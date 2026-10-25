@@ -84,12 +84,10 @@ d3 = steps(
  ],
  pickg=[
   ("In a small town in France, there {lived|living} a young boy.", "there + 동사 + 주어: ~가 살았다 → lived"),
-  ("He liked {to draw|draw} pictures.", "like + to부정사 (~하는 것을 좋아하다)"),
   ("He {drew|drawed} pictures in the sand and in his books.", "draw - drew - drawn (불규칙)"),
   ("When Matisse grew up, he left his town and {became|becomes} an artist in Paris.", "left(과거)와 병렬 → became"),
   ("He was happy {with|to} his life.", "be happy with ~에 만족하다"),
   ("More and more people began {to notice|noticed} him.", "begin + to부정사"),
-  ("They loved his paintings, and soon he became {famous|fame}.", "become + 형용사(보어) → famous"),
   ("He could only lie in bed and {sleep|slept}.", "could + 동사원형 (lie와 병렬)"),
   ("When Matisse opened his eyes, they were full {of|with} sadness.", "be full of ~으로 가득 차다"),
   ("A little later, he started {to paint|painted} again.", "start + to부정사/동명사"),
@@ -97,20 +95,20 @@ d3 = steps(
  ],
  verb=[
   ("He liked ___ pictures.", 'draw', ['to draw', 'drawing'], "like + to부정사/동명사 (본문: to draw)"),
-  ("He ___ pictures in the sand and in his books.", 'draw', ['drew'], "draw - drew - drawn (과거)"),
+  ("He ___ pictures day after day and year after year.", 'paint', ['painted'], "규칙 동사 과거 -ed"),
   ("When Matisse ___ up, he left his town and became an artist in Paris.", 'grow', ['grew'], "grow - grew - grown (과거)"),
   ("When Matisse grew up, he ___ his town and became an artist in Paris.", 'leave', ['left'], "leave - left - left (과거)"),
-  ("More and more people began ___ him.", 'notice', ['to notice', 'noticing'], "begin + to부정사/동명사 (본문: to notice)"),
+  ("They ___ his paintings, and soon he became famous.", 'love', ['loved'], "e로 끝나는 동사 + d → loved"),
   ("When Matisse became an old man, he ___ ill.", 'fall', ['fell'], "fall - fell - fallen (과거)"),
   ("He could only ___ in bed and sleep.", 'lie', ['lie'], "could + 동사원형"),
-  ("A little later, he started ___ again.", 'paint', ['to paint', 'painting'], "start + to부정사/동명사 (본문: to paint)"),
+  ("When Matisse ___ his eyes, they were full of sadness.", 'open', ['opened'], "과거의 일 → opened"),
  ],
  error=[
-  ("In a small town in France, there [[lived]] a young boy. He [[liked]] [[draw]] pictures. He drew pictures [[in]] the sand.", 2, 'to draw', "like + to부정사 → to draw"),
-  ("When Matisse [[grew]] up, he left his town and [[become]] an artist [[in]] Paris. He was happy [[with]] his life.", 1, 'became', "left(과거)와 병렬 → became"),
+  ("When Matisse [[grew]] up, he [[leaved]] his town and [[became]] an artist [[in]] Paris.", 1, 'left', "leave - left - left (불규칙)"),
+  ("He [[painted]] pictures day [[after]] day and year after year. He [[was]] happy [[to]] his life.", 3, 'with', "be happy with ~에 만족하다"),
   ("More and more people [[began]] [[to notice]] him. They [[loved]] his paintings, and soon he became [[fame]].", 3, 'famous', "become + 형용사 → famous"),
-  ("When Matisse became an old man, he [[falled]] ill. He [[could]] only [[lie]] in bed and [[sleep]].", 0, 'fell', "fall - fell - fallen"),
-  ("When Matisse [[opened]] his eyes, they were full [[with]] sadness. A little later, he started [[to paint]] [[again]].", 1, 'of', "be full of ~으로 가득 차다"),
+  ("He [[couldn't]] paint [[at all]]. He could only [[painted]] in his [[dreams]].", 2, 'paint', "조동사 could + 동사원형"),
+  ("A little later, he [[started]] to paint again. However, he [[realized]] [[what]] he couldn't paint [[well]] anymore.", 2, 'that', "realize + that절(~라는 것을)"),
  ],
  scr=[(e(S1, 0), S1[0][1]), (e(S1, 4), S1[4][1]), (e(S1, 7), S1[7][1]), (e(S2, 0), S2[0][1]), (e(S2, 4), S2[4][1]), (e(S2, 7), S2[7][1])],
  order=[
@@ -135,7 +133,7 @@ d3 = steps(
  ],
  gram=[
   ("우리말과 같도록 할 때 빈칸에 알맞은 것은?<br>마을에 어린 소년이 살았다.<br><b>In a town, ______ lived a young boy.</b>", ['there', 'it', 'he', 'they'], "there + 동사 + 주어: ~가 살았다 (there는 해석하지 않음)"),
-  ("다음 중 어법상 <b>틀린</b> 문장은?", ["He liked draw pictures.", "He liked to draw pictures.", "He liked drawing pictures.", "He began to paint."], "like는 to부정사나 동명사를 목적어로 → to draw / drawing"),
+  ("우리말과 같도록 할 때 빈칸에 알맞은 것은?<br>그의 눈은 슬픔으로 가득 차 있었다.<br><b>His eyes were full ______ sadness.</b>", ['of', 'with', 'in', 'for'], "be full of ~으로 가득 차다"),
   (B + "When Matisse ______ up, he became an artist.</b>", ['grew', 'grow', 'grows', 'growing'], "과거의 일 → grew (grow - grew - grown)"),
   ("밑줄 친 <b>When</b>의 뜻으로 알맞은 것은?<br><b><u>When</u> Matisse opened his eyes, they were full of sadness.</b>", ['~할 때', '언제', '어디서', '왜'], "접속사 when: ~할 때 (시간의 부사절)"),
   (B + "Soon he became ______.</b>", ['famous', 'fame', 'famously', 'more famous than'], "become + 형용사(보어)"),
@@ -207,17 +205,16 @@ d4 = steps(
   ("One day, Matisse ___ a brilliant idea.", 'get', ['got'], "get - got - got(ten) (과거)"),
   ("He picked up scissors, ___ some paper, and made beautiful shapes.", 'cut', ['cut'], "cut - cut - cut (과거도 cut)"),
   ("He was ___ with SCISSORS!", 'draw', ['drawing'], "과거진행형 was + -ing"),
-  ("My pleasure in ___ things grows and grows.", 'cut', ['cutting'], "전치사 in + 동명사 (t 겹쳐 쓰기)"),
+  ("He ___ to himself, \"My pleasure in cutting things grows and grows.", 'say', ['said'], "say - said - said (과거)"),
   ("Scissors ___ me another chance.", 'give', ['gave'], "give - gave - given (과거)"),
-  ("I stay in bed most of the time, but I ___ a small paper garden all around me.", 'make', ['made'], "make - made - made (과거)"),
+  ("Soon his room ___ full of shapes and colors.", 'be', ['was'], "주어 his room(단수) + 과거 → was"),
   ("Perhaps Matisse is still ___ scissors to cut out stars in heaven.", 'use', ['using'], "현재진행형 is + -ing"),
-  ("Some of the stars may ___ from his scissors.", 'come', ['come'], "may + 동사원형"),
  ],
  error=[
   ("He [[picked]] up scissors, [[cut]] some paper, and [[make]] beautiful [[shapes]].", 2, 'made', "picked, cut과 병렬 → 과거 made"),
   ("He said to [[him]], \"My pleasure [[in]] [[cutting]] things grows and [[grows]].", 0, 'himself', "주어와 같은 대상 → 재귀대명사 himself"),
   ("My pleasure in cutting things [[grow]] and grows. Scissors [[gave]] [[me]] another [[chance]].", 0, 'grows', "주어 My pleasure(단수) → grows"),
-  ("Soon his room [[was]] full of shapes and colors. There [[is]] leaves, fruits, and [[birds]] ... I am [[really]] happy.", 1, 'are', "복수 주어(leaves, fruits, and birds) → are"),
+  ("Soon his room was full [[with]] shapes and colors. There [[are]] leaves, fruits, and [[birds]] ... I am [[really]] happy.", 0, 'of', "be full of ~으로 가득 차다"),
   ("Perhaps Matisse [[is]] still using scissors [[to cut]] out stars. Some of the stars may [[comes]] [[from]] his scissors.", 2, 'come', "may + 동사원형 → come"),
  ],
  scr=[(e(S3, 0), S3[0][1]), (e(S3, 1), S3[1][1]), (e(S3, 6), S3[6][1]), (e(S4, 0), S4[0][1]), (e(S4, 3), S4[3][1]), (e(S4, 5), S4[5][1])],
@@ -242,7 +239,7 @@ d4 = steps(
   ("Perhaps Matisse is still using scissors to cut out ____ in heaven.", ["stars", "flowers", "birds", "leaves"], "밤하늘의 별 → stars"),
  ],
  gram=[
-  (B + "He said to ______, \"I am happy.\"</b>", ['himself', 'him', 'his', 'he'], "주어(He)와 같은 대상 → 재귀대명사 himself"),
+  ("우리말과 같도록 할 때 빈칸에 알맞은 것은?<br>어제 그는 종이를 잘랐다.<br><b>Yesterday he ______ paper.</b>", ['cut', 'cutted', 'cuts', 'cutting'], "cut - cut - cut (과거형도 cut)"),
   ("두 문장의 뜻이 같도록 할 때 빈칸에 알맞은 것은?<br><b>Scissors gave me another chance.<br>= Scissors gave another chance ______ me.</b>", ['to', 'for', 'of', 'with'], "give는 3형식 전환 시 전치사 to"),
   (B + "There ______ leaves, fruits, and birds.</b>", ['are', 'is', 'be', 'was'], "There + be동사 + 복수 주어 → are"),
   ("밑줄 친 부분과 쓰임이 <b>같은</b> 것은?<br><b>He is using scissors <u>to cut</u> out stars.</b>", ["She went to the shop <u>to buy</u> paper.", "I want <u>to buy</u> paper.", "My plan is <u>to buy</u> paper.", "He liked <u>to buy</u> paper."], "목적(~하기 위해)의 부사적 용법"),
@@ -250,6 +247,27 @@ d4 = steps(
   ("다음 중 어법상 <b>틀린</b> 문장은?", ["He picked up them.", "He picked them up.", "He picked up scissors.", "He picked scissors up."], "목적어가 대명사면 동사 + 대명사 + 부사 → picked them up"),
   (B + "My pleasure in ______ things grows and grows.</b>", ['cutting', 'cut', 'to cut', 'cuts'], "전치사 in 뒤 → 동명사 cutting"),
  ])
+
+SUMQ = '다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 알맞은 것은?'
+def SUMSTEP(items):
+    return {'type': 'mc', 'title': '요약문 완성', 'guide': '본문을 읽고 요약문의 빈칸 (A), (B)에 들어갈 말을 고르세요.',
+            'items': [{'n': n, 'box': box, 'q': SUMQ + '<br><b>' + s + '</b>', 'opts': o, 'ex': x} for n, box, s, o, x in items]}
+d3.append(SUMSTEP([
+  ('❶', ['❶'], "Henri Matisse loved drawing as a boy, and after he became an artist in Paris, he grew (A) ______ as more and more people (B) ______ his paintings.",
+   ['(A) famous – (B) loved', '(A) famous – (B) hated', '(A) poor – (B) loved', '(A) tired – (B) noticed', '(A) poor – (B) forgot'],
+   "근거: More and more people began to notice him. They loved his paintings, and soon he became famous.\n(A) famous 유명한 (B) loved 사랑했다"),
+  ('❷', ['❷'], "When Matisse became old and sick, his eyes were full of (A) ______, and though he could (B) ______ again later, he couldn't paint well anymore.",
+   ['(A) sadness – (B) sit', '(A) happiness – (B) sit', '(A) sadness – (B) run', '(A) pleasure – (B) sleep', '(A) happiness – (B) run'],
+   "근거: they were full of sadness / Luckily, before long, he could sit.\n(A) sadness 슬픔 (B) sit 앉다"),
+]))
+d4.append(SUMSTEP([
+  ('❸', ['❸'], "Matisse found a new way to make art: he cut paper with (A) ______, and he felt they gave him another (B) ______.",
+   ['(A) scissors – (B) chance', '(A) brushes – (B) chance', '(A) scissors – (B) problem', '(A) pencils – (B) dream', '(A) brushes – (B) problem'],
+   "근거: He picked up scissors ... Scissors gave me another chance.\n(A) scissors 가위 (B) chance 기회"),
+  ('❹', ['❹'], "Although Matisse stayed in bed most of the time, he made a small paper (A) ______ around him and felt really (B) ______.",
+   ['(A) garden – (B) happy', '(A) garden – (B) lonely', '(A) house – (B) happy', '(A) forest – (B) sad', '(A) house – (B) lonely'],
+   "근거: I made a small paper garden all around me. ... I am really happy\n(A) garden 정원 (B) happy 행복한"),
+]))
 
 def P(n, rows):
     return [['', n, '']] + [['', a, b] for a, b in rows]
