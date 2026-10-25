@@ -26,7 +26,7 @@ try:
       pg.on('pageerror',lambda e:errs.append(str(e))); pg.on('console',lambda m: m.type=='error' and errs.append(m.text))
       pg.goto('http://localhost:8765/?test'); pg.screenshot(path=SH+'1_home.png',full_page=True)
       pg.fill('#nm','김민준'); pg.click('#nameform button'); ND=pg.evaluate('PKG.days.length')
-      for di,wrong_every in [(0,0),(1,4),(2,0)][:ND]:
+      for di,wrong_every in [(0,0),(1,4),(2,0),(3,0),(4,0),(5,0)][:ND]:
           if pg.locator('#quit').count(): pg.click('#quit')
           pg.locator('[data-go="%d"]'%di).first.click(); k=0; shot=set()
           while True:

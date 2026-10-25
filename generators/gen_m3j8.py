@@ -365,8 +365,8 @@ def SUMSTEP(items):
             'items': [{'n': n, 'box': box, 'q': SUMQ + '<br><b>' + s + '</b>', 'opts': o, 'ex': x, 'ev': evl} for n, box, s, o, x, evl in items]}
 d3.append(SUMSTEP([
   ('❶', ['❶'], "Pascal was having a hard time with graphs and thought nobody (A) ______ them, but then his dog surprisingly started to (B) ______ to him.",
-   ['(A) needs – (B) talk', '(A) loves – (B) talk', '(A) needs – (B) sing', '(A) draws – (B) bark', '(A) loves – (B) bark'],
-   "정답 ▶ (A) needs – (B) talk\n(A) Pascal은 '실생활에서 아무도 그래프가 필요 없다(No one needs graphs)'고 생각했어요 → needs\n(B) 그의 개 Manny가 '말을 하고 있었어요(was talking)' → talk\n오답 ▶ loves(좋아하다)·draws(그리다)는 Pascal이 한 말이 아니고, sing(노래하다)·bark(짖다)는 본문과 달라요.",
+   ['(A) needed – (B) talk', '(A) loved – (B) talk', '(A) needed – (B) sing', '(A) drew – (B) bark', '(A) loved – (B) bark'],
+   "정답 ▶ (A) needed – (B) talk\n(A) Pascal은 '실생활에서 아무도 그래프가 필요 없다(No one needs graphs)'고 생각했어요 → thought(과거)에 맞춰 needed\n(B) 그의 개 Manny가 '말을 하고 있었어요(was talking)' → talk\n오답 ▶ loved(좋아했다)·drew(그렸다)는 Pascal이 한 말이 아니고, sing(노래하다)·bark(짖다)는 본문과 달라요.",
    ["No one needs graphs in real life", "It was his dog, Manny, who was talking"]),
   ('❷', ['❷'], "When Pascal opened his eyes, he was in danger, but a man named Robin Hood (A) ______ him and took him into the (B) ______.",
    ['(A) saved – (B) woods', '(A) chased – (B) woods', '(A) saved – (B) tower', '(A) chased – (B) tower', '(A) ignored – (B) sea'],
