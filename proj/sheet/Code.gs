@@ -10,9 +10,13 @@ var KEY = 'tBj6XBpuNkxf'; // 학생 앱(config.js)의 SHEET_KEY 와 같아야 �
 var NOW_HEAD = ['학생', '학년·교재', '단원', 'DAY', '범위', '진행', '점수', '오답 학습', '회차', '시작', '마지막 활동', '완료', '걸린 시간(분)', '확인 코드', '틀린 것', '기기', '약한 유형 보충'];
 var LOG_HEAD = ['시각', '학생', '학년·교재', '단원', 'DAY', '무엇', '단계', '단계 점수', '진행', '누적 점수', '기기'];
 
-var ROSTER = '학생명단', ROSTER_HEAD = ['이름', '학생 코드', '메모'];
+var ROSTER = '학생명단', ROSTER_HEAD = ['이름', '학생 코드', '교재', '메모'];
 // 학생명단 탭에 한 명이라도 적으면 그때부터 명단에 있는 학생(이름 + 학생 코드)만 학습 화면에 들어올 수 있어요.
+// 교재 칸: 목록에서 고르거나 대충 적어도 돼요(예: 중2 비상). 비워 두면 모든 교재를 열 수 있어요.
+// 교재가 두 개면 같은 이름·코드로 줄을 하나 더 적거나, 쉼표로 이어 적어요.
 // 비워 두면 예전처럼 누구나 들어와요. 그만둔 학생은 그 줄만 지우면 다음에 열 때부터 막혀요.
+var TEXTBOOKS = ['중1 천재(소영순)', '중1 동아(윤정미)', '중2 동아(윤정미)', '중2 비상(황종배)', '중3 지학사(민찬규)',
+  '고1 동아(이병민)', '고1 능률(민병천)', '고1 모의고사', '고2 천재(조수경)', '고2 미래엔(김성연)', '고2 능률(오선영)', '고2 모의고사'];
 
 var VIEW = 'dW6ypYyx'; // 현황판 열쇠: 주소 끝 ?view=dW6ypYyx 가 있어야 학생 현황판이 열려요
 
@@ -168,24 +172,63 @@ function sheet(ss, name, head) {
 function d(t) { return t ? new Date(t) : ''; }
 function out(s) { return ContentService.createTextOutput(s); }
 
-/* 학생 앱이 물어봄: 명단이 켜져 있나(gate), 이 이름 + 코드가 명단에 있나(ok) */
+/* 학생 앱이 물어봄: 명단이 켜져 있나(gate), 이 이름 + 코드가 명단에 있고 이 교재가 열려 있나(ok, why) */
 function nc(c) { return String(c == null ? '' : c).replace(/\D/g, '').replace(/^0+/, ''); }
+function nb(t) { return String(t == null ? '' : t).toLowerCase().replace(/[\s()·.\-]/g, ''); }
+function bookOk(cell, school) {
+  var want = nb(school), parts = String(cell == null ? '' : cell).split(/[,/\n]/).map(nb).filter(String);
+  if (!parts.length) return true; // 비어 있으면 전부
+  return parts.some(function (x) { return want.indexOf(x) >= 0 || x.indexOf(want) >= 0; });
+}
+function bookList() {
+  var pr = PropertiesService.getScriptProperties(), l = [];
+  try { l = JSON.parse(pr.getProperty('books') || '[]'); } catch (e) {}
+  TEXTBOOKS.forEach(function (b) { if (l.indexOf(b) < 0) l.push(b); });
+  return l;
+}
+function bookRule(sh, list) {
+  var rule = SpreadsheetApp.newDataValidation().requireValueInList(list, true).setAllowInvalid(true)
+    .setHelpText('목록에서 고르거나 직접 적어요(예: 중2 비상). 비워 두면 모든 교재.').build();
+  sh.getRange(2, 3, Math.max(sh.getMaxRows() - 1, 1), 1).setDataValidation(rule);
+}
 function rosterSheet(ss) {
   var sh = ss.getSheetByName(ROSTER);
-  if (!sh) { sh = sheet(ss, ROSTER, ROSTER_HEAD); sh.getRange('B:B').setNumberFormat('@'); sh.setColumnWidth(3, 220); }
+  var ready = sh && String(sh.getRange(1, 3).getValue()) === '교재';
+  if (ready) return sh;
+  var lock = LockService.getScriptLock(); lock.waitLock(20000);
+  try {
+    sh = ss.getSheetByName(ROSTER);
+    if (!sh) { sh = sheet(ss, ROSTER, ROSTER_HEAD); }
+    else if (String(sh.getRange(1, 3).getValue()) !== '교재') { // 예전 명단(이름·코드·메모) → 교재 칸 끼워 넣기
+      sh.insertColumnAfter(2);
+      sh.getRange(1, 3).setValue('교재').setFontWeight('bold').setBackground('#2f5fd0').setFontColor('#ffffff');
+    }
+    sh.getRange('B:B').setNumberFormat('@'); sh.setColumnWidth(3, 200); sh.setColumnWidth(4, 200);
+    bookRule(sh, bookList());
+  } finally { lock.releaseLock(); }
   return sh;
 }
+function learnBook(sh, school) { // 새 교재 링크가 처음 열리면 교재 목록에 자동으로 추가
+  if (!school) return;
+  var l = bookList();
+  if (l.some(function (b) { return nb(school).indexOf(nb(b)) >= 0 || nb(b) === nb(school); })) return;
+  l.push(String(school)); PropertiesService.getScriptProperties().setProperty('books', JSON.stringify(l)); bookRule(sh, l);
+}
 function checkRoster(p) {
-  var res = { gate: false, ok: false };
+  var res = { gate: false, ok: false, why: '' };
   try {
     var sh = rosterSheet(SpreadsheetApp.getActiveSpreadsheet());
-    var rows = sh.getLastRow() > 1 ? sh.getRange(2, 1, sh.getLastRow() - 1, 2).getValues().filter(function (v) { return String(v[0]).trim(); }) : [];
+    try { learnBook(sh, p.school); } catch (e2) {}
+    var rows = sh.getLastRow() > 1 ? sh.getRange(2, 1, sh.getLastRow() - 1, 3).getValues().filter(function (v) { return String(v[0]).trim(); }) : [];
     if (rows.length) {
       res.gate = true;
       var n = String(p.name || '').replace(/\s+/g, ''), c = nc(p.code);
-      res.ok = !!n && !!c && rows.some(function (v) { return String(v[0]).replace(/\s+/g, '') === n && nc(v[1]) === c; });
+      var mine = rows.filter(function (v) { return n && c && String(v[0]).replace(/\s+/g, '') === n && nc(v[1]) === c; });
+      if (!mine.length) res.why = 'code';
+      else if (mine.some(function (v) { return bookOk(v[2], p.school); })) res.ok = true;
+      else res.why = 'unit';
     }
-  } catch (err) { res = { gate: false, ok: false }; }
+  } catch (err) { res = { gate: false, ok: false, why: '' }; }
   return ContentService.createTextOutput(JSON.stringify(res)).setMimeType(ContentService.MimeType.JSON);
 }
 
