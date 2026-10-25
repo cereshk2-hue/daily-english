@@ -13,7 +13,7 @@
       if (st.type !== 'pick' || !/어법/.test(st.title)) return;
       st.items.forEach(function (q) {
         var f = nz(q.s.replace(/\{([^}|]*)[^}]*\}/, '$1')).replace(/^\(|\)$/g, '').replace(/[.!?"]+$/, '');
-        lines.forEach(function (l, i) { var w = l[1].split(/\s+/).length; if (w >= 5 && w <= 24 && /[.!?]["']?$/.test(l[1]) && nz(l[1]).indexOf(f) >= 0 && picked.indexOf(i) < 0) picked.push(i); });
+        lines.forEach(function (l, i) { var w = l[1].split(/\s+/).length; if (w >= 5 && w <= 24 && /[.!?]$/.test(l[1]) && !/["“”]/.test(l[1]) && nz(l[1]).indexOf(f) >= 0 && picked.indexOf(i) < 0) picked.push(i); });
       });
     });
     picked.sort(function (a, b) { return a - b; });

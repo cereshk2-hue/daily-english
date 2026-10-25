@@ -4,9 +4,9 @@
 window.PKG = {
   id: 'm1-chunjae-so-L6',
   school: '중1 천재(소영순)',
-  unit: 'Lesson 6',
-  title: 'Heroes in Nature',
-  titleKo: '자연에서 일하는 즐거움',
+  unit: 'Lesson 6~7',
+  title: 'Heroes in Nature · Love for Art',
+  titleKo: '자연에서 일하는 즐거움 · 예술에 대한 사랑',
   exam: '2학기 기말고사',
   prose: true,
   stepsBefore: ["핵심어휘·숙어", "어휘선택", "T/F 내용 확인", "어법선택", "동사변형", "오류찾기", "본문 스크램블", "문장순서", "문장삽입", "어색한 문장", "빈칸추론", "핵심문법"],   /* 일치·불일치 추가 전 단계 이름: 예전 기록을 새 단계에 맞추는 데 씀 */
@@ -401,6 +401,177 @@ window.PKG = {
         { q: '"나는 내 직업이 자랑스럽다."를 바르게 영작한 것은?', opts: ["I'm proud of my job.", "I'm proud my job.", 'I proud of my job.', "I'm proud for my job."], ex: 'be proud of: ~을 자랑스러워하다' }
       ]}
     ]
-  }
+  },
+  { id: 'd3', name: 'DAY 3', range: '7과 본문 ❶❷', story: 'Lesson 7 · Henri\'s Scissors · 화가가 된 소년 · 병에 걸린 Matisse', passage: [['', '❶', ''], ['', 'In a small town in France, there lived a young boy.', '프랑스의 작은 마을에 어린 소년이 살았다.'], ['', 'His name was Henri Matisse.', '그의 이름은 Henri Matisse였다.'], ['', 'He liked to draw pictures.', '그는 그림 그리는 것을 좋아했다.'], ['', 'He drew pictures in the sand and in his books.', '그는 모래와 그의 책에 그림을 그렸다.'], ['', 'When Matisse grew up, he left his town and became an artist in Paris.', 'Matisse가 어른이 되었을 때, 그는 마을을 떠나 파리에서 화가가 되었다.'], ['', 'He painted pictures day after day and year after year.', '그는 날마다, 해마다 그림을 그렸다.'], ['', 'He was happy with his life.', '그는 그의 삶에 행복해했다.'], ['', 'More and more people began to notice him.', '점점 더 많은 사람들이 그를 알아보기 시작했다.'], ['', 'They loved his paintings, and soon he became famous.', '그들은 그의 그림을 사랑했고 곧 그는 유명해졌다.'], ['', '❷', ''], ['', 'When Matisse became an old man, he fell ill.', 'Matisse가 노인이 되었을 때, 그는 병에 걸렸다.'], ['', 'He could only lie in bed and sleep.', '그는 침대에 누워 잠만 잘 수 있었다.'], ['', 'He couldn\'t paint at all.', '그는 그림을 전혀 그릴 수 없었다.'], ['', 'He could only paint in his dreams.', '그는 오직 그의 꿈속에서만 그릴 수 있었다.'], ['', 'When Matisse opened his eyes, they were full of sadness.', 'Matisse가 눈을 떴을 때, 그의 눈은 슬픔으로 가득 차 있었다.'], ['', 'Luckily, before long, he could sit.', '다행히도, 얼마 지나지 않아 그는 앉을 수 있었다.'], ['', 'A little later, he started to paint again.', '조금 후에, 그는 다시 그림을 그리기 시작했다.'], ['', 'However, he realized that he couldn\'t paint well anymore.', '하지만 그는 더 이상 그림을 잘 그릴 수 없다는 것을 깨달았다.']], steps: [
+    { type: 'vocab', title: '핵심어휘·숙어', quizN: 15, items: [['scissors', '가위', '❶'], ['town', '마을, 읍', '❶'], ['young', '어린', '❶'], ['draw', '그리다 (과거 drew)', '❶'], ['picture', '그림', '❶'], ['sand', '모래', '❶'], ['grow up', '(성인으로) 자라다 (과거 grew up)', '❶'], ['leave', '떠나다 (과거 left)', '❶'], ['artist', '화가, 예술가', '❶'], ['day after day', '날마다, 매일매일', '❶'], ['year after year', '해마다, 매년', '❶'], ['be happy with', '~에 만족하다', '❶'], ['more and more', '점점 더 많은', '❶'], ['notice', '알아차리다, 주목하다', '❶'], ['famous', '유명한', '❶'], ['fall ill', '병에 걸리다 (과거 fell ill)', '❷'], ['lie', '누워 있다', '❷'], ['not ~ at all', '전혀 ~ 아니다', '❷'], ['dream', '꿈', '❷'], ['be full of', '~으로 가득 차다', '❷'], ['sadness', '슬픔', '❷'], ['luckily', '다행히도', '❷'], ['before long', '곧, 머지않아', '❷'], ['a little later', '잠시 후, 조금 있다가', '❷'], ['however', '그러나', '❷'], ['realize', '깨닫다', '❷'], ['not ~ anymore', '더 이상 ~않다', '❷']] },
+    { type: 'pick', title: '어휘선택', guide: '문맥에 맞는 낱말을 고르세요.', items: [
+      { s: 'In a small town in France, there lived a {young|old} boy.', ex: '어린 소년 → young (old 나이 든)' },
+      { s: 'He drew pictures in the {sand|sky} and in his books.', ex: '모래에 그림을 그림 → sand' },
+      { s: 'When Matisse grew up, he {left|stayed} his town and became an artist in Paris.', ex: '마을을 \'떠나\' 파리로 감 → left (stay 머무르다)' },
+      { s: 'More and more people began to {notice|forget} him.', ex: '점점 많은 사람들이 \'알아보기\' 시작함 → notice' },
+      { s: 'They loved his paintings, and soon he became {famous|poor}.', ex: '그림을 사랑함 → 곧 \'유명해짐\' famous' },
+      { s: 'When Matisse became an old man, he fell {ill|asleep}.', ex: 'fall ill 병에 걸리다' },
+      { s: 'When Matisse opened his eyes, they were full of {sadness|happiness}.', ex: '그림을 그릴 수 없었음 → 슬픔(sadness)' },
+      { s: '{Luckily|Sadly}, before long, he could sit.', ex: '다시 앉을 수 있게 됨 → 다행히도(Luckily)' },
+      { s: 'However, he {realized|forgot} that he couldn\'t paint well anymore.', ex: 'realize 깨닫다' }
+    ] },
+    { type: 'tf', title: 'T/F 내용 확인', guide: '본문 내용과 일치하면 T, 다르면 F를 고르세요.', items: [['Henri Matisse lived in a small town in France when he was young.', true, '프랑스의 작은 마을에 살던 어린 소년이었다.', '❶', 'In a small town in France, there lived a young boy'], ['Henri Matisse liked to write poems when he was a boy.', false, '시가 아니라 그림 그리는 것(to draw pictures)을 좋아했다.', '❶', 'He liked to draw pictures'], ['Matisse became an artist in his small town.', false, '마을을 떠나 파리(Paris)에서 화가가 되었다.', '❶', 'he left his town and became an artist in Paris'], ['Matisse painted pictures every day for many years.', true, '날마다, 해마다(day after day and year after year) 그렸다.', '❶', 'He painted pictures day after day and year after year'], ['More and more people loved Matisse\'s paintings.', true, '사람들이 그의 그림을 사랑했다.', '❶', 'They loved his paintings'], ['Matisse fell ill when he was a young artist.', false, '노인이 되었을 때(became an old man) 병에 걸렸다.', '❷', 'When Matisse became an old man, he fell ill'], ['Matisse\'s eyes were full of happiness when he opened them.', false, '슬픔(sadness)으로 가득 차 있었다.', '❷', 'they were full of sadness'], ['Matisse started to paint again, but he couldn\'t paint well anymore.', true, '다시 그리기 시작했지만 더 이상 잘 그릴 수 없었다.', '❷', 'he realized that he couldn\'t paint well anymore']] },
+    { type: 'mc', title: '일치·불일치', guide: '선택지는 본문을 어려운 어휘로 바꿔 쓴 문장이에요. 풀고 나서 해설의 어휘를 꼭 확인하세요.', items: [
+      { n: '❶', box: ['❶'], q: 'Henri Matisse에 관한 내용과 일치하지 <u>않는</u> 것은?', opts: ['He drew pictures only on paper when he was young.', 'He was born and grew up in a small town in France.', 'He moved to Paris and became an artist.', 'He was satisfied with his life as an artist.', 'He gradually gained fame as more people noticed him.'], ex: '정답 근거: He drew pictures in the sand and in his books. (종이에만 그린 게 아니라 모래와 책에 그림)\n· be satisfied with = be happy with ~에 만족하다 · gradually 점차 · gain fame 명성을 얻다', per: [['그는 어렸을 때 종이에만 그림을 그렸다.', 'He drew pictures in the sand and in his books', '불일치 → 모래와 책에 그림'], ['그는 프랑스의 작은 마을에서 자랐다.', 'In a small town in France, there lived a young boy', '일치'], ['그는 파리로 가서 화가가 되었다.', 'he left his town and became an artist in Paris', '일치 (move to 이사하다)'], ['그는 화가로서의 삶에 만족했다.', 'He was happy with his life', '일치 (be satisfied with = be happy with)'], ['더 많은 사람들이 알아보면서 그는 점차 유명해졌다.', 'More and more people began to notice him', '일치 (gain fame = become famous)']] },
+      { n: '❷', box: ['❷'], q: '글의 내용과 <u>일치하는</u> 것은?', opts: ['When Matisse got sick, he could do nothing but stay in bed and sleep.', 'Matisse painted many pictures while he was in bed.', 'Matisse felt delighted when he woke up from his dreams.', 'Matisse could never sit again after he fell ill.', 'Matisse painted better than before when he started again.'], ex: '정답 근거: He could only lie in bed and sleep.\n· do nothing but ~ ~만 하다 · delighted 매우 기쁜 · fall ill = get sick 병에 걸리다', per: [['Matisse는 병에 걸렸을 때 침대에 누워 자는 것밖에 할 수 없었다.', 'He could only lie in bed and sleep', '일치 (do nothing but ~ = ~만 하다)'], ['Matisse는 침대에 있는 동안 많은 그림을 그렸다.', 'He couldn\'t paint at all', '불일치 → 전혀 그릴 수 없었음'], ['Matisse는 꿈에서 깼을 때 매우 기뻤다.', 'they were full of sadness', '불일치 → 슬픔으로 가득'], ['Matisse는 병에 걸린 뒤 다시는 앉을 수 없었다.', 'Luckily, before long, he could sit', '불일치 → 곧 앉을 수 있었음'], ['Matisse는 다시 그리기 시작했을 때 전보다 더 잘 그렸다.', 'he couldn\'t paint well anymore', '불일치 → 더 이상 잘 그릴 수 없었음']] }
+    ] },
+    { type: 'pick', title: '어법선택', guide: '어법상 알맞은 것을 고르세요.', items: [
+      { s: 'In a small town in France, there {lived|living} a young boy.', ex: 'there + 동사 + 주어: ~가 살았다 → lived' },
+      { s: 'He liked {to draw|draw} pictures.', ex: 'like + to부정사 (~하는 것을 좋아하다)' },
+      { s: 'He {drew|drawed} pictures in the sand and in his books.', ex: 'draw - drew - drawn (불규칙)' },
+      { s: 'When Matisse grew up, he left his town and {became|becomes} an artist in Paris.', ex: 'left(과거)와 병렬 → became' },
+      { s: 'He was happy {with|to} his life.', ex: 'be happy with ~에 만족하다' },
+      { s: 'More and more people began {to notice|noticed} him.', ex: 'begin + to부정사' },
+      { s: 'They loved his paintings, and soon he became {famous|fame}.', ex: 'become + 형용사(보어) → famous' },
+      { s: 'He could only lie in bed and {sleep|slept}.', ex: 'could + 동사원형 (lie와 병렬)' },
+      { s: 'When Matisse opened his eyes, they were full {of|with} sadness.', ex: 'be full of ~으로 가득 차다' },
+      { s: 'A little later, he started {to paint|painted} again.', ex: 'start + to부정사/동명사' },
+      { s: 'However, he realized {that|what} he couldn\'t paint well anymore.', ex: 'realize + that절 (목적어)' }
+    ] },
+    { type: 'verb', title: '동사변형', guide: '( ) 안의 동사를 알맞은 형태로 바꿔 쓰세요.', items: [
+      { s: 'He liked ___ pictures.', v: 'draw', a: ['to draw', 'drawing'], ex: 'like + to부정사/동명사 (본문: to draw)' },
+      { s: 'He ___ pictures in the sand and in his books.', v: 'draw', a: ['drew'], ex: 'draw - drew - drawn (과거)' },
+      { s: 'When Matisse ___ up, he left his town and became an artist in Paris.', v: 'grow', a: ['grew'], ex: 'grow - grew - grown (과거)' },
+      { s: 'When Matisse grew up, he ___ his town and became an artist in Paris.', v: 'leave', a: ['left'], ex: 'leave - left - left (과거)' },
+      { s: 'More and more people began ___ him.', v: 'notice', a: ['to notice', 'noticing'], ex: 'begin + to부정사/동명사 (본문: to notice)' },
+      { s: 'When Matisse became an old man, he ___ ill.', v: 'fall', a: ['fell'], ex: 'fall - fell - fallen (과거)' },
+      { s: 'He could only ___ in bed and sleep.', v: 'lie', a: ['lie'], ex: 'could + 동사원형' },
+      { s: 'A little later, he started ___ again.', v: 'paint', a: ['to paint', 'painting'], ex: 'start + to부정사/동명사 (본문: to paint)' }
+    ] },
+    { type: 'error', title: '오류찾기', guide: '어법상 틀린 곳을 고르세요.', items: [
+      { s: 'In a small town in France, there [[lived]] a young boy. He [[liked]] [[draw]] pictures. He drew pictures [[in]] the sand.', w: 2, fix: 'to draw', ex: 'like + to부정사 → to draw' },
+      { s: 'When Matisse [[grew]] up, he left his town and [[become]] an artist [[in]] Paris. He was happy [[with]] his life.', w: 1, fix: 'became', ex: 'left(과거)와 병렬 → became' },
+      { s: 'More and more people [[began]] [[to notice]] him. They [[loved]] his paintings, and soon he became [[fame]].', w: 3, fix: 'famous', ex: 'become + 형용사 → famous' },
+      { s: 'When Matisse became an old man, he [[falled]] ill. He [[could]] only [[lie]] in bed and [[sleep]].', w: 0, fix: 'fell', ex: 'fall - fell - fallen' },
+      { s: 'When Matisse [[opened]] his eyes, they were full [[with]] sadness. A little later, he started [[to paint]] [[again]].', w: 1, fix: 'of', ex: 'be full of ~으로 가득 차다' }
+    ] },
+    { type: 'scramble', title: '본문 스크램블', guide: '우리말에 맞게 단어를 눌러 문장을 완성하세요.', items: [
+      { ko: '프랑스의 작은 마을에 어린 소년이 살았다.', en: 'In a small town in France, there lived a young boy.' },
+      { ko: 'Matisse가 어른이 되었을 때, 그는 마을을 떠나 파리에서 화가가 되었다.', en: 'When Matisse grew up, he left his town and became an artist in Paris.' },
+      { ko: '점점 더 많은 사람들이 그를 알아보기 시작했다.', en: 'More and more people began to notice him.' },
+      { ko: 'Matisse가 노인이 되었을 때, 그는 병에 걸렸다.', en: 'When Matisse became an old man, he fell ill.' },
+      { ko: 'Matisse가 눈을 떴을 때, 그의 눈은 슬픔으로 가득 차 있었다.', en: 'When Matisse opened his eyes, they were full of sadness.' },
+      { ko: '하지만 그는 더 이상 그림을 잘 그릴 수 없다는 것을 깨달았다.', en: 'However, he realized that he couldn\'t paint well anymore.' }
+    ] },
+    { type: 'order', title: '문장순서', guide: '문장을 본문 순서대로 눌러서 배열하세요.', items: [
+      { lines: ['In a small town in France, there lived a young boy.', 'His name was Henri Matisse.', 'He liked to draw pictures.', 'He drew pictures in the sand and in his books.'], flow: ['프랑스 작은 마을의 어린 소년', '그의 이름은 Henri Matisse', '그림 그리기를 좋아함', '모래와 책에 그림을 그림'] },
+      { lines: ['When Matisse grew up, he left his town and became an artist in Paris.', 'He painted pictures day after day and year after year.', 'More and more people began to notice him.', 'They loved his paintings, and soon he became famous.'], flow: ['어른이 되어 파리에서 화가가 됨', '날마다, 해마다 그림을 그림', '점점 많은 사람들이 알아봄', '그림을 사랑했고 곧 유명해짐'] },
+      { lines: ['When Matisse became an old man, he fell ill.', 'He could only lie in bed and sleep.', 'When Matisse opened his eyes, they were full of sadness.', 'Luckily, before long, he could sit.', 'However, he realized that he couldn\'t paint well anymore.'], flow: ['노인이 되어 병에 걸림', '침대에 누워 잠만 잘 수 있었음', '눈을 뜨면 슬픔으로 가득', '다행히 곧 앉을 수 있었음', '더 이상 잘 그릴 수 없다는 걸 깨달음'] }
+    ] },
+    { type: 'insert', title: '문장삽입', guide: '주어진 문장이 들어가기에 가장 알맞은 곳을 고르세요.', items: [
+      { lines: ['His name was Henri Matisse.', 'He liked to draw pictures.', 'He drew pictures in the sand and in his books.'], given: 2, flow: ['그의 이름은 Henri Matisse', '그림 그리기를 좋아함', '모래와 책에 그림(pictures)을 그림'], ex: '그림 그리기를 좋아한다는 내용 뒤에 어디에 그렸는지가 이어진다.' },
+      { lines: ['More and more people began to notice him.', 'They loved his paintings, and soon he became famous.', 'When Matisse became an old man, he fell ill.'], given: 1, flow: ['점점 많은 사람들이 그를 알아봄', '그들(They)은 그의 그림을 사랑했고 곧 유명해짐', '노인이 되어 병에 걸림'], ex: 'They는 앞 문장의 More and more people을 가리킨다.' },
+      { lines: ['Luckily, before long, he could sit.', 'A little later, he started to paint again.', 'However, he realized that he couldn\'t paint well anymore.'], given: 2, flow: ['다행히 곧 앉을 수 있었음', '조금 후 다시 그림을 그리기 시작함', '하지만(However) 더 이상 잘 그릴 수 없었음'], ex: 'However는 \'다시 그리기 시작했다\'는 내용과 반대되는 결과를 이끈다.' }
+    ] },
+    { type: 'odd', title: '어색한 문장', guide: '글의 흐름과 관계없는 문장을 고르세요.', items: [
+      { lines: ['He liked to draw pictures.', 'He drew pictures in the sand and in his books.', 'He didn\'t like drawing at all.', 'When Matisse grew up, he left his town and became an artist in Paris.'], odd: 2, ex: '그림 그리기를 싫어했다 → 그림을 좋아했다는 내용과 반대' },
+      { lines: ['He was happy with his life.', 'More and more people began to notice him.', 'Nobody wanted to see his paintings.', 'They loved his paintings, and soon he became famous.'], odd: 2, ex: '아무도 그의 그림을 원하지 않았다 → 점점 유명해졌다는 흐름과 반대' },
+      { lines: ['He couldn\'t paint at all.', 'He could only paint in his dreams.', 'He went to the park and painted every day.', 'When Matisse opened his eyes, they were full of sadness.'], odd: 2, ex: '공원에 가서 매일 그렸다 → 침대에 누워 그릴 수 없었다는 내용과 맞지 않음' }
+    ] },
+    { type: 'blank', title: '빈칸추론', guide: '빈칸에 들어갈 말로 가장 알맞은 것을 고르세요.', items: [
+      { s: 'When Matisse grew up, he left his town and became ____ in Paris.', opts: ['an artist', 'a doctor', 'a teacher', 'a farmer'], ex: '파리에서 화가가 됨' },
+      { s: 'He couldn\'t paint at all. He could only paint ____.', opts: ['in his dreams', 'in the park', 'in his school', 'with his friends'], ex: '병에 걸려 꿈속에서만 그릴 수 있었음' },
+      { s: 'A little later, he started to paint again. However, he realized that ____.', opts: ['he couldn\'t paint well anymore', 'he was a great painter', 'he wanted to sleep', 'he became famous'], ex: 'However → 다시 그렸지만 잘 그릴 수 없었음' }
+    ] },
+    { type: 'mc', title: '핵심문법', guide: '알맞은 답을 고르세요.', items: [
+      { q: '우리말과 같도록 할 때 빈칸에 알맞은 것은?<br>마을에 어린 소년이 살았다.<br><b>In a town, ______ lived a young boy.</b>', opts: ['there', 'it', 'he', 'they'], ex: 'there + 동사 + 주어: ~가 살았다 (there는 해석하지 않음)' },
+      { q: '다음 중 어법상 <b>틀린</b> 문장은?', opts: ['He liked draw pictures.', 'He liked to draw pictures.', 'He liked drawing pictures.', 'He began to paint.'], ex: 'like는 to부정사나 동명사를 목적어로 → to draw / drawing' },
+      { q: '빈칸에 알맞은 것은?<br><b>When Matisse ______ up, he became an artist.</b>', opts: ['grew', 'grow', 'grows', 'growing'], ex: '과거의 일 → grew (grow - grew - grown)' },
+      { q: '밑줄 친 <b>When</b>의 뜻으로 알맞은 것은?<br><b><u>When</u> Matisse opened his eyes, they were full of sadness.</b>', opts: ['~할 때', '언제', '어디서', '왜'], ex: '접속사 when: ~할 때 (시간의 부사절)' },
+      { q: '빈칸에 알맞은 것은?<br><b>Soon he became ______.</b>', opts: ['famous', 'fame', 'famously', 'more famous than'], ex: 'become + 형용사(보어)' },
+      { q: '두 문장의 뜻이 같도록 할 때 빈칸에 알맞은 것은?<br><b>He could only lie in bed.<br>= He was only ______ to lie in bed.</b>', opts: ['able', 'can', 'could', 'ability'], ex: 'could = was/were able to' },
+      { q: '우리말과 같도록 할 때 빈칸에 알맞은 것은?<br>그는 더 이상 그림을 잘 그릴 수 없었다.<br><b>He couldn\'t paint well ______.</b>', opts: ['anymore', 'at all', 'again', 'already'], ex: 'not ~ anymore 더 이상 ~않다' }
+    ] }
+  ] },
+  { id: 'd4', name: 'DAY 4', range: '7과 본문 ❸❹', story: 'Lesson 7 · 가위로 그리는 그림 · 종이 정원과 밤하늘의 별', passage: [['', '❸', ''], ['', 'One day, Matisse got a brilliant idea.', '어느 날, Matisse는 멋진 생각을 해냈다.'], ['', 'He picked up scissors, cut some paper, and made beautiful shapes.', '그는 가위를 집어 들어 종이를 자르고, 아름다운 모양을 만들었다.'], ['', 'He cut out birds and flowers.', '그는 새와 꽃을 잘라 냈다.'], ['', 'He was drawing with SCISSORS!', '그는 가위로 그림을 그리고 있었다!'], ['', 'He said to himself, "My pleasure in cutting things grows and grows.', '그는 자기 자신에게 말했다. “무엇인가를 오려 내는 나의 기쁨이 더욱 커지고 있어.'], ['', 'Scissors gave me another chance."', '가위는 내게 또 다른 기회를 주었어.”'], ['', 'Matisse cut paper all day.', 'Matisse는 하루 종일 종이를 잘랐다.'], ['', '❹', ''], ['', 'Soon his room was full of shapes and colors.', '곧 그의 방은 모양과 색채로 가득 찼다.'], ['', '"I stay in bed most of the time, but I made a small paper garden all around me.', '“나는 대부분 시간을 침대에 머물러 있지만, 온 주변에 작은 종이 정원을 만들었어.'], ['', 'There are leaves, fruits, and birds ... I am really happy," he thought.', '나뭇잎, 과일, 그리고 새들이 있지 … 난 정말 행복해.”라고 그는 생각했다.'], ['', 'Perhaps Matisse is still using scissors to cut out stars in heaven.', '아마도 Matisse는 여전히 천국에서 별을 오리기 위해 가위를 사용하고 있을 것이다.'], ['', 'Look at the night sky.', '밤하늘을 봐.'], ['', 'Some of the stars may come from his scissors.', '별들 중 일부는 그의 가위에서 나온 것일지도 모른다.']], steps: [
+    { type: 'vocab', title: '핵심어휘·숙어', quizN: 15, items: [['get an idea', '생각이 나다 (과거 got)', '❸'], ['brilliant', '멋진, 훌륭한', '❸'], ['pick ~ up', '~을 집어 들다', '❸'], ['cut', '자르다 (과거 cut)', '❸'], ['beautiful', '아름다운', '❸'], ['shape', '모양', '❸'], ['cut ~ out', '~을 오려내다', '❸'], ['say to oneself', '혼잣말을 하다, 마음속으로 생각하다', '❸'], ['pleasure', '기쁨, 즐거움', '❸'], ['grow and grow', '점점 더 커지다', '❸'], ['another', '또 다른', '❸'], ['chance', '기회', '❸'], ['all day', '하루 종일', '❸'], ['color', '색, 색채', '❹'], ['stay', '머무르다', '❹'], ['most of the time', '대부분의 시간', '❹'], ['garden', '정원', '❹'], ['all around ~', '~의 주변 일대에', '❹'], ['leaf', '잎, 나뭇잎 (복수 leaves)', '❹'], ['fruit', '과일', '❹'], ['perhaps', '아마, 어쩌면', '❹'], ['still', '아직도, 여전히', '❹'], ['heaven', '천국', '❹'], ['night sky', '밤하늘', '❹'], ['some of ~', '~ 중 일부', '❹'], ['come from', '~에서 나오다', '❹']] },
+    { type: 'pick', title: '어휘선택', guide: '문맥에 맞는 낱말을 고르세요.', items: [
+      { s: 'One day, Matisse got a {brilliant|terrible} idea.', ex: '멋진 생각 → brilliant' },
+      { s: 'He {picked|put} up scissors, cut some paper, and made beautiful shapes.', ex: 'pick ~ up ~을 집어 들다' },
+      { s: 'He cut {out|off} birds and flowers.', ex: 'cut ~ out ~을 오려내다' },
+      { s: 'He said to himself, "My {pleasure|pain} in cutting things grows and grows.', ex: '오려 내는 \'기쁨\'이 커짐 → pleasure' },
+      { s: 'Scissors gave me another {chance|problem}.', ex: '또 다른 \'기회\' → chance' },
+      { s: 'Soon his room was full of {shapes|books} and colors.', ex: '오려 낸 \'모양\'과 색채로 가득 → shapes' },
+      { s: 'I {stay|work} in bed most of the time, but I made a small paper garden all around me.', ex: '대부분 침대에 \'머물러\' 있음 → stay' },
+      { s: '{Perhaps|Never} Matisse is still using scissors to cut out stars in heaven.', ex: '아마도 → Perhaps' },
+      { s: 'Some of the stars may {come|go} from his scissors.', ex: 'come from ~에서 나오다' }
+    ] },
+    { type: 'tf', title: 'T/F 내용 확인', guide: '본문 내용과 일치하면 T, 다르면 F를 고르세요.', items: [['Matisse got a brilliant idea one day.', true, '어느 날 멋진 생각을 해냈다.', '❸', 'One day, Matisse got a brilliant idea'], ['Matisse put down scissors and picked up brushes again.', false, '가위를 집어 들었다(picked up scissors).', '❸', 'He picked up scissors'], ['Matisse made shapes of birds and flowers with scissors.', true, '새와 꽃을 오려 냈다.', '❸', 'He cut out birds and flowers'], ['Matisse felt happy when he cut things out.', true, '오려 내는 기쁨이 점점 커졌다.', '❸', 'My pleasure in cutting things grows and grows'], ['Matisse cut paper for only an hour a day.', false, '하루 종일(all day) 종이를 잘랐다.', '❸', 'Matisse cut paper all day'], ['Matisse was in his garden all day.', false, '대부분 침대에 머물렀다(stay in bed).', '❹', 'I stay in bed most of the time'], ['Matisse made a paper garden near his bed.', true, '온 주변에 작은 종이 정원을 만들었다.', '❹', 'I made a small paper garden all around me'], ['Maybe Matisse is still painting with brushes in heaven.', false, '붓이 아니라 가위로 별을 오리고 있을 것이다.', '❹', 'Perhaps Matisse is still using scissors to cut out stars in heaven']] },
+    { type: 'mc', title: '일치·불일치', guide: '선택지는 본문을 어려운 어휘로 바꿔 쓴 문장이에요. 풀고 나서 해설의 어휘를 꼭 확인하세요.', items: [
+      { n: '❸', box: ['❸'], q: 'Matisse에 관한 내용과 일치하지 <u>않는</u> 것은?', opts: ['He used scissors only for a short time each day.', 'He came up with a creative idea.', 'He made beautiful shapes out of paper.', 'He thought scissors gave him a new opportunity.', 'His joy kept growing as he cut things out.'], ex: '정답 근거: Matisse cut paper all day. (짧은 시간이 아니라 하루 종일)\n· come up with ~을 생각해 내다 · opportunity = chance 기회 · creative 창의적인', per: [['그는 하루에 잠깐씩만 가위를 사용했다.', 'Matisse cut paper all day', '불일치 → 하루 종일'], ['그는 창의적인 생각을 해냈다.', 'One day, Matisse got a brilliant idea', '일치 (come up with = get an idea)'], ['그는 종이로 아름다운 모양을 만들었다.', 'cut some paper, and made beautiful shapes', '일치'], ['그는 가위가 새로운 기회를 주었다고 생각했다.', 'Scissors gave me another chance', '일치 (opportunity = chance)'], ['무엇인가를 오려 낼수록 그의 기쁨이 계속 커졌다.', 'My pleasure in cutting things grows and grows', '일치']] },
+      { n: '❹', box: ['❹'], q: '글의 내용과 <u>일치하는</u> 것은?', opts: ['Matisse created a garden of paper around his bed.', 'Matisse\'s room was empty and dark.', 'Matisse went outside to pick leaves and fruits.', 'Matisse felt lonely in his small room.', 'The writer says all the stars came from Matisse\'s scissors.'], ex: '정답 근거: I made a small paper garden all around me.\n· create 만들다 · empty 텅 빈 · lonely 외로운', per: [['Matisse는 침대 주변에 종이 정원을 만들었다.', 'I made a small paper garden all around me', '일치 (create = make)'], ['Matisse의 방은 텅 비고 어두웠다.', 'Soon his room was full of shapes and colors', '불일치 → 모양과 색채로 가득'], ['Matisse는 밖에 나가 나뭇잎과 과일을 따 왔다.', 'I stay in bed most of the time', '불일치 → 대부분 침대에 머묾 (종이로 만든 것)'], ['Matisse는 작은 방에서 외로웠다.', 'I am really happy', '불일치 → 정말 행복함'], ['글쓴이는 모든 별이 Matisse의 가위에서 나왔다고 말한다.', 'Some of the stars may come from his scissors', '불일치 → 일부(Some)가 나왔을지도 모름']] }
+    ] },
+    { type: 'pick', title: '어법선택', guide: '어법상 알맞은 것을 고르세요.', items: [
+      { s: 'He picked up scissors, cut some paper, and {made|make} beautiful shapes.', ex: 'picked, cut과 병렬 → 과거 made' },
+      { s: 'He {was|is} drawing with SCISSORS!', ex: '과거진행형 was + -ing' },
+      { s: 'He said to {himself|him}, "My pleasure in cutting things grows and grows.', ex: '주어 He = 말하는 대상 → 재귀대명사 himself' },
+      { s: 'My pleasure in {cutting|cut} things grows and grows.', ex: '전치사 in + 동명사' },
+      { s: 'My pleasure in cutting things {grows|grow} and grows.', ex: '주어 My pleasure(단수) → grows' },
+      { s: 'Scissors gave {me|to me} another chance.', ex: 'give + 간접목적어 + 직접목적어' },
+      { s: 'Soon his room was full {of|with} shapes and colors.', ex: 'be full of ~으로 가득 차다' },
+      { s: 'There {are|is} leaves, fruits, and birds ...', ex: 'There + be동사 + 복수 주어 → are' },
+      { s: 'Perhaps Matisse is still using scissors {to cut|cut} out stars in heaven.', ex: '목적(~하기 위해) → to부정사' },
+      { s: 'Some of the stars may {come|comes} from his scissors.', ex: '조동사 may + 동사원형' }
+    ] },
+    { type: 'verb', title: '동사변형', guide: '( ) 안의 동사를 알맞은 형태로 바꿔 쓰세요.', items: [
+      { s: 'One day, Matisse ___ a brilliant idea.', v: 'get', a: ['got'], ex: 'get - got - got(ten) (과거)' },
+      { s: 'He picked up scissors, ___ some paper, and made beautiful shapes.', v: 'cut', a: ['cut'], ex: 'cut - cut - cut (과거도 cut)' },
+      { s: 'He was ___ with SCISSORS!', v: 'draw', a: ['drawing'], ex: '과거진행형 was + -ing' },
+      { s: 'My pleasure in ___ things grows and grows.', v: 'cut', a: ['cutting'], ex: '전치사 in + 동명사 (t 겹쳐 쓰기)' },
+      { s: 'Scissors ___ me another chance.', v: 'give', a: ['gave'], ex: 'give - gave - given (과거)' },
+      { s: 'I stay in bed most of the time, but I ___ a small paper garden all around me.', v: 'make', a: ['made'], ex: 'make - made - made (과거)' },
+      { s: 'Perhaps Matisse is still ___ scissors to cut out stars in heaven.', v: 'use', a: ['using'], ex: '현재진행형 is + -ing' },
+      { s: 'Some of the stars may ___ from his scissors.', v: 'come', a: ['come'], ex: 'may + 동사원형' }
+    ] },
+    { type: 'error', title: '오류찾기', guide: '어법상 틀린 곳을 고르세요.', items: [
+      { s: 'He [[picked]] up scissors, [[cut]] some paper, and [[make]] beautiful [[shapes]].', w: 2, fix: 'made', ex: 'picked, cut과 병렬 → 과거 made' },
+      { s: 'He said to [[him]], "My pleasure [[in]] [[cutting]] things grows and [[grows]].', w: 0, fix: 'himself', ex: '주어와 같은 대상 → 재귀대명사 himself' },
+      { s: 'My pleasure in cutting things [[grow]] and grows. Scissors [[gave]] [[me]] another [[chance]].', w: 0, fix: 'grows', ex: '주어 My pleasure(단수) → grows' },
+      { s: 'Soon his room [[was]] full of shapes and colors. There [[is]] leaves, fruits, and [[birds]] ... I am [[really]] happy.', w: 1, fix: 'are', ex: '복수 주어(leaves, fruits, and birds) → are' },
+      { s: 'Perhaps Matisse [[is]] still using scissors [[to cut]] out stars. Some of the stars may [[comes]] [[from]] his scissors.', w: 2, fix: 'come', ex: 'may + 동사원형 → come' }
+    ] },
+    { type: 'scramble', title: '본문 스크램블', guide: '우리말에 맞게 단어를 눌러 문장을 완성하세요.', items: [
+      { ko: '어느 날, Matisse는 멋진 생각을 해냈다.', en: 'One day, Matisse got a brilliant idea.' },
+      { ko: '그는 가위를 집어 들어 종이를 자르고, 아름다운 모양을 만들었다.', en: 'He picked up scissors, cut some paper, and made beautiful shapes.' },
+      { ko: 'Matisse는 하루 종일 종이를 잘랐다.', en: 'Matisse cut paper all day.' },
+      { ko: '곧 그의 방은 모양과 색채로 가득 찼다.', en: 'Soon his room was full of shapes and colors.' },
+      { ko: '아마도 Matisse는 여전히 천국에서 별을 오리기 위해 가위를 사용하고 있을 것이다.', en: 'Perhaps Matisse is still using scissors to cut out stars in heaven.' },
+      { ko: '별들 중 일부는 그의 가위에서 나온 것일지도 모른다.', en: 'Some of the stars may come from his scissors.' }
+    ] },
+    { type: 'order', title: '문장순서', guide: '문장을 본문 순서대로 눌러서 배열하세요.', items: [
+      { lines: ['One day, Matisse got a brilliant idea.', 'He picked up scissors, cut some paper, and made beautiful shapes.', 'He cut out birds and flowers.', 'He was drawing with SCISSORS!'], flow: ['어느 날 멋진 생각을 해냄', '가위를 집어 종이를 잘라 모양을 만듦', '새와 꽃을 오려 냄', '가위로 그림을 그리고 있었음!'] },
+      { lines: ['He said to himself, "My pleasure in cutting things grows and grows.', 'Scissors gave me another chance."', 'Matisse cut paper all day.', 'Soon his room was full of shapes and colors.'], flow: ['오려 내는 기쁨이 점점 커짐', '가위가 또 다른 기회를 줌', '하루 종일 종이를 자름', '곧 방이 모양과 색채로 가득 참'] },
+      { lines: ['Perhaps Matisse is still using scissors to cut out stars in heaven.', 'Look at the night sky.', 'Some of the stars may come from his scissors.'], flow: ['아마 천국에서도 가위로 별을 오리고 있을 것', '밤하늘을 봐', '별 중 일부는 그의 가위에서 나왔을지도'] }
+    ] },
+    { type: 'insert', title: '문장삽입', guide: '주어진 문장이 들어가기에 가장 알맞은 곳을 고르세요.', items: [
+      { lines: ['He picked up scissors, cut some paper, and made beautiful shapes.', 'He cut out birds and flowers.', 'He was drawing with SCISSORS!'], given: 2, flow: ['가위로 종이를 잘라 모양을 만듦', '새와 꽃을 오려 냄', '가위로 그림을 그리고 있었음!'], ex: '새와 꽃을 오려 낸 것을 \'가위로 그리고 있었다\'고 표현한다.' },
+      { lines: ['Matisse cut paper all day.', 'Soon his room was full of shapes and colors.', '"I stay in bed most of the time, but I made a small paper garden all around me.'], given: 1, flow: ['하루 종일 종이를 자름', '곧(Soon) 방이 모양과 색채로 가득 참', '침대에 있지만 종이 정원을 만들었다'], ex: '하루 종일 자른 결과 곧 방이 모양으로 가득 찼다.' },
+      { lines: ['Perhaps Matisse is still using scissors to cut out stars in heaven.', 'Look at the night sky.', 'Some of the stars may come from his scissors.'], given: 2, flow: ['천국에서 가위로 별을 오리고 있을 것', '밤하늘을 봐', '별들(the stars) 중 일부는 그의 가위에서'], ex: '밤하늘을 보라는 말 뒤에 별 이야기가 이어진다.' }
+    ] },
+    { type: 'odd', title: '어색한 문장', guide: '글의 흐름과 관계없는 문장을 고르세요.', items: [
+      { lines: ['He picked up scissors, cut some paper, and made beautiful shapes.', 'He cut out birds and flowers.', 'He didn\'t like using scissors at all.', 'He was drawing with SCISSORS!'], odd: 2, ex: '가위 쓰기를 싫어했다 → 가위로 그림을 그렸다는 내용과 반대' },
+      { lines: ['He said to himself, "My pleasure in cutting things grows and grows.', 'Scissors gave me another chance."', 'He threw away the scissors and went to sleep.', 'Matisse cut paper all day.'], odd: 2, ex: '가위를 버리고 잤다 → 하루 종일 종이를 잘랐다는 흐름과 맞지 않음' },
+      { lines: ['Soon his room was full of shapes and colors.', '"I stay in bed most of the time, but I made a small paper garden all around me.', 'He was very sad because his room was empty.', 'There are leaves, fruits, and birds ... I am really happy," he thought.'], odd: 2, ex: '방이 비어 슬펐다 → 모양과 색채로 가득 차 행복했다는 내용과 반대' }
+    ] },
+    { type: 'blank', title: '빈칸추론', guide: '빈칸에 들어갈 말로 가장 알맞은 것을 고르세요.', items: [
+      { s: 'He picked up scissors, cut some paper, and made ____.', opts: ['beautiful shapes', 'a big cake', 'a new bed', 'a loud sound'], ex: '가위로 종이를 잘라 아름다운 모양을 만듦' },
+      { s: 'Scissors gave me ____.', opts: ['another chance', 'a big problem', 'a lot of money', 'a bad dream'], ex: '가위가 또 다른 기회를 줌' },
+      { s: 'Perhaps Matisse is still using scissors to cut out ____ in heaven.', opts: ['stars', 'flowers', 'birds', 'leaves'], ex: '밤하늘의 별 → stars' }
+    ] },
+    { type: 'mc', title: '핵심문법', guide: '알맞은 답을 고르세요.', items: [
+      { q: '빈칸에 알맞은 것은?<br><b>He said to ______, "I am happy."</b>', opts: ['himself', 'him', 'his', 'he'], ex: '주어(He)와 같은 대상 → 재귀대명사 himself' },
+      { q: '두 문장의 뜻이 같도록 할 때 빈칸에 알맞은 것은?<br><b>Scissors gave me another chance.<br>= Scissors gave another chance ______ me.</b>', opts: ['to', 'for', 'of', 'with'], ex: 'give는 3형식 전환 시 전치사 to' },
+      { q: '빈칸에 알맞은 것은?<br><b>There ______ leaves, fruits, and birds.</b>', opts: ['are', 'is', 'be', 'was'], ex: 'There + be동사 + 복수 주어 → are' },
+      { q: '밑줄 친 부분과 쓰임이 <b>같은</b> 것은?<br><b>He is using scissors <u>to cut</u> out stars.</b>', opts: ['She went to the shop <u>to buy</u> paper.', 'I want <u>to buy</u> paper.', 'My plan is <u>to buy</u> paper.', 'He liked <u>to buy</u> paper.'], ex: '목적(~하기 위해)의 부사적 용법' },
+      { q: '밑줄 친 <b>may</b>의 뜻으로 알맞은 것은?<br><b>Some of the stars <u>may</u> come from his scissors.</b>', opts: ['~일지도 모른다', '~해야 한다', '~할 수 있었다', '~하지 않았다'], ex: 'may: ~일지도 모른다 (추측)' },
+      { q: '다음 중 어법상 <b>틀린</b> 문장은?', opts: ['He picked up them.', 'He picked them up.', 'He picked up scissors.', 'He picked scissors up.'], ex: '목적어가 대명사면 동사 + 대명사 + 부사 → picked them up' },
+      { q: '빈칸에 알맞은 것은?<br><b>My pleasure in ______ things grows and grows.</b>', opts: ['cutting', 'cut', 'to cut', 'cuts'], ex: '전치사 in 뒤 → 동명사 cutting' }
+    ] }
+  ] }
   ]
 };
