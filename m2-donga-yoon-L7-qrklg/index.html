@@ -58,6 +58,9 @@ h2 { font: 400 24px/1.2 var(--f-display); margin: 0; text-wrap: balance }
 .who { display: flex; gap: 10px; align-items: center; flex-wrap: wrap }
 .who input { flex: 1 1 160px; min-width: 0; font: inherit; padding: 11px 14px; border: 1.5px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink) }
 .who .name { font: 400 22px var(--f-display) }
+.whochips { display: flex; flex-wrap: wrap; gap: 8px; flex-basis: 100% }
+.whochip { display: inline-flex; align-items: center }
+.whochip .x { border: 0; background: none; color: var(--muted); font: inherit; font-size: 15px; padding: 6px 8px; cursor: pointer; min-width: 32px }
 .btn { border: 0; border-radius: 12px; padding: 12px 18px; font-weight: 600; background: var(--accent); color: var(--on-accent); text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 46px }
 .btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--line) }
 .btn.wide { width: 100% }
@@ -311,6 +314,7 @@ h2 { font: 400 24px/1.2 var(--f-display); margin: 0; text-wrap: balance }
 <div id="app"></div>
 
 <script src="data/m2-donga-yoon-L7.js"></script>
+<script src="../config.js" data-cfg="1"></script>
 <script src="app.js"></script>
 </body>
 </html>

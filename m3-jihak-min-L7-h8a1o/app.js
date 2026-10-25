@@ -38,13 +38,26 @@
   var SHORT = { vocab: '어휘', tf: 'TF', verb: '동사변형', error: '오류찾기', order: '문장순서', scramble: '주요문장', mc: '문법', insert: '삽입', odd: '어색한문장', blank: '빈칸' };
 
   /* ---------- 저장 ---------- */
-  function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
-  var S = load(); S.days = S.days || {}; S.name = S.name || '';
+  /* 학생별 저장: 같은 기기(학원 아이패드)를 여러 학생이 써도 기록이 섞이지 않게 이름마다 따로 저장한다.
+     daily:<단원>:<이름> = 그 학생 기록, daily:roster = 이 기기에서 쓴 이름 목록, daily:who = 마지막 학생 */
+  function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function roster() { try { return JSON.parse(lsGet('daily:roster')) || []; } catch (e) { return []; } }
+  function addRoster(n) { var r = roster().filter(function (x) { return x !== n; }); r.unshift(n); lsSet('daily:roster', JSON.stringify(r.slice(0, 60))); }
+  function dropRoster(n) { lsSet('daily:roster', JSON.stringify(roster().filter(function (x) { return x !== n; }))); if (lsGet('daily:who') === n) lsSet('daily:who', ''); }
+  (function legacy() { /* 예전 방식(daily:<단원> 하나) 기록을 그 학생 이름 칸으로 옮긴다 */
+    var old = lsGet(KEY); if (!old) return;
+    try { var o = JSON.parse(old); if (o && o.name) { if (!lsGet(KEY + ':' + o.name)) lsSet(KEY + ':' + o.name, old); addRoster(o.name); if (!lsGet('daily:who')) lsSet('daily:who', o.name); } localStorage.removeItem(KEY); } catch (e) {}
+  })();
+  function load(n) { var o = null; if (n) { try { o = JSON.parse(lsGet(KEY + ':' + n)); } catch (e) {} } o = o || {}; o.days = o.days || {}; o.name = n || ''; return o; }
+  var S = (function () { var r = roster(), w = lsGet('daily:who'); /* 이름이 하나뿐인 기기(학생 폰)는 바로 그 학생, 여럿이면(아이패드) 매번 고르게 */
+    return r.length === 1 ? load(r[0]) : r.length > 1 ? load('') : load(w || ''); })();
+  function useStudent(n) { S = load(n); addRoster(n); lsSet('daily:who', n); migrate(); save(); }
   var STORE_OK = (function () { try { var k = KEY + ':t'; localStorage.setItem(k, '1'); var ok = localStorage.getItem(k) === '1'; localStorage.removeItem(k); return ok && !/^file:/.test(location.protocol) || ok && !/\\Temp\\|\/Temp\//i.test(decodeURIComponent(location.pathname)); } catch (e) { return false; } })();
-  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  function save() { if (!S.name) return; try { localStorage.setItem(KEY + ':' + S.name, JSON.stringify(S)); } catch (e) {} }
   /* 단계 구성이 바뀌어도(예: 일치·불일치 추가) 저장된 점수가 엉뚱한 단계로 가지 않게 단계 이름으로 다시 맞춘다.
      예전 기록에 단계 이름이 없으면 PKG.stepsBefore(예전 단계 이름 목록)를 기준으로 삼는다. */
-  (function migrate() {
+  function migrate() {
     var changed = false;
     P.days.forEach(function (d) {
       var st = S.days[d.id]; if (!st) return;
@@ -59,7 +72,40 @@
       if (!st.titles || st.titles.join('|') !== cur.join('|')) { st.titles = cur; changed = true; }
     });
     if (changed) save();
-  })();
+  }
+  migrate();
+
+  /* ---------- 선생님 구글 시트로 자동 기록 ----------
+     ../config.js 의 window.SHEET_URL 로 보낸다. 못 보낸 건 기기에 모아 두었다가 다음에 다시 보낸다(인터넷 끊겨도 안전). */
+  var SHEET = window.SHEET_URL || '', OUTK = 'daily:outbox', flushing = false;
+  function outbox() { try { return JSON.parse(lsGet(OUTK)) || []; } catch (e) { return []; } }
+  function devId() { var d = lsGet('daily:dev'); if (!d) { d = Math.random().toString(36).slice(2, 8); lsSet('daily:dev', d); } return d; }
+  function report(kind, d, extra) {
+    if (!SHEET || !S.name) return;
+    try {
+      var st = DS(d.id), g = dayProgress(d), w = [];
+      d.steps.forEach(function (s, i) { var ws = st.wrong[i] || []; if (ws.length) w.push(stepShort(s) + '(' + ws.map(function (q) { return q.key; }).join(', ') + ')'); });
+      var row = { t: Date.now(), kind: kind, name: S.name, unitId: P.id, school: P.school, unit: P.unit + ' ' + P.title, day: d.name, range: d.range,
+        done: g.done, total: d.steps.length, c: g.c, tt: g.t, pct: pctOf(g.c, g.t), attempt: attemptNo(d), finished: !!g.finished,
+        review: !g.finished ? '' : !wrongCount(d) ? '틀린 문제 없음' : st.reviewDone ? '완료' : '안 함', wrongN: wrongCount(d),
+        started: st.started || 0, ended: st.finished || 0, mins: st.started && st.finished ? Math.max(1, Math.round((st.finished - st.started) / 60000)) : '',
+        code: g.finished ? checkCode(d) : '', wrong: g.finished ? w.join(' / ') : '', dev: devId(), step: '', stepScore: '' };
+      if (extra) Object.keys(extra).forEach(function (k) { row[k] = extra[k]; });
+      var q = outbox(); q.push(row); lsSet(OUTK, JSON.stringify(q.slice(-300)));
+    } catch (e) {}
+    flush();
+  }
+  function flush() {
+    if (!SHEET || flushing || !window.fetch) return;
+    var q = outbox().slice(0, 40); if (!q.length) return;
+    flushing = true;
+    fetch(SHEET, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ k: window.SHEET_KEY || '', rows: q }) })
+      .then(function () { var all = outbox(), sent = {}; q.forEach(function (r) { sent[r.t + r.name + r.kind] = 1; });
+        lsSet(OUTK, JSON.stringify(all.filter(function (r) { return !sent[r.t + r.name + r.kind]; }))); flushing = false; if (outbox().length) setTimeout(flush, 500); },
+        function () { flushing = false; });
+  }
+  try { window.addEventListener('online', flush); document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible') flush(); }); } catch (e) {}
+  setTimeout(flush, 800);
   function DS(id) { return S.days[id] || (S.days[id] = { scores: {}, wrong: {}, started: null, finished: null, run: null, titles: (P.days.filter(function (d) { return d.id === id; })[0] || { steps: [] }).steps.map(function (x) { return x.title; }) }); }
 
   /* ---------- 도구 ---------- */
@@ -244,8 +290,11 @@
       '<span class="note" style="display:block">버튼이 안 되면 화면 오른쪽 아래(또는 위) <b>⋮ / ⋯ → 다른 브라우저로 열기</b>를 눌러 주세요. 늘 같은 곳(카톡 또는 브라우저)으로 들어와야 기록이 이어져요.</span><button class="link" id="kakaook" style="margin-top:6px">카톡에서 계속할게요 (닫기)</button></div>';
     if (!STORE_OK) h += '<p class="card" style="margin:0 0 16px;border-color:var(--bad);background:var(--bad-soft)"><b>이 화면에서는 기록이 저장되지 않아요.</b> 나갔다 들어오면 처음부터 시작해요. 선생님께 받은 링크를 크롬이나 사파리로 열어 주세요.</p>';
     if (!S.name) {
-      h += '<form class="card who" id="nameform" style="margin-bottom:16px"><label for="nm" style="flex-basis:100%;font-weight:600">이름을 먼저 적어 주세요</label>' +
-        '<input id="nm" autocomplete="name" placeholder="예: 김민준" maxlength="12"><button class="btn" type="submit">저장</button></form>';
+      var rs = roster();
+      h += '<form class="card who" id="nameform" style="margin-bottom:16px"><label for="nm" style="flex-basis:100%;font-weight:600">' + (rs.length ? '누가 공부하나요? 내 이름을 눌러 주세요' : '이름을 먼저 적어 주세요') + '</label>' +
+        (rs.length ? '<div class="whochips">' + rs.map(function (n) { return '<span class="whochip"><button type="button" class="btn ghost" data-who="' + E(n) + '">' + E(n) + '</button><button type="button" class="x" data-unwho="' + E(n) + '" aria-label="' + E(n) + ' 목록에서 빼기" title="목록에서 빼기(기록은 남아요)">×</button></span>'; }).join('') + '</div>' +
+          '<span class="note" style="flex-basis:100%">내 이름이 없으면 아래에 새로 적어요. 같은 이름을 적으면 내 기록이 그대로 이어져요.</span>' : '') +
+        '<input id="nm" autocomplete="name" placeholder="예: 김민준" maxlength="12"><button class="btn" type="submit">' + (rs.length ? '새 이름으로 시작' : '저장') + '</button></form>';
     }
     var TABS = [['today', '오늘의 학습'], ['text', '본문'], ['types', '유형별 연습']];
     h += '<nav class="tabs" role="tablist">' + TABS.map(function (t) {
@@ -290,7 +339,7 @@
   function lockBtn(d, why) { return '<button class="btn ghost locked" disabled aria-disabled="true"><span><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><rect x="3" y="7" width="10" height="7.5" rx="1.5" fill="currentColor"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0v2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg> ' + (attemptNo(d) + 1) + '회차 도전</span><small>' + E(why) + '</small></button>'; }
   function todayHTML() {
     var h = '';
-    if (S.name) h += '<div class="who"><span class="name">' + E(S.name) + '</span><span class="sub" style="flex:1">학생</span><button class="link" id="rename">이름 바꾸기</button></div>';
+    if (S.name) h += '<div class="who"><span class="name">' + E(S.name) + '</span><span class="sub" style="flex:1">학생</span><button class="link" id="rename">학생 바꾸기</button></div>';
     h += '<p class="sub" style="margin:0">학원 오는 날 꼭 끝내고 가는 세트예요. 단계를 순서대로 다 건너면 선생님께 결과를 보내요.</p>';
     h += stampHTML();
     P.days.forEach(function (d, di) {
@@ -315,7 +364,7 @@
           : '<button class="btn" data-go="' + di + '">' + (g.done || run ? '이어서 하기' : '시작하기') + '</button>' + lockBtn(d, '다 끝내면 열려요')) +
         '</div>' + (g.finished && !needReview(d) ? '<p class="note retrynote" id="rn' + di + '" hidden>한 번 더 누르면 ' + (attemptNo(d) + 1) + '회차를 처음부터 시작해요. 지금 점수(' + pctOf(g.c, g.t) + '점)는 ' + attemptNo(d) + '회차 기록으로 남아요.</p>' : '') + '</section>';
     });
-    h += '<p class="note">진행 상황은 이 휴대폰(브라우저)에만 저장돼요. 같은 폰, 같은 브라우저로 들어와야 이어서 할 수 있어요.</p>';
+    h += '<p class="note">기록은 이 기기에 이름별로 저장돼요. 같은 기기에서 같은 이름으로 들어오면 이어서 할 수 있어요.' + (SHEET ? ' 끝낸 단계는 선생님께도 자동으로 전달돼요.' : '') + '</p>';
     return h;
   }
 
@@ -348,8 +397,12 @@
     };
     var ko = $('#kakaook'); if (ko) ko.onclick = function () { S.kakaoOk = true; save(); var n = $('#kakaonote'); if (n) n.remove(); };
     var f = $('#nameform');
-    if (f) f.addEventListener('submit', function (e) { e.preventDefault(); var v = $('#nm').value.trim(); if (!v) { $('#nm').focus(); return; } S.name = v; save(); home(); });
-    var rn = $('#rename'); if (rn) rn.onclick = function () { S.name = ''; save(); home(); var n = $('#nm'); if (n) n.focus(); };
+    if (f) f.addEventListener('submit', function (e) { e.preventDefault(); var v = $('#nm').value.replace(/\s+/g, ' ').trim(); if (!v) { $('#nm').focus(); return; } useStudent(v); home(); });
+    app.querySelectorAll('[data-who]').forEach(function (b) { b.onclick = function () { useStudent(b.dataset.who); home(); }; });
+    app.querySelectorAll('[data-unwho]').forEach(function (b) { b.onclick = function () {
+      if (b.dataset.arm) { dropRoster(b.dataset.unwho); home(); return; }
+      b.dataset.arm = '1'; b.textContent = '빼기?'; setTimeout(function () { delete b.dataset.arm; b.textContent = '×'; }, 2500); }; });
+    var rn = $('#rename'); if (rn) rn.onclick = function () { S = load(''); lsSet('daily:who', ''); home(); var n = $('#nm'); if (n && !roster().length) n.focus(); };
     app.querySelectorAll('[data-caln]').forEach(function (b) { b.onclick = function () { var m = CAL.m + +b.dataset.caln; CAL = { y: CAL.y + Math.floor(m / 12), m: (m % 12 + 12) % 12 }; CALSEL = null; home(); }; });
     app.querySelectorAll('[data-cald]').forEach(function (b) { b.onclick = function () { CALSEL = CALSEL === b.dataset.cald ? null : b.dataset.cald; var y = window.scrollY; home(); window.scrollTo(0, y); }; });
     app.querySelectorAll('[data-tab]').forEach(function (b) { b.onclick = function () { home(b.dataset.tab); }; });
@@ -391,7 +444,7 @@
 
   function startStep(di, si) {
     var d = P.days[di], st = DS(d.id), step = d.steps[si];
-    if (!st.started) st.started = Date.now();
+    if (!st.started) { st.started = Date.now(); save(); report('시작', d); }
     if (st.run && st.run.si === si) {
       var r = st.run;
       RS = { di: di, si: si, qs: r.qs, qi: r.qi, c: r.c, wrong: r.wrong || [], phase: r.phase, answered: false, practice: false };
@@ -580,8 +633,10 @@
       st.run = null;
       if (dayProgress(d).finished && !st.finished) st.finished = Date.now();
       save();
+      report(dayProgress(d).finished ? 'DAY 완료' : '단계 완료', d, { step: (RS.si + 1) + '. ' + step.title, stepScore: RS.c + '/' + RS.qs.length });
     } else if (RS.practice === '오답 학습') {
       var st2 = DS(P.days[RS.di].id); st2.reviewDone = { n: RS.base, tries: RS.qs.length, at: Date.now(), first: RS.base - (RS.fw || 0) }; st2.review = null; save();
+      report('오답 학습 완료', P.days[RS.di], { stepScore: RS.base + '개 중 ' + (RS.base - (RS.fw || 0)) + '개 한 번에' });
     }
     RS.phase = 'summary'; render();
   }
