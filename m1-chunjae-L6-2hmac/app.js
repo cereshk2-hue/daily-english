@@ -28,10 +28,8 @@
   var KEY = 'daily:' + P.id;
   /* 카톡 안 브라우저 감지: 기록이 지워질 수 있어 크롬·사파리로 열도록 안내 */
   var IN_APP = false; /* 카톡 안내 꺼짐: 대부분 카톡으로 학습 (선생님 요청) */
-  var LINKS = { 'h1-ne-min-L3': 'https://claude.ai/artifact/KW8yRkgEboEFbBvjBjR7E5', 'h1-donga-lee-L3': 'https://claude.ai/artifact/9LtntSwnVzLeWVQddJitNb', 'h2-chunjae-cho-L5': 'https://claude.ai/artifact/9vwnrzyFL44JN88YU8mdvA',
-    'h2-mock-2609-angok': 'https://claude.ai/artifact/Ksh5PXKxSpAdLaxFcmt92N', 'h1-mock-2509': 'https://claude.ai/artifact/T27fHK6oVdbjL7RSGu7xSU', 'h2-ne-oh-L3': 'https://claude.ai/artifact/YMfvbDeJQwUPchX6CWKXsh',
-    'h2-mirae-kim-L4': 'https://claude.ai/artifact/TqKPdLHu3JDhhUgvE39uRd', 'm1-chunjae-so-L6': 'https://claude.ai/artifact/UGKrtEBV6bySxJHedk68LP', 'm1-donga-yoon-L6': 'https://claude.ai/artifact/4BnipmaLx9Zw299JscbL92',
-    'm2-donga-yoon-L7': 'https://claude.ai/artifact/U8S1yNTKtZnxW9ykYnN1RG', 'm2-visang-hwang-L7': 'https://claude.ai/artifact/9Xi5F3dF7oL1pRpmDK7CZ5', 'm3-jihak-min-L7': 'https://claude.ai/artifact/R3H7cs5xp2FNNPJMEoCb2b' };
+  var LINKS = {}; /* 예전 claude.ai 사본 주소는 더 쓰지 않음 → 지금 주소(GitHub)를 그대로 바깥 브라우저로 연다 */
+  function hereURL() { return location.protocol === 'https:' ? location.origin + location.pathname : ''; }
   /* 브라우저가 저장 공간을 함부로 지우지 않도록 요청 */
   try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(function () {}); } catch (e) {}
   var app = document.getElementById('app');
@@ -50,7 +48,25 @@
     var old = lsGet(KEY); if (!old) return;
     try { var o = JSON.parse(old); if (o && o.name) { if (!lsGet(KEY + ':' + o.name)) lsSet(KEY + ':' + o.name, old); addRoster(o.name); if (!lsGet('daily:who')) lsSet('daily:who', o.name); } localStorage.removeItem(KEY); } catch (e) {}
   })();
-  function load(n) { var o = null; if (n) { try { o = JSON.parse(lsGet(KEY + ':' + n)); } catch (e) {} } o = o || {}; o.days = o.days || {}; o.name = n || ''; return o; }
+  function load(n) { var o = null; if (n) { try { o = JSON.parse(lsGet(KEY + ':' + n)); } catch (e) {} } o = o || {}; o.days = o.days || {}; o.name = n || ''; if (n) legacyMerge(o); return o; }
+  /* 모의고사를 번호별로 나누기 전(예전 DAY)의 완료 기록 → 새 번호에 '이전 완료'로 남김. P.legacy = { key: 예전 저장 이름(주소가 바뀐 경우), map: { 예전 DAY id: [새 번호 id…] } } */
+  function legacyMerge(o) {
+    var Lg = P.legacy; if (!Lg || !Lg.map || o.legacyDone) return;
+    var src = o; if (Lg.key) { try { src = JSON.parse(lsGet(Lg.key + ':' + o.name)); } catch (e) { src = null; } }
+    if (src && src.days) Object.keys(Lg.map).forEach(function (oid) {
+      var od = src.days[oid]; if (!od) return;
+      var ent = (od.history || []).slice(), c = 0, t = 0;
+      Object.keys(od.scores || {}).forEach(function (k) { c += od.scores[k][0]; t += od.scores[k][1]; });
+      if (od.finished) ent.push({ c: c, t: t, pct: t ? Math.round(c / t * 100) : 0, finished: od.finished, review: od.reviewDone || null });
+      ent.forEach(function (e) { Lg.map[oid].forEach(function (nid) {
+        var dd = P.days.filter(function (x) { return x.id === nid; })[0]; if (!dd) return;
+        var nd = o.days[nid] || (o.days[nid] = { scores: {}, wrong: {}, started: null, finished: null, run: null, history: [], titles: dd.steps.map(function (x) { return x.title; }) });
+        nd.history = nd.history || [];
+        if (!nd.history.some(function (h) { return h.finished === e.finished; })) nd.history.push({ c: e.c, t: e.t, pct: e.pct, started: null, finished: e.finished, review: e.review || null, restored: true });
+      }); });
+    });
+    o.legacyDone = true;
+  }
   var S = (function () { var r = roster(), w = lsGet('daily:who'); /* 이름이 하나뿐인 기기(학생 폰)는 바로 그 학생, 여럿이면(아이패드) 매번 고르게 */
     return r.length === 1 ? load(r[0]) : r.length > 1 ? load('') : load(w || ''); })();
   function useStudent(n) { S = load(n); addRoster(n); lsSet('daily:who', n); migrate(); save(); }
@@ -326,8 +342,8 @@
     }).join('') + '</div>';
   }
   function daySwitch(id) {
-    return '<div class="seg" role="tablist" aria-label="DAY 고르기">' + P.days.map(function (d, i) {
-      return '<button role="tab" aria-selected="' + (i === SEL) + '" class="' + (i === SEL ? 'on' : '') + '" data-sel="' + i + '">' + (inProgress(d) ? '<span class="seglock">' + LOCK + '</span>' : '') + E(d.name) + ' <small>' + E(d.range) + '</small></button>';
+    return '<div class="seg' + (P.pick ? ' pk' : '') + '" role="tablist" aria-label="' + (P.pick ? '번호' : 'DAY') + ' 고르기">' + P.days.map(function (d, i) {
+      return '<button role="tab" aria-selected="' + (i === SEL) + '" class="' + (i === SEL ? 'on' : '') + '" data-sel="' + i + '">' + (inProgress(d) ? '<span class="seglock">' + LOCK + '</span>' : '') + E(d.name) + (P.pick ? '' : ' <small>' + E(d.range) + '</small>') + '</button>';
     }).join('') + '</div>';
   }
   /* 컨닝 방지: DAY 를 시작한 뒤 오답 학습까지 다 끝낼 때까지 그 DAY 의 본문·유형별 연습·다시 풀기를 잠근다 */
@@ -344,13 +360,13 @@
   function home(tab) {
     if (tab) TAB = tab;
     RS = null; top();
-    var h = '<header class="htop' + (TAB === 'today' && S.name ? '' : ' flat') + '">' + (FROM_HUB ? '<a class="hublink" href="../' + FROM_HUB + '/">← 전체 목록</a>' : '') +
+    var h = '<header class="htop' + (TAB === 'today' && S.name && !P.pick ? '' : ' flat') + '">' + (FROM_HUB ? '<a class="hublink" href="../' + FROM_HUB + '/">← 전체 목록</a>' : '') +
       '<div class="htop-bar"><span>' + E(P.school) + ' · ' + E(P.unit) + '</span>' +
       (S.name ? '<button class="htop-who" id="rename" title="학생 바꾸기"><span class="av">' + E(S.name.charAt(0)) + '</span>' + E(S.name) + '<small>바꾸기</small></button>' : '') + '</div>' +
-      '<h1 class="en">' + E(P.title) + '</h1><p>' + E(P.exam) + ' 대비 · ' + P.days.length + ' DAY</p></header><div class="hbody' + (TAB === 'today' && S.name ? '' : ' flat') + '">';
+      '<h1 class="en">' + E(P.title) + '</h1><p>' + E(P.exam) + ' 대비 · ' + P.days.length + (P.pick ? '문항' : ' DAY') + '</p></header><div class="hbody' + (TAB === 'today' && S.name && !P.pick ? '' : ' flat') + '">';
     /* 카톡 안: 이 화면에 아직 기록이 없을 때만, 닫을 수 있는 작은 안내. 이미 카톡에서 풀던 학생은 그대로 이어서 하게 둔다 */
     if (IN_APP && !S.kakaoOk && !Object.keys(S.days).some(function (k) { return S.days[k] && S.days[k].started; })) h += '<div class="card" id="kakaonote" style="margin:0 0 16px"><b>처음이라면 크롬·사파리로 여는 걸 추천해요.</b> 이미 카톡에서 풀던 학생은 그대로 카톡에서 이어서 하면 돼요. ' +
-      (LINKS[P.id] ? '<a class="btn ghost" style="margin:10px 0 6px;width:100%" target="_blank" rel="noopener" href="kakaotalk://web/openExternal?url=' + encodeURIComponent(LINKS[P.id]) + '">크롬·사파리로 열기</a>' : '') +
+      (hereURL() ? '<a class="btn ghost" style="margin:10px 0 6px;width:100%" target="_blank" rel="noopener" href="kakaotalk://web/openExternal?url=' + encodeURIComponent(hereURL()) + '">크롬·사파리로 열기</a>' : '') +
       '<span class="note" style="display:block">버튼이 안 되면 화면 오른쪽 아래(또는 위) <b>⋮ / ⋯ → 다른 브라우저로 열기</b>를 눌러 주세요. 늘 같은 곳(카톡 또는 브라우저)으로 들어와야 기록이 이어져요.</span><button class="link" id="kakaook" style="margin-top:6px">카톡에서 계속할게요 (닫기)</button></div>';
     if (!STORE_OK) h += '<p class="card" style="margin:0 0 16px;border-color:var(--bad);background:var(--bad-soft)"><b>이 화면에서는 기록이 저장되지 않아요.</b> 나갔다 들어오면 처음부터 시작해요. 선생님께 받은 링크를 크롬이나 사파리로 열어 주세요.</p>';
     if (!S.name) {
@@ -446,9 +462,24 @@
     if (g.done || st.run) return 'now';
     return 'wait';
   }
+  function pickGridHTML() { /* 모의고사: 번호를 골라서 학습 */
+    var done = P.days.filter(function (d) { return dayState(d) === 'done'; }).length;
+    return '<h3 class="sech">문항 고르기 <span>완료 ' + done + ' / ' + P.days.length + '</span></h3><p class="note" style="margin:-4px 0 10px">공부할 번호를 누르면 아래에 단계가 나와요. 순서는 자유예요.</p><div class="qgrid">' + P.days.map(function (d, di) {
+      var s = dayState(d), g = dayProgress(d), prev = s === 'wait' && hist(d).some(function (x) { return x.restored; });
+      var tag = s === 'done' ? '완료' + (hist(d).length ? ' ×' + (hist(d).length + 1) : '') : s === 'rev' ? '오답 남음' : s === 'now' ? g.done + '/' + d.steps.length + '단계' : prev ? '이전 완료' : '';
+      return '<button class="qt ' + s + (prev ? ' prev' : '') + (di === SEL ? ' sel' : '') + '" data-sel="' + di + '"><b>' + E(d.name.replace(/번$/, '')) + '</b><small>' + E(d.range) + '</small><i>' + tag + '</i></button>';
+    }).join('') + '</div>';
+  }
   function todayHTML() {
     var h = '', fi = focusIdx(), fd = P.days[fi], fg = dayProgress(fd), fst = DS(fd.id), fstate = dayState(fd);
     if (!SEL_SET) SEL = fi;
+    if (P.pick) {
+      if (!SEL_SET) { var pi = P.days.findIndex(function (d) { var s = dayState(d); return s === 'now' || s === 'rev'; }); SEL = pi >= 0 ? pi : Math.max(0, P.days.findIndex(function (d) { return dayState(d) !== 'done'; })); }
+      h += pickGridHTML();
+      var ms0 = myStats();
+      h += '<div class="stats"><div class="stat"><small>누적 학습</small><b>' + hm(ms0.mins) + '</b></div><div class="stat"><small>푼 문제</small><b>' + ms0.solved + '<i>문제</i></b></div><div class="stat"><small>정답률</small><b>' + ms0.acc + '<i>%</i></b></div></div>';
+      return h + dayDetailHTML();
+    }
     var allDone = P.days.every(function (d) { return dayState(d) === 'done'; });
     var pct = Math.round(fg.done / fd.steps.length * 100);
     /* 오늘 할 학습 */
@@ -475,6 +506,12 @@
       return '<button class="drow ' + s + (di === SEL ? ' sel' : '') + '" data-sel="' + di + '"><span class="dn"><small>DAY</small>' + E(d.name.replace(/^DAY\s*/, '')) + '</span>' +
         '<span class="dt"><b>' + E(d.range) + '</b><span>' + line + '</span>' + (s === 'now' ? '<span class="mini"><i style="width:' + Math.round(g.done / d.steps.length * 100) + '%"></i></span>' : '') + '</span><span class="badge">' + badge + '</span></button>';
     }).join('') + '</div>';
+    h += dayDetailHTML();
+    return h;
+  }
+
+  function dayDetailHTML() {
+    var h = '';
     /* 약한 유형 보충 띠 */
     var wk = []; P.days.forEach(function (d, di) { if (dayState(d) !== 'done') return; weakList(d).forEach(function (w) { if (!w.ok) wk.push({ di: di, d: d, w: w }); }); });
     if (wk.length) h += '<div class="weakstrip"><div><b>약한 유형 보충 ' + wk.length + '개 남았어요</b><span>' + wk.slice(0, 3).map(function (x) { return E(x.d.name) + ' · ' + E(x.w.s.title) + ' ' + x.w.sc[0] + '/' + x.w.sc[1]; }).join(' · ') + '</span></div><button class="btn" data-weak="' + wk[0].di + ':' + wk[0].w.i + '">보충하기</button></div>';
