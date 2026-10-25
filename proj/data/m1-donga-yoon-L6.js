@@ -14,7 +14,7 @@ window.PKG = {
   days: [
   /* ═══════════════════════════ DAY 1 · 본문 ❶❷❸ ═══════════════════════════ */
   {
-    id: 'd1', name: 'DAY 1', range: '본문 ❶❷❸', story: '병들어 가는 지구 · Olivia의 챌린지 · Domingo의 챌린지',
+    id: 'd1', name: 'DAY 1', range: '6과 본문 ❶❷❸', story: '병들어 가는 지구 · Olivia의 챌린지 · Domingo의 챌린지',
     passage: [
       ['', '❶', ''],
       ['', 'Every day, we produce lots of waste, and the Earth is getting sicker and sicker.', '매일 우리는 많은 쓰레기를 만들고, 지구는 점점 더 병들고 있습니다.'],
@@ -203,7 +203,7 @@ window.PKG = {
 
   /* ═══════════════════════════ DAY 2 · 본문 ❹❺ ═══════════════════════════ */
   {
-    id: 'd2', name: 'DAY 2', range: '본문 ❹❺', story: 'Emma의 챌린지 · 민수의 챌린지',
+    id: 'd2', name: 'DAY 2', range: '6과 본문 ❹❺', story: 'Emma의 챌린지 · 민수의 챌린지',
     passage: [
       ['', '❹', ''],
       ['', 'Challenge 03 Say No to Single-Use Plastic', '챌린지 03 / 일회용 플라스틱 사용을 반대하세요'],
