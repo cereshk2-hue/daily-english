@@ -14,7 +14,7 @@ window.PKG = {
   days: [
   /* ═══════════════════════════ DAY 1 · 본문 ❶❷❸ ═══════════════════════════ */
   {
-    id: 'd1', name: 'DAY 1', range: '본문 ❶❷❸', story: '집단 의사 결정과 투표 · 학생 자치회의 투표 준비',
+    id: 'd1', name: 'DAY 1', range: '3과 본문 ❶❷❸', story: '집단 의사 결정과 투표 · 학생 자치회의 투표 준비',
     passage: [
       ['', '❶', ''],
       ['', 'We make many personal choices in our lives, from who to have lunch with to what career to pursue.', '우리는 누구와 점심을 먹을 것인지부터 어떠한 직업을 추구할 것인지까지 우리의 삶에서 많은 개인적인 선택을 한다.'],
@@ -208,7 +208,7 @@ window.PKG = {
 
   /* ═══════════════════════════ DAY 2 · 본문 ❹❺ ═══════════════════════════ */
   {
-    id: 'd2', name: 'DAY 2', range: '본문 ❹❺', story: '단순 다수결(FPTP) 방식 · 대안 투표(AV) 방식',
+    id: 'd2', name: 'DAY 2', range: '3과 본문 ❹❺', story: '단순 다수결(FPTP) 방식 · 대안 투표(AV) 방식',
     passage: [
       ['', '❹', ''],
       ['', 'The First-Past-The-Post Method', '단순 다수결(FPTP) 방식'],
@@ -410,7 +410,7 @@ window.PKG = {
 
   /* ═══════════════════════════ DAY 3 · 본문 ❻❼ ═══════════════════════════ */
   {
-    id: 'd3', name: 'DAY 3', range: '본문 ❻❼', story: '콩도르세 방식 · 투표 방식을 이해하는 것의 가치',
+    id: 'd3', name: 'DAY 3', range: '3과 본문 ❻❼', story: '콩도르세 방식 · 투표 방식을 이해하는 것의 가치',
     passage: [
       ['', '❻', ''],
       ['', 'The Condorcet Method', '콩도르세 방식'],

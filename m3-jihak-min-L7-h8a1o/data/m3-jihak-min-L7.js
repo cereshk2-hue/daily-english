@@ -14,7 +14,7 @@ window.PKG = {
   days: [
   /* ═══════════════════════════ DAY 1 · 본문 ❶❷ ═══════════════════════════ */
   {
-    id: 'd1', name: 'DAY 1', range: '본문 ❶❷', story: '다양한 집 · 미국 푸에블로 · 이탈리아 베니스',
+    id: 'd1', name: 'DAY 1', range: '7과 본문 ❶❷', story: '다양한 집 · 미국 푸에블로 · 이탈리아 베니스',
     passage: [
       ['', '❶', ''],
       ['', 'Different people live in different houses.', '다양한 사람들이 다양한 집에서 삽니다.'],
@@ -226,7 +226,7 @@ window.PKG = {
 
   /* ═══════════════════════════ DAY 2 · 본문 ❸ ═══════════════════════════ */
   {
-    id: 'd2', name: 'DAY 2', range: '본문 ❸', story: '중국 푸젠의 토루 · 마무리',
+    id: 'd2', name: 'DAY 2', range: '7과 본문 ❸', story: '중국 푸젠의 토루 · 마무리',
     passage: [
       ['', '❸', ''],
       ['', 'Tulou in Fujian, China', '푸젠의 토루, 중국'],
