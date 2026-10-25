@@ -292,10 +292,10 @@
   function home(tab) {
     if (tab) TAB = tab;
     RS = null; top();
-    var h = (FROM_HUB ? '<a class="link" href="../' + FROM_HUB + '/" style="display:inline-block;margin-bottom:10px">← 전체 목록</a>' : '') +
-      '<header class="stack" style="gap:2px;margin-bottom:16px">' +
-      '<div class="eyebrow">' + E(P.school) + ' · ' + E(P.unit) + ' · ' + E(P.exam) + ' 대비</div>' +
-      '<h1 class="en">' + E(P.title) + '</h1></header>';
+    var h = '<header class="htop' + (TAB === 'today' && S.name ? '' : ' flat') + '">' + (FROM_HUB ? '<a class="hublink" href="../' + FROM_HUB + '/">← 전체 목록</a>' : '') +
+      '<div class="htop-bar"><span>' + E(P.school) + ' · ' + E(P.unit) + '</span>' +
+      (S.name ? '<button class="htop-who" id="rename" title="학생 바꾸기"><span class="av">' + E(S.name.charAt(0)) + '</span>' + E(S.name) + '<small>바꾸기</small></button>' : '') + '</div>' +
+      '<h1 class="en">' + E(P.title) + '</h1><p>' + E(P.exam) + ' 대비 · ' + P.days.length + ' DAY</p></header><div class="hbody' + (TAB === 'today' && S.name ? '' : ' flat') + '">';
     /* 카톡 안: 이 화면에 아직 기록이 없을 때만, 닫을 수 있는 작은 안내. 이미 카톡에서 풀던 학생은 그대로 이어서 하게 둔다 */
     if (IN_APP && !S.kakaoOk && !Object.keys(S.days).some(function (k) { return S.days[k] && S.days[k].started; })) h += '<div class="card" id="kakaonote" style="margin:0 0 16px"><b>처음이라면 크롬·사파리로 여는 걸 추천해요.</b> 이미 카톡에서 풀던 학생은 그대로 카톡에서 이어서 하면 돼요. ' +
       (LINKS[P.id] ? '<a class="btn ghost" style="margin:10px 0 6px;width:100%" target="_blank" rel="noopener" href="kakaotalk://web/openExternal?url=' + encodeURIComponent(LINKS[P.id]) + '">크롬·사파리로 열기</a>' : '') +
@@ -308,14 +308,15 @@
           '<span class="note" style="flex-basis:100%">내 이름이 없으면 아래에 새로 적어요. 같은 이름을 적으면 내 기록이 그대로 이어져요.</span>' : '') +
         '<input id="nm" autocomplete="name" placeholder="예: 김민준" maxlength="12"><button class="btn" type="submit">' + (rs.length ? '새 이름으로 시작' : '저장') + '</button></form>';
     }
-    var TABS = [['today', '오늘의 학습'], ['text', '본문'], ['types', '유형별 연습']];
-    h += '<nav class="tabs" role="tablist">' + TABS.map(function (t) {
-      return '<button role="tab" aria-selected="' + (TAB === t[0]) + '" class="' + (TAB === t[0] ? 'on' : '') + '" data-tab="' + t[0] + '">' + t[1] + '</button>';
-    }).join('') + '</nav><div class="stack" style="margin-top:16px">';
+    var TABS = [['today', '오늘의 학습', '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>'], ['text', '본문', '<path d="M5 3h10l4 4v14H5z"/><path d="M9 12h6M9 16h4"/>'],
+      ['types', '유형별 연습', '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>']];
+    h += '<div class="stack">';
     if (TAB === 'today') h += todayHTML();
-    if (TAB === 'text') h += daySwitch() + (inProgress(P.days[SEL]) ? lockHTML(P.days[SEL], '본문') : passageHTML(P.days[SEL]));
-    if (TAB === 'types') h += daySwitch() + (inProgress(P.days[SEL]) ? lockHTML(P.days[SEL], '유형별 연습') : typesHTML(P.days[SEL]));
-    h += '</div>';
+    if (TAB === 'text') h += '<h3 class="sech">본문</h3>' + daySwitch() + (inProgress(P.days[SEL]) ? lockHTML(P.days[SEL], '본문') : passageHTML(P.days[SEL]));
+    if (TAB === 'types') h += '<h3 class="sech">유형별 연습</h3>' + daySwitch() + (inProgress(P.days[SEL]) ? lockHTML(P.days[SEL], '유형별 연습') : typesHTML(P.days[SEL]));
+    h += '</div></div><nav class="bnav tabs" role="tablist">' + TABS.map(function (t) {
+      return '<button role="tab" aria-selected="' + (TAB === t[0]) + '" class="' + (TAB === t[0] ? 'on' : '') + '" data-tab="' + t[0] + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true">' + t[2] + '</svg>' + t[1] + '</button>';
+    }).join('') + '</nav>';
     app.innerHTML = h;
     bindHome();
   }
@@ -349,33 +350,83 @@
   }
 
   function lockBtn(d, why) { return '<button class="btn ghost locked" disabled aria-disabled="true"><span><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><rect x="3" y="7" width="10" height="7.5" rx="1.5" fill="currentColor"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0v2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg> ' + (attemptNo(d) + 1) + '회차 도전</span><small>' + E(why) + '</small></button>'; }
-  function todayHTML() {
-    var h = '';
-    if (S.name) h += '<div class="who"><span class="name">' + E(S.name) + '</span><span class="sub" style="flex:1">학생</span><button class="link" id="rename">학생 바꾸기</button></div>';
-    h += '<p class="sub" style="margin:0">학원 오는 날 꼭 끝내고 가는 세트예요. 단계를 순서대로 다 건너면 선생님께 결과를 보내요.</p>';
-    h += stampHTML();
-    P.days.forEach(function (d, di) {
-      var g = dayProgress(d), st = DS(d.id), run = st.run;
-      var hs = hist(d), hnote = hs.length ? '<br><small>' + attemptNo(d) + '회차 · 이전 기록 ' + hs.map(function (h, i) { return (i + 1) + '회차 ' + h.pct + '점'; }).join(', ') + '</small>' : '';
-    var status = (needReview(d) ? '<b>문제 풀이 완료 · ' + pctOf(g.c, g.t) + '점</b> (' + g.c + '/' + g.t + ') · 오답 학습 ' + wrongCount(d) + '개 남음 (끝내야 결과를 보낼 수 있어요)' : g.finished ? '<b>완료</b> · ' + g.c + '/' + g.t + ' (' + Math.round(g.c / g.t * 100) + '%)' + (st.finished ? ' · ' + fmtTime(st.finished) : '')
-        : run ? '<b>' + E(d.steps[run.si].title) + ' ' + Math.min(run.qi + 1, run.qs.length) + '/' + run.qs.length + '번</b>에서 멈췄어요'
-        : g.done ? '<b>' + g.done + '/' + d.steps.length + '단계</b> 건넜어요 · 다음: ' + E(d.steps[g.next].title) : '아직 시작 전') + hnote;
-      h += '<section class="card day">' +
-        '<h2>' + E(d.name) + ' <span class="range">' + E(d.range) + '</span></h2>' +
-        '<p class="story">' + E(d.story) + '</p>' + bridge(d, g.next) +
-        '<div class="bridge-ends"><span>출발</span><span>' + d.steps.length + '단계</span></div>' +
-        '<ul class="steps-list">' + d.steps.map(function (s, i) {
-          var cls = st.scores[i] ? 'done' : i === g.next ? 'next' : '';
-          return '<li><button class="' + cls + '" data-step="' + di + ':' + i + '"' + (cls ? '' : ' disabled') + '>' +
-            (st.scores[i] ? '✓ ' : '') + E(s.title) + (st.scores[i] ? ' <small>' + st.scores[i][0] + '/' + st.scores[i][1] + '</small>' : '') + '</button></li>';
-        }).join('') + '</ul>' +
-        (inProgress(d) ? '<p class="note" style="margin:8px 0 0">학습 중에는 본문과 연습이 잠겨 있어요. 끝내면 끝낸 단계를 다시 풀어 볼 수 있어요.</p><p class="note lknote" id="lk' + di + '" hidden>지금은 다시 풀기가 잠겨 있어요. 아래 버튼으로 이어서 풀어 주세요.</p>'
-          : '<p class="note" style="margin:8px 0 0">끝낸 단계를 누르면 다시 풀어 볼 수 있어요 (점수는 처음 기록 유지).</p>') +
-        '<div class="status">' + status + '</div>' + weakBox(d, di) + '<div class="acts">' +
-        (needReview(d) ? '<button class="btn plank" data-rev="' + di + '">오답 학습 하기</button>' + lockBtn(d, '오답 학습 후 열려요') : g.finished ? '<button class="btn" data-res="' + di + '">결과 보내기</button><button class="btn ghost" data-retry="' + di + '">' + (attemptNo(d) + 1) + '회차 도전</button>'
-          : '<button class="btn" data-go="' + di + '">' + (g.done || run ? '이어서 하기' : '시작하기') + '</button>' + lockBtn(d, '다 끝내면 열려요')) +
-        '</div>' + (g.finished && !needReview(d) ? '<p class="note retrynote" id="rn' + di + '" hidden>한 번 더 누르면 ' + (attemptNo(d) + 1) + '회차를 처음부터 시작해요. 지금 점수(' + pctOf(g.c, g.t) + '점)는 ' + attemptNo(d) + '회차 기록으로 남아요.</p>' : '') + '</section>';
+  /* 지금 할 DAY: 오답 학습 남은 DAY → 하던 DAY → 아직 안 끝낸 첫 DAY → 마지막 DAY */
+  function focusIdx() {
+    var i;
+    for (i = 0; i < P.days.length; i++) if (needReview(P.days[i])) return i;
+    for (i = 0; i < P.days.length; i++) { var d = P.days[i], g = dayProgress(d); if (!g.finished && (g.done || DS(d.id).run)) return i; }
+    for (i = 0; i < P.days.length; i++) if (!dayProgress(P.days[i]).finished) return i;
+    return P.days.length - 1;
+  }
+  var SEL_SET = false;
+  function myStats() {
+    var mins = 0, solved = 0, right = 0, done = 0;
+    var dur = function (a, b) { return a && b && b > a ? Math.min((b - a) / 60000, 120) : 0; };
+    P.days.forEach(function (d) {
+      var st = DS(d.id), g = dayProgress(d);
+      hist(d).forEach(function (x) { mins += dur(x.started, x.finished); solved += x.t || 0; right += x.c || 0; if (x.finished) done++; });
+      mins += dur(st.started, st.finished); solved += g.t; right += g.c; if (g.finished && !needReview(d)) done++;
+      Object.keys(st.extra || {}).forEach(function (k) { (st.extra[k] || []).forEach(function (x) { solved += x.t; right += x.c; }); });
     });
+    return { mins: Math.round(mins), solved: solved, acc: solved ? Math.round(right / solved * 100) : 0, done: done };
+  }
+  function hm(m) { return m >= 60 ? Math.floor(m / 60) + '<i>시간</i> ' + (m % 60) + '<i>분</i>' : m + '<i>분</i>'; }
+  function dayState(d) {
+    var g = dayProgress(d), st = DS(d.id);
+    if (needReview(d)) return 'rev';
+    if (g.finished) return 'done';
+    if (g.done || st.run) return 'now';
+    return 'wait';
+  }
+  function todayHTML() {
+    var h = '', fi = focusIdx(), fd = P.days[fi], fg = dayProgress(fd), fst = DS(fd.id), fstate = dayState(fd);
+    if (!SEL_SET) SEL = fi;
+    var allDone = P.days.every(function (d) { return dayState(d) === 'done'; });
+    var pct = Math.round(fg.done / fd.steps.length * 100);
+    /* 오늘 할 학습 */
+    var label = allDone ? '모든 DAY 완료' : fstate === 'rev' ? '마지막 단계: 오답 학습' : fstate === 'now' ? '이어서 할 학습' : '오늘 할 학습';
+    var sub = allDone ? '수고했어요! 약한 유형을 보충하거나 2회차에 도전해 보세요.'
+      : fstate === 'rev' ? '틀린 ' + wrongCount(fd) + '문제를 다시 풀면 결과를 보낼 수 있어요.'
+      : fst.run ? '<b>' + E(fd.steps[fst.run.si].title) + '</b> ' + Math.min(fst.run.qi + 1, fst.run.qs.length) + '/' + fst.run.qs.length + '번에서 멈췄어요'
+      : fg.done ? '다음 단계: <b>' + E(fd.steps[fg.next].title) + '</b>' : E(fd.story);
+    var cta = allDone ? '<button class="btn cta" data-res="' + fi + '">결과 다시 보기</button>'
+      : fstate === 'rev' ? '<button class="btn cta" data-rev="' + fi + '">오답 학습 하기 (' + wrongCount(fd) + '개) →</button>'
+      : '<button class="btn cta" data-go="' + fi + '">' + (fstate === 'now' ? '이어서 하기' : '시작하기') + ' →</button>';
+    h += '<section class="card hero"><div class="hero-in"><div class="ring" style="--p:' + (allDone ? 100 : pct) + '"><div><b>' + (allDone ? '✓' : fg.done) + '</b><small>' + (allDone ? '완료' : '/ ' + fd.steps.length + '단계') + '</small></div></div>' +
+      '<div class="hero-t"><div class="k">' + label + '</div><h2>' + E(fd.name) + ' · ' + E(fd.range) + '</h2><p>' + sub + '</p></div></div>' + cta + '</section>';
+    /* 나의 학습 기록 */
+    var ms = myStats();
+    h += '<div class="stats"><div class="stat"><small>누적 학습</small><b>' + hm(ms.mins) + '</b></div><div class="stat"><small>푼 문제</small><b>' + ms.solved + '<i>문제</i></b></div><div class="stat"><small>정답률</small><b>' + ms.acc + '<i>%</i></b></div></div>';
+    /* 학습 진도 */
+    h += '<h3 class="sech">학습 진도 <span>완료 ' + P.days.filter(function (d) { return dayState(d) === 'done'; }).length + ' / ' + P.days.length + '</span></h3><div class="drows">' + P.days.map(function (d, di) {
+      var g = dayProgress(d), st = DS(d.id), s = dayState(d), hs = hist(d);
+      var line = s === 'done' ? pctOf(g.c, g.t) + '점 · ' + (st.finished ? fmtTime(st.finished).split(' ')[0] + ' 완료' : '완료') + (wrongCount(d) ? ' · 오답 학습 완료' : ' · 틀린 문제 없음')
+        : s === 'rev' ? pctOf(g.c, g.t) + '점 · 오답 학습 ' + wrongCount(d) + '개 남음'
+        : s === 'now' ? g.done + ' / ' + d.steps.length + '단계 진행 중' : E(d.story);
+      var badge = { done: '완료' + (hs.length ? ' ×' + (hs.length + 1) : ''), rev: '오답 남음', now: '진행 중', wait: '시작 전' }[s];
+      return '<button class="drow ' + s + (di === SEL ? ' sel' : '') + '" data-sel="' + di + '"><span class="dn"><small>DAY</small>' + E(d.name.replace(/^DAY\s*/, '')) + '</span>' +
+        '<span class="dt"><b>' + E(d.range) + '</b><span>' + line + '</span>' + (s === 'now' ? '<span class="mini"><i style="width:' + Math.round(g.done / d.steps.length * 100) + '%"></i></span>' : '') + '</span><span class="badge">' + badge + '</span></button>';
+    }).join('') + '</div>';
+    /* 약한 유형 보충 띠 */
+    var wk = []; P.days.forEach(function (d, di) { if (dayState(d) !== 'done') return; weakList(d).forEach(function (w) { if (!w.ok) wk.push({ di: di, d: d, w: w }); }); });
+    if (wk.length) h += '<div class="weakstrip"><div><b>약한 유형 보충 ' + wk.length + '개 남았어요</b><span>' + wk.slice(0, 3).map(function (x) { return E(x.d.name) + ' · ' + E(x.w.s.title) + ' ' + x.w.sc[0] + '/' + x.w.sc[1]; }).join(' · ') + '</span></div><button class="btn" data-weak="' + wk[0].di + ':' + wk[0].w.i + '">보충하기</button></div>';
+    /* 고른 DAY 단계 */
+    var d = P.days[SEL], di = SEL, g = dayProgress(d), st = DS(d.id), run = st.run;
+    var hs = hist(d), hnote = hs.length ? '<br><small>' + attemptNo(d) + '회차 · 이전 기록 ' + hs.map(function (x, i) { return (i + 1) + '회차 ' + x.pct + '점'; }).join(', ') + '</small>' : '';
+    var status = (needReview(d) ? '<b>문제 풀이 완료 · ' + pctOf(g.c, g.t) + '점</b> (' + g.c + '/' + g.t + ') · 오답 학습 ' + wrongCount(d) + '개 남음 (끝내야 결과를 보낼 수 있어요)' : g.finished ? '<b>완료</b> · ' + g.c + '/' + g.t + ' (' + Math.round(g.c / g.t * 100) + '%)' + (st.finished ? ' · ' + fmtTime(st.finished) : '')
+      : run ? '<b>' + E(d.steps[run.si].title) + ' ' + Math.min(run.qi + 1, run.qs.length) + '/' + run.qs.length + '번</b>에서 멈췄어요'
+      : g.done ? '<b>' + g.done + '/' + d.steps.length + '단계</b> 건넜어요 · 다음: ' + E(d.steps[g.next].title) : '아직 시작 전') + hnote;
+    h += '<h3 class="sech" id="daydetail">' + E(d.name) + ' 단계 <span>' + E(d.range) + '</span></h3><section class="card day">' +
+      '<ol class="slist">' + d.steps.map(function (s, i) {
+        var sc = st.scores[i], cls = sc ? 'd' : i === g.next ? 'n' : 'w', low = sc && sc[0] / sc[1] < 0.7;
+        return '<li><button class="srow ' + cls + '" data-step="' + di + ':' + i + '"' + (cls === 'w' ? ' disabled' : '') + '><span class="ic">' + (sc ? '✓' : i + 1) + '</span><span class="sn">' + E(s.title) + '</span>' +
+          '<span class="sc' + (low ? ' low' : '') + '">' + (sc ? sc[0] + '/' + sc[1] : cls === 'n' ? (run && run.si === i ? '이어서' : '다음') : '') + '</span></button></li>';
+      }).join('') + '</ol>' +
+      '<p class="note" style="margin:8px 0 0">끝낸 단계를 누르면 다시 풀어 볼 수 있어요 (점수는 처음 기록 유지).</p>' +
+      '<div class="status">' + status + '</div>' + weakBox(d, di) + '<div class="acts">' +
+      (needReview(d) ? '<button class="btn plank" data-rev="' + di + '">오답 학습 하기</button>' + lockBtn(d, '오답 학습 후 열려요') : g.finished ? '<button class="btn" data-res="' + di + '">결과 보내기</button><button class="btn ghost" data-retry="' + di + '">' + (attemptNo(d) + 1) + '회차 도전</button>'
+        : '<button class="btn" data-go="' + di + '">' + (g.done || run ? '이어서 하기' : '시작하기') + '</button>' + lockBtn(d, '다 끝내면 열려요')) +
+      '</div>' + (g.finished && !needReview(d) ? '<p class="note retrynote" id="rn' + di + '" hidden>한 번 더 누르면 ' + (attemptNo(d) + 1) + '회차를 처음부터 시작해요. 지금 점수(' + pctOf(g.c, g.t) + '점)는 ' + attemptNo(d) + '회차 기록으로 남아요.</p>' : '') + '</section>';
     h += '<p class="note">기록은 이 기기에 이름별로 저장돼요. 같은 기기에서 같은 이름으로 들어오면 이어서 할 수 있어요.' + (SHEET ? ' 끝낸 단계는 선생님께도 자동으로 전달돼요.' : '') + '</p>';
     return h;
   }
@@ -424,7 +475,7 @@
     app.querySelectorAll('[data-caln]').forEach(function (b) { b.onclick = function () { var m = CAL.m + +b.dataset.caln; CAL = { y: CAL.y + Math.floor(m / 12), m: (m % 12 + 12) % 12 }; CALSEL = null; home(); }; });
     app.querySelectorAll('[data-cald]').forEach(function (b) { b.onclick = function () { CALSEL = CALSEL === b.dataset.cald ? null : b.dataset.cald; var y = window.scrollY; home(); window.scrollTo(0, y); }; });
     app.querySelectorAll('[data-tab]').forEach(function (b) { b.onclick = function () { home(b.dataset.tab); }; });
-    app.querySelectorAll('[data-sel]').forEach(function (b) { b.onclick = function () { SEL = +b.dataset.sel; home(); }; });
+    app.querySelectorAll('[data-sel]').forEach(function (b) { b.onclick = function () { SEL = +b.dataset.sel; SEL_SET = true; home(); if (TAB === 'today') { var dd = $('#daydetail'); if (dd) dd.scrollIntoView({ block: 'start' }); } }; });
     var needName = function () { if (S.name) return false; var n = $('#nm'); n.placeholder = '이름을 적어야 시작할 수 있어요'; n.focus(); top(); return true; };
     app.querySelectorAll('[data-go]').forEach(function (b) { b.onclick = function () { if (needName()) return; var di = +b.dataset.go, rn = DS(P.days[di].id).run; startStep(di, rn ? rn.si : dayProgress(P.days[di]).next); }; });
     app.querySelectorAll('[data-step]').forEach(function (b) { b.onclick = function () {
@@ -484,10 +535,13 @@
 
   function header() {
     var d = P.days[RS.di];
-    if (RS.practice === '오답 학습') return '<div class="topbar"><div class="row"><button class="link" id="quit">← 나가기 (저장됨)</button><span class="crumb">' + E(d.name) + ' · <b>오답 학습</b> · 다 맞혀야 끝나요</span></div></div>';
-    if (RS.practice) return '<div class="topbar"><div class="row"><button class="link" id="quit">← 처음 화면</button><span class="crumb"><b>' + E(RS.practice) + '</b> · 점수에 안 들어가요</span></div></div>';
-    return '<div class="topbar"><div class="row"><button class="link" id="quit">← 나가기 (저장됨)</button>' +
-      '<span class="crumb">' + E(d.name) + ' · <b>' + (RS.si + 1) + ' / ' + d.steps.length + '단계</b></span></div>' + bridge(d, RS.si) + '</div>';
+    var X = '<button class="xbtn" id="quit" aria-label="나가기"><span aria-hidden="true">✕</span></button>';
+    var pill = RS.phase === 'quiz' && RS.qs.length ? '<span class="qpill">' + Math.min(RS.qi + 1, RS.qs.length) + ' / ' + RS.qs.length + '</span>' : '';
+    var frac = RS.qs.length ? (RS.qi + (RS.answered ? 1 : 0)) / RS.qs.length : 0;
+    if (RS.practice === '오답 학습') return '<div class="topbar"><div class="row">' + X + '<span class="crumb">' + E(d.name) + ' · <b>오답 학습</b> · 저장됨</span>' + pill + '</div><div class="pbar"><i style="width:' + Math.round(frac * 100) + '%"></i></div></div>';
+    if (RS.practice) return '<div class="topbar"><div class="row">' + X + '<span class="crumb"><b>' + E(RS.practice) + '</b> · 점수에 안 들어가요</span>' + pill + '</div><div class="pbar"><i style="width:' + Math.round(frac * 100) + '%"></i></div></div>';
+    return '<div class="topbar"><div class="row">' + X + '<span class="crumb">' + E(d.name) + ' · <b>' + (RS.si + 1) + ' / ' + d.steps.length + '단계</b> · 저장됨</span>' + pill + '</div>' +
+      '<div class="pbar"><i style="width:' + Math.round((RS.si + frac) / d.steps.length * 100) + '%"></i></div></div>';
   }
 
   function render() {
@@ -495,7 +549,7 @@
     var d = P.days[RS.di], q = RS.qs[RS.qi], step = d.steps[RS.si], h = header();
     var title = q && q.stepTitle && RS.practice === '오답 학습' ? q.stepTitle : step.title;
     var guide = q && q.guide && RS.practice === '오답 학습' ? q.guide : step.guide;
-    h += '<div class="stepname">' + E(title) + '</div><p class="guide">' + E(guide || (step.type === 'vocab' ? '단어와 뜻을 훑어보고 퀴즈를 시작하세요.' : '')) + '</p>';
+    h += '<div class="stepk">' + (RS.practice ? E(RS.practice) : 'STEP ' + (RS.si + 1)) + '</div><div class="stepname">' + E(title) + '</div><p class="guide">' + E(guide || (step.type === 'vocab' ? '단어와 뜻을 훑어보고 퀴즈를 시작하세요.' : '')) + '</p>';
     if (RS.phase === 'study') {
       h += '<div class="card"><div class="qno">' + step.items.length + '개 · 소리 내어 한 번씩 읽어 보세요' + (step.quizN ? ' (퀴즈는 ' + step.quizN + '개 무작위)' : '') + '</div><div class="wordlist">' +
         step.items.map(function (w) { return '<div class="w en">' + E(w[0]) + '</div><div class="m">' + E(w[1]) + '</div>'; }).join('') +
@@ -503,7 +557,7 @@
       app.innerHTML = h; bindQuit(); $('#gostart').onclick = function () { RS.phase = 'quiz'; saveRun(); render(); }; return;
     }
     if (RS.phase === 'summary') { app.innerHTML = h + summaryHTML(); bindQuit(); bindSummary(); return; }
-    h += '<div class="card pop" id="qcard">' + (q.src ? '<div class="src"><b>' + E(q.src.replace(/^(\d+번)/, '$1 지문')) + '</b></div>' : '') + '<div class="qno">' + (RS.qi + 1) + ' / ' + RS.qs.length + '</div>' + qHTML(q) + '<div id="fb"></div></div>';
+    h += '<div class="card pop" id="qcard">' + (q.src ? '<div class="src"><b>' + E(q.src.replace(/^(\d+번)/, '$1 지문')) + '</b></div>' : '') + qHTML(q) + '<div id="fb"></div></div>';
     app.innerHTML = h; bindQuit(); bindQ(q);
   }
 
