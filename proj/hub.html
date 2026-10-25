@@ -1,0 +1,128 @@
+<title>데일리 영어 선생님 보드</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#2f5fd0">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: teacher board — grade tabs, then one column per publisher with unit rows (bridge-plank accent shared with student app) */
+:root {
+  --bg: #f3f6f1; --surface: #ffffff; --ink: #1c2822; --muted: #5b6a61; --line: #d9e2da;
+  --accent: #2f5fd0; --accent-soft: #e4ebfb; --on-accent: #ffffff;
+  --plank: #c98a1b; --plank-soft: #f3e3c3; --plank-empty: #e6ebe4; --ok: #1d8549;
+  --shadow: 0 1px 2px rgba(28,40,34,.06), 0 6px 20px rgba(28,40,34,.06);
+  --f-display: "Jua", "IBM Plex Sans KR", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111613; --surface: #1a211d; --ink: #e6ede8; --muted: #9aa8a0; --line: #2b3530;
+  --accent: #7f9fff; --accent-soft: #232d48; --on-accent: #0f1530;
+  --plank: #e0a645; --plank-soft: #3d311b; --plank-empty: #28302b; --ok: #52c584;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.25); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #111613; --surface: #1a211d; --ink: #e6ede8; --muted: #9aa8a0; --line: #2b3530;
+  --accent: #7f9fff; --accent-soft: #232d48; --on-accent: #0f1530;
+  --plank: #e0a645; --plank-soft: #3d311b; --plank-empty: #28302b; --ok: #52c584;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.25); color-scheme: dark }
+* { box-sizing: border-box }
+[hidden] { display: none !important }
+html, body { background: var(--bg) }
+body { margin: 0; color: var(--ink); font: 400 15px/1.55 var(--f-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+button { font: inherit; color: inherit; cursor: pointer }
+button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px }
+#hub { max-width: 1080px; margin: 0 auto; padding-block: 24px 56px }
+header { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; flex-wrap: wrap; margin-bottom: 18px }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .04em; color: var(--muted) }
+h1 { font: 400 clamp(28px, 5vw, 38px)/1.1 var(--f-display); margin: 4px 0 0 }
+.planks { display: flex; gap: 4px; margin-top: 10px }
+.planks i { width: 28px; height: 8px; border-radius: 2px; background: var(--plank) }
+.planks i:nth-child(n+4) { background: var(--plank-empty) }
+.install { border: 1.5px solid var(--accent); background: var(--accent-soft); color: var(--ink); border-radius: 12px; padding: 9px 14px; font-weight: 600 }
+.grades { display: flex; gap: 6px; flex-wrap: wrap; padding: 4px; background: var(--plank-empty); border-radius: 14px; width: fit-content; max-width: 100% }
+.grades button { border: 0; background: transparent; border-radius: 10px; padding: 9px 18px; font-weight: 600; color: var(--muted) }
+.grades button.on { background: var(--surface); color: var(--ink); box-shadow: var(--shadow) }
+.grades small { font-weight: 500; color: var(--muted); margin-left: 4px }
+.board { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 16px; margin-top: 18px; align-items: start }
+.pub { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 16px; min-width: 0 }
+.pub h2 { font: 400 22px/1.2 var(--f-display); margin: 0 0 2px }
+.pub .who { color: var(--muted); font-size: 13px; margin-bottom: 10px }
+.unit { display: grid; gap: 8px; padding: 12px 0; border-top: 1px solid var(--line) }
+.unit-head { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap }
+.unit-head .no { font-weight: 700; color: var(--plank); font-size: 13px; white-space: nowrap }
+.unit-head .t { font-weight: 600; font-size: 16px; min-width: 0; overflow-wrap: anywhere }
+.days { display: flex; gap: 6px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.days span { background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px }
+.acts { display: flex; gap: 6px; flex-wrap: wrap }
+.btn { border: 0; border-radius: 10px; padding: 8px 14px; font-weight: 600; background: var(--accent); color: var(--on-accent); text-decoration: none; display: inline-flex; align-items: center; min-height: 38px }
+.btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--line) }
+.btn.done { background: var(--ok); color: var(--on-accent) }
+.linktext { font-size: 12.5px; color: var(--muted); overflow-wrap: anywhere; user-select: all }
+.empty { color: var(--muted); padding: 24px 0 }
+.foot { margin-top: 28px; color: var(--muted); font-size: 13px; display: grid; gap: 4px }
+</style>
+
+<div id="hub"></div>
+
+<script>
+window.UNITS = __UNITS__; window.BOARD = '__BOARD__';
+</script>
+<script>
+(function () {
+  'use strict';
+  var U = window.UNITS, root = document.getElementById('hub');
+  function E(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  var ORDER = ['초3', '초4', '초5', '초6', '중1', '중2', '중3', '고1', '고2', '고3'];
+  var grades = U.map(function (u) { return u.grade; }).filter(function (g, i, a) { return a.indexOf(g) === i; })
+    .sort(function (a, b) { return (ORDER.indexOf(a) + 99) % 199 - (ORDER.indexOf(b) + 99) % 199; });
+  var cur = null; try { cur = localStorage.getItem('hub:grade'); } catch (e) {}
+  if (grades.indexOf(cur) < 0) cur = grades[0];
+  var deferred = null;
+  window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); deferred = e; draw(); });
+  var standalone = window.matchMedia && matchMedia('(display-mode: standalone)').matches;
+
+  function studentURL(u) { return new URL('../' + u.folder + '/', location.href).href; }
+
+  function draw() {
+    var h = '<header><div><div class="eyebrow">선생님용 · 학생에게 이 주소는 주지 마세요</div><h1>데일리 영어 보드</h1>' +
+      '<div class="planks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></div>' +
+      (deferred && !standalone ? '<button class="install" id="inst">컴퓨터에 앱으로 설치</button>' : '') + '</header>';
+    h += '<nav class="grades" role="tablist" aria-label="학년">' + grades.map(function (g) {
+      var n = U.filter(function (u) { return u.grade === g; }).length;
+      return '<button role="tab" aria-selected="' + (g === cur) + '" class="' + (g === cur ? 'on' : '') + '" data-g="' + E(g) + '">' + E(g) + '<small>' + n + '</small></button>';
+    }).join('') + '</nav>';
+    var list = U.filter(function (u) { return u.grade === cur; }), pubs = [];
+    list.forEach(function (u) { if (pubs.indexOf(u.publisher) < 0) pubs.push(u.publisher); });
+    h += '<div class="board">' + (pubs.length ? pubs.map(function (p) {
+      var units = list.filter(function (u) { return u.publisher === p; });
+      return '<section class="pub"><h2>' + E(p.replace(/\(.*\)/, '')) + '</h2><div class="who">' + E((p.match(/\((.*)\)/) || [, ''])[1]) + (p.match(/\(/) && !/^모의고사/.test(p) ? ' 선생님 교과서' : '') + '</div>' +
+        units.map(function (u) {
+          return '<div class="unit"><div class="unit-head"><span class="no">' + E(u.unit) + '</span><span class="t">' + E(u.title) + '</span></div>' +
+            '<div class="days">' + u.days.map(function (d) { return '<span>' + E(d.name) + ' ' + E(d.range) + ' · ' + d.steps + '단계</span>'; }).join('') + '</div>' +
+            '<div class="acts"><a class="btn" href="../' + E(u.folder) + '/?hub=' + E(window.BOARD) + '">열기</a>' +
+            '<button class="btn ghost" data-copy="' + E(u.folder) + '">학생 링크 복사</button></div>' +
+            '<div class="linktext">' + E(studentURL(u)) + '</div></div>';
+        }).join('') + '</section>';
+    }).join('') : '<p class="empty">이 학년에는 아직 세트가 없어요.</p>') + '</div>';
+    h += '<div class="foot"><span>학생에게는 단원별 학생 링크만 보내 주세요. "열기"로 들어간 화면에는 이 목록으로 돌아오는 버튼이 생겨요.</span>' +
+      '<span>새 단원은 폴더를 추가하고 다시 만들면 여기에 자동으로 나타나요.</span>' +
+      (standalone ? '' : '<span>앱 설치: 크롬·엣지 주소창 오른쪽의 설치 아이콘(⊕ 또는 모니터 모양)을 누르거나, 메뉴 ⋮ → "앱으로 설치"(엣지: 앱 → 이 사이트를 앱으로 설치)를 누르세요.</span>') + '</div>';
+    root.innerHTML = h;
+    root.querySelectorAll('[data-g]').forEach(function (b) { b.onclick = function () { cur = b.dataset.g; try { localStorage.setItem('hub:grade', cur); } catch (e) {} draw(); }; });
+    root.querySelectorAll('[data-copy]').forEach(function (b) { b.onclick = function () {
+      var u = U.filter(function (x) { return x.folder === b.dataset.copy; })[0], url = studentURL(u);
+      var ok = function () { b.textContent = '복사했어요'; b.classList.add('done'); setTimeout(function () { b.textContent = '학생 링크 복사'; b.classList.remove('done'); }, 1600); };
+      var fail = function () { var t = b.parentNode.nextElementSibling, r = document.createRange(); r.selectNodeContents(t); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = '선택됐어요. Ctrl+C로 복사'; };
+      try { navigator.clipboard.writeText(url).then(ok, fail); } catch (e) { fail(); }
+    }; });
+    var ib = document.getElementById('inst');
+    if (ib) ib.onclick = function () { deferred.prompt(); deferred.userChoice.finally(function () { deferred = null; draw(); }); };
+  }
+  draw();
+  if ('serviceWorker' in navigator && location.protocol === 'https:') { try { navigator.serviceWorker.register('sw.js').catch(function () {}); } catch (e) {} }
+})();
+</script>

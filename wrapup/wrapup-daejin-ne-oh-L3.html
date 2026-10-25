@@ -1,0 +1,287 @@
+<title>대진고 능률 L3 Wrap-up</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@media (max-width: 700px) {
+  .page { padding: 18px 14px }
+  .qs, .exp { columns: 1 }
+  .title { grid-template-columns: 1fr } .title .g, .title .when { text-align: center }
+  .idrow { grid-template-columns: repeat(2, 1fr) }
+  .keygrid { grid-template-columns: repeat(5, minmax(0, 1fr)) }
+  .keygrid div:nth-child(10n) { border-right: 1px solid var(--rule) } .keygrid div:nth-child(5n) { border-right: 0 }
+  .keygrid div:nth-last-child(-n+10) { border-bottom: 1px solid var(--rule) } .keygrid div:nth-last-child(-n+5) { border-bottom: 0 }
+}
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+</style><style>
+.part { margin: 6px 0 10px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; border-top: 2px solid var(--navy); padding-top: 10px }
+.part h2 { margin: 0; font: 900 14px var(--f-ko); color: #fff; background: var(--navy); padding: 3px 10px }
+.part p { margin: 0; font-size: 12.5px; color: var(--muted) }
+.swq { display: grid; gap: 4px }
+.pt { font-size: 12px; color: var(--key); font-weight: 700; margin-left: 4px }
+.cond { font-size: 13px; line-height: 1.6 }
+.ans { display: grid; grid-template-columns: auto 1fr auto 1fr; gap: 8px; align-items: end; margin-top: 4px }
+.ans.wide, .swq .q .ans:has(span:only-of-type) { grid-template-columns: auto 1fr }
+.ans.wide { grid-template-columns: 1fr }
+.ans span { font-weight: 700; font-size: 13px }
+.ans i { display: block; border-bottom: 1px solid var(--ink); height: 30px }
+.exp.one { columns: 1 }
+</style>
+
+<main>
+<section class="page">
+  <div class="top"><span>영어Ⅱ NE능률(오선영) Lesson 3 · <b>본문 ❶~❺ Wrap-up</b></span><span>대진고등학교 2학년 · 2학기 기말 대비</span></div>
+  <div class="title">
+    <div class="g">영어Ⅱ</div>
+    <h1>능률 L3 본문 Wrap-up<small>Life Is a Sum of Choices · 고난도</small></h1>
+    <div class="when">선택형 20 × 4점 · 서술형 3<br>제한 시간 45분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">범위: 데일리 학습 DAY 1~2 (본문 ❶~❺). 지문은 일부 바꾼 것이 있어요. 내용 일치 문항의 선택지는 본문 표현을 어려운 어휘로 바꿔 썼고, 표 수 계산이 필요한 선택지도 있어요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>다음 글의 내용과 일치하지 <u>않는</u> 것은?<span class="src">[본문 ❶]</span></div>
+    <div class="box"><p>We make many personal choices in our lives, from who to have lunch with to what career to pursue. However, there are many situations where we must make decisions as a group. Group decision-making is not as simple as our personal choices, as it involves numerous voices with differing opinions. Voting is often used to make group decisions fairer and more efficient, and various voting methods have been developed over time. The following story illustrates how these different voting methods work.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Personal decisions can range from trivial everyday matters to major life choices.</span></li><li><span>②</span><span>Collective decisions are complicated by the presence of divergent viewpoints.</span></li><li><span>③</span><span>Voting methods have remained largely unchanged since they were first devised.</span></li><li><span>④</span><span>Voting is employed to render group decisions more equitable and efficient.</span></li><li><span>⑤</span><span>The passage goes on to present a narrative illustrating how voting methods operate.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>다음 글의 밑줄 친 (a)~(h) 중 어법상 <u>틀린</u> 것의 개수는?<span class="src">[본문 ❶ 변형]</span></div>
+    <div class="box"><p>We make many personal choices in our lives, from <span class="tag">(a)</span><u>who having</u> lunch with to what career to pursue. However, there are many situations <span class="tag">(b)</span><u>where</u> we must make decisions as a group. Group decision-making is not as <span class="tag">(c)</span><u>simpler</u> as our personal choices, as it <span class="tag">(d)</span><u>involves</u> numerous voices with <span class="tag">(e)</span><u>differing</u> opinions. Voting is often used to make group decisions <span class="tag">(f)</span><u>more fairly</u> and more efficient, and various voting methods <span class="tag">(g)</span><u>have developed</u> over time. The following story illustrates <span class="tag">(h)</span><u>how</u> these different voting methods work.</p></div>
+    <ol class="ol"><li><span>①</span><span>1개</span></li><li><span>②</span><span>2개</span></li><li><span>③</span><span>3개</span></li><li><span>④</span><span>4개</span></li><li><span>⑤</span><span>5개</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[본문 ❶]</span></div>
+    <div class="box"><p>We make many personal choices in our lives, from who to have lunch with to what career to pursue. However, there are many situations where we must make decisions as a group. Group decision-making is not as simple as our personal choices, as it <span class="blank"></span>. Voting is often used to make group decisions fairer and more efficient.</p></div>
+    <ol class="ol en"><li><span>①</span><span>relies on the judgment of a single leader</span></li><li><span>②</span><span>involves numerous voices with differing opinions</span></li><li><span>③</span><span>requires no discussion among its members</span></li><li><span>④</span><span>is usually settled by pure chance</span></li><li><span>⑤</span><span>concerns only trivial matters</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[본문 ❷ 변형]</span></div>
+    <div class="box"><p>The members of the Greenville High School student council needed to decide how to raise money for children ①<u>in need</u>. Their three options were an art show, a bake sale, and a charity concert, but there were ②<u>conflicting</u> opinions. So they decided to put it to a ③<u>vote</u>. When they asked for advice from Ms. Akers, the council's advisor, she encouraged them not to use the ④<u>familiar</u> voting method, but to try something different instead. After doing some research, the council members decided to ⑤<u>abandon</u> three different voting systems: the first-past-the-post (FPTP) method, the alternative vote (AV) method, and the Condorcet method.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>(A), (B), (C)의 각 네모 안에서 어법에 맞는 표현으로 가장 적절한 것은?<span class="src">[본문 ❷]</span></div>
+    <div class="box"><p>The members of the Greenville High School student council needed to decide <b>(A)</b> [how to raise / how raising] money for children in need. ... When they asked for advice from Ms. Akers, the council's advisor, she encouraged them <b>(B)</b> [not to use / not using] the familiar voting method, but to try something different instead. ... The entire council was curious to find out <b>(C)</b> [if / that] the different methods would yield different results.</p></div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th><th>(C)</th></tr></thead><tbody><tr><td>①</td><td>how to raise</td><td>not to use</td><td>if</td></tr><tr><td>②</td><td>how to raise</td><td>not using</td><td>that</td></tr><tr><td>③</td><td>how raising</td><td>not to use</td><td>if</td></tr><tr><td>④</td><td>how raising</td><td>not using</td><td>if</td></tr><tr><td>⑤</td><td>how to raise</td><td>not to use</td><td>that</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>다음 글의 내용과 일치하는 것은?<span class="src">[본문 ❷]</span></div>
+    <div class="box"><p>The members of the Greenville High School student council needed to decide how to raise money for children in need. Their three options were an art show, a bake sale, and a charity concert, but there were conflicting opinions. So they decided to put it to a vote. When they asked for advice from Ms. Akers, the council's advisor, she encouraged them not to use the familiar voting method, but to try something different instead. After doing some research, the council members decided to try three different voting systems: the first-past-the-post (FPTP) method, the alternative vote (AV) method, and the Condorcet method. The entire council was curious to find out if the different methods would yield different results.</p></div>
+    <ol class="ol en"><li><span>①</span><span>The council unanimously agreed on which event to hold before any vote took place.</span></li><li><span>②</span><span>Ms. Akers advised the council to stick with the conventional voting method.</span></li><li><span>③</span><span>The council settled on a single voting system after conducting research.</span></li><li><span>④</span><span>The council intended to raise funds for underprivileged children.</span></li><li><span>⑤</span><span>The members were indifferent to whether the methods would produce different outcomes.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?<span class="src">[본문 ❷]</span></div>
+    <div class="given">The members of the Greenville High School student council needed to decide how to raise money for children in need.</div>
+    <div class="box"><p><span class="tag">(A)</span> When they asked for advice from Ms. Akers, the council's advisor, she encouraged them not to use the familiar voting method, but to try something different instead.</p><p><span class="tag">(B)</span> Their three options were an art show, a bake sale, and a charity concert, but there were conflicting opinions. So they decided to put it to a vote.</p><p><span class="tag">(C)</span> After doing some research, the council members decided to try three different voting systems: the FPTP method, the AV method, and the Condorcet method.</p></div>
+    <ol class="ol"><li><span>①</span><span>(A) − (C) − (B)</span></li><li><span>②</span><span>(B) − (C) − (A)</span></li><li><span>③</span><span>(B) − (A) − (C)</span></li><li><span>④</span><span>(C) − (A) − (B)</span></li><li><span>⑤</span><span>(C) − (B) − (A)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?<span class="src">[본문 ❸]</span></div>
+    <div class="given">Each of the 20 council members was given a voting slip and instructed to write down the options in order of preference.</div>
+    <div class="box"><p>The entire council was curious to find out if the different methods would yield different results. ( ① ) On the day of the vote, each possible event was given a letter: "art show" was represented by the letter A, the letter B indicated "bake sale," and C stood for "charity concert." ( ② ) For example, if the charity concert was their first choice, followed by the bake sale and the art show, they would write CBA. ( ③ ) After every member had voted, the voting slips were counted. ( ④ ) The results were as follows. ( ⑤ )</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>다음 글의 내용과 일치하지 <u>않는</u> 것은?<span class="src">[본문 ❸]</span></div>
+    <div class="box"><p>On the day of the vote, each possible event was given a letter: "art show" was represented by the letter A, the letter B indicated "bake sale," and C stood for "charity concert." Each of the 20 council members was given a voting slip and instructed to write down the options in order of preference. For example, if the charity concert was their first choice, followed by the bake sale and the art show, they would write CBA. After every member had voted, the voting slips were counted.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Each of the options was assigned a letter to represent it.</span></li><li><span>②</span><span>Every member ranked all of the options according to personal preference.</span></li><li><span>③</span><span>A voter favoring the concert, then the bake sale, then the art show would write CBA.</span></li><li><span>④</span><span>The slips were tallied only after all members had cast their votes.</span></li><li><span>⑤</span><span>Members were permitted to mark only a single option on their voting slips.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>다음 글의 밑줄 친 (a)~(e) 중 어법상 <u>틀린</u> 것끼리 짝지은 것은?<span class="src">[본문 ❸ 변형]</span></div>
+    <div class="box"><p>On the day of the vote, each possible event <span class="tag">(a)</span><u>gave</u> a letter: "art show" <span class="tag">(b)</span><u>was represented</u> by the letter A, the letter B indicated "bake sale," and C stood for "charity concert." Each of the 20 council members <span class="tag">(c)</span><u>were given</u> a voting slip and instructed to write down the options in order of preference. For example, if the charity concert was their first choice, <span class="tag">(d)</span><u>followed</u> by the bake sale and the art show, they would write CBA. After every member <span class="tag">(e)</span><u>had voted</u>, the voting slips were counted.</p></div>
+    <ol class="ol"><li><span>①</span><span>(a), (c)</span></li><li><span>②</span><span>(a), (d)</span></li><li><span>③</span><span>(b), (c)</span></li><li><span>④</span><span>(b), (e)</span></li><li><span>⑤</span><span>(d), (e)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[본문 ❹]</span></div>
+    <div class="box"><p>The FPTP method is uncomplicated and easy to understand, but it has a significant weakness. It is possible to <span class="blank"></span>. That was the case here. According to the results of the FPTP method, the council's choice was to hold a charity concert. However, only 8 out of 20 council members chose the charity concert as their first preference, which equaled 40% of the total votes.</p></div>
+    <ol class="ol en"><li><span>①</span><span>ignore first-preference votes entirely</span></li><li><span>②</span><span>require several rounds of counting</span></li><li><span>③</span><span>give second preferences too much weight</span></li><li><span>④</span><span>win a vote without the support of the majority</span></li><li><span>⑤</span><span>end up in a tie in almost every election</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>본문 ❹의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?<span class="src">[본문 ❹]</span></div>
+    <div class="sum">Under the FPTP method, an option can win simply by securing a <b>(A)</b> ________ of first-preference votes, even if it lacks <b>(B)</b> ________ support.</div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>majority</td><td>minority</td></tr><tr><td>②</td><td>plurality</td><td>majority</td></tr><tr><td>③</td><td>minority</td><td>unanimous</td></tr><tr><td>④</td><td>plurality</td><td>minority</td></tr><tr><td>⑤</td><td>majority</td><td>unanimous</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>본문 ❹의 내용과 일치하지 <u>않는</u> 것은?<span class="src">[본문 ❹]</span></div>
+    <div class="box"><p>The FPTP method is the simplest of the three methods. Voters are given several options, and whichever gets the most first-preference votes wins. Neither the second nor third preference matters at all, so they are ignored. This method is commonly used in political elections around the world. The student council quickly determined that the winner would be option C, the charity concert. This was because it received 8 first-preference votes, while option A received 5 and option B received 7. The FPTP method is uncomplicated and easy to understand, but it has a significant weakness.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Under FPTP, only first-preference votes are taken into account.</span></li><li><span>②</span><span>FPTP is widely adopted in political elections across the globe.</span></li><li><span>③</span><span>The charity concert secured an outright majority of first-preference votes.</span></li><li><span>④</span><span>The art show received the fewest first-preference votes of the three options.</span></li><li><span>⑤</span><span>The two leading options were separated by a single first-preference vote.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>다음 글에서 전체 흐름과 관계 <u>없는</u> 문장은?<span class="src">[본문 ❹ 변형]</span></div>
+    <div class="box"><p>The FPTP method is the simplest of the three methods. ① Voters are given several options, and whichever gets the most first-preference votes wins. ② Neither the second nor third preference matters at all, so they are ignored. ③ This method is commonly used in political elections around the world. ④ The student council quickly determined that the winner would be option C, the charity concert. ⑤ Charity concerts tend to attract larger audiences because famous singers often perform at them for free.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>(A), (B), (C)의 각 네모 안에서 어법에 맞는 표현으로 가장 적절한 것은?<span class="src">[본문 ❹]</span></div>
+    <div class="box"><p>The FPTP method is the <b>(A)</b> [simplest / simpler] of the three methods. Voters are given several options, and <b>(B)</b> [whichever / however] gets the most first-preference votes wins. Neither the second <b>(C)</b> [nor / or] third preference matters at all, so they are ignored.</p></div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th><th>(C)</th></tr></thead><tbody><tr><td>①</td><td>simplest</td><td>whichever</td><td>nor</td></tr><tr><td>②</td><td>simpler</td><td>whichever</td><td>or</td></tr><tr><td>③</td><td>simplest</td><td>however</td><td>nor</td></tr><tr><td>④</td><td>simpler</td><td>however</td><td>or</td></tr><tr><td>⑤</td><td>simplest</td><td>whichever</td><td>or</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?<span class="src">[본문 ❺]</span></div>
+    <div class="given">Therefore, option A was eliminated, and the 5 council members' votes were redistributed based on their second preferences.</div>
+    <div class="box"><p>The AV method can potentially include more than one round of counting. ( ① ) For an option to win in the first round, it needs to get more than 50% of the first-preference votes. ( ② ) As the charity concert only received 40% of the total votes, a second round of counting was required. ( ③ ) Option A, the art show, received the fewest first-preference votes, with only 5 council members voting for it. ( ④ ) As a result, 4 votes for option B (ABC) and 1 for option C (ACB) were added to the total. ( ⑤ ) This meant that option B had 11 total votes, while option C had only 9.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[본문 ❺]</span></div>
+    <div class="box"><p>This meant that option B had 11 total votes, while option C had only 9. As a result, the bake sale would be the winner. Unfortunately, the AV method is not perfect either. It sometimes allows <span class="blank"></span>. In this case, the bake sale won, but this was mainly due to the second-preference votes it received.</p></div>
+    <ol class="ol en"><li><span>①</span><span>first-preference votes to be disregarded altogether</span></li><li><span>②</span><span>second-preference votes to have a greater influence than first-preference votes</span></li><li><span>③</span><span>the most popular option to win outright in the first round</span></li><li><span>④</span><span>voters to change their minds after the votes are counted</span></li><li><span>⑤</span><span>every option to end up with the same number of votes</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[본문 ❺ 변형]</span></div>
+    <div class="box"><p>Next, the council members examined the votes using the AV method, and they soon realized that there would be a ①<u>different</u> result. The AV method can ②<u>potentially</u> include more than one round of counting. ... Option A, the art show, received the ③<u>most</u> first-preference votes, with only 5 council members voting for it. Therefore, option A was ④<u>eliminated</u>, and the 5 council members' votes were ⑤<u>redistributed</u> based on their second preferences.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>본문 ❺의 내용과 일치하는 것은?<span class="src">[본문 ❺]</span></div>
+    <ol class="ol en"><li><span>①</span><span>After the redistribution, the bake sale outnumbered the charity concert by two votes.</span></li><li><span>②</span><span>The charity concert won outright in the first round of counting under AV.</span></li><li><span>③</span><span>All five votes originally cast for the art show were transferred to the charity concert.</span></li><li><span>④</span><span>The bake sale secured a majority on first-preference votes alone.</span></li><li><span>⑤</span><span>The writer regards AV as a flawless alternative to the FPTP method.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>본문 ❶~❺ 전체의 요지로 가장 적절한 것은?<span class="src">[본문 ❶~❺]</span></div>
+    <ol class="ol"><li><span>①</span><span>집단 의사 결정은 개인의 선택보다 언제나 더 공정하다.</span></li><li><span>②</span><span>단순 다수결 방식이 가장 공정하고 효율적인 투표 방식이다.</span></li><li><span>③</span><span>대안 투표 방식은 단순 다수결 방식의 약점을 완벽하게 해결한다.</span></li><li><span>④</span><span>학생 자치회는 결국 자선 콘서트를 열기로 최종 결정했다.</span></li><li><span>⑤</span><span>같은 투표 결과라도 어떤 투표 방식을 쓰느냐에 따라 승자가 달라질 수 있다.</span></li></ol>
+  </div>
+  </div>
+
+  <div class="part"><h2>서술형</h2><p>요약문 완성 · 답안은 아래 칸에 쓰세요.</p></div>
+  <div class="swq">
+    <div class="q">
+      <div class="stem"><span class="n">서술형 1.</span>본문 ❹의 내용을 요약한 문장의 빈칸 (A), (B)에 들어갈 말을 <b>본문에서 찾아</b> 각각 한 단어로 쓰시오. <span class="pt">[6점]</span><span class="src">[본문 ❹]</span></div>
+      <div class="sum">Although the FPTP method is <b>(A)</b> ____________ and easy to understand, it can let an option win without the support of the <b>(B)</b> ____________.</div>
+      <div class="ans"><span>(A)</span><i></i><span>(B)</span><i></i></div>
+    </div>
+    <div class="q">
+      <div class="stem"><span class="n">서술형 2.</span>본문 ❺의 내용을 요약한 문장이 되도록 &lt;보기&gt;의 말을 <b>모두 한 번씩</b> 바르게 배열하여 빈칸을 완성하시오. <span class="pt">[7점]</span><span class="src">[본문 ❺]</span></div>
+      <div class="sum">In the AV method, if no option wins more than half of the first-preference votes, the option with the fewest votes is eliminated, and its votes ________________________________________.</div>
+      <div class="cond"><b>&lt;보기&gt;</b> second preferences / redistribute / voters' / according / to</div>
+      <div class="cond"><b>&lt;조건&gt;</b> 필요하면 어형을 바꾸고, 문맥에 맞게 <u>be동사 한 단어</u>를 추가할 것</div>
+      <div class="ans wide"><i></i></div>
+    </div>
+    <div class="q">
+      <div class="stem"><span class="n">서술형 3.</span>본문 ❶~❺의 내용을 요약한 문장을 &lt;조건&gt;에 맞게 완성하시오. <span class="pt">[7점]</span><span class="src">[본문 ❶~❺]</span></div>
+      <div class="sum">The story of the student council shows that <b>(A)</b> ________________________________, as the FPTP method chose the charity concert while the AV method chose the bake sale, mainly because of <b>(B)</b> ________________________________.</div>
+      <div class="cond"><b>&lt;조건&gt;</b> (A) <u>result, depend, voting method</u>를 반드시 사용하여 주어와 동사를 갖춘 절로 쓸 것 (9~11단어, 어형 변화 가능)<br>(B) <u>본문에서 찾아</u> 5단어로 쓸 것 (하이픈으로 연결된 말은 한 단어)</div>
+      <div class="ans"><span>(A)</span><i></i></div><div class="ans"><span>(B)</span><i></i></div>
+    </div>
+  </div>
+  <div class="foot"><span>NE능률(오선영) 영어Ⅱ Lesson 3 · 본문 ❶~❺ · 원문 일부 변형</span><span>대진고 2학년 영어 · Wrap-up</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>능률 L3 본문 Wrap-up · <b>정답과 해설</b></span><span>대진고등학교 2학년</span></div>
+  <div class="title"><div class="g">영어Ⅱ</div><h1>정답과 해설</h1><div class="when">선택형 80점 · 서술형 20점</div></div>
+  <div class="keygrid">
+    <div>1<b>③</b></div><div>2<b>④</b></div><div>3<b>②</b></div><div>4<b>⑤</b></div><div>5<b>①</b></div><div>6<b>④</b></div><div>7<b>③</b></div><div>8<b>②</b></div><div>9<b>⑤</b></div><div>10<b>①</b></div>
+    <div>11<b>④</b></div><div>12<b>②</b></div><div>13<b>③</b></div><div>14<b>⑤</b></div><div>15<b>①</b></div><div>16<b>④</b></div><div>17<b>②</b></div><div>18<b>③</b></div><div>19<b>①</b></div><div>20<b>⑤</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">③</span> 시간이 흐르며 다양한 투표 방법이 개발되어 왔다(have been developed over time) → 거의 변하지 않았다는 틀림. devise 고안하다 ① range from A to B ② divergent = differing ④ render + O + 형용사 · equitable = fair</p>
+    <p><b>2</b> <span class="k">④</span> 틀린 것 (a)(c)(f)(g) 4개. (a) 의문사 + to부정사 → <i>who to have</i> (c) as + 원급 + as → <i>simple</i> (f) make + O + 형용사, efficient와 병렬 → <i>fairer</i> (g) 방법이 '개발되는' 수동 → <i>have been developed</i></p>
+    <p><b>3</b> <span class="k">②</span> as(~ 때문에) 뒤에 이유 → 다른 의견을 가진 수많은 목소리가 관련되기 때문에 개인 선택보다 복잡하다.</p>
+    <p><b>4</b> <span class="k">⑤</span> 조사 후 세 가지 투표 방식을 '시도해 보기로(try)' 함. abandon은 '버리다'.</p>
+    <p><b>5</b> <span class="k">①</span> (A) 의문사 + to부정사 (B) encourage + O + to부정사, 부정은 not to (C) find out의 목적어 '~인지 아닌지' → <i>if</i></p>
+    <p><b>6</b> <span class="k">④</span> 어려움에 처한 아이들(children in need = underprivileged children)을 위한 모금. ① unanimously 만장일치로 → 상충되는 의견 ② stick with 고수하다 → 다른 방법을 권함 ③ 세 가지 방식 ⑤ indifferent 무관심한 → curious</p>
+    <p><b>7</b> <span class="k">③</span> (B) 세 선택지와 의견 충돌 → 투표하기로 함 → (A) 고문 교사가 다른 방식을 권함 → (C) 조사 후 세 가지 방식을 시도.</p>
+    <p><b>8</b> <span class="k">②</span> 글자를 정한 뒤 투표용지를 받고 선호 순으로 적으라는 지시(주어진 문장) → 그 예시(For example, CBA).</p>
+    <p><b>9</b> <span class="k">⑤</span> 선호하는 순서대로 모든 선택지를 적었다(in order of preference) → 하나만 적었다는 틀림. tally 집계하다 · cast a vote 투표하다</p>
+    <p><b>10</b> <span class="k">①</span> (a) 행사에 글자가 '주어진' 수동 → <i>was given</i> (c) each of + 복수명사 → 단수동사 <i>was given</i>. (d) 분사구문(수동) (e) 집계보다 먼저 → 과거완료</p>
+    <p><b>11</b> <span class="k">④</span> 8/20 = 40%, 과반수 지지 없이도 이길 수 있다는 약점. That was the case here가 단서.</p>
+    <p><b>12</b> <span class="k">②</span> plurality 최다 득표(과반이 아닌 상대 다수) · majority 과반수. 40%만으로 이긴 상황.</p>
+    <p><b>13</b> <span class="k">③</span> 자선 콘서트는 40%(8/20)만 얻음 → 과반(outright majority)이 아님. ⑤ 8표와 7표, 한 표 차이</p>
+    <p><b>14</b> <span class="k">⑤</span> 콘서트에 유명 가수가 무료로 공연한다는 내용 → FPTP 방식 설명과 관계없음.</p>
+    <p><b>15</b> <span class="k">①</span> (A) 최상급 + of + 복수명사 (B) 복합관계대명사 whichever(~하는 어느 것이든)가 주어 역할 (C) neither A nor B</p>
+    <p><b>16</b> <span class="k">④</span> 가장 적은 표를 받은 A가 제거되고(주어진 문장) → 그 결과(As a result) B에 4표, C에 1표가 더해짐.</p>
+    <p><b>17</b> <span class="k">②</span> 빵 바자회는 2지망 표 덕분에 이겼다 → 2지망이 1지망보다 더 큰 영향을 미친다.</p>
+    <p><b>18</b> <span class="k">③</span> 5명만 투표했다(only 5) → 가장 '적은(fewest)' 1지망 표. most는 반대.</p>
+    <p><b>19</b> <span class="k">①</span> 재분배 후 B 11표, C 9표 → 2표 차이. outnumber ~보다 수가 많다 ② 40%라 2차 집계 필요 ③ B에 4표, C에 1표 ④ 1지망 7표 ⑤ flawless 결함 없는 → not perfect either</p>
+    <p><b>20</b> <span class="k">⑤</span> 같은 표를 FPTP로 세면 자선 콘서트, AV로 세면 빵 바자회가 이긴다 → 투표 방식에 따라 결과가 달라진다.</p>
+  </div>
+  <div class="part"><h2>서술형</h2><p>모범 답안과 채점 기준</p></div>
+  <div class="exp one">
+    <p><b>서술형 1</b> <span class="k">(A) uncomplicated (B) majority</span> 근거: <i>The FPTP method is uncomplicated and easy to understand ... It is possible to win a vote without the support of the majority.</i> 각 3점. (A)는 본문 단어 uncomplicated가 정답이에요. simple(본문 ❹ 첫 문장의 simplest)을 인정할지는 학교 채점 기준에 맞춰 정해 주세요.</p>
+    <p><b>서술형 2</b> <span class="k">are redistributed according to voters' second preferences</span> 근거: <i>the 5 council members' votes were redistributed based on their second preferences</i> → its votes(복수, 현재 일반 서술) + 수동태 are redistributed. according to = based on. 어순 완벽 7점 · be동사 누락/시제 오류 −2점 · redistribute 형태 오류 −2점.</p>
+    <p><b>서술형 3</b> <span class="k">(A) the result of a vote can depend on the voting method</span> (11단어) 또는 <i>the result can depend on which voting method is used</i>(10단어) 등 인정. <span class="k">(B) the second-preference votes it received</span> (본문 ❺ 마지막 문장 · the / second-preference / votes / it / received 5단어). (A) 4점: 세 단어 모두 사용 2점 + 문법·단어 수 2점 · (B) 3점.</p>
+  </div>
+
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>대진고 2학년 영어 · Wrap-up</span></div>
+</section>
+</main>
