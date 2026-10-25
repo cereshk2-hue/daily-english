@@ -111,13 +111,17 @@
      선생님 시트의 '학생명단' 탭(이름 · 학생 코드)에 있는 학생만 들어온다. 탭이 비어 있으면 예전처럼 누구나.
      한 번 확인된 학생은 이 기기에 기억(daily:pass) → 인터넷이 잠깐 안 돼도 공부 가능. 열 때마다 다시 확인해서
      선생님이 명단에서 지우면 다음에 열 때부터 막힌다. */
-  var PASSK = 'daily:pass', GATE = lsGet('daily:gate') === '1';
+  var PASSK = 'daily:pass', GATE = lsGet('daily:gate') === '1', DENY = {};
+  /* daily:pass = { 이름: { c: 코드, u: { 단원id: 확인 시각 } } } — 코드는 기기에 한 번만, 교재(단원)는 따로 확인 */
   function passes() { try { return JSON.parse(lsGet(PASSK)) || {}; } catch (e) { return {}; } }
-  function setPass(n, c) { var p = passes(); if (c == null) delete p[n]; else p[n] = { c: c, t: Date.now() }; lsSet(PASSK, JSON.stringify(p)); }
+  function myPass(n) { var x = passes()[n]; return x && x.c ? x : null; }
+  function setPass(n, c, unitOk) { var p = passes(), x = p[n] && p[n].c ? p[n] : { c: c, u: {} };
+    if (c == null) { delete p[n]; } else { x.c = c; x.u = x.u || {}; if (unitOk === true) x.u[P.id] = Date.now(); else if (unitOk === false) delete x.u[P.id]; p[n] = x; }
+    lsSet(PASSK, JSON.stringify(p)); }
   function ncode(c) { return String(c == null ? '' : c).replace(/\D/g, '').replace(/^0+/, ''); }
-  function needPass() { return GATE && !!SHEET && !!S.name && !passes()[S.name]; }
-  function checkPass(n, c) { /* → {gate, ok}. 시트가 아직 옛 코드면 gate:false. 연결이 안 되면 실패(reject) */
-    var u = SHEET + (SHEET.indexOf('?') < 0 ? '?' : '&') + 'check=1&name=' + encodeURIComponent(n || '') + '&code=' + encodeURIComponent(ncode(c)) + '&_=' + Date.now();
+  function needPass() { if (!GATE || !SHEET || !S.name) return false; var x = myPass(S.name); return !(x && x.u && x.u[P.id]); }
+  function checkPass(n, c) { /* → {gate, ok, why}. 시트가 아직 옛 코드면 gate:false. 연결이 안 되면 실패(reject) */
+    var u = SHEET + (SHEET.indexOf('?') < 0 ? '?' : '&') + 'check=1&name=' + encodeURIComponent(n || '') + '&code=' + encodeURIComponent(ncode(c)) + '&school=' + encodeURIComponent(P.school || '') + '&_=' + Date.now();
     return fetch(u, { cache: 'no-store' }).then(function (r) { return r.text(); }).then(function (t) {
       var j = null; try { j = JSON.parse(t); } catch (e) {}
       if (!j || typeof j.gate !== 'boolean') j = { gate: false, ok: false };
@@ -125,12 +129,18 @@
       return j;
     });
   }
-  function gateSync() { /* 화면을 열 때: 명단이 켜졌는지, 지금 학생이 아직 명단에 있는지 */
+  function applyCheck(n, c, j) { /* 결과를 기기에 기억 */
+    if (!j.gate || !n) return;
+    if (j.ok) { setPass(n, ncode(c), true); delete DENY[n]; }
+    else if (j.why === 'unit') { setPass(n, ncode(c), false); DENY[n] = 'unit'; }
+    else { setPass(n, null); DENY[n] = 'code'; }
+  }
+  function gateSync() { /* 화면을 열 때: 명단이 켜졌는지, 지금 학생이 아직 명단에 있고 이 교재가 열려 있는지 */
     if (!SHEET || !window.fetch) return;
-    var n = S.name, pc = n && passes()[n], was = GATE + '|' + needPass();
+    var n = S.name, pc = n && myPass(n), was = GATE + '|' + needPass() + '|' + (DENY[n] || '');
     checkPass(n, pc ? pc.c : '').then(function (j) {
-      if (j.gate && n && pc) { if (j.ok) setPass(n, pc.c); else setPass(n, null); }
-      if (was !== GATE + '|' + needPass() && app.querySelector('.bnav, #nameform, #passform')) { var y = window.scrollY; home(); window.scrollTo(0, y); }
+      if (pc) applyCheck(n, pc.c, j);
+      if (was !== GATE + '|' + needPass() + '|' + (DENY[n] || '') && app.querySelector('.bnav, #nameform, #passform')) { var y = window.scrollY; home(); window.scrollTo(0, y); }
     }, function () {});
   }
   function tryEnter(n, c, msg, btn) {
@@ -138,10 +148,13 @@
     var old = btn.textContent; btn.disabled = true; btn.textContent = '확인 중…'; msg.hidden = true;
     checkPass(n, c).then(function (j) {
       btn.disabled = false; btn.textContent = old;
-      if (!j.gate || j.ok) { if (j.gate) setPass(n, ncode(c)); useStudent(n); home(); return; }
+      applyCheck(n, c, j);
+      if (!j.gate || j.ok) { useStudent(n); home(); return; }
+      if (j.why === 'unit') { useStudent(n); home(); return; } /* 코드는 맞음 → '열어 주지 않은 과제' 안내 화면 */
       msg.textContent = '이름이나 학생 코드가 맞지 않아요. 선생님께 확인해 주세요.'; msg.hidden = false;
     }, function () { btn.disabled = false; btn.textContent = old; msg.textContent = '인터넷 연결을 확인하고 다시 눌러 주세요.'; msg.hidden = false; });
   }
+
   setTimeout(flush, 800);
   function DS(id) { return S.days[id] || (S.days[id] = { scores: {}, wrong: {}, started: null, finished: null, run: null, titles: (P.days.filter(function (d) { return d.id === id; })[0] || { steps: [] }).steps.map(function (x) { return x.title; }) }); }
 
@@ -349,11 +362,19 @@
         '<input id="nm" autocomplete="name" placeholder="예: 김민준" maxlength="12">' + (GATE ? '<input id="pc" inputmode="numeric" autocomplete="off" placeholder="학생 코드" maxlength="8" style="max-width:9em">' : '') + '<button class="btn" type="submit">' + (rs.length ? '새 이름으로 시작' : '저장') + '</button></form>';
     }
     if (needPass()) {
-      h += '<form class="card who" id="passform" style="margin-bottom:16px"><label for="pc" style="flex-basis:100%;font-weight:600"><b>' + E(S.name) + '</b> 학생, 선생님께 받은 <b>학생 코드</b>를 적어 주세요.</label>' +
+      var mp = myPass(S.name), deny = DENY[S.name];
+      if (deny === 'unit') h += '<form class="card who" id="passform" style="margin-bottom:16px"><p style="flex-basis:100%;margin:0;font-weight:600">' + E(S.name) + ' 학생에게는 아직 열리지 않은 과제예요.</p>' +
+        '<span class="note" style="flex-basis:100%">선생님이 열어 주시면 바로 들어올 수 있어요. 선생님께 말씀드려 주세요.</span>' +
+        '<button class="btn ghost" type="button" id="recheck">다시 확인하기</button>' +
+        '<button class="link" type="button" id="notme" style="flex-basis:100%;text-align:left">' + E(S.name) + ' 학생이 아니에요 (다른 이름으로)</button></form></div>';
+      else if (mp && !deny) h += '<div class="card" id="passform" style="margin-bottom:16px"><p style="margin:0">확인하고 있어요…</p><span class="note">인터넷이 연결되어 있어야 해요.</span></div></div>';
+      else h += '<form class="card who" id="passform" style="margin-bottom:16px"><label for="pc" style="flex-basis:100%;font-weight:600"><b>' + E(S.name) + '</b> 학생, 선생님께 받은 <b>학생 코드</b>를 적어 주세요.</label>' +
         '<span class="note" style="flex-basis:100%">처음 한 번만 적으면 다음부터는 바로 들어와요.</span><span class="note" id="pcbad" style="flex-basis:100%;color:var(--bad);font-weight:700" hidden></span>' +
         '<input id="pc" inputmode="numeric" autocomplete="off" placeholder="학생 코드" maxlength="8"><button class="btn" type="submit">확인</button>' +
         '<button class="link" type="button" id="notme" style="flex-basis:100%;text-align:left">' + E(S.name) + ' 학생이 아니에요 (다른 이름으로)</button></form></div>';
-      app.innerHTML = h; bindHome(); var pi = $('#pc'); if (pi) pi.focus(); return;
+      app.innerHTML = h; bindHome(); var pi = $('#pc'); if (pi) pi.focus();
+      if (mp && !deny) gateSync();
+      return;
     }
     var TABS = [['today', '오늘의 학습', '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>'], ['text', '본문', '<path d="M5 3h10l4 4v14H5z"/><path d="M9 12h6M9 16h4"/>'],
       ['types', '유형별 연습', '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>']];
@@ -518,7 +539,9 @@
       if (GATE && SHEET) { tryEnter(v, ($('#pc') || {}).value, bad, f.querySelector('[type=submit]')); return; }
       useStudent(v); home(); });
     var pf = $('#passform');
-    if (pf) pf.addEventListener('submit', function (e) { e.preventDefault(); tryEnter(S.name, $('#pc').value, $('#pcbad'), pf.querySelector('[type=submit]')); });
+    if (pf && pf.tagName === 'FORM' && $('#pc')) pf.addEventListener('submit', function (e) { e.preventDefault(); tryEnter(S.name, $('#pc').value, $('#pcbad'), pf.querySelector('[type=submit]')); });
+    var rc = $('#recheck'); if (rc) rc.onclick = function () { rc.disabled = true; rc.textContent = '확인 중…'; var mp = myPass(S.name);
+      checkPass(S.name, mp ? mp.c : '').then(function (j) { applyCheck(S.name, mp ? mp.c : '', j); home(); }, function () { rc.disabled = false; rc.textContent = '인터넷 연결을 확인해 주세요'; }); };
     var nm = $('#notme'); if (nm) nm.onclick = function () { S = load(''); lsSet('daily:who', ''); home(); };
     app.querySelectorAll('[data-who]').forEach(function (b) { b.onclick = function () { useStudent(b.dataset.who); home(); gateSync(); }; });
     app.querySelectorAll('[data-unwho]').forEach(function (b) { b.onclick = function () {
