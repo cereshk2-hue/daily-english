@@ -6,12 +6,12 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#2f5fd0">
+<meta name="theme-color" content="#101a3a">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
 <style>
 /* Layout: teacher board — grade tabs, then one column per publisher with unit rows (bridge-plank accent shared with student app) */
 :root {
@@ -84,6 +84,44 @@ h1 { font: 400 clamp(28px, 5vw, 38px)/1.1 var(--f-display); margin: 4px 0 0 }
 :root[data-theme="dark"] .priv { background: #3a1d1d; color: #ffb3b3 }
 .empty { color: var(--muted); padding: 24px 0 }
 .foot { margin-top: 28px; color: var(--muted); font-size: 13px; display: grid; gap: 4px }
+
+/* ===== 2안: 학습 앱 디자인 (학생 화면과 같은 느낌) ===== */
+:root { --bg: #f5f6fa; --surface: #fff; --ink: #0f172a; --muted: #64748b; --line: #e6e9f0; --accent: #2643c4; --accent-soft: #eef1fd; --on-accent: #fff;
+  --plank: #2643c4; --plank-soft: #eef1fd; --plank-empty: #e3e7f1; --ok: #12805c; --navy: #101a3a;
+  --shadow: 0 1px 2px rgba(15,23,42,.04), 0 8px 24px rgba(15,23,42,.06);
+  --f-display: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; --f-body: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #0d111b; --surface: #161c29; --ink: #e8ecf4; --muted: #95a0b6; --line: #262e3f; --accent: #7d97ff; --accent-soft: #1d2642; --on-accent: #0b1020; --plank: #7d97ff; --plank-empty: #232b3c; --ok: #4fc795; --navy: #0a1230; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25) } }
+:root[data-theme="dark"] { --bg: #0d111b; --surface: #161c29; --ink: #e8ecf4; --muted: #95a0b6; --line: #262e3f; --accent: #7d97ff; --accent-soft: #1d2642; --on-accent: #0b1020; --plank: #7d97ff; --plank-empty: #232b3c; --ok: #4fc795; --navy: #0a1230; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25) }
+body { -webkit-font-smoothing: antialiased; letter-spacing: -.005em }
+#hub { padding-block: 0 56px }
+header.htop { display: block; background: var(--navy); color: #fff; margin: 0 calc(-1 * max(16px, env(safe-area-inset-left, 0px))) 0; padding: 20px max(18px, env(safe-area-inset-left, 0px)) 18px; position: relative; overflow: hidden }
+header.htop::before { content: ""; position: absolute; right: -80px; bottom: -150px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(84,118,255,.5), transparent 65%) }
+header.htop > * { position: relative }
+@media (min-width: 1112px) { header.htop { margin: 16px 0 0; border-radius: 20px } }
+.htop-bar { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #aab6d8 }
+.install { margin-left: auto; border: 0; background: rgba(255,255,255,.12); color: #fff; border-radius: 99px; padding: 6px 12px; font-weight: 700; font-size: 13px }
+header.htop h1 { font: 800 clamp(26px, 5vw, 34px)/1.2 var(--f-display); letter-spacing: -.02em; margin: 12px 0 2px; color: #fff }
+header.htop p { margin: 0; color: #aab6d8; font-size: 13.5px }
+.dash { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; background: #fff; color: #101a3a; border-radius: 12px; padding: 10px 14px; font-weight: 800; font-size: 14.5px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,.2) }
+.grades { background: transparent; padding: 0; margin-top: 18px; gap: 6px; flex-wrap: nowrap; overflow-x: auto; width: auto; scrollbar-width: none }
+.grades::-webkit-scrollbar { display: none }
+.grades button { flex: none }
+.grades button { background: rgba(255,255,255,.1); color: #c9d3ee; border-radius: 99px; padding: 7px 16px; font-weight: 700 }
+.grades button.on { background: #fff; color: #101a3a; box-shadow: none }
+.grades small { color: inherit; opacity: .7 }
+.board { margin-top: 18px; gap: 14px }
+.pub { border: 0; border-radius: 18px; box-shadow: var(--shadow); padding: 18px }
+.pub h2 { font: 800 19px/1.25 var(--f-display); letter-spacing: -.02em }
+.unit { padding: 14px 0 }
+.unit-head .no { color: var(--accent); font-weight: 800 }
+.unit-head .t { font-weight: 800 }
+.days span { background: var(--accent-soft); border: 0; color: var(--accent); font-weight: 600; border-radius: 8px; padding: 3px 9px }
+.btn { border-radius: 12px; font-weight: 700; min-height: 40px }
+.btn.ghost { border: 1.5px solid var(--line) }
+.qrthumb { border-radius: 12px; border: 1px solid var(--line) }
+.qrbox { border-radius: 20px } .qrbox h3 { font: 800 22px/1.2 var(--f-display) }
+.linktext { color: var(--muted) }
+.foot { font-size: 12.5px }
 </style>
 </head>
 <body>
@@ -109,16 +147,18 @@ window.UNITS = [{"folder": "h1-donga-lee-L3-h5syj", "grade": "고1", "publisher"
 
   var CANSHARE = !!navigator.share && !!(window.matchMedia && matchMedia('(pointer: coarse)').matches);
   var SENDLBL = CANSHARE ? '학생에게 링크 보내기' : '학생 링크 복사';
+  var DASH = 'https://script.google.com/macros/s/AKfycbx1g7zaET0p8pWuOGURbn9o5g7jvO35NDMohcg5Y5p5jwjnAnY3D66KHLkqkdi2hkqt/exec?view=dW6ypYyx';
   function studentURL(u) { return u.link || new URL(u.folder + '/', location.href).href; }
 
   function draw() {
-    var h = '<header><div><div class="eyebrow">선생님용 · 학생에게 이 주소는 주지 마세요</div><h1>데일리 영어 보드</h1>' +
-      '<div class="planks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></div>' +
-      (deferred && !standalone ? '<button class="install" id="inst">컴퓨터에 앱으로 설치</button>' : '') + '</header>';
+    var h = '<header class="htop"><div class="htop-bar"><span>선생님용 · 학생에게 이 주소는 주지 마세요</span>' +
+      (deferred && !standalone ? '<button class="install" id="inst">앱으로 설치</button>' : '') + '</div>' +
+      '<h1>데일리 영어 보드</h1><p>단원 ' + U.length + '개 · 학생 링크 · QR</p>' +
+      '<a class="dash" href="' + DASH + '" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>학생 현황판 열기 →</a>';
     h += '<nav class="grades" role="tablist" aria-label="학년">' + grades.map(function (g) {
       var n = U.filter(function (u) { return u.grade === g; }).length;
       return '<button role="tab" aria-selected="' + (g === cur) + '" class="' + (g === cur ? 'on' : '') + '" data-g="' + E(g) + '">' + E(g) + '<small>' + n + '</small></button>';
-    }).join('') + '</nav>';
+    }).join('') + '</nav></header>';
     var list = U.filter(function (u) { return u.grade === cur; }), pubs = [];
     list.forEach(function (u) { if (pubs.indexOf(u.publisher) < 0) pubs.push(u.publisher); });
     h += '<div class="board">' + (pubs.length ? pubs.map(function (p) {

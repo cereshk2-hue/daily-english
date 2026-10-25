@@ -61,21 +61,23 @@ function boardData() {
 
 var BOARD_HTML = '<!doctype html><html><head><base target="_top"><meta charset="utf-8">' +
 '<style>' +
-':root{--bg:#f4f6fb;--card:#fff;--ink:#1b2333;--muted:#6b7487;--line:#e3e7ef;--blue:#2f5fd0;--ok:#1d8549;--warn:#b26a00;--bad:#cc3434}' +
-'*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}' +
-'header{position:sticky;top:0;z-index:2;background:var(--blue);color:#fff;padding:14px 16px 10px}h1{margin:0;font-size:19px}' +
-'.sub{font-size:12px;opacity:.85;margin-top:2px}.bar{display:flex;gap:6px;overflow-x:auto;margin-top:10px;padding-bottom:2px}' +
-'.bar button{flex:none;border:0;border-radius:99px;padding:6px 12px;font:inherit;font-size:13px;background:rgba(255,255,255,.18);color:#fff}.bar button.on{background:#fff;color:var(--blue);font-weight:700}' +
-'input{width:100%;margin-top:8px;border:0;border-radius:10px;padding:9px 12px;font:inherit}' +
-'main{max-width:640px;margin:0 auto;padding:12px 12px 40px}.sum{display:flex;gap:8px;margin:2px 0 12px;font-size:13px;color:var(--muted);flex-wrap:wrap}' +
-'.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px}' +
-'.top{display:flex;align-items:center;gap:12px}.av{flex:none;width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:700}' +
-'.nm{font-size:18px;font-weight:700}.gr{font-size:13px;color:var(--muted);margin-left:6px;font-weight:400}.when{margin-left:auto;font-size:12px;color:var(--muted);text-align:right}' +
-'.when.today{color:var(--ok);font-weight:700}.when.old{color:var(--bad)}' +
-'.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px;margin-top:12px}.grid small{display:block;color:var(--muted);font-size:12px}.grid b{font-size:18px}' +
-'.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.tag{font-size:12px;border-radius:99px;padding:3px 9px;background:#eef1f7}.tag.w{background:#fff1d6;color:var(--warn)}.tag.b{background:#fbe5e5;color:var(--bad)}.tag.o{background:#e3f4e6;color:var(--ok)}' +
-'details{margin-top:10px;border-top:1px solid var(--line);padding-top:8px}summary{cursor:pointer;color:var(--blue);font-size:13px}' +
-'.row{padding:8px 0;border-bottom:1px dashed var(--line);font-size:13px}.row:last-child{border:0}.row .u{color:var(--muted)}.row .p{font-weight:700}.row .p.done{color:var(--ok)}.row .p.rev{color:var(--warn)}.row .wk{color:var(--bad);font-size:12px}' +
+'@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap");' +
+':root{--bg:#f5f6fa;--card:#fff;--ink:#0f172a;--muted:#64748b;--line:#e6e9f0;--blue:#2643c4;--soft:#eef1fd;--navy:#101a3a;--ok:#12805c;--oks:#e7f6ef;--warn:#b26a00;--warns:#fff3dc;--bad:#d1435b;--bads:#fdecef}' +
+'*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Noto Sans KR",-apple-system,"Apple SD Gothic Neo",sans-serif;-webkit-font-smoothing:antialiased;letter-spacing:-.005em}' +
+'header{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding:18px 16px 16px}header:before{content:"";position:absolute;right:-80px;bottom:-150px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(84,118,255,.5),transparent 65%)}header>*{position:relative}' +
+'h1{margin:0;font-size:24px;font-weight:800;letter-spacing:-.02em}' +
+'.sub{font-size:12.5px;color:#aab6d8;margin-top:2px}.bar{display:flex;gap:6px;overflow-x:auto;margin-top:14px;padding-bottom:2px;scrollbar-width:none}' +
+'.bar button{flex:none;border:0;border-radius:99px;padding:7px 14px;font:inherit;font-size:13px;font-weight:700;background:rgba(255,255,255,.1);color:#c9d3ee}.bar button.on{background:#fff;color:var(--navy)}' +
+'input{width:100%;margin-top:10px;border:0;border-radius:12px;padding:10px 14px;font:inherit;background:rgba(255,255,255,.12);color:#fff}input::placeholder{color:#aab6d8}' +
+'main{max-width:680px;margin:0 auto;padding:14px 14px 40px}.sum{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 14px}.sum div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px}.sum small{display:block;font-size:11.5px;color:var(--muted)}.sum b{font-size:19px;font-weight:800}' +
+'.card{background:var(--card);border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px rgba(15,23,42,.06)}' +
+'.top{display:flex;align-items:center;gap:12px}.av{flex:none;width:44px;height:44px;border-radius:14px;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:17px}' +
+'.nm{font-size:18px;font-weight:800;letter-spacing:-.02em}.gr{font-size:12.5px;color:var(--muted);margin-left:6px;font-weight:500}.when{margin-left:auto;font-size:12px;color:var(--muted);text-align:right;font-weight:600;white-space:nowrap}' +
+'.when.today{color:var(--ok)}.when.old{color:var(--bad)}' +
+'.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.grid div{background:var(--bg);border-radius:12px;padding:9px 12px}.grid small{display:block;color:var(--muted);font-size:11.5px}.grid b{font-size:17px;font-weight:800;letter-spacing:-.02em}' +
+'.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.tag{font-size:12px;font-weight:700;border-radius:99px;padding:4px 10px;background:var(--soft);color:var(--blue)}.tag.w{background:var(--warns);color:var(--warn)}.tag.b{background:var(--bads);color:var(--bad)}.tag.o{background:var(--oks);color:var(--ok)}' +
+'details{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}summary{cursor:pointer;color:var(--blue);font-size:13px;font-weight:700}' +
+'.row{padding:9px 0;border-bottom:1px solid var(--line);font-size:13px}.row:last-child{border:0}.row .u{color:var(--muted)}.row .p{font-weight:800}.row .p.done{color:var(--ok)}.row .p.rev{color:var(--warn)}.row .wk{color:var(--bad);font-size:12px}' +
 '.empty{text-align:center;color:var(--muted);padding:40px 0}' +
 '</style></head><body><header><h1>학생 현황판</h1><div class="sub" id="made"></div><div class="bar" id="bar"></div><input id="q" placeholder="이름 찾기"></header><main><div class="sum" id="sum"></div><div id="list"></div></main>' +
 '<script>var D=<?!= data ?>;' +
@@ -89,7 +91,7 @@ var BOARD_HTML = '<!doctype html><html><head><base target="_top"><meta charset="
 '[].forEach.call(document.querySelectorAll("[data-f]"),function(x){x.onclick=function(){F=x.dataset.f;bar();draw()}})}' +
 'function draw(){var L=D.list.filter(function(s){if(Q&&s.name.indexOf(Q)<0)return false;if(F==="notoday")return dk(s.last)!==D.today;if(F==="todo")return s.reviewLeft||s.weakLeft;if(F.indexOf("g:")===0)return s.grades.indexOf(F.slice(2))>=0;return true});' +
 'var td=D.list.filter(function(s){return dk(s.last)===D.today}).length;' +
-'document.getElementById("sum").innerHTML="<span>학생 "+D.list.length+"명</span><span>· 오늘 학습 "+td+"명</span><span>· 보이는 학생 "+L.length+"명</span>";' +
+'var todo=D.list.filter(function(s){return s.reviewLeft||s.weakLeft}).length;document.getElementById("sum").innerHTML="<div><small>전체 학생</small><b>"+D.list.length+"명</b></div><div><small>오늘 학습</small><b>"+td+"명</b></div><div><small>할 일 남음</small><b>"+todo+"명</b></div>";' +
 'document.getElementById("list").innerHTML=L.length?L.map(function(s){var age=(Date.now()-s.last)/864e5,cls=dk(s.last)===D.today?"today":age>3?"old":"";' +
 'var acc=s.solved?Math.round(s.right/s.solved*100):0;' +
 'return"<div class=card><div class=top><div class=av>"+E(s.name.charAt(0))+"</div><div><span class=nm>"+E(s.name)+"</span><span class=gr>"+E(s.grades.join(" · "))+"</span></div><div class=\\"when "+cls+"\\">"+(cls==="today"?"오늘 ":"")+ft(s.last)+"</div></div>"+' +
