@@ -306,6 +306,7 @@
       h += '<form class="card who" id="nameform" style="margin-bottom:16px"><label for="nm" style="flex-basis:100%;font-weight:600">' + (rs.length ? '누가 공부하나요? 내 이름을 눌러 주세요' : '이름을 먼저 적어 주세요') + '</label>' +
         (rs.length ? '<div class="whochips">' + rs.map(function (n) { return '<span class="whochip"><button type="button" class="btn ghost" data-who="' + E(n) + '">' + E(n) + '</button><button type="button" class="x" data-unwho="' + E(n) + '" aria-label="' + E(n) + ' 목록에서 빼기" title="목록에서 빼기(기록은 남아요)">×</button></span>'; }).join('') + '</div>' +
           '<span class="note" style="flex-basis:100%">내 이름이 없으면 아래에 새로 적어요. 같은 이름을 적으면 내 기록이 그대로 이어져요.</span>' : '') +
+        '<span class="note" style="flex-basis:100%">선생님이 알아볼 수 있게 <b>한글 이름 전체</b>(예: 김민준)를 정확히 적어 주세요.</span><span class="note" id="nmbad" style="flex-basis:100%;color:var(--bad);font-weight:700" hidden>이름은 띄어쓰기 없이 한글로 적어 주세요. 예: 김민준</span>' +
         '<input id="nm" autocomplete="name" placeholder="예: 김민준" maxlength="12"><button class="btn" type="submit">' + (rs.length ? '새 이름으로 시작' : '저장') + '</button></form>';
     }
     var TABS = [['today', '오늘의 학습', '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>'], ['text', '본문', '<path d="M5 3h10l4 4v14H5z"/><path d="M9 12h6M9 16h4"/>'],
@@ -466,7 +467,8 @@
     };
     var ko = $('#kakaook'); if (ko) ko.onclick = function () { S.kakaoOk = true; save(); var n = $('#kakaonote'); if (n) n.remove(); };
     var f = $('#nameform');
-    if (f) f.addEventListener('submit', function (e) { e.preventDefault(); var v = $('#nm').value.replace(/\s+/g, ' ').trim(); if (!v) { $('#nm').focus(); return; } useStudent(v); home(); });
+    if (f) f.addEventListener('submit', function (e) { e.preventDefault(); var v = $('#nm').value.replace(/\s+/g, '').trim(); var bad = $('#nmbad');
+      if (!/^[가-힣]{2,5}$/.test(v)) { if (bad) bad.hidden = false; $('#nm').focus(); return; } useStudent(v); home(); });
     app.querySelectorAll('[data-who]').forEach(function (b) { b.onclick = function () { useStudent(b.dataset.who); home(); }; });
     app.querySelectorAll('[data-unwho]').forEach(function (b) { b.onclick = function () {
       if (b.dataset.arm) { dropRoster(b.dataset.unwho); home(); return; }
