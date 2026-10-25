@@ -168,7 +168,7 @@ window.UNITS = [{"folder": "h1-donga-lee-L3-h5syj", "grade": "고1", "publisher"
           return '<div class="unit"><div class="unit-top"><div class="unit-head"><span class="no">' + E(u.unit) + '</span><span class="t">' + E(u.title) + '</span></div>' +
             (window.QR && window.QR[u.folder] ? '<button class="qrthumb" data-qr="' + E(u.folder) + '" aria-label="' + E(u.title) + ' QR 크게 보기">' + window.QR[u.folder] + '<small>눌러서 크게 보기</small></button>' : '') + '</div>' +
             '<div class="days">' + u.days.map(function (d) { return '<span>' + E(d.name) + ' ' + E(d.range) + ' · ' + d.steps + '단계</span>'; }).join('') + '</div>' +
-            '<div class="acts"><a class="btn" href="' + E(u.folder) + '/?hub=' + E(window.BOARD) + '">열기</a>' +
+            '<div class="acts"><a class="btn" href="' + E(studentURL(u)) + '?hub=' + E(window.BOARD) + '" target="_blank" rel="noopener">열기</a>' +
             '<button class="btn ghost" data-copy="' + E(u.folder) + '">' + SENDLBL + '</button></div>' +
             '<a class="linktext" href="' + E(studentURL(u)) + '" target="_blank" rel="noopener">' + E(studentURL(u)) + '</a>' +
             (u.priv ? '<div class="priv"><b>아직 비공개라 학생이 못 열어요.</b> 위 주소를 눌러 화면을 연 뒤 오른쪽 위 <b>공유 → "링크가 있는 모든 사람"</b>으로 바꿔 주세요.</div>' : '') + '</div>';
