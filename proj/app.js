@@ -740,7 +740,7 @@
     if ((b = $('#tores'))) b.onclick = function () { result(di); };
     if ((b = $('#toreview'))) b.onclick = function () { retryWrong(di); };
     if ((b = $('#tonext'))) b.onclick = function () { startStep(di, dayProgress(P.days[di]).next); };
-    if ((b = $('#back'))) b.onclick = function () { pr === '오답 학습' ? result(di) : home(pr === '유형별 연습' ? 'types' : 'today'); };
+    if ((b = $('#back'))) b.onclick = function () { pr === '오답 학습' || (pr === '보충 연습' && dayProgress(P.days[di]).finished && !needReview(P.days[di])) ? result(di) : home(pr === '유형별 연습' ? 'types' : 'today'); };
     if ((b = $('#again'))) b.onclick = function () { startFree(di, si, pr); };
   }
 
@@ -856,6 +856,8 @@
         return '<div><span>' + (i + 1) + '회차</span><b>' + h.pct + '점</b><small>' + h.c + '/' + h.t + (h.finished ? ' · ' + fmtTime(h.finished) : '') + (h.review ? ' · 오답 ' + h.review.n + '개' : '') + '</small></div>'; }).join('') + '</div>' : '') +
       '<div class="rc-foot"><span>' + (st.finished ? fmtTime(st.finished) + ' 완료' : '') + (mins ? ' · ' + mins + '분' : '') + '</span><span>확인 코드 <b>' + checkCode(d) + '</b></span></div>' +
       '</section><p class="note" style="margin:0;text-align:center">카드만 캡처하면 결과가 다 담겨요.</p>';
+    if (weakList(d).length) h += '<section class="card stack" style="gap:10px"><h2>빨간 영역 다시 풀기</h2><p class="note" style="margin:0">70% 미만인 영역이에요. 눌러서 다시 풀면 기록이 선생님께 전달되고, 70%를 넘기면 ✓가 붙어요.</p><div class="weakbtns">' +
+      weakList(d).map(function (w) { return '<button class="btn ghost' + (w.ok ? ' wdone' : '') + '" data-weak="' + di + ':' + w.i + '">' + (w.ok ? '✓ ' : '') + E(w.s.title) + ' <small>' + w.sc[0] + '/' + w.sc[1] + (w.n ? ' → ' + w.best.c + '/' + w.best.t : '') + '</small></button>'; }).join('') + '</div></section>';
     h += '<section class="card stack" style="gap:12px"><h2>선생님께 결과 보내기</h2>' +
       '<button class="btn plank wide" id="kakao">카톡으로 보내기</button>' +
       '<p class="note" style="margin:0" id="kakaonote">누르면 공유 창이 열려요. <b>카카오톡 → 선생님 채팅방</b>을 고르고 전송을 누르세요.</p>' +
@@ -868,6 +870,7 @@
       '<button class="btn ghost" id="reset">' + (attemptNo(d) + 1) + '회차 다시 도전하기</button><p class="note" id="resetnote" hidden>다시 누르면 지금 점수(' + pct + '점)는 ' + attemptNo(d) + '회차 기록으로 남고, ' + (attemptNo(d) + 1) + '회차를 처음부터 시작해요.</p></section></div>';
     app.innerHTML = h;
     $('#quit').onclick = function () { home('today'); };
+    app.querySelectorAll('[data-weak]').forEach(function (b) { b.onclick = function () { var p = b.dataset.weak.split(':'); startFree(+p[0], +p[1], '보충 연습'); }; });
     $('#kakao').onclick = function () {
       var btn = this, note = $('#kakaonote');
       var fallback = function () {
