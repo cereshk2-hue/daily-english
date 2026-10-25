@@ -10,9 +10,14 @@ var KEY = 'tBj6XBpuNkxf'; // 학생 앱(config.js)의 SHEET_KEY 와 같아야 �
 var NOW_HEAD = ['학생', '학년·교재', '단원', 'DAY', '범위', '진행', '점수', '오답 학습', '회차', '시작', '마지막 활동', '완료', '걸린 시간(분)', '확인 코드', '틀린 것', '기기', '약한 유형 보충'];
 var LOG_HEAD = ['시각', '학생', '학년·교재', '단원', 'DAY', '무엇', '단계', '단계 점수', '진행', '누적 점수', '기기'];
 
+var ROSTER = '학생명단', ROSTER_HEAD = ['이름', '학생 코드', '메모'];
+// 학생명단 탭에 한 명이라도 적으면 그때부터 명단에 있는 학생(이름 + 학생 코드)만 학습 화면에 들어올 수 있어요.
+// 비워 두면 예전처럼 누구나 들어와요. 그만둔 학생은 그 줄만 지우면 다음에 열 때부터 막혀요.
+
 var VIEW = 'dW6ypYyx'; // 현황판 열쇠: 주소 끝 ?view=dW6ypYyx 가 있어야 학생 현황판이 열려요
 
 function doGet(e) {
+  if (e && e.parameter && e.parameter.check) return checkRoster(e.parameter);
   if (e && e.parameter && e.parameter.view === VIEW) {
     var t = HtmlService.createTemplate(BOARD_HTML);
     t.data = JSON.stringify(boardData());
@@ -163,10 +168,31 @@ function sheet(ss, name, head) {
 function d(t) { return t ? new Date(t) : ''; }
 function out(s) { return ContentService.createTextOutput(s); }
 
+/* 학생 앱이 물어봄: 명단이 켜져 있나(gate), 이 이름 + 코드가 명단에 있나(ok) */
+function nc(c) { return String(c == null ? '' : c).replace(/\D/g, '').replace(/^0+/, ''); }
+function rosterSheet(ss) {
+  var sh = ss.getSheetByName(ROSTER);
+  if (!sh) { sh = sheet(ss, ROSTER, ROSTER_HEAD); sh.getRange('B:B').setNumberFormat('@'); sh.setColumnWidth(3, 220); }
+  return sh;
+}
+function checkRoster(p) {
+  var res = { gate: false, ok: false };
+  try {
+    var sh = rosterSheet(SpreadsheetApp.getActiveSpreadsheet());
+    var rows = sh.getLastRow() > 1 ? sh.getRange(2, 1, sh.getLastRow() - 1, 2).getValues().filter(function (v) { return String(v[0]).trim(); }) : [];
+    if (rows.length) {
+      res.gate = true;
+      var n = String(p.name || '').replace(/\s+/g, ''), c = nc(p.code);
+      res.ok = !!n && !!c && rows.some(function (v) { return String(v[0]).replace(/\s+/g, '') === n && nc(v[1]) === c; });
+    }
+  } catch (err) { res = { gate: false, ok: false }; }
+  return ContentService.createTextOutput(JSON.stringify(res)).setMimeType(ContentService.MimeType.JSON);
+}
+
 /** 처음 한 번 실행: 탭 만들기 + 권한 허용 */
 function setup() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  sheet(ss, '현황', NOW_HEAD); sheet(ss, '기록', LOG_HEAD);
+  sheet(ss, '현황', NOW_HEAD); sheet(ss, '기록', LOG_HEAD); rosterSheet(ss);
   var first = ss.getSheetByName('시트1') || ss.getSheetByName('Sheet1');
   if (first && ss.getSheets().length > 2 && first.getLastRow() === 0) ss.deleteSheet(first);
 }

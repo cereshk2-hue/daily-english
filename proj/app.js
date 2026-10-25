@@ -106,6 +106,42 @@
         function () { flushing = false; });
   }
   try { window.addEventListener('online', flush); document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible') flush(); }); } catch (e) {}
+
+  /* ---------- 학생 명단 확인 ----------
+     선생님 시트의 '학생명단' 탭(이름 · 학생 코드)에 있는 학생만 들어온다. 탭이 비어 있으면 예전처럼 누구나.
+     한 번 확인된 학생은 이 기기에 기억(daily:pass) → 인터넷이 잠깐 안 돼도 공부 가능. 열 때마다 다시 확인해서
+     선생님이 명단에서 지우면 다음에 열 때부터 막힌다. */
+  var PASSK = 'daily:pass', GATE = lsGet('daily:gate') === '1';
+  function passes() { try { return JSON.parse(lsGet(PASSK)) || {}; } catch (e) { return {}; } }
+  function setPass(n, c) { var p = passes(); if (c == null) delete p[n]; else p[n] = { c: c, t: Date.now() }; lsSet(PASSK, JSON.stringify(p)); }
+  function ncode(c) { return String(c == null ? '' : c).replace(/\D/g, '').replace(/^0+/, ''); }
+  function needPass() { return GATE && !!SHEET && !!S.name && !passes()[S.name]; }
+  function checkPass(n, c) { /* → {gate, ok}. 시트가 아직 옛 코드면 gate:false. 연결이 안 되면 실패(reject) */
+    var u = SHEET + (SHEET.indexOf('?') < 0 ? '?' : '&') + 'check=1&name=' + encodeURIComponent(n || '') + '&code=' + encodeURIComponent(ncode(c)) + '&_=' + Date.now();
+    return fetch(u, { cache: 'no-store' }).then(function (r) { return r.text(); }).then(function (t) {
+      var j = null; try { j = JSON.parse(t); } catch (e) {}
+      if (!j || typeof j.gate !== 'boolean') j = { gate: false, ok: false };
+      GATE = j.gate; lsSet('daily:gate', GATE ? '1' : '');
+      return j;
+    });
+  }
+  function gateSync() { /* 화면을 열 때: 명단이 켜졌는지, 지금 학생이 아직 명단에 있는지 */
+    if (!SHEET || !window.fetch) return;
+    var n = S.name, pc = n && passes()[n], was = GATE + '|' + needPass();
+    checkPass(n, pc ? pc.c : '').then(function (j) {
+      if (j.gate && n && pc) { if (j.ok) setPass(n, pc.c); else setPass(n, null); }
+      if (was !== GATE + '|' + needPass() && app.querySelector('.bnav, #nameform, #passform')) { var y = window.scrollY; home(); window.scrollTo(0, y); }
+    }, function () {});
+  }
+  function tryEnter(n, c, msg, btn) {
+    if (!ncode(c)) { msg.textContent = '선생님께 받은 학생 코드를 적어 주세요.'; msg.hidden = false; return; }
+    var old = btn.textContent; btn.disabled = true; btn.textContent = '확인 중…'; msg.hidden = true;
+    checkPass(n, c).then(function (j) {
+      btn.disabled = false; btn.textContent = old;
+      if (!j.gate || j.ok) { if (j.gate) setPass(n, ncode(c)); useStudent(n); home(); return; }
+      msg.textContent = '이름이나 학생 코드가 맞지 않아요. 선생님께 확인해 주세요.'; msg.hidden = false;
+    }, function () { btn.disabled = false; btn.textContent = old; msg.textContent = '인터넷 연결을 확인하고 다시 눌러 주세요.'; msg.hidden = false; });
+  }
   setTimeout(flush, 800);
   function DS(id) { return S.days[id] || (S.days[id] = { scores: {}, wrong: {}, started: null, finished: null, run: null, titles: (P.days.filter(function (d) { return d.id === id; })[0] || { steps: [] }).steps.map(function (x) { return x.title; }) }); }
 
@@ -310,7 +346,14 @@
         (rs.length ? '<div class="whochips">' + rs.map(function (n) { return '<span class="whochip"><button type="button" class="btn ghost" data-who="' + E(n) + '">' + E(n) + '</button><button type="button" class="x" data-unwho="' + E(n) + '" aria-label="' + E(n) + ' 목록에서 빼기" title="목록에서 빼기(기록은 남아요)">×</button></span>'; }).join('') + '</div>' +
           '<span class="note" style="flex-basis:100%">내 이름이 없으면 아래에 새로 적어요. 같은 이름을 적으면 내 기록이 그대로 이어져요.</span>' : '') +
         '<span class="note" style="flex-basis:100%">선생님이 알아볼 수 있게 <b>한글 이름 전체</b>(예: 김민준)를 정확히 적어 주세요.</span><span class="note" id="nmbad" style="flex-basis:100%;color:var(--bad);font-weight:700" hidden>이름은 띄어쓰기 없이 한글로 적어 주세요. 예: 김민준</span>' +
-        '<input id="nm" autocomplete="name" placeholder="예: 김민준" maxlength="12"><button class="btn" type="submit">' + (rs.length ? '새 이름으로 시작' : '저장') + '</button></form>';
+        '<input id="nm" autocomplete="name" placeholder="예: 김민준" maxlength="12">' + (GATE ? '<input id="pc" inputmode="numeric" autocomplete="off" placeholder="학생 코드" maxlength="8" style="max-width:9em">' : '') + '<button class="btn" type="submit">' + (rs.length ? '새 이름으로 시작' : '저장') + '</button></form>';
+    }
+    if (needPass()) {
+      h += '<form class="card who" id="passform" style="margin-bottom:16px"><label for="pc" style="flex-basis:100%;font-weight:600"><b>' + E(S.name) + '</b> 학생, 선생님께 받은 <b>학생 코드</b>를 적어 주세요.</label>' +
+        '<span class="note" style="flex-basis:100%">처음 한 번만 적으면 다음부터는 바로 들어와요.</span><span class="note" id="pcbad" style="flex-basis:100%;color:var(--bad);font-weight:700" hidden></span>' +
+        '<input id="pc" inputmode="numeric" autocomplete="off" placeholder="학생 코드" maxlength="8"><button class="btn" type="submit">확인</button>' +
+        '<button class="link" type="button" id="notme" style="flex-basis:100%;text-align:left">' + E(S.name) + ' 학생이 아니에요 (다른 이름으로)</button></form></div>';
+      app.innerHTML = h; bindHome(); var pi = $('#pc'); if (pi) pi.focus(); return;
     }
     var TABS = [['today', '오늘의 학습', '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>'], ['text', '본문', '<path d="M5 3h10l4 4v14H5z"/><path d="M9 12h6M9 16h4"/>'],
       ['types', '유형별 연습', '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>']];
@@ -471,8 +514,13 @@
     var ko = $('#kakaook'); if (ko) ko.onclick = function () { S.kakaoOk = true; save(); var n = $('#kakaonote'); if (n) n.remove(); };
     var f = $('#nameform');
     if (f) f.addEventListener('submit', function (e) { e.preventDefault(); var v = $('#nm').value.replace(/\s+/g, '').trim(); var bad = $('#nmbad');
-      if (!/^[가-힣]{2,5}$/.test(v)) { if (bad) bad.hidden = false; $('#nm').focus(); return; } useStudent(v); home(); });
-    app.querySelectorAll('[data-who]').forEach(function (b) { b.onclick = function () { useStudent(b.dataset.who); home(); }; });
+      if (!/^[가-힣]{2,5}$/.test(v)) { bad.textContent = '이름은 띄어쓰기 없이 한글로 적어 주세요. 예: 김민준'; bad.hidden = false; $('#nm').focus(); return; }
+      if (GATE && SHEET) { tryEnter(v, ($('#pc') || {}).value, bad, f.querySelector('[type=submit]')); return; }
+      useStudent(v); home(); });
+    var pf = $('#passform');
+    if (pf) pf.addEventListener('submit', function (e) { e.preventDefault(); tryEnter(S.name, $('#pc').value, $('#pcbad'), pf.querySelector('[type=submit]')); });
+    var nm = $('#notme'); if (nm) nm.onclick = function () { S = load(''); lsSet('daily:who', ''); home(); };
+    app.querySelectorAll('[data-who]').forEach(function (b) { b.onclick = function () { useStudent(b.dataset.who); home(); gateSync(); }; });
     app.querySelectorAll('[data-unwho]').forEach(function (b) { b.onclick = function () {
       if (b.dataset.arm) { dropRoster(b.dataset.unwho); home(); return; }
       b.dataset.arm = '1'; b.textContent = '빼기?'; setTimeout(function () { delete b.dataset.arm; b.textContent = '×'; }, 2500); }; });
@@ -898,4 +946,5 @@
 
   if (/[?&]test\b/.test(location.search)) window.__dbg = function () { return RS; };
   home();
+  gateSync();
 })();
