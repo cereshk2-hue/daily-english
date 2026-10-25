@@ -89,7 +89,7 @@
         done: g.done, total: d.steps.length, c: g.c, tt: g.t, pct: pctOf(g.c, g.t), attempt: attemptNo(d), finished: !!g.finished,
         review: !g.finished ? '' : !wrongCount(d) ? '틀린 문제 없음' : st.reviewDone ? '완료' : '안 함', wrongN: wrongCount(d),
         started: st.started || 0, ended: st.finished || 0, mins: st.started && st.finished ? Math.max(1, Math.round((st.finished - st.started) / 60000)) : '',
-        code: g.finished ? checkCode(d) : '', wrong: g.finished ? w.join(' / ') : '', dev: devId(), step: '', stepScore: '' };
+        code: g.finished ? checkCode(d) : '', wrong: g.finished ? w.join(' / ') : '', weak: g.finished ? weakText(d) : '', dev: devId(), step: '', stepScore: '' };
       if (extra) Object.keys(extra).forEach(function (k) { row[k] = extra[k]; });
       var q = outbox(); q.push(row); lsSet(OUTK, JSON.stringify(q.slice(-300)));
     } catch (e) {}
@@ -116,6 +116,18 @@
   function strip(h) { return String(h).replace(/<[^>]+>/g, '').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&'); }
   function cut(s, n) { s = String(s); return s.length > n ? s.slice(0, n) + '…' : s; }
   function $(sel) { return app.querySelector(sel); }
+  /* 약한 유형(70% 미만)과 그 뒤 보충 연습 결과: 선생님 시트·결과 카드에 쓰인다 */
+  function weakList(d) {
+    var st = DS(d.id), out = [];
+    d.steps.forEach(function (s, i) { var sc = st.scores[i]; if (!sc || sc[0] / sc[1] >= 0.7) return;
+      var ex = (st.extra || {})[i] || [], last = ex[ex.length - 1], best = null;
+      ex.forEach(function (x) { if (!best || x.c / x.t > best.c / best.t) best = x; });
+      out.push({ i: i, s: s, sc: sc, n: ex.length, last: last, ok: !!best && best.c / best.t >= 0.7, best: best }); });
+    return out;
+  }
+  function weakText(d) {
+    return weakList(d).map(function (w) { return stepShort(w.s) + ' ' + w.sc[0] + '/' + w.sc[1] + ' → ' + (w.n ? '보충 ' + w.best.c + '/' + w.best.t + (w.ok ? ' ✓' : '') + (w.n > 1 ? ' (' + w.n + '번)' : '') + ' ' + fmtTime(w.last.at) : '보충 안 함'); }).join(' / ');
+  }
   function stepShort(st) { return st.type === 'pick' ? st.title : st.type === 'mc' && /실전/.test(st.title) ? '실전' : st.type === 'mc' && /일치/.test(st.title) ? '일치' : SHORT[st.type]; }
   var CARD = { vocab: '단어', tf: 'T/F', verb: '동사', error: '오류', order: '순서', scramble: '스크램블', mc: '문법', insert: '삽입', odd: '어색', blank: '빈칸' };
   function cardLabel(st) { return st.type === 'pick' ? (/어법/.test(st.title) ? '어법' : '어휘') : st.type === 'mc' && /실전/.test(st.title) ? '실전' : st.type === 'mc' && /일치/.test(st.title) ? '일치' : CARD[st.type]; }
@@ -359,7 +371,7 @@
         }).join('') + '</ul>' +
         (inProgress(d) ? '<p class="note" style="margin:8px 0 0">학습 중에는 본문과 연습이 잠겨 있어요. 끝내면 끝낸 단계를 다시 풀어 볼 수 있어요.</p><p class="note lknote" id="lk' + di + '" hidden>지금은 다시 풀기가 잠겨 있어요. 아래 버튼으로 이어서 풀어 주세요.</p>'
           : '<p class="note" style="margin:8px 0 0">끝낸 단계를 누르면 다시 풀어 볼 수 있어요 (점수는 처음 기록 유지).</p>') +
-        '<div class="status">' + status + '</div><div class="acts">' +
+        '<div class="status">' + status + '</div>' + weakBox(d, di) + '<div class="acts">' +
         (needReview(d) ? '<button class="btn plank" data-rev="' + di + '">오답 학습 하기</button>' + lockBtn(d, '오답 학습 후 열려요') : g.finished ? '<button class="btn" data-res="' + di + '">결과 보내기</button><button class="btn ghost" data-retry="' + di + '">' + (attemptNo(d) + 1) + '회차 도전</button>'
           : '<button class="btn" data-go="' + di + '">' + (g.done || run ? '이어서 하기' : '시작하기') + '</button>' + lockBtn(d, '다 끝내면 열려요')) +
         '</div>' + (g.finished && !needReview(d) ? '<p class="note retrynote" id="rn' + di + '" hidden>한 번 더 누르면 ' + (attemptNo(d) + 1) + '회차를 처음부터 시작해요. 지금 점수(' + pctOf(g.c, g.t) + '점)는 ' + attemptNo(d) + '회차 기록으로 남아요.</p>' : '') + '</section>';
@@ -368,6 +380,12 @@
     return h;
   }
 
+  function weakBox(d, di) {
+    if (!dayProgress(d).finished || needReview(d)) return '';
+    var ws = weakList(d); if (!ws.length) return '';
+    return '<div class="weakbox"><b>약한 유형 보충 연습</b> <small>70% 넘게 맞히면 ✓ · 선생님께 자동으로 전달돼요</small><div class="weakbtns">' + ws.map(function (w) {
+      return '<button class="btn ghost' + (w.ok ? ' wdone' : '') + '" data-weak="' + di + ':' + w.i + '">' + (w.ok ? '✓ ' : '') + E(stepShort(w.s)) + ' <small>' + w.sc[0] + '/' + w.sc[1] + (w.n ? ' → ' + w.best.c + '/' + w.best.t : '') + '</small></button>'; }).join('') + '</div></div>';
+  }
   function passageHTML(d) {
     return '<section class="card"><div class="row" style="justify-content:space-between"><h2 class="en">' + E(P.title) + '</h2>' +
       '<button class="link" id="ptog">해석 숨기기</button></div><div class="script" id="script">' +
@@ -428,6 +446,7 @@
     }; });
     app.querySelectorAll('[data-res]').forEach(function (b) { b.onclick = function () { result(+b.dataset.res); }; });
     app.querySelectorAll('[data-rev]').forEach(function (b) { b.onclick = function () { retryWrong(+b.dataset.rev); }; });
+    app.querySelectorAll('[data-weak]').forEach(function (b) { b.onclick = function () { var p = b.dataset.weak.split(':'); startFree(+p[0], +p[1], '보충 연습'); }; });
     app.querySelectorAll('[data-free]').forEach(function (b) { b.onclick = function () { startFree(SEL, +b.dataset.free, '유형별 연습'); }; });
     var tg = $('#ptog'); if (tg) tg.onclick = function () { var sc = $('#script'), off = sc.classList.toggle('hide-ko'); tg.textContent = off ? '해석 보기' : '해석 숨기기'; };
   }
@@ -634,6 +653,9 @@
       if (dayProgress(d).finished && !st.finished) st.finished = Date.now();
       save();
       report(dayProgress(d).finished ? 'DAY 완료' : '단계 완료', d, { step: (RS.si + 1) + '. ' + step.title, stepScore: RS.c + '/' + RS.qs.length });
+    } else if (RS.practice !== '오답 학습') {
+      var dx = P.days[RS.di], sx = DS(dx.id); sx.extra = sx.extra || {}; (sx.extra[RS.si] = sx.extra[RS.si] || []).push({ c: RS.c, t: RS.qs.length, at: Date.now() }); save();
+      report(RS.practice === '보충 연습' ? '보충 연습' : RS.practice, dx, { step: (RS.si + 1) + '. ' + dx.steps[RS.si].title, stepScore: RS.c + '/' + RS.qs.length });
     } else if (RS.practice === '오답 학습') {
       var st2 = DS(P.days[RS.di].id); st2.reviewDone = { n: RS.base, tries: RS.qs.length, at: Date.now(), first: RS.base - (RS.fw || 0) }; st2.review = null; save();
       report('오답 학습 완료', P.days[RS.di], { stepScore: RS.base + '개 중 ' + (RS.base - (RS.fw || 0)) + '개 한 번에' });
@@ -675,6 +697,7 @@
     d.steps.forEach(function (s, i) { var ws = st.wrong[i] || []; if (ws.length) w.push(stepShort(s) + '(' + ws.map(function (q) { return q.key; }).join(', ') + ')'); });
     lines.push(w.length ? '틀린 것: ' + w.join(' / ') : '틀린 것: 없음');
     if (w.length) lines.push(st.reviewDone ? '오답 학습 완료: ' + revText(st.reviewDone) : '오답 학습: 아직 안 함');
+    if (weakList(d).length) lines.push('약한 유형: ' + weakText(d));
     if (hs.length) lines.push('이전 기록: ' + hs.map(histLine).join(' / '));
     lines.push((st.finished ? fmtTime(st.finished) : '') + (mins ? ' · ' + mins + '분 걸림' : '') + ' · 확인 코드 ' + checkCode(d));
     return lines.join('\n');
@@ -772,6 +795,7 @@
       '<div class="rc-grid">' + d.steps.map(function (s, i) { var sc = st.scores[i], low = sc[0] / sc[1] < 0.7;
         return '<div class="' + (low ? 'low' : '') + '"><span>' + E(cardLabel(s)) + '</span><b>' + sc[0] + '/' + sc[1] + '</b></div>'; }).join('') + '</div>' +
       '<div class="rc-review ' + (wrongN && !rv ? 'no' : 'ok') + '">' + (wrongN ? (rv ? '✓ 오답 학습 완료 → ' + revText(rv) : '✗ 오답 학습 안 함') : '✓ 틀린 문제 없음') + '</div>' +
+      (weakList(d).length ? '<div class="rc-weak"><b>약한 유형 보충</b> ' + weakList(d).map(function (w) { return '<span class="' + (w.ok ? 'ok' : 'no') + '">' + E(stepShort(w.s)) + ' ' + (w.n ? w.best.c + '/' + w.best.t + (w.ok ? ' ✓' : '') + ' <small>' + fmtTime(w.last.at) + '</small>' : '안 함') + '</span>'; }).join('') + '</div>' : '') +
       (hist(d).length ? '<div class="rc-hist"><div class="rc-hist-h">이전 기록</div>' + hist(d).map(function (h, i) {
         return '<div><span>' + (i + 1) + '회차</span><b>' + h.pct + '점</b><small>' + h.c + '/' + h.t + (h.finished ? ' · ' + fmtTime(h.finished) : '') + (h.review ? ' · 오답 ' + h.review.n + '개' : '') + '</small></div>'; }).join('') + '</div>' : '') +
       '<div class="rc-foot"><span>' + (st.finished ? fmtTime(st.finished) + ' 완료' : '') + (mins ? ' · ' + mins + '분' : '') + '</span><span>확인 코드 <b>' + checkCode(d) + '</b></span></div>' +
