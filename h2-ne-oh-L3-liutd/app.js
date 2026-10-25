@@ -8,12 +8,13 @@
      문장이 3개보다 적으면 데이터의 원래 문장을 쓴다. 예전 기록의 '본문 스크램블' 점수는 migrate에서 이어 붙인다. */
   P.days.forEach(function (d) {
     var nz = function (x) { return String(x).toLowerCase().replace(/[’‘`]/g, "'").replace(/\s+/g, ' ').trim(); };
+    var unq = function (x) { return String(x).trim().replace(/^["“]/, '').replace(/["”]$/, '').trim(); };
     var lines = d.passage.filter(function (l) { return l[0] !== '#' && l[2] && !(/^[❶-❿]$/.test(l[1])); }), picked = [], exOf = {};
     d.steps.forEach(function (st) {
       if (st.type !== 'pick' || !/어법/.test(st.title)) return;
       st.items.forEach(function (q) {
         var f = nz(q.s.replace(/\{([^}|]*)[^}]*\}/, '$1')).replace(/^\(|\)$/g, '').replace(/[.!?"]+$/, '');
-        lines.forEach(function (l, i) { var w = l[1].split(/\s+/).length; if (w >= 5 && w <= 24 && /[.!?]$/.test(l[1]) && !/["“”]/.test(l[1]) && nz(l[1]).indexOf(f) >= 0) { if (picked.indexOf(i) < 0) picked.push(i); if (q.ex) exOf[i] = (exOf[i] ? exOf[i] + '\n\n' : '') + q.ex; } });
+        lines.forEach(function (l, i) { var t = unq(l[1]), w = t.split(/\s+/).length; if (w >= 5 && w <= 24 && /[.!?]$/.test(t) && !/["“”]/.test(t) && nz(t).indexOf(f) >= 0) { if (picked.indexOf(i) < 0) picked.push(i); if (q.ex) exOf[i] = (exOf[i] ? exOf[i] + '\n\n' : '') + q.ex; } });
       });
     });
     picked.sort(function (a, b) { return a - b; });
@@ -21,7 +22,7 @@
     d.steps.forEach(function (st) {
       if (st.type !== 'scramble') return;
       st.title = '주요 문장 스크램블'; st.guide = '핵심 문법이 들어간 문장이에요. 우리말에 맞게 단어를 눌러 문장을 완성하세요.';
-      if (picked.length >= 3) st.items = picked.map(function (i) { return { ko: lines[i][2], en: lines[i][1], ex: exOf[i] ? '이 문장의 문법 포인트\n' + exOf[i] : '' }; });
+      if (picked.length >= 3) st.items = picked.map(function (i) { return { ko: unq(lines[i][2]), en: unq(lines[i][1]), ex: exOf[i] ? '이 문장의 문법 포인트\n' + exOf[i] : '' }; });
     });
   });
   var KEY = 'daily:' + P.id;
