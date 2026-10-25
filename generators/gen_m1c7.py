@@ -251,7 +251,13 @@ d4 = steps(
 SUMQ = '다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 알맞은 것은?'
 def SUMSTEP(items):
     return {'type': 'mc', 'title': '요약문 완성', 'guide': '본문을 읽고 요약문의 빈칸 (A), (B)에 들어갈 말을 고르세요.',
-            'items': [{'n': n, 'box': box, 'q': SUMQ + '<br><b>' + s + '</b>', 'opts': o, 'ex': x} for n, box, s, o, x in items]}
+            'items': [{'n': n, 'box': box, 'q': SUMQ + '<br><b>' + s + '</b>', 'opts': o, 'ex': x, 'ev': SUMEV[s[:21]]} for n, box, s, o, x in items]}
+SUMEV = {
+ "Henri Matisse loved d": ["More and more people began to notice him", "They loved his paintings, and soon he became famous"],
+ "When Matisse became o": ["When Matisse opened his eyes, they were full of sadness", "Luckily, before long, he could sit", "However, he realized that he couldn't paint well anymore"],
+ "Matisse found a new w": ["He picked up scissors, cut some paper, and made beautiful shapes", "Scissors gave me another chance"],
+ "Although Matisse stay": ["I stay in bed most of the time, but I made a small paper garden all around me", "I am really happy"],
+}
 d3.append(SUMSTEP([
   ('❶', ['❶'], "Henri Matisse loved drawing as a boy, and after he became an artist in Paris, he grew (A) ______ as more and more people (B) ______ his paintings.",
    ['(A) famous – (B) loved', '(A) famous – (B) hated', '(A) poor – (B) loved', '(A) tired – (B) noticed', '(A) poor – (B) forgot'],

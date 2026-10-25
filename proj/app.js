@@ -207,6 +207,7 @@
       var ev = step.type === 'tf' ? raw[4] : raw.ev;
       if (ev) { q.ev = findLines(d, ev); q.evLabel = '근거 문장'; } else { q.ev = autoEv(d, step.type, raw); q.evLabel = '문장 해석'; }
       if (raw.box) q.prompt = String(q.prompt || '') + boxHTML(d, raw.box);
+      if (/요약/.test(step.title)) q.num = true;
       if (raw.flow) { q.flow = raw.flow; q.flowOn = step.type === 'insert' ? raw.given : -1; }
       if (raw.per) q.per = raw.per.map(function (p, i) { return { o: raw.opts[i], ko: p[0], ev: findLines(d, p[1]), note: p[2] || '' }; });
       return q;
@@ -569,7 +570,7 @@
   function qHTML(q) {
     if (q.t === 'choice') return (q.sub ? '<div class="guide" style="margin:0 0 6px">' + q.sub + '</div>' : '') +
       '<div class="prompt' + (q.big ? ' big' : '') + (q.en ? ' en' : '') + '">' + q.prompt + '</div>' +
-      '<div class="opts">' + q.opts.map(function (o, i) { return '<button class="opt' + (q.optEn ? ' en' : '') + '" data-i="' + i + '">' + o + '</button>'; }).join('') + '</div>';
+      '<div class="opts' + (q.num ? ' num' : '') + '">' + q.opts.map(function (o, i) { return '<button class="opt' + (q.optEn ? ' en' : '') + '" data-i="' + i + '">' + o + '</button>'; }).join('') + '</div>';
     if (q.t === 'pick') return '<div class="prompt en">' + E(q.pre) + '<span class="blank" id="blank">?</span>' + E(q.post) + '</div>' +
       '<div class="opts two">' + q.opts.map(function (o, i) { return '<button class="opt en" data-i="' + i + '">' + E(o) + '</button>'; }).join('') + '</div>';
     if (q.t === 'tf') return '<div class="prompt en">' + E(q.s) + '</div><div class="opts two"><button class="opt tfbtn" data-v="1">T</button><button class="opt tfbtn" data-v="0">F</button></div>';

@@ -431,6 +431,7 @@ h2 { font-size: 19px }
 .opt { border-radius: 14px; border-width: 1.5px; display: flex; align-items: center; gap: 12px; padding: 13px 14px }
 .opt:not(.tfbtn)::before { counter-increment: o; content: counter(o, upper-alpha); flex: none; width: 28px; height: 28px; border-radius: 8px; background: var(--plank-empty); display: grid; place-items: center; font: 800 13px var(--f-body); color: var(--muted) }
 .opts.two .opt { justify-content: center }
+.opts.num .opt:not(.tfbtn)::before { content: counter(o); border-radius: 50% }
 .opt.right::before { background: var(--ok); color: #fff } .opt.wrong::before { background: var(--bad); color: #fff }
 .tfbtn { justify-content: center }
 .feedback { border-radius: 14px }
