@@ -28,6 +28,7 @@ try:
       pg.fill('#nm','김민준'); pg.click('#nameform button'); ND=pg.evaluate('PKG.days.length')
       for di,wrong_every in [(0,0),(1,4),(2,0),(3,0),(4,0),(5,0)][:ND]:
           if pg.locator('#quit').count(): pg.click('#quit')
+          if not pg.locator('[data-go="%d"]'%di).count(): pg.locator('[data-sel="%d"]'%di).first.click()  # 모의고사: 번호 먼저 고르기
           pg.locator('[data-go="%d"]'%di).first.click(); k=0; shot=set()
           while True:
               rs=pg.evaluate('__dbg()')
@@ -42,14 +43,14 @@ try:
                       while pg.evaluate('__dbg()')['phase']!='summary':
                           n+=1; w = n in (2,5) and di==1; rw+=w; solve(pg,w); pg.click('#nx')
                           if di==1 and n==3:
-                              pg.click('#quit'); print('home during review:', pg.locator('.status').first.inner_text()); pg.locator('[data-rev="1"]').first.click()
+                              pg.click('#quit'); print('home during review:', pg.locator('.status').first.inner_text()); (pg.locator('[data-rev="1"]').count() or pg.locator('[data-sel="1"]').first.click()); pg.locator('[data-rev="1"]').first.click()
                       print('review answered',n,'(wrong again',rw,')'); pg.click('#back'); break
                   pg.click('#tonext'); continue
               k+=1; wrong= wrong_every and k%wrong_every==0
               if di==0 and k==20:
                   before=(rs['si'],rs['qi']); pg.click('#quit'); pg.reload()
                   print('resume status:', pg.locator('.status').first.inner_text())
-                  pg.locator('[data-go="0"]').first.click(); r2=pg.evaluate('__dbg()'); print('resume', before, '->', (r2['si'],r2['qi'])); assert before==(r2['si'],r2['qi'])
+                  (pg.locator('[data-go="0"]').count() or pg.locator('[data-sel="0"]').first.click()); pg.locator('[data-go="0"]').first.click(); r2=pg.evaluate('__dbg()'); print('resume', before, '->', (r2['si'],r2['qi'])); assert before==(r2['si'],r2['qi'])
               t=solve(pg,wrong)
               if di==0 and t not in shot: pg.screenshot(path=SH+'3_%s.png'%t); shot.add(t)
               pg.click('#nx')
