@@ -269,6 +269,9 @@ d4.append(SUMSTEP([
    "근거: I made a small paper garden all around me. ... I am really happy\n(A) garden 정원 (B) happy 행복한"),
 ]))
 
+import ex_m1c7
+ex_m1c7.apply('d3', d3); ex_m1c7.apply('d4', d4)
+
 def P(n, rows):
     return [['', n, '']] + [['', a, b] for a, b in rows]
 
