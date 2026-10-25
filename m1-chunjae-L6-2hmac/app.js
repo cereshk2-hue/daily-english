@@ -8,12 +8,12 @@
      문장이 3개보다 적으면 데이터의 원래 문장을 쓴다. 예전 기록의 '본문 스크램블' 점수는 migrate에서 이어 붙인다. */
   P.days.forEach(function (d) {
     var nz = function (x) { return String(x).toLowerCase().replace(/[’‘`]/g, "'").replace(/\s+/g, ' ').trim(); };
-    var lines = d.passage.filter(function (l) { return l[0] !== '#' && l[2] && !(/^[❶-❿]$/.test(l[1])); }), picked = [];
+    var lines = d.passage.filter(function (l) { return l[0] !== '#' && l[2] && !(/^[❶-❿]$/.test(l[1])); }), picked = [], exOf = {};
     d.steps.forEach(function (st) {
       if (st.type !== 'pick' || !/어법/.test(st.title)) return;
       st.items.forEach(function (q) {
         var f = nz(q.s.replace(/\{([^}|]*)[^}]*\}/, '$1')).replace(/^\(|\)$/g, '').replace(/[.!?"]+$/, '');
-        lines.forEach(function (l, i) { var w = l[1].split(/\s+/).length; if (w >= 5 && w <= 24 && /[.!?]$/.test(l[1]) && !/["“”]/.test(l[1]) && nz(l[1]).indexOf(f) >= 0 && picked.indexOf(i) < 0) picked.push(i); });
+        lines.forEach(function (l, i) { var w = l[1].split(/\s+/).length; if (w >= 5 && w <= 24 && /[.!?]$/.test(l[1]) && !/["“”]/.test(l[1]) && nz(l[1]).indexOf(f) >= 0) { if (picked.indexOf(i) < 0) picked.push(i); if (q.ex) exOf[i] = (exOf[i] ? exOf[i] + '\n\n' : '') + q.ex; } });
       });
     });
     picked.sort(function (a, b) { return a - b; });
@@ -21,7 +21,7 @@
     d.steps.forEach(function (st) {
       if (st.type !== 'scramble') return;
       st.title = '주요 문장 스크램블'; st.guide = '핵심 문법이 들어간 문장이에요. 우리말에 맞게 단어를 눌러 문장을 완성하세요.';
-      if (picked.length >= 3) st.items = picked.map(function (i) { return { ko: lines[i][2], en: lines[i][1] }; });
+      if (picked.length >= 3) st.items = picked.map(function (i) { return { ko: lines[i][2], en: lines[i][1], ex: exOf[i] ? '이 문장의 문법 포인트\n' + exOf[i] : '' }; });
     });
   });
   var KEY = 'daily:' + P.id;
@@ -227,7 +227,8 @@
         var ko2en = i % 3 === 2, others = shuffle(it.filter(function (x) { return x !== w; })).slice(0, 3);
         var ans = ko2en ? w[0] : w[1];
         return { t: 'choice', prompt: E(ko2en ? w[1] : w[0]), big: true, en: !ko2en, sub: ko2en ? '알맞은 영어 표현을 고르세요.' : '알맞은 뜻을 고르세요.',
-          opts: shuffle([ans].concat(others.map(function (x) { return ko2en ? x[0] : x[1]; }))).map(E), ans: E(ans), key: w[0] };
+          opts: shuffle([ans].concat(others.map(function (x) { return ko2en ? x[0] : x[1]; }))).map(E), ans: E(ans), key: w[0],
+          ex: '정답 ▶ ' + w[0] + ' = ' + w[1] + (others.length ? '\n다른 보기 ▶ ' + others.map(function (x) { return x[0] + ' = ' + x[1]; }).join(' / ') : '') };
       });
     }
     if (t === 'pick') return shuffle(it).map(function (q) {
@@ -245,7 +246,7 @@
     if (t === 'order') return it.map(function (q, i) { return { t: 'order', lines: q.lines, pool: shuffleDiff(q.lines.map(function (_, j) { return j; })), key: '세트 ' + (i + 1) }; });
     if (t === 'scramble') return shuffle(it).map(function (q) {
       var en = q.en.trim(), p = /[.!?]$/.test(en) ? en.slice(-1) : '', body = p ? en.slice(0, -1) : en, toks = body.split(/\s+/);
-      return { t: 'scramble', ko: q.ko, toks: toks, pool: shuffleDiff(toks.map(function (_, j) { return j; })), punct: p, ans: en, key: cut(q.ko, 14) };
+      return { t: 'scramble', ko: q.ko, toks: toks, pool: shuffleDiff(toks.map(function (_, j) { return j; })), punct: p, ans: en, key: cut(q.ko, 14), ex: q.ex || '' };
     });
     if (t === 'insert') return shuffle(it).map(function (q) {
       var rest = q.lines.filter(function (_, j) { return j !== q.given; });
@@ -655,7 +656,7 @@
         else { var built = picked.map(function (j) { return q.toks[j]; }).join(' ') + q.punct; ok = norm(built) === norm(q.ans); extra = ok ? '' : '정답: <b class="en">' + E(q.ans) + '</b>'; }
         tray.classList.add(ok ? 'right' : 'wrong'); chk.hidden = true;
         tray.querySelectorAll('.chip').forEach(function (c) { c.disabled = true; });
-        answer(ok, '', extra);
+        answer(ok, q.ex || '', extra);
       };
     }
   }
