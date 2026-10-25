@@ -1,0 +1,40 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--bg:#f5f6fa;--card:#fff;--ink:#0f172a;--mut:#64748b;--line:#e6e9f0;--ac:#2643c4;--ac2:#eef1fd;--ok:#12805c;--oks:#e7f6ef;--bad:#d1435b;--bads:#fdecef}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Noto Sans CJK KR",system-ui,sans-serif}
+.tb{position:sticky;top:0;background:var(--bg);padding:14px 16px 10px}
+.row{display:flex;align-items:center;gap:12px}.x{width:34px;height:34px;border-radius:10px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:var(--mut);font-size:18px}
+.row .t{font-size:13px;color:var(--mut)}.row .t b{color:var(--ink)}.row .n{margin-left:auto;font-weight:800;font-size:13px;color:var(--ac);background:var(--ac2);border-radius:99px;padding:4px 10px}
+.pb{height:6px;border-radius:9px;background:#e3e7f1;margin-top:12px;overflow:hidden}.pb i{display:block;height:100%;width:44%;background:linear-gradient(90deg,#3c5bf0,#2643c4);border-radius:9px}
+main{padding:6px 16px 110px}
+.k{font-size:12px;font-weight:800;color:var(--ac);letter-spacing:.04em;margin-top:10px}
+h2{margin:2px 0 4px;font-size:22px;letter-spacing:-.02em}.g{color:var(--mut);font-size:13.5px;margin:0 0 14px}
+.card{background:#fff;border-radius:18px;box-shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px rgba(15,23,42,.06);padding:20px}
+.src{display:inline-block;font-size:12px;font-weight:700;color:var(--mut);background:#f1f3f7;border-radius:6px;padding:3px 8px}
+.q{font-size:19px;line-height:1.75;margin:12px 0 4px}.q .b{display:inline-block;border:1.5px solid var(--ac);border-radius:8px;padding:0 8px;margin:0 2px;color:var(--ac);font-weight:700;background:var(--ac2)}
+.opts{display:grid;gap:10px;margin-top:18px}
+.o{display:flex;align-items:center;gap:12px;border:1.5px solid var(--line);border-radius:14px;padding:14px;font-size:17px;background:#fff}
+.o span{flex:none;width:28px;height:28px;border-radius:8px;background:#f1f3f7;display:grid;place-items:center;font-size:13px;font-weight:800;color:var(--mut)}
+.o.r{border-color:var(--ok);background:var(--oks)}.o.r span{background:var(--ok);color:#fff}
+.o.w{border-color:var(--bad);background:var(--bads)}.o.w span{background:var(--bad);color:#fff}
+.fb{margin-top:16px;border-radius:14px;background:var(--bads);padding:14px 16px}.fb b{color:var(--bad);font-size:15px}.fb p{margin:4px 0 0;font-size:14px;color:#4b5363}
+.fb .ev{margin-top:10px;background:#fff;border-radius:10px;padding:10px 12px;font-size:13.5px}.fb .ev small{display:block;color:var(--mut);font-weight:700;font-size:11.5px;margin-bottom:2px}
+.bt{position:fixed;left:0;right:0;bottom:0;padding:12px 16px 18px;background:linear-gradient(180deg,rgba(245,246,250,0),var(--bg) 30%)}
+.bt button{width:100%;border:0;border-radius:14px;background:var(--ac);color:#fff;font:700 16px inherit;padding:16px;box-shadow:0 6px 16px rgba(38,67,196,.28)}
+</style></head><body>
+<div class="tb"><div class="row"><span class="x">✕</span><span class="t">DAY 2 · <b>6 / 13단계</b></span><span class="n">4 / 9</span></div><div class="pb"><i></i></div></div>
+<main>
+  <div class="k">STEP 6</div><h2>어법선택</h2><p class="g">어법상 알맞은 것을 고르세요.</p>
+  <section class="card">
+    <span class="src">본문 ❸</span>
+    <p class="q">The tiger, <span class="b">which</span> once lived all over the peninsula, has become a symbol of Korea.</p>
+    <div class="opts">
+      <div class="o r"><span>A</span>which</div>
+      <div class="o w"><span>B</span>what</div>
+    </div>
+    <div class="fb"><b>아쉬워요</b><p>선행사 The tiger 가 있고 콤마(,) 뒤 계속적 용법이므로 관계대명사 which 가 맞아요. what 은 선행사를 포함해요.</p>
+      <div class="ev"><small>문장 해석</small>한때 한반도 전역에 살았던 호랑이는 한국의 상징이 되었다.</div></div>
+  </section>
+</main>
+<div class="bt"><button>다음 문제</button></div>
+</body></html>

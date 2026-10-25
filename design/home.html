@@ -1,0 +1,89 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--bg:#f5f6fa;--card:#fff;--ink:#0f172a;--mut:#64748b;--line:#e6e9f0;--ac:#2643c4;--ac2:#eef1fd;--ok:#12805c;--oks:#e7f6ef;--bad:#d1435b;--bads:#fdecef;--navy:#101a3a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Noto Sans CJK KR",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.top{background:var(--navy);color:#fff;padding:18px 18px 64px;position:relative;overflow:hidden}
+.top::before{content:"";position:absolute;inset:auto -60px -120px auto;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(84,118,255,.45),transparent 65%)}
+.bar{display:flex;align-items:center;gap:10px;font-size:13px;color:#aab6d8}
+.bar .pill{margin-left:auto;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border-radius:99px;padding:4px 10px 4px 4px;color:#fff;font-weight:600}
+.av{width:26px;height:26px;border-radius:50%;background:#5b7cff;display:grid;place-items:center;font-size:13px;font-weight:700}
+.top h1{margin:16px 0 2px;font-size:26px;letter-spacing:-.02em;line-height:1.2}
+.top p{margin:0;color:#aab6d8;font-size:13.5px}
+main{padding:0 16px 96px;margin-top:-46px;position:relative}
+.card{background:var(--card);border-radius:18px;box-shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px rgba(15,23,42,.06);padding:18px}
+.hero{display:flex;gap:16px;align-items:center}
+.ring{flex:none;width:84px;height:84px;border-radius:50%;background:conic-gradient(var(--ac) 0 38%,var(--ac2) 38% 100%);display:grid;place-items:center}
+.ring div{width:66px;height:66px;border-radius:50%;background:#fff;display:grid;place-items:center;text-align:center;line-height:1.1}
+.ring b{font-size:20px}.ring small{font-size:11px;color:var(--mut)}
+.hero .k{font-size:12px;font-weight:700;color:var(--ac);letter-spacing:.04em}
+.hero h2{margin:2px 0 4px;font-size:19px;letter-spacing:-.02em}
+.hero .s{font-size:13px;color:var(--mut)}
+.cta{margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:12px;background:var(--ac);color:#fff;font:700 16px inherit;padding:15px;box-shadow:0 6px 16px rgba(38,67,196,.28)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.stat{background:var(--card);border-radius:14px;padding:12px;border:1px solid var(--line)}
+.stat small{display:block;font-size:11.5px;color:var(--mut)}.stat b{font-size:18px;letter-spacing:-.02em}.stat b i{font-style:normal;font-size:12px;color:var(--mut);font-weight:500;margin-left:1px}
+h3{font-size:15px;margin:22px 4px 10px;display:flex;justify-content:space-between;align-items:baseline}h3 a{font-size:12.5px;color:var(--mut);font-weight:500}
+.days{display:grid;gap:10px}
+.day{display:flex;gap:14px;align-items:center;background:var(--card);border-radius:14px;padding:14px;border:1px solid var(--line)}
+.dn{flex:none;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;text-align:center;line-height:1;font-weight:800;font-size:17px}
+.dn small{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;margin-bottom:2px}
+.done .dn{background:var(--oks);color:var(--ok)}.now .dn{background:var(--ac);color:#fff}.wait .dn{background:#eef0f4;color:#9aa3b5}
+.day .t{flex:1;min-width:0}.day .t b{display:block;font-size:15px}.day .t span{font-size:12.5px;color:var(--mut)}
+.badge{font-size:12px;font-weight:700;border-radius:99px;padding:4px 10px;white-space:nowrap}
+.done .badge{background:var(--oks);color:var(--ok)}.now .badge{background:var(--ac2);color:var(--ac)}.wait .badge{background:#f1f3f7;color:#9aa3b5}
+.mini{height:4px;border-radius:9px;background:var(--ac2);margin-top:7px;overflow:hidden}.mini i{display:block;height:100%;width:38%;background:var(--ac);border-radius:9px}
+.steps{margin-top:10px;padding:6px 16px;background:var(--card);border-radius:14px;border:1px solid var(--line)}
+.st{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14.5px}.st:last-child{border:0}
+.ic{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800}
+.st.d .ic{background:var(--ok);color:#fff}.st.n .ic{background:var(--ac);color:#fff;box-shadow:0 0 0 4px var(--ac2)}.st.w .ic{background:#eef0f4;color:#9aa3b5}
+.st.w{color:#9aa3b5}.st .sc{margin-left:auto;font-weight:700;font-size:13.5px;color:var(--mut)}.st.n b{color:var(--ac)}
+.st .sc.low{color:var(--bad)}
+.weak{margin-top:14px;background:var(--bads);border-radius:14px;padding:14px;display:flex;gap:12px;align-items:center}
+.weak b{display:block;font-size:14px}.weak span{font-size:12.5px;color:#8a4452}.weak button{margin-left:auto;border:0;background:var(--bad);color:#fff;font:700 13px inherit;border-radius:10px;padding:9px 12px;white-space:nowrap}
+nav{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);padding:8px 0 14px}
+nav a{display:grid;justify-items:center;gap:2px;font-size:11.5px;color:#94a0b8;text-decoration:none;font-weight:600}nav a.on{color:var(--ac)}
+nav svg{width:22px;height:22px}
+</style></head><body>
+<div class="top">
+  <div class="bar"><span>고1 · 능률(민병천) · Lesson 3</span><span class="pill"><span class="av">이</span>이지혁</span></div>
+  <h1>A Timeless Symbol of Korea</h1>
+  <p>2학기 기말고사 대비 · 3 DAY</p>
+</div>
+<main>
+  <section class="card">
+    <div class="hero">
+      <div class="ring"><div><b>5</b><small>/ 13단계</small></div></div>
+      <div><div class="k">오늘 할 학습</div><h2>DAY 2 · 본문 ❸</h2><div class="s">호랑이에 대한 감정 · 사라짐과 부활<br>다음 단계: <b style="color:var(--ink)">어법선택</b></div></div>
+    </div>
+    <button class="cta">이어서 하기 →</button>
+  </section>
+  <div class="stats">
+    <div class="stat"><small>누적 학습</small><b>1<i>시간</i> 8<i>분</i></b></div>
+    <div class="stat"><small>푼 문제</small><b>258<i>문제</i></b></div>
+    <div class="stat"><small>정답률</small><b>87<i>%</i></b></div>
+  </div>
+  <h3>학습 진도 <a>완료 1 / 3</a></h3>
+  <div class="days">
+    <div class="day done"><div class="dn"><small>DAY</small>1</div><div class="t"><b>본문 ❶❷ · 95점</b><span>10/24 완료 · 오답 학습 완료</span></div><span class="badge">완료</span></div>
+    <div class="day now"><div class="dn"><small>DAY</small>2</div><div class="t"><b>본문 ❸</b><span>5 / 13단계 진행 중</span><div class="mini"><i></i></div></div><span class="badge">진행 중</span></div>
+    <div class="day wait"><div class="dn"><small>DAY</small>3</div><div class="t"><b>본문 ❹❺</b><span>DAY 2를 마치면 열려요</span></div><span class="badge">대기</span></div>
+  </div>
+  <div class="weak"><div><b>약한 유형 보충 1개 남았어요</b><span>DAY 1 · 문장삽입 0/2</span></div><button>보충하기</button></div>
+  <h3>DAY 2 단계</h3>
+  <div class="steps">
+    <div class="st d"><span class="ic">✓</span>핵심어휘·숙어<span class="sc">10/10</span></div>
+    <div class="st d"><span class="ic">✓</span>어휘선택<span class="sc">7/7</span></div>
+    <div class="st d"><span class="ic">✓</span>T/F 내용 확인<span class="sc">6/8</span></div>
+    <div class="st d"><span class="ic">✓</span>일치·불일치<span class="sc low">1/3</span></div>
+    <div class="st d"><span class="ic">✓</span>동사변형<span class="sc">8/8</span></div>
+    <div class="st n"><span class="ic">6</span><b>어법선택</b><span class="sc">지금</span></div>
+    <div class="st w"><span class="ic">7</span>오류찾기</div>
+    <div class="st w"><span class="ic">8</span>주요 문장 스크램블</div>
+  </div>
+</main>
+<nav>
+  <a class="on" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>오늘의 학습</a>
+  <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h11l5 5v11H4z"/><path d="M8 12h8M8 16h6"/></svg>본문</a>
+  <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>유형별 연습</a>
+</nav>
+</body></html>
