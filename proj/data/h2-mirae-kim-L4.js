@@ -14,7 +14,7 @@ window.PKG = {
   days: [
   /* ═══════════════════════════ DAY 1 · 본문 ❶~❹ ═══════════════════════════ */
   {
-    id: 'd1', name: 'DAY 1', range: '본문 ❶~❹', story: 'Galileo의 사고 실험 · 거인이 될 수 없는 이유',
+    id: 'd1', name: 'DAY 1', range: '4과 본문 ❶~❹', story: 'Galileo의 사고 실험 · 거인이 될 수 없는 이유',
     passage: [
       ['', '❶', ''],
       ['', "Have you ever wondered, \"What if I could run so fast that nobody could see me?\"", '여러분은 "만일 내가 아주 빨리 달려서 아무도 날 볼 수 없다면 어떨까?"라고 궁금하게 여긴 적이 있는가?'],
@@ -213,7 +213,7 @@ window.PKG = {
 
   /* ═══════════════════════════ DAY 2 · 본문 ❺❻ ═══════════════════════════ */
   {
-    id: 'd2', name: 'DAY 2', range: '본문 ❺❻', story: '달이 없다면 · 하루의 길이와 계절의 변화',
+    id: 'd2', name: 'DAY 2', range: '4과 본문 ❺❻', story: '달이 없다면 · 하루의 길이와 계절의 변화',
     passage: [
       ['', '❺', ''],
       ['', '2. What if there were no Moon?', '2. 달이 없다면 어떻게 될까?'],
@@ -410,7 +410,7 @@ window.PKG = {
 
   /* ═══════════════════════════ DAY 3 · 본문 ❼❽ ═══════════════════════════ */
   {
-    id: 'd3', name: 'DAY 3', range: '본문 ❼❽', story: '산소 농도가 두 배라면 · 사고 실험의 한계',
+    id: 'd3', name: 'DAY 3', range: '4과 본문 ❼❽', story: '산소 농도가 두 배라면 · 사고 실험의 한계',
     passage: [
       ['', '❼', ''],
       ['', '3. What if the oxygen concentration in the atmosphere doubled?', '3. 만일 대기 중의 산소 농도가 두 배가 되면 어떻게 될까?'],
