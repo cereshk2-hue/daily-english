@@ -151,8 +151,8 @@
     lsSet(PASSK, JSON.stringify(p)); }
   function ncode(c) { return String(c == null ? '' : c).replace(/\D/g, '').replace(/^0+/, ''); }
   function needPass() { if (!GATE || !SHEET || !S.name) return false; var x = myPass(S.name); return !(x && x.u && x.u[P.id]); }
-  function checkPass(n, c) { /* → {gate, ok, why}. 시트가 아직 옛 코드면 gate:false. 연결이 안 되면 실패(reject) */
-    var u = SHEET + (SHEET.indexOf('?') < 0 ? '?' : '&') + 'check=1&name=' + encodeURIComponent(n || '') + '&code=' + encodeURIComponent(ncode(c)) + '&school=' + encodeURIComponent(P.school || '') + '&_=' + Date.now();
+  function checkPass(n, c, reg) { /* → {gate, ok, why}. 시트가 아직 옛 코드면 gate:false. 연결이 안 되면 실패(reject) */
+    var u = SHEET + (SHEET.indexOf('?') < 0 ? '?' : '&') + 'check=1&name=' + encodeURIComponent(n || '') + '&code=' + encodeURIComponent(ncode(c)) + '&school=' + encodeURIComponent(P.school || '') + (reg ? '&reg=1' : '') + '&_=' + Date.now();
     return fetch(u, { cache: 'no-store' }).then(function (r) { return r.text(); }).then(function (t) {
       var j = null; try { j = JSON.parse(t); } catch (e) {}
       if (!j || typeof j.gate !== 'boolean') j = { gate: false, ok: false };
@@ -164,6 +164,7 @@
     if (!j.gate || !n) return;
     if (j.ok) { setPass(n, ncode(c), true); delete DENY[n]; }
     else if (j.why === 'unit') { setPass(n, ncode(c), false); DENY[n] = 'unit'; }
+    else if (j.why === 'blocked') { setPass(n, null); DENY[n] = 'blocked'; }
     else { setPass(n, null); DENY[n] = 'code'; }
   }
   function gateSync() { /* 화면을 열 때: 명단이 켜졌는지, 지금 학생이 아직 명단에 있고 이 교재가 열려 있는지 */
@@ -175,14 +176,16 @@
     }, function () {});
   }
   function tryEnter(n, c, msg, btn) {
-    if (!ncode(c)) { msg.textContent = '선생님께 받은 학생 코드를 적어 주세요.'; msg.hidden = false; return; }
+    if (String(c || '').replace(/\D/g, '').length < 4) { msg.textContent = '학생 코드는 숫자 4자리예요. 처음이면 기억하기 쉬운 숫자 4자리를 정해 주세요.'; msg.hidden = false; return; }
     var old = btn.textContent; btn.disabled = true; btn.textContent = '확인 중…'; msg.hidden = true;
-    checkPass(n, c).then(function (j) {
+    checkPass(n, c, true).then(function (j) {
       btn.disabled = false; btn.textContent = old;
       applyCheck(n, c, j);
-      if (!j.gate || j.ok) { useStudent(n); home(); return; }
+      if (!j.gate || j.ok) { useStudent(n); if (j.isNew) { S.newCode = String(c).replace(/\D/g, ''); save(); } home(); return; }
       if (j.why === 'unit') { useStudent(n); home(); return; } /* 코드는 맞음 → '열어 주지 않은 과제' 안내 화면 */
-      msg.textContent = '이름이나 학생 코드가 맞지 않아요. 선생님께 확인해 주세요.'; msg.hidden = false;
+      msg.textContent = j.why === 'blocked' ? '지금은 이 이름으로 학습할 수 없어요. 선생님께 말씀드려 주세요.'
+        : j.why === 'code' ? '이 이름은 다른 코드로 이미 등록돼 있어요. 내 코드를 잊었다면 선생님께 물어보세요.' : '이름이나 학생 코드를 확인해 주세요.';
+      msg.hidden = false;
     }, function () { btn.disabled = false; btn.textContent = old; msg.textContent = '인터넷 연결을 확인하고 다시 눌러 주세요.'; msg.hidden = false; });
   }
 
@@ -397,18 +400,20 @@
         (rs.length ? '<div class="whochips">' + rs.map(function (n) { return '<span class="whochip"><button type="button" class="btn ghost" data-who="' + E(n) + '">' + E(n) + '</button><button type="button" class="x" data-unwho="' + E(n) + '" aria-label="' + E(n) + ' 목록에서 빼기" title="목록에서 빼기(기록은 남아요)">×</button></span>'; }).join('') + '</div>' +
           '<span class="note" style="flex-basis:100%">내 이름이 없으면 아래에 새로 적어요. 같은 이름을 적으면 내 기록이 그대로 이어져요.</span>' : '') +
         '<span class="note" style="flex-basis:100%">선생님이 알아볼 수 있게 <b>한글 이름 전체</b>(예: 김민준)를 정확히 적어 주세요.</span><span class="note" id="nmbad" style="flex-basis:100%;color:var(--bad);font-weight:700" hidden>이름은 띄어쓰기 없이 한글로 적어 주세요. 예: 김민준</span>' +
-        '<input id="nm" autocomplete="name" placeholder="예: 김민준" maxlength="12">' + (GATE ? '<input id="pc" inputmode="numeric" autocomplete="off" placeholder="학생 코드" maxlength="8" style="max-width:9em">' : '') + '<button class="btn" type="submit">' + (rs.length ? '새 이름으로 시작' : '저장') + '</button></form>';
+        '<input id="nm" autocomplete="name" placeholder="예: 김민준" maxlength="12">' + (GATE ? '<input id="pc" inputmode="numeric" autocomplete="off" placeholder="코드 4자리" maxlength="8" style="max-width:9em"><span class="note" style="flex-basis:100%;order:9">처음이면 <b>내가 정한 숫자 4자리</b>가 학생 코드가 돼요. 다른 기기에서 들어올 때 필요하니 꼭 기억하세요!</span>' : '') + '<button class="btn" type="submit">' + (rs.length ? '새 이름으로 시작' : '저장') + '</button></form>';
     }
     if (!S.name && GATE && SHEET) { app.innerHTML = h + '</div>'; bindHome(); var n0 = $('#nm'); if (n0) n0.focus(); return; } /* 명단이 켜져 있으면 이름·코드를 넣기 전엔 학습 화면을 보여 주지 않음 */
     if (needPass()) {
       var mp = myPass(S.name), deny = DENY[S.name];
-      if (deny === 'unit') h += '<form class="card who" id="passform" style="margin-bottom:16px"><p style="flex-basis:100%;margin:0;font-weight:600">' + E(S.name) + ' 학생에게는 아직 열리지 않은 과제예요.</p>' +
+      if (deny === 'blocked') h += '<form class="card who" id="passform" style="margin-bottom:16px"><p style="flex-basis:100%;margin:0;font-weight:600">지금은 ' + E(S.name) + ' 이름으로 학습할 수 없어요.</p><span class="note" style="flex-basis:100%">선생님께 말씀드려 주세요.</span>' +
+        '<button class="link" type="button" id="notme" style="flex-basis:100%;text-align:left">다른 이름으로 들어가기</button></form></div>';
+      else if (deny === 'unit') h += '<form class="card who" id="passform" style="margin-bottom:16px"><p style="flex-basis:100%;margin:0;font-weight:600">' + E(S.name) + ' 학생에게는 아직 열리지 않은 과제예요.</p>' +
         '<span class="note" style="flex-basis:100%">선생님이 열어 주시면 바로 들어올 수 있어요. 선생님께 말씀드려 주세요.</span>' +
         '<button class="btn ghost" type="button" id="recheck">다시 확인하기</button>' +
         '<button class="link" type="button" id="notme" style="flex-basis:100%;text-align:left">' + E(S.name) + ' 학생이 아니에요 (다른 이름으로)</button></form></div>';
       else if (mp && !deny) h += '<div class="card" id="passform" style="margin-bottom:16px"><p style="margin:0">확인하고 있어요…</p><span class="note">인터넷이 연결되어 있어야 해요.</span></div></div>';
-      else h += '<form class="card who" id="passform" style="margin-bottom:16px"><label for="pc" style="flex-basis:100%;font-weight:600"><b>' + E(S.name) + '</b> 학생, 선생님께 받은 <b>학생 코드</b>를 적어 주세요.</label>' +
-        '<span class="note" style="flex-basis:100%">처음 한 번만 적으면 다음부터는 바로 들어와요.</span><span class="note" id="pcbad" style="flex-basis:100%;color:var(--bad);font-weight:700" hidden></span>' +
+      else h += '<form class="card who" id="passform" style="margin-bottom:16px"><label for="pc" style="flex-basis:100%;font-weight:600"><b>' + E(S.name) + '</b> 학생, <b>학생 코드 4자리</b>를 적어 주세요.</label>' +
+        '<span class="note" style="flex-basis:100%">처음이면 지금 정한 숫자 4자리가 내 코드가 돼요. 이 기기에서는 다음부터 묻지 않아요.</span><span class="note" id="pcbad" style="flex-basis:100%;color:var(--bad);font-weight:700" hidden></span>' +
         '<input id="pc" inputmode="numeric" autocomplete="off" placeholder="학생 코드" maxlength="8"><button class="btn" type="submit">확인</button>' +
         '<button class="link" type="button" id="notme" style="flex-basis:100%;text-align:left">' + E(S.name) + ' 학생이 아니에요 (다른 이름으로)</button></form></div>';
       app.innerHTML = h; bindHome(); var pi = $('#pc'); if (pi) pi.focus();
@@ -519,6 +524,7 @@
     /* 나의 학습 기록 */
     var ms = myStats();
     h += '<div class="stats"><div class="stat"><small>누적 학습</small><b>' + hm(ms.mins) + '</b></div><div class="stat"><small>푼 문제</small><b>' + ms.solved + '<i>문제</i></b></div><div class="stat"><small>정답률</small><b>' + ms.acc + '<i>%</i></b></div></div>';
+    if (S.name && S.newCode) h += '<section class="card notecard" id="newcode" style="border-color:var(--accent)"><b>' + E(S.name) + ' 학생의 코드는 <span style="font-size:20px;letter-spacing:.1em">' + E(S.newCode) + '</span> 예요</b><span class="note">다른 기기나 학원 아이패드에서 들어올 때 필요해요. 꼭 기억하세요!</span><button class="btn ghost" id="codeok">기억했어요</button></section>';
     if (S.name) { h += noteHTML(); setTimeout(noteSync, 0); }
     /* 학습 진도 */
     h += '<h3 class="sech">학습 진도 <span>완료 ' + P.days.filter(function (d) { return dayState(d) === 'done'; }).length + ' / ' + P.days.length + '</span></h3><div class="drows">' + P.days.map(function (d, di) {
@@ -613,6 +619,7 @@
     app.querySelectorAll('[data-cald]').forEach(function (b) { b.onclick = function () { CALSEL = CALSEL === b.dataset.cald ? null : b.dataset.cald; var y = window.scrollY; home(); window.scrollTo(0, y); }; });
     app.querySelectorAll('[data-tab]').forEach(function (b) { b.onclick = function () { home(b.dataset.tab); }; });
     app.querySelectorAll('[data-note]').forEach(function (b) { b.onclick = function () { startNote(b.dataset.note); }; });
+    var ck = $('#codeok'); if (ck) ck.onclick = function () { delete S.newCode; save(); var c = $('#newcode'); if (c) c.remove(); };
     app.querySelectorAll('[data-sel]').forEach(function (b) { b.onclick = function () { SEL = +b.dataset.sel; SEL_SET = true; home(); if (TAB === 'today') { var dd = $('#daydetail'); if (dd) dd.scrollIntoView({ block: 'start' }); } }; });
     var needName = function () { if (S.name) return false; var n = $('#nm'); n.placeholder = '이름을 적어야 시작할 수 있어요'; n.focus(); top(); return true; };
     app.querySelectorAll('[data-go]').forEach(function (b) { b.onclick = function () { if (needName()) return; var di = +b.dataset.go, rn = DS(P.days[di].id).run; startStep(di, rn ? rn.si : dayProgress(P.days[di]).next); }; });
