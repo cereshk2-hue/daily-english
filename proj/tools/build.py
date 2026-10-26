@@ -20,7 +20,7 @@ for f in sorted(glob.glob(os.path.join(R,'data','*.js'))):
     base=did.replace('-so-','-'); SEC['units'].setdefault(base,code(5)); folder=base+'-'+SEC['units'][base]
     grade,publisher=school.split(' ',1)
     days=[{'name':m[0],'range':m[1]} for m in re.findall(r"name:\s*'([^']+)',\s*range:\s*'([^']+)'",js)]
-    blocks=re.split(r"id: '[dq]",js)[1:]
+    blocks=re.split(r"id: '[^']+', name:",js)[1:]
     for d,b in zip(days,blocks): d['steps']=len(re.findall(r"\{ type: '",b))
     units.append({'folder':folder,'grade':grade,'publisher':publisher,'unit':unit,'title':title,'days':days})
     page=src.replace('__TITLE__',title+' Daily').replace('__DATA__',did)
