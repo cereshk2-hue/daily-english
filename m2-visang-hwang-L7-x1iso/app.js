@@ -399,6 +399,7 @@
         '<span class="note" style="flex-basis:100%">선생님이 알아볼 수 있게 <b>한글 이름 전체</b>(예: 김민준)를 정확히 적어 주세요.</span><span class="note" id="nmbad" style="flex-basis:100%;color:var(--bad);font-weight:700" hidden>이름은 띄어쓰기 없이 한글로 적어 주세요. 예: 김민준</span>' +
         '<input id="nm" autocomplete="name" placeholder="예: 김민준" maxlength="12">' + (GATE ? '<input id="pc" inputmode="numeric" autocomplete="off" placeholder="학생 코드" maxlength="8" style="max-width:9em">' : '') + '<button class="btn" type="submit">' + (rs.length ? '새 이름으로 시작' : '저장') + '</button></form>';
     }
+    if (!S.name && GATE && SHEET) { app.innerHTML = h + '</div>'; bindHome(); var n0 = $('#nm'); if (n0) n0.focus(); return; } /* 명단이 켜져 있으면 이름·코드를 넣기 전엔 학습 화면을 보여 주지 않음 */
     if (needPass()) {
       var mp = myPass(S.name), deny = DENY[S.name];
       if (deny === 'unit') h += '<form class="card who" id="passform" style="margin-bottom:16px"><p style="flex-basis:100%;margin:0;font-weight:600">' + E(S.name) + ' 학생에게는 아직 열리지 않은 과제예요.</p>' +
@@ -518,7 +519,7 @@
     /* 나의 학습 기록 */
     var ms = myStats();
     h += '<div class="stats"><div class="stat"><small>누적 학습</small><b>' + hm(ms.mins) + '</b></div><div class="stat"><small>푼 문제</small><b>' + ms.solved + '<i>문제</i></b></div><div class="stat"><small>정답률</small><b>' + ms.acc + '<i>%</i></b></div></div>';
-    h += noteHTML();
+    if (S.name) { h += noteHTML(); setTimeout(noteSync, 0); }
     /* 학습 진도 */
     h += '<h3 class="sech">학습 진도 <span>완료 ' + P.days.filter(function (d) { return dayState(d) === 'done'; }).length + ' / ' + P.days.length + '</span></h3><div class="drows">' + P.days.map(function (d, di) {
       var g = dayProgress(d), st = DS(d.id), s = dayState(d), hs = hist(d);
@@ -983,9 +984,45 @@
     var id = q.noteId || noteId(c, d), e = notes()[id] || (notes()[id] = { id: id, d: d.id, wrong: 0, conf: false, ok: false, first: Date.now() });
     e.q = c; e.at = Date.now();
     if (kind === 'wrong') { e.wrong++; e.ok = false; } else if (kind === 'conf') { e.conf = true; e.ok = false; } else if (kind === 'ok') { e.ok = true; e.conf = false; }
-    save(); return e;
+    save(); noteSend(e); return e;
   }
-  function noteUnconf(q) { var e = noteEntry(q); if (!e) return; e.conf = false; if (!e.wrong) delete notes()[e.id]; else if (RS.practice === '오답 노트') e.ok = true; save(); }
+  function noteUnconf(q) { var e = noteEntry(q); if (!e) return; e.conf = false; e.at = Date.now(); if (!e.wrong) { delete notes()[e.id]; noteSend(e, true); } else { if (RS.practice === '오답 노트') e.ok = true; noteSend(e); } save(); }
+  /* 시트와 맞추기: 바뀐 노트는 보내고(daily:noteq 대기열), 학생이 들어오면 시트의 노트를 받아 합친다 → 어느 기기에서든 같은 노트 */
+  var NQK = 'daily:noteq', nFlushing = false, nSynced = {};
+  function noteQ() { try { return JSON.parse(lsGet(NQK)) || []; } catch (e) { return []; } }
+  function noteSend(e, del) {
+    if (!SHEET || !S.name || !e) return;
+    var d = P.days.filter(function (x) { return x.id === e.d; })[0] || P.days[0], q = e.q || {};
+    var item = { name: S.name, unit: P.id, school: P.school, id: e.id, at: e.at || Date.now(), del: !!del, day: d.name + ' ' + d.range, group: noteGroup(d), step: q.stepTitle || '',
+      text: cut(strip(q.prompt || q.s || q.ko || (q.lines || []).join(' / ') || q.key || ''), 200), wrong: e.wrong, conf: e.conf, ok: e.ok,
+      data: del ? '' : JSON.stringify({ id: e.id, d: e.d, wrong: e.wrong, conf: e.conf, ok: e.ok, at: e.at, first: e.first, q: e.q }) };
+    var qq = noteQ().filter(function (x) { return !(x.name === item.name && x.unit === item.unit && x.id === item.id); }); qq.push(item);
+    lsSet(NQK, JSON.stringify(qq.slice(-400))); setTimeout(noteFlush, 300);
+  }
+  function noteFlush() {
+    if (!SHEET || nFlushing || !window.fetch) return;
+    var qq = noteQ(); if (!qq.length) return;
+    var batch = qq.slice(0, 15); nFlushing = true;
+    fetch(SHEET, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ k: window.SHEET_KEY || '', notes: batch }) })
+      .then(function () { var sent = {}; batch.forEach(function (x) { sent[x.name + x.unit + x.id + x.at + x.del] = 1; });
+        lsSet(NQK, JSON.stringify(noteQ().filter(function (x) { return !sent[x.name + x.unit + x.id + x.at + x.del]; }))); nFlushing = false; if (noteQ().length) setTimeout(noteFlush, 500); },
+        function () { nFlushing = false; });
+  }
+  try { window.addEventListener('online', noteFlush); } catch (e) {}
+  function noteSync() {
+    if (!SHEET || !S.name || !window.fetch || nSynced[S.name]) return;
+    var who = S.name, pc = myPass(who); nSynced[who] = true;
+    fetch(SHEET + (SHEET.indexOf('?') < 0 ? '?' : '&') + 'notes=1&name=' + encodeURIComponent(who) + '&code=' + encodeURIComponent(pc ? pc.c : '') + '&unit=' + encodeURIComponent(P.id) + '&_=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { return r.text(); }).then(function (t) {
+        var j = null; try { j = JSON.parse(t); } catch (e) {}
+        if (!j || !j.ok || S.name !== who) { if (!j || !j.ok) nSynced[who] = false; return; }
+        var mine = notes(), seen = {}, changed = false;
+        (j.notes || []).forEach(function (raw) { var e; try { e = JSON.parse(raw); } catch (x) { return; } if (!e || !e.id || !e.q) return; seen[e.id] = 1;
+          var l = mine[e.id]; if (!l || (e.at || 0) > (l.at || 0)) { mine[e.id] = e; changed = true; } });
+        Object.keys(mine).forEach(function (id) { if (!seen[id]) noteSend(mine[id]); }); /* 이 기기에만 있던 노트는 시트로 */
+        if (changed) { save(); var c = app.querySelector('.notecard'); if (c) { c.outerHTML = noteHTML(); app.querySelectorAll('[data-note]').forEach(function (b) { b.onclick = function () { startNote(b.dataset.note); }; }); } }
+      }, function () { nSynced[who] = false; });
+  }
   function noteGroup(d) { var m = /(\d+)과/.exec(d.range || ''); return m ? m[1] + '과' : d.name; }
   function noteGroups() {
     var g = {}, order = [];
@@ -1087,4 +1124,5 @@
   if (/[?&]test\b/.test(location.search)) window.__dbg = function () { return RS; };
   home();
   gateSync();
+  setTimeout(noteFlush, 1500);
 })();
