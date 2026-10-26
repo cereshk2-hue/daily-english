@@ -184,7 +184,8 @@
       if (!j.gate || j.ok) { useStudent(n); if (j.isNew) { S.newCode = String(c).replace(/\D/g, ''); save(); } home(); return; }
       if (j.why === 'unit') { useStudent(n); home(); return; } /* 코드는 맞음 → '열어 주지 않은 과제' 안내 화면 */
       msg.textContent = j.why === 'blocked' ? '지금은 이 이름으로 학습할 수 없어요. 선생님께 말씀드려 주세요.'
-        : j.why === 'code' ? '이 이름은 다른 코드로 이미 등록돼 있어요. 내 코드를 잊었다면 선생님께 물어보세요.' : '이름이나 학생 코드를 확인해 주세요.';
+        : j.why === 'code' ? '이 이름은 다른 코드로 이미 등록돼 있어요. 내 코드를 잊었다면 선생님께 물어보세요.'
+        : j.why === 'new' ? '처음 들어오는 이름이에요. 학생 코드는 숫자 딱 4자리로 만들어 주세요. (지금 ' + String(c || '').replace(/\D/g, '').length + '자리)' : '이름이나 학생 코드를 확인해 주세요.';
       msg.hidden = false;
     }, function () { btn.disabled = false; btn.textContent = old; msg.textContent = '인터넷 연결을 확인하고 다시 눌러 주세요.'; msg.hidden = false; });
   }
@@ -400,7 +401,7 @@
         (rs.length ? '<div class="whochips">' + rs.map(function (n) { return '<span class="whochip"><button type="button" class="btn ghost" data-who="' + E(n) + '">' + E(n) + '</button><button type="button" class="x" data-unwho="' + E(n) + '" aria-label="' + E(n) + ' 목록에서 빼기" title="목록에서 빼기(기록은 남아요)">×</button></span>'; }).join('') + '</div>' +
           '<span class="note" style="flex-basis:100%">내 이름이 없으면 아래에 새로 적어요. 같은 이름을 적으면 내 기록이 그대로 이어져요.</span>' : '') +
         '<span class="note" style="flex-basis:100%">선생님이 알아볼 수 있게 <b>한글 이름 전체</b>(예: 김민준)를 정확히 적어 주세요.</span><span class="note" id="nmbad" style="flex-basis:100%;color:var(--bad);font-weight:700" hidden>이름은 띄어쓰기 없이 한글로 적어 주세요. 예: 김민준</span>' +
-        '<input id="nm" autocomplete="name" placeholder="예: 김민준" maxlength="12">' + (GATE ? '<input id="pc" inputmode="numeric" autocomplete="off" placeholder="코드 4자리" maxlength="8" style="max-width:9em"><span class="note" style="flex-basis:100%;order:9">처음이면 <b>내가 정한 숫자 4자리</b>가 학생 코드가 돼요. 다른 기기에서 들어올 때 필요하니 꼭 기억하세요!</span>' : '') + '<button class="btn" type="submit">' + (rs.length ? '새 이름으로 시작' : '저장') + '</button></form>';
+        '<input id="nm" autocomplete="name" placeholder="예: 김민준" maxlength="12">' + (GATE ? '<input id="pc" inputmode="numeric" autocomplete="off" placeholder="숫자 4자리" maxlength="4" style="max-width:9em"><span class="note" style="flex-basis:100%;order:9">처음이면 <b>내가 정한 숫자 4자리</b>가 학생 코드가 돼요. 다른 기기에서 들어올 때 필요하니 꼭 기억하세요!</span>' : '') + '<button class="btn" type="submit">' + (rs.length ? '새 이름으로 시작' : '저장') + '</button></form>';
     }
     if (!S.name && GATE && SHEET) { app.innerHTML = h + '</div>'; bindHome(); var n0 = $('#nm'); if (n0) n0.focus(); return; } /* 명단이 켜져 있으면 이름·코드를 넣기 전엔 학습 화면을 보여 주지 않음 */
     if (needPass()) {
@@ -414,7 +415,7 @@
       else if (mp && !deny) h += '<div class="card" id="passform" style="margin-bottom:16px"><p style="margin:0">확인하고 있어요…</p><span class="note">인터넷이 연결되어 있어야 해요.</span></div></div>';
       else h += '<form class="card who" id="passform" style="margin-bottom:16px"><label for="pc" style="flex-basis:100%;font-weight:600"><b>' + E(S.name) + '</b> 학생, <b>학생 코드 4자리</b>를 적어 주세요.</label>' +
         '<span class="note" style="flex-basis:100%">처음이면 지금 정한 숫자 4자리가 내 코드가 돼요. 이 기기에서는 다음부터 묻지 않아요.</span><span class="note" id="pcbad" style="flex-basis:100%;color:var(--bad);font-weight:700" hidden></span>' +
-        '<input id="pc" inputmode="numeric" autocomplete="off" placeholder="학생 코드" maxlength="8"><button class="btn" type="submit">확인</button>' +
+        '<input id="pc" inputmode="numeric" autocomplete="off" placeholder="숫자 4자리" maxlength="4"><button class="btn" type="submit">확인</button>' +
         '<button class="link" type="button" id="notme" style="flex-basis:100%;text-align:left">' + E(S.name) + ' 학생이 아니에요 (다른 이름으로)</button></form></div>';
       app.innerHTML = h; bindHome(); var pi = $('#pc'); if (pi) pi.focus();
       if (mp && !deny) gateSync();
