@@ -1,581 +1,362 @@
-/* 중1 천재(소영순) Lesson 6 · Heroes in Nature (본문: Joys of Working in Nature)
-   작성 규칙은 README.md 의 "데이터 작성 규칙".
+/* 중1 천재(소영순) Lesson 4 · 6 (시험 범위 4·5·6과, 5과는 나중에 4과와 6과 사이에 넣기)
+   4과: scratchpad/gen_m1c4.py · 6과: 예전 파일 그대로(id d1, d2 유지 → 학생 기록 보존). 7과는 시험 범위가 아니라 뺌(예전 파일: scratchpad/m1-chunjae-so-L6.with7.js)
    prose: true → 본문을 대사가 아닌 설명문으로 표시 */
 window.PKG = {
   id: 'm1-chunjae-so-L6',
   school: '중1 천재(소영순)',
-  unit: 'Lesson 6~7',
-  title: 'Heroes in Nature · Love for Art',
-  titleKo: '자연에서 일하는 즐거움 · 예술에 대한 사랑',
+  unit: 'Lesson 4 · 6',
+  title: 'My Delicious Summer Trip · Heroes in Nature',
+  titleKo: '나의 맛있는 여름 여행 · 자연에서 일하는 즐거움',
   exam: '2학기 기말고사',
   prose: true,
-  stepsBefore: ["핵심어휘·숙어", "어휘선택", "T/F 내용 확인", "어법선택", "동사변형", "오류찾기", "본문 스크램블", "문장순서", "문장삽입", "어색한 문장", "빈칸추론", "핵심문법"],   /* 일치·불일치 추가 전 단계 이름: 예전 기록을 새 단계에 맞추는 데 씀 */
-  teacherPhone: '',            /* 결과 받을 번호. 예: '010-1234-5678' */
-
+  stepsBefore: ['핵심어휘·숙어', '어휘선택', 'T/F 내용 확인', '어법선택', '동사변형', '오류찾기', '본문 스크램블', '문장순서', '문장삽입', '어색한 문장', '빈칸추론', '핵심문법'],
+  teacherPhone: '',
   days: [
-  /* ═══════════════════════════ DAY 1 · 본문 ❶❷ ═══════════════════════════ */
-  {
-    id: 'd1', name: 'DAY 1', range: '6과 본문 ❶❷', story: '자연에서 일하는 사람들 · 거제의 해녀, 나리',
-    passage: [
-      ['', '❶', ''],
-      ['', 'Some people love to work in nature.', '어떤 사람들은 자연에서 일하는 것을 아주 좋아한다.'],
-      ['', 'They work in the sea, mountains, or even in the Arctic.', '그들은 바다, 산, 심지어 북극에서도 일한다.'],
-      ['', "Let's meet them and listen to their stories.", '그들을 만나 보고 그들의 이야기를 들어 보자.'],
-      ['', '❷', ''],
-      ['Nari', 'I am Nari.', '저는 나리입니다.'],
-      ['', 'I am a haenyeo in Geoje.', '저는 거제의 해녀입니다.'],
-      ['', 'I dive in the water and collect seafood.', '저는 물에 잠수해서 해산물을 채집합니다.'],
-      ['', 'In the morning, I check the tide and the weather.', '아침에, 저는 조수와 날씨를 확인합니다.'],
-      ['', 'I wear a diving suit and swimming glasses to work in the water.', '저는 물속에서 일하기 위해 잠수복을 입고 수경을 씁니다.'],
-      ['', 'I love diving and spending time in the beautiful sea.', '저는 잠수하는 것과 아름다운 바다에서 시간을 보내는 것을 아주 좋아합니다.'],
-      ['', "I don't collect too much seafood.", '저는 너무 많은 해산물을 채집하지 않습니다.'],
-      ['', 'This is good for the ocean.', '이것이 바다에 좋습니다.'],
-      ['', 'These days, I see a lot of trash in the water, so I pick up the trash.', '요즘은 물속에 쓰레기가 많이 보여서 쓰레기를 줍습니다.'],
-      ['', 'I believe that we should care about the ocean.', '저는 우리가 바다에 신경을 써야 한다고 믿습니다.']
-    ],
-    steps: [
-      { type: 'vocab', title: '핵심어휘·숙어', quizN: 15, items: [
-        ['nature', '자연'], ['mountain', '산'], ['even', '심지어, ~조차'], ['Arctic', '북극; 북극의'],
-        ['listen to', '~을 듣다'], ['story', '이야기'], ['haenyeo', '해녀'], ['dive', '잠수하다'],
-        ['collect', '모으다, 채집하다'], ['seafood', '해산물'], ['check', '확인하다'], ['tide', '조수, 밀물과 썰물'],
-        ['weather', '날씨'], ['wear', '입다, 쓰다, 착용하다'], ['diving suit', '잠수복'], ['swimming glasses', '수경'],
-        ['spend time', '시간을 보내다'], ['too much', '너무 많은'], ['be good for', '~에 좋다'], ['ocean', '바다, 대양'],
-        ['these days', '요즘'], ['a lot of', '많은'], ['trash', '쓰레기'], ['pick up', '~을 줍다'],
-        ['believe', '믿다'], ['care about', '~에 신경 쓰다, 관심을 가지다']
-      ]},
-      { type: 'pick', title: '어휘선택', guide: '문맥에 맞는 낱말을 고르세요.', items: [
-        { s: 'Some people love to work in {nature|future}.', ex: 'nature: 자연' },
-        { s: 'They work in the sea, mountains, or {even|ever} in the Arctic.', ex: 'even: 심지어 (ever: 언젠가, 한 번이라도)' },
-        { s: "Let's meet them and {listen|look} to their stories.", ex: 'listen to: ~을 듣다' },
-        { s: 'I {dive|drive} in the water and collect seafood.', ex: 'dive: 잠수하다 (drive: 운전하다)' },
-        { s: 'In the morning, I {check|change} the tide and the weather.', ex: 'check: 확인하다' },
-        { s: 'I {wear|carry} a diving suit and swimming glasses to work in the water.', ex: 'wear: (옷·안경 등을) 입다, 쓰다' },
-        { s: "I don't collect too much seafood. This is {good|bad} for the ocean.", ex: '해산물을 너무 많이 채집하지 않는 것은 바다에 좋다.' },
-        { s: 'These days, I see a lot of trash in the water, so I {pick up|throw away} the trash.', ex: 'pick up: 줍다 (throw away: 버리다)' },
-        { s: 'I believe that we should {care about|forget about} the ocean.', ex: 'care about: ~에 신경 쓰다' }
-      ]},
-      { type: 'tf', title: 'T/F 내용 확인', guide: '본문 내용과 일치하면 T, 다르면 F를 고르세요.', items: [
-        ['Some people enjoy working in nature.', true, 'Some people love to work in nature.'],
-        ['Nari is a haenyeo in Jeju.', false, '나리는 거제(Geoje)의 해녀다.'],
-        ['Nari checks the tide and the weather in the morning.', true, 'In the morning, I check the tide and the weather.'],
-        ['Nari wears a diving suit to work in the water.', true, '물속에서 일하기 위해 잠수복을 입는다.'],
-        ['Nari collects as much seafood as she can.', false, '너무 많은 해산물을 채집하지 않는다.'],
-        ['Nari sees a lot of trash in the water these days.', true, 'These days, I see a lot of trash in the water.'],
-        ["Nari doesn't pick up the trash in the water.", false, '나리는 쓰레기를 줍는다(pick up the trash).'],
-        ['Nari thinks we should care about the ocean.', true, 'I believe that we should care about the ocean.']
-      ]},
-      { type: 'mc', title: '일치·불일치', guide: "본문을 읽고 내용과 맞는지 확인해요. 틀린 선택지는 해설의 근거 문장과 비교해 보세요.", items: [
-        { n: "❷", box: ["❷"], q: "나리에 관한 내용과 일치하지 <u>않는</u> 것은?", opts: ["Nari collects as much seafood as she can.", "Nari is a haenyeo in Geoje.", "Nari checks the tide and the weather in the morning.", "Nari wears a diving suit to work in the water.", "Nari picks up the trash in the water."], ex: "정답 근거: I don't collect too much seafood. (너무 많은 해산물을 채집하지 않는다)\n· as much ~ as she can : 할 수 있는 한 많이", per: [["나리는 할 수 있는 한 많은 해산물을 채집한다.", "I don't collect too much seafood", "불일치 → 너무 많이 채집하지 않음"], ["나리는 거제의 해녀이다.", "I am a haenyeo in Geoje", "일치"], ["나리는 아침에 조수와 날씨를 확인한다.", "In the morning, I check the tide and the weather", "일치"], ["나리는 물속에서 일하기 위해 잠수복을 입는다.", "I wear a diving suit", "일치"], ["나리는 물속의 쓰레기를 줍는다.", "so I pick up the trash", "일치"]] },
-        { n: "❷", box: ["❶", "❷"], q: "글의 내용과 <u>일치하는</u> 것은?", opts: ["Nari thinks that we should care about the ocean.", "Some people work in the Arctic, but not in the sea.", "Nari dives in the water at night.", "Nari doesn't like spending time in the sea.", "There is no trash in the water these days."], ex: "정답 근거: I believe that we should care about the ocean.\n· care about : ~에 신경 쓰다, 관심을 가지다", per: [["나리는 우리가 바다에 신경 써야 한다고 생각한다.", "I believe that we should care about the ocean", "일치"], ["어떤 사람들은 북극에서 일하지만 바다에서는 일하지 않는다.", "They work in the sea, mountains, or even in the Arctic", "불일치 → 바다에서도 일함"], ["나리는 밤에 물에 잠수한다.", "In the morning, I check the tide", "불일치 → 밤이라는 말은 없음"], ["나리는 바다에서 시간 보내는 것을 좋아하지 않는다.", "I love diving and spending time in the beautiful sea", "불일치 → 아주 좋아함"], ["요즘 물속에는 쓰레기가 없다.", "I see a lot of trash in the water", "불일치 → 쓰레기가 많음"]] }
-      ]},
-      { type: 'pick', title: '어법선택', guide: '어법상 알맞은 것을 고르세요.', items: [
-        { s: 'Some people love {to work|work} in nature.', ex: 'love + to부정사/동명사' },
-        { s: "Let's meet them and {listen|listening} to their stories.", ex: "Let's + 동사원형 (meet and listen 병렬)" },
-        { s: 'I am a haenyeo {in|on} Geoje.', ex: '지역·도시 이름 앞 → in' },
-        { s: 'I dive in the water and {collect|collects} seafood.', ex: '주어 I → collect (dive와 병렬)' },
-        { s: 'I wear a diving suit and swimming glasses {to work|working} in the water.', ex: '목적(~하기 위해) → to부정사' },
-        { s: 'I love diving and {spending|spend} time in the beautiful sea.', ex: 'diving과 and로 연결 → spending' },
-        { s: "I don't collect too {much|many} seafood.", ex: 'seafood는 셀 수 없는 명사 → much' },
-        { s: 'These days, I see {a lot of|a few} trash in the water.', ex: 'trash는 셀 수 없는 명사 → a lot of (a few는 셀 수 있는 명사)' },
-        { s: 'I believe {that|what} we should care about the ocean.', ex: '뒤에 완전한 문장 → 접속사 that' },
-        { s: 'I believe that we should {care|cares} about the ocean.', ex: '조동사 should + 동사원형' }
-      ]},
-      { type: 'verb', title: '동사변형', guide: '( ) 안의 동사를 알맞은 형태로 바꿔 쓰세요.', items: [
-        { s: 'Some people love ___ in nature.', v: 'work', a: ['to work', 'working'], ex: 'love + to부정사/동명사 (본문: to work)' },
-        { s: 'They ___ in the sea, mountains, or even in the Arctic.', v: 'work', a: ['work'], ex: '주어 They → work' },
-        { s: "Let's ___ them and listen to their stories.", v: 'meet', a: ['meet'], ex: "Let's + 동사원형" },
-        { s: 'I ___ in the water and collect seafood.', v: 'dive', a: ['dive'], ex: '주어 I + 현재형' },
-        { s: 'I wear a diving suit and swimming glasses ___ in the water.', v: 'work', a: ['to work'], ex: '목적(~하기 위해) → to work' },
-        { s: 'I love ___ and spending time in the beautiful sea.', v: 'dive', a: ['diving'], ex: 'spending과 병렬 → diving' },
-        { s: 'I love diving and ___ time in the beautiful sea.', v: 'spend', a: ['spending'], ex: 'diving과 병렬 → spending' },
-        { s: "I don't ___ too much seafood.", v: 'collect', a: ['collect'], ex: "don't + 동사원형" },
-        { s: 'This ___ good for the ocean.', v: 'be', a: ['is'], ex: '주어 This → is' },
-        { s: 'I believe that we should ___ about the ocean.', v: 'care', a: ['care'], ex: 'should + 동사원형' }
-      ]},
-      { type: 'error', title: '오류찾기', guide: '어법상 틀린 곳을 고르세요.', items: [
-        { s: 'Some people love [[work]] in nature. They [[work]] in the sea, mountains, or [[even]] [[in]] the Arctic.', w: 0, fix: 'to work', ex: 'love + to부정사/동명사 → to work (또는 working)' },
-        { s: "Let's [[meet]] them and [[listening]] [[to]] [[their]] stories.", w: 1, fix: 'listen', ex: "Let's + 동사원형 → listen" },
-        { s: 'I [[dive]] in the water and [[collects]] seafood. In the morning, I [[check]] the tide and [[the]] weather.', w: 1, fix: 'collect', ex: '주어 I → collect' },
-        { s: 'I wear a diving suit and swimming glasses [[work]] [[in]] the water. I love [[diving]] and [[spending]] time in the beautiful sea.', w: 0, fix: 'to work', ex: '목적(~하기 위해) → to work' },
-        { s: "I [[don't]] collect too [[many]] seafood. This [[is]] good [[for]] the ocean.", w: 1, fix: 'much', ex: 'seafood는 셀 수 없는 명사 → much' },
-        { s: 'These days, I see [[a lot of]] trash in the water, so I [[pick up]] the trash. I believe [[what]] we should [[care]] about the ocean.', w: 2, fix: 'that', ex: '뒤에 완전한 문장 → 접속사 that' }
-      ]},
-      { type: 'scramble', title: '본문 스크램블', guide: '우리말에 맞게 단어를 눌러 문장을 완성하세요.', items: [
-        { ko: '어떤 사람들은 자연에서 일하는 것을 아주 좋아한다.', en: 'Some people love to work in nature.' },
-        { ko: '그들을 만나 보고 그들의 이야기를 들어 보자.', en: "Let's meet them and listen to their stories." },
-        { ko: '저는 물에 잠수해서 해산물을 채집합니다.', en: 'I dive in the water and collect seafood.' },
-        { ko: '저는 물속에서 일하기 위해 잠수복을 입고 수경을 씁니다.', en: 'I wear a diving suit and swimming glasses to work in the water.' },
-        { ko: '저는 잠수하는 것과 아름다운 바다에서 시간을 보내는 것을 아주 좋아합니다.', en: 'I love diving and spending time in the beautiful sea.' },
-        { ko: '저는 너무 많은 해산물을 채집하지 않습니다.', en: "I don't collect too much seafood." },
-        { ko: '저는 우리가 바다에 신경을 써야 한다고 믿습니다.', en: 'I believe that we should care about the ocean.' }
-      ]},
-      { type: 'order', title: '문장순서', guide: '문장을 본문 순서대로 눌러서 배열하세요.', items: [
-        { lines: [
-          'Some people love to work in nature.',
-          'They work in the sea, mountains, or even in the Arctic.',
-          "Let's meet them and listen to their stories.",
-          'I am Nari.'
-        ]},
-        { lines: [
-          'I dive in the water and collect seafood.',
-          'In the morning, I check the tide and the weather.',
-          'I wear a diving suit and swimming glasses to work in the water.',
-          'I love diving and spending time in the beautiful sea.'
-        ]},
-        { lines: [
-          "I don't collect too much seafood.",
-          'This is good for the ocean.',
-          'These days, I see a lot of trash in the water, so I pick up the trash.',
-          'I believe that we should care about the ocean.'
-        ]}
-      ]},
-      { type: 'insert', title: '문장삽입', guide: '주어진 문장이 들어가기에 가장 알맞은 곳을 고르세요.', items: [
-        { lines: [
-          'Some people love to work in nature.',
-          'They work in the sea, mountains, or even in the Arctic.',
-          "Let's meet them and listen to their stories.",
-          'I am Nari.',
-          'I am a haenyeo in Geoje.'
-        ], given: 1, ex: 'They는 앞 문장의 Some people을 가리킨다.' },
-        { lines: [
-          'I dive in the water and collect seafood.',
-          'In the morning, I check the tide and the weather.',
-          'I wear a diving suit and swimming glasses to work in the water.',
-          'I love diving and spending time in the beautiful sea.',
-          "I don't collect too much seafood."
-        ], given: 2, ex: '아침에 조수와 날씨를 확인한 뒤, 물속에서 일하기 위해 잠수복을 입는다.' },
-        { lines: [
-          'I love diving and spending time in the beautiful sea.',
-          "I don't collect too much seafood.",
-          'This is good for the ocean.',
-          'These days, I see a lot of trash in the water, so I pick up the trash.',
-          'I believe that we should care about the ocean.'
-        ], given: 2, ex: 'This는 "해산물을 너무 많이 채집하지 않는 것"을 가리킨다.' }
-      ]},
-      { type: 'odd', title: '어색한 문장', guide: '글의 흐름과 관계없는 문장을 고르세요.', items: [
-        { lines: [
-          'Some people love to work in nature.',
-          'They work in the sea, mountains, or even in the Arctic.',
-          "They don't like going outside at all.",
-          "Let's meet them and listen to their stories."
-        ], odd: 2, ex: '자연에서 일하는 것을 좋아하는 사람들인데 밖에 나가는 것을 싫어한다는 내용은 맞지 않는다.' },
-        { lines: [
-          'I dive in the water and collect seafood.',
-          'In the morning, I check the tide and the weather.',
-          'I wear a diving suit and swimming glasses to work in the water.',
-          'I am afraid of the sea, so I never swim.',
-          'I love diving and spending time in the beautiful sea.'
-        ], odd: 3, ex: '나리는 잠수와 바다에서 시간 보내기를 아주 좋아한다.' },
-        { lines: [
-          "I don't collect too much seafood.",
-          'This is good for the ocean.',
-          'So I always collect as much seafood as I can.',
-          'These days, I see a lot of trash in the water, so I pick up the trash.',
-          'I believe that we should care about the ocean.'
-        ], odd: 2, ex: '해산물을 너무 많이 채집하지 않는다는 앞 내용과 반대된다.' }
-      ]},
-      { type: 'blank', title: '빈칸추론', guide: '빈칸에 들어갈 말로 가장 알맞은 것을 고르세요.', items: [
-        { s: 'I wear a diving suit and swimming glasses ____.', opts: ['to work in the water', 'to look nice', 'to sleep well', 'to go shopping'], ex: '물속에서 일하기 위해 잠수복과 수경을 착용한다.' },
-        { s: 'I love diving and ____ in the beautiful sea.', opts: ['spending time', 'throwing trash', 'building houses', 'doing homework'], ex: '아름다운 바다에서 시간을 보내는 것을 좋아한다.' },
-        { s: 'These days, I see a lot of trash in the water, so I ____.', opts: ['pick up the trash', 'throw more trash', 'stop diving', 'buy new glasses'], ex: '쓰레기가 많이 보여서 쓰레기를 줍는다.' },
-        { s: "I don't collect too much seafood. This is good for the ocean. I believe that we should ____ the ocean.", opts: ['care about', 'take everything from', 'get away from', 'be afraid of'], ex: '바다를 아끼는 행동을 하므로 바다에 신경 써야 한다고 믿는다.' }
-      ]},
-      { type: 'mc', title: '핵심문법', guide: '알맞은 답을 고르세요.', items: [
-        { q: '빈칸에 들어갈 수 <b>없는</b> 것은?<br><b>I ______ to play soccer.</b>', opts: ['enjoy', 'like', 'love', 'start'], ex: 'enjoy는 동명사만 목적어로 쓴다 (enjoy playing). like·love·start는 둘 다 가능.' },
-        { q: '다음 문장과 뜻이 같은 것은?<br><b>Some people love to work in nature.</b>', opts: ['Some people love working in nature.', 'Some people love work in nature.', 'Some people love worked in nature.', 'Some people loves to work in nature.'], ex: 'love + to부정사 = love + 동명사' },
-        { q: '밑줄 친 부분과 쓰임이 같은 것은?<br><b>I wear a diving suit <u>to work</u> in the water.</b>', opts: ['She went to the library <u>to borrow</u> books.', 'I want <u>to work</u> in nature.', 'I love <u>to swim</u> in the sea.', 'He started <u>to read</u> the book.'], ex: '목적(~하기 위해)의 to부정사. 나머지는 동사의 목적어.' },
-        { q: '"나는 책을 사기 위해 서점에 갔다."를 바르게 영작한 것은?', opts: ['I went to the bookstore to buy a book.', 'I went to the bookstore buy a book.', 'I went to the bookstore for buy a book.', 'I went to the bookstore buying a book.'], ex: '목적 → to + 동사원형' },
-        { q: '빈칸에 공통으로 알맞은 것은?<br><b>I believe ______ we should care about the ocean.<br>I think ______ he is kind.</b>', opts: ['that', 'what', 'this', 'it'], ex: '완전한 문장을 이끄는 접속사 that (생략 가능)' },
-        { q: '밑줄 친 <b>that</b>을 생략할 수 있는 것은?', opts: ['I know <u>that</u> she is honest.', '<u>That</u> bag is mine.', 'I like <u>that</u> song.', '<u>That</u> is my brother.'], ex: '동사의 목적어 자리 접속사 that은 생략할 수 있다. 나머지는 지시형용사·지시대명사.' },
-        { q: '빈칸에 알맞은 것은?<br><b>I don\'t collect too ______ seafood.</b>', opts: ['much', 'many', 'a few', 'few'], ex: 'seafood는 셀 수 없는 명사 → much' },
-        { q: '빈칸에 들어갈 수 <b>없는</b> 것은?<br><b>I see ______ trash in the water.</b>', opts: ['many', 'a lot of', 'lots of', 'much'], ex: 'trash는 셀 수 없는 명사 → many는 쓸 수 없다.' },
-        { q: '빈칸에 알맞은 것은?<br><b>I love diving and ______ time in the sea.</b>', opts: ['spending', 'spend', 'spends', 'spent'], ex: 'diving과 and로 연결 → spending' }
-      ]}
-    ]
-  },
-
-  /* ═══════════════════════════ DAY 2 · 본문 ❸❹ ═══════════════════════════ */
-  {
-    id: 'd2', name: 'DAY 2', range: '6과 본문 ❸❹', story: '지리산의 수의사, 지한 · 극지 과학자, 은',
-    passage: [
-      ['', '❸', ''],
-      ['Jihan', 'My name is Jihan.', '제 이름은 지한입니다.'],
-      ['', 'I am a vet at the wild animal care center in Jirisan.', '저는 지리산 야생 동물 보호 센터의 수의사입니다.'],
-      ['', 'I take care of sick wild animals in the center and send them back to their homes.', '저는 센터의 아픈 야생 동물을 돌보고 그들을 집으로 돌려보냅니다.'],
-      ['', 'Also, I often climb the mountain to look after wild animals like bears.', '또한 저는 곰과 같은 야생 동물을 돌보기 위해 자주 산을 오릅니다.'],
-      ['', "I'm proud of my job.", '저는 제 직업이 자랑스럽습니다.'],
-      ['', 'I think that protecting wild animals is important.', '저는 야생 동물을 보호하는 것이 중요하다고 생각합니다.'],
-      ['', 'We should keep an eye on them and their homes to live together.', '우리는 함께 살아가기 위해 그들과 그들의 서식처를 계속 지켜보아야 합니다.'],
-      ['', '❹', ''],
-      ['Eun', 'My name is Eun, and I am an Arctic scientist.', '제 이름은 은이고, 저는 극지 과학자입니다.'],
-      ['', 'I work at the Arctic Dasan Station in Norway.', '저는 노르웨이의 북극 다산 과학 기지에서 일합니다.'],
-      ['', 'I study the soil, seawater, and ice in the Arctic.', '저는 북극의 토양, 바닷물, 얼음을 연구합니다.'],
-      ['', 'I often travel on the special ship, Araon.', '저는 특별한 배인 아라온호를 타고 자주 이동합니다.'],
-      ['', 'This ship is stronger than other ships.', '이 배는 다른 배보다 더 튼튼합니다.'],
-      ['', 'It can break thick ice across the ocean.', '그것은 바다를 가로질러 두꺼운 얼음을 깰 수 있습니다.'],
-      ['', 'Thanks to Araon, I can collect seawater samples.', '아라온호 덕분에 저는 바닷물 표본을 채집할 수 있습니다.'],
-      ['', 'The Arctic Ocean has the answers to the climate crisis.', '북극해는 기후 위기에 대한 해답을 가지고 있습니다.'],
-      ['', 'I hope that my work can help the Earth.', '저는 제 일이 지구를 도울 수 있기를 바랍니다.']
-    ],
-    steps: [
-      { type: 'vocab', title: '핵심어휘·숙어', quizN: 15, items: [
-        ['vet', '수의사'], ['wild animal', '야생 동물'], ['take care of', '~을 돌보다'], ['sick', '아픈'],
-        ['send ~ back', '~을 돌려보내다'], ['often', '자주, 종종'], ['climb', '오르다'], ['look after', '~을 돌보다'],
-        ['like (전치사)', '~와 같은, ~처럼'], ['bear', '곰'], ['be proud of', '~을 자랑스러워하다'], ['protect', '보호하다'],
-        ['important', '중요한'], ['keep an eye on', '~을 계속 지켜보다'], ['together', '함께'], ['scientist', '과학자'],
-        ['station', '기지; 역'], ['soil', '토양, 흙'], ['seawater', '바닷물'], ['travel', '이동하다; 여행하다'],
-        ['special', '특별한'], ['strong', '튼튼한, 강한'], ['break', '깨다, 부수다'], ['thick', '두꺼운'],
-        ['across', '~을 가로질러'], ['thanks to', '~ 덕분에'], ['sample', '표본, 샘플'], ['answer to', '~에 대한 해답'],
-        ['climate crisis', '기후 위기'], ['hope', '바라다, 희망하다']
-      ]},
-      { type: 'pick', title: '어휘선택', guide: '문맥에 맞는 낱말을 고르세요.', items: [
-        { s: 'I am a {vet|chef} at the wild animal care center in Jirisan.', ex: 'vet: 수의사' },
-        { s: 'I take care of {sick|healthy} wild animals in the center and send them back to their homes.', ex: '센터에서 아픈(sick) 동물을 돌본다.' },
-        { s: 'Also, I often {climb|cross} the mountain to look after wild animals like bears.', ex: 'climb the mountain: 산을 오르다' },
-        { s: "I'm {proud|afraid} of my job.", ex: 'be proud of: ~을 자랑스러워하다' },
-        { s: 'I think that {protecting|hunting} wild animals is important.', ex: 'protect: 보호하다' },
-        { s: 'We should keep an {eye|ear} on them and their homes to live together.', ex: 'keep an eye on: ~을 계속 지켜보다' },
-        { s: 'I study the {soil|sand}, seawater, and ice in the Arctic.', ex: 'soil: 토양, 흙' },
-        { s: 'This ship is {stronger|weaker} than other ships.', ex: '두꺼운 얼음을 깰 수 있으므로 더 튼튼하다.' },
-        { s: 'It can break {thick|thin} ice across the ocean.', ex: 'thick: 두꺼운 (thin: 얇은)' },
-        { s: '{Thanks to|Instead of} Araon, I can collect seawater samples.', ex: 'thanks to: ~ 덕분에' },
-        { s: 'The Arctic Ocean has the {answers|questions} to the climate crisis.', ex: 'answer to: ~에 대한 해답' }
-      ]},
-      { type: 'tf', title: 'T/F 내용 확인', guide: '본문 내용과 일치하면 T, 다르면 F를 고르세요.', items: [
-        ['Jihan is a vet in Jirisan.', true, '지리산 야생 동물 보호 센터의 수의사다.'],
-        ['Jihan sends the wild animals to a zoo.', false, '동물들을 그들의 집(서식처)으로 돌려보낸다.'],
-        ['Jihan often climbs the mountain to look after wild animals.', true, 'I often climb the mountain to look after wild animals.'],
-        ["Jihan thinks protecting wild animals isn't important.", false, '야생 동물 보호가 중요하다고 생각한다.'],
-        ['Eun works at a station in Norway.', true, 'the Arctic Dasan Station in Norway'],
-        ['Eun studies the soil, seawater, and ice in the Antarctic.', false, '남극(Antarctic)이 아니라 북극(Arctic)을 연구한다.'],
-        ['Araon can break thick ice across the ocean.', true, 'It can break thick ice across the ocean.'],
-        ['Eun hopes the work can help the Earth.', true, 'I hope that my work can help the Earth.']
-      ]},
-      { type: 'mc', title: '일치·불일치', guide: "본문을 읽고 내용과 맞는지 확인해요. 틀린 선택지는 해설의 근거 문장과 비교해 보세요.", items: [
-        { n: "❸", box: ["❸"], q: "지한에 관한 내용과 일치하지 <u>않는</u> 것은?", opts: ["Jihan works at a zoo in Seoul.", "Jihan takes care of sick wild animals.", "Jihan sends the animals back to their homes.", "Jihan often climbs the mountain to look after bears.", "Jihan is proud of his job."], ex: "정답 근거: I am a vet at the wild animal care center in Jirisan.\n· vet : 수의사 · take care of = look after : 돌보다", per: [["지한은 서울의 동물원에서 일한다.", "I am a vet at the wild animal care center in Jirisan", "불일치 → 지리산 야생 동물 보호 센터"], ["지한은 아픈 야생 동물을 돌본다.", "I take care of sick wild animals", "일치"], ["지한은 동물들을 집으로 돌려보낸다.", "send them back to their homes", "일치"], ["지한은 곰을 돌보기 위해 자주 산에 오른다.", "I often climb the mountain to look after wild animals like bears", "일치"], ["지한은 자기 직업이 자랑스럽다.", "I'm proud of my job", "일치"]] },
-        { n: "❹", box: ["❹"], q: "은에 관한 내용과 <u>일치하는</u> 것은?", opts: ["The ship Araon can break thick ice across the ocean.", "Eun works at a station in Canada.", "Eun studies animals and plants in the Arctic.", "Araon is weaker than other ships.", "Eun can't collect seawater samples."], ex: "정답 근거: It can break thick ice across the ocean.\n· thick : 두꺼운 · thanks to : ~ 덕분에 · sample : 표본", per: [["아라온호는 바다를 가로질러 두꺼운 얼음을 깰 수 있다.", "It can break thick ice across the ocean", "일치"], ["은은 캐나다의 기지에서 일한다.", "I work at the Arctic Dasan Station in Norway", "불일치 → 노르웨이"], ["은은 북극의 동물과 식물을 연구한다.", "I study the soil, seawater, and ice in the Arctic", "불일치 → 토양, 바닷물, 얼음"], ["아라온호는 다른 배보다 약하다.", "This ship is stronger than other ships", "불일치 → 더 튼튼함"], ["은은 바닷물 표본을 채집할 수 없다.", "Thanks to Araon, I can collect seawater samples", "불일치 → 채집할 수 있음"]] }
-      ]},
-      { type: 'pick', title: '어법선택', guide: '어법상 알맞은 것을 고르세요.', items: [
-        { s: 'I am a vet {at|on} the wild animal care center in Jirisan.', ex: '건물·특정 장소 → at, 넓은 지역 → in' },
-        { s: 'I take care of sick wild animals in the center and send {them back|back them} to their homes.', ex: '이어동사 목적어가 대명사 → 동사 + 대명사 + back' },
-        { s: 'Also, I often climb the mountain {to look|looking} after wild animals like bears.', ex: '목적(~하기 위해) → to부정사' },
-        { s: 'Also, I {often climb|climb often} the mountain.', ex: '빈도부사는 일반동사 앞에' },
-        { s: "I'm proud {of|for} my job.", ex: 'be proud of: ~을 자랑스러워하다' },
-        { s: 'I think that protecting wild animals {is|are} important.', ex: '동명사 주어는 단수 취급 → is' },
-        { s: 'We should keep an eye on them and their homes {to live|live} together.', ex: '목적(~하기 위해) → to live' },
-        { s: 'This ship is {stronger|strong} than other ships.', ex: 'than 앞 → 비교급 stronger' },
-        { s: 'It can {break|breaks} thick ice across the ocean.', ex: '조동사 can + 동사원형' },
-        { s: 'Thanks to Araon, I can {collect|collecting} seawater samples.', ex: '조동사 can + 동사원형' },
-        { s: 'I hope {that|what} my work can help the Earth.', ex: '뒤에 완전한 문장 → 접속사 that' }
-      ]},
-      { type: 'verb', title: '동사변형', guide: '( ) 안의 동사를 알맞은 형태로 바꿔 쓰세요.', items: [
-        { s: 'I ___ care of sick wild animals in the center.', v: 'take', a: ['take'], ex: 'take care of: ~을 돌보다' },
-        { s: 'I take care of sick wild animals in the center and ___ them back to their homes.', v: 'send', a: ['send'], ex: 'take와 and로 연결 → send' },
-        { s: 'Also, I often climb the mountain ___ after wild animals like bears.', v: 'look', a: ['to look'], ex: '목적(~하기 위해) → to look' },
-        { s: 'I think that ___ wild animals is important.', v: 'protect', a: ['protecting', 'to protect'], ex: '주어 자리 → 동명사 (본문: protecting)' },
-        { s: 'I think that protecting wild animals ___ important.', v: 'be', a: ['is'], ex: '동명사 주어는 단수 → is' },
-        { s: 'We should keep an eye on them and their homes ___ together.', v: 'live', a: ['to live'], ex: '목적(~하기 위해) → to live' },
-        { s: 'I often ___ on the special ship, Araon.', v: 'travel', a: ['travel'], ex: '주어 I + 현재형' },
-        { s: 'It can ___ thick ice across the ocean.', v: 'break', a: ['break'], ex: 'can + 동사원형' },
-        { s: 'The Arctic Ocean ___ the answers to the climate crisis.', v: 'have', a: ['has'], ex: '3인칭 단수 → has' },
-        { s: 'I hope that my work can ___ the Earth.', v: 'help', a: ['help'], ex: 'can + 동사원형' }
-      ]},
-      { type: 'error', title: '오류찾기', guide: '어법상 틀린 곳을 고르세요.', items: [
-        { s: 'I take care [[of]] sick wild animals in the center and send [[back them]] [[to]] [[their]] homes.', w: 1, fix: 'them back', ex: '이어동사 목적어가 대명사 → send them back' },
-        { s: 'Also, I often [[climb]] the mountain [[looking]] after wild animals [[like]] [[bears]].', w: 1, fix: 'to look', ex: '목적(~하기 위해) → to look' },
-        { s: "I'm proud [[of]] my job. I think [[that]] [[protecting]] wild animals [[are]] important.", w: 3, fix: 'is', ex: '동명사 주어는 단수 → is' },
-        { s: 'We should [[keep]] an eye [[on]] them and their homes [[live]] [[together]].', w: 2, fix: 'to live', ex: '목적(~하기 위해) → to live' },
-        { s: 'I work [[at]] the Arctic Dasan Station [[in]] Norway. I [[study]] the soil, seawater, and ice in the Arctic. I [[travel often]] on the special ship, Araon.', w: 3, fix: 'often travel', ex: '빈도부사는 일반동사 앞 → often travel' },
-        { s: 'This ship is [[strong]] [[than]] other ships. It can [[break]] [[thick]] ice across the ocean.', w: 0, fix: 'stronger', ex: 'than 앞 → 비교급 stronger' },
-        { s: 'Thanks to Araon, I can [[collects]] seawater samples. The Arctic Ocean [[has]] the answers [[to]] the climate crisis. I hope [[that]] my work can help the Earth.', w: 0, fix: 'collect', ex: 'can + 동사원형' }
-      ]},
-      { type: 'scramble', title: '본문 스크램블', guide: '우리말에 맞게 단어를 눌러 문장을 완성하세요.', items: [
-        { ko: '저는 센터의 아픈 야생 동물을 돌보고 그들을 집으로 돌려보냅니다.', en: 'I take care of sick wild animals in the center and send them back to their homes.' },
-        { ko: '또한 저는 곰과 같은 야생 동물을 돌보기 위해 자주 산을 오릅니다.', en: 'Also, I often climb the mountain to look after wild animals like bears.' },
-        { ko: '저는 야생 동물을 보호하는 것이 중요하다고 생각합니다.', en: 'I think that protecting wild animals is important.' },
-        { ko: '우리는 함께 살아가기 위해 그들과 그들의 서식처를 계속 지켜보아야 합니다.', en: 'We should keep an eye on them and their homes to live together.' },
-        { ko: '이 배는 다른 배보다 더 튼튼합니다.', en: 'This ship is stronger than other ships.' },
-        { ko: '아라온호 덕분에 저는 바닷물 표본을 채집할 수 있습니다.', en: 'Thanks to Araon, I can collect seawater samples.' },
-        { ko: '북극해는 기후 위기에 대한 해답을 가지고 있습니다.', en: 'The Arctic Ocean has the answers to the climate crisis.' },
-        { ko: '저는 제 일이 지구를 도울 수 있기를 바랍니다.', en: 'I hope that my work can help the Earth.' }
-      ]},
-      { type: 'order', title: '문장순서', guide: '문장을 본문 순서대로 눌러서 배열하세요.', items: [
-        { lines: [
-          'My name is Jihan.',
-          'I am a vet at the wild animal care center in Jirisan.',
-          'I take care of sick wild animals in the center and send them back to their homes.',
-          'Also, I often climb the mountain to look after wild animals like bears.'
-        ]},
-        { lines: [
-          "I'm proud of my job.",
-          'I think that protecting wild animals is important.',
-          'We should keep an eye on them and their homes to live together.',
-          'My name is Eun, and I am an Arctic scientist.'
-        ]},
-        { lines: [
-          'I work at the Arctic Dasan Station in Norway.',
-          'I study the soil, seawater, and ice in the Arctic.',
-          'I often travel on the special ship, Araon.',
-          'This ship is stronger than other ships.'
-        ]},
-        { lines: [
-          'It can break thick ice across the ocean.',
-          'Thanks to Araon, I can collect seawater samples.',
-          'The Arctic Ocean has the answers to the climate crisis.',
-          'I hope that my work can help the Earth.'
-        ]}
-      ]},
-      { type: 'insert', title: '문장삽입', guide: '주어진 문장이 들어가기에 가장 알맞은 곳을 고르세요.', items: [
-        { lines: [
-          'My name is Jihan.',
-          'I am a vet at the wild animal care center in Jirisan.',
-          'I take care of sick wild animals in the center and send them back to their homes.',
-          'Also, I often climb the mountain to look after wild animals like bears.',
-          "I'm proud of my job."
-        ], given: 2, ex: 'the center는 앞 문장의 보호 센터를 가리키고, 뒤 문장의 Also는 하는 일을 하나 더 덧붙인다.' },
-        { lines: [
-          "I'm proud of my job.",
-          'I think that protecting wild animals is important.',
-          'We should keep an eye on them and their homes to live together.',
-          'My name is Eun, and I am an Arctic scientist.'
-        ], given: 2, ex: 'them은 앞 문장의 wild animals를 가리킨다.' },
-        { lines: [
-          'I study the soil, seawater, and ice in the Arctic.',
-          'I often travel on the special ship, Araon.',
-          'This ship is stronger than other ships.',
-          'It can break thick ice across the ocean.',
-          'Thanks to Araon, I can collect seawater samples.'
-        ], given: 2, ex: 'This ship은 앞의 Araon을 가리키고, 뒤 문장의 It은 This ship을 가리킨다.' },
-        { lines: [
-          'This ship is stronger than other ships.',
-          'It can break thick ice across the ocean.',
-          'Thanks to Araon, I can collect seawater samples.',
-          'The Arctic Ocean has the answers to the climate crisis.',
-          'I hope that my work can help the Earth.'
-        ], given: 2, ex: '얼음을 깰 수 있는 아라온호 덕분에 바닷물 표본을 채집할 수 있다.' }
-      ]},
-      { type: 'odd', title: '어색한 문장', guide: '글의 흐름과 관계없는 문장을 고르세요.', items: [
-        { lines: [
-          'I am a vet at the wild animal care center in Jirisan.',
-          'I take care of sick wild animals in the center and send them back to their homes.',
-          'I keep the animals in the center forever.',
-          'Also, I often climb the mountain to look after wild animals like bears.',
-          "I'm proud of my job."
-        ], odd: 2, ex: '동물들을 집(서식처)으로 돌려보낸다는 내용과 반대된다.' },
-        { lines: [
-          "I'm proud of my job.",
-          'I think that protecting wild animals is important.',
-          "Wild animals don't need our help at all.",
-          'We should keep an eye on them and their homes to live together.'
-        ], odd: 2, ex: '야생 동물 보호가 중요하다는 흐름과 맞지 않는다.' },
-        { lines: [
-          'I work at the Arctic Dasan Station in Norway.',
-          'I study the soil, seawater, and ice in the Arctic.',
-          'I often travel on the special ship, Araon.',
-          "Araon is a small ship, so it can't go through ice.",
-          'This ship is stronger than other ships.',
-          'It can break thick ice across the ocean.'
-        ], odd: 3, ex: '아라온호는 다른 배보다 튼튼하고 두꺼운 얼음을 깰 수 있다.' },
-        { lines: [
-          'Thanks to Araon, I can collect seawater samples.',
-          'The Arctic Ocean has the answers to the climate crisis.',
-          'The climate crisis is not a problem for the Earth.',
-          'I hope that my work can help the Earth.'
-        ], odd: 2, ex: '기후 위기의 해답을 찾아 지구를 돕고 싶다는 흐름과 맞지 않는다.' }
-      ]},
-      { type: 'blank', title: '빈칸추론', guide: '빈칸에 들어갈 말로 가장 알맞은 것을 고르세요.', items: [
-        { s: 'I take care of sick wild animals in the center and ____ to their homes.', opts: ['send them back', 'keep them all', 'sell them', 'hide them'], ex: '치료한 동물을 집(서식처)으로 돌려보낸다.' },
-        { s: 'Also, I often climb the mountain ____ wild animals like bears.', opts: ['to look after', 'to hunt', 'to run away from', 'to sell'], ex: '곰 같은 야생 동물을 돌보기 위해 산을 오른다.' },
-        { s: 'This ship is stronger than other ships. It can ____ across the ocean.', opts: ['break thick ice', 'sink easily', 'carry many cars', 'catch a lot of fish'], ex: '튼튼한 배라서 두꺼운 얼음을 깰 수 있다.' },
-        { s: 'Thanks to Araon, I can collect seawater samples. The Arctic Ocean has the answers to ____.', opts: ['the climate crisis', 'the math test', 'the soccer game', 'the music class'], ex: '북극해는 기후 위기에 대한 해답을 가지고 있다.' }
-      ]},
-      { type: 'mc', title: '핵심문법', guide: '알맞은 답을 고르세요.', items: [
-        { q: '빈칸에 알맞은 것은?<br><b>Protecting wild animals ______ important.</b>', opts: ['is', 'are', 'be', 'am'], ex: '동명사 주어는 단수 취급 → is' },
-        { q: '밑줄 친 to부정사가 <b>"~하기 위해"</b>의 뜻이 <b>아닌</b> 것은?', opts: ['I want <u>to become</u> a vet.', 'I climb the mountain <u>to look</u> after bears.', 'We keep an eye on them <u>to live</u> together.', 'She went to the store <u>to buy</u> milk.'], ex: 'want to become은 want의 목적어(~하는 것). 나머지는 목적(~하기 위해).' },
-        { q: '어법상 <b>틀린</b> 문장은?', opts: ['Please send back them.', 'Please send them back.', 'Please send the animals back.', 'Please send back the animals.'], ex: '목적어가 대명사이면 send them back 순서만 가능' },
-        { q: '비교급 형태가 <b>틀린</b> 것은?', opts: ['important - importanter', 'thick - thicker', 'strong - stronger', 'big - bigger'], ex: '긴 형용사는 more를 쓴다: more important' },
-        { q: '빈칸에 알맞은 것은?<br><b>This ship is stronger ______ other ships.</b>', opts: ['than', 'then', 'that', 'to'], ex: '비교급 + than: ~보다 더' },
-        { q: '어법상 올바른 문장은?', opts: ['I often climb the mountain.', 'I climb often the mountain.', 'Often I climbs the mountain.', 'I often climbing the mountain.'], ex: '빈도부사는 일반동사 앞에' },
-        { q: '빈칸에 알맞은 것은?<br><b>I hope ______ my work can help the Earth.</b>', opts: ['that', 'what', 'this', 'it'], ex: '완전한 문장을 이끄는 접속사 that' },
-        { q: '빈칸에 알맞은 것은?<br><b>It can ______ thick ice across the ocean.</b>', opts: ['break', 'breaks', 'breaking', 'to break'], ex: 'can + 동사원형' },
-        { q: '"나는 내 직업이 자랑스럽다."를 바르게 영작한 것은?', opts: ["I'm proud of my job.", "I'm proud my job.", 'I proud of my job.', "I'm proud for my job."], ex: 'be proud of: ~을 자랑스러워하다' }
-      ]}
-    ]
-  },
-  { id: 'd3', name: 'DAY 3', range: '7과 본문 ❶❷', story: 'Lesson 7 · Henri\'s Scissors · 화가가 된 소년 · 병에 걸린 Matisse', passage: [['', '❶', ''], ['', 'In a small town in France, there lived a young boy.', '프랑스의 작은 마을에 어린 소년이 살았다.'], ['', 'His name was Henri Matisse.', '그의 이름은 Henri Matisse였다.'], ['', 'He liked to draw pictures.', '그는 그림 그리는 것을 좋아했다.'], ['', 'He drew pictures in the sand and in his books.', '그는 모래와 그의 책에 그림을 그렸다.'], ['', 'When Matisse grew up, he left his town and became an artist in Paris.', 'Matisse가 어른이 되었을 때, 그는 마을을 떠나 파리에서 화가가 되었다.'], ['', 'He painted pictures day after day and year after year.', '그는 날마다, 해마다 그림을 그렸다.'], ['', 'He was happy with his life.', '그는 그의 삶에 행복해했다.'], ['', 'More and more people began to notice him.', '점점 더 많은 사람들이 그를 알아보기 시작했다.'], ['', 'They loved his paintings, and soon he became famous.', '그들은 그의 그림을 사랑했고 곧 그는 유명해졌다.'], ['', '❷', ''], ['', 'When Matisse became an old man, he fell ill.', 'Matisse가 노인이 되었을 때, 그는 병에 걸렸다.'], ['', 'He could only lie in bed and sleep.', '그는 침대에 누워 잠만 잘 수 있었다.'], ['', 'He couldn\'t paint at all.', '그는 그림을 전혀 그릴 수 없었다.'], ['', 'He could only paint in his dreams.', '그는 오직 그의 꿈속에서만 그릴 수 있었다.'], ['', 'When Matisse opened his eyes, they were full of sadness.', 'Matisse가 눈을 떴을 때, 그의 눈은 슬픔으로 가득 차 있었다.'], ['', 'Luckily, before long, he could sit.', '다행히도, 얼마 지나지 않아 그는 앉을 수 있었다.'], ['', 'A little later, he started to paint again.', '조금 후에, 그는 다시 그림을 그리기 시작했다.'], ['', 'However, he realized that he couldn\'t paint well anymore.', '하지만 그는 더 이상 그림을 잘 그릴 수 없다는 것을 깨달았다.']], steps: [
-    { type: 'vocab', title: '핵심어휘·숙어', quizN: 15, items: [['scissors', '가위', '❶'], ['town', '마을, 읍', '❶'], ['young', '어린', '❶'], ['draw', '그리다 (과거 drew)', '❶'], ['picture', '그림', '❶'], ['sand', '모래', '❶'], ['grow up', '(성인으로) 자라다 (과거 grew up)', '❶'], ['leave', '떠나다 (과거 left)', '❶'], ['artist', '화가, 예술가', '❶'], ['day after day', '날마다, 매일매일', '❶'], ['year after year', '해마다, 매년', '❶'], ['be happy with', '~에 만족하다', '❶'], ['more and more', '점점 더 많은', '❶'], ['notice', '알아차리다, 주목하다', '❶'], ['famous', '유명한', '❶'], ['fall ill', '병에 걸리다 (과거 fell ill)', '❷'], ['lie', '누워 있다', '❷'], ['not ~ at all', '전혀 ~ 아니다', '❷'], ['dream', '꿈', '❷'], ['be full of', '~으로 가득 차다', '❷'], ['sadness', '슬픔', '❷'], ['luckily', '다행히도', '❷'], ['before long', '곧, 머지않아', '❷'], ['a little later', '잠시 후, 조금 있다가', '❷'], ['however', '그러나', '❷'], ['realize', '깨닫다', '❷'], ['not ~ anymore', '더 이상 ~않다', '❷']] },
+  { id: 'L4a', name: 'DAY 1', range: '4과 본문 ❶❷', story: 'Lesson 4 · 담양의 대나무 정원과 음식 · 통영의 충무김밥', passage: [['', '❶', ''], ['', 'During the summer vacation, William traveled around Korea with his family.', '여름 방학 동안, William은 가족과 함께 한국 여기저기를 여행했다.'], ['', 'This is his food diary.', '이것은 그의 음식 일기이다.'], ['', 'July 25', '7월 25일'], ['', 'We went to Damyang and visited Jungnogwon, a famous bamboo garden.', '우리는 담양에 갔고 유명한 대나무 정원인 죽녹원을 방문했다.'], ['', 'We enjoyed walking in the garden.', '우리는 정원에서 걷는 것을 즐겼다.'], ['', 'After we looked around, we ate two local dishes, daetongbap and tteokgalbi.', '주변을 둘러본 후에, 우리는 두 가지 지역 음식인 대통밥과 떡갈비를 먹었다.'], ['', 'Daetongbap is rice in a bamboo bowl.', '대통밥은 대나무 그릇에 담긴 밥이다.'], ['', 'I loved its unique bamboo smell.', '나는 그것의 독특한 대나무 향이 정말 좋았다.'], ['', 'Tteokgalbi, a Korean beef dish, was soft and sweet.', '한국의 소고기 요리인 떡갈비는 부드럽고 달콤했다.'], ['', 'The dishes really went well together.', '그 요리들은 함께 정말 잘 어울렸다.'], ['', '❷', ''], ['', 'July 30', '7월 30일'], ['', 'We visited Tongyeong and went up the mountain by cable car.', '우리는 통영을 방문했고 케이블카를 타고 산에 올라갔다.'], ['', 'Seeing the blue ocean and the green islands was fantastic!', '파란 바다와 초록 섬들을 보는 것은 환상적이었다!'], ['', 'Near the sea, we found a local restaurant and ate chungmugimbap.', '바다 근처에서 우리는 현지 식당을 찾았고 충무김밥을 먹었다.'], ['', 'It wasn\'t like other types of gimbap.', '그것은 다른 종류의 김밥과 달랐다.'], ['', 'There was only rice inside the seaweed.', '김 안에는 오직 밥만 있었다.'], ['', 'Kimchi and spicy squid were on the side.', '김치와 매운 오징어는 옆에 있었다.'], ['', 'It was spicy but really delicious.', '그것은 매웠지만 정말 맛있었다.'], ['', 'I heard about the history of this food.', '나는 이 음식의 역사에 관해 들었다.'], ['', 'Chungmu is an old name for Tongyeong.', '충무는 통영의 옛 이름이다.'], ['', 'Long ago, fishermen in this town started to eat chungmugimbap because it did not go bad quickly.', '오래전에, 이 마을의 어부들은 그것이 빨리 상하지 않았기 때문에 충무김밥을 먹기 시작했다.']], steps: [
+    { type: 'vocab', title: '핵심어휘·숙어', quizN: 15, items: [['during', '~ 동안', '❶'], ['vacation', '방학', '❶'], ['travel', '여행하다', '❶'], ['diary', '일기', '❶'], ['famous', '유명한', '❶'], ['bamboo', '대나무', '❶'], ['garden', '정원', '❶'], ['enjoy', '즐기다', '❶'], ['look around', '주변을 둘러보다', '❶'], ['local', '지역의, 현지의', '❶'], ['dish', '요리; 접시', '❶'], ['bowl', '(우묵한) 그릇', '❶'], ['unique', '독특한', '❶'], ['smell', '냄새, 향', '❶'], ['beef', '소고기', '❶'], ['soft', '부드러운', '❶'], ['sweet', '달콤한', '❶'], ['go well', '잘 어울리다', '❶'], ['together', '함께', '❶'], ['go up', '올라가다', '❷'], ['by cable car', '케이블카를 타고', '❷'], ['ocean', '바다', '❷'], ['island', '섬', '❷'], ['fantastic', '환상적인', '❷'], ['restaurant', '식당', '❷'], ['type', '종류', '❷'], ['inside', '~ 안에', '❷'], ['seaweed', '김, 해초', '❷'], ['spicy', '매운', '❷'], ['squid', '오징어', '❷'], ['on the side', '옆에, 곁들여', '❷'], ['delicious', '맛있는', '❷'], ['history', '역사', '❷'], ['fisherman', '어부 (복수 fishermen)', '❷'], ['go bad', '(음식이) 상하다', '❷']] },
     { type: 'pick', title: '어휘선택', guide: '문맥에 맞는 낱말을 고르세요.', items: [
-      { s: 'In a small town in France, there lived a {young|old} boy.', ex: '정답 ▶ young (어린)\n오답 ▶ old (나이 든): 뒤에서 \'어른이 되었을 때(grew up)\'가 나오므로 지금은 어린 소년이에요.\n포인트 ▶ young ↔ old' },
-      { s: 'He drew pictures in the {sand|sky} and in his books.', ex: '정답 ▶ sand (모래)\n오답 ▶ sky (하늘): 하늘에는 그림을 그릴 수 없어요. 모래와 책(in the sand and in his books)에 그렸어요.' },
-      { s: 'When Matisse grew up, he {left|stayed} his town and became an artist in Paris.', ex: '정답 ▶ left (leave 떠나다의 과거)\n오답 ▶ stayed (머물렀다): 파리(Paris)에서 화가가 되었으니 마을을 \'떠났다\'가 맞아요.\n포인트 ▶ leave - left - left / leave ↔ stay' },
-      { s: 'More and more people began to {notice|forget} him.', ex: '정답 ▶ notice (알아차리다, 주목하다)\n오답 ▶ forget (잊다): 다음 문장에서 사람들이 그의 그림을 사랑하고 그가 유명해졌으니 \'알아보기\' 시작했다가 자연스러워요.' },
-      { s: 'They loved his paintings, and soon he became {famous|poor}.', ex: '정답 ▶ famous (유명한)\n오답 ▶ poor (가난한): 사람들이 그의 그림을 사랑했다(loved his paintings) → 그 결과 \'유명해졌다\'.\n포인트 ▶ become + 형용사 = ~하게 되다' },
-      { s: 'When Matisse became an old man, he fell {ill|asleep}.', ex: '정답 ▶ ill (아픈) → fall ill 병에 걸리다\n오답 ▶ asleep: fall asleep은 \'잠들다\'. 뒤에서 침대에 누워 그림을 전혀 그릴 수 없었으니 \'병에 걸렸다\'가 맞아요.\n포인트 ▶ fall ill = get sick' },
-      { s: 'When Matisse opened his eyes, they were full of {sadness|happiness}.', ex: '정답 ▶ sadness (슬픔)\n오답 ▶ happiness (행복): 그림을 전혀 그릴 수 없고 꿈속에서만 그릴 수 있었으니 눈을 떴을 때 \'슬픔\'이 가득했어요.\n포인트 ▶ sad(슬픈) → sadness(슬픔)' },
-      { s: '{Luckily|Sadly}, before long, he could sit.', ex: '정답 ▶ Luckily (다행히도)\n오답 ▶ Sadly (슬프게도): \'곧 앉을 수 있었다\'는 좋은 소식이라 \'다행히도\'가 어울려요.\n포인트 ▶ luck(행운) → lucky(운 좋은) → luckily(다행히도)' },
-      { s: 'However, he {realized|forgot} that he couldn\'t paint well anymore.', ex: '정답 ▶ realized (깨달았다)\n오답 ▶ forgot (잊었다): 다시 그려 보니 \'잘 그릴 수 없다는 것을 깨달았다\'가 자연스러워요.\n포인트 ▶ realize that + 주어 + 동사 = ~라는 것을 깨닫다' }
+      { s: 'We went to Damyang and visited Jungnogwon, a {famous|boring} bamboo garden.', ex: '정답 ▶ famous (유명한)\n오답 ▶ boring (지루한): 일부러 찾아가 방문한 곳이고, 걷는 것을 즐겼어요. \'유명한\' 대나무 정원이에요.' },
+      { s: 'We enjoyed {walking|sleeping} in the garden.', ex: '정답 ▶ walking (걷기)\n오답 ▶ sleeping (자기): 정원에서 \'걷는 것\'을 즐겼어요. 바로 다음에 주변을 둘러봤다(looked around)고 나와요.' },
+      { s: 'I loved its {unique|common} bamboo smell.', ex: '정답 ▶ unique (독특한)\n오답 ▶ common (흔한): 대나무 그릇에 담긴 밥이라 \'독특한\' 대나무 향이 났어요.' },
+      { s: 'Tteokgalbi, a Korean beef dish, was {soft|hard} and sweet.', ex: '정답 ▶ soft (부드러운)\n오답 ▶ hard (딱딱한): 떡갈비는 \'부드럽고\' 달콤했어요. soft ↔ hard 반대말로 외워 두세요.' },
+      { s: 'The dishes really went {well|bad} together.', ex: '정답 ▶ well\n이유: go well = 잘 어울리다. 두 요리가 함께 \'잘 어울렸다\'\n오답 ▶ go bad = (음식이) 상하다 → ❷에 나오는 표현이에요. 헷갈리지 마세요!' },
+      { s: 'We visited Tongyeong and went {up|down} the mountain by cable car.', ex: '정답 ▶ up\n이유: 케이블카를 타고 산에 \'올라가서(went up)\' 파란 바다와 섬들을 내려다봤어요.' },
+      { s: 'Near the sea, we found a {local|foreign} restaurant and ate chungmugimbap.', ex: '정답 ▶ local (현지의, 지역의)\n오답 ▶ foreign (외국의): 통영 바닷가의 \'현지\' 식당에서 충무김밥을 먹었어요.' },
+      { s: 'Kimchi and {spicy|sweet} squid were on the side.', ex: '정답 ▶ spicy (매운)\n오답 ▶ sweet (달콤한): 바로 다음 문장이 \'It was spicy but really delicious.\'예요.' },
+      { s: 'Long ago, {fishermen|farmers} in this town started to eat chungmugimbap because it did not go bad quickly.', ex: '정답 ▶ fishermen (어부들)\n오답 ▶ farmers (농부들): 바닷가 마을(통영)에서 배를 타고 일하는 \'어부들\'이 먹기 시작했어요.' }
     ] },
-    { type: 'tf', title: 'T/F 내용 확인', guide: '본문 내용과 일치하면 T, 다르면 F를 고르세요.', items: [['Henri Matisse lived in a small town in France when he was young.', true, '정답 ▶ T\n이유: 프랑스의 작은 마을에 살던 어린 소년의 이름이 Henri Matisse예요.', '❶', 'In a small town in France, there lived a young boy'], ['Henri Matisse liked to write poems when he was a boy.', false, '정답 ▶ F\n이유: 시(poems)를 쓰는 것이 아니라 \'그림 그리는 것(to draw pictures)\'을 좋아했어요.', '❶', 'He liked to draw pictures'], ['Matisse became an artist in his small town.', false, '정답 ▶ F\n이유: 자기 마을이 아니라, 마을을 떠나(left his town) \'파리\'에서 화가가 되었어요.', '❶', 'he left his town and became an artist in Paris'], ['Matisse painted pictures every day for many years.', true, '정답 ▶ T\n이유: day after day(날마다) + year after year(해마다) = 여러 해 동안 매일(every day for many years).', '❶', 'He painted pictures day after day and year after year'], ['More and more people loved Matisse\'s paintings.', true, '정답 ▶ T\n이유: They loved his paintings의 They는 앞 문장의 More and more people(점점 더 많은 사람들)이에요.', '❶', 'They loved his paintings'], ['Matisse fell ill when he was a young artist.', false, '정답 ▶ F\n이유: 젊은 화가였을 때가 아니라 \'노인이 되었을 때(became an old man)\' 병에 걸렸어요.', '❷', 'When Matisse became an old man, he fell ill'], ['Matisse\'s eyes were full of happiness when he opened them.', false, '정답 ▶ F\n이유: 행복(happiness)이 아니라 슬픔(sadness)으로 가득했어요. they = his eyes', '❷', 'they were full of sadness'], ['Matisse started to paint again, but he couldn\'t paint well anymore.', true, '정답 ▶ T\n이유: 다시 그리기 시작했지만(started to paint again) 더 이상 잘 그릴 수 없었어요(couldn\'t paint well anymore).', '❷', 'he realized that he couldn\'t paint well anymore']] },
+    { type: 'tf', title: 'T/F 내용 확인', guide: '본문 내용과 일치하면 T, 다르면 F를 고르세요.', items: [['William traveled around Korea with his friends.', false, '정답 ▶ F\n이유: 친구들이 아니라 가족과 함께(with his family) 여행했어요.', '❶', 'William traveled around Korea with his family'], ['Jungnogwon is a famous bamboo garden.', true, '정답 ▶ T\n이유: Jungnogwon, a famous bamboo garden → 콤마 뒤 말이 죽녹원을 설명해요.', '❶', 'Jungnogwon, a famous bamboo garden'], ['Tteokgalbi was hard and salty.', false, '정답 ▶ F\n이유: 떡갈비는 부드럽고 달콤했어요(soft and sweet).', '❶', 'was soft and sweet'], ['Daetongbap is served in a bamboo bowl.', true, '정답 ▶ T\n이유: 대통밥은 대나무 그릇에 담긴 밥이에요.\n어휘 ▶ be served 차려지다', '❶', 'Daetongbap is rice in a bamboo bowl'], ['William climbed the mountain on foot.', false, '정답 ▶ F\n이유: 걸어서가 아니라 케이블카를 타고(by cable car) 올라갔어요.\n어휘 ▶ on foot 걸어서', '❷', 'went up the mountain by cable car'], ['Chungmugimbap had kimchi inside the seaweed.', false, '정답 ▶ F\n이유: 김 안에는 밥만 있었고, 김치와 오징어는 옆에(on the side) 있었어요.', '❷', 'There was only rice inside the seaweed'], ['Tongyeong was once called Chungmu.', true, '정답 ▶ T\n이유: 충무는 통영의 옛 이름이에요.\n어휘 ▶ once 한때', '❷', 'Chungmu is an old name for Tongyeong'], ['Fishermen liked chungmugimbap because it went bad quickly.', false, '정답 ▶ F\n이유: 빨리 상하지 \'않아서(did not go bad quickly)\' 먹었어요.', '❷', 'because it did not go bad quickly']] },
     { type: 'mc', title: '일치·불일치', guide: '선택지는 본문을 어려운 어휘로 바꿔 쓴 문장이에요. 풀고 나서 해설의 어휘를 꼭 확인하세요.', items: [
-      { n: '❶', box: ['❶'], q: 'Henri Matisse에 관한 내용과 일치하지 <u>않는</u> 것은?', opts: ['He drew pictures only on paper when he was young.', 'He was born and grew up in a small town in France.', 'He moved to Paris and became an artist.', 'He was satisfied with his life as an artist.', 'He gradually gained fame as more people noticed him.'], ex: '정답 근거: He drew pictures in the sand and in his books. (종이에만 그린 게 아니라 모래와 책에 그림)\n· be satisfied with = be happy with ~에 만족하다 · gradually 점차 · gain fame 명성을 얻다', per: [['그는 어렸을 때 종이에만 그림을 그렸다.', 'He drew pictures in the sand and in his books', '불일치 → 모래와 책에 그림'], ['그는 프랑스의 작은 마을에서 자랐다.', 'In a small town in France, there lived a young boy', '일치'], ['그는 파리로 가서 화가가 되었다.', 'he left his town and became an artist in Paris', '일치 (move to 이사하다)'], ['그는 화가로서의 삶에 만족했다.', 'He was happy with his life', '일치 (be satisfied with = be happy with)'], ['더 많은 사람들이 알아보면서 그는 점차 유명해졌다.', 'More and more people began to notice him', '일치 (gain fame = become famous)']] },
-      { n: '❷', box: ['❷'], q: '글의 내용과 <u>일치하는</u> 것은?', opts: ['When Matisse got sick, he could do nothing but stay in bed and sleep.', 'Matisse painted many pictures while he was in bed.', 'Matisse felt delighted when he woke up from his dreams.', 'Matisse could never sit again after he fell ill.', 'Matisse painted better than before when he started again.'], ex: '정답 근거: He could only lie in bed and sleep.\n· do nothing but ~ ~만 하다 · delighted 매우 기쁜 · fall ill = get sick 병에 걸리다', per: [['Matisse는 병에 걸렸을 때 침대에 누워 자는 것밖에 할 수 없었다.', 'He could only lie in bed and sleep', '일치 (do nothing but ~ = ~만 하다)'], ['Matisse는 침대에 있는 동안 많은 그림을 그렸다.', 'He couldn\'t paint at all', '불일치 → 전혀 그릴 수 없었음'], ['Matisse는 꿈에서 깼을 때 매우 기뻤다.', 'they were full of sadness', '불일치 → 슬픔으로 가득'], ['Matisse는 병에 걸린 뒤 다시는 앉을 수 없었다.', 'Luckily, before long, he could sit', '불일치 → 곧 앉을 수 있었음'], ['Matisse는 다시 그리기 시작했을 때 전보다 더 잘 그렸다.', 'he couldn\'t paint well anymore', '불일치 → 더 이상 잘 그릴 수 없었음']] }
+      { n: '❶', box: ['❶'], q: '글의 내용과 일치하지 <u>않는</u> 것은?', opts: ['William ate three local dishes in Damyang.', 'William traveled with his family.', 'Jungnogwon is a bamboo garden.', 'William loved the smell of daetongbap.', 'Tteokgalbi is a beef dish.'], ex: '정답 ▶ William ate three local dishes in Damyang.\n이유: 세 가지가 아니라 \'두 가지(two local dishes)\' 지역 음식, 대통밥과 떡갈비를 먹었어요.', per: [['William은 담양에서 지역 음식 세 가지를 먹었다.', 'we ate two local dishes, daetongbap and tteokgalbi', '불일치 → 두 가지'], ['William은 가족과 함께 여행했다.', 'William traveled around Korea with his family', '일치'], ['죽녹원은 대나무 정원이다.', 'Jungnogwon, a famous bamboo garden', '일치'], ['William은 대통밥의 향이 정말 좋았다.', 'I loved its unique bamboo smell', '일치'], ['떡갈비는 소고기 요리이다.', 'Tteokgalbi, a Korean beef dish', '일치']] },
+      { n: '❷', box: ['❷'], q: '글의 내용과 <u>일치하는</u> 것은?', opts: ['Chungmugimbap was spicy but delicious.', 'William walked up the mountain.', 'There was kimchi inside the seaweed.', 'William didn\'t like chungmugimbap.', 'Chungmugimbap goes bad very quickly.'], ex: '정답 ▶ Chungmugimbap was spicy but delicious.\n이유: It was spicy but really delicious. 매웠지만 정말 맛있었어요.', per: [['충무김밥은 매웠지만 맛있었다.', 'It was spicy but really delicious', '일치'], ['William은 걸어서 산에 올라갔다.', 'went up the mountain by cable car', '불일치 → 케이블카'], ['김 안에 김치가 있었다.', 'There was only rice inside the seaweed', '불일치 → 밥만'], ['William은 충무김밥을 좋아하지 않았다.', 'It was spicy but really delicious', '불일치 → 맛있었음'], ['충무김밥은 아주 빨리 상한다.', 'because it did not go bad quickly', '불일치 → 빨리 상하지 않음']] }
     ] },
     { type: 'pick', title: '어법선택', guide: '어법상 알맞은 것을 고르세요.', items: [
-      { s: 'In a small town in France, there {lived|living} a young boy.', ex: '정답 ▶ lived\n이유: \'There + 동사 + 주어\'는 \'~가 살았다/있었다\'예요. There 뒤에는 문장의 진짜 동사가 와야 해요.\n오답 ▶ living은 -ing 형태라 혼자서 동사 역할을 못 해요.\n포인트 ▶ 주어는 a young boy, there는 해석하지 않아요.' },
-      { s: 'He {drew|drawed} pictures in the sand and in his books.', ex: '정답 ▶ drew\n이유: draw(그리다)는 불규칙 동사: draw - drew - drawn\n오답 ▶ drawed라는 형태는 없어요.' },
-      { s: 'When Matisse grew up, he left his town and {became|becomes} an artist in Paris.', ex: '정답 ▶ became\n이유: and로 연결된 두 동사는 시제를 맞춰요(병렬). left(과거) and became(과거)\n오답 ▶ becomes는 현재형이라 left와 시제가 맞지 않아요.\n포인트 ▶ become - became - become' },
-      { s: 'He was happy {with|to} his life.', ex: '정답 ▶ with\n이유: be happy with ~ = ~에 만족하다. 뒤에 명사(his life)가 와요.\n오답 ▶ be happy to는 뒤에 동사원형이 와서 \'~해서 기쁘다\'(I\'m happy to see you)예요.' },
-      { s: 'More and more people began {to notice|noticed} him.', ex: '정답 ▶ to notice\n이유: begin(시작하다) 뒤에는 to부정사(to + 동사원형)나 동명사(-ing)가 와요.\n오답 ▶ noticed는 과거형 동사라 began 바로 뒤에 올 수 없어요(동사 두 개 연속 X).\n포인트 ▶ began to notice = began noticing' },
-      { s: 'He could only lie in bed and {sleep|slept}.', ex: '정답 ▶ sleep\n이유: could(조동사) 뒤에는 동사원형. could only lie ... and sleep → lie와 sleep 둘 다 could에 걸려요.\n오답 ▶ slept는 과거형이라 조동사 뒤에 올 수 없어요.' },
-      { s: 'When Matisse opened his eyes, they were full {of|with} sadness.', ex: '정답 ▶ of\n이유: be full of ~ = ~으로 가득 차다 (짝꿍으로 외우기)\n오답 ▶ full with는 쓰지 않아요. (be filled with는 가능)' },
-      { s: 'A little later, he started {to paint|painted} again.', ex: '정답 ▶ to paint\n이유: start 뒤에는 to부정사나 동명사가 와요. started to paint = started painting\n오답 ▶ painted는 동사라 started 바로 뒤에 올 수 없어요.' },
-      { s: 'However, he realized {that|what} he couldn\'t paint well anymore.', ex: '정답 ▶ that\n이유: realized 뒤에 \'주어(he) + 동사(couldn\'t paint)\'가 빠짐없이 이어지니까 \'~라는 것\'을 뜻하는 접속사 that을 써요.\n오답 ▶ what은 뒤 문장에 빠진 것(주어·목적어)이 있을 때 써요.\n포인트 ▶ 목적어 자리 that은 생략할 수 있어요.' }
+      { s: 'During the summer vacation, William {traveled|travels} around Korea with his family.', ex: '정답 ▶ traveled\n이유: 지난 여름 방학에 한 일 → 과거형. travel + -ed' },
+      { s: 'We went to Damyang and {visited|visit} Jungnogwon, a famous bamboo garden.', ex: '정답 ▶ visited\n이유: went(과거)와 and로 이어진 병렬 → 둘 다 과거형' },
+      { s: 'We enjoyed {walking|to walk} in the garden.', ex: '정답 ▶ walking\n이유: enjoy는 목적어로 동명사(-ing)만 써요. enjoy -ing = ~하는 것을 즐기다\n오답 ▶ to walk ✘' },
+      { s: 'After we looked around, we {ate|eated} two local dishes, daetongbap and tteokgalbi.', ex: '정답 ▶ ate\n이유: eat의 과거형은 불규칙 ate! (eat - ate - eaten)\n오답 ▶ eated라는 말은 없어요.' },
+      { s: 'I loved {its|it\'s} unique bamboo smell.', ex: '정답 ▶ its\n이유: \'그것의\' 향 → 소유격 its. it\'s는 it is의 줄임말이에요.' },
+      { s: 'Tteokgalbi, a Korean beef dish, {was|were} soft and sweet.', ex: '정답 ▶ was\n이유: 주어는 Tteokgalbi(단수). 콤마 사이 a Korean beef dish는 떡갈비를 설명하는 말(동격)이에요.' },
+      { s: '{Seeing|See} the blue ocean and the green islands was fantastic!', ex: '정답 ▶ Seeing\n이유: \'보는 것은\'이 문장의 주어 → 동명사(-ing). 동사원형 See는 주어가 될 수 없어요.' },
+      { s: 'Seeing the blue ocean and the green islands {was|were} fantastic!', ex: '정답 ▶ was\n이유: 동명사 주어(Seeing ~)는 단수 취급 → was. 바로 앞 islands(복수)에 속지 마세요!' },
+      { s: 'There {was|were} only rice inside the seaweed.', ex: '정답 ▶ was\n이유: There + be동사 + 주어. 주어 rice(쌀, 셀 수 없는 명사)는 단수 → was' },
+      { s: 'Long ago, fishermen in this town started to eat chungmugimbap {because|because of} it did not go bad quickly.', ex: '정답 ▶ because\n이유: 뒤에 \'주어 + 동사(it did not go bad)\'가 오면 because. because of 뒤에는 명사' }
     ] },
     { type: 'verb', title: '동사변형', guide: '( ) 안의 동사를 알맞은 형태로 바꿔 쓰세요.', items: [
-      { s: 'He liked ___ pictures.', v: 'draw', a: ['to draw', 'drawing'], ex: '정답 ▶ to draw (또는 drawing)\n이유: like(좋아하다) 뒤에 동사가 오면 to부정사나 동명사로 바꿔요. 본문은 to draw.\n주의 ▶ liked draw (X): 동사 두 개가 바로 붙을 수 없어요.' },
-      { s: 'He ___ pictures day after day and year after year.', v: 'paint', a: ['painted'], ex: '정답 ▶ painted\n이유: 과거 이야기 → 과거형. paint는 규칙 동사라 -ed를 붙여요.\n포인트 ▶ day after day and year after year (날마다, 해마다)' },
-      { s: 'When Matisse ___ up, he left his town and became an artist in Paris.', v: 'grow', a: ['grew'], ex: '정답 ▶ grew\n이유: When 절도 과거의 일 → 과거형. grow - grew - grown\n포인트 ▶ grow up = (성인으로) 자라다' },
-      { s: 'When Matisse grew up, he ___ his town and became an artist in Paris.', v: 'leave', a: ['left'], ex: '정답 ▶ left\n이유: 과거형이 필요해요. leave - left - left (불규칙)\n주의 ▶ leaved (X)' },
-      { s: 'They ___ his paintings, and soon he became famous.', v: 'love', a: ['loved'], ex: '정답 ▶ loved\n이유: 과거형. e로 끝나는 동사는 -d만 붙여요: love → loved' },
-      { s: 'When Matisse became an old man, he ___ ill.', v: 'fall', a: ['fell'], ex: '정답 ▶ fell\n이유: 과거형. fall - fell - fallen (불규칙)\n포인트 ▶ fall ill = 병에 걸리다' },
-      { s: 'He could only ___ in bed and sleep.', v: 'lie', a: ['lie'], ex: '정답 ▶ lie\n이유: could(조동사) 뒤에는 항상 동사원형!\n주의 ▶ lie(눕다) - lay - lain / lie(거짓말하다) - lied - lied 헷갈리지 않기' },
-      { s: 'When Matisse ___ his eyes, they were full of sadness.', v: 'open', a: ['opened'], ex: '정답 ▶ opened\n이유: 과거의 일 → 규칙 동사 -ed\n포인트 ▶ When + 주어 + 동사 ~, = ~할 때' }
+      { s: 'We ___ to Damyang and visited Jungnogwon, a famous bamboo garden.', v: 'go', a: ['went'], ex: '정답 ▶ went\n이유: go의 과거형은 불규칙 went (go - went - gone)' },
+      { s: 'We enjoyed ___ in the garden.', v: 'walk', a: ['walking'], ex: '정답 ▶ walking\n이유: enjoy + 동명사(-ing)' },
+      { s: 'We ___ Tongyeong and went up the mountain by cable car.', v: 'visit', a: ['visited'], ex: '정답 ▶ visited\n이유: 과거형 규칙 변화 visit + -ed' },
+      { s: 'Near the sea, we ___ a local restaurant and ate chungmugimbap.', v: 'find', a: ['found'], ex: '정답 ▶ found\n이유: find의 과거형은 불규칙 found (find - found - found)' },
+      { s: 'Kimchi and spicy squid ___ on the side.', v: 'be', a: ['were'], ex: '정답 ▶ were\n이유: 주어 Kimchi and spicy squid(두 가지 → 복수) + 과거 → were' },
+      { s: 'I ___ about the history of this food.', v: 'hear', a: ['heard'], ex: '정답 ▶ heard\n이유: hear의 과거형은 불규칙 heard (hear - heard - heard)' },
+      { s: 'Long ago, fishermen in this town started ___ chungmugimbap because it did not go bad quickly.', v: 'eat', a: ['to eat', 'eating'], ex: '정답 ▶ to eat (또는 eating)\n이유: start + to부정사/동명사 = ~하기 시작하다. 본문은 to eat' },
+      { s: 'The dishes really ___ well together.', v: 'go', a: ['went'], ex: '정답 ▶ went\n이유: go well(잘 어울리다)의 과거 → went well' }
     ] },
     { type: 'error', title: '오류찾기', guide: '어법상 틀린 곳을 고르세요.', items: [
-      { s: 'When Matisse [[grew]] up, he [[leaved]] his town and [[became]] an artist [[in]] Paris.', w: 1, fix: 'left', ex: '틀린 곳 ▶ ② leaved → left\n이유: leave(떠나다)는 불규칙 동사(leave - left - left)라 -ed를 붙이지 않아요.\n나머지 ▶ ① grew(grow의 과거) ✔ ③ became(과거, 병렬) ✔ ④ in Paris(도시 앞 in) ✔' },
-      { s: 'He [[painted]] pictures day [[after]] day and year after year. He [[was]] happy [[to]] his life.', w: 3, fix: 'with', ex: '틀린 곳 ▶ ④ to → with\n이유: be happy with ~ = ~에 만족하다. 뒤에 명사 his life가 오므로 with.\n나머지 ▶ ① painted(과거) ✔ ② day after day ✔ ③ was(He + 과거) ✔' },
-      { s: 'More and more people [[began]] [[to notice]] him. They [[loved]] his paintings, and soon he became [[fame]].', w: 3, fix: 'famous', ex: '틀린 곳 ▶ ④ fame → famous\n이유: became 뒤 보어 자리 → \'유명해졌다\'는 형용사 famous. fame은 \'명성\'이라는 명사예요.\n나머지 ▶ ① began ✔ ② to notice(begin + to부정사) ✔ ③ loved(과거) ✔' },
-      { s: 'He [[couldn\'t]] paint [[at all]]. He could only [[painted]] in his [[dreams]].', w: 2, fix: 'paint', ex: '틀린 곳 ▶ ③ painted → paint\n이유: could(조동사) 뒤에는 동사원형!\n나머지 ▶ ① couldn\'t ✔ ② at all(not ~ at all 전혀 ~아니다) ✔ ④ dreams ✔' },
-      { s: 'A little later, he [[started]] to paint again. However, he [[realized]] [[what]] he couldn\'t paint [[well]] anymore.', w: 2, fix: 'that', ex: '틀린 곳 ▶ ③ what → that\n이유: realized 뒤에 빠진 것 없는 완전한 문장(he couldn\'t paint well anymore)이 오므로 접속사 that.\n나머지 ▶ ① started(과거) ✔ ② realized ✔ ④ well(동사 paint를 꾸미는 부사) ✔' }
+      { s: 'During the summer vacation, William [[travel]] around Korea [[with]] his [[family]].', w: 0, fix: 'traveled', ex: '틀린 곳 ▶ ① travel → traveled\n이유: 지난 방학에 한 일 → 과거형\n나머지 ▶ ② with(~와 함께) ✔ ③ his family ✔' },
+      { s: 'I loved [[it\'s]] unique bamboo [[smell]]. Tteokgalbi, a Korean beef dish, [[was]] soft and sweet.', w: 0, fix: 'its', ex: '틀린 곳 ▶ ① it\'s → its\n이유: \'그것의\' → 소유격 its. it\'s = it is\n나머지 ▶ ② smell(명사, 향) ✔ ③ was(Tteokgalbi 단수) ✔' },
+      { s: 'Near the sea, we [[finded]] a local restaurant and [[ate]] [[chungmugimbap]].', w: 0, fix: 'found', ex: '틀린 곳 ▶ ① finded → found\n이유: find는 불규칙 동사 (find - found - found)\n나머지 ▶ ② ate(eat의 과거) ✔' },
+      { s: 'There [[were]] only rice [[inside]] the [[seaweed]].', w: 0, fix: 'was', ex: '틀린 곳 ▶ ① were → was\n이유: rice(셀 수 없는 명사)는 단수 취급 → There was\n나머지 ▶ ② inside(~ 안에) ✔ ③ the seaweed ✔' },
+      { s: 'Long ago, fishermen in this town [[started]] to eat chungmugimbap [[because of]] it did not go bad [[quickly]].', w: 1, fix: 'because', ex: '틀린 곳 ▶ ② because of → because\n이유: 뒤에 \'주어 + 동사(it did not go bad)\' → because\n나머지 ▶ ① started ✔ ③ quickly(부사, 빨리) ✔' },
+      { s: 'Tteokgalbi, a Korean beef dish, was soft and sweet. The dishes [[really]] [[go]] well [[together]].', w: 1, fix: 'went', ex: '틀린 곳 ▶ ② go → went\n이유: 여행 일기 속 지난 일 → 과거형 went\n나머지 ▶ ① really(정말) ✔ ③ together(함께) ✔' }
     ] },
     { type: 'scramble', title: '본문 스크램블', guide: '우리말에 맞게 단어를 눌러 문장을 완성하세요.', items: [
-      { ko: '프랑스의 작은 마을에 어린 소년이 살았다.', en: 'In a small town in France, there lived a young boy.' },
-      { ko: 'Matisse가 어른이 되었을 때, 그는 마을을 떠나 파리에서 화가가 되었다.', en: 'When Matisse grew up, he left his town and became an artist in Paris.' },
-      { ko: '점점 더 많은 사람들이 그를 알아보기 시작했다.', en: 'More and more people began to notice him.' },
-      { ko: 'Matisse가 노인이 되었을 때, 그는 병에 걸렸다.', en: 'When Matisse became an old man, he fell ill.' },
-      { ko: 'Matisse가 눈을 떴을 때, 그의 눈은 슬픔으로 가득 차 있었다.', en: 'When Matisse opened his eyes, they were full of sadness.' },
-      { ko: '하지만 그는 더 이상 그림을 잘 그릴 수 없다는 것을 깨달았다.', en: 'However, he realized that he couldn\'t paint well anymore.' }
+      { ko: '우리는 정원에서 걷는 것을 즐겼다.', en: 'We enjoyed walking in the garden.' },
+      { ko: '대통밥은 대나무 그릇에 담긴 밥이다.', en: 'Daetongbap is rice in a bamboo bowl.' },
+      { ko: '나는 그것의 독특한 대나무 향이 정말 좋았다.', en: 'I loved its unique bamboo smell.' },
+      { ko: '우리는 통영을 방문했고 케이블카를 타고 산에 올라갔다.', en: 'We visited Tongyeong and went up the mountain by cable car.' },
+      { ko: '김 안에는 오직 밥만 있었다.', en: 'There was only rice inside the seaweed.' },
+      { ko: '나는 이 음식의 역사에 관해 들었다.', en: 'I heard about the history of this food.' }
     ] },
     { type: 'order', title: '문장순서', guide: '문장을 본문 순서대로 눌러서 배열하세요.', items: [
-      { lines: ['In a small town in France, there lived a young boy.', 'His name was Henri Matisse.', 'He liked to draw pictures.', 'He drew pictures in the sand and in his books.'], flow: ['프랑스 작은 마을의 어린 소년', '그의 이름은 Henri Matisse', '그림 그리기를 좋아함', '모래와 책에 그림을 그림'] },
-      { lines: ['When Matisse grew up, he left his town and became an artist in Paris.', 'He painted pictures day after day and year after year.', 'More and more people began to notice him.', 'They loved his paintings, and soon he became famous.'], flow: ['어른이 되어 파리에서 화가가 됨', '날마다, 해마다 그림을 그림', '점점 많은 사람들이 알아봄', '그림을 사랑했고 곧 유명해짐'] },
-      { lines: ['When Matisse became an old man, he fell ill.', 'He could only lie in bed and sleep.', 'When Matisse opened his eyes, they were full of sadness.', 'Luckily, before long, he could sit.', 'However, he realized that he couldn\'t paint well anymore.'], flow: ['노인이 되어 병에 걸림', '침대에 누워 잠만 잘 수 있었음', '눈을 뜨면 슬픔으로 가득', '다행히 곧 앉을 수 있었음', '더 이상 잘 그릴 수 없다는 걸 깨달음'] }
+      { lines: ['We went to Damyang and visited Jungnogwon, a famous bamboo garden.', 'We enjoyed walking in the garden.', 'After we looked around, we ate two local dishes, daetongbap and tteokgalbi.', 'Daetongbap is rice in a bamboo bowl.'], flow: ['담양의 죽녹원 방문', '정원에서 걷기를 즐김', '둘러본 후 지역 음식 두 가지를 먹음', '대통밥 = 대나무 그릇의 밥'] },
+      { lines: ['We visited Tongyeong and went up the mountain by cable car.', 'Seeing the blue ocean and the green islands was fantastic!', 'Near the sea, we found a local restaurant and ate chungmugimbap.', 'It wasn\'t like other types of gimbap.'], flow: ['케이블카로 산에 올라감', '바다와 섬을 보는 건 환상적', '현지 식당에서 충무김밥', '다른 김밥과 달랐음'] },
+      { lines: ['It was spicy but really delicious.', 'I heard about the history of this food.', 'Chungmu is an old name for Tongyeong.', 'Long ago, fishermen in this town started to eat chungmugimbap because it did not go bad quickly.'], flow: ['매웠지만 맛있었음', '이 음식의 역사를 들음', '충무 = 통영의 옛 이름', '어부들이 상하지 않아 먹기 시작'] }
     ] },
     { type: 'insert', title: '문장삽입', guide: '주어진 문장이 들어가기에 가장 알맞은 곳을 고르세요.', items: [
-      { lines: ['His name was Henri Matisse.', 'He liked to draw pictures.', 'He drew pictures in the sand and in his books.'], given: 2, flow: ['그의 이름은 Henri Matisse', '그림 그리기를 좋아함', '모래와 책에 그림(pictures)을 그림'], ex: '정답 ▶ ②\n이유: 주어진 문장 \'그는 모래와 책에 그림을 그렸다\'는 \'그림 그리기를 좋아했다(He liked to draw pictures)\' 바로 뒤에 와야 \'좋아해서 → 여기저기 그렸다\'로 이어져요.' },
-      { lines: ['More and more people began to notice him.', 'They loved his paintings, and soon he became famous.', 'When Matisse became an old man, he fell ill.'], given: 1, flow: ['점점 많은 사람들이 그를 알아봄', '그들(They)은 그의 그림을 사랑했고 곧 유명해짐', '노인이 되어 병에 걸림'], ex: '정답 ▶ ①\n이유: 주어진 문장의 They는 \'점점 더 많은 사람들(More and more people)\'을 가리켜요. 그래서 그 문장 바로 뒤에 와요. 유명해진 뒤에 \'노인이 되어 병에 걸렸다\'로 이야기가 넘어가요.' },
-      { lines: ['Luckily, before long, he could sit.', 'A little later, he started to paint again.', 'However, he realized that he couldn\'t paint well anymore.'], given: 2, flow: ['다행히 곧 앉을 수 있었음', '조금 후 다시 그림을 그리기 시작함', '하지만(However) 더 이상 잘 그릴 수 없었음'], ex: '정답 ▶ ②\n이유: However(하지만)는 앞과 반대되는 내용을 이어요. \'다시 그리기 시작했다\' → 하지만 \'잘 그릴 수 없었다\'.' }
+      { lines: ['After we looked around, we ate two local dishes, daetongbap and tteokgalbi.', 'Daetongbap is rice in a bamboo bowl.', 'I loved its unique bamboo smell.'], given: 1, flow: ['대통밥과 떡갈비를 먹음', '대통밥은 대나무 그릇에 담긴 밥', '나는 그것의(its) 대나무 향이 좋았음'], ex: '정답 ▶ ①\n이유: \'대나무 향\'이 나는 이유가 \'대나무 그릇에 담긴 밥\'이기 때문이에요. its는 대통밥을 가리켜요.' },
+      { lines: ['It wasn\'t like other types of gimbap.', 'There was only rice inside the seaweed.', 'Kimchi and spicy squid were on the side.'], given: 1, flow: ['다른 김밥과 달랐음', '김 안에는 밥만 있었음', '김치와 오징어는 옆에'], ex: '정답 ▶ ①\n이유: \'어떻게 달랐는지\'를 설명하는 문장이에요. 안에는 밥만 → 반찬은 옆에, 순서로 이어져요.' },
+      { lines: ['I heard about the history of this food.', 'Chungmu is an old name for Tongyeong.', 'Long ago, fishermen in this town started to eat chungmugimbap because it did not go bad quickly.'], given: 1, flow: ['이 음식의 역사를 들음', '충무는 통영의 옛 이름', '오래전 어부들이 먹기 시작함'], ex: '정답 ▶ ①\n이유: 들은 역사의 내용이에요. 먼저 \'충무\'라는 이름을 설명하고, 어부들 이야기가 이어져요.' }
     ] },
     { type: 'odd', title: '어색한 문장', guide: '글의 흐름과 관계없는 문장을 고르세요.', items: [
-      { lines: ['He liked to draw pictures.', 'He drew pictures in the sand and in his books.', 'He didn\'t like drawing at all.', 'When Matisse grew up, he left his town and became an artist in Paris.'], odd: 2, ex: '정답 ▶ ③\n이유: 앞뒤는 Matisse가 그림을 좋아해서 여기저기 그리고 화가가 되는 이야기예요. \'그림 그리기를 전혀 좋아하지 않았다\'는 정반대라 흐름에 맞지 않아요.' },
-      { lines: ['He was happy with his life.', 'More and more people began to notice him.', 'Nobody wanted to see his paintings.', 'They loved his paintings, and soon he became famous.'], odd: 2, ex: '정답 ▶ ③\n이유: \'아무도 그의 그림을 보고 싶어 하지 않았다\'는, 점점 많은 사람들이 그를 알아보고 그림을 사랑했다는 흐름과 반대예요.' },
-      { lines: ['He couldn\'t paint at all.', 'He could only paint in his dreams.', 'He went to the park and painted every day.', 'When Matisse opened his eyes, they were full of sadness.'], odd: 2, ex: '정답 ▶ ③\n이유: 병에 걸려 그림을 전혀 그릴 수 없었다는 내용인데 \'공원에 가서 매일 그렸다\'는 맞지 않아요.' }
+      { lines: ['We enjoyed walking in the garden.', 'After we looked around, we ate two local dishes, daetongbap and tteokgalbi.', 'William didn\'t eat anything in Damyang.', 'Daetongbap is rice in a bamboo bowl.'], odd: 2, ex: '정답 ▶ ③\n이유: 바로 앞에서 대통밥과 떡갈비를 먹었다고 했어요. \'아무것도 먹지 않았다\'는 정반대예요.' },
+      { lines: ['We visited Tongyeong and went up the mountain by cable car.', 'Seeing the blue ocean and the green islands was fantastic!', 'It rained all day, so we couldn\'t see anything.', 'Near the sea, we found a local restaurant and ate chungmugimbap.'], odd: 2, ex: '정답 ▶ ③\n이유: 파란 바다와 초록 섬을 보는 게 환상적이었다고 했어요. \'아무것도 못 봤다\'는 흐름과 맞지 않아요.' },
+      { lines: ['There was only rice inside the seaweed.', 'Kimchi and spicy squid were on the side.', 'Chungmugimbap has a lot of meat inside.', 'It was spicy but really delicious.'], odd: 2, ex: '정답 ▶ ③\n이유: 김 안에는 \'밥만\' 있었다고 했어요. \'안에 고기가 많다\'는 내용과 반대예요.' }
     ] },
     { type: 'blank', title: '빈칸추론', guide: '빈칸에 들어갈 말로 가장 알맞은 것을 고르세요.', items: [
-      { s: 'When Matisse grew up, he left his town and became ____ in Paris.', opts: ['an artist', 'a doctor', 'a teacher', 'a farmer'], ex: '정답 ▶ an artist (화가)\n이유: 그림 그리기를 좋아했고, 뒤에서 날마다 그림을 그렸다(He painted pictures)고 하니 \'화가\'가 되었어요.' },
-      { s: 'He couldn\'t paint at all. He could only paint ____.', opts: ['in his dreams', 'in the park', 'in his school', 'with his friends'], ex: '정답 ▶ in his dreams (꿈속에서)\n이유: 병으로 침대에 누워 그림을 전혀 그릴 수 없었으니(couldn\'t paint at all), 그릴 수 있는 곳은 오직 \'꿈속\'이었어요.' },
-      { s: 'A little later, he started to paint again. However, he realized that ____.', opts: ['he couldn\'t paint well anymore', 'he was a great painter', 'he wanted to sleep', 'he became famous'], ex: '정답 ▶ he couldn\'t paint well anymore\n이유: However(하지만)가 있으니 \'다시 그리기 시작했다\'와 반대되는 내용 → 더 이상 잘 그릴 수 없었다.' }
+      { s: 'Tteokgalbi, a Korean ____ dish, was soft and sweet.', opts: ['beef', 'pork', 'fish', 'chicken'], ex: '정답 ▶ beef\n이유: 떡갈비는 \'소고기\' 요리예요. pork(돼지고기)는 ❸의 돔베고기!' },
+      { s: 'We visited Tongyeong and went up the mountain by ____.', opts: ['cable car', 'bike', 'bus', 'boat'], ex: '정답 ▶ cable car\n이유: 산에 \'케이블카를 타고\' 올라갔어요. by + 교통수단 = ~을 타고' },
+      { s: 'Long ago, fishermen in this town started to eat chungmugimbap because it did not go ____ quickly.', opts: ['bad', 'well', 'up', 'out'], ex: '정답 ▶ bad\n이유: go bad = (음식이) 상하다. 빨리 상하지 않아서 바다에 나가는 어부들이 먹었어요.' }
     ] },
     { type: 'mc', title: '핵심문법', guide: '알맞은 답을 고르세요.', items: [
-      { q: '우리말과 같도록 할 때 빈칸에 알맞은 것은?<br>마을에 어린 소년이 살았다.<br><b>In a town, ______ lived a young boy.</b>', opts: ['there', 'it', 'he', 'they'], ex: '정답 ▶ there\n이유: \'There + 동사(lived/is/are) + 주어\'는 \'~가 살았다/있다\'. there는 \'거기\'로 해석하지 않아요.\n오답 ▶ it, he, they를 쓰면 주어가 두 개(he + a young boy)가 되어 틀려요.' },
-      { q: '우리말과 같도록 할 때 빈칸에 알맞은 것은?<br>그의 눈은 슬픔으로 가득 차 있었다.<br><b>His eyes were full ______ sadness.</b>', opts: ['of', 'with', 'in', 'for'], ex: '정답 ▶ of\n이유: be full of ~ = ~으로 가득 차다\n오답 ▶ with, in, for는 full과 짝이 아니에요. (be filled with는 가능)' },
-      { q: '빈칸에 알맞은 것은?<br><b>When Matisse ______ up, he became an artist.</b>', opts: ['grew', 'grow', 'grows', 'growing'], ex: '정답 ▶ grew\n이유: became(과거)과 시제를 맞춰 과거형. grow - grew - grown\n오답 ▶ grow(현재), grows(3인칭 현재), growing(-ing)' },
-      { q: '밑줄 친 <b>When</b>의 뜻으로 알맞은 것은?<br><b><u>When</u> Matisse opened his eyes, they were full of sadness.</b>', opts: ['~할 때', '언제', '어디서', '왜'], ex: '정답 ▶ ~할 때\n이유: When이 \'주어(Matisse) + 동사(opened)\'를 이끌고 콤마 뒤에 문장이 이어지면 접속사 \'~할 때\'예요.\n비교 ▶ 물음표가 있는 질문(When is your birthday?)의 When은 \'언제\'.' },
-      { q: '빈칸에 알맞은 것은?<br><b>Soon he became ______.</b>', opts: ['famous', 'fame', 'famously', 'more famous than'], ex: '정답 ▶ famous\n이유: become 뒤 보어 자리에는 형용사가 와요 (became famous 유명해졌다).\n오답 ▶ fame(명사: 명성), famously(부사), more famous than(비교할 대상이 없음)' },
-      { q: '두 문장의 뜻이 같도록 할 때 빈칸에 알맞은 것은?<br><b>He could only lie in bed.<br>= He was only ______ to lie in bed.</b>', opts: ['able', 'can', 'could', 'ability'], ex: '정답 ▶ able\n이유: could(~할 수 있었다) = was/were able to\n오답 ▶ can, could는 to 앞에 올 수 없고, ability는 명사(능력)예요.' },
-      { q: '우리말과 같도록 할 때 빈칸에 알맞은 것은?<br>그는 더 이상 그림을 잘 그릴 수 없었다.<br><b>He couldn\'t paint well ______.</b>', opts: ['anymore', 'at all', 'again', 'already'], ex: '정답 ▶ anymore\n이유: not ~ anymore = 더 이상 ~않다\n오답 ▶ at all(전혀), again(다시), already(이미)는 \'더 이상\'의 뜻이 아니에요.' }
+      { q: '다음 중 동사의 과거형이 <b>잘못된</b> 것은?', opts: ['eat - eated', 'go - went', 'find - found', 'hear - heard'], ex: '정답 ▶ eat - eated\n이유: eat의 과거형은 불규칙 ate예요. go-went, find-found, hear-heard도 모두 불규칙이니 함께 외워 두세요.' },
+      { q: '밑줄 친 부분과 같은 대상을 가리키는 것은?<br><b>We visited Jungnogwon, <u>a famous bamboo garden</u>.</b>', opts: ['Jungnogwon', 'Damyang', 'William', 'daetongbap'], ex: '정답 ▶ Jungnogwon\n이유: 콤마(,) 뒤 명사가 앞의 명사를 다시 설명해요(동격). 죽녹원 = 유명한 대나무 정원' },
+      { q: '밑줄 친 <b>After</b>의 뜻으로 알맞은 것은?<br><b><u>After</u> we looked around, we ate two local dishes.</b>', opts: ['~한 후에', '~하기 전에', '~하는 동안', '~ 때문에'], ex: '정답 ▶ ~한 후에\n이유: after + 주어 + 동사 = ~한 후에. 둘러본 \'후에\' 먹었어요.\n비교 ▶ before ~하기 전에 / while ~하는 동안' },
+      { q: '다음 문장의 뜻으로 알맞은 것은?<br><b>It wasn\'t like other types of gimbap.</b>', opts: ['그것은 다른 종류의 김밥과 달랐다.', '그것은 다른 김밥을 좋아하지 않았다.', '그것은 다른 김밥보다 맛있었다.', '그것은 다른 종류의 김밥이었다.'], ex: '정답 ▶ 그것은 다른 종류의 김밥과 달랐다.\n이유: be동사 뒤 like는 \'좋아하다\'가 아니라 \'~와 같은\'(전치사). wasn\'t like = ~와 같지 않았다' },
+      { q: '빈칸에 공통으로 알맞은 것은?<br><b>We went up the mountain ___ cable car. / I go to school ___ bus.</b>', opts: ['by', 'on', 'in', 'with'], ex: '정답 ▶ by\n이유: by + 교통수단(관사 없이) = ~을 타고. by cable car, by bus, by subway' },
+      { q: '밑줄 친 부분의 뜻으로 알맞은 것은?<br><b>It did not <u>go bad</u> quickly.</b>', opts: ['(음식이) 상하다', '잘 어울리다', '멀리 가다', '맛있어지다'], ex: '정답 ▶ (음식이) 상하다\n이유: go bad = 상하다\n비교 ▶ go well = 잘 어울리다 (❶)' },
+      { q: '다음 질문에 대한 대답으로 알맞은 것은?<br><b>Why did fishermen eat chungmugimbap?</b>', opts: ['Because it did not go bad quickly.', 'Because it was very cheap.', 'Because it had a lot of meat.', 'Because it was sweet.'], ex: '정답 ▶ Because it did not go bad quickly.\n이유: Why ~? → Because ~로 대답. 빨리 상하지 않아서 바다에서 일하는 어부들에게 좋았어요.' }
     ] },
     { type: 'mc', title: '요약문 완성', guide: '본문을 읽고 요약문의 빈칸 (A), (B)에 들어갈 말을 고르세요.', items: [
-      { n: '❶', box: ['❶'], q: '다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 알맞은 것은?<br><b>Henri Matisse loved drawing as a boy, and after he became an artist in Paris, he grew (A) ______ as more and more people (B) ______ his paintings.</b>', opts: ['(A) famous – (B) loved', '(A) famous – (B) hated', '(A) poor – (B) loved', '(A) tired – (B) noticed', '(A) poor – (B) forgot'], ex: '정답 ▶ (A) famous – (B) loved\n(A) 사람들이 알아보고 그림을 사랑해서 \'유명해졌다\' → famous\n(B) 사람들이 그의 그림을 \'사랑했다\' → loved\n오답 ▶ poor(가난한)·tired(피곤한)는 본문에 없고, hated(싫어했다)·forgot(잊었다)는 반대예요.', ev: ['More and more people began to notice him', 'They loved his paintings, and soon he became famous'] },
-      { n: '❷', box: ['❷'], q: '다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 알맞은 것은?<br><b>When Matisse became old and sick, his eyes were full of (A) ______, and though he could (B) ______ again later, he couldn\'t paint well anymore.</b>', opts: ['(A) sadness – (B) sit', '(A) happiness – (B) sit', '(A) sadness – (B) run', '(A) pleasure – (B) sleep', '(A) happiness – (B) run'], ex: '정답 ▶ (A) sadness – (B) sit\n(A) 그림을 그릴 수 없어서 눈이 \'슬픔\'으로 가득 → sadness\n(B) 다행히 곧 \'앉을\' 수 있었다 → sit\n오답 ▶ happiness(행복)·pleasure(기쁨)는 반대이고, run(달리다)은 본문에 없어요.', ev: ['When Matisse opened his eyes, they were full of sadness', 'Luckily, before long, he could sit', 'However, he realized that he couldn\'t paint well anymore'] }
+      { n: '❶', box: ['❶'], q: '다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 알맞은 것은?<br><b>In Damyang, William visited a (A) ______ garden and ate two local dishes that went (B) ______ together.</b>', opts: ['(A) bamboo – (B) well', '(A) bamboo – (B) bad', '(A) flower – (B) well', '(A) flower – (B) bad', '(A) rice – (B) up'], ex: '정답 ▶ (A) bamboo – (B) well\n(A) 죽녹원 = 유명한 \'대나무\' 정원 → bamboo\n(B) 두 요리가 함께 \'잘\' 어울렸다 → went well\n오답 ▶ flower(꽃) 정원이 아니고, go bad는 \'상하다\'라는 뜻이에요.', ev: ['Jungnogwon, a famous bamboo garden', 'The dishes really went well together'] },
+      { n: '❷', box: ['❷'], q: '다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 알맞은 것은?<br><b>In Tongyeong, William ate chungmugimbap, which was (A) ______ but delicious, and it did not go bad (B) ______.</b>', opts: ['(A) spicy – (B) quickly', '(A) sweet – (B) quickly', '(A) spicy – (B) slowly', '(A) sweet – (B) slowly', '(A) soft – (B) easily'], ex: '정답 ▶ (A) spicy – (B) quickly\n(A) 매웠지만 맛있었다 → spicy\n(B) 빨리 상하지 않았다 → quickly\n오답 ▶ sweet(달콤한)는 ❶의 떡갈비, slowly(천천히)는 반대 뜻이에요.', ev: ['It was spicy but really delicious', 'because it did not go bad quickly'] }
     ] }
   ] },
-  { id: 'd4', name: 'DAY 4', range: '7과 본문 ❸❹', story: 'Lesson 7 · 가위로 그리는 그림 · 종이 정원과 밤하늘의 별', passage: [['', '❸', ''], ['', 'One day, Matisse got a brilliant idea.', '어느 날, Matisse는 멋진 생각을 해냈다.'], ['', 'He picked up scissors, cut some paper, and made beautiful shapes.', '그는 가위를 집어 들어 종이를 자르고, 아름다운 모양을 만들었다.'], ['', 'He cut out birds and flowers.', '그는 새와 꽃을 잘라 냈다.'], ['', 'He was drawing with SCISSORS!', '그는 가위로 그림을 그리고 있었다!'], ['', 'He said to himself, "My pleasure in cutting things grows and grows.', '그는 자기 자신에게 말했다. “무엇인가를 오려 내는 나의 기쁨이 더욱 커지고 있어.'], ['', 'Scissors gave me another chance."', '가위는 내게 또 다른 기회를 주었어.”'], ['', 'Matisse cut paper all day.', 'Matisse는 하루 종일 종이를 잘랐다.'], ['', '❹', ''], ['', 'Soon his room was full of shapes and colors.', '곧 그의 방은 모양과 색채로 가득 찼다.'], ['', '"I stay in bed most of the time, but I made a small paper garden all around me.', '“나는 대부분 시간을 침대에 머물러 있지만, 온 주변에 작은 종이 정원을 만들었어.'], ['', 'There are leaves, fruits, and birds ... I am really happy," he thought.', '나뭇잎, 과일, 그리고 새들이 있지 … 난 정말 행복해.”라고 그는 생각했다.'], ['', 'Perhaps Matisse is still using scissors to cut out stars in heaven.', '아마도 Matisse는 여전히 천국에서 별을 오리기 위해 가위를 사용하고 있을 것이다.'], ['', 'Look at the night sky.', '밤하늘을 봐.'], ['', 'Some of the stars may come from his scissors.', '별들 중 일부는 그의 가위에서 나온 것일지도 모른다.']], steps: [
-    { type: 'vocab', title: '핵심어휘·숙어', quizN: 15, items: [['get an idea', '생각이 나다 (과거 got)', '❸'], ['brilliant', '멋진, 훌륭한', '❸'], ['pick ~ up', '~을 집어 들다', '❸'], ['cut', '자르다 (과거 cut)', '❸'], ['beautiful', '아름다운', '❸'], ['shape', '모양', '❸'], ['cut ~ out', '~을 오려내다', '❸'], ['say to oneself', '혼잣말을 하다, 마음속으로 생각하다', '❸'], ['pleasure', '기쁨, 즐거움', '❸'], ['grow and grow', '점점 더 커지다', '❸'], ['another', '또 다른', '❸'], ['chance', '기회', '❸'], ['all day', '하루 종일', '❸'], ['color', '색, 색채', '❹'], ['stay', '머무르다', '❹'], ['most of the time', '대부분의 시간', '❹'], ['garden', '정원', '❹'], ['all around ~', '~의 주변 일대에', '❹'], ['leaf', '잎, 나뭇잎 (복수 leaves)', '❹'], ['fruit', '과일', '❹'], ['perhaps', '아마, 어쩌면', '❹'], ['still', '아직도, 여전히', '❹'], ['heaven', '천국', '❹'], ['night sky', '밤하늘', '❹'], ['some of ~', '~ 중 일부', '❹'], ['come from', '~에서 나오다', '❹']] },
+  { id: 'L4b', name: 'DAY 2', range: '4과 본문 ❸', story: 'Lesson 4 · 제주도의 돔베고기', passage: [['', '❸', ''], ['', 'August 2', '8월 2일'], ['', 'Jeju-do is a beautiful island in Korea.', '제주도는 한국의 아름다운 섬이다.'], ['', 'We went there on a very hot day, and we became tired.', '우리는 매우 더운 날 그곳에 갔고, 피곤해졌다.'], ['', 'However, we got our energy back thanks to dombegogi.', '하지만 우리는 돔베고기 덕분에 기운을 되찾았다.'], ['', 'It surprised me in two ways.', '그것은 두 가지 면에서 나를 놀라게 했다.'], ['', 'First, it was pork on a cutting board, not on a plate.', '첫째, 그것은 접시가 아닌 도마 위에 놓인 돼지고기였다.'], ['', 'Second, the meat was so soft!', '둘째, 고기가 정말 부드러웠다!'], ['', 'I had it with a special fish sauce, and the sauce was great, too.', '나는 그것을 특별한 생선 소스와 함께 먹었는데, 그 소스도 훌륭했다.'], ['', 'Later, I learned about the meaning of dombe.', '나중에, 나는 돔베의 의미에 대해 배웠다.'], ['', 'It means a cutting board in Jeju\'s language.', '그것은 제주 말로 도마를 의미한다.']], steps: [
+    { type: 'vocab', title: '핵심어휘·숙어', quizN: 15, items: [['island', '섬', '❸'], ['become', '~이 되다, ~해지다 (become-became-become)', '❸'], ['tired', '피곤한', '❸'], ['however', '하지만, 그러나', '❸'], ['energy', '기운, 에너지', '❸'], ['get back', '되찾다', '❸'], ['thanks to', '~ 덕분에', '❸'], ['surprise', '놀라게 하다', '❸'], ['way', '면, 방식', '❸'], ['first', '첫째로', '❸'], ['pork', '돼지고기', '❸'], ['cutting board', '도마', '❸'], ['plate', '접시', '❸'], ['second', '둘째로', '❸'], ['meat', '고기', '❸'], ['special', '특별한', '❸'], ['sauce', '소스', '❸'], ['later', '나중에', '❸'], ['learn', '배우다', '❸'], ['meaning', '의미', '❸'], ['mean', '의미하다', '❸'], ['language', '언어, 말', '❸']] },
     { type: 'pick', title: '어휘선택', guide: '문맥에 맞는 낱말을 고르세요.', items: [
-      { s: 'One day, Matisse got a {brilliant|terrible} idea.', ex: '정답 ▶ brilliant (멋진, 훌륭한)\n오답 ▶ terrible (끔찍한): 뒤에서 가위로 아름다운 모양을 만들었으니 \'멋진\' 생각이에요.\n포인트 ▶ get an idea = 생각이 나다' },
-      { s: 'He {picked|put} up scissors, cut some paper, and made beautiful shapes.', ex: '정답 ▶ picked (pick up = 집어 들다)\n오답 ▶ put: put up은 \'(벽에) 붙이다, 세우다\'예요. 가위를 \'집어 들고\' 종이를 잘랐어요.\n포인트 ▶ pick up ↔ put down(내려놓다)' },
-      { s: 'He cut {out|off} birds and flowers.', ex: '정답 ▶ out (cut out = 오려 내다)\n오답 ▶ off: cut off는 \'잘라 내다, 끊다\'(머리카락, 전기 등). 종이에서 새와 꽃 모양을 \'오려 냈다\'는 cut out.' },
-      { s: 'He said to himself, "My {pleasure|pain} in cutting things grows and grows.', ex: '정답 ▶ pleasure (기쁨)\n오답 ▶ pain (고통): 가위가 또 다른 기회를 줬다고 기뻐하고 있으니 \'기쁨\'이 점점 커졌어요.\n포인트 ▶ pleasure = joy' },
-      { s: 'Scissors gave me another {chance|problem}.', ex: '정답 ▶ chance (기회)\n오답 ▶ problem (문제): 그림을 못 그리게 된 Matisse에게 가위는 다시 작품을 만들 \'기회\'를 줬어요.' },
-      { s: 'Soon his room was full of {shapes|books} and colors.', ex: '정답 ▶ shapes (모양)\n오답 ▶ books (책): 하루 종일 종이를 잘라 만든 \'모양\'과 색채로 방이 가득 찼어요.' },
-      { s: 'I {stay|work} in bed most of the time, but I made a small paper garden all around me.', ex: '정답 ▶ stay (머무르다)\n오답 ▶ work (일하다): 아파서 대부분의 시간을 침대에 \'머물러\' 있었어요.\n포인트 ▶ stay in bed = 침대에 누워 지내다' },
-      { s: '{Perhaps|Never} Matisse is still using scissors to cut out stars in heaven.', ex: '정답 ▶ Perhaps (아마도)\n오답 ▶ Never (결코 ~않다): 뒤 문장의 may(~일지도 모른다)처럼 \'추측\'하는 내용이라 \'아마도\'가 어울려요.\n포인트 ▶ perhaps = maybe' },
-      { s: 'Some of the stars may {come|go} from his scissors.', ex: '정답 ▶ come (come from = ~에서 나오다)\n오답 ▶ go from은 \'~에서 떠나가다\'라서 어색해요. 별이 그의 가위에서 \'나왔을지도\' 몰라요.' }
+      { s: 'We went there on a very {hot|cold} day, and we became tired.', ex: '정답 ▶ hot (더운)\n오답 ▶ cold (추운): 8월 여름날, \'더워서\' 피곤해졌어요.' },
+      { s: 'However, we got our energy back {thanks to|instead of} dombegogi.', ex: '정답 ▶ thanks to (~ 덕분에)\n오답 ▶ instead of (~ 대신에): 돔베고기를 먹고 기운을 되찾았어요. 돔베고기 \'덕분에\'' },
+      { s: 'First, it was {pork|beef} on a cutting board, not on a plate.', ex: '정답 ▶ pork (돼지고기)\n오답 ▶ beef (소고기): 돔베고기는 \'돼지고기\'예요. 소고기는 ❶의 떡갈비!' },
+      { s: 'Second, the meat was so {soft|hard}!', ex: '정답 ▶ soft (부드러운)\n오답 ▶ hard (딱딱한): 놀란 두 번째 이유 → 고기가 아주 \'부드러웠다\'' },
+      { s: 'I had it with a special {fish|fruit} sauce, and the sauce was great, too.', ex: '정답 ▶ fish (생선)\n오답 ▶ fruit (과일): 특별한 \'생선\' 소스와 함께 먹었어요.' },
+      { s: 'Later, I learned about the {meaning|price} of dombe.', ex: '정답 ▶ meaning (의미)\n오답 ▶ price (가격): 바로 다음 문장이 \'그것은 제주 말로 도마를 의미한다(means)\'예요.' }
     ] },
-    { type: 'tf', title: 'T/F 내용 확인', guide: '본문 내용과 일치하면 T, 다르면 F를 고르세요.', items: [['Matisse got a brilliant idea one day.', true, '정답 ▶ T\n이유: One day(어느 날) Matisse got a brilliant idea(멋진 생각이 났다).', '❸', 'One day, Matisse got a brilliant idea'], ['Matisse put down scissors and picked up brushes again.', false, '정답 ▶ F\n이유: 붓(brushes)을 다시 든 게 아니라 가위(scissors)를 집어 들었어요(picked up).', '❸', 'He picked up scissors'], ['Matisse made shapes of birds and flowers with scissors.', true, '정답 ▶ T\n이유: cut out birds and flowers = 새와 꽃을 오려 냈다 → 가위로 새와 꽃 모양을 만들었어요.', '❸', 'He cut out birds and flowers'], ['Matisse felt happy when he cut things out.', true, '정답 ▶ T\n이유: 무언가를 오려 내는 기쁨(pleasure)이 점점 커진다(grows and grows)고 했어요 → 행복했어요.', '❸', 'My pleasure in cutting things grows and grows'], ['Matisse cut paper for only an hour a day.', false, '정답 ▶ F\n이유: 하루에 한 시간만이 아니라 하루 종일(all day) 종이를 잘랐어요.', '❸', 'Matisse cut paper all day'], ['Matisse was in his garden all day.', false, '정답 ▶ F\n이유: 정원에 있던 게 아니라 대부분 침대에 머물렀어요(stay in bed). 정원은 종이로 만든 거예요.', '❹', 'I stay in bed most of the time'], ['Matisse made a paper garden near his bed.', true, '정답 ▶ T\n이유: 자기 주변 온 곳에(all around me) 작은 종이 정원을 만들었어요. 그는 침대에 있었으니 침대 근처예요.', '❹', 'I made a small paper garden all around me'], ['Maybe Matisse is still painting with brushes in heaven.', false, '정답 ▶ F\n이유: 붓으로 그리는 게 아니라 가위(scissors)로 별을 오리고(cut out stars) 있을 거라고 했어요.', '❹', 'Perhaps Matisse is still using scissors to cut out stars in heaven']] },
+    { type: 'tf', title: 'T/F 내용 확인', guide: '본문 내용과 일치하면 T, 다르면 F를 고르세요.', items: [['William went to Jeju-do on a cold day.', false, '정답 ▶ F\n이유: 매우 더운 날(a very hot day)에 갔어요.', '❸', 'on a very hot day'], ['William got tired on the hot day.', true, '정답 ▶ T\n이유: 더운 날이라 피곤해졌어요(became tired).\n어휘 ▶ get tired = become tired', '❸', 'we became tired'], ['Dombegogi was served on a plate.', false, '정답 ▶ F\n이유: 접시가 아니라 도마 위에(on a cutting board, not on a plate) 나왔어요.', '❸', 'it was pork on a cutting board, not on a plate'], ['William ate dombegogi with a special sauce.', true, '정답 ▶ T\n이유: 특별한 생선 소스와 함께 먹었어요.', '❸', 'I had it with a special fish sauce'], ['In Jeju\'s language, dombe means a cutting board.', true, '정답 ▶ T\n이유: It means a cutting board in Jeju\'s language.', '❸', 'It means a cutting board in Jeju\'s language']] },
     { type: 'mc', title: '일치·불일치', guide: '선택지는 본문을 어려운 어휘로 바꿔 쓴 문장이에요. 풀고 나서 해설의 어휘를 꼭 확인하세요.', items: [
-      { n: '❸', box: ['❸'], q: 'Matisse에 관한 내용과 일치하지 <u>않는</u> 것은?', opts: ['He used scissors only for a short time each day.', 'He came up with a creative idea.', 'He made beautiful shapes out of paper.', 'He thought scissors gave him a new opportunity.', 'His joy kept growing as he cut things out.'], ex: '정답 근거: Matisse cut paper all day. (짧은 시간이 아니라 하루 종일)\n· come up with ~을 생각해 내다 · opportunity = chance 기회 · creative 창의적인', per: [['그는 하루에 잠깐씩만 가위를 사용했다.', 'Matisse cut paper all day', '불일치 → 하루 종일'], ['그는 창의적인 생각을 해냈다.', 'One day, Matisse got a brilliant idea', '일치 (come up with = get an idea)'], ['그는 종이로 아름다운 모양을 만들었다.', 'cut some paper, and made beautiful shapes', '일치'], ['그는 가위가 새로운 기회를 주었다고 생각했다.', 'Scissors gave me another chance', '일치 (opportunity = chance)'], ['무엇인가를 오려 낼수록 그의 기쁨이 계속 커졌다.', 'My pleasure in cutting things grows and grows', '일치']] },
-      { n: '❹', box: ['❹'], q: '글의 내용과 <u>일치하는</u> 것은?', opts: ['Matisse created a garden of paper around his bed.', 'Matisse\'s room was empty and dark.', 'Matisse went outside to pick leaves and fruits.', 'Matisse felt lonely in his small room.', 'The writer says all the stars came from Matisse\'s scissors.'], ex: '정답 근거: I made a small paper garden all around me.\n· create 만들다 · empty 텅 빈 · lonely 외로운', per: [['Matisse는 침대 주변에 종이 정원을 만들었다.', 'I made a small paper garden all around me', '일치 (create = make)'], ['Matisse의 방은 텅 비고 어두웠다.', 'Soon his room was full of shapes and colors', '불일치 → 모양과 색채로 가득'], ['Matisse는 밖에 나가 나뭇잎과 과일을 따 왔다.', 'I stay in bed most of the time', '불일치 → 대부분 침대에 머묾 (종이로 만든 것)'], ['Matisse는 작은 방에서 외로웠다.', 'I am really happy', '불일치 → 정말 행복함'], ['글쓴이는 모든 별이 Matisse의 가위에서 나왔다고 말한다.', 'Some of the stars may come from his scissors', '불일치 → 일부(Some)가 나왔을지도 모름']] }
+      { n: '❸', box: ['❸'], q: '글의 내용과 일치하지 <u>않는</u> 것은?', opts: ['The meat of dombegogi was hard.', 'Jeju-do is an island in Korea.', 'William got his energy back thanks to dombegogi.', 'Dombegogi surprised William in two ways.', 'William learned the meaning of dombe later.'], ex: '정답 ▶ The meat of dombegogi was hard.\n이유: 고기가 아주 부드러웠어요(so soft).', per: [['돔베고기의 고기는 딱딱했다.', 'the meat was so soft', '불일치 → 부드러움'], ['제주도는 한국의 섬이다.', 'Jeju-do is a beautiful island in Korea', '일치'], ['William은 돔베고기 덕분에 기운을 되찾았다.', 'we got our energy back thanks to dombegogi', '일치'], ['돔베고기는 두 가지 면에서 William을 놀라게 했다.', 'It surprised me in two ways', '일치'], ['William은 나중에 돔베의 의미를 배웠다.', 'Later, I learned about the meaning of dombe', '일치']] }
     ] },
     { type: 'pick', title: '어법선택', guide: '어법상 알맞은 것을 고르세요.', items: [
-      { s: 'He picked up scissors, cut some paper, and {made|make} beautiful shapes.', ex: '정답 ▶ made\n이유: picked(과거), cut(과거), and made(과거). \'A, B, and C\'로 이어진 동사는 시제를 맞춰요.\n오답 ▶ make는 현재형. (cut은 과거형도 cut)' },
-      { s: 'He {was|is} drawing with SCISSORS!', ex: '정답 ▶ was\n이유: 과거진행형 = was/were + -ing (~하고 있었다). 이야기가 과거라서 was.\n오답 ▶ is drawing은 현재진행형(지금 ~하고 있다)이라 시제가 맞지 않아요.' },
-      { s: 'He said to {himself|him}, "My pleasure in cutting things grows and grows.', ex: '정답 ▶ himself\n이유: 말한 사람(He)과 말을 들은 대상이 같은 사람이면 재귀대명사(-self). say to oneself = 혼잣말하다\n오답 ▶ him을 쓰면 \'다른 남자에게\' 말한 뜻이 돼요.' },
-      { s: 'My pleasure in {cutting|cut} things grows and grows.', ex: '정답 ▶ cutting\n이유: 전치사(in) 뒤에는 명사나 동명사(-ing)가 와요. cut → cutting (t를 한 번 더)\n오답 ▶ cut은 동사원형이라 전치사 뒤에 올 수 없어요.' },
-      { s: 'My pleasure in cutting things {grows|grow} and grows.', ex: '정답 ▶ grows\n이유: 주어는 My pleasure(나의 기쁨, 단수) → 3인칭 단수 현재 -s. in cutting things는 주어를 꾸며 주는 말이에요.\n오답 ▶ grow는 복수 주어일 때. 바로 앞 things(복수)에 속지 않기!' },
-      { s: 'Scissors gave {me|to me} another chance.', ex: '정답 ▶ me\n이유: give + 사람(~에게) + 물건(~을): gave me another chance (나에게 또 다른 기회를 주었다)\n오답 ▶ to me를 쓰려면 순서를 바꿔 gave another chance to me라고 해야 해요.' },
-      { s: 'Soon his room was full {of|with} shapes and colors.', ex: '정답 ▶ of\n이유: be full of ~ = ~으로 가득 차다\n오답 ▶ full with는 쓰지 않아요. (be filled with는 가능)' },
-      { s: 'There {are|is} leaves, fruits, and birds ...', ex: '정답 ▶ are\n이유: There + be동사는 뒤에 오는 주어에 맞춰요. leaves, fruits, and birds는 복수 → are\n오답 ▶ is는 단수 주어일 때 (There is a bird.)' },
-      { s: 'Perhaps Matisse is still using scissors {to cut|cut} out stars in heaven.', ex: '정답 ▶ to cut\n이유: \'별을 오리기 위해\' → 목적(~하기 위해)을 나타내는 to부정사\n오답 ▶ cut은 동사라, 이미 동사(is using)가 있는 문장에 또 올 수 없어요.' },
-      { s: 'Some of the stars may {come|comes} from his scissors.', ex: '정답 ▶ come\n이유: 조동사 may 뒤에는 동사원형! 주어가 무엇이든 -s를 붙이지 않아요.\n오답 ▶ comes ✘' }
+      { s: 'We went there on a very hot day, and we {became|become} tired.', ex: '정답 ▶ became\n이유: went(과거)와 and로 이어진 지난 일 → become의 과거형 became (불규칙)' },
+      { s: 'We went there on a very hot day, and we became {tired|tiredly}.', ex: '정답 ▶ tired\n이유: become + 형용사 = ~해지다. 부사 tiredly는 올 수 없어요.' },
+      { s: 'It surprised {me|I} in two ways.', ex: '정답 ▶ me\n이유: surprised(놀라게 했다)의 목적어 자리 → 목적격 me' },
+      { s: 'Second, the meat was {so|such} soft!', ex: '정답 ▶ so\n이유: so + 형용사 = 정말 ~한. such는 뒤에 (a) + 형용사 + 명사가 올 때 (such a soft meat)' },
+      { s: 'I had it with a special fish sauce, and the sauce was great, {too|either}.', ex: '정답 ▶ too\n이유: 긍정문 끝 \'~도\' → too. either는 부정문 끝에 써요. (The sauce wasn\'t bad, either.)' },
+      { s: 'It {means|mean} a cutting board in Jeju\'s language.', ex: '정답 ▶ means\n이유: 주어 It(3인칭 단수) + 현재 → means. 지금도 그런 뜻이라 현재형이에요.' }
     ] },
     { type: 'verb', title: '동사변형', guide: '( ) 안의 동사를 알맞은 형태로 바꿔 쓰세요.', items: [
-      { s: 'One day, Matisse ___ a brilliant idea.', v: 'get', a: ['got'], ex: '정답 ▶ got\n이유: 과거의 일(One day) → get의 과거형 got (get - got - got/gotten)\n포인트 ▶ get an idea = 생각이 나다' },
-      { s: 'He picked up scissors, ___ some paper, and made beautiful shapes.', v: 'cut', a: ['cut'], ex: '정답 ▶ cut\n이유: picked(과거)와 병렬 → 과거형. cut은 현재·과거·과거분사가 모두 cut!\n주의 ▶ cutted (X)' },
-      { s: 'He was ___ with SCISSORS!', v: 'draw', a: ['drawing'], ex: '정답 ▶ drawing\n이유: was + -ing = 과거진행형 (~하고 있었다)' },
-      { s: 'He ___ to himself, "My pleasure in cutting things grows and grows.', v: 'say', a: ['said'], ex: '정답 ▶ said\n이유: 과거형. say - said - said\n포인트 ▶ say to oneself = 혼잣말하다, 마음속으로 생각하다' },
-      { s: 'Scissors ___ me another chance.', v: 'give', a: ['gave'], ex: '정답 ▶ gave\n이유: 과거형. give - gave - given\n포인트 ▶ give + 사람 + 물건 = ~에게 …을 주다' },
-      { s: 'Soon his room ___ full of shapes and colors.', v: 'be', a: ['was'], ex: '정답 ▶ was\n이유: 주어 his room(단수) + 과거 → was\n포인트 ▶ be full of ~ = ~으로 가득 차다' },
-      { s: 'Perhaps Matisse is still ___ scissors to cut out stars in heaven.', v: 'use', a: ['using'], ex: '정답 ▶ using\n이유: is + -ing = 현재진행형 (지금도 ~하고 있다). use → using (e를 빼고 -ing)\n포인트 ▶ still = 여전히' }
+      { s: 'We ___ there on a very hot day, and we became tired.', v: 'go', a: ['went'], ex: '정답 ▶ went\n이유: go - went - gone (불규칙)' },
+      { s: 'However, we ___ our energy back thanks to dombegogi.', v: 'get', a: ['got'], ex: '정답 ▶ got\n이유: get - got - got(ten). get ~ back = ~을 되찾다' },
+      { s: 'I ___ it with a special fish sauce, and the sauce was great, too.', v: 'have', a: ['had'], ex: '정답 ▶ had\n이유: have(먹다)의 과거형 had' },
+      { s: 'Later, I ___ about the meaning of dombe.', v: 'learn', a: ['learned', 'learnt'], ex: '정답 ▶ learned\n이유: 규칙 변화 learn + -ed' }
     ] },
     { type: 'error', title: '오류찾기', guide: '어법상 틀린 곳을 고르세요.', items: [
-      { s: 'He [[picked]] up scissors, [[cut]] some paper, and [[make]] beautiful [[shapes]].', w: 2, fix: 'made', ex: '틀린 곳 ▶ ③ make → made\n이유: picked, cut, and made. \'A, B, and C\'로 이어진 동사는 시제를 맞춰요(모두 과거).\n나머지 ▶ ① picked ✔ ② cut(과거도 cut) ✔ ④ shapes(복수) ✔' },
-      { s: 'He said to [[him]], "My pleasure [[in]] [[cutting]] things grows and [[grows]].', w: 0, fix: 'himself', ex: '틀린 곳 ▶ ① him → himself\n이유: 주어 He가 자기 자신에게 말한 것이라 재귀대명사 himself.\n나머지 ▶ ② in(전치사) ✔ ③ cutting(전치사 뒤 동명사) ✔ ④ grows(단수 주어 pleasure) ✔' },
-      { s: 'My pleasure in cutting things [[grow]] and grows. Scissors [[gave]] [[me]] another [[chance]].', w: 0, fix: 'grows', ex: '틀린 곳 ▶ ① grow → grows\n이유: 주어는 My pleasure(단수) → grows. 바로 앞 things(복수)에 속지 마세요.\n나머지 ▶ ② gave(과거) ✔ ③ me(~에게) ✔ ④ chance ✔' },
-      { s: 'Soon his room was full [[with]] shapes and colors. There [[are]] leaves, fruits, and [[birds]] ... I am [[really]] happy.', w: 0, fix: 'of', ex: '틀린 곳 ▶ ① with → of\n이유: be full of ~ = ~으로 가득 차다\n나머지 ▶ ② are(복수 주어) ✔ ③ birds ✔ ④ really(형용사 happy를 꾸미는 부사) ✔' },
-      { s: 'Perhaps Matisse [[is]] still using scissors [[to cut]] out stars. Some of the stars may [[comes]] [[from]] his scissors.', w: 2, fix: 'come', ex: '틀린 곳 ▶ ③ comes → come\n이유: 조동사 may 뒤에는 동사원형.\n나머지 ▶ ① is(Matisse 단수) ✔ ② to cut(~하기 위해) ✔ ④ from(come from ~에서 나오다) ✔' }
+      { s: 'We went there on a very hot day, and we [[become]] [[tired]]. However, we got our energy [[back]] thanks to dombegogi.', w: 0, fix: 'became', ex: '틀린 곳 ▶ ① become → became\n이유: 지난 일 → 과거형 became\n나머지 ▶ ② tired(become + 형용사) ✔ ③ get back(되찾다) ✔' },
+      { s: 'It surprised [[I]] in two [[ways]]. First, it [[was]] pork on a cutting board, not on a plate.', w: 0, fix: 'me', ex: '틀린 곳 ▶ ① I → me\n이유: 동사 surprised의 목적어 → 목적격 me\n나머지 ▶ ② ways(two 뒤 복수) ✔ ③ was ✔' },
+      { s: 'Later, I [[learned]] about the meaning of dombe. It [[mean]] a cutting board in Jeju\'s [[language]].', w: 1, fix: 'means', ex: '틀린 곳 ▶ ② mean → means\n이유: 주어 It(3인칭 단수) 현재 → means\n나머지 ▶ ① learned ✔ ③ language ✔' }
     ] },
     { type: 'scramble', title: '본문 스크램블', guide: '우리말에 맞게 단어를 눌러 문장을 완성하세요.', items: [
-      { ko: '어느 날, Matisse는 멋진 생각을 해냈다.', en: 'One day, Matisse got a brilliant idea.' },
-      { ko: '그는 가위를 집어 들어 종이를 자르고, 아름다운 모양을 만들었다.', en: 'He picked up scissors, cut some paper, and made beautiful shapes.' },
-      { ko: 'Matisse는 하루 종일 종이를 잘랐다.', en: 'Matisse cut paper all day.' },
-      { ko: '곧 그의 방은 모양과 색채로 가득 찼다.', en: 'Soon his room was full of shapes and colors.' },
-      { ko: '아마도 Matisse는 여전히 천국에서 별을 오리기 위해 가위를 사용하고 있을 것이다.', en: 'Perhaps Matisse is still using scissors to cut out stars in heaven.' },
-      { ko: '별들 중 일부는 그의 가위에서 나온 것일지도 모른다.', en: 'Some of the stars may come from his scissors.' }
+      { ko: '제주도는 한국의 아름다운 섬이다.', en: 'Jeju-do is a beautiful island in Korea.' },
+      { ko: '그것은 두 가지 면에서 나를 놀라게 했다.', en: 'It surprised me in two ways.' },
+      { ko: '나중에, 나는 돔베의 의미에 대해 배웠다.', en: 'Later, I learned about the meaning of dombe.' }
     ] },
     { type: 'order', title: '문장순서', guide: '문장을 본문 순서대로 눌러서 배열하세요.', items: [
-      { lines: ['One day, Matisse got a brilliant idea.', 'He picked up scissors, cut some paper, and made beautiful shapes.', 'He cut out birds and flowers.', 'He was drawing with SCISSORS!'], flow: ['어느 날 멋진 생각을 해냄', '가위를 집어 종이를 잘라 모양을 만듦', '새와 꽃을 오려 냄', '가위로 그림을 그리고 있었음!'] },
-      { lines: ['He said to himself, "My pleasure in cutting things grows and grows.', 'Scissors gave me another chance."', 'Matisse cut paper all day.', 'Soon his room was full of shapes and colors.'], flow: ['오려 내는 기쁨이 점점 커짐', '가위가 또 다른 기회를 줌', '하루 종일 종이를 자름', '곧 방이 모양과 색채로 가득 참'] },
-      { lines: ['Perhaps Matisse is still using scissors to cut out stars in heaven.', 'Look at the night sky.', 'Some of the stars may come from his scissors.'], flow: ['아마 천국에서도 가위로 별을 오리고 있을 것', '밤하늘을 봐', '별 중 일부는 그의 가위에서 나왔을지도'] }
+      { lines: ['Jeju-do is a beautiful island in Korea.', 'We went there on a very hot day, and we became tired.', 'However, we got our energy back thanks to dombegogi.', 'It surprised me in two ways.'], flow: ['제주도는 아름다운 섬', '더운 날 가서 피곤해짐', '돔베고기 덕분에 기운을 되찾음', '두 가지 면에서 놀람'] },
+      { lines: ['First, it was pork on a cutting board, not on a plate.', 'Second, the meat was so soft!', 'I had it with a special fish sauce, and the sauce was great, too.', 'Later, I learned about the meaning of dombe.'], flow: ['첫째: 접시가 아닌 도마 위 돼지고기', '둘째: 고기가 아주 부드러움', '특별한 생선 소스도 훌륭', '나중에 돔베의 의미를 배움'] }
     ] },
     { type: 'insert', title: '문장삽입', guide: '주어진 문장이 들어가기에 가장 알맞은 곳을 고르세요.', items: [
-      { lines: ['He picked up scissors, cut some paper, and made beautiful shapes.', 'He cut out birds and flowers.', 'He was drawing with SCISSORS!'], given: 2, flow: ['가위로 종이를 잘라 모양을 만듦', '새와 꽃을 오려 냄', '가위로 그림을 그리고 있었음!'], ex: '정답 ▶ ②\n이유: 새와 꽃을 오려 낸 것(cut out birds and flowers)을 \'가위로 그림을 그리고 있었다!\'고 감탄하며 표현해요. 그래서 오려 냈다는 문장 바로 뒤에 와요.' },
-      { lines: ['Matisse cut paper all day.', 'Soon his room was full of shapes and colors.', '"I stay in bed most of the time, but I made a small paper garden all around me.'], given: 1, flow: ['하루 종일 종이를 자름', '곧(Soon) 방이 모양과 색채로 가득 참', '침대에 있지만 종이 정원을 만들었다'], ex: '정답 ▶ ①\n이유: \'하루 종일 종이를 잘랐다\' → 그 결과 \'곧(Soon) 방이 모양과 색채로 가득 찼다\'. Soon은 앞 일의 결과가 곧 나타났음을 보여 줘요.' },
-      { lines: ['Perhaps Matisse is still using scissors to cut out stars in heaven.', 'Look at the night sky.', 'Some of the stars may come from his scissors.'], given: 2, flow: ['천국에서 가위로 별을 오리고 있을 것', '밤하늘을 봐', '별들(the stars) 중 일부는 그의 가위에서'], ex: '정답 ▶ ②\n이유: \'밤하늘을 봐(Look at the night sky)\' 다음에 \'그 별들(the stars) 중 일부는 그의 가위에서 나왔을지도\'가 이어져야 자연스러워요.' }
+      { lines: ['It surprised me in two ways.', 'First, it was pork on a cutting board, not on a plate.', 'Second, the meat was so soft!'], given: 1, flow: ['두 가지 면에서 놀람', '첫째(First): 도마 위 돼지고기', '둘째(Second): 고기가 부드러움'], ex: '정답 ▶ ①\n이유: two ways → First, Second 순서로 이어져요. Second 앞에는 First가 있어야 해요.' },
+      { lines: ['I had it with a special fish sauce, and the sauce was great, too.', 'Later, I learned about the meaning of dombe.', 'It means a cutting board in Jeju\'s language.'], given: 1, flow: ['생선 소스도 훌륭했음', '나중에 돔베의 의미를 배움', '그것(It)은 도마를 의미함'], ex: '정답 ▶ ①\n이유: It은 dombe를 가리켜요. \'돔베의 의미\'를 먼저 말해야 \'그것은 도마를 의미한다\'가 이어져요.' }
     ] },
     { type: 'odd', title: '어색한 문장', guide: '글의 흐름과 관계없는 문장을 고르세요.', items: [
-      { lines: ['He picked up scissors, cut some paper, and made beautiful shapes.', 'He cut out birds and flowers.', 'He didn\'t like using scissors at all.', 'He was drawing with SCISSORS!'], odd: 2, ex: '정답 ▶ ③\n이유: 가위로 종이를 잘라 아름다운 모양을 만들고 \'가위로 그림을 그리고 있었다!\'는 흐름인데, \'가위 쓰는 걸 전혀 좋아하지 않았다\'는 정반대예요.' },
-      { lines: ['He said to himself, "My pleasure in cutting things grows and grows.', 'Scissors gave me another chance."', 'He threw away the scissors and went to sleep.', 'Matisse cut paper all day.'], odd: 2, ex: '정답 ▶ ③\n이유: 오려 내는 기쁨이 커지고 하루 종일 종이를 잘랐다는 흐름인데, \'가위를 버리고 잠을 잤다\'는 맞지 않아요.' },
-      { lines: ['Soon his room was full of shapes and colors.', '"I stay in bed most of the time, but I made a small paper garden all around me.', 'He was very sad because his room was empty.', 'There are leaves, fruits, and birds ... I am really happy," he thought.'], odd: 2, ex: '정답 ▶ ③\n이유: 방이 모양과 색채로 가득 차고 정말 행복하다는 내용인데, \'방이 비어서 슬펐다\'는 반대예요.' }
+      { lines: ['We went there on a very hot day, and we became tired.', 'However, we got our energy back thanks to dombegogi.', 'We were too tired to eat anything.', 'It surprised me in two ways.'], odd: 2, ex: '정답 ▶ ③\n이유: 바로 앞에서 돔베고기 덕분에 기운을 되찾았다고 했어요. \'너무 피곤해 아무것도 못 먹었다\'는 반대예요.' },
+      { lines: ['First, it was pork on a cutting board, not on a plate.', 'Second, the meat was so soft!', 'The meat was too hard to chew.', 'I had it with a special fish sauce, and the sauce was great, too.'], odd: 2, ex: '정답 ▶ ③\n이유: 고기가 아주 부드러웠다고 했어요. \'너무 딱딱해 씹을 수 없었다\'는 반대예요.' }
     ] },
     { type: 'blank', title: '빈칸추론', guide: '빈칸에 들어갈 말로 가장 알맞은 것을 고르세요.', items: [
-      { s: 'He picked up scissors, cut some paper, and made ____.', opts: ['beautiful shapes', 'a big cake', 'a new bed', 'a loud sound'], ex: '정답 ▶ beautiful shapes (아름다운 모양)\n이유: 가위로 종이를 잘라 만든 것 → 다음 문장에서 새와 꽃을 오려 냈다고 하니 \'아름다운 모양\'이에요.' },
-      { s: 'Scissors gave me ____.', opts: ['another chance', 'a big problem', 'a lot of money', 'a bad dream'], ex: '정답 ▶ another chance (또 다른 기회)\n이유: 그림을 잘 그릴 수 없게 된 Matisse에게 가위는 다시 예술을 할 수 있는 \'또 다른 기회\'였어요.' },
-      { s: 'Perhaps Matisse is still using scissors to cut out ____ in heaven.', opts: ['stars', 'flowers', 'birds', 'leaves'], ex: '정답 ▶ stars (별)\n이유: 다음 문장에서 밤하늘을 보라며 \'별들 중 일부는 그의 가위에서 나왔을지도\'라고 해요 → 천국에서 별을 오리고 있을 거예요.' }
+      { s: 'However, we got our ____ back thanks to dombegogi.', opts: ['energy', 'money', 'bag', 'way'], ex: '정답 ▶ energy\n이유: 더워서 피곤해졌다가 돔베고기 덕분에 \'기운\'을 되찾았어요.' },
+      { s: 'It means a ____ in Jeju\'s language.', opts: ['cutting board', 'plate', 'bowl', 'pork'], ex: '정답 ▶ cutting board\n이유: 고기가 도마 위에 나와서 이름이 \'돔베(도마)\'고기예요.' }
     ] },
     { type: 'mc', title: '핵심문법', guide: '알맞은 답을 고르세요.', items: [
-      { q: '우리말과 같도록 할 때 빈칸에 알맞은 것은?<br>어제 그는 종이를 잘랐다.<br><b>Yesterday he ______ paper.</b>', opts: ['cut', 'cutted', 'cuts', 'cutting'], ex: '정답 ▶ cut\n이유: cut은 현재·과거·과거분사가 모두 cut이에요 (cut - cut - cut).\n오답 ▶ cutted라는 형태는 없고, cuts(현재)와 cutting(-ing)은 과거가 아니에요.' },
-      { q: '두 문장의 뜻이 같도록 할 때 빈칸에 알맞은 것은?<br><b>Scissors gave me another chance.<br>= Scissors gave another chance ______ me.</b>', opts: ['to', 'for', 'of', 'with'], ex: '정답 ▶ to\n이유: give + 사람 + 물건 → give + 물건 + to + 사람 으로 바꿀 수 있어요. (give, send, show, tell, teach는 to)\n오답 ▶ for는 make, buy, cook에 써요.' },
-      { q: '빈칸에 알맞은 것은?<br><b>There ______ leaves, fruits, and birds.</b>', opts: ['are', 'is', 'be', 'was'], ex: '정답 ▶ are\n이유: There + be동사 뒤의 주어(leaves, fruits, and birds)가 복수 → are\n오답 ▶ is(단수), be(원형), was(단수 과거)' },
-      { q: '밑줄 친 부분과 쓰임이 <b>같은</b> 것은?<br><b>He is using scissors <u>to cut</u> out stars.</b>', opts: ['She went to the shop <u>to buy</u> paper.', 'I want <u>to buy</u> paper.', 'My plan is <u>to buy</u> paper.', 'He liked <u>to buy</u> paper.'], ex: '정답 ▶ She went to the store to buy milk.\n이유: 문제의 to cut은 \'오리기 위해\'라는 목적(부사적 용법). 정답도 \'우유를 사기 위해 가게에 갔다\'로 목적이에요.\n오답 ▶ want to buy(사는 것을 원하다), My plan is to buy(사는 것), liked to buy(사는 것을 좋아하다)는 모두 \'~하는 것\'(명사적 용법)이에요.' },
-      { q: '밑줄 친 <b>may</b>의 뜻으로 알맞은 것은?<br><b>Some of the stars <u>may</u> come from his scissors.</b>', opts: ['~일지도 모른다', '~해야 한다', '~할 수 있었다', '~하지 않았다'], ex: '정답 ▶ ~일지도 모른다\n이유: may는 \'추측(~일지도 모른다)\'이나 \'허락(~해도 된다)\'. 여기서는 별이 가위에서 나왔을지도 모른다는 추측이에요.\n오답 ▶ ~해야 한다(must), ~할 수 있었다(could)' },
-      { q: '다음 중 어법상 <b>틀린</b> 문장은?', opts: ['He picked up them.', 'He picked them up.', 'He picked up scissors.', 'He picked scissors up.'], ex: '정답 ▶ He picked up them.\n이유: pick up 같은 \'동사 + 부사\'에서 목적어가 대명사(them, it)면 반드시 가운데에 넣어요: picked them up\n나머지 ▶ 목적어가 명사(scissors)면 picked up scissors, picked scissors up 둘 다 가능해요.' },
-      { q: '빈칸에 알맞은 것은?<br><b>My pleasure in ______ things grows and grows.</b>', opts: ['cutting', 'cut', 'to cut', 'cuts'], ex: '정답 ▶ cutting\n이유: 전치사(in) 뒤에는 동명사(-ing). cut은 \'모음 1개 + 자음 1개\'로 끝나서 t를 겹쳐 cutting.\n오답 ▶ cut(원형), to cut(전치사 뒤 X), cuts(동사)' }
+      { q: '밑줄 친 부분의 뜻으로 알맞은 것은?<br><b>We got our energy back <u>thanks to</u> dombegogi.</b>', opts: ['~ 덕분에', '~에게 감사하며', '~ 대신에', '~에도 불구하고'], ex: '정답 ▶ ~ 덕분에\n이유: thanks to + 명사 = ~ 덕분에' },
+      { q: '빈칸에 알맞은 것은?<br><b>I don\'t like spicy food. My brother doesn\'t like it, ______.</b>', opts: ['either', 'too', 'so', 'also'], ex: '정답 ▶ either\n이유: 부정문 끝 \'~도\' → either\n비교 ▶ 긍정문은 too (The sauce was great, too.)' },
+      { q: '밑줄 친 <b>It</b>이 가리키는 것은?<br><b>Later, I learned about the meaning of dombe. <u>It</u> means a cutting board.</b>', opts: ['dombe', 'dombegogi', 'the sauce', 'Jeju-do'], ex: '정답 ▶ dombe\n이유: 바로 앞 문장의 \'돔베\'라는 말이 \'도마\'라는 뜻이에요.' },
+      { q: '다음 문장의 뜻으로 알맞은 것은?<br><b>It was pork on a cutting board, not on a plate.</b>', opts: ['그것은 접시가 아니라 도마 위의 돼지고기였다.', '그것은 도마와 접시 위의 돼지고기였다.', '그것은 접시 위의 돼지고기였다.', '그것은 도마 위의 소고기였다.'], ex: '정답 ▶ 그것은 접시가 아니라 도마 위의 돼지고기였다.\n이유: A, not B = B가 아니라 A' }
     ] },
     { type: 'mc', title: '요약문 완성', guide: '본문을 읽고 요약문의 빈칸 (A), (B)에 들어갈 말을 고르세요.', items: [
-      { n: '❸', box: ['❸'], q: '다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 알맞은 것은?<br><b>Matisse found a new way to make art: he cut paper with (A) ______, and he felt they gave him another (B) ______.</b>', opts: ['(A) scissors – (B) chance', '(A) brushes – (B) chance', '(A) scissors – (B) problem', '(A) pencils – (B) dream', '(A) brushes – (B) problem'], ex: '정답 ▶ (A) scissors – (B) chance\n(A) 종이를 자른 도구 → 가위(scissors)\n(B) 가위가 준 것 → 또 다른 기회(another chance)\n오답 ▶ brushes(붓)·pencils(연필)는 도구가 틀리고, problem(문제)·dream(꿈)은 내용과 달라요.', ev: ['He picked up scissors, cut some paper, and made beautiful shapes', 'Scissors gave me another chance'] },
-      { n: '❹', box: ['❹'], q: '다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 알맞은 것은?<br><b>Although Matisse stayed in bed most of the time, he made a small paper (A) ______ around him and felt really (B) ______.</b>', opts: ['(A) garden – (B) happy', '(A) garden – (B) lonely', '(A) house – (B) happy', '(A) forest – (B) sad', '(A) house – (B) lonely'], ex: '정답 ▶ (A) garden – (B) happy\n(A) 종이로 만든 것 → 정원(garden)\n(B) 그의 기분 → 정말 행복(really happy)\n오답 ▶ house(집)·forest(숲)는 만든 것이 아니고, lonely(외로운)·sad(슬픈)는 반대예요.', ev: ['I stay in bed most of the time, but I made a small paper garden all around me', 'I am really happy'] }
+      { n: '❸', box: ['❸'], q: '다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 알맞은 것은?<br><b>On a hot day in Jeju-do, William got his (A) ______ back thanks to dombegogi, pork served on a cutting (B) ______.</b>', opts: ['(A) energy – (B) board', '(A) energy – (B) plate', '(A) money – (B) board', '(A) money – (B) plate', '(A) bag – (B) bowl'], ex: '정답 ▶ (A) energy – (B) board\n(A) 피곤했다가 \'기운\'을 되찾음 → energy\n(B) 접시가 아니라 \'도마(cutting board)\' 위에 나옴 → board\n오답 ▶ plate(접시)는 아니라고 했고, money·bag은 관계없어요.', ev: ['we got our energy back thanks to dombegogi', 'it was pork on a cutting board, not on a plate'] },
+      { n: '❸', box: ['❸'], q: '다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 알맞은 것은?<br><b>Dombegogi surprised William because the meat was very (A) ______ and the fish sauce was (B) ______, too.</b>', opts: ['(A) soft – (B) great', '(A) hard – (B) great', '(A) soft – (B) terrible', '(A) hard – (B) terrible', '(A) spicy – (B) sweet'], ex: '정답 ▶ (A) soft – (B) great\n(A) 고기가 아주 \'부드러웠다\' → soft\n(B) 생선 소스도 \'훌륭했다\' → great\n오답 ▶ hard(딱딱한)·terrible(끔찍한)은 반대예요.', ev: ['the meat was so soft', 'the sauce was great, too'] }
+    ] }
+  ] },
+  { id: 'd1', name: 'DAY 3', range: '6과 본문 ❶❷', story: '자연에서 일하는 사람들 · 거제의 해녀, 나리', passage: [['', '❶', ''], ['', 'Some people love to work in nature.', '어떤 사람들은 자연에서 일하는 것을 아주 좋아한다.'], ['', 'They work in the sea, mountains, or even in the Arctic.', '그들은 바다, 산, 심지어 북극에서도 일한다.'], ['', 'Let\'s meet them and listen to their stories.', '그들을 만나 보고 그들의 이야기를 들어 보자.'], ['', '❷', ''], ['Nari', 'I am Nari.', '저는 나리입니다.'], ['', 'I am a haenyeo in Geoje.', '저는 거제의 해녀입니다.'], ['', 'I dive in the water and collect seafood.', '저는 물에 잠수해서 해산물을 채집합니다.'], ['', 'In the morning, I check the tide and the weather.', '아침에, 저는 조수와 날씨를 확인합니다.'], ['', 'I wear a diving suit and swimming glasses to work in the water.', '저는 물속에서 일하기 위해 잠수복을 입고 수경을 씁니다.'], ['', 'I love diving and spending time in the beautiful sea.', '저는 잠수하는 것과 아름다운 바다에서 시간을 보내는 것을 아주 좋아합니다.'], ['', 'I don\'t collect too much seafood.', '저는 너무 많은 해산물을 채집하지 않습니다.'], ['', 'This is good for the ocean.', '이것이 바다에 좋습니다.'], ['', 'These days, I see a lot of trash in the water, so I pick up the trash.', '요즘은 물속에 쓰레기가 많이 보여서 쓰레기를 줍습니다.'], ['', 'I believe that we should care about the ocean.', '저는 우리가 바다에 신경을 써야 한다고 믿습니다.']], steps: [
+    { type: 'vocab', title: '핵심어휘·숙어', quizN: 15, items: [['nature', '자연'], ['mountain', '산'], ['even', '심지어, ~조차'], ['Arctic', '북극; 북극의'], ['listen to', '~을 듣다'], ['story', '이야기'], ['haenyeo', '해녀'], ['dive', '잠수하다'], ['collect', '모으다, 채집하다'], ['seafood', '해산물'], ['check', '확인하다'], ['tide', '조수, 밀물과 썰물'], ['weather', '날씨'], ['wear', '입다, 쓰다, 착용하다'], ['diving suit', '잠수복'], ['swimming glasses', '수경'], ['spend time', '시간을 보내다'], ['too much', '너무 많은'], ['be good for', '~에 좋다'], ['ocean', '바다, 대양'], ['these days', '요즘'], ['a lot of', '많은'], ['trash', '쓰레기'], ['pick up', '~을 줍다'], ['believe', '믿다'], ['care about', '~에 신경 쓰다, 관심을 가지다']] },
+    { type: 'pick', title: '어휘선택', guide: '문맥에 맞는 낱말을 고르세요.', items: [
+      { s: 'Some people love to work in {nature|future}.', ex: 'nature: 자연' },
+      { s: 'They work in the sea, mountains, or {even|ever} in the Arctic.', ex: 'even: 심지어 (ever: 언젠가, 한 번이라도)' },
+      { s: 'Let\'s meet them and {listen|look} to their stories.', ex: 'listen to: ~을 듣다' },
+      { s: 'I {dive|drive} in the water and collect seafood.', ex: 'dive: 잠수하다 (drive: 운전하다)' },
+      { s: 'In the morning, I {check|change} the tide and the weather.', ex: 'check: 확인하다' },
+      { s: 'I {wear|carry} a diving suit and swimming glasses to work in the water.', ex: 'wear: (옷·안경 등을) 입다, 쓰다' },
+      { s: 'I don\'t collect too much seafood. This is {good|bad} for the ocean.', ex: '해산물을 너무 많이 채집하지 않는 것은 바다에 좋다.' },
+      { s: 'These days, I see a lot of trash in the water, so I {pick up|throw away} the trash.', ex: 'pick up: 줍다 (throw away: 버리다)' },
+      { s: 'I believe that we should {care about|forget about} the ocean.', ex: 'care about: ~에 신경 쓰다' }
+    ] },
+    { type: 'tf', title: 'T/F 내용 확인', guide: '본문 내용과 일치하면 T, 다르면 F를 고르세요.', items: [['Some people enjoy working in nature.', true, 'Some people love to work in nature.'], ['Nari is a haenyeo in Jeju.', false, '나리는 거제(Geoje)의 해녀다.'], ['Nari checks the tide and the weather in the morning.', true, 'In the morning, I check the tide and the weather.'], ['Nari wears a diving suit to work in the water.', true, '물속에서 일하기 위해 잠수복을 입는다.'], ['Nari collects as much seafood as she can.', false, '너무 많은 해산물을 채집하지 않는다.'], ['Nari sees a lot of trash in the water these days.', true, 'These days, I see a lot of trash in the water.'], ['Nari doesn\'t pick up the trash in the water.', false, '나리는 쓰레기를 줍는다(pick up the trash).'], ['Nari thinks we should care about the ocean.', true, 'I believe that we should care about the ocean.']] },
+    { type: 'mc', title: '일치·불일치', guide: '본문을 읽고 내용과 맞는지 확인해요. 틀린 선택지는 해설의 근거 문장과 비교해 보세요.', items: [
+      { n: '❷', box: ['❷'], q: '나리에 관한 내용과 일치하지 <u>않는</u> 것은?', opts: ['Nari collects as much seafood as she can.', 'Nari is a haenyeo in Geoje.', 'Nari checks the tide and the weather in the morning.', 'Nari wears a diving suit to work in the water.', 'Nari picks up the trash in the water.'], ex: '정답 근거: I don\'t collect too much seafood. (너무 많은 해산물을 채집하지 않는다)\n· as much ~ as she can : 할 수 있는 한 많이', per: [['나리는 할 수 있는 한 많은 해산물을 채집한다.', 'I don\'t collect too much seafood', '불일치 → 너무 많이 채집하지 않음'], ['나리는 거제의 해녀이다.', 'I am a haenyeo in Geoje', '일치'], ['나리는 아침에 조수와 날씨를 확인한다.', 'In the morning, I check the tide and the weather', '일치'], ['나리는 물속에서 일하기 위해 잠수복을 입는다.', 'I wear a diving suit', '일치'], ['나리는 물속의 쓰레기를 줍는다.', 'so I pick up the trash', '일치']] },
+      { n: '❷', box: ['❶', '❷'], q: '글의 내용과 <u>일치하는</u> 것은?', opts: ['Nari thinks that we should care about the ocean.', 'Some people work in the Arctic, but not in the sea.', 'Nari dives in the water at night.', 'Nari doesn\'t like spending time in the sea.', 'There is no trash in the water these days.'], ex: '정답 근거: I believe that we should care about the ocean.\n· care about : ~에 신경 쓰다, 관심을 가지다', per: [['나리는 우리가 바다에 신경 써야 한다고 생각한다.', 'I believe that we should care about the ocean', '일치'], ['어떤 사람들은 북극에서 일하지만 바다에서는 일하지 않는다.', 'They work in the sea, mountains, or even in the Arctic', '불일치 → 바다에서도 일함'], ['나리는 밤에 물에 잠수한다.', 'In the morning, I check the tide', '불일치 → 밤이라는 말은 없음'], ['나리는 바다에서 시간 보내는 것을 좋아하지 않는다.', 'I love diving and spending time in the beautiful sea', '불일치 → 아주 좋아함'], ['요즘 물속에는 쓰레기가 없다.', 'I see a lot of trash in the water', '불일치 → 쓰레기가 많음']] }
+    ] },
+    { type: 'pick', title: '어법선택', guide: '어법상 알맞은 것을 고르세요.', items: [
+      { s: 'Some people love {to work|work} in nature.', ex: 'love + to부정사/동명사' },
+      { s: 'Let\'s meet them and {listen|listening} to their stories.', ex: 'Let\'s + 동사원형 (meet and listen 병렬)' },
+      { s: 'I am a haenyeo {in|on} Geoje.', ex: '지역·도시 이름 앞 → in' },
+      { s: 'I dive in the water and {collect|collects} seafood.', ex: '주어 I → collect (dive와 병렬)' },
+      { s: 'I wear a diving suit and swimming glasses {to work|working} in the water.', ex: '목적(~하기 위해) → to부정사' },
+      { s: 'I love diving and {spending|spend} time in the beautiful sea.', ex: 'diving과 and로 연결 → spending' },
+      { s: 'I don\'t collect too {much|many} seafood.', ex: 'seafood는 셀 수 없는 명사 → much' },
+      { s: 'These days, I see {a lot of|a few} trash in the water.', ex: 'trash는 셀 수 없는 명사 → a lot of (a few는 셀 수 있는 명사)' },
+      { s: 'I believe {that|what} we should care about the ocean.', ex: '뒤에 완전한 문장 → 접속사 that' },
+      { s: 'I believe that we should {care|cares} about the ocean.', ex: '조동사 should + 동사원형' }
+    ] },
+    { type: 'verb', title: '동사변형', guide: '( ) 안의 동사를 알맞은 형태로 바꿔 쓰세요.', items: [
+      { s: 'Some people love ___ in nature.', v: 'work', a: ['to work', 'working'], ex: 'love + to부정사/동명사 (본문: to work)' },
+      { s: 'They ___ in the sea, mountains, or even in the Arctic.', v: 'work', a: ['work'], ex: '주어 They → work' },
+      { s: 'Let\'s ___ them and listen to their stories.', v: 'meet', a: ['meet'], ex: 'Let\'s + 동사원형' },
+      { s: 'I ___ in the water and collect seafood.', v: 'dive', a: ['dive'], ex: '주어 I + 현재형' },
+      { s: 'I wear a diving suit and swimming glasses ___ in the water.', v: 'work', a: ['to work'], ex: '목적(~하기 위해) → to work' },
+      { s: 'I love ___ and spending time in the beautiful sea.', v: 'dive', a: ['diving'], ex: 'spending과 병렬 → diving' },
+      { s: 'I love diving and ___ time in the beautiful sea.', v: 'spend', a: ['spending'], ex: 'diving과 병렬 → spending' },
+      { s: 'I don\'t ___ too much seafood.', v: 'collect', a: ['collect'], ex: 'don\'t + 동사원형' },
+      { s: 'This ___ good for the ocean.', v: 'be', a: ['is'], ex: '주어 This → is' },
+      { s: 'I believe that we should ___ about the ocean.', v: 'care', a: ['care'], ex: 'should + 동사원형' }
+    ] },
+    { type: 'error', title: '오류찾기', guide: '어법상 틀린 곳을 고르세요.', items: [
+      { s: 'Some people love [[work]] in nature. They [[work]] in the sea, mountains, or [[even]] [[in]] the Arctic.', w: 0, fix: 'to work', ex: 'love + to부정사/동명사 → to work (또는 working)' },
+      { s: 'Let\'s [[meet]] them and [[listening]] [[to]] [[their]] stories.', w: 1, fix: 'listen', ex: 'Let\'s + 동사원형 → listen' },
+      { s: 'I [[dive]] in the water and [[collects]] seafood. In the morning, I [[check]] the tide and [[the]] weather.', w: 1, fix: 'collect', ex: '주어 I → collect' },
+      { s: 'I wear a diving suit and swimming glasses [[work]] [[in]] the water. I love [[diving]] and [[spending]] time in the beautiful sea.', w: 0, fix: 'to work', ex: '목적(~하기 위해) → to work' },
+      { s: 'I [[don\'t]] collect too [[many]] seafood. This [[is]] good [[for]] the ocean.', w: 1, fix: 'much', ex: 'seafood는 셀 수 없는 명사 → much' },
+      { s: 'These days, I see [[a lot of]] trash in the water, so I [[pick up]] the trash. I believe [[what]] we should [[care]] about the ocean.', w: 2, fix: 'that', ex: '뒤에 완전한 문장 → 접속사 that' }
+    ] },
+    { type: 'scramble', title: '본문 스크램블', guide: '우리말에 맞게 단어를 눌러 문장을 완성하세요.', items: [
+      { ko: '어떤 사람들은 자연에서 일하는 것을 아주 좋아한다.', en: 'Some people love to work in nature.' },
+      { ko: '그들을 만나 보고 그들의 이야기를 들어 보자.', en: 'Let\'s meet them and listen to their stories.' },
+      { ko: '저는 물에 잠수해서 해산물을 채집합니다.', en: 'I dive in the water and collect seafood.' },
+      { ko: '저는 물속에서 일하기 위해 잠수복을 입고 수경을 씁니다.', en: 'I wear a diving suit and swimming glasses to work in the water.' },
+      { ko: '저는 잠수하는 것과 아름다운 바다에서 시간을 보내는 것을 아주 좋아합니다.', en: 'I love diving and spending time in the beautiful sea.' },
+      { ko: '저는 너무 많은 해산물을 채집하지 않습니다.', en: 'I don\'t collect too much seafood.' },
+      { ko: '저는 우리가 바다에 신경을 써야 한다고 믿습니다.', en: 'I believe that we should care about the ocean.' }
+    ] },
+    { type: 'order', title: '문장순서', guide: '문장을 본문 순서대로 눌러서 배열하세요.', items: [
+      { lines: ['Some people love to work in nature.', 'They work in the sea, mountains, or even in the Arctic.', 'Let\'s meet them and listen to their stories.', 'I am Nari.'] },
+      { lines: ['I dive in the water and collect seafood.', 'In the morning, I check the tide and the weather.', 'I wear a diving suit and swimming glasses to work in the water.', 'I love diving and spending time in the beautiful sea.'] },
+      { lines: ['I don\'t collect too much seafood.', 'This is good for the ocean.', 'These days, I see a lot of trash in the water, so I pick up the trash.', 'I believe that we should care about the ocean.'] }
+    ] },
+    { type: 'insert', title: '문장삽입', guide: '주어진 문장이 들어가기에 가장 알맞은 곳을 고르세요.', items: [
+      { lines: ['Some people love to work in nature.', 'They work in the sea, mountains, or even in the Arctic.', 'Let\'s meet them and listen to their stories.', 'I am Nari.', 'I am a haenyeo in Geoje.'], given: 1, ex: 'They는 앞 문장의 Some people을 가리킨다.' },
+      { lines: ['I dive in the water and collect seafood.', 'In the morning, I check the tide and the weather.', 'I wear a diving suit and swimming glasses to work in the water.', 'I love diving and spending time in the beautiful sea.', 'I don\'t collect too much seafood.'], given: 2, ex: '아침에 조수와 날씨를 확인한 뒤, 물속에서 일하기 위해 잠수복을 입는다.' },
+      { lines: ['I love diving and spending time in the beautiful sea.', 'I don\'t collect too much seafood.', 'This is good for the ocean.', 'These days, I see a lot of trash in the water, so I pick up the trash.', 'I believe that we should care about the ocean.'], given: 2, ex: 'This는 "해산물을 너무 많이 채집하지 않는 것"을 가리킨다.' }
+    ] },
+    { type: 'odd', title: '어색한 문장', guide: '글의 흐름과 관계없는 문장을 고르세요.', items: [
+      { lines: ['Some people love to work in nature.', 'They work in the sea, mountains, or even in the Arctic.', 'They don\'t like going outside at all.', 'Let\'s meet them and listen to their stories.'], odd: 2, ex: '자연에서 일하는 것을 좋아하는 사람들인데 밖에 나가는 것을 싫어한다는 내용은 맞지 않는다.' },
+      { lines: ['I dive in the water and collect seafood.', 'In the morning, I check the tide and the weather.', 'I wear a diving suit and swimming glasses to work in the water.', 'I am afraid of the sea, so I never swim.', 'I love diving and spending time in the beautiful sea.'], odd: 3, ex: '나리는 잠수와 바다에서 시간 보내기를 아주 좋아한다.' },
+      { lines: ['I don\'t collect too much seafood.', 'This is good for the ocean.', 'So I always collect as much seafood as I can.', 'These days, I see a lot of trash in the water, so I pick up the trash.', 'I believe that we should care about the ocean.'], odd: 2, ex: '해산물을 너무 많이 채집하지 않는다는 앞 내용과 반대된다.' }
+    ] },
+    { type: 'blank', title: '빈칸추론', guide: '빈칸에 들어갈 말로 가장 알맞은 것을 고르세요.', items: [
+      { s: 'I wear a diving suit and swimming glasses ____.', opts: ['to work in the water', 'to look nice', 'to sleep well', 'to go shopping'], ex: '물속에서 일하기 위해 잠수복과 수경을 착용한다.' },
+      { s: 'I love diving and ____ in the beautiful sea.', opts: ['spending time', 'throwing trash', 'building houses', 'doing homework'], ex: '아름다운 바다에서 시간을 보내는 것을 좋아한다.' },
+      { s: 'These days, I see a lot of trash in the water, so I ____.', opts: ['pick up the trash', 'throw more trash', 'stop diving', 'buy new glasses'], ex: '쓰레기가 많이 보여서 쓰레기를 줍는다.' },
+      { s: 'I don\'t collect too much seafood. This is good for the ocean. I believe that we should ____ the ocean.', opts: ['care about', 'take everything from', 'get away from', 'be afraid of'], ex: '바다를 아끼는 행동을 하므로 바다에 신경 써야 한다고 믿는다.' }
+    ] },
+    { type: 'mc', title: '핵심문법', guide: '알맞은 답을 고르세요.', items: [
+      { q: '빈칸에 들어갈 수 <b>없는</b> 것은?<br><b>I ______ to play soccer.</b>', opts: ['enjoy', 'like', 'love', 'start'], ex: 'enjoy는 동명사만 목적어로 쓴다 (enjoy playing). like·love·start는 둘 다 가능.' },
+      { q: '다음 문장과 뜻이 같은 것은?<br><b>Some people love to work in nature.</b>', opts: ['Some people love working in nature.', 'Some people love work in nature.', 'Some people love worked in nature.', 'Some people loves to work in nature.'], ex: 'love + to부정사 = love + 동명사' },
+      { q: '밑줄 친 부분과 쓰임이 같은 것은?<br><b>I wear a diving suit <u>to work</u> in the water.</b>', opts: ['She went to the library <u>to borrow</u> books.', 'I want <u>to work</u> in nature.', 'I love <u>to swim</u> in the sea.', 'He started <u>to read</u> the book.'], ex: '목적(~하기 위해)의 to부정사. 나머지는 동사의 목적어.' },
+      { q: '"나는 책을 사기 위해 서점에 갔다."를 바르게 영작한 것은?', opts: ['I went to the bookstore to buy a book.', 'I went to the bookstore buy a book.', 'I went to the bookstore for buy a book.', 'I went to the bookstore buying a book.'], ex: '목적 → to + 동사원형' },
+      { q: '빈칸에 공통으로 알맞은 것은?<br><b>I believe ______ we should care about the ocean.<br>I think ______ he is kind.</b>', opts: ['that', 'what', 'this', 'it'], ex: '완전한 문장을 이끄는 접속사 that (생략 가능)' },
+      { q: '밑줄 친 <b>that</b>을 생략할 수 있는 것은?', opts: ['I know <u>that</u> she is honest.', '<u>That</u> bag is mine.', 'I like <u>that</u> song.', '<u>That</u> is my brother.'], ex: '동사의 목적어 자리 접속사 that은 생략할 수 있다. 나머지는 지시형용사·지시대명사.' },
+      { q: '빈칸에 알맞은 것은?<br><b>I don\'t collect too ______ seafood.</b>', opts: ['much', 'many', 'a few', 'few'], ex: 'seafood는 셀 수 없는 명사 → much' },
+      { q: '빈칸에 들어갈 수 <b>없는</b> 것은?<br><b>I see ______ trash in the water.</b>', opts: ['many', 'a lot of', 'lots of', 'much'], ex: 'trash는 셀 수 없는 명사 → many는 쓸 수 없다.' },
+      { q: '빈칸에 알맞은 것은?<br><b>I love diving and ______ time in the sea.</b>', opts: ['spending', 'spend', 'spends', 'spent'], ex: 'diving과 and로 연결 → spending' }
+    ] }
+  ] },
+  { id: 'd2', name: 'DAY 4', range: '6과 본문 ❸❹', story: '지리산의 수의사, 지한 · 극지 과학자, 은', passage: [['', '❸', ''], ['Jihan', 'My name is Jihan.', '제 이름은 지한입니다.'], ['', 'I am a vet at the wild animal care center in Jirisan.', '저는 지리산 야생 동물 보호 센터의 수의사입니다.'], ['', 'I take care of sick wild animals in the center and send them back to their homes.', '저는 센터의 아픈 야생 동물을 돌보고 그들을 집으로 돌려보냅니다.'], ['', 'Also, I often climb the mountain to look after wild animals like bears.', '또한 저는 곰과 같은 야생 동물을 돌보기 위해 자주 산을 오릅니다.'], ['', 'I\'m proud of my job.', '저는 제 직업이 자랑스럽습니다.'], ['', 'I think that protecting wild animals is important.', '저는 야생 동물을 보호하는 것이 중요하다고 생각합니다.'], ['', 'We should keep an eye on them and their homes to live together.', '우리는 함께 살아가기 위해 그들과 그들의 서식처를 계속 지켜보아야 합니다.'], ['', '❹', ''], ['Eun', 'My name is Eun, and I am an Arctic scientist.', '제 이름은 은이고, 저는 극지 과학자입니다.'], ['', 'I work at the Arctic Dasan Station in Norway.', '저는 노르웨이의 북극 다산 과학 기지에서 일합니다.'], ['', 'I study the soil, seawater, and ice in the Arctic.', '저는 북극의 토양, 바닷물, 얼음을 연구합니다.'], ['', 'I often travel on the special ship, Araon.', '저는 특별한 배인 아라온호를 타고 자주 이동합니다.'], ['', 'This ship is stronger than other ships.', '이 배는 다른 배보다 더 튼튼합니다.'], ['', 'It can break thick ice across the ocean.', '그것은 바다를 가로질러 두꺼운 얼음을 깰 수 있습니다.'], ['', 'Thanks to Araon, I can collect seawater samples.', '아라온호 덕분에 저는 바닷물 표본을 채집할 수 있습니다.'], ['', 'The Arctic Ocean has the answers to the climate crisis.', '북극해는 기후 위기에 대한 해답을 가지고 있습니다.'], ['', 'I hope that my work can help the Earth.', '저는 제 일이 지구를 도울 수 있기를 바랍니다.']], steps: [
+    { type: 'vocab', title: '핵심어휘·숙어', quizN: 15, items: [['vet', '수의사'], ['wild animal', '야생 동물'], ['take care of', '~을 돌보다'], ['sick', '아픈'], ['send ~ back', '~을 돌려보내다'], ['often', '자주, 종종'], ['climb', '오르다'], ['look after', '~을 돌보다'], ['like (전치사)', '~와 같은, ~처럼'], ['bear', '곰'], ['be proud of', '~을 자랑스러워하다'], ['protect', '보호하다'], ['important', '중요한'], ['keep an eye on', '~을 계속 지켜보다'], ['together', '함께'], ['scientist', '과학자'], ['station', '기지; 역'], ['soil', '토양, 흙'], ['seawater', '바닷물'], ['travel', '이동하다; 여행하다'], ['special', '특별한'], ['strong', '튼튼한, 강한'], ['break', '깨다, 부수다'], ['thick', '두꺼운'], ['across', '~을 가로질러'], ['thanks to', '~ 덕분에'], ['sample', '표본, 샘플'], ['answer to', '~에 대한 해답'], ['climate crisis', '기후 위기'], ['hope', '바라다, 희망하다']] },
+    { type: 'pick', title: '어휘선택', guide: '문맥에 맞는 낱말을 고르세요.', items: [
+      { s: 'I am a {vet|chef} at the wild animal care center in Jirisan.', ex: 'vet: 수의사' },
+      { s: 'I take care of {sick|healthy} wild animals in the center and send them back to their homes.', ex: '센터에서 아픈(sick) 동물을 돌본다.' },
+      { s: 'Also, I often {climb|cross} the mountain to look after wild animals like bears.', ex: 'climb the mountain: 산을 오르다' },
+      { s: 'I\'m {proud|afraid} of my job.', ex: 'be proud of: ~을 자랑스러워하다' },
+      { s: 'I think that {protecting|hunting} wild animals is important.', ex: 'protect: 보호하다' },
+      { s: 'We should keep an {eye|ear} on them and their homes to live together.', ex: 'keep an eye on: ~을 계속 지켜보다' },
+      { s: 'I study the {soil|sand}, seawater, and ice in the Arctic.', ex: 'soil: 토양, 흙' },
+      { s: 'This ship is {stronger|weaker} than other ships.', ex: '두꺼운 얼음을 깰 수 있으므로 더 튼튼하다.' },
+      { s: 'It can break {thick|thin} ice across the ocean.', ex: 'thick: 두꺼운 (thin: 얇은)' },
+      { s: '{Thanks to|Instead of} Araon, I can collect seawater samples.', ex: 'thanks to: ~ 덕분에' },
+      { s: 'The Arctic Ocean has the {answers|questions} to the climate crisis.', ex: 'answer to: ~에 대한 해답' }
+    ] },
+    { type: 'tf', title: 'T/F 내용 확인', guide: '본문 내용과 일치하면 T, 다르면 F를 고르세요.', items: [['Jihan is a vet in Jirisan.', true, '지리산 야생 동물 보호 센터의 수의사다.'], ['Jihan sends the wild animals to a zoo.', false, '동물들을 그들의 집(서식처)으로 돌려보낸다.'], ['Jihan often climbs the mountain to look after wild animals.', true, 'I often climb the mountain to look after wild animals.'], ['Jihan thinks protecting wild animals isn\'t important.', false, '야생 동물 보호가 중요하다고 생각한다.'], ['Eun works at a station in Norway.', true, 'the Arctic Dasan Station in Norway'], ['Eun studies the soil, seawater, and ice in the Antarctic.', false, '남극(Antarctic)이 아니라 북극(Arctic)을 연구한다.'], ['Araon can break thick ice across the ocean.', true, 'It can break thick ice across the ocean.'], ['Eun hopes the work can help the Earth.', true, 'I hope that my work can help the Earth.']] },
+    { type: 'mc', title: '일치·불일치', guide: '본문을 읽고 내용과 맞는지 확인해요. 틀린 선택지는 해설의 근거 문장과 비교해 보세요.', items: [
+      { n: '❸', box: ['❸'], q: '지한에 관한 내용과 일치하지 <u>않는</u> 것은?', opts: ['Jihan works at a zoo in Seoul.', 'Jihan takes care of sick wild animals.', 'Jihan sends the animals back to their homes.', 'Jihan often climbs the mountain to look after bears.', 'Jihan is proud of his job.'], ex: '정답 근거: I am a vet at the wild animal care center in Jirisan.\n· vet : 수의사 · take care of = look after : 돌보다', per: [['지한은 서울의 동물원에서 일한다.', 'I am a vet at the wild animal care center in Jirisan', '불일치 → 지리산 야생 동물 보호 센터'], ['지한은 아픈 야생 동물을 돌본다.', 'I take care of sick wild animals', '일치'], ['지한은 동물들을 집으로 돌려보낸다.', 'send them back to their homes', '일치'], ['지한은 곰을 돌보기 위해 자주 산에 오른다.', 'I often climb the mountain to look after wild animals like bears', '일치'], ['지한은 자기 직업이 자랑스럽다.', 'I\'m proud of my job', '일치']] },
+      { n: '❹', box: ['❹'], q: '은에 관한 내용과 <u>일치하는</u> 것은?', opts: ['The ship Araon can break thick ice across the ocean.', 'Eun works at a station in Canada.', 'Eun studies animals and plants in the Arctic.', 'Araon is weaker than other ships.', 'Eun can\'t collect seawater samples.'], ex: '정답 근거: It can break thick ice across the ocean.\n· thick : 두꺼운 · thanks to : ~ 덕분에 · sample : 표본', per: [['아라온호는 바다를 가로질러 두꺼운 얼음을 깰 수 있다.', 'It can break thick ice across the ocean', '일치'], ['은은 캐나다의 기지에서 일한다.', 'I work at the Arctic Dasan Station in Norway', '불일치 → 노르웨이'], ['은은 북극의 동물과 식물을 연구한다.', 'I study the soil, seawater, and ice in the Arctic', '불일치 → 토양, 바닷물, 얼음'], ['아라온호는 다른 배보다 약하다.', 'This ship is stronger than other ships', '불일치 → 더 튼튼함'], ['은은 바닷물 표본을 채집할 수 없다.', 'Thanks to Araon, I can collect seawater samples', '불일치 → 채집할 수 있음']] }
+    ] },
+    { type: 'pick', title: '어법선택', guide: '어법상 알맞은 것을 고르세요.', items: [
+      { s: 'I am a vet {at|on} the wild animal care center in Jirisan.', ex: '건물·특정 장소 → at, 넓은 지역 → in' },
+      { s: 'I take care of sick wild animals in the center and send {them back|back them} to their homes.', ex: '이어동사 목적어가 대명사 → 동사 + 대명사 + back' },
+      { s: 'Also, I often climb the mountain {to look|looking} after wild animals like bears.', ex: '목적(~하기 위해) → to부정사' },
+      { s: 'Also, I {often climb|climb often} the mountain.', ex: '빈도부사는 일반동사 앞에' },
+      { s: 'I\'m proud {of|for} my job.', ex: 'be proud of: ~을 자랑스러워하다' },
+      { s: 'I think that protecting wild animals {is|are} important.', ex: '동명사 주어는 단수 취급 → is' },
+      { s: 'We should keep an eye on them and their homes {to live|live} together.', ex: '목적(~하기 위해) → to live' },
+      { s: 'This ship is {stronger|strong} than other ships.', ex: 'than 앞 → 비교급 stronger' },
+      { s: 'It can {break|breaks} thick ice across the ocean.', ex: '조동사 can + 동사원형' },
+      { s: 'Thanks to Araon, I can {collect|collecting} seawater samples.', ex: '조동사 can + 동사원형' },
+      { s: 'I hope {that|what} my work can help the Earth.', ex: '뒤에 완전한 문장 → 접속사 that' }
+    ] },
+    { type: 'verb', title: '동사변형', guide: '( ) 안의 동사를 알맞은 형태로 바꿔 쓰세요.', items: [
+      { s: 'I ___ care of sick wild animals in the center.', v: 'take', a: ['take'], ex: 'take care of: ~을 돌보다' },
+      { s: 'I take care of sick wild animals in the center and ___ them back to their homes.', v: 'send', a: ['send'], ex: 'take와 and로 연결 → send' },
+      { s: 'Also, I often climb the mountain ___ after wild animals like bears.', v: 'look', a: ['to look'], ex: '목적(~하기 위해) → to look' },
+      { s: 'I think that ___ wild animals is important.', v: 'protect', a: ['protecting', 'to protect'], ex: '주어 자리 → 동명사 (본문: protecting)' },
+      { s: 'I think that protecting wild animals ___ important.', v: 'be', a: ['is'], ex: '동명사 주어는 단수 → is' },
+      { s: 'We should keep an eye on them and their homes ___ together.', v: 'live', a: ['to live'], ex: '목적(~하기 위해) → to live' },
+      { s: 'I often ___ on the special ship, Araon.', v: 'travel', a: ['travel'], ex: '주어 I + 현재형' },
+      { s: 'It can ___ thick ice across the ocean.', v: 'break', a: ['break'], ex: 'can + 동사원형' },
+      { s: 'The Arctic Ocean ___ the answers to the climate crisis.', v: 'have', a: ['has'], ex: '3인칭 단수 → has' },
+      { s: 'I hope that my work can ___ the Earth.', v: 'help', a: ['help'], ex: 'can + 동사원형' }
+    ] },
+    { type: 'error', title: '오류찾기', guide: '어법상 틀린 곳을 고르세요.', items: [
+      { s: 'I take care [[of]] sick wild animals in the center and send [[back them]] [[to]] [[their]] homes.', w: 1, fix: 'them back', ex: '이어동사 목적어가 대명사 → send them back' },
+      { s: 'Also, I often [[climb]] the mountain [[looking]] after wild animals [[like]] [[bears]].', w: 1, fix: 'to look', ex: '목적(~하기 위해) → to look' },
+      { s: 'I\'m proud [[of]] my job. I think [[that]] [[protecting]] wild animals [[are]] important.', w: 3, fix: 'is', ex: '동명사 주어는 단수 → is' },
+      { s: 'We should [[keep]] an eye [[on]] them and their homes [[live]] [[together]].', w: 2, fix: 'to live', ex: '목적(~하기 위해) → to live' },
+      { s: 'I work [[at]] the Arctic Dasan Station [[in]] Norway. I [[study]] the soil, seawater, and ice in the Arctic. I [[travel often]] on the special ship, Araon.', w: 3, fix: 'often travel', ex: '빈도부사는 일반동사 앞 → often travel' },
+      { s: 'This ship is [[strong]] [[than]] other ships. It can [[break]] [[thick]] ice across the ocean.', w: 0, fix: 'stronger', ex: 'than 앞 → 비교급 stronger' },
+      { s: 'Thanks to Araon, I can [[collects]] seawater samples. The Arctic Ocean [[has]] the answers [[to]] the climate crisis. I hope [[that]] my work can help the Earth.', w: 0, fix: 'collect', ex: 'can + 동사원형' }
+    ] },
+    { type: 'scramble', title: '본문 스크램블', guide: '우리말에 맞게 단어를 눌러 문장을 완성하세요.', items: [
+      { ko: '저는 센터의 아픈 야생 동물을 돌보고 그들을 집으로 돌려보냅니다.', en: 'I take care of sick wild animals in the center and send them back to their homes.' },
+      { ko: '또한 저는 곰과 같은 야생 동물을 돌보기 위해 자주 산을 오릅니다.', en: 'Also, I often climb the mountain to look after wild animals like bears.' },
+      { ko: '저는 야생 동물을 보호하는 것이 중요하다고 생각합니다.', en: 'I think that protecting wild animals is important.' },
+      { ko: '우리는 함께 살아가기 위해 그들과 그들의 서식처를 계속 지켜보아야 합니다.', en: 'We should keep an eye on them and their homes to live together.' },
+      { ko: '이 배는 다른 배보다 더 튼튼합니다.', en: 'This ship is stronger than other ships.' },
+      { ko: '아라온호 덕분에 저는 바닷물 표본을 채집할 수 있습니다.', en: 'Thanks to Araon, I can collect seawater samples.' },
+      { ko: '북극해는 기후 위기에 대한 해답을 가지고 있습니다.', en: 'The Arctic Ocean has the answers to the climate crisis.' },
+      { ko: '저는 제 일이 지구를 도울 수 있기를 바랍니다.', en: 'I hope that my work can help the Earth.' }
+    ] },
+    { type: 'order', title: '문장순서', guide: '문장을 본문 순서대로 눌러서 배열하세요.', items: [
+      { lines: ['My name is Jihan.', 'I am a vet at the wild animal care center in Jirisan.', 'I take care of sick wild animals in the center and send them back to their homes.', 'Also, I often climb the mountain to look after wild animals like bears.'] },
+      { lines: ['I\'m proud of my job.', 'I think that protecting wild animals is important.', 'We should keep an eye on them and their homes to live together.', 'My name is Eun, and I am an Arctic scientist.'] },
+      { lines: ['I work at the Arctic Dasan Station in Norway.', 'I study the soil, seawater, and ice in the Arctic.', 'I often travel on the special ship, Araon.', 'This ship is stronger than other ships.'] },
+      { lines: ['It can break thick ice across the ocean.', 'Thanks to Araon, I can collect seawater samples.', 'The Arctic Ocean has the answers to the climate crisis.', 'I hope that my work can help the Earth.'] }
+    ] },
+    { type: 'insert', title: '문장삽입', guide: '주어진 문장이 들어가기에 가장 알맞은 곳을 고르세요.', items: [
+      { lines: ['My name is Jihan.', 'I am a vet at the wild animal care center in Jirisan.', 'I take care of sick wild animals in the center and send them back to their homes.', 'Also, I often climb the mountain to look after wild animals like bears.', 'I\'m proud of my job.'], given: 2, ex: 'the center는 앞 문장의 보호 센터를 가리키고, 뒤 문장의 Also는 하는 일을 하나 더 덧붙인다.' },
+      { lines: ['I\'m proud of my job.', 'I think that protecting wild animals is important.', 'We should keep an eye on them and their homes to live together.', 'My name is Eun, and I am an Arctic scientist.'], given: 2, ex: 'them은 앞 문장의 wild animals를 가리킨다.' },
+      { lines: ['I study the soil, seawater, and ice in the Arctic.', 'I often travel on the special ship, Araon.', 'This ship is stronger than other ships.', 'It can break thick ice across the ocean.', 'Thanks to Araon, I can collect seawater samples.'], given: 2, ex: 'This ship은 앞의 Araon을 가리키고, 뒤 문장의 It은 This ship을 가리킨다.' },
+      { lines: ['This ship is stronger than other ships.', 'It can break thick ice across the ocean.', 'Thanks to Araon, I can collect seawater samples.', 'The Arctic Ocean has the answers to the climate crisis.', 'I hope that my work can help the Earth.'], given: 2, ex: '얼음을 깰 수 있는 아라온호 덕분에 바닷물 표본을 채집할 수 있다.' }
+    ] },
+    { type: 'odd', title: '어색한 문장', guide: '글의 흐름과 관계없는 문장을 고르세요.', items: [
+      { lines: ['I am a vet at the wild animal care center in Jirisan.', 'I take care of sick wild animals in the center and send them back to their homes.', 'I keep the animals in the center forever.', 'Also, I often climb the mountain to look after wild animals like bears.', 'I\'m proud of my job.'], odd: 2, ex: '동물들을 집(서식처)으로 돌려보낸다는 내용과 반대된다.' },
+      { lines: ['I\'m proud of my job.', 'I think that protecting wild animals is important.', 'Wild animals don\'t need our help at all.', 'We should keep an eye on them and their homes to live together.'], odd: 2, ex: '야생 동물 보호가 중요하다는 흐름과 맞지 않는다.' },
+      { lines: ['I work at the Arctic Dasan Station in Norway.', 'I study the soil, seawater, and ice in the Arctic.', 'I often travel on the special ship, Araon.', 'Araon is a small ship, so it can\'t go through ice.', 'This ship is stronger than other ships.', 'It can break thick ice across the ocean.'], odd: 3, ex: '아라온호는 다른 배보다 튼튼하고 두꺼운 얼음을 깰 수 있다.' },
+      { lines: ['Thanks to Araon, I can collect seawater samples.', 'The Arctic Ocean has the answers to the climate crisis.', 'The climate crisis is not a problem for the Earth.', 'I hope that my work can help the Earth.'], odd: 2, ex: '기후 위기의 해답을 찾아 지구를 돕고 싶다는 흐름과 맞지 않는다.' }
+    ] },
+    { type: 'blank', title: '빈칸추론', guide: '빈칸에 들어갈 말로 가장 알맞은 것을 고르세요.', items: [
+      { s: 'I take care of sick wild animals in the center and ____ to their homes.', opts: ['send them back', 'keep them all', 'sell them', 'hide them'], ex: '치료한 동물을 집(서식처)으로 돌려보낸다.' },
+      { s: 'Also, I often climb the mountain ____ wild animals like bears.', opts: ['to look after', 'to hunt', 'to run away from', 'to sell'], ex: '곰 같은 야생 동물을 돌보기 위해 산을 오른다.' },
+      { s: 'This ship is stronger than other ships. It can ____ across the ocean.', opts: ['break thick ice', 'sink easily', 'carry many cars', 'catch a lot of fish'], ex: '튼튼한 배라서 두꺼운 얼음을 깰 수 있다.' },
+      { s: 'Thanks to Araon, I can collect seawater samples. The Arctic Ocean has the answers to ____.', opts: ['the climate crisis', 'the math test', 'the soccer game', 'the music class'], ex: '북극해는 기후 위기에 대한 해답을 가지고 있다.' }
+    ] },
+    { type: 'mc', title: '핵심문법', guide: '알맞은 답을 고르세요.', items: [
+      { q: '빈칸에 알맞은 것은?<br><b>Protecting wild animals ______ important.</b>', opts: ['is', 'are', 'be', 'am'], ex: '동명사 주어는 단수 취급 → is' },
+      { q: '밑줄 친 to부정사가 <b>"~하기 위해"</b>의 뜻이 <b>아닌</b> 것은?', opts: ['I want <u>to become</u> a vet.', 'I climb the mountain <u>to look</u> after bears.', 'We keep an eye on them <u>to live</u> together.', 'She went to the store <u>to buy</u> milk.'], ex: 'want to become은 want의 목적어(~하는 것). 나머지는 목적(~하기 위해).' },
+      { q: '어법상 <b>틀린</b> 문장은?', opts: ['Please send back them.', 'Please send them back.', 'Please send the animals back.', 'Please send back the animals.'], ex: '목적어가 대명사이면 send them back 순서만 가능' },
+      { q: '비교급 형태가 <b>틀린</b> 것은?', opts: ['important - importanter', 'thick - thicker', 'strong - stronger', 'big - bigger'], ex: '긴 형용사는 more를 쓴다: more important' },
+      { q: '빈칸에 알맞은 것은?<br><b>This ship is stronger ______ other ships.</b>', opts: ['than', 'then', 'that', 'to'], ex: '비교급 + than: ~보다 더' },
+      { q: '어법상 올바른 문장은?', opts: ['I often climb the mountain.', 'I climb often the mountain.', 'Often I climbs the mountain.', 'I often climbing the mountain.'], ex: '빈도부사는 일반동사 앞에' },
+      { q: '빈칸에 알맞은 것은?<br><b>I hope ______ my work can help the Earth.</b>', opts: ['that', 'what', 'this', 'it'], ex: '완전한 문장을 이끄는 접속사 that' },
+      { q: '빈칸에 알맞은 것은?<br><b>It can ______ thick ice across the ocean.</b>', opts: ['break', 'breaks', 'breaking', 'to break'], ex: 'can + 동사원형' },
+      { q: '"나는 내 직업이 자랑스럽다."를 바르게 영작한 것은?', opts: ['I\'m proud of my job.', 'I\'m proud my job.', 'I proud of my job.', 'I\'m proud for my job.'], ex: 'be proud of: ~을 자랑스러워하다' }
     ] }
   ] }
   ]
