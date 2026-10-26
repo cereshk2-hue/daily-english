@@ -22,6 +22,7 @@ var VIEW = 'dW6ypYyx'; // 현황판 열쇠: 주소 끝 ?view=dW6ypYyx 가 있어
 
 function doGet(e) {
   if (e && e.parameter && e.parameter.check) return checkRoster(e.parameter);
+  if (e && e.parameter && e.parameter.notes) return getNotes(e.parameter);
   if (e && e.parameter && e.parameter.view === VIEW) {
     var t = HtmlService.createTemplate(BOARD_HTML);
     t.data = JSON.stringify(boardData());
@@ -115,7 +116,9 @@ var BOARD_HTML = '<!doctype html><html><head><base target="_top"><meta charset="
 function doPost(e) {
   var data;
   try { data = JSON.parse(e.postData.contents); } catch (err) { return out('bad'); }
-  if (!data || data.k !== KEY || !data.rows || !data.rows.length) return out('no');
+  if (!data || data.k !== KEY) return out('no');
+  if (data.notes && data.notes.length) saveNotes(data.notes);
+  if (!data.rows || !data.rows.length) return out('ok');
   var lock = LockService.getScriptLock();
   lock.waitLock(20000);
   try {
@@ -239,3 +242,48 @@ function setup() {
   var first = ss.getSheetByName('시트1') || ss.getSheetByName('Sheet1');
   if (first && ss.getSheets().length > 2 && first.getLastRow() === 0) ss.deleteSheet(first);
 }
+
+
+/* ---------- 오답 노트: 학생 이름에 붙여 저장 → 어느 기기에서든 같은 노트, 선생님은 '오답노트' 탭에서 확인 ---------- */
+var NOTE = '오답노트', NOTE_HEAD = ['학생', '교재', 'DAY', '과·DAY', '단계', '문제', '틀린 횟수', '헷갈려요', '상태', '마지막', 'key', 'data'];
+function noteSheet(ss) {
+  var sh = ss.getSheetByName(NOTE);
+  if (!sh) {
+    sh = ss.insertSheet(NOTE, ss.getSheets().length);
+    sh.getRange(1, 1, 1, NOTE_HEAD.length).setValues([NOTE_HEAD]).setFontWeight('bold').setBackground('#2f5fd0').setFontColor('#ffffff');
+    sh.setFrozenRows(1); sh.getRange('J:J').setNumberFormat('m/d hh:mm'); sh.getRange('K:L').setNumberFormat('@');
+    sh.setColumnWidth(6, 360); sh.hideColumns(11, 2); sh.getRange(1, 1, 1, 10).createFilter();
+  }
+  return sh;
+}
+function saveNotes(list) {
+  var lock = LockService.getScriptLock(); lock.waitLock(20000);
+  try {
+    var sh = noteSheet(SpreadsheetApp.getActiveSpreadsheet());
+    list.forEach(function (n) {
+      if (!n || !n.name || !n.unit || !n.id) return;
+      var key = n.name + '|' + n.unit + '|' + n.id, last = sh.getLastRow();
+      var hit = last > 1 ? sh.getRange(2, 11, last - 1, 1).createTextFinder(key).matchEntireCell(true).findNext() : null;
+      if (n.del) { if (hit) sh.deleteRow(hit.getRow()); return; }
+      if (hit) { var old = sh.getRange(hit.getRow(), 10).getValue(); if (old instanceof Date && old.getTime() > n.at) return; }
+      var row = [n.name, n.school || '', n.day || '', n.group || '', n.step || '', String(n.text || '').slice(0, 300), n.wrong || 0,
+                 n.conf ? '★' : '', n.ok ? '맞힘' : '남음', new Date(n.at || Date.now()), key, String(n.data || '').slice(0, 45000)];
+      if (hit) sh.getRange(hit.getRow(), 1, 1, row.length).setValues([row]); else sh.appendRow(row);
+    });
+  } finally { lock.releaseLock(); }
+}
+function getNotes(p) {
+  var res = { ok: false, notes: [] };
+  try {
+    var ss = SpreadsheetApp.getActiveSpreadsheet(), name = String(p.name || '').replace(/\s+/g, ''), unit = String(p.unit || '');
+    if (!name || !unit) throw 0;
+    var r = ss.getSheetByName(ROSTER), rows = r && r.getLastRow() > 1 ? r.getRange(2, 1, r.getLastRow() - 1, 2).getValues().filter(function (v) { return String(v[0]).trim(); }) : [];
+    if (rows.length && !rows.some(function (v) { return String(v[0]).replace(/\s+/g, '') === name && nc(v[1]) === nc(p.code) && nc(p.code); })) return json(res);
+    var sh = ss.getSheetByName(NOTE); res.ok = true;
+    if (sh && sh.getLastRow() > 1) sh.getRange(2, 11, sh.getLastRow() - 1, 2).getValues().forEach(function (v) {
+      if (String(v[0]).indexOf(name + '|' + unit + '|') === 0 && v[1]) res.notes.push(String(v[1]));
+    });
+  } catch (err) {}
+  return json(res);
+}
+function json(o) { return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON); }
