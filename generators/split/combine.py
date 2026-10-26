@@ -43,26 +43,27 @@ def finish(days):
     for x in days: x.pop('_num', None)
     return days
 
-# ── 고1 2025년 9월 ──
-P1 = json.load(open(D + 'h1-mock-2509.json'))
-days1, leg1 = split_pkg(P1)
-P1['days'] = finish(days1); P1['pick'] = True; P1['legacy'] = {'map': leg1}
-write(P1, '/home/claude/proj/data/h1-mock-2509.js',
-      "/* 고1 2025학년도 9월 전국연합학력평가 영어 18~24 · 26 · 29~31번 — 모의고사는 번호 하나 = DAY 하나, 학생이 번호를 골라 학습\n"
-      "   만든 곳: scratchpad/gen_h1m2509b.py(26~31) + 이전 18~24 파일을 split/combine.py 로 번호별로 나눔. legacy.map = 예전 DAY → 새 번호 */\n")
+if __name__ == '__main__':
+    # ── 고1 2025년 9월 ──
+    P1 = json.load(open(D + 'h1-mock-2509.json'))
+    days1, leg1 = split_pkg(P1)
+    P1['days'] = finish(days1); P1['pick'] = True; P1['legacy'] = {'map': leg1}
+    write(P1, '/home/claude/proj/data/h1-mock-2509.js',
+          "/* 고1 2025학년도 9월 전국연합학력평가 영어 18~24 · 26 · 29~31번 — 모의고사는 번호 하나 = DAY 하나, 학생이 번호를 골라 학습\n"
+          "   만든 곳: scratchpad/gen_h1m2509b.py(26~31) + 이전 18~24 파일을 split/combine.py 로 번호별로 나눔. legacy.map = 예전 DAY → 새 번호 */\n")
 
-# ── 고2 2026년 9월 ──
-P2 = json.load(open(D + 'h2-mock-2609-angok.json'))
-days2, leg2 = split_pkg(P2)
-for x in json.load(open(D + 'new_h2.json')):
-    days2.append({'id': 'q%d' % x['num'], 'name': '%d번' % x['num'], 'range': x['kind'], 'story': x['label'], 'passage': x['passage'], 'steps': x['steps'], '_num': str(x['num'])})
-P2['days'] = finish(days2)
-P2.update({'id': 'h2-mock-2609', 'school': '고2 모의고사(2026년 9월 학평)', 'unit': '19~24 · 26~27 · 29~30 · 34 · 38 · 40~42번',
-           'titleKo': '2026년 9월 고2 학력평가', 'pick': True, 'legacy': {'key': 'daily:h2-mock-2609-angok', 'map': leg2}})
-write(P2, '/home/claude/proj/data/h2-mock-2609.js',
-      "/* 고2 2026년 9월 학력평가(인천광역시교육청) 영어 19~24 · 26~27 · 29~30 · 34 · 38 · 40~42번 — 번호 하나 = DAY 하나, 학생이 번호를 골라 학습\n"
-      "   만든 곳: scratchpad/gen_m2609.py(24·29·30·34·38·40·41~42, 예전 파일) + gen_m2609b.py(19~23·26·27) → split/combine.py\n"
-      "   legacy = 예전 주소(h2-mock-2609-angok)의 기기 기록을 새 번호로 옮겨 '이전 완료'로 보여 줌 */\n")
-for P in (P1, P2):
-    print(P['id'], P['unit'], [(d['name'], d['range'], len(d['steps'])) for d in P['days']])
-    print('  legacy', P['legacy'])
+    # ── 고2 2026년 9월 ──
+    P2 = json.load(open(D + 'h2-mock-2609-angok.json'))
+    days2, leg2 = split_pkg(P2)
+    for x in json.load(open(D + 'new_h2.json')):
+        days2.append({'id': 'q%d' % x['num'], 'name': '%d번' % x['num'], 'range': x['kind'], 'story': x['label'], 'passage': x['passage'], 'steps': x['steps'], '_num': str(x['num'])})
+    P2['days'] = finish(days2)
+    P2.update({'id': 'h2-mock-2609', 'school': '고2 모의고사(2026년 9월 학평)', 'unit': '19~24 · 26~27 · 29~30 · 34 · 38 · 40~42번',
+               'titleKo': '2026년 9월 고2 학력평가', 'pick': True, 'legacy': {'key': 'daily:h2-mock-2609-angok', 'map': leg2}})
+    write(P2, '/home/claude/proj/data/h2-mock-2609.js',
+          "/* 고2 2026년 9월 학력평가(인천광역시교육청) 영어 19~24 · 26~27 · 29~30 · 34 · 38 · 40~42번 — 번호 하나 = DAY 하나, 학생이 번호를 골라 학습\n"
+          "   만든 곳: scratchpad/gen_m2609.py(24·29·30·34·38·40·41~42, 예전 파일) + gen_m2609b.py(19~23·26·27) → split/combine.py\n"
+          "   legacy = 예전 주소(h2-mock-2609-angok)의 기기 기록을 새 번호로 옮겨 '이전 완료'로 보여 줌 */\n")
+    for P in (P1, P2):
+        print(P['id'], P['unit'], [(d['name'], d['range'], len(d['steps'])) for d in P['days']])
+        print('  legacy', P['legacy'])

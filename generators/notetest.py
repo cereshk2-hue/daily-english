@@ -1,0 +1,45 @@
+import subprocess, sys, time, re
+from playwright.sync_api import sync_playwright
+src=open('tools/e2e.py').read(); exec(src[src.index('def solve'):src.index('try:')])
+O='/tmp/claude-0/-home-claude/a9e3e882-1f02-5d62-8f70-aced81bc59d2/scratchpad/'
+srv=subprocess.Popen([sys.executable,'-m','http.server','8791','-d','dist/github/h2-mock-2609-jungsan-q66hr'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL); time.sleep(1)
+R=[]
+def chk(n,c): R.append(bool(c)); print(('PASS ' if c else 'FAIL ')+n)
+try:
+  with sync_playwright() as p:
+    b=p.chromium.launch(); pg=b.new_page(viewport={'width':390,'height':844},device_scale_factor=2)
+    errs=[]; pg.on('pageerror',lambda e:errs.append(str(e)))
+    pg.goto('http://localhost:8791/?test'); pg.fill('#nm','김민준'); pg.click('#nameform button'); pg.wait_for_timeout(300)
+    chk('빈 오답 노트 카드', '아직 비어 있어요' in pg.inner_text('.notecard'))
+    pg.locator('[data-go="0"]').first.click(); pg.click('#gostart')
+    solve(pg, True); pg.wait_for_timeout(200)
+    chk('틀리면 자동으로 담김 표시', '오답 노트에 담겼어요' in pg.inner_text('#fb'))
+    pg.click('#nx'); solve(pg, False); pg.wait_for_timeout(200)
+    chk('맞히면 헷갈려요 버튼', pg.locator('#conf').count()==1)
+    pg.screenshot(path=O+'note_conf.png'); pg.click('#conf'); pg.wait_for_timeout(100)
+    chk('헷갈려요 누르면 담김', '담김' in pg.inner_text('#conf'))
+    pg.click('#nx'); solve(pg, False); pg.click('#conf'); pg.click('#conf')  # 눌렀다 취소
+    pg.click('#quit'); pg.wait_for_timeout(300)
+    t=pg.inner_text('.notecard'); print('  card:', t.replace('\n',' | '))
+    chk('노트 2문제 (틀림1 + 헷갈림1, 취소한 건 빠짐)', '남은 문제 2' in t)
+    pg.screenshot(path=O+'note_home.png', full_page=True)
+    pg.click('[data-note="*"]'); pg.wait_for_timeout(200)
+    chk('노트 풀기 화면', '오답 노트' in pg.inner_text('.stepk'))
+    pg.screenshot(path=O+'note_run.png')
+    while pg.evaluate('__dbg()')['phase']!='summary': solve(pg, False); pg.click('#nx')
+    pg.click('#back'); pg.wait_for_timeout(300)
+    t=pg.inner_text('.notecard'); print('  card:', t.replace('\n',' | '))
+    chk('다 맞히면 남은 0 + 전체 복습 링크', '남은 문제 0' in t and pg.locator('[data-note="**"]').count()==1)
+    pg.reload(); pg.wait_for_timeout(300)
+    chk('새로고침해도 유지', '모은 문제 2' in pg.inner_text('.notecard'))
+    # 고등 스크램블 화면
+    pg.evaluate("() => { const d=window.PKG.days[0]; }")
+    si=pg.evaluate("PKG.days[0].steps.findIndex(s=>s.type==='scramble')")
+    pg.locator('[data-free="%d"]'%si).count() or pg.click('[data-tab="types"]')
+    pg.click('[data-tab="types"]'); pg.click('[data-free="%d"]'%si); pg.wait_for_timeout(200)
+    pg.screenshot(path=O+'gap_q.png'); solve(pg, True); pg.wait_for_timeout(200); pg.screenshot(path=O+'gap_wrong.png')
+    chk('스크램블 빈칸형', pg.locator('.gapline').count()==1)
+    chk('페이지 오류 없음 '+str(errs), not errs)
+    b.close()
+finally: srv.terminate()
+print('ALL OK' if all(R) else 'SOME FAILED')
