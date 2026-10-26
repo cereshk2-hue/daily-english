@@ -6,23 +6,38 @@
   var P = window.PKG;
   /* 주요 문장 스크램블: 어법선택에 나온 문장(핵심 문법이 들어간 본문 문장)으로 스크램블을 만든다 (선생님 요청).
      문장이 3개보다 적으면 데이터의 원래 문장을 쓴다. 예전 기록의 '본문 스크램블' 점수는 migrate에서 이어 붙인다. */
+  var HS = /^고/.test(P.school || '');
   P.days.forEach(function (d) {
     var nz = function (x) { return String(x).toLowerCase().replace(/[’‘`]/g, "'").replace(/\s+/g, ' ').trim(); };
     var unq = function (x) { return String(x).trim().replace(/^["“]/, '').replace(/["”]$/, '').trim(); };
-    var lines = d.passage.filter(function (l) { return l[0] !== '#' && l[2] && !(/^[❶-❿]$/.test(l[1])); }), picked = [], exOf = {};
+    var lines = d.passage.filter(function (l) { return l[0] !== '#' && l[2] && !(/^[❶-❿]$/.test(l[1])); }), picked = [], exOf = {}, gapOf = {};
+    /* 고등: 문장 전체 스크램블 대신 문법 포인트(어법선택 정답 자리)가 있는 3~4단어만 비워서 채우기 */
+    var gapAt = function (q, t) {
+      var m = /\{([^}|]*)\|[^}]*\}/.exec(q.s); if (!m) return null;
+      var pre = nz(q.s.slice(0, m.index).replace(/\{([^}|]*)[^}]*\}/g, '$1')), full = nz(q.s.replace(/\{([^}|]*)[^}]*\}/g, '$1')).replace(/^\(|\)$/g, '').replace(/[.!?"]+$/, '');
+      var T = nz(t), off = T.indexOf(full); if (off < 0) return null;
+      var pos = off + (pre ? pre.length + (/\s$/.test(q.s.slice(0, m.index)) ? 1 : 0) : 0);
+      var ws = T.slice(0, pos).split(' ').length - 1, n = nz(m[1]).split(' ').length, W = T.split(' ').length;
+      var Wd = String(t).trim().split(/\s+/), FN = /^(a|an|the|of|to|in|on|at|for|with|by|from|our|their|my|your|his|her|its|and|or|but|that|as|some|any)$/i;
+      var a = ws, b = Math.min(W - 1, ws + Math.min(n, 4) - 1), goal = Math.min(4, Math.max(3, n));
+      var right = function () { return b < W - 1 && !/[,;:]$/.test(Wd[b]); };
+      while (b - a + 1 < goal) { if (right()) b++; else if (a > 0) a--; else break; }
+      if (b - a + 1 < 4 && FN.test(String(Wd[b]).replace(/[^a-z']/gi, '')) && right()) b++; /* 'to eat a' → 'to eat a sandwich' */
+      return b - a + 1 >= 3 ? [a, b] : null;
+    };
     d.steps.forEach(function (st) {
       if (st.type !== 'pick' || !/어법/.test(st.title)) return;
       st.items.forEach(function (q) {
         var f = nz(q.s.replace(/\{([^}|]*)[^}]*\}/, '$1')).replace(/^\(|\)$/g, '').replace(/[.!?"]+$/, '');
-        lines.forEach(function (l, i) { var t = unq(l[1]), w = t.split(/\s+/).length; if (w >= 5 && w <= 24 && /[.!?]$/.test(t) && !/["“”]/.test(t) && nz(t).indexOf(f) >= 0) { if (picked.indexOf(i) < 0) picked.push(i); if (q.ex) exOf[i] = (exOf[i] ? exOf[i] + '\n\n' : '') + q.ex; } });
+        lines.forEach(function (l, i) { var t = unq(l[1]), w = t.split(/\s+/).length; if (w >= 5 && w <= 24 && /[.!?]$/.test(t) && !/["“”]/.test(t) && nz(t).indexOf(f) >= 0) { if (picked.indexOf(i) < 0) picked.push(i); if (q.ex) exOf[i] = (exOf[i] ? exOf[i] + '\n\n' : '') + q.ex; if (!gapOf[i]) gapOf[i] = gapAt(q, t); } });
       });
     });
     picked.sort(function (a, b) { return a - b; });
     if (picked.length > 7) { var keep = [], stepN = picked.length / 7; for (var k = 0; k < 7; k++) keep.push(picked[Math.floor(k * stepN)]); picked = keep; }
     d.steps.forEach(function (st) {
       if (st.type !== 'scramble') return;
-      st.title = '주요 문장 스크램블'; st.guide = '핵심 문법이 들어간 문장이에요. 우리말에 맞게 단어를 눌러 문장을 완성하세요.';
-      if (picked.length >= 3) st.items = picked.map(function (i) { return { ko: unq(lines[i][2]), en: unq(lines[i][1]), ex: exOf[i] ? '이 문장의 문법 포인트\n' + exOf[i] : '' }; });
+      st.title = '주요 문장 스크램블'; st.guide = HS ? '문법 포인트가 들어간 3~4단어가 비어 있어요. 우리말을 보고 단어를 순서대로 눌러 빈칸을 채우세요.' : '핵심 문법이 들어간 문장이에요. 우리말에 맞게 단어를 눌러 문장을 완성하세요.';
+      if (picked.length >= 3) st.items = picked.map(function (i) { return { ko: unq(lines[i][2]), en: unq(lines[i][1]), gap: gapOf[i] || null, ex: exOf[i] ? '이 문장의 문법 포인트\n' + exOf[i] : '' }; });
     });
   });
   var KEY = 'daily:' + P.id;
@@ -51,7 +66,7 @@
   function load(n) { var o = null; if (n) { try { o = JSON.parse(lsGet(KEY + ':' + n)); } catch (e) {} } o = o || {}; o.days = o.days || {}; o.name = n || ''; if (n) legacyMerge(o); return o; }
   /* 모의고사를 번호별로 나누기 전(예전 DAY)의 완료 기록 → 새 번호에 '이전 완료'로 남김. P.legacy = { key: 예전 저장 이름(주소가 바뀐 경우), map: { 예전 DAY id: [새 번호 id…] } } */
   function legacyMerge(o) {
-    var Lg = P.legacy; if (!Lg || !Lg.map || o.legacyDone) return;
+    var Lg = P.legacy, ver = Lg && Lg.v || 1; if (!Lg || !Lg.map || o.legacyDone === ver || (ver === 1 && o.legacyDone === true)) return;
     var src = o; if (Lg.key) { try { src = JSON.parse(lsGet(Lg.key + ':' + o.name)); } catch (e) { src = null; } }
     if (src && src.days) Object.keys(Lg.map).forEach(function (oid) {
       var od = src.days[oid]; if (!od) return;
@@ -65,7 +80,7 @@
         if (!nd.history.some(function (h) { return h.finished === e.finished; })) nd.history.push({ c: e.c, t: e.t, pct: e.pct, started: null, finished: e.finished, review: e.review || null, restored: true });
       }); });
     });
-    o.legacyDone = true;
+    o.legacyDone = ver;
   }
   var S = (function () { var r = roster(), w = lsGet('daily:who'); /* 이름이 하나뿐인 기기(학생 폰)는 바로 그 학생, 여럿이면(아이패드) 매번 고르게 */
     return r.length === 1 ? load(r[0]) : r.length > 1 ? load('') : load(w || ''); })();
@@ -313,6 +328,13 @@
     if (t === 'order') return it.map(function (q, i) { return { t: 'order', lines: q.lines, pool: shuffleDiff(q.lines.map(function (_, j) { return j; })), key: '세트 ' + (i + 1) }; });
     if (t === 'scramble') return shuffle(it).map(function (q) {
       var en = q.en.trim(), p = /[.!?]$/.test(en) ? en.slice(-1) : '', body = p ? en.slice(0, -1) : en, toks = body.split(/\s+/);
+      if (HS && toks.length >= 5) { /* 고등: 3~4단어 빈칸 채우기 */
+        var W = en.split(/\s+/), g = q.gap;
+        if (!g) { var len = W.length >= 12 ? 4 : 3, a0 = Math.max(1, Math.floor((W.length - len) / 2)); g = [a0, a0 + len - 1]; }
+        var part = W.slice(g[0], g[1] + 1), post = W.slice(g[1] + 1).join(' '), m2 = /^(.*?)([.!?]["”]?)$/.exec(part[part.length - 1]);
+        if (g[1] === W.length - 1 && m2 && m2[1]) { part[part.length - 1] = m2[1]; post = m2[2]; } /* 문장 끝 부호는 빈칸 밖에 */
+        return { t: 'scramble', gap: true, ko: q.ko, pre: W.slice(0, g[0]).join(' '), post: post, toks: part, pool: shuffleDiff(part.map(function (_, j) { return j; })), punct: '', ans: part.join(' '), full: en, key: cut(q.ko, 14), ex: q.ex || '' };
+      }
       return { t: 'scramble', ko: q.ko, toks: toks, pool: shuffleDiff(toks.map(function (_, j) { return j; })), punct: p, ans: en, key: cut(q.ko, 14), ex: q.ex || '' };
     });
     if (t === 'insert') return shuffle(it).map(function (q) {
@@ -496,6 +518,7 @@
     /* 나의 학습 기록 */
     var ms = myStats();
     h += '<div class="stats"><div class="stat"><small>누적 학습</small><b>' + hm(ms.mins) + '</b></div><div class="stat"><small>푼 문제</small><b>' + ms.solved + '<i>문제</i></b></div><div class="stat"><small>정답률</small><b>' + ms.acc + '<i>%</i></b></div></div>';
+    h += noteHTML();
     /* 학습 진도 */
     h += '<h3 class="sech">학습 진도 <span>완료 ' + P.days.filter(function (d) { return dayState(d) === 'done'; }).length + ' / ' + P.days.length + '</span></h3><div class="drows">' + P.days.map(function (d, di) {
       var g = dayProgress(d), st = DS(d.id), s = dayState(d), hs = hist(d);
@@ -588,6 +611,7 @@
     app.querySelectorAll('[data-caln]').forEach(function (b) { b.onclick = function () { var m = CAL.m + +b.dataset.caln; CAL = { y: CAL.y + Math.floor(m / 12), m: (m % 12 + 12) % 12 }; CALSEL = null; home(); }; });
     app.querySelectorAll('[data-cald]').forEach(function (b) { b.onclick = function () { CALSEL = CALSEL === b.dataset.cald ? null : b.dataset.cald; var y = window.scrollY; home(); window.scrollTo(0, y); }; });
     app.querySelectorAll('[data-tab]').forEach(function (b) { b.onclick = function () { home(b.dataset.tab); }; });
+    app.querySelectorAll('[data-note]').forEach(function (b) { b.onclick = function () { startNote(b.dataset.note); }; });
     app.querySelectorAll('[data-sel]').forEach(function (b) { b.onclick = function () { SEL = +b.dataset.sel; SEL_SET = true; home(); if (TAB === 'today') { var dd = $('#daydetail'); if (dd) dd.scrollIntoView({ block: 'start' }); } }; });
     var needName = function () { if (S.name) return false; var n = $('#nm'); n.placeholder = '이름을 적어야 시작할 수 있어요'; n.focus(); top(); return true; };
     app.querySelectorAll('[data-go]').forEach(function (b) { b.onclick = function () { if (needName()) return; var di = +b.dataset.go, rn = DS(P.days[di].id).run; startStep(di, rn ? rn.si : dayProgress(P.days[di]).next); }; });
@@ -659,10 +683,11 @@
 
   function render() {
     top();
-    var d = P.days[RS.di], q = RS.qs[RS.qi], step = d.steps[RS.si], h = header();
-    var title = q && q.stepTitle && RS.practice === '오답 학습' ? q.stepTitle : step.title;
-    var guide = q && q.guide && RS.practice === '오답 학습' ? q.guide : step.guide;
-    h += '<div class="stepk">' + (RS.practice ? E(RS.practice) : 'STEP ' + (RS.si + 1)) + '</div><div class="stepname">' + E(title) + '</div><p class="guide">' + E(guide || (step.type === 'vocab' ? '단어와 뜻을 훑어보고 퀴즈를 시작하세요.' : '')) + '</p>';
+    if (RS.practice === '오답 노트' && RS.qs[RS.qi] && RS.qs[RS.qi].dayIdx != null) RS.di = RS.qs[RS.qi].dayIdx;
+    var d = P.days[RS.di], q = RS.qs[RS.qi], step = d.steps[RS.si] || d.steps[0], h = header(), fromQ = RS.practice === '오답 학습' || RS.practice === '오답 노트';
+    var title = q && q.stepTitle && fromQ ? q.stepTitle : step.title;
+    var guide = q && q.guide && fromQ ? q.guide : step.guide;
+    h += '<div class="stepk">' + (RS.practice ? E(RS.practice) + (RS.practice === '오답 노트' ? ' · ' + E(d.name + ' ' + d.range) : '') : 'STEP ' + (RS.si + 1)) + '</div><div class="stepname">' + E(title) + '</div><p class="guide">' + E(guide || (step.type === 'vocab' ? '단어와 뜻을 훑어보고 퀴즈를 시작하세요.' : '')) + '</p>';
     if (RS.phase === 'study') {
       h += '<div class="card"><div class="qno">' + step.items.length + '개 · 소리 내어 한 번씩 읽어 보세요' + (step.quizN ? ' (퀴즈는 ' + step.quizN + '개 무작위)' : '') + '</div><div class="wordlist">' +
         step.items.map(function (w) { return '<div class="w en">' + E(w[0]) + '</div><div class="m">' + E(w[1]) + '</div>'; }).join('') +
@@ -693,6 +718,9 @@
       return '<button class="sent" data-m="' + j + '"><sup>' + CIRC[j] + '</sup>' + E(l) + '</button>'; }).join(' ') + '</div>';
     if (q.t === 'order') return '<div class="guide" style="margin:0">누른 순서대로 아래에 쌓여요. 잘못 놓았으면 다시 눌러 빼세요.</div>' +
       '<div class="tray lines" id="tray"></div><div class="pool lines" id="pool">' + q.pool.map(function (j) { return '<button class="chip en" data-j="' + j + '">' + E(q.lines[j]) + '</button>'; }).join('') + '</div>' +
+      '<div class="nextbar"><button class="btn" id="chk" disabled>확인</button></div>';
+    if (q.t === 'scramble' && q.gap) return '<div class="prompt"><span class="ko">우리말</span>' + E(q.ko) + '</div>' +
+      '<div class="gapline en">' + E(q.pre) + ' <span class="tray inline" id="tray"></span> ' + E(q.post) + '</div><div class="pool" id="pool">' + q.pool.map(function (j) { return '<button class="chip en" data-j="' + j + '">' + E(q.toks[j]) + '</button>'; }).join('') + '</div>' +
       '<div class="nextbar"><button class="btn" id="chk" disabled>확인</button></div>';
     if (q.t === 'scramble') return '<div class="prompt"><span class="ko">우리말</span>' + E(q.ko) + '</div>' +
       '<div class="tray" id="tray"></div><div class="pool" id="pool">' + q.pool.map(function (j) { return '<button class="chip en" data-j="' + j + '">' + E(q.toks[j]) + '</button>'; }).join('') + '</div>' +
@@ -763,7 +791,7 @@
         if (RS.answered) return;
         var ok, extra;
         if (lines) { ok = picked.every(function (j, k) { return j === k; }); extra = ok ? '' : '<b>바른 순서</b><ol style="margin:4px 0 0;padding-left:1.3em">' + q.lines.map(function (l) { return '<li class="en">' + E(l) + '</li>'; }).join('') + '</ol>'; }
-        else { var built = picked.map(function (j) { return q.toks[j]; }).join(' ') + q.punct; ok = norm(built) === norm(q.ans); extra = ok ? '' : '정답: <b class="en">' + E(q.ans) + '</b>'; }
+        else { var built = picked.map(function (j) { return q.toks[j]; }).join(' ') + q.punct; ok = norm(built) === norm(q.ans); extra = ok ? '' : q.gap ? '정답: <span class="en">' + E(q.pre) + ' <b>' + E(q.ans) + '</b> ' + E(q.post) + '</span>' : '정답: <b class="en">' + E(q.ans) + '</b>'; }
         tray.classList.add(ok ? 'right' : 'wrong'); chk.hidden = true;
         tray.querySelectorAll('.chip').forEach(function (c) { c.disabled = true; });
         answer(ok, q.ex || '', extra);
@@ -789,6 +817,7 @@
     if (RS.answered) return; RS.answered = true;
     var q = RS.qs[RS.qi];
     if (ok) RS.c++; else RS.wrong.push(q);
+    var ne = null; try { ne = !ok ? noteAdd(q, 'wrong') : RS.practice === '오답 노트' ? noteAdd(q, 'ok') : noteEntry(q); } catch (e) {}
     if (RS.practice === '오답 학습') {
       if (!ok && RS.qi < RS.base) RS.fw = (RS.fw || 0) + 1;
       if (!ok) RS.qs.push(reshuffle(q));
@@ -798,8 +827,14 @@
     var last = RS.qi === RS.qs.length - 1;
     var fb = '<div class="feedback ' + (ok ? 'ok' : 'bad') + '" role="status"><b class="tag">' + (ok ? '정답!' : '아쉬워요') + '</b>' +
       (extra ? '<div class="answer-line">' + extra + '</div>' : '') + (ex ? '<div class="answer-line">' + E(ex) + '</div>' : '') + evHTML(q) + '</div>' +
+      (ok ? '<div class="notebar"><button type="button" class="conf' + (ne && ne.conf ? ' on' : '') + '" id="conf" aria-pressed="' + !!(ne && ne.conf) + '">' + (ne && ne.conf ? '★ 헷갈려요 (오답 노트에 담김)' : '☆ 헷갈려요') + '</button><span>확신이 없었다면 눌러 두세요.</span></div>'
+        : '<div class="notebar"><span class="in">📌 오답 노트에 담겼어요</span></div>') +
       '<div class="nextbar"><button class="btn" id="nx">' + (last ? (RS.practice === '오답 학습' ? '오답 학습 마치기' : '이 단계 마치기') : (RS.practice === '오답 학습' && !ok ? '다음 문제 (이 문제는 뒤에 다시 나와요)' : '다음 문제')) + '</button></div>';
     $('#fb').innerHTML = fb;
+    var cf = $('#conf'); if (cf) cf.onclick = function () {
+      var on = cf.classList.toggle('on'); if (on) noteAdd(q, 'conf'); else noteUnconf(q);
+      cf.setAttribute('aria-pressed', on); cf.textContent = on ? '★ 헷갈려요 (오답 노트에 담김)' : '☆ 헷갈려요';
+    };
     var nx = $('#nx'); nx.onclick = next; nx.focus({ preventScroll: true });
     nx.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   }
@@ -820,6 +855,8 @@
       if (dayProgress(d).finished && !st.finished) st.finished = Date.now();
       save();
       report(dayProgress(d).finished ? 'DAY 완료' : '단계 완료', d, { step: (RS.si + 1) + '. ' + step.title, stepScore: RS.c + '/' + RS.qs.length });
+    } else if (RS.practice === '오답 노트') {
+      report('오답 노트', P.days[RS.di], { step: '오답 노트 ' + (RS.noteKey === '*' ? '남은 문제 전체' : RS.noteKey === '**' ? '전체 복습' : String(RS.noteKey).replace(/^g:/, '')), stepScore: RS.c + '/' + RS.qs.length });
     } else if (RS.practice !== '오답 학습') {
       var dx = P.days[RS.di], sx = DS(dx.id); sx.extra = sx.extra || {}; (sx.extra[RS.si] = sx.extra[RS.si] || []).push({ c: RS.c, t: RS.qs.length, at: Date.now() }); save();
       report(RS.practice === '보충 연습' ? '보충 연습' : RS.practice, dx, { step: (RS.si + 1) + '. ' + dx.steps[RS.si].title, stepScore: RS.c + '/' + RS.qs.length });
@@ -847,12 +884,12 @@
     return h + '</div></div>';
   }
   function bindSummary() {
-    var di = RS.di, si = RS.si, pr = RS.practice, b;
+    var di = RS.di, si = RS.si, pr = RS.practice, nk = RS.noteKey, b;
     if ((b = $('#tores'))) b.onclick = function () { result(di); };
     if ((b = $('#toreview'))) b.onclick = function () { retryWrong(di); };
     if ((b = $('#tonext'))) b.onclick = function () { startStep(di, dayProgress(P.days[di]).next); };
     if ((b = $('#back'))) b.onclick = function () { pr === '오답 학습' || (pr === '보충 연습' && dayProgress(P.days[di]).finished && !needReview(P.days[di])) ? result(di) : home(pr === '유형별 연습' ? 'types' : 'today'); };
-    if ((b = $('#again'))) b.onclick = function () { startFree(di, si, pr); };
+    if ((b = $('#again'))) b.onclick = function () { pr === '오답 노트' ? startNote(nk) : startFree(di, si, pr); };
   }
 
   /* ---------- 결과 · 문자 ---------- */
@@ -933,6 +970,49 @@
   }
   function wrongCount(d) { var st = DS(d.id); return d.steps.reduce(function (n, _, i) { return n + (st.wrong[i] || []).length; }, 0); }
   function needReview(d) { return dayProgress(d).finished && wrongCount(d) > 0 && !DS(d.id).reviewDone; }
+  /* ---------- 오답 노트 ----------
+     S.note = { id: { id, d: DAY id, q: 문제 사본, wrong: 틀린 횟수, conf: 헷갈려요, ok: 노트에서 맞힘, at } }
+     틀린 문제는 자동으로, 맞힌 문제도 '헷갈려요'를 누르면 담긴다. 과(교과서)·DAY(모의고사)별로 골라 다시 푼다. */
+  function noteId(q, d) { return d.id + '|' + fnv([q.t, q.stepTitle || '', strip(q.prompt || q.s || q.ko || (q.lines || []).join('/') || ''), q.key || ''].join('|')); }
+  function notes() { return S.note || (S.note = {}); }
+  function curStepTitle() { var q = RS.qs[RS.qi], d = P.days[RS.di]; return q.stepTitle || (d.steps[RS.si] || {}).title || ''; }
+  function noteEntry(q) { return notes()[q.noteId || noteId(Object.assign({ stepTitle: curStepTitle() }, q), P.days[RS.di])]; }
+  function noteAdd(q, kind) {
+    var d = P.days[RS.di], step = d.steps[RS.si] || {}, c = JSON.parse(JSON.stringify(q));
+    c.stepTitle = q.stepTitle || step.title; c.guide = q.guide || step.guide; delete c.noteId; delete c.dayIdx;
+    var id = q.noteId || noteId(c, d), e = notes()[id] || (notes()[id] = { id: id, d: d.id, wrong: 0, conf: false, ok: false, first: Date.now() });
+    e.q = c; e.at = Date.now();
+    if (kind === 'wrong') { e.wrong++; e.ok = false; } else if (kind === 'conf') { e.conf = true; e.ok = false; } else if (kind === 'ok') { e.ok = true; e.conf = false; }
+    save(); return e;
+  }
+  function noteUnconf(q) { var e = noteEntry(q); if (!e) return; e.conf = false; if (!e.wrong) delete notes()[e.id]; else if (RS.practice === '오답 노트') e.ok = true; save(); }
+  function noteGroup(d) { var m = /(\d+)과/.exec(d.range || ''); return m ? m[1] + '과' : d.name; }
+  function noteGroups() {
+    var g = {}, order = [];
+    Object.keys(notes()).forEach(function (id) { var e = notes()[id], di = P.days.findIndex(function (d) { return d.id === e.d; }); if (di < 0) return;
+      var k = noteGroup(P.days[di]); if (!g[k]) { g[k] = { k: k, di: di, rem: 0, all: 0, label: /과$/.test(k) ? k : k + ' (' + P.days[di].range + ')' }; order.push(k); }
+      g[k].all++; if (!e.ok) g[k].rem++; if (di < g[k].di) g[k].di = di; });
+    return order.map(function (k) { return g[k]; }).sort(function (a, b) { return a.di - b.di; });
+  }
+  function noteHTML() {
+    var gs = noteGroups(), rem = gs.reduce(function (n, g) { return n + g.rem; }, 0), all = gs.reduce(function (n, g) { return n + g.all; }, 0);
+    if (!all) return '<section class="card notecard"><div class="nc-h"><b>오답 노트</b><span>아직 비어 있어요</span></div><p class="note" style="margin:6px 0 0">틀린 문제와, 맞혔어도 <b>헷갈려요</b>를 누른 문제가 여기에 모여요. 시험 전이나 주말에 모아서 다시 풀어요.</p></section>';
+    return '<section class="card notecard"><div class="nc-h"><b>오답 노트</b><span>남은 문제 <b>' + rem + '</b>개 · 모은 문제 ' + all + '개</span></div>' +
+      '<div class="nc-g">' + gs.map(function (g) { return '<button class="btn ghost" data-note="g:' + E(g.k) + '">' + E(g.label) + ' <b>' + (g.rem || '✓') + '</b></button>'; }).join('') + '</div>' +
+      (rem ? '<button class="btn" data-note="*">남은 문제 전체 다시 풀기 (' + rem + ')</button>' : '<p class="note" style="margin:8px 0 0">남은 문제를 다 맞혔어요! 시험 전에는 아래에서 전체를 다시 복습해 보세요.</p>') +
+      (all > rem ? '<button class="link" data-note="**" style="margin-top:8px">맞힌 문제까지 전체 복습 (' + all + ')</button>' : '') + '</section>';
+  }
+  function startNote(key) {
+    var es = Object.keys(notes()).map(function (id) { return notes()[id]; }).filter(function (e) { return P.days.some(function (d) { return d.id === e.d; }); });
+    if (key === '*') es = es.filter(function (e) { return !e.ok; });
+    else if (key !== '**') { var k = key.replace(/^g:/, ''), inG = es.filter(function (e) { return noteGroup(P.days.filter(function (d) { return d.id === e.d; })[0]) === k; }), r = inG.filter(function (e) { return !e.ok; }); es = r.length ? r : inG; }
+    if (!es.length) return;
+    var di0 = function (e) { return P.days.findIndex(function (d) { return d.id === e.d; }); };
+    es.sort(function (a, b) { return di0(a) - di0(b) || a.first - b.first; });
+    var qs = es.map(function (e) { var q = reshuffle(e.q); q.noteId = e.id; q.dayIdx = di0(e); return q; });
+    RS = { di: qs[0].dayIdx, si: 0, qs: qs, qi: 0, c: 0, wrong: [], phase: 'quiz', answered: false, practice: '오답 노트', back: 'today', noteKey: key };
+    render();
+  }
   function reshuffle(q) { q = JSON.parse(JSON.stringify(q)); if (q.t === 'order' || q.t === 'scramble') q.pool = shuffleDiff(q.pool); if (q.opts) q.opts = shuffle(q.opts); return q; }
   /* 오답 학습: 틀린 문제를 모두 맞힐 때까지 다시 낸다. 끝내야 결과를 보낼 수 있다. 문제마다 저장돼 이어서 할 수 있다. */
   function retryWrong(di) {

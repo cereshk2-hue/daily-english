@@ -464,6 +464,21 @@ h2 { font-size: 19px }
 .qt.rev { border-color: var(--bad); background: var(--bad-soft) } .qt.rev i { color: var(--bad) }
 .qt.sel { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft) }
 .seg.pk button { flex: 0 0 auto; min-width: 58px; padding: 7px 10px }
+/* 고등 스크램블: 3~4단어 빈칸 채우기 */
+.gapline { font-size: 17px; line-height: 2.3; margin: 6px 0 14px; padding: 12px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px }
+.tray.inline { display: inline-flex; flex-wrap: wrap; gap: 4px; align-items: center; vertical-align: middle; min-width: 140px; min-height: 38px; margin: 2px 0; padding: 3px 6px; border: 0; border-bottom: 2.5px dashed var(--accent); border-radius: 6px 6px 0 0; background: var(--accent-soft) }
+.tray.inline .chip { margin: 0 }
+.tray.inline.right { border-bottom-color: var(--ok); background: var(--ok-soft) } .tray.inline.wrong { border-bottom-color: var(--bad); background: var(--bad-soft) }
+/* 오답 노트 · 헷갈려요 */
+.notecard { margin: 0 0 18px; display: flex; flex-direction: column; gap: 8px }
+.notecard .nc-h { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap }
+.notecard .nc-h b { font-size: 16px } .notecard .nc-h span { font-size: 13px; color: var(--muted) } .notecard .nc-h span b { font-size: 13px; color: var(--bad) }
+.notecard .nc-g { display: flex; flex-wrap: wrap; gap: 6px }
+.notecard .nc-g .btn { flex: 0 0 auto; padding: 7px 12px; font-size: 14px } .notecard .nc-g .btn b { color: var(--bad); margin-left: 4px }
+.notebar { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 10px 0 2px; font-size: 13px; color: var(--muted) }
+.notebar .conf { border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 7px 14px; font: inherit; font-weight: 700; cursor: pointer }
+.notebar .conf.on { border-color: #e0a100; background: #fff6d6; color: #8a6200 }
+.notebar .in { font-weight: 700; color: var(--bad) }
 </style>
 </head>
 <body>
