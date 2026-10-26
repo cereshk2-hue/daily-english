@@ -389,7 +389,7 @@
     var h = '<header class="htop' + (TAB === 'today' && S.name && !P.pick ? '' : ' flat') + '">' + (FROM_HUB ? '<a class="hublink" href="../' + FROM_HUB + '/">← 전체 목록</a>' : '') +
       '<div class="htop-bar"><span>' + E(P.school) + ' · ' + E(P.unit) + '</span>' +
       (S.name ? '<button class="htop-who" id="rename" title="학생 바꾸기"><span class="av">' + E(S.name.charAt(0)) + '</span>' + E(S.name) + '<small>바꾸기</small></button>' : '') + '</div>' +
-      '<h1 class="en">' + E(P.title) + '</h1><p>' + E(P.exam) + ' 대비 · ' + P.days.length + (P.pick ? '문항' : ' DAY') + '</p></header><div class="hbody' + (TAB === 'today' && S.name && !P.pick ? '' : ' flat') + '">';
+      '<h1 class="en">' + E(P.title) + '</h1><p>' + E(P.exam) + ' 대비 · ' + P.days.length + (P.pick && !/^DAY/.test(P.days[0].name) ? '문항' : ' DAY') + '</p></header><div class="hbody' + (TAB === 'today' && S.name && !P.pick ? '' : ' flat') + '">';
     /* 카톡 안: 이 화면에 아직 기록이 없을 때만, 닫을 수 있는 작은 안내. 이미 카톡에서 풀던 학생은 그대로 이어서 하게 둔다 */
     if (IN_APP && !S.kakaoOk && !Object.keys(S.days).some(function (k) { return S.days[k] && S.days[k].started; })) h += '<div class="card" id="kakaonote" style="margin:0 0 16px"><b>처음이라면 크롬·사파리로 여는 걸 추천해요.</b> 이미 카톡에서 풀던 학생은 그대로 카톡에서 이어서 하면 돼요. ' +
       (hereURL() ? '<a class="btn ghost" style="margin:10px 0 6px;width:100%" target="_blank" rel="noopener" href="kakaotalk://web/openExternal?url=' + encodeURIComponent(hereURL()) + '">크롬·사파리로 열기</a>' : '') +
@@ -493,10 +493,11 @@
   }
   function pickGridHTML() { /* 모의고사: 번호를 골라서 학습 */
     var done = P.days.filter(function (d) { return dayState(d) === 'done'; }).length;
-    return '<h3 class="sech">문항 고르기 <span>완료 ' + done + ' / ' + P.days.length + '</span></h3><p class="note" style="margin:-4px 0 10px">공부할 번호를 누르면 아래에 단계가 나와요. 순서는 자유예요.</p><div class="qgrid">' + P.days.map(function (d, di) {
+    var isDay = /^DAY/.test(P.days[0].name);
+    return '<h3 class="sech">' + (isDay ? 'DAY 고르기' : '문항 고르기') + ' <span>완료 ' + done + ' / ' + P.days.length + '</span></h3><p class="note" style="margin:-4px 0 10px">공부할 ' + (isDay ? 'DAY' : '번호') + '를 누르면 아래에 단계가 나와요. 순서는 자유예요.</p><div class="qgrid">' + P.days.map(function (d, di) {
       var s = dayState(d), g = dayProgress(d), prev = s === 'wait' && hist(d).some(function (x) { return x.restored; });
       var tag = s === 'done' ? '완료' + (hist(d).length ? ' ×' + (hist(d).length + 1) : '') : s === 'rev' ? '오답 남음' : s === 'now' ? g.done + '/' + d.steps.length + '단계' : prev ? '이전 완료' : '';
-      return '<button class="qt ' + s + (prev ? ' prev' : '') + (di === SEL ? ' sel' : '') + '" data-sel="' + di + '"><b>' + E(d.name.replace(/번$/, '')) + '</b><small>' + E(d.range) + '</small><i>' + tag + '</i></button>';
+      return '<button class="qt ' + s + (prev ? ' prev' : '') + (di === SEL ? ' sel' : '') + '" data-sel="' + di + '">' + (isDay ? '<small class="dk">DAY</small>' : '') + '<b>' + E(d.name.replace(/번$/, '').replace(/^DAY\s*/, '')) + '</b><small>' + E(d.range) + '</small><i>' + tag + '</i></button>';
     }).join('') + '</div>';
   }
   function todayHTML() {
@@ -507,6 +508,7 @@
       h += pickGridHTML();
       var ms0 = myStats();
       h += '<div class="stats"><div class="stat"><small>누적 학습</small><b>' + hm(ms0.mins) + '</b></div><div class="stat"><small>푼 문제</small><b>' + ms0.solved + '<i>문제</i></b></div><div class="stat"><small>정답률</small><b>' + ms0.acc + '<i>%</i></b></div></div>';
+      if (S.name) { h += noteHTML(); setTimeout(noteSync, 0); }
       return h + dayDetailHTML();
     }
     var allDone = P.days.every(function (d) { return dayState(d) === 'done'; });
