@@ -11,10 +11,11 @@ var NOW_HEAD = ['학생', '학년·교재', '단원', 'DAY', '범위', '진행',
 var LOG_HEAD = ['시각', '학생', '학년·교재', '단원', 'DAY', '무엇', '단계', '단계 점수', '진행', '누적 점수', '기기'];
 
 var ROSTER = '학생명단', ROSTER_HEAD = ['이름', '학생 코드', '교재', '메모'];
-// 학생명단 탭에 한 명이라도 적으면 그때부터 명단에 있는 학생(이름 + 학생 코드)만 학습 화면에 들어올 수 있어요.
+// 학생은 처음 들어올 때 이름 + 숫자 4자리 코드를 스스로 정하고, 그 줄이 학생명단에 자동으로 생겨요.
+// 다음부터는 같은 이름 + 같은 코드여야 들어와요. 코드를 잊은 학생은 학생명단에서 코드를 확인해 알려 주세요.
+// 그만둔 학생·모르는 이름은 줄을 지우지 말고 메모 칸에 '그만둠'이라고 적어 두세요(지우면 다시 등록할 수 있어요).
 // 교재 칸: 목록에서 고르거나 대충 적어도 돼요(예: 중2 비상). 비워 두면 모든 교재를 열 수 있어요.
 // 교재가 두 개면 같은 이름·코드로 줄을 하나 더 적거나, 쉼표로 이어 적어요.
-// 비워 두면 예전처럼 누구나 들어와요. 그만둔 학생은 그 줄만 지우면 다음에 열 때부터 막혀요.
 var TEXTBOOKS = ['중1 천재(소영순)', '중1 동아(윤정미)', '중2 동아(윤정미)', '중2 비상(황종배)', '중3 지학사(민찬규)',
   '고1 동아(이병민)', '고1 능률(민병천)', '고1 모의고사', '고2 천재(조수경)', '고2 미래엔(김성연)', '고2 능률(오선영)', '고2 모의고사'];
 
@@ -218,21 +219,35 @@ function learnBook(sh, school) { // 새 교재 링크가 처음 열리면 교재
   l.push(String(school)); PropertiesService.getScriptProperties().setProperty('books', JSON.stringify(l)); bookRule(sh, l);
 }
 function checkRoster(p) {
-  var res = { gate: false, ok: false, why: '' };
+  /* 학생 스스로 등록: 처음 들어오는 이름 + 4자리 코드 → 학생명단에 자동으로 한 줄. 이미 있는 이름은 코드가 맞아야.
+     메모 칸에 '그만둠'(또는 차단·퇴원)이라고 적힌 이름은 들어올 수 없음 (줄을 지우면 다시 등록할 수 있으니 지우지 말고 메모에 적기) */
+  var res = { gate: true, ok: false, why: '' };
   try {
-    var sh = rosterSheet(SpreadsheetApp.getActiveSpreadsheet());
+    var ss = SpreadsheetApp.getActiveSpreadsheet(), sh = rosterSheet(ss);
     try { learnBook(sh, p.school); } catch (e2) {}
-    var rows = sh.getLastRow() > 1 ? sh.getRange(2, 1, sh.getLastRow() - 1, 3).getValues().filter(function (v) { return String(v[0]).trim(); }) : [];
-    if (rows.length) {
-      res.gate = true;
-      var n = String(p.name || '').replace(/\s+/g, ''), c = nc(p.code);
-      var mine = rows.filter(function (v) { return n && c && String(v[0]).replace(/\s+/g, '') === n && nc(v[1]) === c; });
-      if (!mine.length) res.why = 'code';
-      else if (mine.some(function (v) { return bookOk(v[2], p.school); })) res.ok = true;
+    var read = function () { return sh.getLastRow() > 1 ? sh.getRange(2, 1, sh.getLastRow() - 1, 4).getValues().filter(function (v) { return String(v[0]).trim(); }) : []; };
+    var n = String(p.name || '').replace(/\s+/g, ''), c = nc(p.code), raw = String(p.code || '').replace(/\D/g, '');
+    var BLOCK = /그만|차단|퇴원|정지/;
+    var same = function (rows) { return rows.filter(function (v) { return n && String(v[0]).replace(/\s+/g, '') === n; }); };
+    var judge = function (mine) {
+      if (mine.some(function (v) { return BLOCK.test(String(v[3])); })) { res.why = 'blocked'; return; }
+      var ok = mine.filter(function (v) { return c && nc(v[1]) === c; });
+      if (!ok.length) res.why = 'code';
+      else if (ok.some(function (v) { return bookOk(v[2], p.school); })) res.ok = true;
       else res.why = 'unit';
-    }
+    };
+    var mine = same(read());
+    if (mine.length) judge(mine);
+    else if (p.reg === '1' && /^[가-힣]{2,5}$/.test(n) && /^\d{4}$/.test(raw)) {
+      var lock = LockService.getScriptLock(); lock.waitLock(20000);
+      try {
+        mine = same(read());
+        if (mine.length) judge(mine);
+        else { sh.appendRow([n, raw, '', '자동 등록 ' + Utilities.formatDate(new Date(), 'Asia/Seoul', 'M/d HH:mm')]); res.ok = true; res.isNew = true; }
+      } finally { lock.releaseLock(); }
+    } else res.why = n ? 'new' : 'code';
   } catch (err) { res = { gate: false, ok: false, why: '' }; }
-  return ContentService.createTextOutput(JSON.stringify(res)).setMimeType(ContentService.MimeType.JSON);
+  return json(res);
 }
 
 /** 처음 한 번 실행: 탭 만들기 + 권한 허용 */
