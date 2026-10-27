@@ -4,6 +4,7 @@ window.PKG = {
   id: 'h2-mirae-kim-L4',
   school: '고2 미래엔(김성연)',
   unit: '영어Ⅱ Lesson 4',
+  pick: true, /* 학생이 DAY를 골라서 학습 (선생님 요청 10/27) */
   title: 'What-If Science',
   titleKo: '만약의 과학',
   exam: '2학기 기말고사',

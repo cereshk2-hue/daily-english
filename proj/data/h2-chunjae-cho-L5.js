@@ -4,6 +4,7 @@ window.PKG = {
   id: 'h2-chunjae-cho-L5',
   school: '고2 천재(조수경)',
   unit: '영어Ⅱ Lesson 5',
+  pick: true, /* 학생이 DAY를 골라서 학습 (선생님 요청 10/27) */
   title: '7000 Oaks Make a Forest',
   titleKo: '7000그루의 참나무가 숲을 만들다',
   exam: '2학기 기말고사',
