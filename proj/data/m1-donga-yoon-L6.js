@@ -4,6 +4,7 @@ window.PKG = {
   id: 'm1-donga-yoon-L6',
   school: '중1 동아(윤정미)',
   unit: 'Lesson 6~8',
+  startAt: 2, /* DAY 1·2는 이미 함 → DAY 3부터 (선생님 지정 10/27) */
   title: 'Zero-Waste Challenge · Let’s Make a Movie! · Be Smart Online',
   titleKo: '제로 웨이스트 챌린지에 동참하세요',
   exam: '2학기 기말고사',
