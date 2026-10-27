@@ -468,6 +468,7 @@
     var i;
     for (i = 0; i < P.days.length; i++) if (needReview(P.days[i])) return i;
     for (i = 0; i < P.days.length; i++) { var d = P.days[i], g = dayProgress(d); if (!g.finished && (g.done || DS(d.id).run)) return i; }
+    for (i = P.startAt || 0; i < P.days.length; i++) if (!dayProgress(P.days[i]).finished) return i; /* startAt: 선생님이 정한 시작 DAY(앞 DAY는 이미 함) */
     for (i = 0; i < P.days.length; i++) if (!dayProgress(P.days[i]).finished) return i;
     return P.days.length - 1;
   }
@@ -535,7 +536,9 @@
       var line = s === 'done' ? pctOf(g.c, g.t) + '점 · ' + (st.finished ? fmtTime(st.finished).split(' ')[0] + ' 완료' : '완료') + (wrongCount(d) ? ' · 오답 학습 완료' : ' · 틀린 문제 없음')
         : s === 'rev' ? pctOf(g.c, g.t) + '점 · 오답 학습 ' + wrongCount(d) + '개 남음'
         : s === 'now' ? g.done + ' / ' + d.steps.length + '단계 진행 중' : E(d.story);
-      var badge = { done: '완료' + (hs.length ? ' ×' + (hs.length + 1) : ''), rev: '오답 남음', now: '진행 중', wait: '시작 전' }[s];
+      var skip = s === 'wait' && di < (P.startAt || 0);
+      if (skip) line = '선생님이 DAY ' + ((P.startAt || 0) + 1) + '부터 하도록 정했어요 · 눌러서 해도 돼요';
+      var badge = skip ? '건너뜀' : { done: '완료' + (hs.length ? ' ×' + (hs.length + 1) : ''), rev: '오답 남음', now: '진행 중', wait: '시작 전' }[s];
       return '<button class="drow ' + s + (di === SEL ? ' sel' : '') + '" data-sel="' + di + '"><span class="dn"><small>DAY</small>' + E(d.name.replace(/^DAY\s*/, '')) + '</span>' +
         '<span class="dt"><b>' + E(d.range) + '</b><span>' + line + '</span>' + (s === 'now' ? '<span class="mini"><i style="width:' + Math.round(g.done / d.steps.length * 100) + '%"></i></span>' : '') + '</span><span class="badge">' + badge + '</span></button>';
     }).join('') + '</div>';
