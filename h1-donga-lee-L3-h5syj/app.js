@@ -7,6 +7,7 @@
   /* 주요 문장 스크램블: 어법선택에 나온 문장(핵심 문법이 들어간 본문 문장)으로 스크램블을 만든다 (선생님 요청).
      문장이 3개보다 적으면 데이터의 원래 문장을 쓴다. 예전 기록의 '본문 스크램블' 점수는 migrate에서 이어 붙인다. */
   var HS = /^고/.test(P.school || '');
+  function SKIP(i) { return i < (P.startAt || 0) || (P.skip || []).indexOf(P.days[i].id) >= 0; }
   P.days.forEach(function (d) {
     var nz = function (x) { return String(x).toLowerCase().replace(/[’‘`]/g, "'").replace(/\s+/g, ' ').trim(); };
     var unq = function (x) { return String(x).trim().replace(/^["“]/, '').replace(/["”]$/, '').trim(); };
@@ -468,7 +469,7 @@
     var i;
     for (i = 0; i < P.days.length; i++) if (needReview(P.days[i])) return i;
     for (i = 0; i < P.days.length; i++) { var d = P.days[i], g = dayProgress(d); if (!g.finished && (g.done || DS(d.id).run)) return i; }
-    for (i = P.startAt || 0; i < P.days.length; i++) if (!dayProgress(P.days[i]).finished) return i; /* startAt: 선생님이 정한 시작 DAY(앞 DAY는 이미 함) */
+    for (i = 0; i < P.days.length; i++) if (!SKIP(i) && !dayProgress(P.days[i]).finished) return i; /* SKIP: 선생님이 건너뛰게 정한 DAY(startAt 앞 또는 skip 목록) */
     for (i = 0; i < P.days.length; i++) if (!dayProgress(P.days[i]).finished) return i;
     return P.days.length - 1;
   }
@@ -497,7 +498,7 @@
     var isDay = /^DAY/.test(P.days[0].name);
     return '<h3 class="sech">' + (isDay ? 'DAY 고르기' : '문항 고르기') + ' <span>완료 ' + done + ' / ' + P.days.length + '</span></h3><p class="note" style="margin:-4px 0 10px">공부할 ' + (isDay ? 'DAY' : '번호') + '를 누르면 아래에 단계가 나와요. 순서는 자유예요.</p><div class="qgrid">' + P.days.map(function (d, di) {
       var s = dayState(d), g = dayProgress(d), prev = s === 'wait' && hist(d).some(function (x) { return x.restored; });
-      var tag = s === 'done' ? '완료' + (hist(d).length ? ' ×' + (hist(d).length + 1) : '') : s === 'rev' ? '오답 남음' : s === 'now' ? g.done + '/' + d.steps.length + '단계' : prev ? '이전 완료' : di < (P.startAt || 0) ? '건너뜀' : '';
+      var tag = s === 'done' ? '완료' + (hist(d).length ? ' ×' + (hist(d).length + 1) : '') : s === 'rev' ? '오답 남음' : s === 'now' ? g.done + '/' + d.steps.length + '단계' : prev ? '이전 완료' : SKIP(di) ? '건너뜀' : '';
       return '<button class="qt ' + s + (prev ? ' prev' : '') + (di === SEL ? ' sel' : '') + '" data-sel="' + di + '">' + (isDay ? '<small class="dk">DAY</small>' : '') + '<b>' + E(d.name.replace(/번$/, '').replace(/^DAY\s*/, '')) + '</b><small>' + E(d.range) + '</small><i>' + tag + '</i></button>';
     }).join('') + '</div>';
   }
@@ -505,7 +506,7 @@
     var h = '', fi = focusIdx(), fd = P.days[fi], fg = dayProgress(fd), fst = DS(fd.id), fstate = dayState(fd);
     if (!SEL_SET) SEL = fi;
     if (P.pick) {
-      if (!SEL_SET) { var pi = P.days.findIndex(function (d) { var s = dayState(d); return s === 'now' || s === 'rev'; }); SEL = pi >= 0 ? pi : Math.max(P.startAt || 0, P.days.findIndex(function (d, i) { return i >= (P.startAt || 0) && dayState(d) !== 'done'; })); }
+      if (!SEL_SET) { var pi = P.days.findIndex(function (d) { var s = dayState(d); return s === 'now' || s === 'rev'; }); SEL = pi >= 0 ? pi : Math.max(0, P.days.findIndex(function (d, i) { return !SKIP(i) && dayState(d) !== 'done'; })); }
       h += pickGridHTML();
       var ms0 = myStats();
       h += '<div class="stats"><div class="stat"><small>누적 학습</small><b>' + hm(ms0.mins) + '</b></div><div class="stat"><small>푼 문제</small><b>' + ms0.solved + '<i>문제</i></b></div><div class="stat"><small>정답률</small><b>' + ms0.acc + '<i>%</i></b></div></div>';
@@ -536,8 +537,8 @@
       var line = s === 'done' ? pctOf(g.c, g.t) + '점 · ' + (st.finished ? fmtTime(st.finished).split(' ')[0] + ' 완료' : '완료') + (wrongCount(d) ? ' · 오답 학습 완료' : ' · 틀린 문제 없음')
         : s === 'rev' ? pctOf(g.c, g.t) + '점 · 오답 학습 ' + wrongCount(d) + '개 남음'
         : s === 'now' ? g.done + ' / ' + d.steps.length + '단계 진행 중' : E(d.story);
-      var skip = s === 'wait' && di < (P.startAt || 0);
-      if (skip) line = '선생님이 DAY ' + ((P.startAt || 0) + 1) + '부터 하도록 정했어요 · 눌러서 해도 돼요';
+      var skip = s === 'wait' && SKIP(di);
+      if (skip) line = '선생님이 건너뛰도록 정했어요 · 눌러서 해도 돼요';
       var badge = skip ? '건너뜀' : { done: '완료' + (hs.length ? ' ×' + (hs.length + 1) : ''), rev: '오답 남음', now: '진행 중', wait: '시작 전' }[s];
       return '<button class="drow ' + s + (di === SEL ? ' sel' : '') + '" data-sel="' + di + '"><span class="dn"><small>DAY</small>' + E(d.name.replace(/^DAY\s*/, '')) + '</span>' +
         '<span class="dt"><b>' + E(d.range) + '</b><span>' + line + '</span>' + (s === 'now' ? '<span class="mini"><i style="width:' + Math.round(g.done / d.steps.length * 100) + '%"></i></span>' : '') + '</span><span class="badge">' + badge + '</span></button>';
