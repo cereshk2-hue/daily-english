@@ -9,7 +9,7 @@ for(const d of P.days){
     st.items.forEach((q,i)=>{cnt++;const tag=`${st.title}#${i+1}`;
       if(st.type==='pick'){const m=q.s.match(/\{([^}]*)\}/g);if(!m||m.length!==1)err(d.id,tag,'중괄호 1개 필요');else{const o=m[0].slice(1,-1).split('|');if(o.length<2||new Set(o).size!==o.length)err(d.id,tag,'선택지 이상');
         const filled=n(q.s.replace(/\{([^}|]*)[^}]*\}/,'$1').replace(/^\(|\)$/g,''));if(!has(filled))err(d.id,tag,'정답 넣은 문장이 본문에 없음: '+filled);}}
-      if(st.type==='verb'){if((q.s.match(/___/g)||[]).length!==1)err(d.id,tag,'___ 1개 필요');const f=n(q.s.replace('___',q.a[0]));if(!has(f))err(d.id,tag,'정답 넣은 문장이 본문에 없음: '+f);}
+      if(st.type==='verb'){if((q.s.match(/___/g)||[]).length!==1)err(d.id,tag,'___ 1개 필요');const f=n(q.s.replace('___',q.a[0]));if(!st.free&&!has(f))err(d.id,tag,'정답 넣은 문장이 본문에 없음: '+f);if(st.free&&q.mask){const m=q.mask.replace(/[^□a-zA-Z ]/g,'');const w=q.a[0];if(m.length!==w.length||m[0].toLowerCase()!==w[0].toLowerCase())err(d.id,tag,'네모칸 수/첫 글자 불일치: '+q.mask+' vs '+w);}}
       if(st.type==='error'){const m=[...q.s.matchAll(/\[\[(.+?)\]\]/g)];if(m.length<3||q.w>=m.length)err(d.id,tag,'표시 개수/정답 번호 이상');
         let k=0;const f=n(q.s.replace(/\[\[(.+?)\]\]/g,(a,b)=>k++===q.w?q.fix:b));if(!has(f))err(d.id,tag,'고친 문장이 본문에 없음: '+f);}
       if(st.type==='order')q.lines.forEach(l=>{if(!lines.some(x=>x===n(l)||x.startsWith(n(l).replace(/\)$/,''))||x.includes(n(l))))err(d.id,tag,'본문에 없는 줄: '+l)});

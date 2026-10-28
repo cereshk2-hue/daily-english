@@ -325,7 +325,7 @@
       return { t: 'pick', pre: q.s.slice(0, m.index), post: q.s.slice(m.index + m[0].length), opts: shuffle(opts), ans: opts[0], ex: q.ex, key: opts[0] };
     });
     if (t === 'tf') return shuffle(it).map(function (q) { return { t: 'tf', s: q[0], ans: q[1], ex: q[2], key: q[0].split(' ').slice(0, 4).join(' ') + '…' }; });
-    if (t === 'verb') return shuffle(it).map(function (q) { return { t: 'verb', s: q.s, v: q.v, a: q.a, ex: q.ex, key: q.v + '→' + q.a[0] }; });
+    if (t === 'verb') return shuffle(it).map(function (q) { return { t: 'verb', s: q.s, v: q.v, a: q.a, ex: q.ex, ph: step.ph, key: q.v + '→' + q.a[0] }; });
     if (t === 'error') return shuffle(it).map(function (q) {
       var parts = [], re = /\[\[(.+?)\]\]/g, last = 0, m, k = 0;
       while ((m = re.exec(q.s))) { parts.push({ x: q.s.slice(last, m.index) }); parts.push({ x: m[1], mk: k++ }); last = re.lastIndex; }
@@ -726,7 +726,7 @@
       '<div class="opts two">' + q.opts.map(function (o, i) { return '<button class="opt en" data-i="' + i + '">' + E(o) + '</button>'; }).join('') + '</div>';
     if (q.t === 'tf') return '<div class="prompt en">' + E(q.s) + '</div><div class="opts two"><button class="opt tfbtn" data-v="1">T</button><button class="opt tfbtn" data-v="0">F</button></div>';
     if (q.t === 'verb') return '<div class="prompt en">' + E(q.s).replace('___', '<span class="blank" id="blank">&nbsp;</span>') + ' <span class="verbhint">(' + E(q.v) + ')</span></div>' +
-      '<form class="typein" id="vf"><input id="vin" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="알맞은 형태로 쓰기" aria-label="답 입력"><button class="btn" type="submit">확인</button></form>';
+      '<form class="typein" id="vf"><input id="vin" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="' + E(q.ph || '알맞은 형태로 쓰기') + '" aria-label="답 입력"><button class="btn" type="submit">확인</button></form>';
     if (q.t === 'error') return '<div class="prompt en">' + q.parts.map(function (p) {
       return p.mk == null ? E(p.x) : '<button class="mark" data-m="' + p.mk + '"><sup>' + CIRC[p.mk] + '</sup>' + E(p.x) + '</button>'; }).join('') + '</div>';
     if (q.t === 'insert') return '<div class="given"><span class="eyebrow">주어진 문장</span><span class="en">' + E(q.given) + '</span></div>' +
