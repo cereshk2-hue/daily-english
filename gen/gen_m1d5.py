@@ -637,6 +637,7 @@ by = {d['id']: d for d in PK['days']}
 assert set(by) >= {'d1', 'd2', 'd3', 'd4'}, list(by)
 order = [C6A, C6B, by['d1'], by['d2'], C7A, C7B, by['d3'], by['d4'], C5A, C5B, L5A, L5B]
 for i, d in enumerate(order): d['name'] = 'DAY %d' % (i + 1)
+for d in order: ansfirst(d['steps'])
 PK['days'] = order
 PK['unit'] = 'Lesson 5~7'
 PK['title'] = 'Zero-Waste Challenge · Let’s Make a Movie! · Who Threw a Cake at the Monalisa?'

@@ -467,6 +467,7 @@ base = [d for d in PK['days'] if not d['id'].startswith('k')]
 assert [d['id'] for d in base] == ['L4a', 'L4b', 'L5a', 'L5b', 'd1', 'd2'], [d['id'] for d in base]
 order = [K4A, K4B, by['L4a'], by['L4b'], K5A, K5B, by['L5a'], by['L5b'], K6A, K6B, by['d1'], by['d2']]
 for i, d in enumerate(order): d['name'] = 'DAY %d' % (i + 1)
+for d in order: ansfirst(d['steps'])
 PK['days'] = order
 PK['pick'] = True
 src = open(path).read(); head = src[:src.index('window.PKG')]

@@ -97,3 +97,19 @@ def sub(passage, labels):
         if l[0] == '#': on = l[1] in labels
         if on: out.append(l)
     return out
+
+# ── 앱은 opts[0]을 정답으로 채점한다(보기는 화면에서 섞임). 해설의 '정답 ▶ X'에 맞는 보기를 맨 앞으로 옮긴다 ──
+def _st(s): return _re.sub(r'<[^>]+>', '', str(s)).strip()
+def ansfirst(steps):
+    for st in steps:
+        if st['type'] not in ('mc', 'blank'): continue
+        for q in st['items']:
+            m = _re.search(r'정답 ▶ ([^\n]+)', q.get('ex', ''))
+            if not m: continue
+            a = _st(m.group(1)); a2 = _re.sub(r'\s*\(.*$', '', a)
+            idx = next((i for i, o in enumerate(q['opts']) if _st(o) in (a, a2) or _st(o).startswith(a2)), None)
+            assert idx is not None, ('정답 보기 없음', a, q['opts'])
+            if idx:
+                q['opts'].insert(0, q['opts'].pop(idx))
+                if q.get('per'): q['per'].insert(0, q['per'].pop(idx))
+    return steps
