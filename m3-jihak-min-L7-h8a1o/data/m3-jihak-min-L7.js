@@ -484,7 +484,7 @@ window.PKG = {
       { s: 'Well, I surveyed 100 students and the results show {that|what} eighty percent of the students liked pizza and fried chicken for snacks. Do you see what I mean?', ex: '정답 ▶ that\n이유: 뒤에 완전한 문장이 오는 목적어절 → 접속사 that (생략 가능). what 뒤에는 불완전한 문장이 와요.' },
       { s: 'Wow, students should really try {to eat|eating} healthier snacks!', ex: '정답 ▶ to eat\n이유: try to + 동사원형 = ~하려고 노력하다. try -ing는 \'시험 삼아 ~해 보다\'라서 여기 뜻(노력해야 한다)과 맞지 않아요.' },
       { s: 'What makes you {say|to say} that?', ex: '정답 ▶ say\n이유: 사역동사 make + 목적어 + 동사원형 (무엇이 너를 그렇게 말하게 하니? = 왜 그렇게 말하니?)' },
-      { s: 'Look at the pie chart. Seventy percent of the students said that they {wanted|want} to learn tennis. Do you see what I mean?', ex: '정답 ▶ wanted\n이유: 주절이 과거(said) → that절도 과거(wanted)로 시제를 맞춰요.' }
+      { s: 'Twelve percent of the students chose chocolate cake {as|to} their favorite.', ex: '정답 ▶ as\n이유: choose A as B = A를 B로 고르다 (as = ~로서). 초콜릿 케이크를 가장 좋아하는 것\'으로\' 골랐어요.' }
     ] },
     { type: 'error', title: '오류찾기', guide: '어법상 틀린 곳을 고르세요.', items: [
       { s: 'Well, I [[surveyed]] 100 students and the results [[shows]] that eighty percent of the students [[liked]] pizza and fried chicken for snacks.', w: 1, fix: 'show', ex: '틀린 곳 ▶ ② shows → show\n이유: 주어 the results(복수) → show\n나머지 ▶ ① surveyed ✔ ③ liked(조사 당시 과거) ✔' },
