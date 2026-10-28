@@ -13,7 +13,7 @@ def solve(pg, wrong=False):
     elif t=='tf': pg.locator('.opt[data-v="%d"]'%(int(q['ans'])^int(wrong))).click()
     elif t=='verb': pg.fill('#vin', 'zzz' if wrong else q['a'][0]); pg.click('#vf button')
     elif t in('insert','odd'): pg.locator('#qcard [data-m="%d"]'%((q['ans']+1)%2 if wrong else q['ans'])).click()
-    elif t=='error': pg.locator('.mark[data-m="%d"]'%((q['w']+1)%4 if wrong else q['w'])).click()
+    elif t=='error': pg.locator('.mark[data-m="%d"]'%((q['w']+1)%3 if wrong else q['w'])).click()
     elif t in('order','scramble'):
         n=len(q['pool']); order=list(range(n))
         if wrong: order=order[::-1]
