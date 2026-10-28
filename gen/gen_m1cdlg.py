@@ -229,7 +229,7 @@ R4 = [('Eric', "What's the matter, Bomin?", "보민아, 무슨 일이야?"), ('B
       ('Eric', "Don't worry. We all learn from our mistakes. You'll do better this time.", "걱정하지 마. 우리 모두 실수에서 배우는 거야. 너는 이번에는 더 잘할 거야."),
       ('Bomin', "Thanks, Eric. I feel better now.", "고마워, Eric. 이제 기분이 훨씬 나아졌어.")]
 R5 = [('Maria', "Hi, I'm Maria from Guatemala.", "안녕, 나는 과테말라에서 온 Maria야."), ('Maria', "In my country, many children have worry dolls.", "우리나라에서는 많은 어린이가 걱정 인형을 가지고 있어."),
-      ('Maria', "Look at my worry doll.", "내 걱정 인형을 봐."), ('Maria', "I tell her about my worries and keep her under my pillow.", "나는 내 걱정 인형에게 걱정을 말하고, 베개 밑에 보관해."),
+      ('Maria', "Look at my worry doll.", "내 걱정 인형을 봐."), ('Maria', "I tell her about my worries and keep her under my pillow.", "나는 내 걱정 인형에게 말하고, 베개 밑에 보관해."),
       ('Maria', "Like this.", "이렇게."), ('Maria', "Now I'm worried about the weather on my camp day next week.", "지금 나는 다음 주 캠핑 날의 날씨가 걱정돼."),
       ('Maria', "So I'll tell her about it.", "그래서 그것에 대해 인형에게 이야기할 거야."), ('Maria', "During the night, she will take away my worries!", "밤 동안 인형이 내 걱정을 가져갈 거야!")]
 K5b = ['5과 대화 4 · 농구 경기 걱정 (In Everyday Life)', '5과 클립 · 걱정 인형 (Enjoy the Clip)']

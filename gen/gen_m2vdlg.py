@@ -173,7 +173,7 @@ v7b = build(
  order=[([T(B4, i) for i in range(4)], ["M: 뭐 요리하고 있어?", "W: 파에야, 내일 친구들과 나눠 먹을 거야", "M: 파에야가 뭐야?", "W: 해산물과 채소가 든 스페인 쌀 요리"])],
  blank=[
   (T(B3, 0).replace("I'm so hungry", "I'm so ____"), ['hungry', 'full', 'sleepy', 'busy'], "정답 ▶ hungry\n이유: 늦게 일어나 아침을 못 먹어서 '배고파'요. 그래서 샌드위치를 권받아요.\n오답 ▶ full(배부른)은 반대"),
-  (T(B2, 1).replace("I'm making tteokbokki", "I'm making ____"), ['tteokbokki', 'spaghetti', 'pizza', 'gimbap'], "정답 ▶ tteokbokki\n이유: 바로 뒤에 Is it really tteokbokki?라고 놀라며 되물어요. 스파게티냐는 질문에는 No라고 했어요."),
+  (T(B1, 2).replace('have them later', 'have them ____'), ['later', 'yesterday', 'ago', 'before'], "정답 ▶ later (나중에)\n이유: 방금(just) 김밥을 먹어서 배가 부르니 핫도그는 '나중에' 먹겠다고 해요. 그래서 아빠가 냉장고에 넣어 둬요.\n오답 ▶ yesterday·ago·before는 과거를 나타내서 Can I ~?(앞으로의 일)와 맞지 않아요."),
  ],
  awk=[(["A: Would you like some pizza? B: Yes, I have.", "A: Would you like some? B: No, thanks. I'm full.", "A: I'm sure your friends will love this. B: I hope so.", "A: I'm so hungry. B: I brought some sandwiches. Would you like some?"],
        "정답 ▶ A: Would you like some pizza? B: Yes, I have.\n이유: 음식을 권하는 말에는 Yes, please. / No, thanks.로 답해요. Yes, I have.는 Have you ~?의 대답이에요.")],

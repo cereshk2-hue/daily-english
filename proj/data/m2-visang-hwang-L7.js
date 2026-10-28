@@ -99,7 +99,7 @@ window.PKG = {
     ] },
     { type: 'blank', title: '빈칸추론', guide: '빈칸에 들어갈 말로 가장 알맞은 것을 고르세요.', items: [
       { s: 'I\'m so ____, but it\'s only 10 a.m.', opts: ['hungry', 'full', 'sleepy', 'busy'], ex: '정답 ▶ hungry\n이유: 늦게 일어나 아침을 못 먹어서 \'배고파\'요. 그래서 샌드위치를 권받아요.\n오답 ▶ full(배부른)은 반대' },
-      { s: 'No. I\'m making ____.', opts: ['tteokbokki', 'spaghetti', 'pizza', 'gimbap'], ex: '정답 ▶ tteokbokki\n이유: 바로 뒤에 Is it really tteokbokki?라고 놀라며 되물어요. 스파게티냐는 질문에는 No라고 했어요.' }
+      { s: 'Actually, I just had gimbap with my friends. Can I have them ____?', opts: ['later', 'yesterday', 'ago', 'before'], ex: '정답 ▶ later (나중에)\n이유: 방금(just) 김밥을 먹어서 배가 부르니 핫도그는 \'나중에\' 먹겠다고 해요. 그래서 아빠가 냉장고에 넣어 둬요.\n오답 ▶ yesterday·ago·before는 과거를 나타내서 Can I ~?(앞으로의 일)와 맞지 않아요.' }
     ] },
     { type: 'mc', title: '어색한 대화 고르기', guide: '짝지어진 대화 중 어색한 것을 고르세요.', items: [
       { q: '다음 중 짝지어진 대화가 <b>어색한</b> 것은?', opts: ['A: Would you like some pizza? B: Yes, I have.', 'A: Would you like some? B: No, thanks. I\'m full.', 'A: I\'m sure your friends will love this. B: I hope so.', 'A: I\'m so hungry. B: I brought some sandwiches. Would you like some?'], ex: '정답 ▶ A: Would you like some pizza? B: Yes, I have.\n이유: 음식을 권하는 말에는 Yes, please. / No, thanks.로 답해요. Yes, I have.는 Have you ~?의 대답이에요.' }

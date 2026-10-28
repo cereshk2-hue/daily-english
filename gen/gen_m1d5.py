@@ -204,7 +204,7 @@ S1 = [("Last Saturday, someone threw a cake at the Monalisa in the Botero Museum
       ("There were four eyewitnesses.", "네 명의 목격자가 있었다."), ("What did they say?", "그들은 뭐라고 말했을까?"), ("Read the following, and find the criminal.", "다음을 읽고, 범인을 찾아보자.")]
 S2 = [("Ann Jones, a visitor", "Ann Jones, 방문객"),
       ("I was looking at the Monalisa, and someone threw a cake at the painting.", "저는 '모나리자'를 보고 있었는데, 누군가 그 그림을 향해 케이크를 던졌어요."),
-      ("I turned around and saw an old man.", "저는 뒤를 돌아 한 노인을 봤어요."), ("He was standing in front of a wheelchair.", "그는 휠체어 앞에 서 있었어요."),
+      ("I turned around and saw an old man.", "저는 뒤로 돌았고 한 노인을 봤어요."), ("He was standing in front of a wheelchair.", "그는 휠체어 앞에 서 있었어요."),
       ("I'm about 170 cm tall, and he was a little taller than me.", "저는 키가 170cm 정도인데, 그는 저보다 조금 더 컸어요."),
       ("Carlos Diaz, a janitor", "Carlos Diaz, 청소부"),
       ("An old man with gray hair was running away, and something fell off his head.", "회색 머리의 한 노인이 도망가고 있었는데, 그의 머리에서 무언가 떨어졌어요."),
@@ -219,7 +219,7 @@ S3 = [("Diego Perez, a guard", "Diego Perez, 경비원"),
       ("Last Friday, a young man came in.", "지난 금요일, 한 젊은 남자가 들어왔어요."),
       ("I spoke to him in Spanish, but he didn't understand me.", "저는 그에게 스페인어로 말했지만, 그는 제 말을 이해하지 못했어요."),
       ("He spoke only English.", "그는 영어로만 말했어요."),
-      ("We had a lot of different cakes, but he just wanted the smallest one.", "우리 가게에는 다양한 케이크가 많이 있었지만, 그는 그저 가장 작은 것을 원했어요."),
+      ("We had a lot of different cakes, but he just wanted the smallest one.", "우리 가게에는 다양한 케이크가 많이 있었지만, 그는 단지 가장 작은 것을 원했어요."),
       ("We sold only one cake that day, so I remember him clearly.", "우리는 그날 케이크를 한 개만 팔아서, 저는 그를 똑똑히 기억해요."),
       ("Oh, he had blue eyes.", "아, 그는 파란색 눈을 가지고 있었어요.")]
 S4 = [("Now, look at the information about the suspects.", "이제, 용의자들에 대한 정보를 보자."), ("Who threw the cake at the Monalisa?", "누가 '모나리자'에 케이크를 던졌을까?"),
@@ -333,7 +333,7 @@ db = steps(
  ],
  tf=[
   ["The guard found pieces of cake on the painting.", True, "정답 ▶ T\n이유: there were pieces of cake all over the painting", '❸', "there were pieces of cake all over the painting"],
-  ["The cake box was from a bakery near the museum.", False, "정답 ▶ F\n이유: 상자는 Camila 빵집의 것이었어요. 박물관 근처라는 말은 없어요.", '❸', "The box was from Camila's Bakery"],
+  ["The cake box was from Ann's Bakery.", False, "정답 ▶ F\n이유: 케이크 상자는 Ann's Bakery가 아니라 Camila's Bakery의 것이었어요. Ann은 그림을 보던 방문객이에요.", '❸', "The box was from Camila's Bakery"],
   ["The young man spoke Spanish well.", False, "정답 ▶ F\n이유: 스페인어를 알아듣지 못했고 영어로만 말했어요.", '❸', "He spoke only English"],
   ["The young man bought the smallest cake.", True, "정답 ▶ T\n이유: he just wanted the smallest one", '❸', "he just wanted the smallest one"],
   ["The bakery sold many cakes that day.", False, "정답 ▶ F\n이유: 그날 케이크를 한 개만(only one) 팔았어요.", '❸', "We sold only one cake that day"],

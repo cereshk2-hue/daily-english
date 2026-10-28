@@ -520,7 +520,7 @@ j8c = build(
   (T(Y1, 3).replace('results show that eighty', 'results show {that|what} eighty'), "정답 ▶ that\n이유: 뒤에 완전한 문장이 오는 목적어절 → 접속사 that (생략 가능). what 뒤에는 불완전한 문장이 와요."),
   (T(Y1, 6).replace('try to eat', 'try {to eat|eating}'), "정답 ▶ to eat\n이유: try to + 동사원형 = ~하려고 노력하다. try -ing는 '시험 삼아 ~해 보다'라서 여기 뜻(노력해야 한다)과 맞지 않아요."),
   (T(Y2, 1).replace('makes you say', 'makes you {say|to say}'), "정답 ▶ say\n이유: 사역동사 make + 목적어 + 동사원형 (무엇이 너를 그렇게 말하게 하니? = 왜 그렇게 말하니?)"),
-  (T(Y2, 2).replace('they wanted to learn', 'they {wanted|want} to learn'), "정답 ▶ wanted\n이유: 주절이 과거(said) → that절도 과거(wanted)로 시제를 맞춰요."),
+  (T(Y1, 5).replace('chocolate cake as their', 'chocolate cake {as|to} their'), "정답 ▶ as\n이유: choose A as B = A를 B로 고르다 (as = ~로서). 초콜릿 케이크를 가장 좋아하는 것'으로' 골랐어요."),
  ],
  error=[
   ER("Well, I [[surveyed]] 100 students and the results [[shows]] that eighty percent of the students [[liked]] pizza and fried chicken for snacks.", 1, 'show',
