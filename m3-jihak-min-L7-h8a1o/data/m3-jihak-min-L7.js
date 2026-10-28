@@ -3,6 +3,7 @@
 window.PKG = {
   id: 'm3-jihak-min-L7',
   school: '중3 지학사(민찬규)',
+  pick: true,
   unit: 'Lesson 7~8',
   title: 'If I Lived There',
   titleKo: '만약 내가 그곳에 산다면',

@@ -3,6 +3,7 @@
 window.PKG = {
   id: 'm2-visang-hwang-L7',
   school: '중2 비상(황종배)',
+  pick: true,
   unit: 'Lesson 7~8',
   title: 'Food Brings Us Together · The Last Wild Race',
   titleKo: '음식이 우리를 하나로 만듭니다 · 마지막 야생 경주',
