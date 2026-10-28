@@ -483,19 +483,168 @@ C5B = {'id': 'c5b', 'name': 'DAY', 'range': '5과 대화문 ② 대화 5', 'stor
 L5A = {'id': 'L5a', 'name': 'DAY', 'range': '5과 본문 ❶❷', 'story': 'Lesson 5 · 모나리자에 케이크를 던진 사람 · 목격자 진술 1', 'passage': P('❶', S1) + P('❷', S2), 'steps': da}
 L5B = {'id': 'L5b', 'name': 'DAY', 'range': '5과 본문 ❸❹', 'story': 'Lesson 5 · 목격자 진술 2 · 용의자 정보와 범인 찾기', 'passage': P('❸', S3) + P('❹', S4), 'steps': db}
 
+# ═════════════ 6과 대화문 (Watch and Choose 1~4 / Watch, Answer, and Talk) ═════════════
+def S6(box, s, o, x, ev): return (None, box, s, o, x, ev)
+E1 = [('W', "Excuse me, but can you please close the door? The air conditioner is on.", "실례지만, 문을 닫아 주시겠어요? 에어컨이 켜져 있어서요."),
+      ('B', "Oh, I didn't know that. I'll close it right away.", "아, 몰랐네요. 즉시 닫을게요."), ('W', "Thanks.", "감사합니다.")]
+E2 = [('M', "For here or to go?", "여기에서 드실 건가요, 아니면 가져가실 건가요?"),
+      ('G', "For here, please. And can you please put my smoothie in a plastic cup, not in a glass?", "여기서 먹고 갈게요. 그리고 제 스무디를 유리잔 말고 플라스틱 컵에 담아 주시겠어요?"),
+      ('M', "I'm sorry, but we don't use single-use plastic cups inside the café.", "죄송하지만, 카페 안에서는 일회용 플라스틱 컵을 사용하지 않아요."), ('G', "Oh, I see.", "아, 그렇군요.")]
+E3 = [('W', "Look. Somebody forgot to turn off the water.", "봐. 누군가 물을 잠그는 걸 깜빡했네."), ('B', "Again? People are so forgetful.", "또요? 사람들은 너무 잘 잊어요."),
+      ('W', "I know. Can you run over there and turn off the water?", "그러게. 저기로 뛰어가서 물을 잠가 주겠니?"), ('B', "Sure. No problem.", "물론이죠. 문제없어요.")]
+E4 = [('M', "Can you please carry this box to my car?", "이 상자를 내 차로 옮겨 줄래?"), ('G', "I'm really sorry, Dad, but I'm late for my class.", "정말 죄송해요, 아빠, 그런데 제가 수업에 늦었어요."),
+      ('M', "Oh, I see. I'll ask somebody else.", "아, 그렇구나. 다른 사람에게 부탁할게.")]
+L6 = ['6과 대화 1 · 문 닫기 (Watch and Choose)', '6과 대화 2 · 카페에서 (Watch and Choose)', '6과 대화 3 · 물 잠그기 (Watch and Choose)', '6과 대화 4 · 상자 옮기기 (Watch and Choose)']
+P6a = dlg(L6[0], E1) + dlg(L6[1], E2) + dlg(L6[2], E3) + dlg(L6[3], E4)
+c6a = build(
+ vocab=[['Can you please ~?', '~해 주시겠어요? (도움 요청)'], ['close', '닫다'], ['air conditioner', '에어컨'], ['be on', '켜져 있다'], ['right away', '즉시, 바로'],
+        ['For here or to go?', '여기서 드세요, 가져가세요?'], ['plastic cup', '플라스틱 컵'], ['glass', '유리잔'], ['single-use', '일회용의'], ['inside', '~ 안에서'],
+        ['forget to', '~할 것을 잊다 (forget - forgot - forgotten)'], ['turn off', '(물·전기를) 잠그다, 끄다'], ['forgetful', '잘 잊어버리는'], ['No problem.', '문제없어요.'],
+        ['carry', '옮기다, 나르다'], ['be late for', '~에 늦다'], ['somebody else', '다른 누군가']],
+ pickv=[
+  (T(E1, 0).replace('is on', 'is {on|off}'), "정답 ▶ on (켜져 있는)\n오답 ▶ off (꺼져 있는): 에어컨이 '켜져 있어서' 찬 바람이 나가지 않게 문을 닫아 달라고 해요."),
+  (T(E3, 0).replace('turn off the water', 'turn {off|on} the water'), "정답 ▶ off\n오답 ▶ on: 누군가 물을 '잠그는(turn off)' 것을 깜빡해서 물이 계속 나오고 있어요."),
+  (T(E3, 1).replace('so forgetful', 'so {forgetful|careful}'), "정답 ▶ forgetful (잘 잊어버리는)\n오답 ▶ careful (조심성 있는): 물 잠그는 걸 또(Again?) 잊었으니 '잘 잊어버린다'"),
+ ],
+ tf=[
+  ("The woman asks the boy to open the door.", False, "정답 ▶ F\n이유: 문을 여는 게 아니라 닫아(close the door) 달라고 했어요.", None, "can you please close the door"),
+  ("The girl will eat at the café.", True, "정답 ▶ T\n이유: For here, please. → 가게 안에서 먹고 가요.", None, "For here, please"),
+  ("The café uses single-use plastic cups inside.", False, "정답 ▶ F\n이유: 카페 안에서는 일회용 플라스틱 컵을 쓰지 않아요(don't use).", None, "we don't use single-use plastic cups inside the café"),
+  ("The boy will turn off the water.", True, "정답 ▶ T\n이유: 물을 잠가 달라는 부탁에 Sure. No problem.이라고 했어요.", None, "Can you run over there and turn off the water"),
+  ("The girl will carry the box for her dad.", False, "정답 ▶ F\n이유: 수업에 늦어서 거절했고, 아빠는 다른 사람에게 부탁할 거예요.", None, "I'm late for my class"),
+ ],
+ resp=[
+  ("A: Can you please close the door?", ['Sure. No problem.', 'For here, please.', "You're welcome.", 'Yes, I did.'],
+   "정답 ▶ Sure. No problem.\n이유: 도움 요청(Can you please ~?)을 들어줄 때 → Sure. No problem. / 거절할 때 → I'm sorry, but I can't."),
+  ("A: For here or to go?", ['For here, please.', 'Sure. No problem.', "I'll ask somebody else.", 'Thanks.'],
+   "정답 ▶ For here, please.\n이유: '여기서 드세요, 가져가세요?' → For here.(여기서요) / To go.(가져갈게요)"),
+ ],
+ ilchi=[{'box': L6, 'q': "대화의 내용과 일치하지 <u>않는</u> 것은?",
+   'opts': ["The air conditioner is on.", "The girl wants her smoothie in a plastic cup.", "Somebody forgot to turn off the water.", "The boy thinks people are forgetful.", "The girl helps her dad carry the box."],
+   'ex': "정답 ▶ The girl helps her dad carry the box.\n이유: 소녀는 수업에 늦어서 도와드릴 수 없다고 했어요(I'm really sorry, Dad, but ~).",
+   'per': [["에어컨이 켜져 있다.", "The air conditioner is on", "일치"],
+           ["소녀는 스무디를 플라스틱 컵에 담기를 원한다.", "can you please put my smoothie in a plastic cup", "일치"],
+           ["누군가 물 잠그는 것을 잊었다.", "Somebody forgot to turn off the water", "일치"],
+           ["소년은 사람들이 잘 잊어버린다고 생각한다.", "People are so forgetful", "일치"],
+           ["소녀는 아빠가 상자 옮기는 것을 돕는다.", "I'm late for my class", "불일치 → 거절함"]]}],
+ pickg=[
+  (T(E3, 0).replace('forgot to turn', 'forgot {to turn|turning}'), "정답 ▶ to turn\n이유: forget to + 동사원형 = (앞으로) ~할 것을 잊다. 물을 잠가야 하는데 잊어버렸어요."),
+  (T(E1, 1).replace("I'll close it", "I'll close {it|them}"), "정답 ▶ it\n이유: 가리키는 것은 the door(단수) → it"),
+  (T(E3, 2).replace('and turn off', 'and {turn|turned} off'), "정답 ▶ turn\n이유: Can you + 동사원형 ~? run과 turn이 and로 나란히 연결돼요."),
+  (T(E4, 1).replace('late for my class', 'late {for|of} my class'), "정답 ▶ for\n이유: be late for ~ = ~에 늦다 (짝꿍 전치사 for)"),
+ ],
+ scr=[(T(E4, 0), E4[0][2]), (T(E2, 2), E2[2][2])],
+ order=[([T(E3, i) for i in range(4)], ["W: 누군가 물 잠그는 걸 잊었네", "B: 또요? 사람들은 너무 잘 잊어요", "W: 뛰어가서 물 좀 잠가 줄래?", "B: 물론이죠"])],
+ blank=[
+  (T(E1, 0).replace('is on', 'is ____'), ['on', 'off', 'small', 'cheap'], "정답 ▶ on\n이유: 에어컨이 '켜져 있어서' 문을 닫아 달라는 거예요. 꺼져 있으면(off) 닫을 이유가 없어요."),
+  (T(E4, 1).replace("I'm late", "I'm ____"), ['late', 'early', 'ready', 'happy'], "정답 ▶ late\n이유: 부탁을 거절하는 이유 → 수업에 '늦었다(late)'"),
+ ],
+ awk=[(['A: Can you please help me? B: Sure. No problem.', "A: Can you carry this box? B: I'm sorry, but I can't. I'm busy now.", 'A: For here or to go? B: To go, please.', 'A: Can you please close the window? B: Yes, I did.'],
+       "정답 ▶ A: Can you please close the window? B: Yes, I did.\n이유: 도움 요청에는 Sure. No problem. / I'm sorry, but I can't.로 답해요. Yes, I did.는 Did you ~?의 대답이에요.")],
+ func=[
+  ("도움을 요청하는 표현이 <b>아닌</b> 것은?", ["I'm sorry, but I can't.", 'Can you please close the door?', 'Can you do me a favor?', 'I need a favor.'],
+   "정답 ▶ I'm sorry, but I can't.\n이유: 요청을 '거절'하는 말이에요. 나머지는 모두 도움을 요청하는 표현이에요."),
+  ("요청을 거절하며 이유를 말하는 것은?", ["I'm sorry, but I can't. I'm busy now.", 'Sure. No problem.', 'Of course, I can.', "I'll close it right away."],
+   "정답 ▶ I'm sorry, but I can't. I'm busy now.\n이유: 거절(I'm sorry, but I can't.) + 이유(I'm busy now.)\n오답 ▶ 나머지는 모두 들어주는 말"),
+ ],
+ summ=[
+  S6([L6[0], L6[1]], "The woman asked the boy to (A) ______ the door, and the café doesn't use single-use plastic (B) ______ inside.",
+    ['(A) close – (B) cups', '(A) open – (B) cups', '(A) close – (B) bags', '(A) paint – (B) straws', '(A) open – (B) glasses'],
+    "정답 ▶ (A) close – (B) cups\n(A) 문을 '닫아' 달라 → close\n(B) 일회용 플라스틱 '컵'을 쓰지 않는다 → cups",
+    ["can you please close the door", "we don't use single-use plastic cups inside the café"]),
+  S6([L6[2], L6[3]], "The boy agreed to turn off the water, but the girl couldn't carry the box because she was (A) ______ for her class, so her dad will ask somebody (B) ______.",
+    ['(A) late – (B) else', '(A) early – (B) else', '(A) late – (B) first', '(A) ready – (B) again', '(A) busy – (B) never'],
+    "정답 ▶ (A) late – (B) else\n(A) 수업에 '늦어서' 거절 → late\n(B) '다른' 사람에게 부탁하겠다 → somebody else",
+    ["I'm late for my class", "I'll ask somebody else"])],
+)
+E5 = [('Alex', "Hi, Yuna. What are you doing here?", "안녕, 유나야. 여기에서 뭐 하고 있니?"), ('Yuna', "Hi, Alex. I'm plogging with my club members.", "안녕, Alex. 동아리 회원들과 플로깅을 하고 있어."),
+      ('Alex', "Excuse me?", "뭐라고?"), ('Yuna', "Plogging. It means jogging and picking up trash at the same time.", "플로깅. 조깅과 쓰레기 줍기를 동시에 한다는 뜻이야."),
+      ('Alex', "Sounds cool! So you're a member of a plogging club.", "멋지다! 그럼 너는 플로깅 동아리의 회원이구나."),
+      ('Yuna', "Yes. We plog together every Saturday morning from 10 to 12. Interested?", "응. 우리는 매주 토요일 아침 10시부터 12시까지 함께 플로깅을 해. 관심 있니?"),
+      ('Alex', "Well, I'll think about it.", "음, 생각해 볼게."), ('Yuna', "OK. By the way, can you please help me with this trash bag? It's heavy.", "알겠어. 그런데, 이 쓰레기봉투 드는 것 좀 도와줄래? 무거워."),
+      ('Alex', "Sure. No problem.", "물론이지. 문제없어.")]
+M6 = '6과 대화 5 · 플로깅 (Watch, Answer, and Talk)'
+P6b = dlg(M6, E5)
+c6b = build(
+ vocab=[['club member', '동아리 회원'], ['plog', '플로깅하다 (조깅하며 쓰레기 줍기)'], ['Excuse me?', '뭐라고? (되묻기)'], ['mean', '의미하다'], ['jog', '조깅하다'],
+        ['pick up', '줍다'], ['trash', '쓰레기'], ['at the same time', '동시에'], ['Sounds cool!', '멋지다!'], ['every Saturday', '매주 토요일'],
+        ['Interested?', '관심 있니?'], ['think about', '~에 대해 생각하다'], ['by the way', '그런데 (화제 바꾸기)'], ['help A with B', 'A가 B 하는 것을 돕다'],
+        ['trash bag', '쓰레기봉투'], ['heavy', '무거운']],
+ pickv=[
+  (T(E5, 3).replace('picking up trash', 'picking up {trash|flowers}'), "정답 ▶ trash (쓰레기)\n오답 ▶ flowers: 플로깅 = 조깅 + '쓰레기' 줍기. 나중에 쓰레기봉투도 나와요."),
+  (T(E5, 7).replace("It's heavy", "It's {heavy|light}"), "정답 ▶ heavy (무거운)\n오답 ▶ light (가벼운): 도와 달라고 하는 이유 → 봉투가 '무거워서'"),
+  (T(E5, 6).replace("I'll think", "I'll {think|forget}"), "정답 ▶ think\n오답 ▶ forget: 관심 있냐는 말에 바로 답하지 않고 '생각해 볼게'라고 해요."),
+ ],
+ tf=[
+  ("Yuna is plogging alone.", False, "정답 ▶ F\n이유: 혼자가 아니라 동아리 회원들(my club members)과 하고 있어요.", None, "I'm plogging with my club members"),
+  ("Plogging means jogging and picking up trash at the same time.", True, "정답 ▶ T\n이유: It means jogging and picking up trash at the same time.", None, "It means jogging and picking up trash at the same time"),
+  ("Yuna's club plogs every Sunday.", False, "정답 ▶ F\n이유: 일요일이 아니라 매주 토요일(every Saturday) 아침이에요.", None, "We plog together every Saturday morning from 10 to 12"),
+  ("Alex joins the club right away.", False, "정답 ▶ F\n이유: 바로 가입하지 않고 생각해 보겠다(I'll think about it)고 했어요.", None, "Well, I'll think about it"),
+  ("Alex will help Yuna with the trash bag.", True, "정답 ▶ T\n이유: Sure. No problem.", None, "can you please help me with this trash bag"),
+ ],
+ resp=[
+  ("A: Can you please help me with this trash bag? It's heavy.", ['Sure. No problem.', 'Excuse me?', 'Sounds cool!', 'For here, please.'],
+   "정답 ▶ Sure. No problem.\n이유: 도움 요청을 들어주는 말 → Sure. No problem."),
+  ("A: We plog every Saturday. Interested?", ["Well, I'll think about it.", 'For here, please.', "It's heavy.", "I'm sorry to hear that."],
+   "정답 ▶ Well, I'll think about it.\n이유: 관심 있냐는 제안에 바로 답하지 않을 때 → I'll think about it.(생각해 볼게)"),
+ ],
+ ilchi=[
+  {'box': [M6], 'q': "대화의 내용과 일치하지 <u>않는</u> 것은?",
+   'opts': ["Yuna is plogging with her club members.", "Plogging is jogging and picking up trash.", "The club plogs from 10 to 12.", "Alex is already a member of the plogging club.", "The trash bag is heavy."],
+   'ex': "정답 ▶ Alex is already a member of the plogging club.\n이유: 동아리 회원은 유나예요. Alex는 생각해 보겠다고만 했어요.",
+   'per': [["유나는 동아리 회원들과 플로깅을 하고 있다.", "I'm plogging with my club members", "일치"],
+           ["플로깅은 조깅하면서 쓰레기를 줍는 것이다.", "It means jogging and picking up trash at the same time", "일치"],
+           ["동아리는 10시부터 12시까지 플로깅을 한다.", "from 10 to 12", "일치"],
+           ["Alex는 이미 플로깅 동아리 회원이다.", ["So you're a member of a plogging club", "I'll think about it"], "불일치 → 회원은 유나"],
+           ["쓰레기봉투는 무겁다.", "It's heavy", "일치"]]},
+  {'box': [M6], 'q': "Alex가 대화 직후에 유나를 위해 할 일로 알맞은 것은?",
+   'opts': ['쓰레기봉투 드는 것 도와주기', '플로깅 동아리에 가입하기', '함께 조깅하기', '포스터 만들기', '물 잠그기'],
+   'ex': "정답 ▶ 쓰레기봉투 드는 것 도와주기\n이유: can you please help me with this trash bag? → Sure. No problem.\n오답 ▶ 동아리 가입은 '생각해 볼게'라고만 했어요.",
+   'per': [["", "can you please help me with this trash bag", "정답"], ["", "I'll think about it", "✘ 아직 생각 중"], ["", "", "✘"], ["", "", "✘"], ["", "", "✘"]]},
+ ],
+ pickg=[
+  (T(E5, 3).replace('means jogging', 'means {jogging|jog}'), "정답 ▶ jogging\n이유: means의 목적어 자리 → 동명사(-ing). jogging과 picking up이 and로 나란히 연결돼요."),
+  (T(E5, 5).replace('every Saturday morning', 'every {Saturday|Saturdays} morning'), "정답 ▶ Saturday\n이유: every + 단수 명사 (매주 토요일 = every Saturday = on Saturdays)"),
+  (T(E5, 7).replace("It's heavy", "It's {heavy|heavily}"), "정답 ▶ heavy\n이유: be동사 뒤에서 주어를 설명 → 형용사 heavy. heavily는 부사예요."),
+  (T(E5, 7).replace('please help me', 'please {help|helping} me'), "정답 ▶ help\n이유: Can you (please) + 동사원형 ~? = ~해 주겠니? (도움 요청)"),
+ ],
+ scr=[(T(E5, 3).split('. ')[1], "조깅과 쓰레기 줍기를 동시에 한다는 뜻이야."), (T(E5, 6), E5[6][2])],
+ order=[([T(E5, i) for i in range(4)], ["Alex: 여기서 뭐 하고 있니?", "Yuna: 동아리 회원들과 플로깅 중", "Alex: 뭐라고?", "Yuna: 조깅하며 쓰레기 줍기라는 뜻이야"])],
+ blank=[
+  (T(E5, 5).replace('every Saturday', 'every ____'), ['Saturday', 'Sunday', 'Monday', 'Friday'], "정답 ▶ Saturday\n이유: 매주 '토요일' 아침 10시부터 12시까지 플로깅을 해요."),
+  (T(E5, 4).replace('a member of', 'a ____ of'), ['member', 'teacher', 'doctor', 'driver'], "정답 ▶ member\n이유: 유나는 동아리 회원들과 플로깅 중 → 플로깅 동아리의 '회원'"),
+ ],
+ awk=[(["A: What are you doing here? B: I'm plogging.", "A: Interested? B: Well, I'll think about it.", "A: Can you help me? B: Sure. No problem.", "A: Can you help me with this bag? B: Yes, please."],
+       "정답 ▶ A: Can you help me with this bag? B: Yes, please.\n이유: Yes, please.는 무언가를 권할 때 받는 말이에요. 도움 요청에는 Sure. No problem.으로 답해요.")],
+ func=[("밑줄 친 말과 바꿔 쓸 수 있는 것은?<br><b>Alex: <u>Excuse me?</u></b>", ['Can you say that again?', "I'm sorry, but I can't.", 'Thank you.', 'Here you are.'],
+        "정답 ▶ Can you say that again?\n이유: 여기서 Excuse me?는 잘 못 알아듣고 '뭐라고?' 하고 되묻는 말이에요. = Sorry? / Can you say that again?")],
+ summ=[
+  S6([M6], "Yuna's club goes plogging, which means jogging and picking up (A) ______, and Alex will think about (B) ______ the club.",
+    ['(A) trash – (B) joining', '(A) flowers – (B) joining', '(A) trash – (B) leaving', '(A) friends – (B) closing', '(A) bottles – (B) selling'],
+    "정답 ▶ (A) trash – (B) joining\n(A) 조깅하며 '쓰레기' 줍기 → trash\n(B) 동아리에 '가입하는' 것을 생각해 본다 → joining",
+    ["It means jogging and picking up trash at the same time", "Well, I'll think about it"]),
+  S6([M6], "At the end, Yuna asks Alex for (A) ______ with the trash bag because it is (B) ______.",
+    ['(A) help – (B) heavy', '(A) help – (B) light', '(A) money – (B) heavy', '(A) a picture – (B) dirty', '(A) advice – (B) empty'],
+    "정답 ▶ (A) help – (B) heavy\n(A) 쓰레기봉투 드는 것을 '도와' 달라 → help\n(B) 봉투가 '무거워서' → heavy",
+    ["can you please help me with this trash bag", "It's heavy"])],
+)
+C6A = {'id': 'c6a', 'name': 'DAY', 'range': '6과 대화문 ① 대화 1~4', 'story': 'Lesson 6 · 도움 요청하고 답하기 · 거절의 이유 말하기 · 대화 1~4', 'passage': P6a, 'steps': c6a}
+C6B = {'id': 'c6b', 'name': 'DAY', 'range': '6과 대화문 ② 대화 5', 'story': 'Lesson 6 · 플로깅 (Watch, Answer, and Talk)', 'passage': P6b, 'steps': c6b}
+
 path = '/home/claude/proj/data/m1-donga-yoon-L6.js'
 PK = json.loads(subprocess.check_output(['node', '-e', "global.window={};require('%s');process.stdout.write(JSON.stringify(window.PKG))" % path]))
 by = {d['id']: d for d in PK['days']}
 assert set(by) >= {'d1', 'd2', 'd3', 'd4'}, list(by)
-order = [by['d1'], by['d2'], C7A, C7B, by['d3'], by['d4'], C5A, C5B, L5A, L5B]
+order = [C6A, C6B, by['d1'], by['d2'], C7A, C7B, by['d3'], by['d4'], C5A, C5B, L5A, L5B]
 for i, d in enumerate(order): d['name'] = 'DAY %d' % (i + 1)
 PK['days'] = order
 PK['unit'] = 'Lesson 5~7'
 PK['title'] = 'Zero-Waste Challenge · Let’s Make a Movie! · Who Threw a Cake at the Monalisa?'
 PK['titleKo'] = '제로 웨이스트 챌린지 · 영화 만들기 · 모나리자 케이크 사건'
-PK['startAt'] = 2
+PK.pop('startAt', None)
+PK['skip'] = ['d1', 'd2']  # 6과 본문은 이미 함(선생님 지정). 6과 대화문은 새로 추가돼서 해야 함
 PK['pick'] = True
 write(PK, path, "/* 중1 동아(윤정미) Lesson 5~7 (시험 범위 5·6·7과, 8과 제외 10/28). 순서: 6과 → 7과(대화문·본문) → 5과(대화문·본문)\n"
-      "   6·7과 본문: 예전 파일(id d1~d4 유지) · 7과·5과 대화문, 5과 본문: scratchpad/gen_m1d5.py · startAt 2 = DAY 3부터(6과는 이미 함)\n"
+      "   6·7과 본문: 예전 파일(id d1~d4 유지) · 7과·5과 대화문, 5과 본문: scratchpad/gen_m1d5.py · skip d1,d2 = 6과 본문은 이미 함(건너뜀 표시)\n"
       "   prose: true → 본문을 설명문으로 표시(대화문은 화자 표시) */\n")
 print('ok', [(d['id'], d['name'], d['range'], len(d['steps'])) for d in PK['days']])
