@@ -497,7 +497,7 @@
     var isDay = /^DAY/.test(P.days[0].name);
     return '<h3 class="sech">' + (isDay ? 'DAY 고르기' : '문항 고르기') + ' <span>완료 ' + done + ' / ' + P.days.length + '</span></h3><p class="note" style="margin:-4px 0 10px">공부할 ' + (isDay ? 'DAY' : '번호') + '를 누르면 아래에 단계가 나와요. 순서는 자유예요.</p><div class="qgrid">' + P.days.map(function (d, di) {
       var s = dayState(d), g = dayProgress(d), prev = s === 'wait' && hist(d).some(function (x) { return x.restored; });
-      var tag = s === 'done' ? '완료' + (hist(d).length ? ' ×' + (hist(d).length + 1) : '') : s === 'rev' ? '오답 남음' : s === 'now' ? g.done + '/' + d.steps.length + '단계' : prev ? '이전 완료' : '';
+      var tag = s === 'done' ? '완료' + (hist(d).length ? ' ×' + (hist(d).length + 1) : '') : s === 'rev' ? '오답 남음' : s === 'now' ? g.done + '/' + d.steps.length + '단계' : prev ? '이전 완료' : di < (P.startAt || 0) ? '건너뜀' : '';
       return '<button class="qt ' + s + (prev ? ' prev' : '') + (di === SEL ? ' sel' : '') + '" data-sel="' + di + '">' + (isDay ? '<small class="dk">DAY</small>' : '') + '<b>' + E(d.name.replace(/번$/, '').replace(/^DAY\s*/, '')) + '</b><small>' + E(d.range) + '</small><i>' + tag + '</i></button>';
     }).join('') + '</div>';
   }
@@ -505,7 +505,7 @@
     var h = '', fi = focusIdx(), fd = P.days[fi], fg = dayProgress(fd), fst = DS(fd.id), fstate = dayState(fd);
     if (!SEL_SET) SEL = fi;
     if (P.pick) {
-      if (!SEL_SET) { var pi = P.days.findIndex(function (d) { var s = dayState(d); return s === 'now' || s === 'rev'; }); SEL = pi >= 0 ? pi : Math.max(0, P.days.findIndex(function (d) { return dayState(d) !== 'done'; })); }
+      if (!SEL_SET) { var pi = P.days.findIndex(function (d) { var s = dayState(d); return s === 'now' || s === 'rev'; }); SEL = pi >= 0 ? pi : Math.max(P.startAt || 0, P.days.findIndex(function (d, i) { return i >= (P.startAt || 0) && dayState(d) !== 'done'; })); }
       h += pickGridHTML();
       var ms0 = myStats();
       h += '<div class="stats"><div class="stat"><small>누적 학습</small><b>' + hm(ms0.mins) + '</b></div><div class="stat"><small>푼 문제</small><b>' + ms0.solved + '<i>문제</i></b></div><div class="stat"><small>정답률</small><b>' + ms0.acc + '<i>%</i></b></div></div>';
