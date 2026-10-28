@@ -272,8 +272,10 @@
   function srcOf(secs, type, q) {
     var n = type === 'vocab' ? q[2] : type === 'tf' ? q[3] : q.n, s = '';
     if (n != null) { var hit = secs.filter(function (x) { return x.label.indexOf(n + '번') === 0 || x.label === '본문 ' + n; })[0]; return hit ? hit.label : (/^\d+$/.test(n) ? n + '번' : '본문 ' + n); }
-    s = filled(type, q);
-    s = norm(s).split(/(?<=[.!?]["']?)\s+/)[0].replace(/[.!?"]+$/, '');
+    s = filled(type, q) || (type === 'tf' ? q[4] || '' : '');
+    if (type === 'mc' && q.box && q.box.length === 1) { var bx = secs.filter(function (x) { return x.label === q.box[0]; })[0]; if (bx) return bx.label; }
+    /* 가장 긴 문장으로 찾는다 (Yes. / Sure. 같은 짧은 첫 문장은 여러 대화에 있어 엉뚱한 대화로 표시되던 문제) */
+    s = norm(s).split(/(?<=[.!?]["']?)\s+/).map(function (x) { return x.replace(/[.!?"]+$/, ''); }).sort(function (a, b) { return b.length - a.length; })[0] || '';
     var f = s && secs.filter(function (x) { return x.text.indexOf(s) >= 0; })[0];
     if (f) return f.label;
     /* 본문 문장을 그대로 쓰지 않는 문항(단어·T/F·문법): 겹치는 낱말이 가장 많은 본문을 고른다. 애매하면 비워 둔다 */
