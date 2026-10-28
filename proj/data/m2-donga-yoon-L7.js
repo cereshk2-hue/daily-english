@@ -3,6 +3,7 @@
 window.PKG = {
   id: 'm2-donga-yoon-L7',
   school: '중2 동아(윤정미)',
+  pick: true,
   unit: 'Lesson 7~8',
   title: 'Seasonal Festivals Around the World · Time Travel',
   titleKo: '전 세계의 계절 축제들',
