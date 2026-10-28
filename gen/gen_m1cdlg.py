@@ -302,10 +302,162 @@ k5b = build(
     ["I tell her about my worries", "she will take away my worries"])],
 )
 
+# ═════════════ 6과 대화문 ① Listen and Number 1~3 ═════════════
+N1 = [('G', "Look at the sign. We can see many eco-friendly cars.", "저 표지판을 봐. 우리는 많은 친환경 차를 볼 수 있어."), ('B', "Oh, I'm interested in eco-friendly cars.", "오, 난 친환경 차에 관심이 있어."),
+      ('G', "Me, too.", "나도 그래."), ('B', "Let's go see them.", "우리 가서 보자.")]
+N2 = [('B', "These bags look pretty. Did you make them?", "이 가방들은 정말 예뻐요. 당신이 만들었나요?"), ('W', "Yes, I made them with old jeans and shirts.", "네, 저는 오래된 청바지와 셔츠로 그것들을 만들었어요."),
+      ('B', "That's cool. I'm interested in upcycling.", "멋지네요. 저는 업사이클링에 관심이 있어요."), ('W', "Then visit our website. You can learn many things about upcycling.", "그러면 우리 홈페이지를 방문해 보세요. 업사이클링에 대한 많은 것을 배울 수 있어요.")]
+N3 = [('M', "Welcome. Do you want to try our app, Eco Friends?", "어서 오세요. 저희 앱, Eco Friends를 사용해 볼래요?"), ('G', "Yes. Wow, your app is very interesting.", "네. 와, 당신의 앱은 정말 흥미로워요."),
+      ('M', "Thanks.", "고맙습니다."), ('G', "I want to become an app designer. What should I do?", "저는 앱 디자이너가 되고 싶어요. 제가 어떻게 해야 하나요?"),
+      ('M', "You should collect new ideas and learn programming.", "새로운 생각들을 모으고 프로그래밍을 배워야 해요.")]
+K6 = ['6과 대화 1 · 친환경 차 (Listen and Number)', '6과 대화 2 · 업사이클링 가방 (Listen and Number)', '6과 대화 3 · 앱 디자이너 (Listen and Number)']
+P6a = dlg(K6[0], N1) + dlg(K6[1], N2) + dlg(K6[2], N3)
+k6a = build(
+ vocab=[['sign', '표지판'], ['eco-friendly', '친환경적인'], ['be interested in', '~에 관심이 있다'], ['Me, too.', '나도 그래.'], ["Let's go see ~", '가서 ~을 보자'],
+        ['look pretty', '예뻐 보이다'], ['jeans', '청바지'], ['upcycling', '업사이클링 (버려지는 물건에 디자인을 더해 새 물건으로 만드는 것)'], ['website', '웹사이트, 홈페이지'],
+        ['app', '앱, 응용 프로그램'], ['interesting', '흥미로운'], ['become', '~이 되다'], ['designer', '디자이너'], ['What should I do?', '내가 어떻게 해야 하니? (조언 구하기)'],
+        ['collect', '모으다'], ['programming', '프로그래밍']],
+ pickv=[
+  (T(N1, 0).replace('the sign', 'the {sign|sky}'), "정답 ▶ sign (표지판)\n오답 ▶ sky: 친환경 차를 볼 수 있다고 알려 주는 것 → '표지판'"),
+  (T(N2, 1).replace('old jeans', 'old {jeans|books}'), "정답 ▶ jeans (청바지)\n오답 ▶ books: 청바지와 셔츠 같은 헌 옷으로 가방을 만들었어요(업사이클링)."),
+  (T(N3, 4).replace('collect new ideas', '{collect|throw away} new ideas'), "정답 ▶ collect (모으다)\n오답 ▶ throw away (버리다): 앱 디자이너가 되려면 새로운 생각을 '모아야' 해요."),
+ ],
+ tf=[
+  ("The boy is interested in eco-friendly cars.", True, "정답 ▶ T\n이유: Oh, I'm interested in eco-friendly cars.", None, "I'm interested in eco-friendly cars"),
+  ("The woman bought the bags at a store.", False, "정답 ▶ F\n이유: 산 것이 아니라 직접 만들었어요(I made them).", None, "Yes, I made them with old jeans and shirts"),
+  ("The woman made the bags with old jeans and shirts.", True, "정답 ▶ T\n이유: I made them with old jeans and shirts.", None, "I made them with old jeans and shirts"),
+  ("The girl wants to become a car designer.", False, "정답 ▶ F\n이유: 자동차가 아니라 앱 디자이너(an app designer)가 되고 싶어 해요.", None, "I want to become an app designer"),
+  ("The man tells the girl to learn programming.", True, "정답 ▶ T\n이유: You should collect new ideas and learn programming.", None, "You should collect new ideas and learn programming"),
+ ],
+ resp=[
+  ("A: I'm interested in eco-friendly cars.", ['Me, too.', 'Yes, please.', 'No, you may not.', "I'm sorry to hear that."],
+   "정답 ▶ Me, too.\n이유: 관심을 말하는 친구에게 → '나도 그래(Me, too.)'로 맞장구쳐요."),
+  ("A: I want to become an app designer. What should I do?", ['You should learn programming.', "I'm interested in cars.", 'Me, too.', "Let's go see them."],
+   "정답 ▶ You should learn programming.\n이유: What should I do?(어떻게 해야 하니?)는 조언을 구하는 말 → You should ~.(~해야 해)로 조언해요."),
+ ],
+ ilchi=[{'box': K6, 'q': "대화의 내용과 일치하지 <u>않는</u> 것은?",
+   'opts': ["The boy and the girl will go see eco-friendly cars.", "The woman made bags with old clothes.", "People can learn about upcycling on the woman's website.", "The girl thinks the app is boring.", "The man gives the girl some advice."],
+   'ex': "정답 ▶ The girl thinks the app is boring.\n이유: 소녀는 앱이 정말 흥미롭다(very interesting)고 했어요.",
+   'per': [["두 사람은 친환경 차를 보러 갈 것이다.", "Let's go see them", "일치"],
+           ["여자는 헌 옷으로 가방을 만들었다.", "I made them with old jeans and shirts", "일치"],
+           ["여자의 홈페이지에서 업사이클링을 배울 수 있다.", "You can learn many things about upcycling", "일치"],
+           ["소녀는 앱이 지루하다고 생각한다.", "your app is very interesting", "불일치 → 흥미로움"],
+           ["남자는 소녀에게 조언을 해 준다.", "You should collect new ideas and learn programming", "일치"]]}],
+ pickg=[
+  (T(N1, 1).replace('interested in', 'interested {in|on}'), "정답 ▶ in\n이유: be interested in ~ = ~에 관심이 있다 (짝꿍 전치사 in)"),
+  (T(N2, 0).replace('Did you make', 'Did you {make|made}'), "정답 ▶ make\n이유: Did + 주어 + 동사원형 ~? (did가 과거를 나타내니 동사는 원형)"),
+  (T(N3, 1).replace('very interesting', 'very {interesting|interested}'), "정답 ▶ interesting\n이유: 앱이 '흥미를 주는' 것 → interesting. interested는 사람이 '흥미를 느끼는' 것이에요."),
+  (T(N3, 4).replace('should collect', 'should {collect|collecting}'), "정답 ▶ collect\n이유: 조동사 should + 동사원형 = ~해야 한다 (조언)"),
+ ],
+ scr=[("I'm interested in upcycling.", "저는 업사이클링에 관심이 있어요."), (T(N3, 4), N3[4][2])],
+ order=[([T(N2, i) for i in range(4)], ["B: 가방이 예뻐요, 직접 만들었나요?", "W: 네, 헌 청바지와 셔츠로", "B: 멋져요, 업사이클링에 관심 있어요", "W: 그럼 홈페이지에 가 보세요"])],
+ blank=[
+  (T(N2, 3).replace('our website', 'our ____'), ['website', 'school', 'store', 'car'], "정답 ▶ website\n이유: '방문해서(visit)' 업사이클링에 대해 많은 것을 배울 수 있는 곳 → 홈페이지"),
+  (T(N3, 0).replace('our app', 'our ____'), ['app', 'car', 'bag', 'game'], "정답 ▶ app\n이유: 뒤에서 소녀가 '앱 디자이너'가 되고 싶다고 해요. Eco Friends는 앱 이름이에요."),
+ ],
+ awk=[(['A: What are you interested in? B: I\'m interested in music.', 'A: What should I do? B: You should practice every day.', "A: I'm interested in cars. B: Me, too.", 'A: Do you want to try our app? B: Yes, I should.'],
+       "정답 ▶ A: Do you want to try our app? B: Yes, I should.\n이유: Do you ~? 질문에는 Yes, I do. / No, I don't.로 답해요.")],
+ func=[
+  ("조언을 구하는 표현으로 알맞은 것은?", ['What should I do?', 'What are you interested in?', 'Did you make them?', "Let's go see them."],
+   "정답 ▶ What should I do?\n이유: '내가 어떻게 해야 하니?' = 조언 구하기 → 대답은 You should ~."),
+  ("관심을 표현하는 말이 <b>아닌</b> 것은?", ['You should learn programming.', "I'm interested in art.", "I'm into art.", 'Art interests me.'],
+   "정답 ▶ You should learn programming.\n이유: You should ~는 조언하는 표현이에요. 나머지는 모두 '나는 미술에 관심이 있어'라는 뜻이에요."),
+ ],
+ summ=[
+  S([K6[0], K6[1]], "In Dialog 1, the boy wants to see eco-friendly (A) ______, and in Dialog 2, the woman made bags with old (B) ______ and shirts.",
+    ['(A) cars – (B) jeans', '(A) bags – (B) jeans', '(A) cars – (B) paper', '(A) apps – (B) shoes', '(A) trees – (B) bottles'],
+    "정답 ▶ (A) cars – (B) jeans\n(A) 친환경 '차' → cars\n(B) 헌 '청바지'와 셔츠 → jeans",
+    ["I'm interested in eco-friendly cars", "I made them with old jeans and shirts"]),
+  S([K6[2]], "The girl wants to become an app (A) ______, and the man advises her to collect new ideas and learn (B) ______.",
+    ['(A) designer – (B) programming', '(A) user – (B) programming', '(A) designer – (B) cooking', '(A) seller – (B) drawing', '(A) player – (B) singing'],
+    "정답 ▶ (A) designer – (B) programming\n(A) 앱 '디자이너' → designer\n(B) '프로그래밍'을 배워야 한다 → programming",
+    ["I want to become an app designer", "You should collect new ideas and learn programming"])],
+)
+
+# ═════════════ 6과 대화문 ② In Everyday Life + Enjoy the Clip ═════════════
+N4 = [('Jinsu', "Did you see this movie, Amy?", "Amy, 이 영화 봤어?"), ('Amy', "I didn't see it. What's it about, Jinsu?", "안 봤어. 진수야, 그것은 무엇에 관한 거니?"),
+      ('Jinsu', "It's about wild animals in deserts.", "그것은 사막의 야생 동물에 관한 거야."), ('Amy', "I'm interested in making movies about nature.", "나는 자연에 관한 영화를 만드는 데 관심이 있어."),
+      ('Jinsu', "Then you should learn from movie directors. The director, Linda Han, is giving a speech in the main hall.", "그러면 너는 영화감독에게서 배워야 해. Linda Han 감독님이 대강당에서 연설을 하고 계셔."),
+      ('Amy', "Great. Let's go together.", "좋아. 같이 가 보자."), ('Jinsu', "Okay.", "그래.")]
+N5 = [('Jake', "Hi, my name is Jake, and I'm a forest ranger.", "안녕하세요, 제 이름은 Jake이고 저는 산림 경비원입니다."),
+      ('Jake', "I'm interested in forests, so I became a forest ranger.", "저는 숲에 관심이 있어서 산림 경비원이 되었습니다."),
+      ('Jake', "Do you want to protect trees and animals in the forest?", "여러분은 숲속의 나무와 동물을 보호하고 싶나요?"),
+      ('Jake', "Then you should not touch them.", "그러면 그들을 만지지 말아야 합니다."), ('Jake', "And don't throw away trash in the forest.", "그리고 숲에 쓰레기를 버리지 마세요.")]
+K6b = ['6과 대화 4 · 자연 다큐 영화 (In Everyday Life)', '6과 클립 · 산림 경비원 Jake (Enjoy the Clip)']
+P6b = dlg(K6b[0], N4) + dlg(K6b[1], N5)
+k6b = build(
+ vocab=[['movie', '영화'], ["What's it about?", '그것은 무엇에 관한 거니?'], ['wild animal', '야생 동물'], ['desert', '사막'], ['nature', '자연'],
+        ['director', '감독'], ['give a speech', '연설하다'], ['main hall', '대강당'], ['together', '함께'], ['forest ranger', '산림 경비원'],
+        ['forest', '숲'], ['protect', '보호하다'], ['touch', '만지다'], ['throw away', '버리다'], ['trash', '쓰레기']],
+ pickv=[
+  (T(N4, 4).replace('movie directors', 'movie {directors|doctors}'), "정답 ▶ directors (감독)\n오답 ▶ doctors: 영화를 만들고 싶은 Amy → 영화 '감독'에게 배워야 해요. 바로 뒤에 감독 Linda Han이 나와요."),
+  (T(N5, 1).replace('interested in forests', 'interested in {forests|cars}'), "정답 ▶ forests (숲)\n오답 ▶ cars: 숲에 관심이 있어서 '산림' 경비원이 되었어요."),
+  (T(N5, 4).replace('away trash', 'away {trash|water}'), "정답 ▶ trash (쓰레기)\n오답 ▶ water: 숲을 보호하려면 '쓰레기'를 버리지 말아야 해요."),
+ ],
+ tf=[
+  ("The movie is about wild animals in deserts.", True, "정답 ▶ T\n이유: It's about wild animals in deserts.", None, "It's about wild animals in deserts"),
+  ("Amy is interested in drawing cartoons about nature.", False, "정답 ▶ F\n이유: 만화를 그리는 것이 아니라 자연에 관한 영화를 만드는 것(making movies)에 관심이 있어요.", None, "I'm interested in making movies about nature"),
+  ("Linda Han is giving a speech in the main hall.", True, "정답 ▶ T\n이유: The director, Linda Han, is giving a speech in the main hall.", None, "is giving a speech in the main hall"),
+  ("Jake became a forest ranger because he is interested in forests.", True, "정답 ▶ T\n이유: I'm interested in forests, so I became a forest ranger.", None, "I'm interested in forests, so I became a forest ranger"),
+  ("Jake says we can touch animals in the forest.", False, "정답 ▶ F\n이유: 나무와 동물을 만지지 말아야 한다(should not touch)고 했어요.", None, "Then you should not touch them"),
+ ],
+ resp=[
+  ("A: What's it about?", ["It's about wild animals.", "I didn't see it.", 'Great.', 'Okay.'],
+   "정답 ▶ It's about wild animals.\n이유: What's it about?(무엇에 관한 거니?) → It's about ~.(~에 관한 거야)로 답해요."),
+  ("A: I'm interested in making movies. What should I do?", ['You should learn from movie directors.', "I didn't see it.", "It's about nature.", 'Me, too.'],
+   "정답 ▶ You should learn from movie directors.\n이유: 조언을 구하면 → You should ~.로 조언해요."),
+ ],
+ ilchi=[
+  {'box': [K6b[0]], 'q': "대화의 내용과 일치하지 <u>않는</u> 것은?",
+   'opts': ["Amy didn't see the movie.", "The movie is about wild animals.", "Amy is interested in making movies about nature.", "Jinsu is giving a speech in the main hall.", "Amy and Jinsu will go to the main hall together."],
+   'ex': "정답 ▶ Jinsu is giving a speech in the main hall.\n이유: 대강당에서 연설하는 사람은 영화감독 Linda Han이에요.",
+   'per': [["Amy는 그 영화를 보지 않았다.", "I didn't see it", "일치"],
+           ["그 영화는 야생 동물에 관한 것이다.", "It's about wild animals in deserts", "일치"],
+           ["Amy는 자연에 관한 영화를 만드는 데 관심이 있다.", "I'm interested in making movies about nature", "일치"],
+           ["진수가 대강당에서 연설하고 있다.", "The director, Linda Han, is giving a speech", "불일치 → Linda Han"],
+           ["둘은 함께 대강당에 갈 것이다.", "Let's go together", "일치"]]},
+  {'box': [K6b[1]], 'q': "클립의 내용과 일치하지 <u>않는</u> 것은?",
+   'opts': ["Jake is interested in forests.", "Jake is a forest ranger.", "Jake talks about protecting trees and animals.", "Jake says we should touch the animals.", "Jake says we should not throw away trash in the forest."],
+   'ex': "정답 ▶ Jake says we should touch the animals.\n이유: 동물과 나무를 만지지 말아야 한다(should not touch them)고 했어요.",
+   'per': [["Jake는 숲에 관심이 있다.", "I'm interested in forests", "일치"],
+           ["Jake는 산림 경비원이다.", "I'm a forest ranger", "일치"],
+           ["Jake는 나무와 동물 보호에 대해 이야기한다.", "Do you want to protect trees and animals", "일치"],
+           ["Jake는 동물을 만져야 한다고 말한다.", "you should not touch them", "불일치"],
+           ["Jake는 숲에 쓰레기를 버리지 말라고 한다.", "don't throw away trash in the forest", "일치"]]},
+ ],
+ pickg=[
+  (T(N4, 1).replace("I didn't see", "I {didn't|don't} see"), "정답 ▶ didn't\n이유: Did you see ~?(과거)로 물었으니 과거 부정 didn't + 동사원형으로 답해요."),
+  (T(N4, 3).replace('in making', 'in {making|make}'), "정답 ▶ making\n이유: 전치사 in 뒤에는 명사나 동명사(-ing). be interested in -ing"),
+  (T(N4, 4).replace('is giving', 'is {giving|give}'), "정답 ▶ giving\n이유: 지금 연설하는 중 → 현재진행형 is + -ing"),
+  (T(N5, 2).replace('want to protect', 'want {to protect|protecting}'), "정답 ▶ to protect\n이유: want + to부정사 = ~하고 싶다. want 뒤에 -ing는 쓰지 않아요."),
+ ],
+ scr=[(T(N4, 4).split('. ')[0] + '.', "그러면 너는 영화감독에게서 배워야 해."), (T(N5, 1), N5[1][2])],
+ order=[([T(N4, i) for i in range(4)], ["Jinsu: 이 영화 봤어?", "Amy: 안 봤어, 무엇에 관한 거니?", "Jinsu: 사막의 야생 동물", "Amy: 자연에 관한 영화를 만드는 데 관심 있어"])],
+ blank=[
+  (T(N4, 4).replace('main hall', 'main ____'), ['hall', 'kitchen', 'desert', 'forest'], "정답 ▶ hall\n이유: 연설을 하는 곳 → main hall(대강당)"),
+  (T(N5, 3).replace('not touch', 'not ____'), ['touch', 'protect', 'see', 'love'], "정답 ▶ touch\n이유: 나무와 동물을 보호하려면 '만지지' 말아야 해요.\n오답 ▶ protect: 보호하지 말라는 건 앞 문장과 반대예요."),
+ ],
+ awk=[(["A: Did you see this movie? B: No, I didn't.", "A: What's it about? B: It's about wild animals.", "A: Let's go together. B: Okay.", "A: What should I do? B: I'm interested in movies."],
+       "정답 ▶ A: What should I do? B: I'm interested in movies.\n이유: 조언을 구했는데 자기 관심사를 말했어요. → You should ~.로 조언해야 해요.")],
+ func=[("밑줄 친 말과 바꿔 쓸 수 있는 것은?<br><b>Then you <u>should not</u> touch them.</b>", ["shouldn't", 'should', 'can', 'will'],
+        "정답 ▶ shouldn't\n이유: should not = shouldn't (~하면 안 된다). 하지 말라는 조언이에요.")],
+ summ=[
+  S([K6b[0]], "Amy is interested in making movies about (A) ______, so Jinsu advises her to learn from movie (B) ______.",
+    ['(A) nature – (B) directors', '(A) cars – (B) directors', '(A) nature – (B) actors', '(A) music – (B) rangers', '(A) cars – (B) teachers'],
+    "정답 ▶ (A) nature – (B) directors\n(A) '자연'에 관한 영화 → nature\n(B) 영화 '감독'에게 배워야 한다 → directors",
+    ["I'm interested in making movies about nature", "you should learn from movie directors"]),
+  S([K6b[1]], "To (A) ______ the forest, we should not touch trees and animals, and we should not throw away (B) ______ there.",
+    ['(A) protect – (B) trash', '(A) visit – (B) trash', '(A) protect – (B) water', '(A) cut – (B) trees', '(A) clean – (B) seeds'],
+    "정답 ▶ (A) protect – (B) trash\n(A) 숲을 '보호하려면' → protect\n(B) '쓰레기'를 버리지 마세요 → trash",
+    ["Do you want to protect trees and animals in the forest", "don't throw away trash in the forest"])],
+)
+
 D = lambda i, r, st, p, s: {'id': i, 'name': 'DAY', 'range': r, 'story': st, 'passage': p, 'steps': s}
 K4A = D('k4a', '4과 대화문 ① 대화 1~3', 'Lesson 4 · 음식 권하기 · 경험 묘사하기 (Listen and Check)', P4a, k4a)
 K4B = D('k4b', '4과 대화문 ② 대화 4·클립', 'Lesson 4 · 제빵 수업 · 단오 수리취떡', P4b, k4b)
 K5A = D('k5a', '5과 대화문 ① 대화 1~3', 'Lesson 5 · 감정이나 상태 묻기 · 걱정 표현하기 (Listen and Circle)', P5a, k5a)
+K6A = D('k6a', '6과 대화문 ① 대화 1~3', 'Lesson 6 · 관심 표현하기 · 조언하기 (Listen and Number)', P6a, k6a)
+K6B = D('k6b', '6과 대화문 ② 대화 4·클립', 'Lesson 6 · 자연 다큐 영화 · 산림 경비원', P6b, k6b)
 K5B = D('k5b', '5과 대화문 ② 대화 4·클립', 'Lesson 5 · 농구 경기 걱정 · 걱정 인형', P5b, k5b)
 
 path = '/home/claude/proj/data/m1-chunjae-so-L6.js'
@@ -313,7 +465,7 @@ PK = json.loads(subprocess.check_output(['node', '-e', "global.window={};require
 by = {d['id']: d for d in PK['days']}
 base = [d for d in PK['days'] if not d['id'].startswith('k')]
 assert [d['id'] for d in base] == ['L4a', 'L4b', 'L5a', 'L5b', 'd1', 'd2'], [d['id'] for d in base]
-order = [K4A, K4B, by['L4a'], by['L4b'], K5A, K5B, by['L5a'], by['L5b'], by['d1'], by['d2']]
+order = [K4A, K4B, by['L4a'], by['L4b'], K5A, K5B, by['L5a'], by['L5b'], K6A, K6B, by['d1'], by['d2']]
 for i, d in enumerate(order): d['name'] = 'DAY %d' % (i + 1)
 PK['days'] = order
 PK['pick'] = True
