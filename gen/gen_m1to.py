@@ -18,7 +18,7 @@ class Day:
         s.d['passage'] = s.notes + ([['#', '예문', '']] + s.ex if s.ex else [])
         return s.d
 
-def cards(title, items, n=None): return {'type': 'vocab', 'title': title, 'quizN': n or len(items), 'items': [list(x) for x in items]}
+def cards(title, items, n=None, guide='카드를 한 번 읽고, 퀴즈에서 짝이 맞는 것을 고르세요.'): return {'type': 'vocab', 'title': title, 'guide': guide, 'quizN': n or len(items), 'items': [list(x) for x in items]}
 def TF(title, items, guide='맞으면 T, 틀리면 F를 고르세요.'): return {'type': 'tf', 'title': title, 'guide': guide, 'items': [[a, b, c, None, None] for a, b, c in items]}
 def MC(title, items, guide='알맞은 답을 고르세요.'): return {'type': 'mc', 'title': title, 'guide': guide, 'items': [{'q': q, 'opts': o, 'ex': x} for q, o, x in items]}
 def PICK(D, title, items, guide='어법상 알맞은 것을 고르세요.'):
@@ -196,8 +196,9 @@ D.note('개념 ③ 주어와 보어 구별', [
     ('be동사 뒤', '보어 · "~하는 것이다"'),
 ])
 D.step(cards('개념 카드', [
-    ('주어 자리', '문장 맨 앞 · "~하는 것은"'), ('보어 자리', 'be동사 뒤 · "~하는 것이다"'), ('To ~ is ...', '~하는 것은 …이다 (주어)'),
-    ('My dream is to ~', '내 꿈은 ~하는 것이다 (보어)'), ('to부정사 주어의 동사', '단수 취급 → is (are ✗)'), ('be동사', 'is · am · are · was · were')]))
+    ('To swim is fun.', '주어 → 수영하는 것은 (문장 맨 앞)'), ('To learn English is fun.', '주어 → 영어를 배우는 것은 (is 앞)'),
+    ('My dream is to be a singer.', '보어 → 가수가 되는 것이다 (is 뒤)'), ('His job is to teach English.', '보어 → 영어를 가르치는 것이다 (is 뒤)'),
+    ('맨 앞에 있으면?', '주어 (~하는 것은)'), ('is 뒤에 있으면?', '보어 (~하는 것이다)'), ('To learn English ___ fun.', 'is (주어가 to부정사면 단수 → are ✗)')], guide='문장을 보고 to부정사가 어디에 있는지(맨 앞? is 뒤?)로 역할을 골라요.'))
 D.step(MC('역할 고르기 (주어 · 보어)', [
     role(D, 'To play soccer is exciting.', 'To play soccer', '축구를 하는 것은 신난다.', 0, '문장 맨 앞, 동사 is 앞 → 주어 "~하는 것은"'),
     role(D, 'My hobby is to draw pictures.', 'to draw pictures', '내 취미는 그림을 그리는 것이다.', 2, 'be동사 is 뒤 → 보어 "~하는 것이다" (내 취미 = 그림 그리는 것)'),
@@ -241,8 +242,9 @@ D.note('개념 ② 주·목·보 3단계 구별법', [
     ('3단계', '일반동사(like, want …) 바로 뒤? → 목적어 "~하는 것을"'),
 ])
 D.step(cards('개념 카드', [
-    ('목적어 자리', '일반동사 바로 뒤 · "~하는 것을"'), ('like to ~', '~하는 것을 좋아하다'), ('want to ~', '~하는 것을 원하다 = ~하고 싶다'),
-    ('구별 1단계', '문장 맨 앞 → 주어'), ('구별 2단계', 'be동사 뒤 → 보어'), ('구별 3단계', '일반동사 뒤 → 목적어')]))
+    ('I like to dance.', '목적어 → 춤추는 것을 (like 바로 뒤)'), ('She wants to go home.', '목적어 → 집에 가는 것을 = 가고 싶다 (wants 뒤)'),
+    ('To ride a bike is fun.', '주어 → 자전거를 타는 것은 (문장 맨 앞)'), ('My dream is to be a chef.', '보어 → 요리사가 되는 것이다 (is 뒤)'),
+    ('맨 앞에 있으면?', '주어 (~하는 것은)'), ('is 뒤에 있으면?', '보어 (~하는 것이다)'), ('like·want 뒤에 있으면?', '목적어 (~하는 것을)')], guide='문장을 보고 to부정사가 어디에 있는지(맨 앞? is 뒤? like·want 뒤?)로 역할을 골라요.'))
 D.step(MC('역할 고르기 (주어 · 목적어 · 보어)', [
     role(D, 'I love to sing songs.', 'to sing songs', '나는 노래 부르는 것을 아주 좋아한다.', 1, '일반동사 love 바로 뒤 → 목적어 "~하는 것을"'),
     role(D, 'To ride a bike is fun.', 'To ride a bike', '자전거를 타는 것은 재미있다.', 0, '문장 맨 앞 → 주어 "~하는 것은"'),
