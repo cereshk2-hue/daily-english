@@ -557,16 +557,18 @@
     /* 고른 DAY 단계 */
     var d = P.days[SEL], di = SEL, g = dayProgress(d), st = DS(d.id), run = st.run;
     var hs = hist(d), hnote = hs.length ? '<br><small>' + attemptNo(d) + '회차 · 이전 기록 ' + hs.map(function (x, i) { return (i + 1) + '회차 ' + x.pct + '점'; }).join(', ') + '</small>' : '';
-    var status = (needReview(d) ? '<b>문제 풀이 완료 · ' + pctOf(g.c, g.t) + '점</b> (' + g.c + '/' + g.t + ') · 오답 학습 ' + wrongCount(d) + '개 남음 (끝내야 결과를 보낼 수 있어요)' : g.finished ? '<b>완료</b> · ' + g.c + '/' + g.t + ' (' + Math.round(g.c / g.t * 100) + '%)' + (st.finished ? ' · ' + fmtTime(st.finished) : '')
+    var status = (needReview(d) ? '<b>문제 풀이 완료 · ' + pctOf(g.c, g.t) + '점</b> (' + g.c + '/' + g.t + ') · 틀린 ' + wrongCount(d) + '문제 남음<br><small>아래 <b>오답 학습 하기</b>로 틀린 문제를 모두 다시 맞히면 완료로 바뀌어요.</small>' : g.finished ? '<b>완료</b> · ' + g.c + '/' + g.t + ' (' + Math.round(g.c / g.t * 100) + '%)' + (st.finished ? ' · ' + fmtTime(st.finished) : '')
       : run ? '<b>' + E(d.steps[run.si].title) + ' ' + Math.min(run.qi + 1, run.qs.length) + '/' + run.qs.length + '번</b>에서 멈췄어요'
       : g.done ? '<b>' + g.done + '/' + d.steps.length + '단계</b> 건넜어요 · 다음: ' + E(d.steps[g.next].title) : '아직 시작 전') + hnote;
     h += '<h3 class="sech" id="daydetail">' + E(d.name) + ' 단계 <span>' + E(d.range) + '</span></h3><section class="card day">' +
       '<ol class="slist">' + d.steps.map(function (s, i) {
-        var sc = st.scores[i], cls = sc ? 'd' : i === g.next ? 'n' : 'w', low = sc && sc[0] / sc[1] < 0.7;
+        var sc = st.scores[i], cls = sc ? 'd' : i === g.next ? 'n' : 'w', low = sc && sc[0] / sc[1] < 0.7, fix = null;
+        if (low) (st.extra && st.extra[i] || []).forEach(function (x) { if (x.c / x.t >= 0.7 && (!fix || x.c / x.t > fix.c / fix.t)) fix = x; });
+        if (fix) low = false; /* 빨간 단계도 다시 풀어 70%를 넘기면 빨간색을 지운다 */
         return '<li><button class="srow ' + cls + '" data-step="' + di + ':' + i + '"' + (cls === 'w' ? ' disabled' : '') + '><span class="ic">' + (sc ? '✓' : i + 1) + '</span><span class="sn">' + E(s.title) + '</span>' +
-          '<span class="sc' + (low ? ' low' : '') + '">' + (sc ? sc[0] + '/' + sc[1] : cls === 'n' ? (run && run.si === i ? '이어서' : '다음') : '') + '</span></button></li>';
+          '<span class="sc' + (low ? ' low' : '') + '">' + (sc ? sc[0] + '/' + sc[1] + (fix ? ' → ' + fix.c + '/' + fix.t + ' ✓' : '') : cls === 'n' ? (run && run.si === i ? '이어서' : '다음') : '') + '</span></button></li>';
       }).join('') + '</ol>' +
-      '<p class="note" style="margin:8px 0 0">끝낸 단계를 누르면 다시 풀어 볼 수 있어요 (점수는 처음 기록 유지).</p>' +
+      '<p class="note" style="margin:8px 0 0">끝낸 단계를 누르면 다시 풀어 볼 수 있어요. 빨간 점수(70% 미만) 단계는 다시 풀어서 70%를 넘기면 ✓로 바뀌어요.</p>' +
       '<div class="status">' + status + '</div>' + weakBox(d, di) + '<div class="acts">' +
       (needReview(d) ? '<button class="btn plank" data-rev="' + di + '">오답 학습 하기</button>' + lockBtn(d, '오답 학습 후 열려요') : g.finished ? '<button class="btn" data-res="' + di + '">결과 보내기</button><button class="btn ghost" data-retry="' + di + '">' + (attemptNo(d) + 1) + '회차 도전</button>'
         : '<button class="btn" data-go="' + di + '">' + (g.done || run ? '이어서 하기' : '시작하기') + '</button>' + lockBtn(d, '다 끝내면 열려요')) +
@@ -835,10 +837,12 @@
     var q = RS.qs[RS.qi];
     if (ok) RS.c++; else RS.wrong.push(q);
     var ne = null; try { ne = !ok ? noteAdd(q, 'wrong') : RS.practice === '오답 노트' ? noteAdd(q, 'ok') : noteEntry(q); } catch (e) {}
+    if (ok && RS.practice && RS.practice !== '오답 학습') { try { var fd = P.days[q.dayIdx != null ? q.dayIdx : RS.di], fs = DS(fd.id); var fq = Object.assign({ stepTitle: curStepTitle() }, q); fs.fixed = fs.fixed || {}; fs.fixed[noteId(fq, fd)] = 1; fs.fixed[pairId(fq, fd)] = 1; save(); } catch (e) {} } /* 다시 풀기·보충·노트에서 다시 맞힌 문제 */
     if (RS.practice === '오답 학습') {
       if (!ok && RS.qi < RS.base) RS.fw = (RS.fw || 0) + 1;
       if (!ok) RS.qs.push(reshuffle(q));
       DS(P.days[RS.di].id).review = { qs: RS.qs, qi: RS.qi + 1, c: RS.c, base: RS.base, fw: RS.fw || 0 }; save();
+      if (ok && RS.qi === RS.qs.length - 1) markReviewDone(P.days[RS.di], { n: RS.base, tries: RS.qs.length, at: Date.now(), first: RS.base - (RS.fw || 0) }, RS.base + '개 중 ' + (RS.base - (RS.fw || 0)) + '개 한 번에'); /* 마지막 문제를 맞힌 순간 완료 (마치기 버튼을 안 눌러도) */
     }
     saveRun();
     var last = RS.qi === RS.qs.length - 1;
@@ -878,8 +882,7 @@
       var dx = P.days[RS.di], sx = DS(dx.id); sx.extra = sx.extra || {}; (sx.extra[RS.si] = sx.extra[RS.si] || []).push({ c: RS.c, t: RS.qs.length, at: Date.now() }); save();
       report(RS.practice === '보충 연습' ? '보충 연습' : RS.practice, dx, { step: (RS.si + 1) + '. ' + dx.steps[RS.si].title, stepScore: RS.c + '/' + RS.qs.length });
     } else if (RS.practice === '오답 학습') {
-      var st2 = DS(P.days[RS.di].id); st2.reviewDone = { n: RS.base, tries: RS.qs.length, at: Date.now(), first: RS.base - (RS.fw || 0) }; st2.review = null; save();
-      report('오답 학습 완료', P.days[RS.di], { stepScore: RS.base + '개 중 ' + (RS.base - (RS.fw || 0)) + '개 한 번에' });
+      markReviewDone(P.days[RS.di], { n: RS.base, tries: RS.qs.length, at: Date.now(), first: RS.base - (RS.fw || 0) }, RS.base + '개 중 ' + (RS.base - (RS.fw || 0)) + '개 한 번에');
     }
     RS.phase = 'summary'; render();
   }
@@ -986,11 +989,21 @@
     S.days[d.id] = { scores: {}, wrong: {}, started: null, finished: null, run: null, history: hs, titles: d.steps.map(function (x) { return x.title; }) }; save();
   }
   function wrongCount(d) { var st = DS(d.id); return d.steps.reduce(function (n, _, i) { return n + (st.wrong[i] || []).length; }, 0); }
-  function needReview(d) { return dayProgress(d).finished && wrongCount(d) > 0 && !DS(d.id).reviewDone; }
+  /* 오답 학습을 끝냈거나, 틀린 문제를 오답 노트에서 모두 다시 맞혔으면 오답 학습 완료로 본다 */
+  function markReviewDone(d, rv, how) { var st = DS(d.id); if (st.reviewDone) return; st.reviewDone = rv; st.review = null; save(); try { report('오답 학습 완료', d, { stepScore: how }); } catch (e) {} }
+  function needReview(d) {
+    var st = DS(d.id);
+    if (!dayProgress(d).finished || st.reviewDone || wrongCount(d) === 0) return false;
+    var r = st.review; if (r && r.qs && r.qi >= r.qs.length) { markReviewDone(d, { n: r.base, tries: r.qs.length, at: Date.now(), first: r.base - (r.fw || 0) }, r.base + '개 중 ' + (r.base - (r.fw || 0)) + '개 한 번에'); return false; }
+    var ws = []; d.steps.forEach(function (_, i) { (st.wrong[i] || []).forEach(function (q) { ws.push(q); }); });
+    if (ws.length && ws.every(function (q) { var id = noteId(q, d), e = notes()[id]; return (e && e.ok) || (st.fixed && (st.fixed[id] || st.fixed[pairId(q, d)])); })) { markReviewDone(d, { n: ws.length, tries: ws.length, at: Date.now(), first: null }, '틀린 ' + ws.length + '개를 다시 풀어 모두 맞힘'); return false; }
+    return true;
+  }
   /* ---------- 오답 노트 ----------
      S.note = { id: { id, d: DAY id, q: 문제 사본, wrong: 틀린 횟수, conf: 헷갈려요, ok: 노트에서 맞힘, at } }
      틀린 문제는 자동으로, 맞힌 문제도 '헷갈려요'를 누르면 담긴다. 과(교과서)·DAY(모의고사)별로 골라 다시 푼다. */
   function noteId(q, d) { return d.id + '|' + fnv([q.t, q.stepTitle || '', strip(q.prompt || q.s || q.ko || (q.lines || []).join('/') || ''), q.key || ''].join('|')); }
+  function pairId(q, d) { return d.id + '|p|' + fnv([q.stepTitle || '', q.big ? String(q.key || '') : strip(q.prompt || q.s || q.ko || '') + '|' + (q.key || '')].join('|')); } /* 단어 카드: 영→한/한→영 방향이 바뀌어도 같은 문제 */
   function notes() { return S.note || (S.note = {}); }
   function curStepTitle() { var q = RS.qs[RS.qi], d = P.days[RS.di]; return q.stepTitle || (d.steps[RS.si] || {}).title || ''; }
   function noteEntry(q) { return notes()[q.noteId || noteId(Object.assign({ stepTitle: curStepTitle() }, q), P.days[RS.di])]; }
@@ -1138,6 +1151,7 @@
   }
 
   if (/[?&]test\b/.test(location.search)) window.__dbg = function () { return RS; };
+  if (/[?&]test\b/.test(location.search)) window.__rev = function (di) { var d = P.days[di], st = DS(d.id), w = []; d.steps.forEach(function (_, i) { (st.wrong[i] || []).forEach(function (q) { w.push([i, q.t, noteId(q, d), !!(st.fixed || {})[noteId(q, d)], strip(q.prompt || q.s || q.ko || '').slice(0, 40), q.key]); }); }); return { w: w, fixed: Object.keys(st.fixed || {}) }; };
   home();
   gateSync();
   setTimeout(noteFlush, 1500);
