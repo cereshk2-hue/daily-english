@@ -19,6 +19,10 @@ class Day:
         return s.d
 
 def cards(title, items, n=None, guide='카드를 한 번 읽고, 퀴즈에서 짝이 맞는 것을 고르세요.'): return {'type': 'vocab', 'title': title, 'guide': guide, 'quizN': n or len(items), 'items': [list(x) for x in items]}
+def SCARDS(D, title, items, n=None, guide=''):  # 문장 → 해석 카드 (예문 목록에도 넣는다)
+    for en, ko in items:
+        for e in en.split(' = '): D.sent(e, re.sub(r' \([^)]*\)$', '', ko))
+    return cards(title, items, n, guide)
 def TF(title, items, guide='맞으면 T, 틀리면 F를 고르세요.'): return {'type': 'tf', 'title': title, 'guide': guide, 'items': [[a, b, c, None, None] for a, b, c in items]}
 def MC(title, items, guide='알맞은 답을 고르세요.'): return {'type': 'mc', 'title': title, 'guide': guide, 'items': [{'q': q, 'opts': o, 'ex': x} for q, o, x in items]}
 def PICK(D, title, items, guide='어법상 알맞은 것을 고르세요.'):
@@ -66,10 +70,12 @@ D.note('개념 ③ 명사적 용법', [
     ('to부정사의 명사적 용법', 'to부정사가 명사처럼 쓰여서 "~하는 것, ~하기"로 해석돼요.'),
     ('to swim', '수영하는 것, 수영하기'),
 ])
-D.step(cards('개념 카드', [
-    ('to부정사', 'to + 동사원형'), ('동사원형', '-s·-ed·-ing가 붙지 않은 원래 모양'), ('to play', '노는 것, 놀기'),
-    ('to read', '읽는 것, 읽기'), ('to swim', '수영하는 것, 수영하기'), ('to be', '~이 되는 것, ~인 것'),
-    ('to learn', '배우는 것, 배우기'), ('to school', '학교에 (전치사 to · to부정사 아님!)')]))
+D.step(SCARDS(D, '해석 카드', [
+    ('I like to play soccer.', '나는 축구하는 것을 좋아한다.'), ('I want to eat pizza.', '나는 피자를 먹고 싶다.'),
+    ('She likes to read books.', '그녀는 책 읽는 것을 좋아한다.'), ('To swim is fun.', '수영하는 것은 재미있다.'),
+    ('He wants to be a doctor.', '그는 의사가 되고 싶어 한다.'), ('We like to learn English.', '우리는 영어를 배우는 것을 좋아한다.'),
+    ('I go to school by bus.', '나는 버스로 학교에 간다. (전치사 to)'), ('Give it to me.', '그것을 나에게 줘. (전치사 to)')],
+    guide='문장을 읽고 알맞은 해석을 골라요. to + 동사원형은 "~하는 것", to + 장소·사람은 "~에, ~에게"(전치사)예요.'))
 D.step(TF('개념 확인 T/F', [
     ('to 다음에는 동사원형이 온다.', True, '정답 ▶ T\n이유: to부정사 = to + 동사원형. to play, to read, to be처럼 -s·-ed·-ing 없이 써요.'),
     ('to plays는 바른 to부정사이다.', False, '정답 ▶ F\n이유: to 다음에는 동사원형! plays(-s)가 아니라 play → to play'),
@@ -127,10 +133,12 @@ D.note('개념 ② "~하기 위해"는 부사적 용법(목적)', [
     ('I went to the store / to buy milk.', '"나는 가게에 갔다."로 끝남 → 우유를 사기 위해 (부사적)'),
     ('I want / to buy milk.', '"나는 원한다…" 뭘? 끝나지 않음 → 우유 사는 것을 (명사적)'),
 ])
-D.step(cards('개념 카드', [
-    ('to play', '노는 것, 놀기'), ('like to ~', '~하는 것을 좋아하다'), ('want to ~', '~하는 것을 원하다 = ~하고 싶다'),
-    ('hope to ~', '~하기를 바라다'), ('decide to ~', '~하기로 결심하다'), ('To ~ is ...', '~하는 것은 …이다'),
-    ('My dream is to ~', '내 꿈은 ~하는 것이다'), ('~하기 위해', '부사적 용법(목적) · 명사적 아님!')]))
+D.step(SCARDS(D, '해석 카드', [
+    ('I like to draw.', '나는 그림 그리는 것을 좋아한다.'), ('I want to go home.', '나는 집에 가고 싶다.'),
+    ('He hopes to see you again.', '그는 너를 다시 보기를 바란다.'), ('We decided to go swimming.', '우리는 수영하러 가기로 결심했다.'),
+    ('To play games is fun.', '게임을 하는 것은 재미있다.'), ('My hope is to be a doctor.', '내 소망은 의사가 되는 것이다.'),
+    ('She went to the library to study.', '그녀는 공부하기 위해 도서관에 갔다. (부사적)'), ('He runs every day to stay healthy.', '그는 건강을 유지하기 위해 매일 달린다. (부사적)')],
+    guide='문장을 읽고 알맞은 해석을 골라요. 대부분 "~하는 것(~하기)"이고, (부사적) 표시가 된 두 문장만 "~하기 위해"예요.'))
 def tr(en, ko, wrong, why):
     D.sent(en, ko); return ('다음 문장의 해석으로 알맞은 것은?' + Q(en), [ko] + wrong, '정답 ▶ %s\n이유: %s' % (ko, why))
 D.step(MC('해석 고르기', [
@@ -300,11 +308,16 @@ D.note('개념 ② to부정사의 부정 = not to + 동사원형', [
     ('I promised not to make a mess.', '나는 어지르지 않겠다고 약속했다. (not은 to 앞에!)'),
     ('We decided not to go to Paris.', '우리는 파리에 가지 않기로 결정했다.'),
 ])
-D.step(cards('동사 카드', [
-    ('want to ~', '~하고 싶다 (원하다)'), ('would like to ~', '~하고 싶다 (공손)'), ('hope to ~', '~하기를 바라다'), ('wish to ~', '~하기를 소망하다'),
-    ('expect to ~', '~할 것을 기대하다'), ('plan to ~', '~할 계획이다'), ('decide to ~', '~하기로 결정하다'), ('choose to ~', '~하기로 선택하다'),
-    ('promise to ~', '~하겠다고 약속하다'), ('agree to ~', '~하기로 동의하다'), ('refuse to ~', '~하기를 거절하다'), ('need to ~', '~할 필요가 있다'),
-    ('learn to ~', '~하는 것을 배우다'), ('afford to ~', '~할 여유가 있다'), ('pretend to ~', '~인 척하다'), ('not to + 동사원형', 'to부정사의 부정 (~하지 않기로)')], 12))
+D.step(SCARDS(D, '해석 카드', [
+    ('I want to buy a new bag.', '나는 새 가방을 사고 싶다.'), ('Would you like to have some tea?', '차 좀 드실래요? (would like to = ~하고 싶다)'),
+    ('We hope to see you soon.', '우리는 곧 너를 보기를 바란다.'), ('She plans to visit Jeju.', '그녀는 제주도를 방문할 계획이다.'),
+    ('He decided to study abroad.', '그는 유학하기로 결심했다.'), ('I promised to clean my room.', '나는 내 방을 청소하겠다고 약속했다.'),
+    ('They agreed to meet at six.', '그들은 6시에 만나기로 동의했다.'), ('She refused to answer the question.', '그녀는 그 질문에 대답하기를 거절했다.'),
+    ('You need to drink more water.', '너는 물을 더 마실 필요가 있다.'), ('I learned to ride a bike.', '나는 자전거 타는 법을 배웠다.'),
+    ('He pretended to be sick.', '그는 아픈 척했다.'), ('I expect to pass the test.', '나는 시험에 합격하기를 기대한다.'),
+    ('She chose to stay home.', '그녀는 집에 있기로 선택했다.'), ("We can't afford to buy a car.", '우리는 차를 살 여유가 없다.'),
+    ('I decided not to go out.', '나는 외출하지 않기로 결정했다. (not to = ~하지 않기로)'), ('He promised not to be late.', '그는 늦지 않겠다고 약속했다. (not to)')], 12,
+    guide='문장을 읽고 알맞은 해석을 골라요. 동사 + to부정사 짝(want to, hope to, decide to …)을 소리 내어 읽어 보세요.'))
 D.step(TF('동사 확인 T/F', [
     ('refuse(거절하다)는 목적어로 to부정사를 쓴다.', True, '정답 ▶ T\n이유: refuse to ~ = ~하기를 거절하다 (Carol refused to go out.)'),
     ('"~하지 않기로 결정했다"는 decided to not go보다 decided not to go가 교과서식 표현이다.', True, '정답 ▶ T\n이유: to부정사의 부정은 not을 to 앞에 → not to + 동사원형'),
@@ -356,11 +369,15 @@ D.note('개념 ② 둘 다 쓰는 동사 · 조심할 동사', [
     ('stop to ~', '~하기 위해 멈추다 (뜻이 달라져요! 이건 부사적 용법)'),
     ('feel like -ing vs would like to', '둘 다 "~하고 싶다"지만 feel like 다음은 -ing, would like 다음은 to부정사'),
 ])
-D.step(cards('동사 카드', [
-    ('mind -ing', '~하는 것을 꺼리다'), ('enjoy -ing', '~하는 것을 즐기다'), ('give up -ing', '~하는 것을 포기하다'), ('avoid -ing', '~하는 것을 피하다'),
-    ('finish -ing', '~하는 것을 끝내다'), ('practice -ing', '~하는 것을 연습하다'), ('stop -ing', '~하는 것을 그만두다'), ('suggest -ing', '~하자고 제안하다'),
-    ('keep -ing', '계속 ~하다'), ('admit -ing', '~한 것을 인정하다'), ('imagine -ing', '~하는 것을 상상하다'), ('feel like -ing', '~하고 싶다'),
-    ('like · love · start · begin', 'to부정사·-ing 둘 다 OK')], 12))
+D.step(SCARDS(D, '해석 카드', [
+    ('Do you mind opening the window?', '창문을 열어 줄 수 있니? (여는 것을 꺼리니?)'), ('I enjoy playing the piano.', '나는 피아노 치는 것을 즐긴다.'),
+    ('He gave up eating snacks.', '그는 간식 먹는 것을 포기했다(끊었다).'), ('She avoids eating junk food.', '그녀는 정크 푸드를 먹는 것을 피한다.'),
+    ('I finished doing my homework.', '나는 숙제하는 것을 끝냈다.'), ('He practices speaking English.', '그는 영어로 말하는 것을 연습한다.'),
+    ('They stopped talking.', '그들은 이야기하는 것을 멈췄다.'), ('She suggested going to the movies.', '그녀는 영화 보러 가자고 제안했다.'),
+    ('He kept running.', '그는 계속 달렸다.'), ('I feel like eating pizza.', '나는 피자를 먹고 싶다. (feel like -ing)'),
+    ('Can you imagine living on Mars?', '화성에서 사는 것을 상상할 수 있니?'), ('She admitted breaking the vase.', '그녀는 꽃병을 깬 것을 인정했다.'),
+    ('I like swimming. = I like to swim.', '나는 수영하는 것을 좋아한다. (like는 둘 다 OK)'), ('It began raining. = It began to rain.', '비가 오기 시작했다. (begin은 둘 다 OK)')], 12,
+    guide='문장을 읽고 알맞은 해석을 골라요. 이 동사들 뒤에는 -ing가 와요. like·begin 두 장만 to부정사·-ing 둘 다 OK예요.'))
 D.step(TF('동사 확인 T/F', [
     ('enjoy to shop은 바른 표현이다.', False, '정답 ▶ F\n이유: enjoy + 동명사 → enjoy shopping'),
     ('keep은 목적어로 동명사(-ing)를 쓴다.', True, '정답 ▶ T\n이유: keep -ing = 계속 ~하다 (The girls keep talking.)'),
