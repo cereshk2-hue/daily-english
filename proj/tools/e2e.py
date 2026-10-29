@@ -65,7 +65,7 @@ try:
       pg.reload(); print('home status:', [s.inner_text() for s in pg.locator('.status').all()])
       pg.click('[data-tab="text"]'); pg.click('[data-sel="1"]'); pg.screenshot(path=SH+'5_passage.png')
       pg.click('[data-tab="types"]'); pg.screenshot(path=SH+'7_types.png')
-      pg.click('[data-free="8"]'); n=0
+      fr=pg.locator('[data-free]').count(); pg.click('[data-free="%d"]'%min(8,fr-1)); n=0
       while pg.evaluate('__dbg()')['phase']!='summary':
           solve(pg); pg.click('#nx'); n+=1
       print('free practice', n, 'back btn', pg.locator('#back').count()); pg.click('#back'); print('tab after back:', pg.locator('.tabs .on').inner_text())
