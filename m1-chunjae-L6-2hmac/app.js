@@ -353,7 +353,7 @@
       return { t: 'choice', prompt: '<span class="en">' + E(q.s).replace('____', '<span class="blank" id="blank">&nbsp;</span>') + '</span>', fill: E(q.opts[0]),
         opts: shuffle(q.opts).map(E), ans: E(q.opts[0]), ex: q.ex, key: q.opts[0], optEn: true };
     });
-    if (t === 'mc') return shuffle(it).map(function (q) { return { t: 'choice', prompt: q.q, opts: shuffle(q.opts), ans: q.opts[0], ex: q.ex, key: strip(q.opts[0]) }; });
+    if (t === 'mc') return shuffle(it).map(function (q) { return { t: 'choice', prompt: q.q, opts: q.sort ? q.opts.slice().sort() : shuffle(q.opts), /* sort: 개수·기호 묶음은 차례대로 */ ans: q.opts[0], ex: q.ex, key: strip(q.opts[0]) }; });
     return [];
   }
 
