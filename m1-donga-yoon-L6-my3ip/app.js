@@ -777,7 +777,8 @@
   function weakBox(d, di) {
     if (!dayProgress(d).finished || needReview(d)) return '';
     var ws = weakList(d); if (!ws.length) return '';
-    return '<div class="weakbox"><b>약한 유형 보충 연습</b> <small>70% 넘게 맞히면 ✓ · 선생님께 자동으로 전달돼요</small><div class="weakbtns">' + ws.map(function (w) {
+    var all = ws.every(function (w) { return w.ok; }), left = ws.filter(function (w) { return !w.ok; }).length;
+    return '<div class="weakbox' + (all ? ' wkdone' : '') + '"><b>' + (all ? '약한 유형 보충 완료 ✓' : '약한 유형 보충 연습 · ' + left + '개 남음') + '</b> <small>' + (all ? '모두 70%를 넘겼어요. 다시 눌러 더 연습해도 돼요.' : '끝까지 풀어서 70% 넘게 맞히면 ✓ · 선생님께 자동으로 전달돼요') + '</small><div class="weakbtns">' + ws.map(function (w) {
       return '<button class="btn ghost' + (w.ok ? ' wdone' : '') + '" data-weak="' + di + ':' + w.i + '">' + (w.ok ? '✓ ' : '') + E(stepShort(w.s)) + ' <small>' + w.sc[0] + '/' + w.sc[1] + (w.n ? ' → ' + w.best.c + '/' + w.best.t : '') + '</small></button>'; }).join('') + '</div></div>';
   }
   function passageHTML(d) {
@@ -918,7 +919,17 @@
     app.innerHTML = h; bindQuit(); bindQ(q);
   }
 
-  function bindQuit() { $('#quit').onclick = function () { home(RS && RS.practice === '유형별 연습' ? 'types' : 'today'); }; }
+  function bindQuit() { $('#quit').onclick = function () {
+    try { /* 보충 연습을 중간에 나가도 충분히 풀었으면 푼 만큼 기록 (끝까지 안 풀어서 계속 빨간색인 문제) */
+      if (RS && RS.phase === 'quiz' && (RS.practice === '보충 연습' || RS.practice === '다시 풀기' || RS.practice === '유형별 연습')) {
+        var done = RS.qi + (RS.answered ? 1 : 0);
+        if (done >= Math.min(10, Math.ceil(RS.qs.length / 2))) {
+          var dx = P.days[RS.di], sx = DS(dx.id); sx.extra = sx.extra || {}; (sx.extra[RS.si] = sx.extra[RS.si] || []).push({ c: RS.c, t: done, at: Date.now(), part: true }); save();
+          report(RS.practice, dx, { step: (RS.si + 1) + '. ' + dx.steps[RS.si].title, stepScore: RS.c + '/' + done + ' (중간까지)' });
+        }
+      }
+    } catch (e) {}
+    home(RS && RS.practice === '유형별 연습' ? 'types' : 'today'); }; }
 
   function qHTML(q) {
     if (q.t === 'choice') return (q.sub ? '<div class="guide" style="margin:0 0 6px">' + q.sub + '</div>' : '') +
@@ -1314,7 +1325,8 @@
         return '<div><span>' + (i + 1) + '회차</span><b>' + h.pct + '점</b><small>' + h.c + '/' + h.t + (h.finished ? ' · ' + fmtTime(h.finished) : '') + (h.review ? ' · 오답 ' + h.review.n + '개' : '') + '</small></div>'; }).join('') + '</div>' : '') +
       '<div class="rc-foot"><span>' + (st.finished ? fmtTime(st.finished) + ' 완료' : '') + (mins ? ' · ' + mins + '분' : '') + '</span><span>확인 코드 <b>' + checkCode(d) + '</b></span></div>' +
       '</section><p class="note" style="margin:0;text-align:center">카드만 캡처하면 결과가 다 담겨요.</p>';
-    if (weakList(d).length) h += '<section class="card stack" style="gap:10px"><h2>빨간 영역 다시 풀기</h2><p class="note" style="margin:0">70% 미만인 영역이에요. 눌러서 다시 풀면 기록이 선생님께 전달되고, 70%를 넘기면 ✓가 붙어요.</p><div class="weakbtns">' +
+    var wl = weakList(d), wall = wl.length && wl.every(function (w) { return w.ok; });
+    if (wl.length) h += '<section class="card stack" style="gap:10px"><h2>' + (wall ? '약한 영역 보충 완료 ✓' : '빨간 영역 다시 풀기') + '</h2><p class="note" style="margin:0">' + (wall ? '처음에 70% 미만이던 영역을 모두 다시 풀어 70%를 넘겼어요.' : '70% 미만인 영역이에요. 눌러서 끝까지 다시 풀면 기록이 선생님께 전달되고, 70%를 넘기면 ✓가 붙어요.') + '</p><div class="weakbtns">' +
       weakList(d).map(function (w) { return '<button class="btn ghost' + (w.ok ? ' wdone' : '') + '" data-weak="' + di + ':' + w.i + '">' + (w.ok ? '✓ ' : '') + E(w.s.title) + ' <small>' + w.sc[0] + '/' + w.sc[1] + (w.n ? ' → ' + w.best.c + '/' + w.best.t : '') + '</small></button>'; }).join('') + '</div></section>';
     h += '<section class="card stack" style="gap:12px"><h2>선생님께 결과 보내기</h2>' +
       '<button class="btn plank wide" id="kakao">카톡으로 보내기</button>' +
