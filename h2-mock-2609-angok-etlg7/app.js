@@ -361,7 +361,7 @@
       return { t: 'choice', prompt: '<span class="en">' + E(q.s).replace('____', '<span class="blank" id="blank">&nbsp;</span>') + '</span>', fill: E(q.opts[0]),
         opts: shuffle(q.opts).map(E), ans: E(q.opts[0]), ex: q.ex, key: q.opts[0], optEn: true };
     });
-    if (t === 'mc') return shuffle(it).map(function (q) { return { t: 'choice', prompt: q.q, opts: q.sort ? q.opts.slice().sort() : shuffle(q.opts), /* sort: 개수·기호 묶음은 차례대로 */ ans: q.opts[0], ex: q.ex, key: strip(q.opts[0]) }; });
+    if (t === 'mc') return shuffle(it).map(function (q) { var ai = q.keep ? q.a : 0; return { t: 'choice', prompt: q.q, opts: q.keep ? q.opts.slice() : q.sort ? q.opts.slice().sort() : shuffle(q.opts), /* sort: 개수·기호 묶음은 차례대로 · keep: 시험지 ①~⑤ 순서 그대로(정답 번호 a) */ ans: q.opts[ai], ex: q.ex, key: strip(q.opts[ai]), num: !!q.keep }; });
     return [];
   }
 
@@ -438,7 +438,7 @@
     h += '<div class="stack">';
     if (TAB === 'test' && TESTS.length) h += testsHTML();
     if (TAB === 'today') h += todayHTML();
-    if (TAB === 'text') h += '<h3 class="sech">본문</h3>' + daySwitch() + (inProgress(P.days[SEL]) ? lockHTML(P.days[SEL], '본문') : passageHTML(P.days[SEL]));
+    if (TAB === 'text') h += '<h3 class="sech">본문</h3>' + daySwitch() + (inProgress(P.days[SEL]) ? lockHTML(P.days[SEL], '본문') : P.passLock && !DS(P.days[SEL].id).scores[0] ? '<section class="card"><b>먼저 실전 1문제를 풀어 보세요.</b><p class="note" style="margin:6px 0 0">문제를 풀고 나면 문장별 해석과 노트 정리용 핵심 문장이 여기에 열려요.</p></section>' : passageHTML(P.days[SEL]));
     if (TAB === 'types') h += '<h3 class="sech">유형별 연습</h3>' + daySwitch() + (inProgress(P.days[SEL]) ? lockHTML(P.days[SEL], '유형별 연습') : typesHTML(P.days[SEL]));
     h += '</div></div><nav class="bnav tabs' + (TABS.length > 3 ? ' four' : '') + '" role="tablist">' + TABS.map(function (t) {
       return '<button role="tab" aria-selected="' + (TAB === t[0]) + '" class="' + (TAB === t[0] ? 'on' : '') + '" data-tab="' + t[0] + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true">' + t[2] + '</svg>' + t[1] + '</button>';
