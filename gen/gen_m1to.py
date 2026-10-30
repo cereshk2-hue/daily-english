@@ -24,7 +24,8 @@ def SCARDS(D, title, items, n=None, guide=''):  # 문장 → 해석 카드 (예�
         for e in en.split(' = '): D.sent(e, re.sub(r' \([^)]*\)$', '', ko))
     return cards(title, items, n, guide)
 def TF(title, items, guide='맞으면 T, 틀리면 F를 고르세요.'): return {'type': 'tf', 'title': title, 'guide': guide, 'items': [[a, b, c, None, None] for a, b, c in items]}
-def MC(title, items, guide='알맞은 답을 고르세요.'): return {'type': 'mc', 'title': title, 'guide': guide, 'items': [{'q': q, 'opts': o, 'ex': x} for q, o, x in items]}
+def MC(title, items, guide='알맞은 답을 고르세요.'):  # 4번째 값 True = 선택지를 섞지 않고 정렬해서(개수·기호 묶음)
+    return {'type': 'mc', 'title': title, 'guide': guide, 'items': [dict({'q': it[0], 'opts': it[1], 'ex': it[2]}, **({'sort': True} if len(it) > 3 and it[3] else {})) for it in items]}
 def PICK(D, title, items, guide='어법상 알맞은 것을 고르세요.'):
     for s, ko, x in items: D.sent(re.sub(r'\{([^|}]*)\|[^}]*\}', r'\1', s), ko)
     return {'type': 'pick', 'title': title, 'guide': guide, 'items': [{'s': s, 'ex': x} for s, ko, x in items]}
@@ -585,6 +586,158 @@ D.step(PICK(D, '교과서 문장 · 어법 선택', [
     ('I like to travel and {enjoy|enjoying} challenges.', '나는 여행하는 것을 좋아하고 도전을 즐겨요.', '정답 ▶ enjoy\n이유: [동아 7과] and로 이어진 말은 형태를 맞춰요. "여행하는 것을 좋아하고 도전을 즐겨요" → enjoy(동사원형)\n포인트 ▶ and 뒤에는 동사원형 enjoy ("도전을 즐겨요"). enjoying은 올 수 없어요.'),
 ]))
 D.step(SCR(D, '교과서 문장 배열', [('I want to be a sports reporter.', '나는 스포츠 기자가 되고 싶어.'), ('Some people love to work in nature.', '어떤 사람들은 자연에서 일하는 것을 아주 좋아한다.')]))
+DAYS.append(D.done())
+
+
+# ═════════ DAY 11 · 실전 ① 쓰임 구별 (워크북 객관식 Pattern 1) ═════════
+D = Day('t11', '실전 ① 쓰임이 같은 것 · 다른 것', '워크북 Grammar Build Up 객관식 · 명사적 용법과 헷갈리는 to 가려내기')
+D.note('명사적 용법 = "~하는 것"', [
+    ('주어', '문장 맨 앞 → To drink milk is good. (우유를 마시는 것은)'),
+    ('목적어', '일반동사 바로 뒤 → I want to take a walk. (산책하는 것을 → 산책하고 싶다)'),
+    ('보어', 'be동사 뒤 → My hobby is to watch musicals. (보는 것이다)'),
+])
+D.note('명사적이 아닌 to (실전 함정)', [
+    ('함정 ① 전치사 to', 'to + 명사(장소·사람) → We go to school. / Jenny goes to the City Hall. (to부정사 아님)'),
+    ('함정 ② be going to', '~할 예정이다 → I am going to go shopping. (미래 표현)'),
+    ('함정 ③ ~하기 위해', 'to 앞에서 끊어도 문장이 끝남 → I studied hard / to pass the exam. (목적)'),
+    ('함정 ④ 감정 + to', 'glad·happy·sad + to부정사 → I am glad to meet you. (만나서 기쁘다)'),
+    ('함정 ⑤ 명사 + to', '앞의 명사를 꾸밈 → books to read 읽을 책 · something to eat 먹을 것'),
+    ('함정 ⑥ 결과', 'He grew up to be an artist. (자라서 화가가 되었다)'),
+    ('푸는 법', '밑줄 친 to부정사를 "~하는 것"으로 바꿔 읽어 보세요. 말이 되면 명사적, 어색하면 함정!'),
+])
+D.step(SCARDS(D, '해석 카드', [
+    ('I want to take a walk.', '나는 산책하고 싶다. (명사적 · 목적어)'), ('My hobby is to watch musicals.', '내 취미는 뮤지컬을 보는 것이다. (명사적 · 보어)'),
+    ('To drink milk is good for your health.', '우유를 마시는 것은 건강에 좋다. (명사적 · 주어)'), ('We go to school every morning.', '우리는 매일 아침 학교에 간다. (전치사 to)'),
+    ('I am going to go shopping.', '나는 쇼핑하러 갈 예정이다. (be going to)'), ('I studied hard to pass the exam.', '나는 시험에 통과하기 위해 열심히 공부했다. (목적)'),
+    ('I am glad to meet you.', '나는 너를 만나서 기쁘다. (감정 + to)'), ('I have many books to read.', '나는 읽을 책이 많다. (명사 + to)')],
+    guide='문장을 읽고 알맞은 해석을 골라요. (명사적) 표시는 "~하는 것", 나머지는 명사적 용법이 아닌 함정이에요.'))
+D.step(TF('명사적 용법일까? T/F', [
+    ("'He likes to change his clothes every day.'의 to change는 명사적 용법이다.", True, '정답 ▶ T\n이유: likes 바로 뒤 → 목적어 "갈아입는 것을"\n해석 ▶ 그는 매일 옷을 갈아입는 것을 좋아한다.'),
+    ("'We went to the park and lay on the grass.'의 to는 to부정사이다.", False, '정답 ▶ F\n이유: to 다음이 the park(명사) → 전치사 to (공원에)\n해석 ▶ 우리는 공원에 가서 잔디 위에 누웠다.'),
+    ("'I am going to go shopping on Saturday.'의 to go는 명사적 용법이다.", False, '정답 ▶ F\n이유: be going to + 동사원형 = ~할 예정이다 (미래 표현)\n해석 ▶ 나는 토요일에 쇼핑하러 갈 예정이다.'),
+    ("'To see is to believe.'의 To see와 to believe는 둘 다 명사적 용법이다.", True, '정답 ▶ T\n이유: To see(보는 것은) = 주어, to believe(믿는 것이다) = 보어\n해석 ▶ 보는 것이 믿는 것이다. (백문이 불여일견)'),
+    ("'I was happy to talk with my uncle.'의 to talk는 '이야기하는 것'으로 해석한다.", False, "정답 ▶ F\n이유: happy(감정) + to부정사 → '이야기해서' (감정의 원인)\n해석 ▶ 나는 삼촌과 이야기해서 기뻤다."),
+    ("'She needed something to drink after dinner.'의 to drink는 '마시는 것을'로 해석한다.", False, "정답 ▶ F\n이유: something을 꾸며 '마실 (것)' (명사 + to)\n해석 ▶ 그녀는 저녁 식사 후에 마실 것이 필요했다."),
+    ("'He tried to win a gold medal.'의 to win은 tried의 목적어이다.", True, '정답 ▶ T\n이유: 일반동사 tried 바로 뒤 → 목적어 (따려고 노력했다)\n해석 ▶ 그는 금메달을 따려고 노력했다.'),
+    ("'He grew up to be a famous artist.'의 to be는 보어 역할의 명사적 용법이다.", False, "정답 ▶ F\n이유: grew up to be ~ = '자라서 ~이 되었다' (결과). be동사 뒤가 아니라 grew up 뒤예요.\n해석 ▶ 그는 자라서 유명한 화가가 되었다."),
+], '문장을 읽고 맞으면 T, 틀리면 F를 고르세요. 밑줄 부분을 "~하는 것"으로 바꿔 읽어 보세요.'))
+for en, ko in [('I need to buy a pen.', '나는 펜을 살 필요가 있다.'), ('We went to the park and lay on the grass.', '우리는 공원에 가서 잔디 위에 누웠다.'),
+               ('I am going to go shopping on Saturday.', '나는 토요일에 쇼핑하러 갈 예정이다.'), ('Jenny goes to the City Hall.', 'Jenny는 시청에 간다.'),
+               ('I was happy to talk with my uncle.', '나는 삼촌과 이야기해서 기뻤다.'), ("I went to the farmer's market to buy some carrots.", '나는 당근을 좀 사기 위해 농산물 시장에 갔다.'),
+               ('Her plan is to become a writer.', '그녀의 계획은 작가가 되는 것이다.'), ("My uncle's hobby is to ride a bicycle.", '삼촌의 취미는 자전거를 타는 것이다.')]: D.sent(en, ko)
+D.step(MC('쓰임이 다른 하나 고르기', [
+    ('밑줄 친 부분의 쓰임이 나머지와 <b>다른</b> 것은?', [U('We went to the park and lay on the grass.', 'to'), U('I need to buy a pen.', 'to buy'), U('I want to help poor people.', 'to help'), U('She began to learn French.', 'to learn'), U('He likes to change his clothes every day.', 'to change')],
+     '정답 ▶ We went to the park and lay on the grass.\n이유: to 다음이 the park(명사) → 전치사 to (공원에)\n오답 ▶ to buy / to help / to learn / to change는 동사 뒤 목적어 "~하는 것을" (명사적)'),
+    ('밑줄 친 부분의 쓰임이 나머지와 <b>다른</b> 것은?', [U('I am going to go shopping on Saturday.', 'to go'), U('To see is to believe.', 'To see'), U('I hope to hear from you soon.', 'to hear'), U('My hobby is to watch musicals.', 'to watch'), U('My friends like to go camping.', 'to go')],
+     '정답 ▶ I am going to go shopping on Saturday.\n이유: be going to + 동사원형 = ~할 예정이다 (미래 표현)\n오답 ▶ To see(주어) / to hear(목적어) / to watch(보어) / to go(목적어)는 모두 명사적'),
+    ('밑줄 친 부분의 쓰임이 나머지와 <b>다른</b> 것은?', [U('Jenny goes to the City Hall.', 'to'), U('Minho likes to study math.', 'to study'), U('Paul wants to go home early.', 'to go'), U('Sora began to learn the piano.', 'to learn'), U('Jiho hopes to be a pilot.', 'to be')],
+     '정답 ▶ Jenny goes to the City Hall.\n이유: to 다음이 the City Hall(장소 명사) → 전치사 to (시청에)\n오답 ▶ 나머지는 동사 뒤 to + 동사원형 → 목적어 (명사적)'),
+    ('밑줄 친 to부정사의 쓰임이 나머지와 <b>다른</b> 것은?', [U('I was happy to talk with my uncle.', 'to talk'), U('I want to be a teacher.', 'to be'), U('He plans to buy a new camera.', 'to buy'), U('They need to get some sleep.', 'to get'), U('To drink milk is good for your health.', 'To drink')],
+     "정답 ▶ I was happy to talk with my uncle.\n이유: happy(감정) + to부정사 → '이야기해서 기뻤다' (감정의 원인 · 부사적)\n오답 ▶ to be / to buy / to get(목적어) · To drink(주어)는 명사적"),
+    ('밑줄 친 to부정사의 쓰임이 나머지와 <b>다른</b> 것은?', [U("I went to the farmer's market to buy some carrots.", 'to buy'), U('I hope to see you soon.', 'to see'), U("Sam doesn't like to watch TV.", 'to watch'), U('My wish is to be a famous actor.', 'to be'), U('To exercise every morning is not easy.', 'To exercise')],
+     "정답 ▶ I went to the farmer's market to buy some carrots.\n이유: 끊어 보기 → '나는 농산물 시장에 갔다.'로 끝나요 → 당근을 사기 위해 (목적 · 부사적)\n오답 ▶ to see / to watch(목적어) · to be(보어) · To exercise(주어)는 명사적"),
+    ('밑줄 친 to부정사의 쓰임이 나머지와 <b>다른</b> 것은?', [U("My uncle's hobby is to ride a bicycle.", 'to ride'), U('Jane came to Seoul to see her grandparents.', 'to see'), U('Mr. Kim felt happy to win the game.', 'to win'), U('Jack wrote the letter to say sorry to her.', 'to say'), U('He cried to hear the news.', 'to hear')],
+     "정답 ▶ My uncle's hobby is to ride a bicycle.\n이유: is 뒤 보어 '자전거를 타는 것이다' → 명사적. 나머지 넷은 모두 명사적이 아니에요!\n오답 ▶ to see(보기 위해 · 목적) / to win(이겨서 · 감정) / to say(말하기 위해 · 목적) / to hear(듣고서 · 감정)\n포인트 ▶ 이번엔 명사적인 하나를 찾는 문제예요."),
+], '밑줄 친 to를 "~하는 것"으로 바꿔 읽어 보세요. 혼자만 다른 것을 고르면 돼요.'))
+D.step(MC('역할(주·목·보)이 다른 하나', [
+    ('밑줄 친 to부정사의 <b>역할</b>이 나머지와 다른 것은?', [U('Her plan is to become a writer.', 'to become'), U('She loves to study English.', 'to study'), U('She started to take notes.', 'to take'), U('She wants to write a great novel.', 'to write'), U('She likes to write about her friends in English.', 'to write')],
+     '정답 ▶ Her plan is to become a writer.\n이유: be동사 is 뒤 → 보어 "작가가 되는 것이다"\n오답 ▶ loves / started / wants / likes 바로 뒤 → 목적어\n포인트 ▶ 모두 명사적이지만 역할이 달라요.'),
+    ('밑줄 친 부분과 <b>역할까지</b> 같은 것은?' + Q('My hope is to be a good father.', 'to be'), [U('His job is to deliver the mail.', 'to deliver'), U('To eat rice is unusual in England.', 'To eat'), U('To drive a sports car is very interesting.', 'To drive'), U('I want to study English.', 'to study'), U('I like to read newspapers every morning.', 'to read')],
+     '정답 ▶ His job is to deliver the mail.\n이유: 주어진 문장과 같이 be동사 is 뒤 → 보어 "~하는 것이다"\n오답 ▶ To eat / To drive(맨 앞 → 주어) · to study / to read(동사 뒤 → 목적어)\n해석 ▶ 내 소망은 좋은 아빠가 되는 것이다. / 그의 일은 우편물을 배달하는 것이다.'),
+], '모두 명사적 용법이에요. 자리(맨 앞 · 일반동사 뒤 · be동사 뒤)를 보고 역할을 비교하세요.'))
+D.step(MC('주어진 문장과 쓰임이 같은 것', [
+    ('밑줄 친 부분과 쓰임이 <b>같은</b> 것은?' + Q('I need to study English very hard.', 'to study'), [U('I want to take a walk along the river.', 'to take'), U('I am glad to meet you.', 'to meet'), U('I have many books to read.', 'to read'), U('Would you like something to eat?', 'to eat'), U('He grew up to be a famous artist.', 'to be')],
+     "정답 ▶ I want to take a walk along the river.\n이유: 둘 다 동사(need, want) 뒤 목적어 '~하는 것을' (명사적)\n오답 ▶ to meet(만나서 · 감정) / to read(읽을 · books 꾸밈) / to eat(먹을 · something 꾸밈) / to be(자라서 ~이 되었다 · 결과)"),
+    ('밑줄 친 부분과 쓰임이 <b>같은</b> 것은?' + Q('He wanted to become a famous runner.', 'to become'), [U('She likes to dance on the stage.', 'to dance'), U('We go to school every morning.', 'to'), U('I am very happy to see you again.', 'to see'), U('He has many friends to play with.', 'to play'), U('I usually get up early to go jogging.', 'to go')],
+     "정답 ▶ She likes to dance on the stage.\n이유: 둘 다 동사(wanted, likes) 뒤 목적어 (명사적)\n오답 ▶ to school(전치사) / to see(만나서 · 감정) / to play(함께 놀 · friends 꾸밈) / to go(조깅하러 가기 위해 · 목적)"),
+    ('밑줄 친 부분과 쓰임이 <b>같은</b> 것은?' + Q('Sometimes I want to say "Leave me alone!"', 'to say'), [U('He tried to win a gold medal in the Olympics.', 'to win'), U('I studied hard to pass the exam.', 'to pass'), U('We started exercising to become healthy.', 'to become'), U('She needed something to drink after dinner.', 'to drink'), U('He went to Australia to learn English for a year.', 'to learn')],
+     "정답 ▶ He tried to win a gold medal in the Olympics.\n이유: 둘 다 동사(want, tried) 뒤 목적어 (명사적)\n오답 ▶ to pass / to become / to learn(~하기 위해 · 목적) · to drink(마실 · something 꾸밈)"),
+    ('밑줄 친 부분과 쓰임이 <b>같은</b> 것은?' + Q('Mr. van Gogh likes to be with his family.', 'to be'), [U('Mina decided to exercise every day.', 'to exercise'), U('I am going to go to the library.', 'to go'), U('She was on the way to the movies.', 'to'), U('I was sad to hear the news.', 'to hear'), U('I need a pen to write with.', 'to write')],
+     "정답 ▶ Mina decided to exercise every day.\n이유: 둘 다 동사(likes, decided) 뒤 목적어 '~하는 것을' (명사적)\n오답 ▶ going to go(~할 예정 · 미래) / to the movies(전치사) / to hear(듣고서 · 감정) / to write(쓸 · pen 꾸밈)"),
+], '주어진 문장의 to부정사가 "~하는 것"인지 먼저 확인하고, 같은 쓰임을 고르세요.'))
+D.step(MC('같은 것끼리 묶기', [
+    ('밑줄 친 to부정사의 쓰임이 같은 것끼리 짝지어진 것은?<br>ⓐ Scientists expect <u>to meet</u> aliens.<br>ⓑ I\'m saving money <u>to travel</u> around Europe.<br>ⓒ Does he prefer <u>to travel</u> by car?<br>ⓓ Jackie doesn\'t have any bottles <u>to recycle</u>.<br>ⓔ She grew up <u>to become</u> a famous actress.',
+     ['ⓐ, ⓒ', 'ⓐ, ⓑ', 'ⓑ, ⓓ', 'ⓒ, ⓔ', 'ⓓ, ⓔ'],
+     '정답 ▶ ⓐ, ⓒ\n이유: expect / prefer 뒤 목적어 "~하는 것을" (명사적)\n오답 ▶ ⓑ 여행하기 위해(목적) ⓓ 재활용할(bottles 꾸밈) ⓔ 자라서 ~이 되었다(결과)', True),
+    ('to부정사의 쓰임이 같은 것끼리 묶인 것은?<br>(A) My hope is <u>to go</u> to England.<br>(B) He must be rich <u>to have</u> such a big house.<br>(C) <u>To study</u> hard is important for students.<br>(D) He grew up <u>to be</u> a great doctor.<br>(E) I like <u>to eat</u> out with my family.',
+     ['(A), (C), (E)', '(A), (D)', '(B), (E)', '(B), (D), (E)', '(A), (B), (D)'],
+     '정답 ▶ (A), (C), (E)\n이유: (A) is 뒤 보어 (C) 맨 앞 주어 (E) like 뒤 목적어 → 모두 명사적\n오답 ▶ (B) 저렇게 큰 집을 가진 걸 보니(판단의 근거) (D) 자라서 ~이 되었다(결과) → 명사적 아님', True),
+    ('<보기>의 밑줄 친 부분과 쓰임이 같은 것을 <b>모두</b> 고른 것은?<br>&lt;보기&gt; <u>To get up</u> early is good for your health.<br>ⓐ I\'m glad <u>to meet</u> you.<br>ⓑ She has a lot of work <u>to do</u>.<br>ⓒ We wanted <u>to win</u> the game.<br>ⓓ He studies hard <u>to be</u> a doctor.<br>ⓔ My hobby is <u>to play</u> the piano.',
+     ['ⓒ, ⓔ', 'ⓐ, ⓒ', 'ⓑ, ⓓ', 'ⓐ, ⓓ, ⓔ', 'ⓑ, ⓒ, ⓔ'],
+     '정답 ▶ ⓒ, ⓔ\n이유: <보기>는 주어 "일찍 일어나는 것은"(명사적). ⓒ 목적어 · ⓔ 보어도 명사적이에요.\n오답 ▶ ⓐ 만나서(감정) ⓑ 해야 할(work 꾸밈) ⓓ 의사가 되기 위해(목적)', True),
+], '하나씩 "~하는 것"으로 읽어 보고, 명사적인 것끼리 묶으세요.'))
+DAYS.append(D.done())
+
+# ═════════ DAY 12 · 실전 ② 어법 판단 (워크북 객관식 Pattern 1) ═════════
+D = Day('t12', '실전 ② 어법상 옳은 것 · 틀린 것', '워크북 Grammar Build Up 객관식 · 동사 짝 · to + 동사원형 · 개수 세기')
+D.note('어법 문제 체크리스트', [
+    ('1. to 뒤는 동사원형', 'to takes ✗ · to seeing ✗ · to won ✗ → to take / to see / to win'),
+    ('2. 동사 짝 확인', 'want · hope · plan · decide · wish · need · learn + to부정사 / enjoy · finish · mind · give up · keep · avoid + -ing / like · love · begin · start는 둘 다'),
+    ('3. 동사 두 개 연달아 ✗', 'She wants go ✗ → wants to go · His dream is be ✗ → is to be'),
+    ('4. 주어 자리', 'To slept ✗ → To sleep / Playing games are ✗ → is (to부정사·동명사 주어는 단수)'),
+    ('5. 부정은 don\'t / doesn\'t', '그녀는 가고 싶어 하지 않는다 → She doesn\'t want to go. (She don\'t wants ✗)'),
+    ('6. 개수 문제', '한 문장씩 1~4번을 체크하며 ✔/✗ 표시 → 마지막에 세기'),
+])
+D.step(PICK(D, '빠르게 어법 고르기', [
+    ('Jane hopes {to take|taking} many pictures.', 'Jane은 사진을 많이 찍기를 바란다.', '정답 ▶ to take\n이유: hope + to부정사'),
+    ('We hope {to see|seeing} you soon.', '우리는 너를 곧 보기를 바란다.', '정답 ▶ to see\n이유: hope + to부정사 (교과서 예문)'),
+    ("Brian doesn't want {to eat|eating} ice cream.", 'Brian은 아이스크림을 먹고 싶어 하지 않는다.', '정답 ▶ to eat\n이유: want + to부정사 (부정문이어도 같아요)'),
+    ('Sumin wanted {to dance|dancing} well.', '수민이는 춤을 잘 추고 싶었다.', '정답 ▶ to dance\n이유: want + to부정사'),
+    ('Who decided {to join|joining} me this coming Friday?', '누가 이번 금요일에 나와 함께하기로 했니?', '정답 ▶ to join\n이유: decide + to부정사'),
+    ('He kept {talking|to talk} on the phone.', '그는 계속 통화를 했다.', '정답 ▶ talking\n이유: keep + 동명사(-ing) = 계속 ~하다'),
+    ('Ted plans {to go|going} camping this weekend.', 'Ted는 이번 주말에 캠핑하러 갈 계획이다.', '정답 ▶ to go\n이유: plan + to부정사 (교과서 예문)'),
+    ('Her dream is {to become|become} a pianist.', '그녀의 꿈은 피아니스트가 되는 것이다.', '정답 ▶ to become\n이유: is 뒤 보어 "~하는 것이다" → to become (is become ✗ 동사 두 개)'),
+]))
+D.sent("Brian doesn't want to eat ice cream.", 'Brian은 아이스크림을 먹고 싶어 하지 않는다.')
+D.sent("She doesn't want to go swimming.", '그녀는 수영하러 가고 싶어 하지 않는다.')
+D.step(MC('빈칸 · 영작 · 배열', [
+    ('빈칸에 들어갈 말로 알맞지 <b>않은</b> 것은?' + Q('I ______ to take a trip around the world.'), ['enjoy', 'plan', 'hope', 'wish', 'want'],
+     '정답 ▶ enjoy\n이유: 빈칸 뒤 to take(to부정사) → enjoy는 동명사(-ing)만 써요. (enjoy taking ✔)\n오답 ▶ plan / hope / wish / want + to부정사 ✔'),
+    ('빈칸에 들어갈 말로 알맞지 <b>않은</b> 것은?' + Q('I ______ to buy a new camera.'), ['gave up', 'hope', 'forgot', 'want', 'decided'],
+     '정답 ▶ gave up\n이유: give up은 동명사(-ing)만 → gave up buying\n오답 ▶ hope / want / decided + to부정사 ✔, forgot to buy(사는 것을 잊었다) ✔'),
+    ('빈칸에 들어갈 말로 알맞지 <b>않은</b> 것은?' + Q('When I was a child, I wanted ______.'), ['happy with my family', 'a pet dog', 'to have a new dress', 'some interesting books', 'to live in a beautiful house'],
+     '정답 ▶ happy with my family\n이유: want의 목적어 자리에는 명사(구)나 to부정사가 와요. happy는 형용사라 올 수 없어요. (wanted to be happy ✔)\n오답 ▶ a pet dog / some interesting books(명사) · to have / to live(to부정사) ✔'),
+    ('우리말을 영어로 바르게 옮긴 것은?' + Q('그녀는 수영하러 가고 싶어 하지 않는다.'), ["She doesn't want to go swimming.", "She don't wants going to swim.", "She doesn't want going swimming.", 'She wants not to go to swim.', 'She wants to not go swimming.'],
+     "정답 ▶ She doesn't want to go swimming.\n이유: 주어 She → doesn't + 동사원형 want, want + to부정사, '수영하러 가다' = go swimming\n오답 ▶ don't wants(✗ doesn't want) / want going(✗ to go) / wants not to go(\"가지 않기를 원한다\"로 뜻이 달라짐)"),
+    ("&lt;보기&gt;의 단어를 배열하여 문장을 만들 때 <b>5번째</b>로 올 단어는?<br><b>cream / to / eat / want / Brian / doesn't / ice</b>", ['eat', 'Brian', 'want', 'cream', "doesn't"],
+     "정답 ▶ eat\n이유: Brian(1) doesn't(2) want(3) to(4) eat(5) ice(6) cream(7).\n해석 ▶ Brian은 아이스크림을 먹고 싶어 하지 않는다."),
+    ('괄호 안에서 어법상 올바른 것을 순서대로 고른 것은?<br>• We want (to eat / eating) pizza.<br>• When did Jane (want / wants) to go there?<br>• She (wants / wanted) to go there last week.', ['to eat - want - wanted', 'to eat - want - wants', 'eating - wants - wanted', 'to eat - wants - wanted', 'eating - want - wanted'],
+     '정답 ▶ to eat - want - wanted\n이유: ① want + to부정사 ② did가 있는 의문문 → 동사원형 want ③ last week(과거) → wanted'),
+]))
+D.step(MC('어법상 올바른 문장 고르기', [
+    ('어법상 <b>올바른</b> 문장은?', ['What do you want to do this weekend?', 'My plan is to traveling the world.', 'She wants go to the zoo next Friday.', 'What will the weather like tomorrow?', 'Will he comes to the birthday party?'],
+     '정답 ▶ What do you want to do this weekend?\n오답 ▶ to traveling → to travel / wants go → wants to go / will the weather like → will the weather be like / Will he comes → Will he come'),
+    ('어법상 <b>올바른</b> 문장은?', ['She hopes to win the first prize.', 'Mary wants to studies English.', 'I like play soccer after school.', 'He wanted to met Dojin yesterday.', "I don't want playing the piano every day."],
+     '정답 ▶ She hopes to win the first prize.\n오답 ▶ to studies → to study / like play → like to play(playing) / to met → to meet(to 뒤는 늘 동사원형, 과거여도!) / want playing → want to play'),
+    ('어법상 <b>올바른</b> 문장은?', ['Bomin finished writing the report.', 'Mike minds to read books.', "Minjung won't give up to study English.", 'Woojin expects seeing his favorite singer.', 'Mingi hopes playing computer games every day.'],
+     '정답 ▶ Bomin finished writing the report.\n이유: finish + 동명사\n오답 ▶ minds to read → minds reading / give up to study → give up studying / expects seeing → expects to see / hopes playing → hopes to play'),
+    ('어법상 <b>올바른</b> 문장은?', ['Her job is to teach Chinese.', 'His dream is be a pilot.', 'I hope to seeing you soon.', "I don't like watch sports games.", 'She enjoys to read a book.'],
+     '정답 ▶ Her job is to teach Chinese.\n이유: is 뒤 보어 → to teach\n오답 ▶ is be → is to be / to seeing → to see / like watch → like to watch(watching) / enjoys to read → enjoys reading'),
+    ('어법상 <b>올바른</b> 문장은?', ['He decided to take a piano lesson.', 'I wish be an English teacher.', 'Jack and Tom enjoyed to ride a horse.', 'She kept to cry while watching the movie.', 'I love have some ice cream.'],
+     '정답 ▶ He decided to take a piano lesson.\n오답 ▶ wish be → wish to be / enjoyed to ride → enjoyed riding / kept to cry → kept crying / love have → love to have(having)'),
+    ('어법상 <b>올바른</b> 문장은?', ['I hope to go camping with my family.', 'My hobby is collect stamps.', 'She likes to listening to music.', 'To slept enough is good for your health.', 'Playing computer games are very interesting.'],
+     '정답 ▶ I hope to go camping with my family.\n오답 ▶ is collect → is to collect(collecting) / to listening → to listen / To slept → To sleep / Playing … are → is (동명사 주어는 단수)'),
+], '선택지를 하나씩 체크리스트(동사원형 · 동사 짝 · 동사 두 개 · 주어)로 확인하세요.'))
+D.step(MC('어법상 어색한 문장 고르기', [
+    ('어법상 <b>어색한</b> 문장은?', ['He hopes changing his hair color.', 'I need to take a rest.', 'I love to walk the dog in the park.', 'She likes playing the computer game.', 'My sister and I decided to clean our room.'],
+     '정답 ▶ He hopes changing his hair color.\n이유: hope + to부정사 → hopes to change\n오답 ▶ need to ✔ / love to ✔ / like -ing ✔(둘 다 OK) / decided to ✔'),
+    ('어법상 <b>어색한</b> 문장은?', ['I finished to do my homework.', 'I like to play badminton.', 'Swimming is good for you.', 'Playing soccer is really fun.', 'I plan to visit my grandparents.'],
+     '정답 ▶ I finished to do my homework.\n이유: finish + 동명사 → finished doing\n오답 ▶ like to ✔ / 동명사 주어 + is ✔ / plan to ✔'),
+    ('밑줄 친 부분 중 어법상 <b>어색한</b> 것은?', ['Do you mind <u>to open</u> the door?', 'Tom is planning <u>not to skip</u> breakfast.', 'He finished <u>running</u> to the finish line.', 'She hoped <u>to be</u> a movie star.', 'They kept <u>writing</u> letters to their teacher.'],
+     '정답 ▶ Do you mind to open the door?\n이유: mind + 동명사 → mind opening\n오답 ▶ plan + not to(부정) ✔ / finish -ing ✔ / hope to ✔ / keep -ing ✔'),
+    ('밑줄 친 부분 중 어법상 <b>어색한</b> 것은?', ['I want <u>to having</u> pizza.', 'I enjoy <u>reading</u> a book.', 'We finished <u>cleaning</u> our room.', "Don't give up <u>practicing</u> hard.", 'She kept <u>smiling</u> and looking at her baby.'],
+     '정답 ▶ I want to having pizza.\n이유: to 뒤는 동사원형 → to have\n오답 ▶ enjoy / finish / give up / keep + -ing ✔'),
+]))
+D.step(MC('개수 세기 · 옳은 것끼리', [
+    ('어법상 <b>틀린</b> 문장의 개수는?<br>• I enjoy playing soccer after school.<br>• I like to eat with my friend, Woobin.<br>• She want to be a teacher.<br>• I hope seeing a movie this weekend.<br>• He began crying after reading the book.<br>• They wish to won the game.', ['3개', '1개', '2개', '4개', '5개'],
+     '정답 ▶ 3개\n틀린 것 ▶ She want → She wants / hope seeing → hope to see / to won → to win\n맞는 것 ▶ enjoy -ing ✔ / like to ✔ / begin -ing ✔(둘 다 OK)', True),
+    ('( ) 안의 동사를 <b>to부정사</b>로 바꿔야 하는 것의 개수는?<br>ⓐ She avoided ______ with me. (go)<br>ⓑ I decided ______ to the city. (move)<br>ⓒ You need ______ some rest. (take)<br>ⓓ He promised ______ here on time. (be)<br>ⓔ I plan ______ my aunt. (visit)<br>ⓕ Don\'t give up ______ again. (try)', ['4개', '1개', '2개', '3개', '5개'],
+     '정답 ▶ 4개\n이유: ⓑ to move ⓒ to take ⓓ to be ⓔ to visit\n오답 ▶ ⓐ avoid going ⓕ give up trying (동명사만)', True),
+    ('어법상 <b>옳은</b> 문장의 개수는?<br>• I hope getting a good score.<br>• She hates playing games all day.<br>• He kept to talk on the phone.<br>• Do you mind opening the door?<br>• She enjoys watching dramas on TV.<br>• We gave up writing all the sentences.<br>• She decided buying a new refrigerator.<br>• The actors started to sing on the stage.', ['5개', '1개', '2개', '3개', '4개'],
+     '정답 ▶ 5개\n옳은 것 ▶ hate -ing(둘 다 OK) / mind opening / enjoy watching / gave up writing / started to sing(둘 다 OK)\n틀린 것 ▶ hope getting → hope to get / kept to talk → kept talking / decided buying → decided to buy', True),
+    ('어법상 <b>옳은</b> 문장끼리 짝지어진 것은?<br>Ⓐ Keeping a diary is fun.<br>Ⓑ To live without air is impossible.<br>Ⓒ Do you mind to open the door?<br>Ⓓ My dream is becoming a singer.<br>Ⓔ Jane will learn to speak Spanish.', ['Ⓐ, Ⓑ, Ⓓ, Ⓔ', 'Ⓑ, Ⓔ', 'Ⓑ, Ⓓ, Ⓔ', 'Ⓑ, Ⓒ, Ⓓ', 'Ⓐ, Ⓑ, Ⓒ, Ⓓ, Ⓔ'],
+     '정답 ▶ Ⓐ, Ⓑ, Ⓓ, Ⓔ\n이유: Ⓐ 동명사 주어 + is ✔ Ⓑ to부정사 주어 + is ✔ Ⓓ is 뒤 보어 자리에 동명사도 OK(becoming = 되는 것) ✔ Ⓔ learn to ✔\n틀린 것 ▶ Ⓒ mind to open → mind opening', True),
+], '문장마다 ✔ / ✗를 표시하면서 세어 보세요.'))
 DAYS.append(D.done())
 
 for i, d in enumerate(DAYS): d['name'] = 'DAY %d' % (i + 1)
