@@ -448,121 +448,186 @@
   }
 
   /* ---------- Wrap-up 시험 ----------
-     종이 시험지와 같은 문항을 앱에서 풀고 제출한다. 처음 제출한 점수가 선생님 시트(현황 'Wrap-up …' 줄)로 가고,
-     틀린 문제는 오답 노트('Wrap-up …' 묶음)에 쌓인다. 다시 풀기는 연습이라 처음 점수는 바뀌지 않는다. */
+     아래 탭 'Wrap-up'에서 고른다.
+     종이 시험지와 같은 문항을 앱에서 풀고 제출 → 처음 제출한 점수가 선생님 시트(현황 'Wrap-up …' 줄)로 가고,
+     틀린 문제는 오답 노트('Wrap-up …' 묶음)에 쌓인다. 다시 풀기는 연습이라 처음 점수는 바뀌지 않는다.
+     서술형(kind: 'write'): 칸마다 자동 채점, 정해 둔 답과 다르면 '확인 필요'(review) → 선생님이 시트에서 답을 보고 확인. */
   var TV = null;
   function TST(t) { S.tests = S.tests || {}; return S.tests[t.id] || (S.tests[t.id] = { draft: null, first: null, tries: [] }); }
   function testDay(t) { return TD.filter(function (x) { return x.test === t; })[0]; }
-  function testQ(t, k) {
+  function isW(it) { return it.kind === 'write'; }
+  function hasW(t) { return t.items.some(isW); }
+  function wnorm(s) { return norm(String(s || '').replace(/[“”]/g, '"')).replace(/[.\s]+$/, ''); }
+  function testQ(t, k, b) {
     var it = t.items[k];
+    if (isW(it)) { var bl = it.blanks[b];
+      return { t: 'verb', s: bl.s, v: bl.v, a: bl.ans.concat(bl.ans.map(function (x) { return x + '.'; })), ph: '답 쓰기', ex: '모범 답안 ▶ ' + it.model + '\n' + it.ex,
+        key: t.short + ' ' + it.n + (bl.label ? ' ' + bl.label : ''), stepTitle: t.title, guide: '' }; }
     return { t: 'choice', prompt: '<div class="wq">' + (it.ctx ? '<details class="wctx" open><summary>지문</summary>' + it.ctx + '</details>' : '') +
         '<div class="wq-stem">' + it.n + '. ' + it.stem + '</div>' + it.body + '</div>',
-      opts: it.opts.slice(), ans: it.opts[it.ans], ex: '정답 ▶ ' + CIRC[it.ans] + ' ' + strip(it.opts[it.ans]) + '\n' + it.ex,
+      opts: it.opts.slice(), ans: it.opts[it.ans], ex: '정답 ▶ ' + CIRC[it.ans] + ' ' + strip(it.opts[it.ans]) + (it.okos ? ' (' + it.okos[it.ans] + ')' : '') + '\n' + it.ex + ((it.words || []).length ? '\n단어 ▶ ' + it.words.map(function (w) { return w[0] + ' ' + w[1]; }).join(' · ') : ''),
       key: t.short + ' ' + it.n + '번', num: true, fixed: true, optEn: it.en, stepTitle: t.title, guide: '' };
   }
-  function testLeft(t) {
-    var st = TST(t), d = testDay(t); if (!st.first) return [];
-    return st.first.wrong.filter(function (k) { var e = notes()[noteId(testQ(t, k), d)]; return !e || !e.ok; });
+  /* 채점: { score, max, c(선택형 맞은 수), mcN, wrong: [문항 번호(k)], wb: {'k_b': 'ok'|'no'|'chk'} } */
+  function grade(t, a) {
+    var r = { score: 0, max: 0, c: 0, mcN: 0, wrong: [], wb: {} };
+    t.items.forEach(function (it, k) {
+      r.max += it.pts;
+      if (!isW(it)) { r.mcN++; if (a[k] === it.ans) { r.c++; r.score += it.pts; } else r.wrong.push(k); return; }
+      var bad = false;
+      it.blanks.forEach(function (bl, b) {
+        var v = wnorm(a[k + '_' + b]), st = !v ? 'no' : bl.ans.some(function (x) { return wnorm(x) === v; }) ? 'ok' : (bl.review || (bl.chk || []).some(function (x) { return wnorm(x) === v; })) ? 'chk' : 'no';
+        r.wb[k + '_' + b] = st; if (st === 'ok') r.score += bl.pts; else bad = true;
+      });
+      if (bad) r.wrong.push(k);
+    });
+    return r;
   }
-  function noteAddTest(t, k) {
-    var d = testDay(t), q = testQ(t, k), id = noteId(q, d), e = notes()[id] || (notes()[id] = { id: id, d: d.id, wrong: 0, conf: false, ok: false, first: Date.now() });
-    e.q = q; e.at = Date.now(); e.wrong++; e.ok = false; noteSend(e);
+  function recScore(t, rec) { return rec.score != null ? rec.score : rec.c * (t.items[0].pts || 5); }
+  function recMax(t, rec) { return rec.max != null ? rec.max : t.items.reduce(function (n, it) { return n + it.pts; }, 0); }
+  function noteKeys(t, k) { var it = t.items[k]; return isW(it) ? it.blanks.map(function (bl, b) { return bl.note ? b : -1; }).filter(function (b) { return b >= 0; }) : [null]; }
+  function testLeft(t) {
+    var st = TST(t), d = testDay(t), out = []; if (!st.first) return out;
+    st.first.wrong.forEach(function (k) {
+      var wb = st.first.wb || {}, left = noteKeys(t, k).some(function (b) {
+        if (b != null && wb[k + '_' + b] === 'ok') return false;
+        var e = notes()[noteId(testQ(t, k, b), d)]; return !e || !e.ok; });
+      if (left) out.push(k);
+    });
+    return out;
+  }
+  function noteAddTest(t, k, wb) {
+    var d = testDay(t);
+    noteKeys(t, k).forEach(function (b) {
+      if (b != null && wb && wb[k + '_' + b] === 'ok') return;
+      var q = testQ(t, k, b), id = noteId(q, d), e = notes()[id] || (notes()[id] = { id: id, d: d.id, wrong: 0, conf: false, ok: false, first: Date.now() });
+      e.q = q; e.at = Date.now(); e.wrong++; e.ok = false; noteSend(e);
+    });
+  }
+  function wText(t, rec) { /* 서술형 답과 채점 결과 (시트 '틀린 문제' 칸) */
+    var out = [];
+    t.items.forEach(function (it, k) { if (!isW(it)) return;
+      it.blanks.forEach(function (bl, b) { var st = (rec.wb || {})[k + '_' + b]; if (st === 'ok') return;
+        out.push(it.n.replace('서술형 ', '서') + (bl.label ? bl.label : '') + ' "' + cut(rec.a[k + '_' + b] || '', 60) + '" ' + (st === 'chk' ? '확인 필요' : '✗')); }); });
+    return out.join(' / ');
   }
   function reportTest(kind, t, extra) {
     if (!SHEET || !S.name) return;
     try {
       var st = TST(t), f = st.first; if (!f) return;
-      var left = testLeft(t), n = t.items.length, num = function (ks) { return ks.map(function (k) { return t.items[k].n; }).join(', '); };
+      var left = testLeft(t), w = hasW(t), num = function (ks) { return ks.map(function (k) { return t.items[k].n; }).join(', '); };
+      var mcw = f.wrong.filter(function (k) { return !isW(t.items[k]); }), ww = wText(t, f);
       var row = { t: Date.now(), kind: kind, name: S.name, unitId: P.id, school: P.school, unit: P.unit + ' ' + P.title, day: 'Wrap-up ' + t.short, range: t.school,
-        done: 1, total: 1, c: f.c, tt: n, pct: pctOf(f.c, n), attempt: 1 + (st.tries || []).length, finished: true,
+        done: 1, total: 1, c: w ? recScore(t, f) : f.c, tt: w ? recMax(t, f) : t.items.length, pct: pctOf(recScore(t, f), recMax(t, f)), attempt: 1 + (st.tries || []).length, finished: true,
         review: !f.wrong.length ? '틀린 문제 없음' : left.length ? '안 함' : '완료', wrongN: left.length,
         started: f.started || 0, ended: f.at, mins: f.started ? Math.max(1, Math.round((f.at - f.started) / 60000)) : '', code: '',
-        wrong: f.wrong.length ? '틀린 번호 ' + num(f.wrong) + (left.length ? ' · 남은 오답 ' + num(left) : ' · 오답 모두 해결') : '',
+        wrong: (mcw.length ? '틀린 번호 ' + num(mcw) : '') + (ww ? (mcw.length ? ' · ' : '') + '서술형 ' + ww : '') + (f.wrong.length ? (left.length ? ' · 남은 오답 ' + num(left) : ' · 오답 모두 해결') : ''),
         weak: '', dev: devId(), step: t.title, stepScore: '' };
       if (extra) Object.keys(extra).forEach(function (k) { row[k] = extra[k]; });
       var q = outbox(); q.push(row); lsSet(OUTK, JSON.stringify(q.slice(-300)));
     } catch (e) {}
     flush();
   }
+  function testState(t) { var st = TST(t); return st.first ? (testLeft(t).length ? 'rev' : 'done') : st.draft ? 'now' : 'wait'; }
+  function testTag(t) { var st = TST(t), f = st.first; return f ? pctOf(recScore(t, f), recMax(t, f)) + '점' + (testLeft(t).length ? ' · 오답' : '') : st.draft ? '푸는 중' : ''; }
+  function testCardHTML(ti) {
+    var t = TESTS[ti], st = TST(t), f = st.first, dr = st.draft, left = testLeft(t), n = t.items.length, w = hasW(t);
+    var status = f ? '<b>' + pctOf(recScore(t, f), recMax(t, f)) + '점</b>' + (w ? '' : ' (' + f.c + '/' + n + ')') + ' · ' + fmtTime(f.at) + ' 제출' +
+        (f.wrong.length ? (left.length ? ' · 틀린 문제 <b>' + left.length + '개</b> 남음' : ' · 오답 모두 해결 ✓') : ' · 만점!') +
+        (f.wb && Object.keys(f.wb).some(function (k) { return f.wb[k] === 'chk'; }) ? '<br><small>서술형 일부는 선생님이 확인해요 (점수에 아직 안 들어감)</small>' : '')
+      : dr ? '<b>푸는 중</b> · ' + Object.keys(dr.a).filter(function (k) { return dr.a[k] !== '' && dr.a[k] != null; }).length + '칸 답함' : '아직 안 풀었어요';
+    var btns = f ? (left.length ? '<button class="btn plank" data-tnote="' + ti + '">틀린 문제 다시 풀기 (' + left.length + ')</button>' : '') + '<button class="btn" data-tres="' + ti + '">결과 · 해설 보기</button>' +
+        '<button class="btn ghost" data-tgo2="' + ti + '">' + (dr ? '연습 이어서 풀기' : '처음부터 다시 풀기 (연습)') + '</button>'
+      : '<button class="btn plank" data-tgo2="' + ti + '">' + (dr ? '이어서 풀기' : '시험 시작하기') + '</button>';
+    return '<section class="card day" style="margin-bottom:12px"><div class="eyebrow">' + E(t.school) + ' · ' + n + '문항' + (w ? ' (서술형 포함)' : '') + ' · ' + t.minutes + '분</div>' +
+      '<h2 style="margin-top:4px">' + E(t.title) + '</h2>' +
+      '<div class="status">' + status + '</div><div class="acts">' + btns + '</div></section>';
+  }
   function testsHTML() {
     return '<h3 class="sech">Wrap-up 시험</h3><p class="sub" style="margin:0 0 12px">종이 시험지 대신 여기에서 답을 입력해요. <b>처음 제출한 점수</b>가 선생님께 전달되고, 틀린 문제는 오답 노트에 쌓여요.</p>' +
-      TESTS.map(function (t, ti) {
-        var st = TST(t), f = st.first, dr = st.draft, left = testLeft(t), n = t.items.length;
-        var status = f ? '<b>' + pctOf(f.c, n) + '점</b> (' + f.c + '/' + n + ') · ' + fmtTime(f.at) + (f.wrong.length ? (left.length ? ' · 틀린 문제 <b>' + left.length + '개</b> 남음' : ' · 오답 모두 해결 ✓') : ' · 만점!')
-          : dr ? '<b>푸는 중</b> · ' + Object.keys(dr.a).length + '/' + n + '문항 답함' : '아직 안 풀었어요';
-        var btns = f ? (left.length ? '<button class="btn plank" data-tnote="' + ti + '">틀린 문제 다시 풀기 (' + left.length + ')</button>' : '') + '<button class="btn" data-tres="' + ti + '">결과 · 해설 보기</button>' +
-            '<button class="btn ghost" data-tgo2="' + ti + '">' + (dr ? '연습 이어서 풀기' : '처음부터 다시 풀기 (연습)') + '</button>'
-          : '<button class="btn plank" data-tgo2="' + ti + '">' + (dr ? '이어서 풀기' : '시험 시작하기') + '</button>';
-        return '<section class="card day" style="margin-bottom:12px"><div class="eyebrow">' + E(t.school) + ' · ' + n + '문항 · ' + t.minutes + '분</div><h2 style="margin-top:4px">' + E(t.title) + '</h2>' +
-          '<div class="status">' + status + '</div><div class="acts">' + btns + '</div></section>';
-      }).join('');
+      TESTS.map(function (_, ti) { return testCardHTML(ti); }).join('');
+  }
+  function expHTML(it, my, wrong) { /* 정답 이유 · 선택지 해석 · 단어 뜻 · 문장 해석 (시험지에 옮겨 적기) */
+    var o = it.okos || [];
+    return '<p class="wex"><b>정답 ' + CIRC[it.ans] + '</b> ' + E(it.ex) + '</p>' +
+      '<ol class="wopts">' + it.opts.map(function (x, i) { return '<li class="' + (i === it.ans ? 'right' : i === my ? 'wrong' : '') + '"><span>' + CIRC[i] + '</span><span><span' + (it.en ? ' class="en"' : '') + '>' + x + '</span>' + (o[i] && strip(x) !== o[i] ? '<small class="wko">' + E(o[i]) + '</small>' : '') + '</span></li>'; }).join('') + '</ol>' +
+      ((it.words || []).length ? '<div class="wwords"><b>단어</b>' + it.words.map(function (w) { return '<span><i class="en">' + E(w[0]) + '</i> ' + E(w[1]) + '</span>'; }).join('') + '</div>' : '') +
+      ((it.kos || []).length ? '<details class="wkos"' + (wrong ? ' open' : '') + '><summary>문장 해석 (' + it.kos.length + '문장)</summary>' + it.kos.map(function (p) { return '<p><span class="en">' + E(p[0]) + '</span><small>' + E(p[1]) + '</small></p>'; }).join('') + '</details>' : '');
   }
   function startTest(ti) {
     var t = TESTS[ti], st = TST(t);
     if (!st.draft) { st.draft = { a: {}, started: Date.now(), retake: !!st.first }; save(); }
     TV = { ti: ti, armed: false }; examView();
   }
-  function examView() {
+  function examView() { /* 답안지만: 문제는 종이 시험지로 풀고 여기에는 답만 입력 */
     RS = null; top();
     var t = TESTS[TV.ti], st = TST(t), dr = st.draft, a = dr.a, n = t.items.length;
+    var filled = function (k) { var it = t.items[k]; return isW(it) ? it.blanks.every(function (_, b) { return wnorm(a[k + '_' + b]); }) : a[k] != null; };
+    var cnt = function () { return t.items.filter(function (_, k) { return filled(k); }).length; };
     var h = '<div class="topbar"><div class="row"><button class="xbtn" id="tquit" aria-label="나가기"><span aria-hidden="true">✕</span></button><span class="crumb"><b>' + E(t.title) + '</b>' +
-      (dr.retake ? ' · 연습 (점수 그대로)' : ' · 저장됨') + '</span><span class="qpill" id="tcount">' + Object.keys(a).length + ' / ' + n + '</span></div></div>';
+      (dr.retake ? ' · 연습 (점수 그대로)' : ' · 답안지') + '</span><span class="qpill" id="tcount">' + cnt() + ' / ' + n + '</span></div></div>';
     h += '<div class="stack examwrap"><p class="note" style="margin:0">' + (dr.retake ? '처음 제출한 점수는 그대로 남아요. 연습으로 다시 풀어 보세요.'
-      : '답을 고르면 바로 저장돼요. 나갔다 와도 이어서 풀 수 있어요. 다 풀고 맨 아래 <b>제출하기</b>를 누르면 점수가 선생님께 전달되고, 틀린 문제는 오답 노트에 담겨요. 정답은 제출한 뒤에 보여요.') + '</p>';
-    t.items.forEach(function (it, k) {
-      h += '<section class="card wq exq" id="tq' + k + '"><div class="wq-stem"><span class="wn">' + it.n + '</span>' + it.stem + (it.src ? ' <small class="wsrc">[' + E(it.src) + ']</small>' : '') + '</div>' +
-        (it.ctx ? '<details class="wctx"><summary>지문 다시 보기</summary>' + it.ctx + '</details>' : '') + it.body +
-        '<div class="opts num exopts">' + it.opts.map(function (o, i) { return '<button class="opt' + (it.en ? ' en' : '') + (a[k] === i ? ' sel' : '') + '" data-tq="' + k + ':' + i + '" aria-pressed="' + (a[k] === i) + '">' + o + '</button>'; }).join('') + '</div></section>';
-    });
-    h += '<section class="card omr"><b>답안 확인</b> <small class="note">번호를 누르면 그 문제로 가요</small><div class="omrgrid">' + t.items.map(function (it, k) {
-      return '<button class="om' + (a[k] != null ? ' on' : '') + '" data-tgo="' + k + '">' + it.n + '<b>' + (a[k] != null ? CIRC[a[k]] : '·') + '</b></button>'; }).join('') + '</div>' +
-      '<p class="note" id="tleft" style="margin:8px 0 0" hidden></p><button class="btn plank" id="tsubmit" style="width:100%;margin-top:10px">' + (dr.retake ? '채점하기 (연습)' : '제출하기') + '</button></section></div>';
+      : '문제는 종이 시험지로 풀고, 여기에는 <b>답만</b> 입력해요. 고른 답은 바로 저장돼요. 다 입력하고 <b>제출하기</b>를 누르면 점수가 선생님께 전달되고, 해설이 나와요. 틀린 문제는 오답 노트에 담겨요.') + '</p>';
+    h += '<section class="card omrsheet">' + t.items.map(function (it, k) {
+      if (isW(it)) return '<div class="orow w" id="tq' + k + '"><span class="onum">' + it.n.replace('서술형 ', '서') + '</span><div class="wins">' + it.blanks.map(function (bl, b) {
+        return '<label class="win">' + (bl.label ? '<b>' + bl.label + '</b>' : '') + '<input class="en" data-tw="' + k + '_' + b + '" value="' + E(a[k + '_' + b] || '') + '" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="' + E(it.n) + (bl.label ? ' ' + bl.label : '') + ' 답 쓰기"></label>'; }).join('') + '</div></div>';
+      return '<div class="orow" id="tq' + k + '"><span class="onum">' + it.n + '</span><div class="obub">' + [0, 1, 2, 3, 4].map(function (i) {
+        return '<button class="bub' + (a[k] === i ? ' sel' : '') + '" data-tq="' + k + ':' + i + '" aria-label="' + it.n + '번 ' + (i + 1) + '번" aria-pressed="' + (a[k] === i) + '">' + CIRC[i] + '</button>'; }).join('') + '</div></div>';
+    }).join('') + '</section>' +
+      '<p class="note" id="tleft" style="margin:0" hidden></p><button class="btn plank" id="tsubmit" style="width:100%">' + (dr.retake ? '채점하기 (연습)' : '제출하기') + '</button></div>';
     app.innerHTML = h;
+    var upd = function () { $('#tcount').textContent = cnt() + ' / ' + n; $('#tleft').hidden = true; TV.armed = false; };
     $('#tquit').onclick = function () { TV = null; home('test'); };
     app.querySelectorAll('[data-tq]').forEach(function (b) { b.onclick = function () {
       var p = b.dataset.tq.split(':'), k = +p[0], i = +p[1];
-      dr.a[k] = i; save(); TV.armed = false;
+      dr.a[k] = i; save();
       app.querySelectorAll('[data-tq^="' + k + ':"]').forEach(function (x) { var on = x === b; x.classList.toggle('sel', on); x.setAttribute('aria-pressed', on); });
-      var om = app.querySelector('[data-tgo="' + k + '"]'); om.classList.add('on'); om.querySelector('b').textContent = CIRC[i];
-      $('#tcount').textContent = Object.keys(dr.a).length + ' / ' + n; var tl = $('#tleft'); tl.hidden = true;
+      upd();
     }; });
-    app.querySelectorAll('[data-tgo]').forEach(function (b) { b.onclick = function () { $('#tq' + b.dataset.tgo).scrollIntoView({ block: 'start', behavior: 'smooth' }); }; });
+    app.querySelectorAll('[data-tw]').forEach(function (inp) { inp.oninput = function () { dr.a[inp.dataset.tw] = inp.value; save(); upd(); }; });
     $('#tsubmit').onclick = function () {
-      var miss = t.items.map(function (_, k) { return k; }).filter(function (k) { return dr.a[k] == null; }), tl = $('#tleft');
+      var miss = t.items.map(function (_, k) { return k; }).filter(function (k) { return !filled(k); }), tl = $('#tleft');
       if (miss.length && !TV.armed) {
         TV.armed = true; tl.hidden = false;
-        tl.innerHTML = '<b style="color:var(--bad)">아직 ' + miss.length + '문항(' + miss.map(function (k) { return t.items[k].n + '번'; }).join(', ') + ')을 안 풀었어요.</b> 안 푼 문제는 틀린 것으로 채점돼요. 그래도 제출하려면 한 번 더 누르세요.';
+        tl.innerHTML = '<b style="color:var(--bad)">아직 ' + miss.length + '문항(' + miss.map(function (k) { return t.items[k].n + (isW(t.items[k]) ? '' : '번'); }).join(', ') + ')의 답을 안 썼어요.</b> 안 쓴 문제는 틀린 것으로 채점돼요. 그래도 제출하려면 한 번 더 누르세요.';
+        $('#tq' + miss[0]).scrollIntoView({ block: 'center', behavior: 'smooth' });
         return;
       }
       submitTest();
     };
   }
   function submitTest() {
-    var t = TESTS[TV.ti], st = TST(t), dr = st.draft, n = t.items.length, c = 0, wrong = [];
-    t.items.forEach(function (it, k) { if (dr.a[k] === it.ans) c++; else wrong.push(k); });
-    var rec = { at: Date.now(), started: dr.started, a: dr.a, c: c, t: n, wrong: wrong }, first = !st.first;
+    var t = TESTS[TV.ti], st = TST(t), dr = st.draft, g = grade(t, dr.a);
+    var rec = { at: Date.now(), started: dr.started, a: dr.a, c: g.c, t: g.mcN, score: g.score, max: g.max, wrong: g.wrong, wb: g.wb }, first = !st.first;
     if (first) st.first = rec; else (st.tries = st.tries || []).push(rec);
     st.draft = null;
-    wrong.forEach(function (k) { noteAddTest(t, k); }); save();
-    reportTest(first ? 'Wrap-up 제출' : 'Wrap-up 연습', t, { stepScore: (first ? '' : '연습 ') + c + '/' + n });
+    g.wrong.forEach(function (k) { noteAddTest(t, k, g.wb); }); save();
+    reportTest(first ? 'Wrap-up 제출' : 'Wrap-up 연습', t, { stepScore: (first ? '' : '연습 ') + g.score + '/' + g.max + '점' });
     var ti = TV.ti; TV = null; testResult(ti, rec);
   }
   function testResult(ti, rec) {
     RS = null; top();
     var t = TESTS[ti], st = TST(t), f = st.first; rec = rec || f;
-    var n = t.items.length, left = testLeft(t), practice = rec !== f;
+    var left = testLeft(t), practice = rec !== f, w = hasW(t), sc = recScore(t, rec), mx = recMax(t, rec), chk = Object.keys(rec.wb || {}).filter(function (k) { return rec.wb[k] === 'chk'; }).length;
     var h = '<div class="topbar"><div class="row"><button class="link" id="tback">← Wrap-up 목록</button><span class="crumb">' + E(t.title) + ' · <b>결과</b></span></div></div><div class="stack examwrap">';
     h += '<section class="card pop stack" style="gap:8px"><div class="eyebrow">' + (practice ? '연습 결과 · 처음 점수는 그대로예요' : '제출 완료 · 선생님께 전달돼요') + '</div>' +
-      '<div class="score">' + pctOf(rec.c, n) + '<small>점 (' + rec.c + '/' + n + ')</small></div>' +
-      (practice ? '<p class="note" style="margin:0">처음 제출: ' + pctOf(f.c, n) + '점 (' + f.c + '/' + n + ') · ' + fmtTime(f.at) + '</p>' : '') +
-      (rec.wrong.length ? '<p class="note" style="margin:0">틀린 문제: ' + rec.wrong.map(function (k) { return t.items[k].n + '번'; }).join(', ') + ' → 오답 노트에 담았어요.</p>' : '<p class="note" style="margin:0">모두 맞혔어요!</p>') +
-      '<div class="acts" style="display:flex;gap:8px;flex-wrap:wrap">' + (left.length ? '<button class="btn plank" id="tnote">틀린 문제 다시 풀기 (' + left.length + ')</button>' : (f.wrong.length ? '<span class="note"><b>처음에 틀린 문제를 모두 다시 맞혔어요 ✓</b></span>' : '')) + '</div></section>';
+      '<div class="score">' + pctOf(sc, mx) + '<small>점' + (w ? ' (선택형 ' + rec.c + '/' + rec.t + ')' : ' (' + rec.c + '/' + rec.t + ')') + '</small></div>' +
+      (chk ? '<p class="note" style="margin:0"><b>서술형 ' + chk + '칸은 선생님이 확인해요.</b> 정해 둔 답과 달라서 아직 점수에 넣지 않았어요.</p>' : '') +
+      (practice ? '<p class="note" style="margin:0">처음 제출: ' + pctOf(recScore(t, f), recMax(t, f)) + '점 · ' + fmtTime(f.at) + '</p>' : '') +
+      (rec.wrong.length ? '<p class="note" style="margin:0">틀린 문제: ' + rec.wrong.map(function (k) { return t.items[k].n + (isW(t.items[k]) ? '' : '번'); }).join(', ') + ' → 오답 노트에 담았어요.</p>' +
+        '<p class="wguide"><b>시험지에 적어 오기</b> 틀린 문제마다 아래 해설을 보고 시험지에 ① 정답과 이유 ② 모르는 단어 뜻 ③ 문장 해석을 적어서 선생님께 내요.</p>' : '<p class="note" style="margin:0">모두 맞혔어요!</p>') +
+      '<div class="acts" style="display:flex;gap:8px;flex-wrap:wrap">' + (left.length ? '<button class="btn plank" id="tnote">틀린 문제 다시 풀기 (' + left.length + ')</button>' : (f.wrong.length ? '<span class="note"><b>처음에 틀린 문제를 모두 다시 풀었어요 ✓</b></span>' : '')) + '</div></section>';
     h += '<h3 class="sech">문항별 정답과 해설</h3>' + t.items.map(function (it, k) {
+      if (isW(it)) {
+        var sts = it.blanks.map(function (_, b) { return (rec.wb || {})[k + '_' + b] || 'no'; }), allok = sts.every(function (s) { return s === 'ok'; });
+        return '<details class="card wres' + (allok ? ' ok' : ' no') + '"' + (allok ? '' : ' open') + '><summary><span class="wmark">' + (allok ? '✔' : sts.indexOf('chk') >= 0 && sts.indexOf('no') < 0 ? '?' : '✗') + '</span><b>' + it.n + '</b> <span class="note">' + it.pts + '점</span></summary>' +
+          '<div class="wq"><details class="wctx"><summary>문제 보기</summary><div class="wq-stem">' + it.stem + '</div>' + it.body + '</details><ul class="wmine">' + it.blanks.map(function (bl, b) {
+            return '<li class="' + sts[b] + '">' + (bl.label ? '<b>' + bl.label + '</b> ' : '') + '<span class="en">' + E(rec.a[k + '_' + b] || '(안 씀)') + '</span> <i>' + ({ ok: '✔ ' + bl.pts + '점', no: '✗', chk: '선생님 확인' }[sts[b]]) + '</i></li>'; }).join('') + '</ul>' +
+          '<p class="wex"><b>모범 답안</b> <span class="en">' + E(it.model) + '</span>\n' + E(it.ex) + '</p></div></details>';
+      }
       var my = rec.a[k], ok = my === it.ans;
       return '<details class="card wres' + (ok ? ' ok' : ' no') + '"' + (ok ? '' : ' open') + '><summary><span class="wmark">' + (ok ? '✔' : '✗') + '</span><b>' + it.n + '번</b> <span class="note">내 답 ' + (my != null ? CIRC[my] : '안 씀') + ' · 정답 ' + CIRC[it.ans] + '</span></summary>' +
-        '<div class="wq"><div class="wq-stem">' + it.stem + '</div>' + (it.ctx ? '<details class="wctx"><summary>지문</summary>' + it.ctx + '</details>' : '') + it.body +
-        '<ol class="wopts">' + it.opts.map(function (o, i) { return '<li class="' + (i === it.ans ? 'right' : i === my ? 'wrong' : '') + (it.en ? ' en' : '') + '"><span>' + CIRC[i] + '</span><span>' + o + '</span></li>'; }).join('') + '</ol>' +
-        '<p class="wex"><b>해설</b> ' + E(it.ex) + '</p></div></details>';
+        '<div class="wq">' + expHTML(it, my, !ok) + '<details class="wctx"><summary>문제 보기</summary><div class="wq-stem">' + it.stem + '</div>' + (it.ctx ? it.ctx : '') + it.body + '</details></div></details>';
     }).join('') + '</div>';
     app.innerHTML = h;
     $('#tback').onclick = function () { home('test'); };
