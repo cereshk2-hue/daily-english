@@ -1,6 +1,6 @@
 import re
 base=open('wrapup-2509-22.html',encoding='utf-8').read()
-css=base[base.index('<style>'):base.index('</style>')+8]
+css=base[base.index('<style>'):base.index('</style>')]+open('a4.css',encoding='utf-8').read()+'</style>'
 fonts=base[base.index('<link rel="preconnect"'):base.index('<style>')]
 def Q(n,stem,body): return '\n  <div class="q">\n    <div class="stem"><span class="n">%d.</span>%s</div>\n%s\n  </div>\n'%(n,stem,body)
 def OL(items,en=True): return '    <ol class="ol'+(' en' if en else '')+'">'+''.join('<li><span>%s</span><span>%s</span></li>'%(c,x) for c,x in zip('①②③④⑤',items))+'</ol>'

@@ -78,6 +78,29 @@ table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 
   .page:last-child { break-after: auto }
   .qs, .exp { columns: 2 }
 }
+/* A4 맞춤 (10/31): 화면에서도 A4 폭(210mm)으로 보이고, 인쇄·PDF는 A4 한 장에 문항이 3~4개씩 들어가게 글자와 간격을 줄임 */
+@media (min-width: 701px) {
+  .page { width: 210mm; max-width: 100%; padding: 11mm }
+  body { font-size: 9.6pt }
+  .stem { font-size: 9.8pt } .stem .src { font-size: 8pt }
+  .box, .given, .sum { font-size: 9.4pt; line-height: 1.46; padding: 2.2mm 2.8mm }
+  .ol, .ol.en li { font-size: 9.3pt; line-height: 1.38 }
+  table.ch { font-size: 9.2pt } table.ch th { font-size: 8.4pt }
+  .q { margin-bottom: 3.6mm; gap: 1.6mm }
+  .qs { column-gap: 6mm; margin-top: 4mm }
+  .exp { font-size: 8.1pt; line-height: 1.38; column-gap: 6mm; margin-top: 3mm } .exp p { margin-bottom: 1.2mm }
+  .top, .notice, .idrow, .title .when, .foot { font-size: 8.6pt }
+  .title h1 { font-size: 18pt } .title h1 small { font-size: 8.6pt }
+  .keygrid div { font-size: 9pt; padding: 1.2mm 0 } .keygrid b { font-size: 10.5pt }
+}
+@page { size: A4; margin: 0 }
+@media print {
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  body { padding: 0 }
+  .page { width: 210mm; max-width: none; margin: 0; padding: 11mm; box-shadow: none; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
 </style>
 
 <main>
