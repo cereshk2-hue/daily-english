@@ -12,7 +12,7 @@
       var head = [].slice.call(sec.children).filter(function (e) { return e !== box && e !== foot && !(e.classList.contains('keygrid') && false); });
       var cols, ci, first = true;
       function newPage() {
-        var pg = document.createElement('div'); pg.className = 'sheet';
+        var sh = document.createElement('div'); sh.className = 'sheet'; var pg = document.createElement('div'); pg.className = 'inner'; sh.appendChild(pg);
         if (first) head.forEach(function (e) { pg.appendChild(e); });
         else { var t = top.cloneNode(true); t.classList.add('run'); pg.appendChild(t); }
         first = false;
@@ -21,7 +21,7 @@
         pg.appendChild(cols);
         var f = foot.cloneNode(true), sp = f.querySelectorAll('span'), mid = document.createElement('span'); mid.className = 'pno';
         f.insertBefore(mid, sp[1] || null); pg.appendChild(f);
-        out.appendChild(pg); pages.push(pg); ci = 0;
+        out.appendChild(sh); pages.push(pg); ci = 0;
       }
       function over(c) { return c.scrollHeight > c.clientHeight + 1; }
       newPage();
