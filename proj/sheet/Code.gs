@@ -74,7 +74,7 @@ function boardData() {
   var nt = ss.getSheetByName(NOTE);
   if (nt && nt.getLastRow() > 1) {
     nt.getRange(2, 1, nt.getLastRow() - 1, 10).getValues().forEach(function (v) {
-      if (!v[0]) return;
+      if (!v[0] || /^Wrap-up/.test(String(v[2]))) return; /* Wrap-up은 종이로 오답 정리 → 오답 수에서 뺌 */
       var s = st(String(v[0])), bk = String(v[1]).replace(/\(.*$/, '').trim() || '기타', left = String(v[8]) !== '맞힘';
       s.nAll++; if (left) s.nLeft++; s.nTimes += +v[6] || 0;
       if (v[9] instanceof Date && Utilities.formatDate(v[9], tz, 'yyyy-MM-dd') === today && +v[6] > 0) s.nToday++;
@@ -382,8 +382,8 @@ function analysis() {
   });
   var nt = ss.getSheetByName(NOTE);
   if (nt && nt.getLastRow() > 1) nt.getRange(2, 1, nt.getLastRow() - 1, 9).getValues().forEach(function (v) {
-    var n = String(v[0]).trim(); if (!n) return;
-    var s = st(n), left = String(v[8]) !== '맞힘', ty = /Wrap-up/i.test(String(v[2]) + String(v[3]) + String(v[4])) ? 'Wrap-up' : typeOf(v[4]) || '기타';
+    var n = String(v[0]).trim(); if (!n || /^Wrap-up/.test(String(v[2]))) return;
+    var s = st(n), left = String(v[8]) !== '맞힘', ty = typeOf(v[4]) || '기타';
     s.nAll++; if (left) { s.nLeft++; s.nTy[ty] = (s.nTy[ty] || 0) + 1; }
   });
   var now = ss.getSheetByName('현황');
@@ -412,7 +412,7 @@ function analysis() {
   sh.clear(); sh.clearConditionalFormatRules();
   var stamp = Utilities.formatDate(new Date(), tz, 'M/d HH:mm');
   sh.getRange(1, 1).setValue('학생별 분석 · ' + stamp + ' 기준').setFontWeight('bold').setFontSize(13);
-  sh.getRange(2, 1).setValue('정답률은 처음 배우는 단계(단계 완료) 기준. 약한 유형은 6문제 이상 푼 유형 중 정답률 85% 미만, 낮은 순. 남은 오답 = 오답노트에서 아직 못 맞힌 문제. 오답 학습 = 앱의 오답 노트에서 다시 푼 기록(Wrap-up 오답 포함).').setFontColor('#666666');
+  sh.getRange(2, 1).setValue('정답률은 처음 배우는 단계(단계 완료) 기준. 약한 유형은 6문제 이상 푼 유형 중 정답률 85% 미만, 낮은 순. 남은 오답 = 오답노트에서 아직 못 맞힌 문제. 오답 학습 = 앱의 오답 노트에서 다시 푼 기록(중간에 그만둔 것도 푼 만큼). Wrap-up은 종이 시험지에 오답을 정리하므로 오답 수에서 뺌.').setFontColor('#666666');
   var H1 = ['학생', '교재', '마지막 학습', '공부한 날', '학습 시간(분)', '끝낸 DAY', '푼 문제', '정답률', '약한 유형 1', '약한 유형 2', '약한 유형 3', '남은 오답', '남은 오답 많은 유형', '오늘 오답 학습', '최근 7일 오답 학습한 날', '마지막 오답 학습', '오답 학습 안 한 DAY', 'Wrap-up 점수'];
   var rows = list.map(function (s) {
     var w = function (i) { var x = s.weak[i]; return x ? x.k + ' ' + Math.round(x.p * 100) + '% (' + x.a + '문제)' : ''; };
