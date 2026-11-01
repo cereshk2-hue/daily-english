@@ -18,7 +18,7 @@
   P.days.forEach(function (d) {
     var nz = function (x) { return String(x).toLowerCase().replace(/[’‘`]/g, "'").replace(/\s+/g, ' ').trim(); };
     var unq = function (x) { return String(x).trim().replace(/^["“]/, '').replace(/["”]$/, '').trim(); };
-    var lines = d.passage.filter(function (l) { return l[0] !== '#' && l[2] && !(/^[❶-❿]$/.test(l[1])); }), picked = [], exOf = {}, gapOf = {};
+    var lines = d.passage.filter(function (l) { return l[0] !== '#' && l[2] && !(/^[❶-❿]$/.test(l[1])); }), picked = [], exOf = {}, gapOf = {}, trapOf = {};
     /* 고등: 문장 전체 스크램블 대신 문법 포인트(어법선택 정답 자리) 3~4단어를 찾고, 문제 낼 때 그 둘레 6~8단어로 넓힌다(scrSpan) */
     var gapAt = function (q, t) {
       var m = /\{([^}|]*)\|[^}]*\}/.exec(q.s); if (!m) return null;
@@ -37,15 +37,15 @@
       if (st.type !== 'pick' || !/어법/.test(st.title)) return;
       st.items.forEach(function (q) {
         var f = nz(q.s.replace(/\{([^}|]*)[^}]*\}/, '$1')).replace(/^\(|\)$/g, '').replace(/[.!?"]+$/, '');
-        lines.forEach(function (l, i) { var t = unq(l[1]), w = t.split(/\s+/).length; if (w >= 5 && w <= 24 && /[.!?]$/.test(t) && !/["“”]/.test(t) && nz(t).indexOf(f) >= 0) { if (picked.indexOf(i) < 0) picked.push(i); if (q.ex) exOf[i] = (exOf[i] ? exOf[i] + '\n\n' : '') + q.ex; if (!gapOf[i]) gapOf[i] = gapAt(q, t); } });
+        lines.forEach(function (l, i) { var t = unq(l[1]), w = t.split(/\s+/).length; if (w >= 5 && w <= 24 && /[.!?]$/.test(t) && !/["“”]/.test(t) && nz(t).indexOf(f) >= 0) { if (picked.indexOf(i) < 0) picked.push(i); if (q.ex) exOf[i] = (exOf[i] ? exOf[i] + '\n\n' : '') + q.ex; if (!gapOf[i]) { gapOf[i] = gapAt(q, t); var tm = /\{([^}|]*)\|([^}]*)\}/.exec(q.s); if (gapOf[i] && tm) trapOf[i] = { ok: tm[1].trim(), no: tm[2].trim() }; } } });
       });
     });
     picked.sort(function (a, b) { return a - b; });
     if (picked.length > 7) { var keep = [], stepN = picked.length / 7; for (var k = 0; k < 7; k++) keep.push(picked[Math.floor(k * stepN)]); picked = keep; }
     d.steps.forEach(function (st) {
       if (st.type !== 'scramble') return;
-      st.title = '주요 문장 스크램블'; st.guide = HS ? '문법 포인트가 들어간 3~4단어가 비어 있어요. 우리말을 보고 단어를 순서대로 눌러 빈칸을 채우세요.' : '핵심 문법이 들어간 문장이에요. 우리말에 맞게 단어를 눌러 문장을 완성하세요.';
-      if (picked.length >= 3) st.items = picked.map(function (i) { return { ko: unq(lines[i][2]), en: unq(lines[i][1]), gap: gapOf[i] || null, ex: exOf[i] ? '이 문장의 문법 포인트\n' + exOf[i] : '' }; });
+      st.title = '주요 문장 스크램블'; st.guide = HS ? '문법 포인트가 들어간 6~8단어가 비어 있어요. 카드 하나는 어법상 틀린 함정이에요! 우리말을 보고 바른 낱말만 순서대로 눌러 빈칸을 채우세요.' : '핵심 문법이 들어간 문장이에요. 우리말에 맞게 단어를 눌러 문장을 완성하세요.';
+      if (picked.length >= 3) st.items = picked.map(function (i) { return { ko: unq(lines[i][2]), en: unq(lines[i][1]), gap: gapOf[i] || null, trap: trapOf[i] || null, ex: exOf[i] ? '이 문장의 문법 포인트\n' + exOf[i] : '' }; });
     });
   });
   var KEY = 'daily:' + P.id;
@@ -400,7 +400,11 @@
         g = scrSpan(W, g); /* g(어법 포인트 3~4단어)가 있으면 그것을 중심에 두고 넓힌다 */
         var part = W.slice(g[0], g[1] + 1), post = W.slice(g[1] + 1).join(' '), m2 = /^(.*?)([.!?]["”]?)$/.exec(part[part.length - 1]);
         if (g[1] === W.length - 1 && m2 && m2[1]) { part[part.length - 1] = m2[1]; post = m2[2]; } /* 문장 끝 부호는 빈칸 밖에 */
-        return { t: 'scramble', gap: true, ko: q.ko, pre: W.slice(0, g[0]).join(' '), post: post, toks: part, pool: shuffleDiff(part.map(function (_, j) { return j; })), punct: '', ans: part.join(' '), full: en, key: cut(q.ko, 14), ex: q.ex || '' };
+        var toks2 = part.slice(), tex = '', low = function (x) { return String(x).toLowerCase().replace(/[^a-z']/g, ''); };
+        if (q.trap && q.trap.no && !/\s/.test(q.trap.no) && /^[A-Za-z'-]+$/.test(q.trap.no) && part.some(function (x) { return low(x) === low(q.trap.ok.split(/\s+/)[0]); }) && !part.some(function (x) { return low(x) === low(q.trap.no); })) {
+          toks2.push(q.trap.no); tex = '\n함정 카드 ▶ ' + q.trap.no + ' (어법상 틀린 형태, 바른 것은 ' + q.trap.ok + ')';
+        }
+        return { t: 'scramble', gap: true, ko: q.ko, pre: W.slice(0, g[0]).join(' '), post: post, toks: toks2, need: part.length, pool: shuffleDiff(toks2.map(function (_, j) { return j; })), punct: '', ans: part.join(' '), full: en, key: cut(q.ko, 14), ex: (q.ex || '') + tex };
       }
       return { t: 'scramble', ko: q.ko, toks: toks, pool: shuffleDiff(toks.map(function (_, j) { return j; })), punct: p, ans: en, key: cut(q.ko, 14), ex: q.ex || '' };
     });
@@ -1084,8 +1088,8 @@
       var draw = function () {
         tray.innerHTML = picked.map(function (j, k) { return '<button class="chip in' + (q.ko ? ' kochip' : ' en') + '" data-k="' + k + '">' + (lines ? '<span class="n">' + (k + 1) + '</span>' : '') + E(label(j)) + '</button>'; }).join('') +
           (!lines && q.punct && picked.length ? '<span class="punct">' + E(q.punct) + '</span>' : '');
-        pool.querySelectorAll('.chip').forEach(function (c) { var u = picked.indexOf(+c.dataset.j) >= 0; c.classList.toggle('used', u); c.disabled = u; });
-        chk.disabled = picked.length !== q.pool.length;
+        pool.querySelectorAll('.chip').forEach(function (c) { var u = picked.indexOf(+c.dataset.j) >= 0; c.classList.toggle('used', u); c.disabled = u || (q.need && picked.length >= q.need); });
+        chk.disabled = picked.length !== (q.need || q.pool.length);
         tray.querySelectorAll('.chip').forEach(function (c) { c.onclick = function () { if (RS.answered) return; picked.splice(+c.dataset.k, 1); draw(); }; });
       };
       pool.querySelectorAll('.chip').forEach(function (c) { c.onclick = function () { if (RS.answered) return; picked.push(+c.dataset.j); draw(); }; });
