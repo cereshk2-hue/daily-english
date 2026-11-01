@@ -37,7 +37,7 @@ function boardData() {
   var ss = SpreadsheetApp.getActiveSpreadsheet(), tz = 'Asia/Seoul';
   var today = Utilities.formatDate(new Date(), tz, 'yyyy-MM-dd');
   var log = ss.getSheetByName('기록'), now = ss.getSheetByName('현황'), S = {};
-  function st(name) { return S[name] || (S[name] = { name: name, grades: {}, last: 0, mins: 0, minsToday: 0, solved: 0, right: 0, solvedToday: 0, days: 0, reviewLeft: 0, weakLeft: 0, rows: [], _t: [] }); }
+  function st(name) { return S[name] || (S[name] = { name: name, grades: {}, last: 0, mins: 0, minsToday: 0, solved: 0, right: 0, solvedToday: 0, days: 0, reviewLeft: 0, weakLeft: 0, rows: [], _t: [], nAll: 0, nLeft: 0, nTimes: 0, nToday: 0, nBook: {} }); }
   if (log && log.getLastRow() > 1) {
     log.getRange(2, 1, log.getLastRow() - 1, 8).getValues().forEach(function (v) {
       if (!v[1]) return;
@@ -65,6 +65,17 @@ function boardData() {
       s.rows.push({ book: String(v[1]), unit: String(v[2]), day: String(v[3]), range: String(v[4]), prog: String(v[5]), score: String(v[6]), review: String(v[7]), last: last, weak: String(v[16]) });
     });
   }
+  /* 누적 오답: '오답노트' 탭 (학생 앱이 틀린 문제·헷갈려요를 모아 둔 것) */
+  var nt = ss.getSheetByName(NOTE);
+  if (nt && nt.getLastRow() > 1) {
+    nt.getRange(2, 1, nt.getLastRow() - 1, 10).getValues().forEach(function (v) {
+      if (!v[0]) return;
+      var s = st(String(v[0])), bk = String(v[1]).replace(/\(.*$/, '').trim() || '기타', left = String(v[8]) !== '맞힘';
+      s.nAll++; if (left) s.nLeft++; s.nTimes += +v[6] || 0;
+      if (v[9] instanceof Date && Utilities.formatDate(v[9], tz, 'yyyy-MM-dd') === today && +v[6] > 0) s.nToday++;
+      var b = s.nBook[bk] || (s.nBook[bk] = { all: 0, left: 0 }); b.all++; if (left) b.left++;
+    });
+  }
   var list = Object.keys(S).map(function (k) { var s = S[k]; s.grades = Object.keys(s.grades); s.rows.sort(function (a, b) { return b.last - a.last; }); return s; });
   list.sort(function (a, b) { return b.last - a.last; });
   return { today: today, made: Date.now(), list: list };
@@ -90,6 +101,9 @@ var BOARD_HTML = '<!doctype html><html><head><base target="_top"><meta charset="
 'details{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}summary{cursor:pointer;color:var(--blue);font-size:13px;font-weight:700}' +
 '.row{padding:9px 0;border-bottom:1px solid var(--line);font-size:13px}.row:last-child{border:0}.row .u{color:var(--muted)}.row .p{font-weight:800}.row .p.done{color:var(--ok)}.row .p.rev{color:var(--warn)}.row .wk{color:var(--bad);font-size:12px}' +
 '.empty{text-align:center;color:var(--muted);padding:40px 0}' +
+'.sum{grid-template-columns:repeat(4,1fr)}@media(max-width:480px){.sum{grid-template-columns:repeat(2,1fr)}}' +
+'.grid .nb small:last-child{font-size:11px}.grid .nb.lf{background:var(--bads)}.grid .nb.lf b{color:var(--bad)}.grid .nb.ok{background:var(--oks)}.grid .nb.ok b{color:var(--ok)}' +
+'.nbk{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:8px;font-size:12.5px;color:var(--muted)}.nbk b{color:var(--ink)}.nbk i{font-style:normal;color:var(--bad);font-weight:700}' +
 '</style></head><body><header><h1>학생 현황판</h1><div class="sub" id="made"></div><div class="bar" id="bar"></div><input id="q" placeholder="이름 찾기"></header><main><div class="sum" id="sum"></div><div id="list"></div></main>' +
 '<script>var D=<?!= data ?>;' +
 'var F="all",Q="";function E(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;"}[c]})}' +
@@ -97,18 +111,20 @@ var BOARD_HTML = '<!doctype html><html><head><base target="_top"><meta charset="
 'function ft(t){if(!t)return"기록 없음";var d=new Date(t),w="일월화수목금토"[d.getDay()];return(d.getMonth()+1)+"/"+d.getDate()+"("+w+") "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2)}' +
 'function hm(m){return m>=60?Math.floor(m/60)+"시간 "+(m%60)+"분":m+"분"}' +
 'var G={};D.list.forEach(function(s){s.grades.forEach(function(g){G[g]=1})});' +
-'var B=[["all","전체"],["notoday","오늘 안 한 학생"],["todo","할 일 남은 학생"]].concat(Object.keys(G).sort().map(function(g){return["g:"+g,g]}));' +
+'var B=[["all","전체"],["notoday","오늘 안 한 학생"],["todo","할 일 남은 학생"],["wrong","오답 많은 순"]].concat(Object.keys(G).sort().map(function(g){return["g:"+g,g]}));' +
 'function bar(){document.getElementById("bar").innerHTML=B.map(function(b){return"<button data-f=\\""+b[0]+"\\" class=\\""+(F===b[0]?"on":"")+"\\">"+E(b[1])+"</button>"}).join("");' +
 '[].forEach.call(document.querySelectorAll("[data-f]"),function(x){x.onclick=function(){F=x.dataset.f;bar();draw()}})}' +
-'function draw(){var L=D.list.filter(function(s){if(Q&&s.name.indexOf(Q)<0)return false;if(F==="notoday")return dk(s.last)!==D.today;if(F==="todo")return s.reviewLeft||s.weakLeft;if(F.indexOf("g:")===0)return s.grades.indexOf(F.slice(2))>=0;return true});' +
+'function draw(){var L=D.list.filter(function(s){if(Q&&s.name.indexOf(Q)<0)return false;if(F==="notoday")return dk(s.last)!==D.today;if(F==="todo")return s.reviewLeft||s.weakLeft;if(F.indexOf("g:")===0)return s.grades.indexOf(F.slice(2))>=0;return true});if(F==="wrong")L=L.slice().sort(function(a,b){return(b.nLeft-a.nLeft)||(b.nAll-a.nAll)});' +
 'var td=D.list.filter(function(s){return dk(s.last)===D.today}).length;' +
-'var todo=D.list.filter(function(s){return s.reviewLeft||s.weakLeft}).length;document.getElementById("sum").innerHTML="<div><small>전체 학생</small><b>"+D.list.length+"명</b></div><div><small>오늘 학습</small><b>"+td+"명</b></div><div><small>할 일 남음</small><b>"+todo+"명</b></div>";' +
+'var todo=D.list.filter(function(s){return s.reviewLeft||s.weakLeft}).length;var nl=D.list.reduce(function(n,s){return n+(s.nLeft||0)},0);document.getElementById("sum").innerHTML="<div><small>전체 학생</small><b>"+D.list.length+"명</b></div><div><small>오늘 학습</small><b>"+td+"명</b></div><div><small>할 일 남음</small><b>"+todo+"명</b></div><div><small>못 맞힌 오답 (전체)</small><b>"+nl+"문제</b></div>";' +
 'document.getElementById("list").innerHTML=L.length?L.map(function(s){var age=(Date.now()-s.last)/864e5,cls=dk(s.last)===D.today?"today":age>3?"old":"";' +
 'var acc=s.solved?Math.round(s.right/s.solved*100):0;' +
 'return"<div class=card><div class=top><div class=av>"+E(s.name.charAt(0))+"</div><div><span class=nm>"+E(s.name)+"</span><span class=gr>"+E(s.grades.join(" · "))+"</span></div><div class=\\"when "+cls+"\\">"+(cls==="today"?"오늘 ":"")+ft(s.last)+"</div></div>"+' +
 '"<div class=grid><div><small>누적 학습시간</small><b>"+hm(s.mins)+"</b></div><div><small>오늘 학습시간</small><b>"+hm(s.minsToday)+"</b></div>"+' +
-'"<div><small>누적 푼 문제</small><b>"+s.solved+"문제</b></div><div><small>정답률 · 틀린 문제</small><b>"+acc+"% · "+(s.solved-s.right)+"개</b></div></div>"+' +
-'"<div class=tags><span class=\\"tag o\\">완료 DAY "+s.days+"개</span>"+(s.reviewLeft?"<span class=\\"tag w\\">오답 학습 남음 "+s.reviewLeft+"</span>":"")+(s.weakLeft?"<span class=\\"tag b\\">약한 유형 보충 안 함 "+s.weakLeft+"</span>":"")+(s.solvedToday?"<span class=tag>오늘 "+s.solvedToday+"문제</span>":"")+"</div>"+' +
+'"<div><small>누적 푼 문제</small><b>"+s.solved+"문제</b></div><div><small>정답률 · 틀린 문제</small><b>"+acc+"% · "+(s.solved-s.right)+"개</b></div>"+' +
+'"<div class=nb><small>누적 오답 (오답 노트)</small><b>"+s.nAll+"문제</b><small>틀린 횟수 합 "+s.nTimes+"번</small></div><div class=\\""+(s.nLeft?"nb lf":"nb ok")+"\\"><small>아직 못 맞힌 오답</small><b>"+s.nLeft+"문제</b><small>"+(s.nAll?"다시 맞힘 "+(s.nAll-s.nLeft)+"문제":"오답 없음")+"</small></div></div>"+' +
+'(Object.keys(s.nBook).length?"<div class=nbk>"+Object.keys(s.nBook).map(function(k){var b=s.nBook[k];return"<span>"+E(k)+" <b>"+b.all+"</b>"+(b.left?" <i>남음 "+b.left+"</i>":" ✓")+"</span>"}).join("")+"</div>":"")+' +
+'"<div class=tags><span class=\\"tag o\\">완료 DAY "+s.days+"개</span>"+(s.reviewLeft?"<span class=\\"tag w\\">오답 학습 남음 "+s.reviewLeft+"</span>":"")+(s.weakLeft?"<span class=\\"tag b\\">약한 유형 보충 안 함 "+s.weakLeft+"</span>":"")+(s.solvedToday?"<span class=tag>오늘 "+s.solvedToday+"문제</span>":"")+(s.nToday?"<span class=\\"tag b\\">오늘 새 오답 "+s.nToday+"</span>":"")+"</div>"+' +
 '(s.rows.length?"<details><summary>단원·DAY별 보기 ("+s.rows.length+")</summary>"+s.rows.map(function(r){var pc=r.prog==="완료"?"done":r.prog==="오답 학습 남음"?"rev":"";' +
 'return"<div class=row><div><span class=\\"p "+pc+"\\">"+E(r.day)+" · "+E(r.prog)+"</span> "+E(r.score)+"</div><div class=u>"+E(r.book)+" · "+E(r.unit)+" · "+E(r.range)+" · "+ft(r.last)+"</div>"+(r.weak?"<div class=wk>"+E(r.weak)+"</div>":"")+"</div>"}).join("")+"</details>":"")+"</div>"}).join(""):"<p class=empty>해당하는 학생이 없어요.</p>"}' +
 'document.getElementById("made").textContent=ft(D.made)+" 기준 · 새로고침하면 최신으로 바뀌어요";' +
@@ -253,7 +269,7 @@ function checkRoster(p) {
 /** 처음 한 번 실행: 탭 만들기 + 권한 허용 */
 function setup() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  sheet(ss, '현황', NOW_HEAD); sheet(ss, '기록', LOG_HEAD); rosterSheet(ss);
+  sheet(ss, '현황', NOW_HEAD); sheet(ss, '기록', LOG_HEAD); rosterSheet(ss); analysis();
   var first = ss.getSheetByName('시트1') || ss.getSheetByName('Sheet1');
   if (first && ss.getSheets().length > 2 && first.getLastRow() === 0) ss.deleteSheet(first);
 }
@@ -302,3 +318,116 @@ function getNotes(p) {
   return json(res);
 }
 function json(o) { return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON); }
+
+/* ---------- 학생별 분석 탭 (11/1) ----------
+ * '기록'(단계마다 맞힌 수) · '오답노트' · '현황'(Wrap-up 점수)을 학생 이름별로 모아
+ * 누가 얼마나 공부하고 있는지, 어떤 유형이 가장 약한지 한눈에 보여 준다.
+ * 시트 위 메뉴 [데일리 영어 → 학생별 분석 새로고침] 또는 매시간 자동(메뉴에서 한 번 켜기). */
+var ANA = '학생별 분석';
+var TYPES = [ // [묶음 이름, 단계 이름에 들어 있는 말] · 위에서부터 먼저 맞는 것
+  ['영작·배열', /스크램블|배열|영작|바꿔 쓰기|(으로|형태로|동사로) 쓰기|서술/], ['어휘', /어휘|단어|숙어|유의어|반의어|철자/],
+  ['대화문', /대화|의사소통|응답/], ['어법', /어법|동사변형|오류/],
+  ['문법 개념', /문법|개념|용법|역할|쓰임|to부정사|S · O · C|동사|하는 것|같은 것끼리|개수 세기|세 개 중/],
+  ['내용 일치', /T\/F|일치|내용/], ['해석', /해석|끊어 보기/], ['대의(주제·요지·제목)', /주제|요지|제목|주장|함축|목적/],
+  ['빈칸', /빈칸/], ['순서·삽입·흐름', /순서|삽입|어색|흐름|무관/], ['요약문', /요약/], ['실전 문제', /실전/]];
+var TYPE_NAMES = TYPES.map(function (t) { return t[0]; });
+function typeOf(step) {
+  var s = String(step || '').replace(/^\d+\.\s*/, '').trim(); if (!s) return '';
+  for (var i = 0; i < TYPES.length; i++) if (TYPES[i][1].test(s)) return TYPES[i][0];
+  return '기타';
+}
+function onOpen() {
+  SpreadsheetApp.getUi().createMenu('데일리 영어')
+    .addItem('학생별 분석 새로고침', 'analysis')
+    .addItem('학생별 분석 매시간 자동 새로고침 켜기', 'analysisAuto')
+    .addToUi();
+}
+function analysisAuto() {
+  ScriptApp.getProjectTriggers().forEach(function (t) { if (t.getHandlerFunction() === 'analysis') ScriptApp.deleteTrigger(t); });
+  ScriptApp.newTrigger('analysis').timeBased().everyHours(1).create();
+  analysis();
+  try { SpreadsheetApp.getUi().alert('학생별 분석이 매시간 자동으로 새로고침돼요.'); } catch (e) {}
+}
+function analysis() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet(), tz = 'Asia/Seoul', S = {};
+  function st(n) { return S[n] || (S[n] = { name: n, books: {}, days: {}, last: 0, t: [], solved: 0, right: 0, ty: {}, nLeft: 0, nAll: 0, nTy: {}, wrap: [], fin: 0, revLeft: 0 }); }
+  var quit = {};
+  var r = ss.getSheetByName(ROSTER);
+  if (r && r.getLastRow() > 1) r.getRange(2, 1, r.getLastRow() - 1, 4).getValues().forEach(function (v) { if (String(v[0]).trim() && /그만/.test(String(v[3]))) quit[String(v[0]).trim()] = 1; });
+  var log = ss.getSheetByName('기록');
+  if (log && log.getLastRow() > 1) log.getRange(2, 1, log.getLastRow() - 1, 8).getValues().forEach(function (v) {
+    var n = String(v[1]).trim(); if (!n || !(v[0] instanceof Date)) return;
+    var s = st(n), t = v[0].getTime();
+    s.t.push(t); if (t > s.last) s.last = t; s.days[Utilities.formatDate(v[0], tz, 'yyyy-MM-dd')] = 1;
+    if (v[2]) s.books[String(v[2])] = 1;
+    if (!/단계 완료|DAY 완료/.test(String(v[5]))) return;           // 처음 배우는 단계만 (오답 노트 다시 풀기는 빼고)
+    var m = /^(\d+)\/(\d+)/.exec(String(v[7])); if (!m) return;
+    var c = +m[1], a = +m[2]; if (!a) return;
+    s.solved += a; s.right += c;
+    var ty = typeOf(v[6]); if (!ty) return;
+    var x = s.ty[ty] || (s.ty[ty] = { c: 0, a: 0 }); x.c += c; x.a += a;
+  });
+  var nt = ss.getSheetByName(NOTE);
+  if (nt && nt.getLastRow() > 1) nt.getRange(2, 1, nt.getLastRow() - 1, 9).getValues().forEach(function (v) {
+    var n = String(v[0]).trim(); if (!n) return;
+    var s = st(n), left = String(v[8]) !== '맞힘', ty = /Wrap-up/i.test(String(v[2]) + String(v[3]) + String(v[4])) ? 'Wrap-up' : typeOf(v[4]) || '기타';
+    s.nAll++; if (left) { s.nLeft++; s.nTy[ty] = (s.nTy[ty] || 0) + 1; }
+  });
+  var now = ss.getSheetByName('현황');
+  if (now && now.getLastRow() > 1) now.getRange(2, 1, now.getLastRow() - 1, 8).getValues().forEach(function (v) {
+    var n = String(v[0]).trim(); if (!n) return;
+    var s = st(n); if (v[1]) s.books[String(v[1])] = 1;
+    if (/^Wrap-up/.test(String(v[3]))) { var p = /^(\d+)점/.exec(String(v[6])); s.wrap.push(String(v[3]).replace('Wrap-up ', '') + ' ' + (p ? p[1] + '점' : String(v[6]))); return; }
+    if (v[5] === '완료') s.fin++; if (v[5] === '오답 학습 남음') { s.fin++; s.revLeft++; }
+  });
+  var MIN = 6; // 유형마다 6문제 이상 풀어야 약점으로 판단
+  var list = Object.keys(S).filter(function (n) { return !quit[n]; }).map(function (n) {
+    var s = S[n], ts = s.t.sort(function (a, b) { return a - b; }), mins = 0;
+    for (var i = 1; i < ts.length; i++) { var g = ts[i] - ts[i - 1]; if (g > 0 && g <= 15 * 60000) mins += g / 60000; }
+    s.mins = Math.round(mins);
+    var ranked = Object.keys(s.ty).filter(function (k) { return s.ty[k].a >= MIN; }).map(function (k) { return { k: k, p: s.ty[k].c / s.ty[k].a, a: s.ty[k].a }; })
+      .sort(function (a, b) { return a.p - b.p; });
+    s.weak = ranked.filter(function (x) { return x.p < 0.85; }).slice(0, 3);
+    var tops = Object.keys(s.nTy).sort(function (a, b) { return s.nTy[b] - s.nTy[a]; }).slice(0, 2);
+    s.nTop = tops.map(function (k) { return k + ' ' + s.nTy[k]; }).join(', ');
+    return s;
+  }).sort(function (a, b) { return a.name < b.name ? -1 : a.name > b.name ? 1 : 0; });
+
+  var sh = ss.getSheetByName(ANA) || ss.insertSheet(ANA, 1);
+  sh.clear(); sh.clearConditionalFormatRules();
+  var stamp = Utilities.formatDate(new Date(), tz, 'M/d HH:mm');
+  sh.getRange(1, 1).setValue('학생별 분석 · ' + stamp + ' 기준').setFontWeight('bold').setFontSize(13);
+  sh.getRange(2, 1).setValue('정답률은 처음 배우는 단계(단계 완료) 기준. 약한 유형은 6문제 이상 푼 유형 중 정답률 85% 미만, 낮은 순. 남은 오답 = 오답노트에서 아직 못 맞힌 문제.').setFontColor('#666666');
+  var H1 = ['학생', '교재', '마지막 학습', '공부한 날', '학습 시간(분)', '끝낸 DAY', '푼 문제', '정답률', '약한 유형 1', '약한 유형 2', '약한 유형 3', '남은 오답', '남은 오답 많은 유형', '오답 학습 안 한 DAY', 'Wrap-up 점수'];
+  var rows = list.map(function (s) {
+    var w = function (i) { var x = s.weak[i]; return x ? x.k + ' ' + Math.round(x.p * 100) + '% (' + x.a + '문제)' : ''; };
+    return [s.name, Object.keys(s.books).map(function (b) { return b.split('(')[0].trim(); }).filter(function (b, i, a) { return a.indexOf(b) === i; }).join(', '),
+      s.last ? new Date(s.last) : '', Object.keys(s.days).length, s.mins, s.fin, s.solved, s.solved ? s.right / s.solved : '',
+      w(0), w(1), w(2), s.nLeft, s.nTop, s.revLeft, s.wrap.join(' / ')];
+  });
+  var r0 = 4;
+  sh.getRange(r0, 1, 1, H1.length).setValues([H1]).setFontWeight('bold').setBackground('#1f3a5f').setFontColor('#ffffff');
+  if (rows.length) {
+    sh.getRange(r0 + 1, 1, rows.length, H1.length).setValues(rows);
+    sh.getRange(r0 + 1, 3, rows.length, 1).setNumberFormat('m/d hh:mm');
+    sh.getRange(r0 + 1, 8, rows.length, 1).setNumberFormat('0%');
+    sh.getRange(r0 + 1, 9, rows.length, 1).setFontColor('#b3261e').setFontWeight('bold');
+  }
+  // 학생 × 유형 정답률 표 (색: 빨강 낮음 → 초록 높음)
+  var r1 = r0 + rows.length + 3;
+  sh.getRange(r1 - 1, 1).setValue('유형별 정답률 (빈칸 = 아직 안 풂 · 괄호 = 푼 문제 수)').setFontWeight('bold');
+  var used = TYPE_NAMES.concat(['기타']).filter(function (k) { return list.some(function (s) { return s.ty[k]; }); });
+  var H2 = ['학생'].concat(used);
+  sh.getRange(r1, 1, 1, H2.length).setValues([H2]).setFontWeight('bold').setBackground('#1f3a5f').setFontColor('#ffffff');
+  if (list.length && used.length) {
+    var pv = list.map(function (s) { return [s.name].concat(used.map(function (k) { return s.ty[k] ? s.ty[k].c / s.ty[k].a : ''; })); });
+    var nv = list.map(function (s) { return used.map(function (k) { return s.ty[k] ? s.ty[k].a + '문제' : ''; }); });
+    var rg = sh.getRange(r1 + 1, 1, pv.length, H2.length); rg.setValues(pv);
+    var body = sh.getRange(r1 + 1, 2, pv.length, used.length); body.setNumberFormat('0%').setNotes(nv).setHorizontalAlignment('center');
+    sh.setConditionalFormatRules([SpreadsheetApp.newConditionalFormatRule().setGradientMinpointWithValue('#f4c7c3', SpreadsheetApp.InterpolationType.NUMBER, '0.5')
+      .setGradientMidpointWithValue('#fff2cc', SpreadsheetApp.InterpolationType.NUMBER, '0.75').setGradientMaxpointWithValue('#b7e1cd', SpreadsheetApp.InterpolationType.NUMBER, '1').setRanges([body]).build()]);
+  }
+  sh.setFrozenRows(r0); sh.setFrozenColumns(1);
+  sh.autoResizeColumns(1, Math.max(H1.length, H2.length));
+  return list.length;
+}

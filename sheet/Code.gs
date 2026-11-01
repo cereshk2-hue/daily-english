@@ -269,7 +269,7 @@ function checkRoster(p) {
 /** 처음 한 번 실행: 탭 만들기 + 권한 허용 */
 function setup() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  sheet(ss, '현황', NOW_HEAD); sheet(ss, '기록', LOG_HEAD); rosterSheet(ss);
+  sheet(ss, '현황', NOW_HEAD); sheet(ss, '기록', LOG_HEAD); rosterSheet(ss); analysis();
   var first = ss.getSheetByName('시트1') || ss.getSheetByName('Sheet1');
   if (first && ss.getSheets().length > 2 && first.getLastRow() === 0) ss.deleteSheet(first);
 }
@@ -318,3 +318,116 @@ function getNotes(p) {
   return json(res);
 }
 function json(o) { return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON); }
+
+/* ---------- 학생별 분석 탭 (11/1) ----------
+ * '기록'(단계마다 맞힌 수) · '오답노트' · '현황'(Wrap-up 점수)을 학생 이름별로 모아
+ * 누가 얼마나 공부하고 있는지, 어떤 유형이 가장 약한지 한눈에 보여 준다.
+ * 시트 위 메뉴 [데일리 영어 → 학생별 분석 새로고침] 또는 매시간 자동(메뉴에서 한 번 켜기). */
+var ANA = '학생별 분석';
+var TYPES = [ // [묶음 이름, 단계 이름에 들어 있는 말] · 위에서부터 먼저 맞는 것
+  ['영작·배열', /스크램블|배열|영작|바꿔 쓰기|(으로|형태로|동사로) 쓰기|서술/], ['어휘', /어휘|단어|숙어|유의어|반의어|철자/],
+  ['대화문', /대화|의사소통|응답/], ['어법', /어법|동사변형|오류/],
+  ['문법 개념', /문법|개념|용법|역할|쓰임|to부정사|S · O · C|동사|하는 것|같은 것끼리|개수 세기|세 개 중/],
+  ['내용 일치', /T\/F|일치|내용/], ['해석', /해석|끊어 보기/], ['대의(주제·요지·제목)', /주제|요지|제목|주장|함축|목적/],
+  ['빈칸', /빈칸/], ['순서·삽입·흐름', /순서|삽입|어색|흐름|무관/], ['요약문', /요약/], ['실전 문제', /실전/]];
+var TYPE_NAMES = TYPES.map(function (t) { return t[0]; });
+function typeOf(step) {
+  var s = String(step || '').replace(/^\d+\.\s*/, '').trim(); if (!s) return '';
+  for (var i = 0; i < TYPES.length; i++) if (TYPES[i][1].test(s)) return TYPES[i][0];
+  return '기타';
+}
+function onOpen() {
+  SpreadsheetApp.getUi().createMenu('데일리 영어')
+    .addItem('학생별 분석 새로고침', 'analysis')
+    .addItem('학생별 분석 매시간 자동 새로고침 켜기', 'analysisAuto')
+    .addToUi();
+}
+function analysisAuto() {
+  ScriptApp.getProjectTriggers().forEach(function (t) { if (t.getHandlerFunction() === 'analysis') ScriptApp.deleteTrigger(t); });
+  ScriptApp.newTrigger('analysis').timeBased().everyHours(1).create();
+  analysis();
+  try { SpreadsheetApp.getUi().alert('학생별 분석이 매시간 자동으로 새로고침돼요.'); } catch (e) {}
+}
+function analysis() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet(), tz = 'Asia/Seoul', S = {};
+  function st(n) { return S[n] || (S[n] = { name: n, books: {}, days: {}, last: 0, t: [], solved: 0, right: 0, ty: {}, nLeft: 0, nAll: 0, nTy: {}, wrap: [], fin: 0, revLeft: 0 }); }
+  var quit = {};
+  var r = ss.getSheetByName(ROSTER);
+  if (r && r.getLastRow() > 1) r.getRange(2, 1, r.getLastRow() - 1, 4).getValues().forEach(function (v) { if (String(v[0]).trim() && /그만/.test(String(v[3]))) quit[String(v[0]).trim()] = 1; });
+  var log = ss.getSheetByName('기록');
+  if (log && log.getLastRow() > 1) log.getRange(2, 1, log.getLastRow() - 1, 8).getValues().forEach(function (v) {
+    var n = String(v[1]).trim(); if (!n || !(v[0] instanceof Date)) return;
+    var s = st(n), t = v[0].getTime();
+    s.t.push(t); if (t > s.last) s.last = t; s.days[Utilities.formatDate(v[0], tz, 'yyyy-MM-dd')] = 1;
+    if (v[2]) s.books[String(v[2])] = 1;
+    if (!/단계 완료|DAY 완료/.test(String(v[5]))) return;           // 처음 배우는 단계만 (오답 노트 다시 풀기는 빼고)
+    var m = /^(\d+)\/(\d+)/.exec(String(v[7])); if (!m) return;
+    var c = +m[1], a = +m[2]; if (!a) return;
+    s.solved += a; s.right += c;
+    var ty = typeOf(v[6]); if (!ty) return;
+    var x = s.ty[ty] || (s.ty[ty] = { c: 0, a: 0 }); x.c += c; x.a += a;
+  });
+  var nt = ss.getSheetByName(NOTE);
+  if (nt && nt.getLastRow() > 1) nt.getRange(2, 1, nt.getLastRow() - 1, 9).getValues().forEach(function (v) {
+    var n = String(v[0]).trim(); if (!n) return;
+    var s = st(n), left = String(v[8]) !== '맞힘', ty = /Wrap-up/i.test(String(v[2]) + String(v[3]) + String(v[4])) ? 'Wrap-up' : typeOf(v[4]) || '기타';
+    s.nAll++; if (left) { s.nLeft++; s.nTy[ty] = (s.nTy[ty] || 0) + 1; }
+  });
+  var now = ss.getSheetByName('현황');
+  if (now && now.getLastRow() > 1) now.getRange(2, 1, now.getLastRow() - 1, 8).getValues().forEach(function (v) {
+    var n = String(v[0]).trim(); if (!n) return;
+    var s = st(n); if (v[1]) s.books[String(v[1])] = 1;
+    if (/^Wrap-up/.test(String(v[3]))) { var p = /^(\d+)점/.exec(String(v[6])); s.wrap.push(String(v[3]).replace('Wrap-up ', '') + ' ' + (p ? p[1] + '점' : String(v[6]))); return; }
+    if (v[5] === '완료') s.fin++; if (v[5] === '오답 학습 남음') { s.fin++; s.revLeft++; }
+  });
+  var MIN = 6; // 유형마다 6문제 이상 풀어야 약점으로 판단
+  var list = Object.keys(S).filter(function (n) { return !quit[n]; }).map(function (n) {
+    var s = S[n], ts = s.t.sort(function (a, b) { return a - b; }), mins = 0;
+    for (var i = 1; i < ts.length; i++) { var g = ts[i] - ts[i - 1]; if (g > 0 && g <= 15 * 60000) mins += g / 60000; }
+    s.mins = Math.round(mins);
+    var ranked = Object.keys(s.ty).filter(function (k) { return s.ty[k].a >= MIN; }).map(function (k) { return { k: k, p: s.ty[k].c / s.ty[k].a, a: s.ty[k].a }; })
+      .sort(function (a, b) { return a.p - b.p; });
+    s.weak = ranked.filter(function (x) { return x.p < 0.85; }).slice(0, 3);
+    var tops = Object.keys(s.nTy).sort(function (a, b) { return s.nTy[b] - s.nTy[a]; }).slice(0, 2);
+    s.nTop = tops.map(function (k) { return k + ' ' + s.nTy[k]; }).join(', ');
+    return s;
+  }).sort(function (a, b) { return a.name < b.name ? -1 : a.name > b.name ? 1 : 0; });
+
+  var sh = ss.getSheetByName(ANA) || ss.insertSheet(ANA, 1);
+  sh.clear(); sh.clearConditionalFormatRules();
+  var stamp = Utilities.formatDate(new Date(), tz, 'M/d HH:mm');
+  sh.getRange(1, 1).setValue('학생별 분석 · ' + stamp + ' 기준').setFontWeight('bold').setFontSize(13);
+  sh.getRange(2, 1).setValue('정답률은 처음 배우는 단계(단계 완료) 기준. 약한 유형은 6문제 이상 푼 유형 중 정답률 85% 미만, 낮은 순. 남은 오답 = 오답노트에서 아직 못 맞힌 문제.').setFontColor('#666666');
+  var H1 = ['학생', '교재', '마지막 학습', '공부한 날', '학습 시간(분)', '끝낸 DAY', '푼 문제', '정답률', '약한 유형 1', '약한 유형 2', '약한 유형 3', '남은 오답', '남은 오답 많은 유형', '오답 학습 안 한 DAY', 'Wrap-up 점수'];
+  var rows = list.map(function (s) {
+    var w = function (i) { var x = s.weak[i]; return x ? x.k + ' ' + Math.round(x.p * 100) + '% (' + x.a + '문제)' : ''; };
+    return [s.name, Object.keys(s.books).map(function (b) { return b.split('(')[0].trim(); }).filter(function (b, i, a) { return a.indexOf(b) === i; }).join(', '),
+      s.last ? new Date(s.last) : '', Object.keys(s.days).length, s.mins, s.fin, s.solved, s.solved ? s.right / s.solved : '',
+      w(0), w(1), w(2), s.nLeft, s.nTop, s.revLeft, s.wrap.join(' / ')];
+  });
+  var r0 = 4;
+  sh.getRange(r0, 1, 1, H1.length).setValues([H1]).setFontWeight('bold').setBackground('#1f3a5f').setFontColor('#ffffff');
+  if (rows.length) {
+    sh.getRange(r0 + 1, 1, rows.length, H1.length).setValues(rows);
+    sh.getRange(r0 + 1, 3, rows.length, 1).setNumberFormat('m/d hh:mm');
+    sh.getRange(r0 + 1, 8, rows.length, 1).setNumberFormat('0%');
+    sh.getRange(r0 + 1, 9, rows.length, 1).setFontColor('#b3261e').setFontWeight('bold');
+  }
+  // 학생 × 유형 정답률 표 (색: 빨강 낮음 → 초록 높음)
+  var r1 = r0 + rows.length + 3;
+  sh.getRange(r1 - 1, 1).setValue('유형별 정답률 (빈칸 = 아직 안 풂 · 괄호 = 푼 문제 수)').setFontWeight('bold');
+  var used = TYPE_NAMES.concat(['기타']).filter(function (k) { return list.some(function (s) { return s.ty[k]; }); });
+  var H2 = ['학생'].concat(used);
+  sh.getRange(r1, 1, 1, H2.length).setValues([H2]).setFontWeight('bold').setBackground('#1f3a5f').setFontColor('#ffffff');
+  if (list.length && used.length) {
+    var pv = list.map(function (s) { return [s.name].concat(used.map(function (k) { return s.ty[k] ? s.ty[k].c / s.ty[k].a : ''; })); });
+    var nv = list.map(function (s) { return used.map(function (k) { return s.ty[k] ? s.ty[k].a + '문제' : ''; }); });
+    var rg = sh.getRange(r1 + 1, 1, pv.length, H2.length); rg.setValues(pv);
+    var body = sh.getRange(r1 + 1, 2, pv.length, used.length); body.setNumberFormat('0%').setNotes(nv).setHorizontalAlignment('center');
+    sh.setConditionalFormatRules([SpreadsheetApp.newConditionalFormatRule().setGradientMinpointWithValue('#f4c7c3', SpreadsheetApp.InterpolationType.NUMBER, '0.5')
+      .setGradientMidpointWithValue('#fff2cc', SpreadsheetApp.InterpolationType.NUMBER, '0.75').setGradientMaxpointWithValue('#b7e1cd', SpreadsheetApp.InterpolationType.NUMBER, '1').setRanges([body]).build()]);
+  }
+  sh.setFrozenRows(r0); sh.setFrozenColumns(1);
+  sh.autoResizeColumns(1, Math.max(H1.length, H2.length));
+  return list.length;
+}
