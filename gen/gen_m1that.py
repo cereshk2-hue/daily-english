@@ -421,9 +421,22 @@ D.step(ERR(D, '오류 찾기', [
 ]))
 DAYS.append(D.done())
 
-for i, d in enumerate(DAYS): d['name'] = 'DAY %d' % (i + 1)
+RENAME = {'c5': 'that 영작 · 두 문장 잇기', 'c6': 'that · 교과서 6과 문장', 'c7': 'that 실전 ① 쓰임 같은 것·다른 것', 'c8': 'that 실전 ② 어법 · 종합'}
+for d in DAYS:
+    if d['id'] in RENAME: d['range'] = RENAME[d['id']]
 for d in DAYS: ansfirst(d['steps'])
-PK = {'id': 'm1-grammar-that', 'school': '중1 동아(윤정미)', 'unit': '6과 문법 · 접속사 that', 'title': '접속사 that',
-      'titleKo': '~라고 생각하다 · 지시사 that과 구별', 'exam': '2학기 기말고사', 'prose': True, 'pick': True, 'teacherPhone': '', 'days': DAYS}
-write(PK, '/home/claude/proj/data/m1-grammar-that.js', "/* 중1 동아(윤정미) 6과 문법 · 접속사 that (11/1, gen/gen_m1that.py)\n   근거: Grammar Build Up 객관식 6과 Pattern 2 유형 + 교과서 6과 본문·대화 문장. 본문 탭 = 개념 노트 + 예문 */\n")
-print('ok', [(d['id'], d['range'], len(d['steps']), sum(len(s['items']) for s in d['steps'])) for d in DAYS])
+# 11/1 선생님: 따로 링크가 아니라 to부정사 ① 단원 DAY 13부터 이어서
+import json, subprocess
+path = '/home/claude/proj/data/m1-grammar-to1.js'
+PK = json.loads(subprocess.check_output(['node', '-e', "global.window={};require('%s');process.stdout.write(JSON.stringify(window.PKG))" % path]))
+base = [d for d in PK['days'] if not d['id'].startswith('c')]
+assert len(base) == 12, len(base)
+PK['days'] = base + DAYS
+for i, d in enumerate(PK['days']): d['name'] = 'DAY %d' % (i + 1)
+PK['unit'] = '공통 문법 · to부정사 ① · 접속사 that'
+PK['title'] = 'to부정사 ① 명사적 용법 · 접속사 that'
+PK['titleKo'] = '~하는 것 · 주어 · 목적어 · 보어 / ~라고 생각하다 · 지시사 that과 구별'
+src = open(path, encoding='utf-8').read(); head = src[:src.index('window.PKG')]
+if '접속사 that' not in head: head = head.rstrip('\n') + '\n/* 11/1: DAY 13~20 = 동아(윤정미) 6과 문법 · 접속사 that (gen/gen_m1that.py가 이 파일 뒤에 붙임) */\n'
+write(PK, path, head)
+print('ok', [(d['name'], d['id'], d['range']) for d in PK['days']][10:])
