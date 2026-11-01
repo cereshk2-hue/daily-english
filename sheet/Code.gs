@@ -37,7 +37,7 @@ function boardData() {
   var ss = SpreadsheetApp.getActiveSpreadsheet(), tz = 'Asia/Seoul';
   var today = Utilities.formatDate(new Date(), tz, 'yyyy-MM-dd');
   var log = ss.getSheetByName('기록'), now = ss.getSheetByName('현황'), S = {};
-  function st(name) { return S[name] || (S[name] = { name: name, grades: {}, last: 0, mins: 0, minsToday: 0, solved: 0, right: 0, solvedToday: 0, days: 0, reviewLeft: 0, weakLeft: 0, rows: [], _t: [], nAll: 0, nLeft: 0, nTimes: 0, nToday: 0, nBook: {} }); }
+  function st(name) { return S[name] || (S[name] = { name: name, grades: {}, last: 0, mins: 0, minsToday: 0, solved: 0, right: 0, solvedToday: 0, days: 0, reviewLeft: 0, weakLeft: 0, rows: [], _t: [], nAll: 0, nLeft: 0, nTimes: 0, nToday: 0, nBook: {}, noteT: 0, noteC: 0, noteDays: {}, noteLast: 0 }); }
   if (log && log.getLastRow() > 1) {
     log.getRange(2, 1, log.getLastRow() - 1, 8).getValues().forEach(function (v) {
       if (!v[1]) return;
@@ -47,6 +47,11 @@ function boardData() {
       var g = String(v[2]).split(' ')[0]; if (g) s.grades[g] = 1;
       var m = /^(\d+)\/(\d+)$/.exec(String(v[7]));
       if (m) { s.solved += +m[2]; s.right += +m[1]; if (Utilities.formatDate(v[0], tz, 'yyyy-MM-dd') === today) s.solvedToday += +m[2]; }
+      if (/오답 노트/.test(String(v[5]))) { /* 오답 학습 기록: 오늘 몇 문제 · 최근 7일 며칠 */
+        var dk = Utilities.formatDate(v[0], tz, 'yyyy-MM-dd'), nm = /(\d+)\/(\d+)\s*$/.exec(String(v[7]));
+        s.noteDays[dk] = 1; if (t > s.noteLast) s.noteLast = t;
+        if (nm && dk === today) { s.noteT += +nm[2]; s.noteC += +nm[1]; }
+      }
     });
   }
   Object.keys(S).forEach(function (k) { /* 학습 시간: 기록 사이 간격을 더하되 15분 넘게 비면 쉬었다고 본다 */
@@ -76,7 +81,9 @@ function boardData() {
       var b = s.nBook[bk] || (s.nBook[bk] = { all: 0, left: 0 }); b.all++; if (left) b.left++;
     });
   }
-  var list = Object.keys(S).map(function (k) { var s = S[k]; s.grades = Object.keys(s.grades); s.rows.sort(function (a, b) { return b.last - a.last; }); return s; });
+  var since7 = Utilities.formatDate(new Date(Date.now() - 6 * 86400000), tz, 'yyyy-MM-dd');
+  var list = Object.keys(S).map(function (k) { var s = S[k]; s.grades = Object.keys(s.grades);
+    s.note7 = Object.keys(s.noteDays).filter(function (x) { return x >= since7; }).length; delete s.noteDays; s.rows.sort(function (a, b) { return b.last - a.last; }); return s; });
   list.sort(function (a, b) { return b.last - a.last; });
   return { today: today, made: Date.now(), list: list };
 }
@@ -111,10 +118,10 @@ var BOARD_HTML = '<!doctype html><html><head><base target="_top"><meta charset="
 'function ft(t){if(!t)return"기록 없음";var d=new Date(t),w="일월화수목금토"[d.getDay()];return(d.getMonth()+1)+"/"+d.getDate()+"("+w+") "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2)}' +
 'function hm(m){return m>=60?Math.floor(m/60)+"시간 "+(m%60)+"분":m+"분"}' +
 'var G={};D.list.forEach(function(s){s.grades.forEach(function(g){G[g]=1})});' +
-'var B=[["all","전체"],["notoday","오늘 안 한 학생"],["todo","할 일 남은 학생"],["wrong","오답 많은 순"]].concat(Object.keys(G).sort().map(function(g){return["g:"+g,g]}));' +
+'var B=[["all","전체"],["notoday","오늘 안 한 학생"],["todo","할 일 남은 학생"],["nonote","오답 학습 안 한 학생"],["wrong","오답 많은 순"]].concat(Object.keys(G).sort().map(function(g){return["g:"+g,g]}));' +
 'function bar(){document.getElementById("bar").innerHTML=B.map(function(b){return"<button data-f=\\""+b[0]+"\\" class=\\""+(F===b[0]?"on":"")+"\\">"+E(b[1])+"</button>"}).join("");' +
 '[].forEach.call(document.querySelectorAll("[data-f]"),function(x){x.onclick=function(){F=x.dataset.f;bar();draw()}})}' +
-'function draw(){var L=D.list.filter(function(s){if(Q&&s.name.indexOf(Q)<0)return false;if(F==="notoday")return dk(s.last)!==D.today;if(F==="todo")return s.reviewLeft||s.weakLeft;if(F.indexOf("g:")===0)return s.grades.indexOf(F.slice(2))>=0;return true});if(F==="wrong")L=L.slice().sort(function(a,b){return(b.nLeft-a.nLeft)||(b.nAll-a.nAll)});' +
+'function draw(){var L=D.list.filter(function(s){if(Q&&s.name.indexOf(Q)<0)return false;if(F==="notoday")return dk(s.last)!==D.today;if(F==="todo")return s.reviewLeft||s.weakLeft;if(F==="nonote")return s.nLeft>0&&!s.noteT;if(F.indexOf("g:")===0)return s.grades.indexOf(F.slice(2))>=0;return true});if(F==="wrong")L=L.slice().sort(function(a,b){return(b.nLeft-a.nLeft)||(b.nAll-a.nAll)});' +
 'var td=D.list.filter(function(s){return dk(s.last)===D.today}).length;' +
 'var todo=D.list.filter(function(s){return s.reviewLeft||s.weakLeft}).length;var nl=D.list.reduce(function(n,s){return n+(s.nLeft||0)},0);document.getElementById("sum").innerHTML="<div><small>전체 학생</small><b>"+D.list.length+"명</b></div><div><small>오늘 학습</small><b>"+td+"명</b></div><div><small>할 일 남음</small><b>"+todo+"명</b></div><div><small>못 맞힌 오답 (전체)</small><b>"+nl+"문제</b></div>";' +
 'document.getElementById("list").innerHTML=L.length?L.map(function(s){var age=(Date.now()-s.last)/864e5,cls=dk(s.last)===D.today?"today":age>3?"old":"";' +
@@ -124,7 +131,7 @@ var BOARD_HTML = '<!doctype html><html><head><base target="_top"><meta charset="
 '"<div><small>누적 푼 문제</small><b>"+s.solved+"문제</b></div><div><small>정답률 · 틀린 문제</small><b>"+acc+"% · "+(s.solved-s.right)+"개</b></div>"+' +
 '"<div class=nb><small>누적 오답 (오답 노트)</small><b>"+s.nAll+"문제</b><small>틀린 횟수 합 "+s.nTimes+"번</small></div><div class=\\""+(s.nLeft?"nb lf":"nb ok")+"\\"><small>아직 못 맞힌 오답</small><b>"+s.nLeft+"문제</b><small>"+(s.nAll?"다시 맞힘 "+(s.nAll-s.nLeft)+"문제":"오답 없음")+"</small></div></div>"+' +
 '(Object.keys(s.nBook).length?"<div class=nbk>"+Object.keys(s.nBook).map(function(k){var b=s.nBook[k];return"<span>"+E(k)+" <b>"+b.all+"</b>"+(b.left?" <i>남음 "+b.left+"</i>":" ✓")+"</span>"}).join("")+"</div>":"")+' +
-'"<div class=tags><span class=\\"tag o\\">완료 DAY "+s.days+"개</span>"+(s.reviewLeft?"<span class=\\"tag w\\">오답 학습 남음 "+s.reviewLeft+"</span>":"")+(s.weakLeft?"<span class=\\"tag b\\">약한 유형 보충 안 함 "+s.weakLeft+"</span>":"")+(s.solvedToday?"<span class=tag>오늘 "+s.solvedToday+"문제</span>":"")+(s.nToday?"<span class=\\"tag b\\">오늘 새 오답 "+s.nToday+"</span>":"")+"</div>"+' +
+'"<div class=tags><span class=\\"tag o\\">완료 DAY "+s.days+"개</span>"+(s.reviewLeft?"<span class=\\"tag w\\">오답 학습 남음 "+s.reviewLeft+"</span>":"")+(s.weakLeft?"<span class=\\"tag b\\">약한 유형 보충 안 함 "+s.weakLeft+"</span>":"")+(s.solvedToday?"<span class=tag>오늘 "+s.solvedToday+"문제</span>":"")+(s.noteT?"<span class=\\"tag o\\">오늘 오답 학습 "+s.noteT+"문제 · "+s.noteC+"개 맞힘</span>":(s.nLeft?"<span class=\\"tag b\\">오늘 오답 학습 안 함</span>":""))+(s.note7?"<span class=tag>최근 7일 오답 학습 "+s.note7+"일</span>":"")+(s.nToday?"<span class=\\"tag b\\">오늘 새 오답 "+s.nToday+"</span>":"")+"</div>"+' +
 '(s.rows.length?"<details><summary>단원·DAY별 보기 ("+s.rows.length+")</summary>"+s.rows.map(function(r){var pc=r.prog==="완료"?"done":r.prog==="오답 학습 남음"?"rev":"";' +
 'return"<div class=row><div><span class=\\"p "+pc+"\\">"+E(r.day)+" · "+E(r.prog)+"</span> "+E(r.score)+"</div><div class=u>"+E(r.book)+" · "+E(r.unit)+" · "+E(r.range)+" · "+ft(r.last)+"</div>"+(r.weak?"<div class=wk>"+E(r.weak)+"</div>":"")+"</div>"}).join("")+"</details>":"")+"</div>"}).join(""):"<p class=empty>해당하는 학생이 없어요.</p>"}' +
 'document.getElementById("made").textContent=ft(D.made)+" 기준 · 새로고침하면 최신으로 바뀌어요";' +
@@ -350,7 +357,7 @@ function analysisAuto() {
 }
 function analysis() {
   var ss = SpreadsheetApp.getActiveSpreadsheet(), tz = 'Asia/Seoul', S = {};
-  function st(n) { return S[n] || (S[n] = { name: n, books: {}, days: {}, last: 0, t: [], solved: 0, right: 0, ty: {}, nLeft: 0, nAll: 0, nTy: {}, wrap: [], fin: 0, revLeft: 0 }); }
+  function st(n) { return S[n] || (S[n] = { name: n, books: {}, days: {}, last: 0, t: [], solved: 0, right: 0, ty: {}, nLeft: 0, nAll: 0, nTy: {}, wrap: [], fin: 0, revLeft: 0, noteDays: {}, noteLast: 0, noteT: 0, noteC: 0 }); }
   var quit = {};
   var r = ss.getSheetByName(ROSTER);
   if (r && r.getLastRow() > 1) r.getRange(2, 1, r.getLastRow() - 1, 4).getValues().forEach(function (v) { if (String(v[0]).trim() && /그만/.test(String(v[3]))) quit[String(v[0]).trim()] = 1; });
@@ -360,6 +367,12 @@ function analysis() {
     var s = st(n), t = v[0].getTime();
     s.t.push(t); if (t > s.last) s.last = t; s.days[Utilities.formatDate(v[0], tz, 'yyyy-MM-dd')] = 1;
     if (v[2]) s.books[String(v[2])] = 1;
+    if (/오답 노트/.test(String(v[5]))) {
+      var dk = Utilities.formatDate(v[0], tz, 'yyyy-MM-dd'), nm = /(\d+)\/(\d+)\s*$/.exec(String(v[7]));
+      s.noteDays[dk] = 1; if (t > s.noteLast) s.noteLast = t;
+      if (nm && dk === Utilities.formatDate(new Date(), tz, 'yyyy-MM-dd')) { s.noteT += +nm[2]; s.noteC += +nm[1]; }
+      return;
+    }
     if (!/단계 완료|DAY 완료/.test(String(v[5]))) return;           // 처음 배우는 단계만 (오답 노트 다시 풀기는 빼고)
     var m = /^(\d+)\/(\d+)/.exec(String(v[7])); if (!m) return;
     var c = +m[1], a = +m[2]; if (!a) return;
@@ -385,6 +398,8 @@ function analysis() {
     var s = S[n], ts = s.t.sort(function (a, b) { return a - b; }), mins = 0;
     for (var i = 1; i < ts.length; i++) { var g = ts[i] - ts[i - 1]; if (g > 0 && g <= 15 * 60000) mins += g / 60000; }
     s.mins = Math.round(mins);
+    var since7 = Utilities.formatDate(new Date(Date.now() - 6 * 86400000), tz, 'yyyy-MM-dd');
+    s.note7 = Object.keys(s.noteDays).filter(function (x) { return x >= since7; }).length;
     var ranked = Object.keys(s.ty).filter(function (k) { return s.ty[k].a >= MIN; }).map(function (k) { return { k: k, p: s.ty[k].c / s.ty[k].a, a: s.ty[k].a }; })
       .sort(function (a, b) { return a.p - b.p; });
     s.weak = ranked.filter(function (x) { return x.p < 0.85; }).slice(0, 3);
@@ -397,13 +412,14 @@ function analysis() {
   sh.clear(); sh.clearConditionalFormatRules();
   var stamp = Utilities.formatDate(new Date(), tz, 'M/d HH:mm');
   sh.getRange(1, 1).setValue('학생별 분석 · ' + stamp + ' 기준').setFontWeight('bold').setFontSize(13);
-  sh.getRange(2, 1).setValue('정답률은 처음 배우는 단계(단계 완료) 기준. 약한 유형은 6문제 이상 푼 유형 중 정답률 85% 미만, 낮은 순. 남은 오답 = 오답노트에서 아직 못 맞힌 문제.').setFontColor('#666666');
-  var H1 = ['학생', '교재', '마지막 학습', '공부한 날', '학습 시간(분)', '끝낸 DAY', '푼 문제', '정답률', '약한 유형 1', '약한 유형 2', '약한 유형 3', '남은 오답', '남은 오답 많은 유형', '오답 학습 안 한 DAY', 'Wrap-up 점수'];
+  sh.getRange(2, 1).setValue('정답률은 처음 배우는 단계(단계 완료) 기준. 약한 유형은 6문제 이상 푼 유형 중 정답률 85% 미만, 낮은 순. 남은 오답 = 오답노트에서 아직 못 맞힌 문제. 오답 학습 = 앱의 오답 노트에서 다시 푼 기록(Wrap-up 오답 포함).').setFontColor('#666666');
+  var H1 = ['학생', '교재', '마지막 학습', '공부한 날', '학습 시간(분)', '끝낸 DAY', '푼 문제', '정답률', '약한 유형 1', '약한 유형 2', '약한 유형 3', '남은 오답', '남은 오답 많은 유형', '오늘 오답 학습', '최근 7일 오답 학습한 날', '마지막 오답 학습', '오답 학습 안 한 DAY', 'Wrap-up 점수'];
   var rows = list.map(function (s) {
     var w = function (i) { var x = s.weak[i]; return x ? x.k + ' ' + Math.round(x.p * 100) + '% (' + x.a + '문제)' : ''; };
     return [s.name, Object.keys(s.books).map(function (b) { return b.split('(')[0].trim(); }).filter(function (b, i, a) { return a.indexOf(b) === i; }).join(', '),
       s.last ? new Date(s.last) : '', Object.keys(s.days).length, s.mins, s.fin, s.solved, s.solved ? s.right / s.solved : '',
-      w(0), w(1), w(2), s.nLeft, s.nTop, s.revLeft, s.wrap.join(' / ')];
+      w(0), w(1), w(2), s.nLeft, s.nTop, s.noteT ? s.noteT + '문제 · ' + s.noteC + '개 맞힘' : (s.nLeft ? '안 함' : ''), s.note7 + '일 / 7일', s.noteLast ? new Date(s.noteLast) : '',
+      s.revLeft, s.wrap.join(' / ')];
   });
   var r0 = 4;
   sh.getRange(r0, 1, 1, H1.length).setValues([H1]).setFontWeight('bold').setBackground('#1f3a5f').setFontColor('#ffffff');
@@ -412,6 +428,11 @@ function analysis() {
     sh.getRange(r0 + 1, 3, rows.length, 1).setNumberFormat('m/d hh:mm');
     sh.getRange(r0 + 1, 8, rows.length, 1).setNumberFormat('0%');
     sh.getRange(r0 + 1, 9, rows.length, 1).setFontColor('#b3261e').setFontWeight('bold');
+    sh.getRange(r0 + 1, 16, rows.length, 1).setNumberFormat('m/d hh:mm');
+    rows.forEach(function (row, i) { /* 오늘 오답 학습: 했으면 초록, 안 했으면 빨강 */
+      if (row[13] === '안 함') sh.getRange(r0 + 1 + i, 14).setBackground('#fce8e6').setFontColor('#b3261e').setFontWeight('bold');
+      else if (row[13]) sh.getRange(r0 + 1 + i, 14).setBackground('#e6f4ea').setFontColor('#137333');
+    });
   }
   // 학생 × 유형 정답률 표 (색: 빨강 낮음 → 초록 높음)
   var r1 = r0 + rows.length + 3;
