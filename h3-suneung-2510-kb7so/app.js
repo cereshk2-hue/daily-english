@@ -873,6 +873,7 @@
   }
 
   function startStep(di, si) {
+    if (S.name && dailyPending()) { dailyGate(di, si); return; } /* 선생님: 지난 오답 15문제를 먼저 풀고 오늘 학습 */
     var d = P.days[di], st = DS(d.id), step = d.steps[si];
     if (!st.started) { st.started = Date.now(); save(); report('시작', d); }
     if (st.run && st.run.si === si) {
@@ -884,6 +885,17 @@
       saveRun();
     }
     render();
+  }
+
+  function dailyGate(di, si) {
+    RS = null; top();
+    var nd = noteDay(), av = Object.keys(notes()).filter(function (id) { var e = notes()[id]; return canToday(e) && dayById(e.d) && !isTestNote(e); }).length, k = Math.min(DAILY - nd.n, av);
+    app.innerHTML = '<div class="topbar"><div class="row"><button class="link" id="gback">← 처음 화면</button><span class="crumb">' + E(P.days[di].name + ' · ' + P.days[di].range) + '</span></div></div>' +
+      '<div class="stack"><section class="card pop stack" style="gap:10px"><div class="eyebrow">오늘 학습 전에</div><h2 style="margin:0">먼저 오늘의 오답 ' + k + '문제부터 풀어요</h2>' +
+      '<p class="note" style="margin:0">지난번까지 쌓인 오답을 풀어야 <b>' + E(P.days[di].name) + '</b> 학습을 시작할 수 있어요.' + (nd.n ? ' 오늘 ' + nd.n + '/' + DAILY + '문제 했어요.' : '') + '</p>' +
+      '<button class="btn plank" id="gnote">오늘의 오답 ' + (nd.n ? '이어서 풀기' : k + '문제 풀기') + ' →</button></section></div>';
+    $('#gback').onclick = function () { home('today'); };
+    $('#gnote').onclick = function () { startNote('today'); };
   }
 
   function startFree(di, si, label) {
@@ -1275,7 +1287,8 @@
   }
   function noteKeyName(k) { return k === '*' ? '남은 문제 전체' : k === '**' ? '전체 복습' : k === 'today' ? '오늘의 오답' : String(k).replace(/^g:/, ''); }
   var NEED = 2; /* 서로 다른 날 이만큼 맞혀야 노트에서 빠짐 */
-  function canToday(e) { return !e.ok && e.hitDay !== ymd(Date.now()); } /* 오늘 이미 맞힌 문제는 내일 한 번 더 */
+  function canToday(e) { var td = ymd(Date.now()); return !e.ok && e.hitDay !== td && ymd(e.first || 0) !== td; } /* 오늘 이미 맞힌 문제는 내일 한 번 더 · 오늘 새로 생긴 오답은 내일부터 (그날은 DAY 오답 학습으로 풂) */
+  function newToday(e) { return !e.ok && ymd(e.first || 0) === ymd(Date.now()); }
   var DAILY = 15; /* 오늘의 오답: 하루에 이만큼 (선생님: 하루 15개 풀고 시작) */
   function isTestNote(e) { var d = dayById(e.d); return !!(d && d.test); }
   function purgeTestNotes() { /* 예전에 담긴 Wrap-up 문제는 노트에서 지우고 시트에서도 지운다 */
@@ -1287,19 +1300,19 @@
     var g = {}, order = [];
     Object.keys(notes()).forEach(function (id) { var e = notes()[id], di = idxById(e.d); if (di < 0 || isTestNote(e)) return;
       var k = noteGroup(DX(di)); if (!g[k]) { g[k] = { k: k, di: di, rem: 0, all: 0, label: /과$/.test(k) || DX(di).test ? k : k + ' (' + DX(di).range + ')' }; order.push(k); }
-      g[k].all++; if (!e.ok) g[k].rem++; if (!e.ok && e.hit >= 1) g[k].chk = (g[k].chk || 0) + 1; if (canToday(e)) g[k].av = (g[k].av || 0) + 1; if (di < g[k].di) g[k].di = di; });
+      g[k].all++; if (!e.ok) g[k].rem++; if (!e.ok && e.hit >= 1) g[k].chk = (g[k].chk || 0) + 1; if (canToday(e)) g[k].av = (g[k].av || 0) + 1; if (newToday(e)) g[k].nw = (g[k].nw || 0) + 1; if (di < g[k].di) g[k].di = di; });
     return order.map(function (k) { return g[k]; }).sort(function (a, b) { return a.di - b.di; });
   }
   function noteHTML() {
     try { purgeTestNotes(); } catch (e) {}
     var gs = noteGroups(), rem = gs.reduce(function (n, g) { return n + g.rem; }, 0), all = gs.reduce(function (n, g) { return n + g.all; }, 0),
-      chk = gs.reduce(function (n, g) { return n + (g.chk || 0); }, 0), av = gs.reduce(function (n, g) { return n + (g.av || 0); }, 0);
+      chk = gs.reduce(function (n, g) { return n + (g.chk || 0); }, 0), av = gs.reduce(function (n, g) { return n + (g.av || 0); }, 0), nw = gs.reduce(function (n, g) { return n + (g.nw || 0); }, 0);
     if (!all) return '<section class="card notecard"><div class="nc-h"><b>오답 노트</b><span>아직 비어 있어요</span></div><p class="note" style="margin:6px 0 0">틀린 문제와, 맞혔어도 <b>헷갈려요</b>를 누른 문제가 여기에 모여요. 시험 전이나 주말에 모아서 다시 풀어요.</p></section>';
     return '<section class="card notecard"><div class="nc-h"><b>오답 노트</b><span>남은 문제 <b>' + rem + '</b>개' + (chk ? ' (한 번 더 확인 ' + chk + ')' : '') + ' · 모은 문제 ' + all + '개</span></div>' +
       '<div class="nc-g">' + gs.map(function (g) { return '<button class="btn ghost" data-note="g:' + E(g.k) + '">' + E(g.label) + ' <b>' + (g.rem || '✓') + '</b></button>'; }).join('') + '</div>' +
-      (rem && !av ? '<p class="note" style="margin:8px 0 0"><b>오늘 할 오답은 다 했어요 ✓</b> 오늘 맞힌 문제는 <b>다른 날 한 번 더</b> 맞혀야 노트에서 빠져요. 내일 다시 나와요.</p>' : '') +
+      (rem && !av ? '<p class="note" style="margin:8px 0 0"><b>오늘 할 오답은 다 했어요 ✓</b> 오늘 맞힌 문제는 <b>다른 날 한 번 더</b> 맞혀야 노트에서 빠지고, 오늘 새로 틀린 문제는 <b>내일부터</b> 나와요.</p>' : '') +
       (av ? (function () { var nd = noteDay(), done = nd.n >= DAILY, k = Math.min(done ? DAILY : DAILY - nd.n, av);
-          return (nd.n ? '<p class="note" style="margin:8px 0 4px">' + (done ? '<b>오늘의 오답 완료 ✓</b> ' : '오늘 ' + nd.n + '/' + DAILY + ' · ') + nd.n + '문제 풀고 ' + nd.c + '개 맞혔어요.' + (done ? '' : ' 이어서 풀어요.') + '</p>' : '<p class="note" style="margin:8px 0 4px"><b>오늘 학습 전에 오늘의 오답 ' + k + '문제부터!</b> 여러 번 틀린 문제부터 나와요. <b>서로 다른 날 2번</b> 맞히면 노트에서 빠져요.</p>') +
+          return (nd.n ? '<p class="note" style="margin:8px 0 4px">' + (done ? '<b>오늘의 오답 완료 ✓</b> ' : '오늘 ' + nd.n + '/' + DAILY + ' · ') + nd.n + '문제 풀고 ' + nd.c + '개 맞혔어요.' + (done ? '' : ' 이어서 풀어요.') + '</p>' : '<p class="note" style="margin:8px 0 4px"><b>오늘 학습 전에 오늘의 오답 ' + k + '문제부터!</b> 지난번까지 쌓인 오답에서 여러 번 틀린 문제부터 나와요. <b>서로 다른 날 2번</b> 맞히면 노트에서 빠져요.' + (nw ? ' (오늘 새로 틀린 ' + nw + '문제는 내일부터)' : '') + '</p>') +
             '<button class="btn plank" data-note="today">' + (done ? '오늘의 오답 ' + k + '문제 더 풀기' : nd.n ? '오늘의 오답 이어서 풀기 (' + k + '문제 남음)' : '오늘의 오답 ' + k + '문제 풀기') + '</button>' +
             (av > k ? '<button class="btn ghost" data-note="*" style="margin-top:8px">남은 문제 전체 다시 풀기 (' + av + ')</button>' : ''); })()
         : rem ? '' : '<p class="note" style="margin:8px 0 0">남은 문제를 다 맞혔어요! 시험 전에는 아래에서 전체를 다시 복습해 보세요.</p>') +
