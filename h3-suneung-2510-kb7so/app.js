@@ -1215,7 +1215,7 @@
     if (!dayProgress(d).finished || st.reviewDone || wrongCount(d) === 0) return false;
     var r = st.review; if (r && r.qs && r.qi >= r.qs.length) { markReviewDone(d, { n: r.base, tries: r.qs.length, at: Date.now(), first: r.base - (r.fw || 0) }, r.base + '개 중 ' + (r.base - (r.fw || 0)) + '개 한 번에'); return false; }
     var ws = []; d.steps.forEach(function (_, i) { (st.wrong[i] || []).forEach(function (q) { ws.push(q); }); });
-    if (ws.length && ws.every(function (q) { var id = noteId(q, d), e = notes()[id]; return (e && e.ok) || (st.fixed && (st.fixed[id] || st.fixed[pairId(q, d)])); })) { markReviewDone(d, { n: ws.length, tries: ws.length, at: Date.now(), first: null }, '틀린 ' + ws.length + '개를 다시 풀어 모두 맞힘'); return false; }
+    if (ws.length && ws.every(function (q) { var id = noteId(q, d), e = notes()[id]; return (e && (e.ok || e.hit >= 1)) || (st.fixed && (st.fixed[id] || st.fixed[pairId(q, d)])); })) { markReviewDone(d, { n: ws.length, tries: ws.length, at: Date.now(), first: null }, '틀린 ' + ws.length + '개를 다시 풀어 모두 맞힘'); return false; }
     return true;
   }
   /* ---------- 오답 노트 ----------
@@ -1231,10 +1231,12 @@
     c.stepTitle = q.stepTitle || step.title; c.guide = q.guide || step.guide; delete c.noteId; delete c.dayIdx;
     var id = q.noteId || noteId(c, d), e = notes()[id] || (notes()[id] = { id: id, d: d.id, wrong: 0, conf: false, ok: false, first: Date.now() });
     e.q = c; e.at = Date.now();
-    if (kind === 'wrong') { e.wrong++; e.ok = false; } else if (kind === 'conf') { e.conf = true; e.ok = false; } else if (kind === 'ok') { e.ok = true; e.conf = false; }
+    /* 11/1: 오답 노트에서는 서로 다른 날 2번 맞혀야 빠진다 (같은 날 여러 번 맞혀도 1번) · 틀리면 처음부터 */
+    if (kind === 'wrong') { e.wrong++; e.ok = false; e.hit = 0; e.hitDay = ''; } else if (kind === 'conf') { e.conf = true; e.ok = false; e.hit = 0; e.hitDay = ''; }
+    else if (kind === 'ok') { var td = ymd(Date.now()); if (e.hitDay !== td) { e.hit = (e.hit || 0) + 1; e.hitDay = td; } if (e.hit >= NEED) { e.ok = true; e.conf = false; } }
     save(); noteSend(e); return e;
   }
-  function noteUnconf(q) { var e = noteEntry(q); if (!e) return; e.conf = false; e.at = Date.now(); if (!e.wrong) { delete notes()[e.id]; noteSend(e, true); } else { if (RS.practice === '오답 노트') e.ok = true; noteSend(e); } save(); }
+  function noteUnconf(q) { var e = noteEntry(q); if (!e) return; e.conf = false; e.at = Date.now(); if (!e.wrong) { delete notes()[e.id]; noteSend(e, true); } else { if (RS.practice === '오답 노트' && (e.hit || 0) >= NEED) e.ok = true; noteSend(e); } save(); }
   /* 시트와 맞추기: 바뀐 노트는 보내고(daily:noteq 대기열), 학생이 들어오면 시트의 노트를 받아 합친다 → 어느 기기에서든 같은 노트 */
   var NQK = 'daily:noteq', nFlushing = false, nSynced = {};
   function noteQ() { try { return JSON.parse(lsGet(NQK)) || []; } catch (e) { return []; } }
@@ -1243,7 +1245,7 @@
     var d = dayById(e.d) || P.days[0], q = e.q || {};
     var item = { name: S.name, unit: P.id, school: P.school, id: e.id, at: e.at || Date.now(), del: !!del, day: d.name + ' ' + d.range, group: noteGroup(d), step: q.stepTitle || '',
       text: cut(strip(q.prompt || q.s || q.ko || (q.lines || []).join(' / ') || q.key || ''), 200), wrong: e.wrong, conf: e.conf, ok: e.ok,
-      data: del ? '' : JSON.stringify({ id: e.id, d: e.d, wrong: e.wrong, conf: e.conf, ok: e.ok, at: e.at, first: e.first, q: e.q }) };
+      data: del ? '' : JSON.stringify({ id: e.id, d: e.d, wrong: e.wrong, conf: e.conf, ok: e.ok, hit: e.hit || 0, hitDay: e.hitDay || '', at: e.at, first: e.first, q: e.q }) };
     var qq = noteQ().filter(function (x) { return !(x.name === item.name && x.unit === item.unit && x.id === item.id); }); qq.push(item);
     lsSet(NQK, JSON.stringify(qq.slice(-400))); setTimeout(noteFlush, 300);
   }
@@ -1272,39 +1274,43 @@
       }, function () { nSynced[who] = false; });
   }
   function noteKeyName(k) { return k === '*' ? '남은 문제 전체' : k === '**' ? '전체 복습' : k === 'today' ? '오늘의 오답' : String(k).replace(/^g:/, ''); }
+  var NEED = 2; /* 서로 다른 날 이만큼 맞혀야 노트에서 빠짐 */
+  function canToday(e) { return !e.ok && e.hitDay !== ymd(Date.now()); } /* 오늘 이미 맞힌 문제는 내일 한 번 더 */
   var DAILY = 15; /* 오늘의 오답: 하루에 이만큼 (선생님: 하루 15개 풀고 시작) */
   function isTestNote(e) { var d = dayById(e.d); return !!(d && d.test); }
   function purgeTestNotes() { /* 예전에 담긴 Wrap-up 문제는 노트에서 지우고 시트에서도 지운다 */
     var m = notes(), n = 0; Object.keys(m).forEach(function (id) { var e = m[id]; if (isTestNote(e)) { delete m[id]; noteSend(e, true); n++; } }); if (n) save(); }
-  function dailyPending() { try { purgeTestNotes(); } catch (e) {} var rem = Object.keys(notes()).filter(function (id) { var e = notes()[id]; return !e.ok && dayById(e.d) && !isTestNote(e); }).length; return rem > 0 && noteDay().n < DAILY; }
+  function dailyPending() { try { purgeTestNotes(); } catch (e) {} var rem = Object.keys(notes()).filter(function (id) { var e = notes()[id]; return canToday(e) && dayById(e.d) && !isTestNote(e); }).length; return rem > 0 && noteDay().n < DAILY; }
   function noteDay() { var t = ymd(Date.now()); if (!S.noteDay || S.noteDay.d !== t) S.noteDay = { d: t, n: 0, c: 0 }; return S.noteDay; }
   function noteGroup(d) { if (d.test) return 'Wrap-up ' + d.range; var m = /(\d+)과/.exec(d.range || ''); return m ? m[1] + '과' : d.name; }
   function noteGroups() {
     var g = {}, order = [];
     Object.keys(notes()).forEach(function (id) { var e = notes()[id], di = idxById(e.d); if (di < 0 || isTestNote(e)) return;
       var k = noteGroup(DX(di)); if (!g[k]) { g[k] = { k: k, di: di, rem: 0, all: 0, label: /과$/.test(k) || DX(di).test ? k : k + ' (' + DX(di).range + ')' }; order.push(k); }
-      g[k].all++; if (!e.ok) g[k].rem++; if (di < g[k].di) g[k].di = di; });
+      g[k].all++; if (!e.ok) g[k].rem++; if (!e.ok && e.hit >= 1) g[k].chk = (g[k].chk || 0) + 1; if (canToday(e)) g[k].av = (g[k].av || 0) + 1; if (di < g[k].di) g[k].di = di; });
     return order.map(function (k) { return g[k]; }).sort(function (a, b) { return a.di - b.di; });
   }
   function noteHTML() {
     try { purgeTestNotes(); } catch (e) {}
-    var gs = noteGroups(), rem = gs.reduce(function (n, g) { return n + g.rem; }, 0), all = gs.reduce(function (n, g) { return n + g.all; }, 0);
+    var gs = noteGroups(), rem = gs.reduce(function (n, g) { return n + g.rem; }, 0), all = gs.reduce(function (n, g) { return n + g.all; }, 0),
+      chk = gs.reduce(function (n, g) { return n + (g.chk || 0); }, 0), av = gs.reduce(function (n, g) { return n + (g.av || 0); }, 0);
     if (!all) return '<section class="card notecard"><div class="nc-h"><b>오답 노트</b><span>아직 비어 있어요</span></div><p class="note" style="margin:6px 0 0">틀린 문제와, 맞혔어도 <b>헷갈려요</b>를 누른 문제가 여기에 모여요. 시험 전이나 주말에 모아서 다시 풀어요.</p></section>';
-    return '<section class="card notecard"><div class="nc-h"><b>오답 노트</b><span>남은 문제 <b>' + rem + '</b>개 · 모은 문제 ' + all + '개</span></div>' +
+    return '<section class="card notecard"><div class="nc-h"><b>오답 노트</b><span>남은 문제 <b>' + rem + '</b>개' + (chk ? ' (한 번 더 확인 ' + chk + ')' : '') + ' · 모은 문제 ' + all + '개</span></div>' +
       '<div class="nc-g">' + gs.map(function (g) { return '<button class="btn ghost" data-note="g:' + E(g.k) + '">' + E(g.label) + ' <b>' + (g.rem || '✓') + '</b></button>'; }).join('') + '</div>' +
-      (rem ? (function () { var nd = noteDay(), done = nd.n >= DAILY, k = Math.min(done ? DAILY : DAILY - nd.n, rem);
-          return (nd.n ? '<p class="note" style="margin:8px 0 4px">' + (done ? '<b>오늘의 오답 완료 ✓</b> ' : '오늘 ' + nd.n + '/' + DAILY + ' · ') + nd.n + '문제 풀고 ' + nd.c + '개 맞혔어요.' + (done ? '' : ' 이어서 풀어요.') + '</p>' : '<p class="note" style="margin:8px 0 4px"><b>오늘 학습 전에 오늘의 오답 ' + k + '문제부터!</b> 여러 번 틀린 문제부터 나오고, 맞힌 문제는 노트에서 빠져서 내일은 그다음 문제가 나와요.</p>') +
+      (rem && !av ? '<p class="note" style="margin:8px 0 0"><b>오늘 할 오답은 다 했어요 ✓</b> 오늘 맞힌 문제는 <b>다른 날 한 번 더</b> 맞혀야 노트에서 빠져요. 내일 다시 나와요.</p>' : '') +
+      (av ? (function () { var nd = noteDay(), done = nd.n >= DAILY, k = Math.min(done ? DAILY : DAILY - nd.n, av);
+          return (nd.n ? '<p class="note" style="margin:8px 0 4px">' + (done ? '<b>오늘의 오답 완료 ✓</b> ' : '오늘 ' + nd.n + '/' + DAILY + ' · ') + nd.n + '문제 풀고 ' + nd.c + '개 맞혔어요.' + (done ? '' : ' 이어서 풀어요.') + '</p>' : '<p class="note" style="margin:8px 0 4px"><b>오늘 학습 전에 오늘의 오답 ' + k + '문제부터!</b> 여러 번 틀린 문제부터 나와요. <b>서로 다른 날 2번</b> 맞히면 노트에서 빠져요.</p>') +
             '<button class="btn plank" data-note="today">' + (done ? '오늘의 오답 ' + k + '문제 더 풀기' : nd.n ? '오늘의 오답 이어서 풀기 (' + k + '문제 남음)' : '오늘의 오답 ' + k + '문제 풀기') + '</button>' +
-            (rem > DAILY ? '<button class="btn ghost" data-note="*" style="margin-top:8px">남은 문제 전체 다시 풀기 (' + rem + ')</button>' : ''); })()
-        : '<p class="note" style="margin:8px 0 0">남은 문제를 다 맞혔어요! 시험 전에는 아래에서 전체를 다시 복습해 보세요.</p>') +
+            (av > k ? '<button class="btn ghost" data-note="*" style="margin-top:8px">남은 문제 전체 다시 풀기 (' + av + ')</button>' : ''); })()
+        : rem ? '' : '<p class="note" style="margin:8px 0 0">남은 문제를 다 맞혔어요! 시험 전에는 아래에서 전체를 다시 복습해 보세요.</p>') +
       (all > rem ? '<button class="link" data-note="**" style="margin-top:8px">맞힌 문제까지 전체 복습 (' + all + ')</button>' : '') + '</section>';
   }
   function startNote(key) {
     var es = Object.keys(notes()).map(function (id) { return notes()[id]; }).filter(function (e) { return !!dayById(e.d) && !isTestNote(e); });
     if (key === 'today') { /* 여러 번 틀린 것 → 오래된 것 → 헷갈려요만 누른 것 순으로 DAILY개, 푸는 순서는 DAY 순 */
-      es = es.filter(function (e) { return !e.ok; }).sort(function (a, b) { return (b.wrong || 0) - (a.wrong || 0) || (a.first || 0) - (b.first || 0); }).slice(0, noteDay().n < DAILY ? DAILY - noteDay().n : DAILY);
-    } else if (key === '*') es = es.filter(function (e) { return !e.ok; });
-    else if (key !== '**') { var k = key.replace(/^g:/, ''), inG = es.filter(function (e) { return noteGroup(dayById(e.d)) === k; }), r = inG.filter(function (e) { return !e.ok; }); es = r.length ? r : inG; }
+      es = es.filter(canToday).sort(function (a, b) { return ((b.hit || 0) - (a.hit || 0)) || (b.wrong || 0) - (a.wrong || 0) || (a.first || 0) - (b.first || 0); }).slice(0, noteDay().n < DAILY ? DAILY - noteDay().n : DAILY);
+    } else if (key === '*') es = es.filter(canToday);
+    else if (key !== '**') { var k = key.replace(/^g:/, ''), inG = es.filter(function (e) { return noteGroup(dayById(e.d)) === k; }), r = inG.filter(canToday); es = r.length ? r : inG; }
     if (!es.length) return;
     var di0 = function (e) { return idxById(e.d); };
     es.sort(function (a, b) { return di0(a) - di0(b) || a.first - b.first; });
