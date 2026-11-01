@@ -295,7 +295,23 @@
     var need = type === 'vocab' ? 1 : 2;
     return sc[0].n >= need && (!sc[1] || sc[0].n > sc[1].n) ? sc[0].l : '';
   }
-  function gen(step, d) {
+  /* 11/1 선생님: 문장순서 단계에서 영어 순서 전에 '① 우리말로 내용 흐름'(본문 해석 문장)을 먼저 맞춘다. 같은 단계 안이라 단계 번호·기록은 그대로 */
+  function koNorm(x) { return String(x || '').replace(/<[^>]+>/g, '').replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, ' ').trim().toLowerCase(); }
+  function koFlow(step, d, qs) {
+    if (step.type !== 'order' || !d) return qs;
+    var M = {}; (d.passage || []).forEach(function (l) { if (l[0] !== '#' && l[1] && l[2]) M[koNorm(l[1])] = l[2]; });
+    var out = [];
+    qs.forEach(function (q) {
+      var kos = (q.lines || []).map(function (en) { return M[koNorm(en)]; });
+      var good = kos.length > 1 && kos.every(Boolean) && kos.filter(function (k, i) { return kos.indexOf(k) === i; }).length === kos.length;
+      if (good) out.push({ t: 'order', ko: true, lines: kos, pool: shuffleDiff(kos.map(function (_, j) { return j; })), key: q.key + ' 우리말', src: q.src, en: q.lines });
+      if (good) q.afterKo = true;
+      out.push(q);
+    });
+    return out;
+  }
+  function gen(step, d) { return koFlow(step, d, genRaw(step, d)); }
+  function genRaw(step, d) {
     var secs = sections(d);
     if (!secs) return gen0(step);
     var lab = function (q, raw) {
@@ -965,8 +981,10 @@
       '<div class="prompt en para">' + q.rest.map(function (l, j) { return E(l) + ' <button class="mark gap" data-m="' + j + '">' + CIRC[j] + '</button> '; }).join('') + '</div>';
     if (q.t === 'odd') return '<div class="prompt en para">' + q.lines.map(function (l, j) {
       return '<button class="sent" data-m="' + j + '"><sup>' + CIRC[j] + '</sup>' + E(l) + '</button>'; }).join(' ') + '</div>';
-    if (q.t === 'order') return '<div class="guide" style="margin:0">누른 순서대로 아래에 쌓여요. 잘못 놓았으면 다시 눌러 빼세요.</div>' +
-      '<div class="tray lines" id="tray"></div><div class="pool lines" id="pool">' + q.pool.map(function (j) { return '<button class="chip en" data-j="' + j + '">' + E(q.lines[j]) + '</button>'; }).join('') + '</div>' +
+    if (q.t === 'order') return (q.ko ? '<div class="flowtag ko1"><b>① 우리말로 내용 흐름 먼저</b> 해석을 꼼꼼히 읽고, 글의 내용이 이어지는 순서대로 눌러요.</div>'
+        : q.afterKo ? '<div class="flowtag en2"><b>② 이제 영어 문장 순서</b> 방금 잡은 흐름대로 영어 문장을 배열해요.</div>' : '') +
+      '<div class="guide" style="margin:0">누른 순서대로 아래에 쌓여요. 잘못 놓았으면 다시 눌러 빼세요.</div>' +
+      '<div class="tray lines" id="tray"></div><div class="pool lines" id="pool">' + q.pool.map(function (j) { return '<button class="chip' + (q.ko ? ' kochip' : ' en') + '" data-j="' + j + '">' + E(q.lines[j]) + '</button>'; }).join('') + '</div>' +
       '<div class="nextbar"><button class="btn" id="chk" disabled>확인</button></div>';
     if (q.t === 'scramble' && q.gap) return '<div class="prompt"><span class="ko">우리말</span>' + E(q.ko) + '</div>' +
       '<div class="gapline en">' + E(q.pre) + ' <span class="tray inline" id="tray"></span> ' + E(q.post) + '</div><div class="pool" id="pool">' + q.pool.map(function (j) { return '<button class="chip en" data-j="' + j + '">' + E(q.toks[j]) + '</button>'; }).join('') + '</div>' +
@@ -1028,7 +1046,7 @@
       var picked = [], tray = $('#tray'), pool = $('#pool'), chk = $('#chk'), lines = q.t === 'order';
       var label = function (j) { return lines ? q.lines[j] : q.toks[j]; };
       var draw = function () {
-        tray.innerHTML = picked.map(function (j, k) { return '<button class="chip in en" data-k="' + k + '">' + (lines ? '<span class="n">' + (k + 1) + '</span>' : '') + E(label(j)) + '</button>'; }).join('') +
+        tray.innerHTML = picked.map(function (j, k) { return '<button class="chip in' + (q.ko ? ' kochip' : ' en') + '" data-k="' + k + '">' + (lines ? '<span class="n">' + (k + 1) + '</span>' : '') + E(label(j)) + '</button>'; }).join('') +
           (!lines && q.punct && picked.length ? '<span class="punct">' + E(q.punct) + '</span>' : '');
         pool.querySelectorAll('.chip').forEach(function (c) { var u = picked.indexOf(+c.dataset.j) >= 0; c.classList.toggle('used', u); c.disabled = u; });
         chk.disabled = picked.length !== q.pool.length;
@@ -1039,7 +1057,7 @@
       chk.onclick = function () {
         if (RS.answered) return;
         var ok, extra;
-        if (lines) { ok = picked.every(function (j, k) { return j === k; }); extra = ok ? '' : '<b>바른 순서</b><ol style="margin:4px 0 0;padding-left:1.3em">' + q.lines.map(function (l) { return '<li class="en">' + E(l) + '</li>'; }).join('') + '</ol>'; }
+        if (lines) { ok = picked.every(function (j, k) { return j === k; }); extra = ok ? '' : '<b>바른 순서</b><ol style="margin:4px 0 0;padding-left:1.3em">' + q.lines.map(function (l, i) { return '<li' + (q.ko ? '' : ' class="en"') + '>' + E(l) + (q.ko && q.en ? '<br><small class="en" style="color:var(--muted)">' + E(q.en[i]) + '</small>' : '') + '</li>'; }).join('') + '</ol>'; }
         else { var built = picked.map(function (j) { return q.toks[j]; }).join(' ') + q.punct; ok = norm(built) === norm(q.ans); extra = ok ? '' : q.gap ? '정답: <span class="en">' + E(q.pre) + ' <b>' + E(q.ans) + '</b> ' + E(q.post) + '</span>' : '정답: <b class="en">' + E(q.ans) + '</b>'; }
         tray.classList.add(ok ? 'right' : 'wrong'); chk.hidden = true;
         tray.querySelectorAll('.chip').forEach(function (c) { c.disabled = true; });
