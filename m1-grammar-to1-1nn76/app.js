@@ -19,7 +19,7 @@
     var nz = function (x) { return String(x).toLowerCase().replace(/[’‘`]/g, "'").replace(/\s+/g, ' ').trim(); };
     var unq = function (x) { return String(x).trim().replace(/^["“]/, '').replace(/["”]$/, '').trim(); };
     var lines = d.passage.filter(function (l) { return l[0] !== '#' && l[2] && !(/^[❶-❿]$/.test(l[1])); }), picked = [], exOf = {}, gapOf = {};
-    /* 고등: 문장 전체 스크램블 대신 문법 포인트(어법선택 정답 자리)가 있는 3~4단어만 비워서 채우기 */
+    /* 고등: 문장 전체 스크램블 대신 문법 포인트(어법선택 정답 자리) 3~4단어를 찾고, 문제 낼 때 그 둘레 6~8단어로 넓힌다(scrSpan) */
     var gapAt = function (q, t) {
       var m = /\{([^}|]*)\|[^}]*\}/.exec(q.s); if (!m) return null;
       var pre = nz(q.s.slice(0, m.index).replace(/\{([^}|]*)[^}]*\}/g, '$1')), full = nz(q.s.replace(/\{([^}|]*)[^}]*\}/g, '$1')).replace(/^\(|\)$/g, '').replace(/[.!?"]+$/, '');
@@ -310,7 +310,43 @@
     });
     return out;
   }
-  function gen(step, d) { return koFlow(step, d, genRaw(step, d)); }
+  function gen(step, d) { VOC = vocabOf(d); return koFlow(step, d, genRaw(step, d)); }
+  /* 스크램블 빈칸 고르기: 그날 핵심어휘·숙어가 들어 있는 곳을 중심으로 6~8단어 (8단어 이하 문장은 통째로) */
+  var VOC = [];
+  function vocabOf(d) {
+    var out = []; ((d && d.steps) || []).forEach(function (st) { if (st.type !== 'vocab') return; st.items.forEach(function (w) {
+      var t = String(w[0] || '').toLowerCase().replace(/\(.*?\)|~|…|\.\.\./g, ' ').replace(/one's|someone|something|sb|sth|a\/b|[a-z]\/[a-z]/g, ' ').split(/\s+/).filter(function (x) { return /^[a-z'-]+$/.test(x); });
+      if (t.length && !(t.length === 1 && t[0].length < 4)) out.push(t); }); });
+    return out;
+  }
+  var FW = /^(a|an|the|of|to|and|or|but|in|on|at|for|with|from|by|as|that|which|who|whom|whose|my|your|his|her|its|our|their|this|these|those|is|are|was|were|be|been|very|so|not|no|than|into|about|over|if|when|while|because|can|could|will|would|should|may|might|must|do|does|did|have|has|had|i|we|you|he|she|it|they)$/;
+  function scrSpan(W, anc) {
+    var n = W.length; if (n <= 8) return [0, n - 1];
+    var L = n >= 14 ? 8 : n >= 11 ? 7 : 6, w = W.map(function (x) { return x.toLowerCase().replace(/[^a-z'-]/g, ''); });
+    var stem = function (x) { return x.length > 5 ? x.slice(0, x.length - 2) : x.replace(/s$/, ''); };
+    var best = null;
+    VOC.forEach(function (ph) {
+      for (var i = 0; i + ph.length <= n; i++) {
+        var ok = ph.every(function (p, k) { var a = w[i + k]; return k === 0 || ph.length === 1 ? a.indexOf(stem(p)) === 0 : a === p || a.indexOf(stem(p)) === 0; });
+        if (ok && ph.length <= 8) { var c = Math.abs(i + ph.length / 2 - n / 2); if (!best || ph.length > best.len || (ph.length === best.len && c < best.c)) best = { a: i, b: i + ph.length - 1, len: ph.length, c: c }; }
+      }
+    });
+    if (anc && anc[0] >= 0 && anc[1] < n && anc[1] - anc[0] < 8) best = { a: anc[0], b: anc[1] }; /* 어법 포인트가 1순위 */
+    var mid = best ? (best.a + best.b) / 2 : (n - 1) / 2, top = null;
+    for (var len = 6; len <= 8; len++) for (var a0 = 0; a0 + len <= n; a0++) {
+      var b0 = a0 + len - 1;
+      if (best && (best.a < a0 || best.b > b0)) continue;           /* 핵심 표현은 꼭 안에 */
+      var pen = Math.abs(len - L) * 0.6 + Math.abs((a0 + b0) / 2 - mid) * 0.15;
+      if (FW.test(w[b0]) && !/[,.;:!?]$/.test(W[b0])) pen += 3;      /* a·the·of·and…로 끝나면 어색 */
+      if (a0 > 0 && FW.test(w[a0 - 1]) && !/[,;:]$/.test(W[a0 - 1])) pen += 2; /* 바로 앞이 a·the·of…면 덩어리가 잘림 */
+      if (a0 > 0 && /,$/.test(W[a0]) && !/[,;:]$/.test(W[a0 - 1])) pen += 2; /* 'all,'처럼 쉼표 낀 낱말로 시작 */
+      if (a0 > 0 && /[,;:]$/.test(W[a0 - 1])) pen -= 0.8;            /* 쉼표 뒤에서 시작하면 자연스러움 */
+      if (/[,;:]$/.test(W[b0]) || b0 === n - 1) pen -= 0.5;
+      if (b0 < n - 1 && !/[,;:]$/.test(W[b0]) && !FW.test(w[b0 + 1])) pen += 1.2; /* 바로 뒤가 내용어면 표현 중간에서 잘린 것 */
+      if (!top || pen < top.p) top = { p: pen, a: a0, b: b0 };
+    }
+    return top ? [top.a, top.b] : [0, Math.min(n, L) - 1];
+  }
   function genRaw(step, d) {
     var secs = sections(d);
     if (!secs) return gen0(step);
@@ -359,9 +395,9 @@
     if (t === 'order') return it.map(function (q, i) { return { t: 'order', lines: q.lines, pool: shuffleDiff(q.lines.map(function (_, j) { return j; })), key: '세트 ' + (i + 1) }; });
     if (t === 'scramble') return shuffle(it).map(function (q) {
       var en = q.en.trim(), p = /[.!?]$/.test(en) ? en.slice(-1) : '', body = p ? en.slice(0, -1) : en, toks = body.split(/\s+/);
-      if (HS && toks.length >= 5) { /* 고등: 3~4단어 빈칸 채우기 */
+      if (HS && toks.length >= 5) { /* 고등: 6~8단어 덩어리 배열 (11/1 선생님: 3~4단어는 너무 쉬움 → 핵심어휘·숙어가 든 6~8단어) */
         var W = en.split(/\s+/), g = q.gap;
-        if (!g) { var len = W.length >= 12 ? 4 : 3, a0 = Math.max(1, Math.floor((W.length - len) / 2)); g = [a0, a0 + len - 1]; }
+        g = scrSpan(W, g); /* g(어법 포인트 3~4단어)가 있으면 그것을 중심에 두고 넓힌다 */
         var part = W.slice(g[0], g[1] + 1), post = W.slice(g[1] + 1).join(' '), m2 = /^(.*?)([.!?]["”]?)$/.exec(part[part.length - 1]);
         if (g[1] === W.length - 1 && m2 && m2[1]) { part[part.length - 1] = m2[1]; post = m2[2]; } /* 문장 끝 부호는 빈칸 밖에 */
         return { t: 'scramble', gap: true, ko: q.ko, pre: W.slice(0, g[0]).join(' '), post: post, toks: part, pool: shuffleDiff(part.map(function (_, j) { return j; })), punct: '', ans: part.join(' '), full: en, key: cut(q.ko, 14), ex: q.ex || '' };
