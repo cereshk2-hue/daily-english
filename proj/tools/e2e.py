@@ -15,7 +15,7 @@ def solve(pg, wrong=False):
     elif t in('insert','odd'): pg.locator('#qcard [data-m="%d"]'%((q['ans']+1)%2 if wrong else q['ans'])).click()
     elif t=='error': pg.locator('.mark[data-m="%d"]'%((q['w']+1)%3 if wrong else q['w'])).click()
     elif t in('order','scramble'):
-        n=len(q['pool']); order=list(range(n))
+        n=q.get('need') or len(q['pool']); order=list(range(n))
         if wrong: order=order[::-1]
         for j in order: pg.locator('#pool .chip[data-j="%d"]'%j).click()
         pg.click('#chk')
