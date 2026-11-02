@@ -490,13 +490,15 @@
     }
     var TABS = [['today', '오늘의 학습', '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>'], ['text', '본문', '<path d="M5 3h10l4 4v14H5z"/><path d="M9 12h6M9 16h4"/>'],
       ['types', '유형별 연습', '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>']];
-    if (TESTS.length) TABS.push(['test', 'Wrap-up', '<path d="M6 3h9l4 4v14H6z"/><path d="M9 13l2 2 4-4"/>']);
+    if (TESTS.some(function (t) { return !isBoss(t); })) TABS.push(['test', 'Wrap-up', '<path d="M6 3h9l4 4v14H6z"/><path d="M9 13l2 2 4-4"/>']);
+    if (TESTS.some(isBoss)) TABS.push(['boss', '끝판왕', '<path d="M12 3c1 3 4 4.5 4 8.5a4 4 0 0 1-8 0c0-2 1-3 1-3 .5 1.5 1.5 2 2 2 0-3-1-5 1-7.5z"/><path d="M8 21h8"/>']);
     h += '<div class="stack">';
     if (TAB === 'test' && TESTS.length) h += testsHTML();
+    if (TAB === 'boss' && TESTS.length) h += bossHTML();
     if (TAB === 'today') h += todayHTML();
     if (TAB === 'text') h += '<h3 class="sech">본문</h3>' + daySwitch() + (inProgress(P.days[SEL]) ? lockHTML(P.days[SEL], '본문') : P.passLock && !DS(P.days[SEL].id).scores[0] ? '<section class="card"><b>먼저 실전 1문제를 풀어 보세요.</b><p class="note" style="margin:6px 0 0">문제를 풀고 나면 문장별 해석과 노트 정리용 핵심 문장이 여기에 열려요.</p></section>' : passageHTML(P.days[SEL]));
     if (TAB === 'types') h += '<h3 class="sech">유형별 연습</h3>' + daySwitch() + (inProgress(P.days[SEL]) ? lockHTML(P.days[SEL], '유형별 연습') : typesHTML(P.days[SEL]));
-    h += '</div></div><nav class="bnav tabs' + (TABS.length > 3 ? ' four' : '') + '" role="tablist">' + TABS.map(function (t) {
+    h += '</div></div><nav class="bnav tabs' + (TABS.length > 4 ? ' five' : TABS.length > 3 ? ' four' : '') + '" role="tablist">' + TABS.map(function (t) {
       return '<button role="tab" aria-selected="' + (TAB === t[0]) + '" class="' + (TAB === t[0] ? 'on' : '') + '" data-tab="' + t[0] + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true">' + t[2] + '</svg>' + t[1] + '</button>';
     }).join('') + '</nav>';
     app.innerHTML = h;
@@ -512,6 +514,8 @@
   function TST(t) { S.tests = S.tests || {}; return S.tests[t.id] || (S.tests[t.id] = { draft: null, first: null, tries: [] }); }
   function testDay(t) { return TD.filter(function (x) { return x.test === t; })[0]; }
   function isW(it) { return it.kind === 'write'; }
+  function isBoss(t) { return t.kind === 'boss'; } /* 11/2 요약문 끝판왕 챌린지: 아래 '끝판왕' 탭에 따로 (주말 도전) */
+  function listTab(t) { return isBoss(t) ? 'boss' : 'test'; }
   function hasW(t) { return t.items.some(isW); }
   function wnorm(s) { return norm(String(s || '').replace(/[“”]/g, '"')).replace(/[.\s]+$/, ''); }
   function testQ(t, k, b) {
@@ -602,7 +606,11 @@
   }
   function testsHTML() {
     return '<h3 class="sech">Wrap-up 시험</h3><p class="sub" style="margin:0 0 12px">종이 시험지 대신 여기에서 답을 입력해요. <b>처음 제출한 점수</b>가 선생님께 전달돼요. 틀린 문제는 해설을 보고 <b>시험지에 정리</b>해요 (오답 노트에는 담기지 않아요).</p>' +
-      TESTS.map(function (_, ti) { return testCardHTML(ti); }).join('');
+      TESTS.map(function (t, ti) { return isBoss(t) ? '' : testCardHTML(ti); }).join('');
+  }
+  function bossHTML() {
+    return '<h3 class="sech">요약문 끝판왕 챌린지</h3><p class="sub" style="margin:0 0 12px">한 주의 <b>마지막 날</b>에 도전하는 <b>최상위 난이도</b> 요약문 시험이에요. 지문 하나로 요약문 10개, 어휘를 꼬아 만든 선택지라 단어 뜻을 정확히 따져야 해요. 종이 시험지로 풀고 여기에는 답만 입력해요. <b>처음 제출한 점수</b>가 선생님께 전달돼요.</p>' +
+      TESTS.map(function (t, ti) { return isBoss(t) ? testCardHTML(ti) : ''; }).join('');
   }
   function expHTML(it, my, wrong) { /* 정답 이유 · 선택지 해석 · 단어 뜻 · 문장 해석 (시험지에 옮겨 적기) */
     var o = it.okos || [];
@@ -634,7 +642,7 @@
       '<p class="note" id="tleft" style="margin:0" hidden></p><button class="btn plank" id="tsubmit" style="width:100%">' + (dr.retake ? '채점하기 (연습)' : '제출하기') + '</button></div>';
     app.innerHTML = h;
     var upd = function () { $('#tcount').textContent = cnt() + ' / ' + n; $('#tleft').hidden = true; TV.armed = false; };
-    $('#tquit').onclick = function () { TV = null; home('test'); };
+    $('#tquit').onclick = function () { TV = null; home(listTab(t)); };
     app.querySelectorAll('[data-tq]').forEach(function (b) { b.onclick = function () {
       var p = b.dataset.tq.split(':'), k = +p[0], i = +p[1];
       dr.a[k] = i; save();
@@ -659,14 +667,14 @@
     if (first) st.first = rec; else (st.tries = st.tries || []).push(rec);
     st.draft = null;
     save();
-    reportTest(first ? 'Wrap-up 제출' : 'Wrap-up 연습', t, { stepScore: (first ? '' : '연습 ') + g.score + '/' + g.max + '점' });
+    reportTest((isBoss(t) ? '끝판왕' : 'Wrap-up') + (first ? ' 제출' : ' 연습'), t, { stepScore: (first ? '' : '연습 ') + g.score + '/' + g.max + '점' });
     var ti = TV.ti; TV = null; testResult(ti, rec);
   }
   function testResult(ti, rec) {
     RS = null; top();
     var t = TESTS[ti], st = TST(t), f = st.first; rec = rec || f;
     var left = testLeft(t), practice = rec !== f, w = hasW(t), sc = recScore(t, rec), mx = recMax(t, rec), chk = Object.keys(rec.wb || {}).filter(function (k) { return rec.wb[k] === 'chk'; }).length;
-    var h = '<div class="topbar"><div class="row"><button class="link" id="tback">← Wrap-up 목록</button><span class="crumb">' + E(t.title) + ' · <b>결과</b></span></div></div><div class="stack examwrap">';
+    var h = '<div class="topbar"><div class="row"><button class="link" id="tback">← ' + (isBoss(t) ? '끝판왕' : 'Wrap-up') + ' 목록</button><span class="crumb">' + E(t.title) + ' · <b>결과</b></span></div></div><div class="stack examwrap">';
     h += '<section class="card pop stack" style="gap:8px"><div class="eyebrow">' + (practice ? '연습 결과 · 처음 점수는 그대로예요' : '제출 완료 · 선생님께 전달돼요') + '</div>' +
       '<div class="score">' + pctOf(sc, mx) + '<small>점' + (w ? ' (선택형 ' + rec.c + '/' + rec.t + ')' : ' (' + rec.c + '/' + rec.t + ')') + '</small></div>' +
       (chk ? '<p class="note" style="margin:0"><b>서술형 ' + chk + '칸은 선생님이 확인해요.</b> 정해 둔 답과 달라서 아직 점수에 넣지 않았어요.</p>' : '') +
@@ -687,7 +695,7 @@
         '<div class="wq">' + expHTML(it, my, !ok) + '<details class="wctx"><summary>문제 보기</summary><div class="wq-stem">' + it.stem + '</div>' + (it.ctx ? it.ctx : '') + it.body + '</details></div></details>';
     }).join('') + '</div>';
     app.innerHTML = h;
-    $('#tback').onclick = function () { home('test'); };
+    $('#tback').onclick = function () { home(listTab(t)); };
     var tn = $('#tnote'); if (tn) tn.onclick = function () { startNote('g:' + noteGroup(testDay(t))); };
   }
 
