@@ -322,6 +322,8 @@ day(40, 'q40', '요약문', '요약문 완성 · (A)(B)를 본문의 다른 말�
  summary='While social norms are often practiced <b>(A)</b> ________ in daily interactions, these negotiated rules act as a mechanism that ultimately <b>(B)</b> ________ social ties.',
  notes='* pervasive: 만연한 ** transparency: 투명함 *** cohesion: 결합', three=True)
 
+# 11/2 나머지 번호 DAY 11~25 (고1·2 학생용으로 전부, 쉬운 문항·어려운 문항 번갈아)
+exec(open(__import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), 'gen_h3sn_more.py'), encoding='utf-8').read())
 for i, d in enumerate(DAYS): d['name'] = 'DAY %d' % (i + 1)
 PK = {'id': 'h3-suneung-2510', 'school': '고3 수능실전반', 'unit': '하루 한 문제 · 2026학년도 10월 학평', 'title': 'Daily Suneung Practice',
       'titleKo': '고3 수능실전반 · 하루 한 문제', 'exam': '수능', 'prose': True, 'pick': True, 'passLock': True, 'teacherPhone': '', 'days': DAYS}
