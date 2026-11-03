@@ -207,6 +207,14 @@ h2 { font: 400 24px/1.2 var(--f-display); margin: 0; text-wrap: balance }
 .mark sup { color: var(--accent); font-weight: 700; font-size: .7em; margin-right: 2px }
 .mark.right { background: var(--ok-soft); outline: 2px solid var(--ok) }
 .mark.wrong { background: var(--bad-soft); outline: 2px solid var(--bad) }
+.huntbar { display: flex; justify-content: space-between; align-items: center; margin: 0 0 4px; font-size: 15px } .huntbar span { font-weight: 800; color: var(--accent) }
+.prompt.hunt { line-height: 2.1 } .hw { border: 0; background: none; font: inherit; color: var(--ink); padding: 1px 2px; margin: 0 -1px; border-radius: 6px }
+.hw.on { background: var(--accent-soft); outline: 2px solid var(--accent) } .hw.right { background: var(--ok-soft); outline: 2px solid var(--ok) } .hw.wrong { background: var(--bad-soft); text-decoration: line-through }
+.hw.miss { background: #fff1db; outline: 2px dashed #e08a00 } .hw sup { font-size: .65em; font-weight: 800; color: var(--accent); margin-right: 1px } .hw:disabled { opacity: 1; color: var(--ink) }
+.hfixh { margin: 10px 0 6px; font-size: 14px } .hfix { display: flex; align-items: center; gap: 6px; margin: 0 0 6px; flex-wrap: wrap } .hfix .no { font-weight: 800; color: var(--accent); width: 1.4em }
+.hfix .wr { text-decoration: line-through; color: var(--bad) } .hfix input { flex: 1; min-width: 9em; font-size: 16px; padding: 6px 8px; border: 1.5px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink) }
+.hfix input.right { border-color: var(--ok); background: var(--ok-soft) } .hfix input.wrong { border-color: var(--bad); background: var(--bad-soft) }
+.hfull { margin-top: 6px } .hfull p { margin: 4px 0 0 }
 .fix { color: var(--ok); font-weight: 700 }
 .typein { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap }
 .typein input { flex: 1 1 180px; min-width: 0; font: 500 18px var(--f-body); padding: 12px 14px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink) }

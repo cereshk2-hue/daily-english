@@ -43,7 +43,7 @@
     picked.sort(function (a, b) { return a - b; });
     if (picked.length > 7) { var keep = [], stepN = picked.length / 7; for (var k = 0; k < 7; k++) keep.push(picked[Math.floor(k * stepN)]); picked = keep; }
     d.steps.forEach(function (st) {
-      if (st.type !== 'scramble') return;
+      if (st.type !== 'scramble' || st.items.some(function (q) { return q.chunks; })) return; /* 덩어리 스크램블(본문 완전정복)은 그대로 */
       st.title = '주요 문장 스크램블'; st.guide = HS ? '문법 포인트가 들어간 6~8단어가 비어 있어요. 카드 하나는 어법상 틀린 함정이에요! 우리말을 보고 바른 낱말만 순서대로 눌러 빈칸을 채우세요.' : '핵심 문법이 들어간 문장이에요. 우리말에 맞게 단어를 눌러 문장을 완성하세요.';
       if (picked.length >= 3) st.items = picked.map(function (i) { return { ko: unq(lines[i][2]), en: unq(lines[i][1]), gap: gapOf[i] || null, trap: trapOf[i] || null, ex: exOf[i] ? '이 문장의 문법 포인트\n' + exOf[i] : '' }; });
     });
@@ -57,7 +57,7 @@
   try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(function () {}); } catch (e) {}
   var app = document.getElementById('app');
   var CIRC = '①②③④⑤⑥⑦⑧⑨⑩';
-  var SHORT = { vocab: '어휘', tf: 'TF', verb: '동사변형', error: '오류찾기', order: '문장순서', scramble: '주요문장', mc: '문법', insert: '삽입', odd: '어색한문장', blank: '빈칸' };
+  var SHORT = { hunt: '틀린곳', vocab: '어휘', tf: 'TF', verb: '동사변형', error: '오류찾기', order: '문장순서', scramble: '주요문장', mc: '문법', insert: '삽입', odd: '어색한문장', blank: '빈칸' };
 
   /* ---------- 저장 ---------- */
   /* 학생별 저장: 같은 기기(학원 아이패드)를 여러 학생이 써도 기록이 섞이지 않게 이름마다 따로 저장한다.
@@ -223,7 +223,7 @@
     return weakList(d).map(function (w) { return stepShort(w.s) + ' ' + w.sc[0] + '/' + w.sc[1] + ' → ' + (w.n ? '보충 ' + w.best.c + '/' + w.best.t + (w.ok ? ' ✓' : '') + (w.n > 1 ? ' (' + w.n + '번)' : '') + ' ' + fmtTime(w.last.at) : '보충 안 함'); }).join(' / ');
   }
   function stepShort(st) { return st.type === 'pick' ? st.title : st.type === 'mc' && /실전/.test(st.title) ? '실전' : st.type === 'mc' && /일치/.test(st.title) ? '일치' : st.type === 'mc' && /요약/.test(st.title) ? '요약문' : SHORT[st.type]; }
-  var CARD = { vocab: '단어', tf: 'T/F', verb: '동사', error: '오류', order: '순서', scramble: '스크램블', mc: '문법', insert: '삽입', odd: '어색', blank: '빈칸' };
+  var CARD = { hunt: '틀린곳', vocab: '단어', tf: 'T/F', verb: '동사', error: '오류', order: '순서', scramble: '스크램블', mc: '문법', insert: '삽입', odd: '어색', blank: '빈칸' };
   function cardLabel(st) { return st.type === 'pick' ? (/어법/.test(st.title) ? '어법' : '어휘') : st.type === 'mc' && /실전/.test(st.title) ? '실전' : st.type === 'mc' && /일치/.test(st.title) ? '일치' : st.type === 'mc' && /요약/.test(st.title) ? '요약' : CARD[st.type]; }
   function fmtTime(t) { var d = new Date(t); return (d.getMonth() + 1) + '/' + d.getDate() + ' ' + String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); }
   function top() { window.scrollTo(0, 0); }
@@ -248,6 +248,7 @@
     else if (type === 'error') { var k = 0; s = q.s.replace(/\[\[(.+?)\]\]/g, function (a, b) { return k++ === q.w ? q.fix : b; }); }
     else if (type === 'blank') s = q.s.replace('____', q.opts[0]);
     else if (type === 'scramble') s = q.en;
+    else if (type === 'hunt') s = q.s.replace(/\[\[([^|\]]*)\|([^\]]*)\]\]/g, '$2');
     else if (type === 'order' || type === 'insert') s = q.lines[0];
     else if (type === 'odd') s = q.lines[q.odd === 0 ? 1 : 0];
     return s;
@@ -392,9 +393,21 @@
       parts.push({ x: q.s.slice(last) });
       return { t: 'error', parts: parts, w: q.w, fix: q.fix, ex: q.ex, key: q.fix };
     });
+    if (t === 'hunt') return it.map(function (q) { /* 11/3 틀린 곳 N개 찾아 고치기: s 안의 [[틀린 말|바른 말]] */
+      var toks = [], errs = [], re = /\[\[([^|\]]*)\|([^\]]*)\]\]/g, last = 0, m;
+      var words = function (x) { x.split(/\s+/).filter(Boolean).forEach(function (w) { toks.push({ x: w }); }); };
+      while ((m = re.exec(q.s))) { words(q.s.slice(last, m.index)); errs.push({ no: m[1], ok: m[2], why: (q.why || [])[errs.length] || '' }); toks.push({ x: m[1], e: errs.length - 1 }); last = re.lastIndex; }
+      words(q.s.slice(last));
+      return { t: 'hunt', s: q.s, toks: toks, errs: errs, need: errs.length, n: errs.length * 2, label: q.label || '', ex: q.ex || '', key: (q.label || '') + ' 틀린 곳 ' + errs.length + '개' };
+    });
     if (t === 'order') return it.map(function (q, i) { return { t: 'order', lines: q.lines, pool: shuffleDiff(q.lines.map(function (_, j) { return j; })), key: '세트 ' + (i + 1) }; });
     if (t === 'scramble') return shuffle(it).map(function (q) {
       var en = q.en.trim(), p = /[.!?]$/.test(en) ? en.slice(-1) : '', body = p ? en.slice(0, -1) : en, toks = body.split(/\s+/);
+      if (q.chunks) { /* 11/3 본문 완전정복: 문장 전체를 의미 덩어리로 배열 (영작에 가까운 연습) */
+        var ch = q.chunks.slice(), m3 = /^(.*?)([.!?]["”]?)$/.exec(ch[ch.length - 1]), pu = '';
+        if (m3 && m3[1]) { ch[ch.length - 1] = m3[1]; pu = m3[2]; }
+        return { t: 'scramble', ko: q.ko, toks: ch, pool: shuffleDiff(ch.map(function (_, j) { return j; })), punct: pu, ans: en, key: cut(q.ko, 14), ex: q.ex || '', chunk: true };
+      }
       if (HS && toks.length >= 5) { /* 고등: 6~8단어 덩어리 배열 (11/1 선생님: 3~4단어는 너무 쉬움 → 핵심어휘·숙어가 든 6~8단어) */
         var W = en.split(/\s+/), g = q.gap;
         g = scrSpan(W, g); /* g(어법 포인트 3~4단어)가 있으면 그것을 중심에 두고 넓힌다 */
@@ -1025,6 +1038,10 @@
       '<form class="typein" id="vf"><input id="vin" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="' + E(q.ph || '알맞은 형태로 쓰기') + '" aria-label="답 입력"><button class="btn" type="submit">확인</button></form>';
     if (q.t === 'error') return '<div class="prompt en">' + q.parts.map(function (p) {
       return p.mk == null ? E(p.x) : '<button class="mark" data-m="' + p.mk + '"><sup>' + CIRC[p.mk] + '</sup>' + E(p.x) + '</button>'; }).join('') + '</div>';
+    if (q.t === 'hunt') return '<div class="huntbar"><b>' + E(q.label) + ' 틀린 곳 ' + q.need + '개</b><span id="hcnt">0 / ' + q.need + '</span></div>' +
+      '<div class="guide" style="margin:0 0 6px">어법·어휘가 틀린 낱말을 <b>' + q.need + '개</b> 눌러 고르세요. 다시 누르면 취소돼요. 다 고르면 확인 → 고쳐 쓰기.</div>' +
+      '<div class="prompt en para hunt" id="hpara">' + q.toks.map(function (w, i) { return '<button class="hw" data-h="' + i + '">' + E(w.x) + '</button>'; }).join(' ') + '</div>' +
+      '<div id="hfix"></div><div class="nextbar"><button class="btn" id="hchk" disabled>확인</button></div>';
     if (q.t === 'insert') return '<div class="given"><span class="eyebrow">주어진 문장</span><span class="en">' + E(q.given) + '</span></div>' +
       '<div class="prompt en para">' + q.rest.map(function (l, j) { return E(l) + ' <button class="mark gap" data-m="' + j + '">' + CIRC[j] + '</button> '; }).join('') + '</div>';
     if (q.t === 'odd') return '<div class="prompt en para">' + q.lines.map(function (l, j) {
@@ -1079,6 +1096,35 @@
       var wrongTxt = q.parts.filter(function (p) { return p.mk === q.w; })[0].x;
       answer(ok, q.ex, (ok ? '' : '틀린 곳은 <b>' + CIRC[q.w] + '</b> · ') + '<span class="en">' + E(wrongTxt) + ' → <span class="fix">' + E(q.fix) + '</span></span>');
     }; });
+    if (q.t === 'hunt') {
+      var sel = [], hchk = $('#hchk'), hcnt = $('#hcnt'), phase = 1;
+      card.querySelectorAll('.hw').forEach(function (b) { b.onclick = function () {
+        if (phase !== 1 || RS.answered) return;
+        var i = +b.dataset.h, k = sel.indexOf(i);
+        if (k >= 0) sel.splice(k, 1); else if (sel.length < q.need) sel.push(i); else return;
+        b.classList.toggle('on', k < 0); hcnt.textContent = sel.length + ' / ' + q.need; hchk.disabled = sel.length !== q.need;
+      }; });
+      hchk.onclick = function () {
+        if (phase === 1) {
+          phase = 2; var found = 0;
+          card.querySelectorAll('.hw').forEach(function (b) { var w = q.toks[+b.dataset.h], on = sel.indexOf(+b.dataset.h) >= 0; b.disabled = true;
+            if (w.e != null) { b.classList.add(on ? 'right' : 'miss'); b.insertAdjacentHTML('afterbegin', '<sup>' + (w.e + 1) + '</sup>'); if (on) found++; } else if (on) b.classList.add('wrong'); });
+          q.found = found;
+          $('#hfix').innerHTML = '<div class="hfixh">찾은 곳 <b>' + found + ' / ' + q.need + '</b> · 이제 ' + q.need + '곳을 모두 바르게 고쳐 쓰세요' + (found < q.need ? ' (주황색은 놓친 곳)' : '') + '</div>' +
+            q.errs.map(function (e, j) { return '<label class="hfix"><span class="no">' + (j + 1) + '</span><span class="en wr">' + E(e.no) + '</span> → <input class="en" data-f="' + j + '" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="고쳐 쓰기"></label>'; }).join('');
+          hcnt.textContent = '찾기 ' + found + '/' + q.need; hchk.textContent = '채점하기'; hchk.disabled = false;
+          var f0 = card.querySelector('[data-f]'); if (f0) f0.focus({ preventScroll: true });
+          return;
+        }
+        if (RS.answered) return;
+        var fixed = 0, lines = [];
+        q.errs.forEach(function (e, j) { var inp = card.querySelector('[data-f="' + j + '"]'), ok1 = norm(inp.value).replace(/[.,!?]+$/, '') === norm(e.ok); inp.disabled = true; inp.classList.add(ok1 ? 'right' : 'wrong'); if (ok1) fixed++;
+          lines.push((j + 1) + ') ' + e.no + ' → ' + e.ok + (e.why ? '  · ' + e.why : '') + (ok1 ? '' : '  ✗ 내 답: ' + (inp.value.trim() || '(안 씀)'))); });
+        q.got = q.found + fixed; hchk.hidden = true;
+        answer(q.got === q.n, lines.join('\n') + (q.ex ? '\n' + q.ex : ''), '찾기 <b>' + q.found + '/' + q.need + '</b> · 고치기 <b>' + fixed + '/' + q.need + '</b> → <b>' + q.got + '/' + q.n + '점</b>' +
+          '<details class="hfull"><summary>바르게 고친 본문</summary><p class="en">' + E(filled('hunt', q)) + '</p></details>');
+      };
+    }
     if (q.t === 'insert' || q.t === 'odd') card.querySelectorAll('[data-m]').forEach(function (b) { b.onclick = function () {
       if (RS.answered) return;
       var m = +b.dataset.m, ok = m === q.ans;
@@ -1131,7 +1177,7 @@
   function answer(ok, ex, extra) {
     if (RS.answered) return; RS.answered = true;
     var q = RS.qs[RS.qi];
-    if (ok) RS.c++; else RS.wrong.push(q);
+    RS.c += q.n ? (q.got || 0) : ok ? 1 : 0; if (!ok) RS.wrong.push(q); /* 틀린 곳 찾기(hunt)는 찾기·고치기 한 곳당 1점 */
     var ne = null; try { ne = !ok ? noteAdd(q, 'wrong') : RS.practice === '오답 노트' ? noteAdd(q, 'ok') : noteEntry(q); } catch (e) {}
     if (RS.practice === '오답 노트') { var ndy = noteDay(); ndy.n++; if (ok) ndy.c++; save(); }
     if (ok && RS.practice && RS.practice !== '오답 학습') { try { var fd = DX(q.dayIdx != null ? q.dayIdx : RS.di); if (fd.test) throw 0; var fs = DS(fd.id); var fq = Object.assign({ stepTitle: curStepTitle() }, q); fs.fixed = fs.fixed || {}; fs.fixed[noteId(fq, fd)] = 1; fs.fixed[pairId(fq, fd)] = 1; save(); } catch (e) {} } /* 다시 풀기·보충·노트에서 다시 맞힌 문제 */
@@ -1157,6 +1203,7 @@
     nx.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   }
 
+  function TOT() { return RS.qs.reduce(function (n, q) { return n + (q.n || 1); }, 0); }
   function next() {
     RS.answered = false;
     if (RS.qi < RS.qs.length - 1) { RS.qi++; render(); return; }
@@ -1167,17 +1214,17 @@
     RS.answered = false;
     if (!RS.practice) {
       var d = DX(RS.di), st = DS(d.id), step = d.steps[RS.si];
-      st.scores[RS.si] = [RS.c, RS.qs.length];
+      st.scores[RS.si] = [RS.c, TOT()];
       st.wrong[RS.si] = RS.wrong.map(function (q) { var c = JSON.parse(JSON.stringify(q)); c.stepTitle = step.title; c.guide = step.guide; return c; });
       st.run = null;
       if (dayProgress(d).finished && !st.finished) st.finished = Date.now();
       save();
-      report(dayProgress(d).finished ? 'DAY 완료' : '단계 완료', d, { step: (RS.si + 1) + '. ' + step.title, stepScore: RS.c + '/' + RS.qs.length });
+      report(dayProgress(d).finished ? 'DAY 완료' : '단계 완료', d, { step: (RS.si + 1) + '. ' + step.title, stepScore: RS.c + '/' + TOT() });
     } else if (RS.practice === '오답 노트') {
-      var nd = DX(RS.di); if (!nd.test) report('오답 노트', nd, { step: '오답 노트 ' + noteKeyName(RS.noteKey), stepScore: RS.c + '/' + RS.qs.length });
+      var nd = DX(RS.di); if (!nd.test) report('오답 노트', nd, { step: '오답 노트 ' + noteKeyName(RS.noteKey), stepScore: RS.c + '/' + TOT() });
     } else if (RS.practice !== '오답 학습') {
-      var dx = DX(RS.di), sx = DS(dx.id); sx.extra = sx.extra || {}; (sx.extra[RS.si] = sx.extra[RS.si] || []).push({ c: RS.c, t: RS.qs.length, at: Date.now() }); save();
-      report(RS.practice === '보충 연습' ? '보충 연습' : RS.practice, dx, { step: (RS.si + 1) + '. ' + dx.steps[RS.si].title, stepScore: RS.c + '/' + RS.qs.length });
+      var dx = DX(RS.di), sx = DS(dx.id); sx.extra = sx.extra || {}; (sx.extra[RS.si] = sx.extra[RS.si] || []).push({ c: RS.c, t: TOT(), at: Date.now() }); save();
+      report(RS.practice === '보충 연습' ? '보충 연습' : RS.practice, dx, { step: (RS.si + 1) + '. ' + dx.steps[RS.si].title, stepScore: RS.c + '/' + TOT() });
     } else if (RS.practice === '오답 학습') {
       markReviewDone(DX(RS.di), { n: RS.base, tries: RS.qs.length, at: Date.now(), first: RS.base - (RS.fw || 0) }, RS.base + '개 중 ' + (RS.base - (RS.fw || 0)) + '개 한 번에');
     }
@@ -1190,7 +1237,7 @@
       '<div class="score">' + RS.base + '<small>개 모두 맞혔어요</small></div><p class="note" style="margin:0">한 번에 맞힌 문제 ' + (RS.base - (RS.fw || 0)) + '개 · 총 ' + RS.qs.length + '번 풀었어요. 이제 선생님께 결과를 보낼 수 있어요.</p>' +
       '<div class="nextbar"><button class="btn plank" id="back">결과 보내러 가기</button></div></div>';
     var h = '<div class="card pop stack" style="gap:10px"><div class="eyebrow">' + E(step.title) + ' 끝' + (RS.practice ? ' · 점수에 안 들어가요' : '') + '</div>' +
-      '<div class="score">' + RS.c + '<small> / ' + RS.qs.length + '</small></div>';
+      '<div class="score">' + RS.c + '<small> / ' + TOT() + '</small></div>';
     if (RS.wrong.length) h += '<div><div class="note" style="margin-bottom:4px">틀린 문제</div><ul class="wronglist">' + RS.wrong.map(function (q) { return '<li class="en">' + E(q.key) + '</li>'; }).join('') + '</ul></div>';
     h += '<div class="nextbar">';
     if (RS.practice) h += '<button class="btn ghost" id="again">한 번 더</button><button class="btn" id="back">돌아가기</button>';
