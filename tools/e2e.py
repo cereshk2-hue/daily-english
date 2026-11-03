@@ -14,6 +14,13 @@ def solve(pg, wrong=False):
     elif t=='verb': pg.fill('#vin', 'zzz' if wrong else q['a'][0]); pg.click('#vf button')
     elif t in('insert','odd'): pg.locator('#qcard [data-m="%d"]'%((q['ans']+1)%2 if wrong else q['ans'])).click()
     elif t=='error': pg.locator('.mark[data-m="%d"]'%((q['w']+1)%3 if wrong else q['w'])).click()
+    elif t=='hunt':
+        idx=[i for i,w in enumerate(q['toks']) if w.get('e') is not None]
+        if wrong: idx=idx[1:]+[next(i for i,w in enumerate(q['toks']) if w.get('e') is None)]
+        for i in idx: pg.locator('.hw[data-h="%d"]'%i).click()
+        pg.click('#hchk')
+        for j,e in enumerate(q['errs']): pg.fill('[data-f="%d"]'%j, 'zzz' if wrong else e['ok'])
+        pg.click('#hchk')
     elif t in('order','scramble'):
         n=q.get('need') or len(q['pool']); order=list(range(n))
         if wrong: order=order[::-1]
