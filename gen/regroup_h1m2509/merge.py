@@ -42,6 +42,9 @@ for i,n in enumerate([32,33,34,35,36,37,38,39,40,41]):
     days.append({'id':'q%d'%n,'name':'DAY %d'%(6+i),'range':'41·42번' if n==41 else '%d번'%n,'story':STORY[n],'passage':b['passage'],'steps':steps})
 PK=B['pk']; PK.pop('days',None); PK.pop('tests',None)
 PK['days']=B['head']+days
+# 예전 DAY id 로 쌓인 오답 노트를 새 DAY 로 (app.js moveNotes)
+PK['noteMove']={'d6':['q32','q33','q34'],'d7':['q35','q36','q37'],'d8':['q38','q39','q40'],'d9':['q41'],
+  'p6':['q32','q33'],'p7':['q34','q35'],'p8':['q36','q37'],'p9':['q38','q39'],'p10':['q40'],'p11':['q41']}
 src=open('orig_h1-mock-2509.js').read(); tail=src[src.index('/* WRAPUP-TESTS'):]
 head='''/* 고1 2025학년도 9월 전국연합학력평가(인천광역시교육청 주관) 영어 18~24 · 26 · 29~42번
    DAY 1~5 는 gen_h1m2509.py / gen_h1m2509b.py, 32~42번은 gen_h1m2509c.py 로 만든 뒤
