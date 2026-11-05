@@ -1367,7 +1367,19 @@
      틀린 문제는 자동으로, 맞힌 문제도 '헷갈려요'를 누르면 담긴다. 과(교과서)·DAY(모의고사)별로 골라 다시 푼다. */
   function noteId(q, d) { return d.id + '|' + fnv([q.t, q.stepTitle || '', strip(q.prompt || q.s || q.ko || (q.lines || []).join('/') || ''), q.key || ''].join('|')); }
   function pairId(q, d) { return d.id + '|p|' + fnv([q.stepTitle || '', q.big ? String(q.key || '') : strip(q.prompt || q.s || q.ko || '') + '|' + (q.key || '')].join('|')); } /* 단어 카드: 영→한/한→영 방향이 바뀌어도 같은 문제 */
-  function notes() { return S.note || (S.note = {}); }
+  function notes() { var m = S.note || (S.note = {}); if (!S.noteMoved && P.noteMove) { S.noteMoved = 1; if (moveNotes(m)) save(); } return m; }
+  /* 11/5: DAY 를 다시 나누면(예: 모의고사 두세 지문 → 한 지문) 예전 DAY id 로 쌓인 오답이 고아가 되어 '오늘의 오답'에서 빠졌다.
+     P.noteMove = { 예전 id: [새 id…] } → 문제 글과 본문이 가장 많이 겹치는 새 DAY 로 옮긴다 (문제 자체는 그대로) */
+  function moveNotes(m) {
+    var mv = P.noteMove, n = 0, words = function (s) { var o = {}; (String(s).toLowerCase().match(/[a-z']{3,}/g) || []).forEach(function (w) { o[w] = 1; }); return o; }, pw = {};
+    Object.keys(m).forEach(function (id) { var e = m[id], to = e && mv[e.d]; if (!to || dayById(e.d)) return;
+      var best = to[0];
+      if (to.length > 1) { var qw = words(JSON.stringify(e.q || {})), bs = -1;
+        to.forEach(function (nid) { var d = dayById(nid); if (!d) return; var w = pw[nid] || (pw[nid] = words((d.passage || []).map(function (l) { return l[1]; }).join(' '))), k = Object.keys(w).length || 1, c = 0;
+          Object.keys(qw).forEach(function (x) { if (w[x]) c++; }); var sc = c / Math.sqrt(k); if (sc > bs) { bs = sc; best = nid; } }); }
+      if (dayById(best)) { e.d = best; e.at = Math.max(e.at || 0, Date.now()); n++; try { noteSend(e); } catch (x) {} } });
+    return n;
+  }
   function curStepTitle() { var q = RS.qs[RS.qi], d = DX(RS.di); return q.stepTitle || (d.steps[RS.si] || {}).title || ''; }
   function noteEntry(q) { return notes()[q.noteId || noteId(Object.assign({ stepTitle: curStepTitle() }, q), DX(RS.di))]; }
   function noteAdd(q, kind) {
@@ -1413,6 +1425,7 @@
         var mine = notes(), seen = {}, changed = false;
         (j.notes || []).forEach(function (raw) { var e; try { e = JSON.parse(raw); } catch (x) { return; } if (!e || !e.id || !e.q) return; seen[e.id] = 1;
           var l = mine[e.id]; if (!l || (e.at || 0) > (l.at || 0)) { mine[e.id] = e; changed = true; } });
+        if (P.noteMove && moveNotes(mine)) changed = true; /* 시트에서 받은 예전 DAY 오답도 새 DAY 로 */
         Object.keys(mine).forEach(function (id) { if (!seen[id]) noteSend(mine[id]); }); /* 이 기기에만 있던 노트는 시트로 */
         if (changed) { save(); var c = app.querySelector('.notecard'); if (c) { c.outerHTML = noteHTML(); app.querySelectorAll('[data-note]').forEach(function (b) { b.onclick = function () { startNote(b.dataset.note); }; }); } }
       }, function () { nSynced[who] = false; });
