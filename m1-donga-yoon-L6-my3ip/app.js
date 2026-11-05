@@ -273,6 +273,25 @@
     });
     return out.length ? '<span class="exam-box en">' + out.join(' ') + '</span>' : '';
   }
+  /* 11/5 선생님: 단어 퀴즈도 맞히든 틀리든 그 단어가 본문 어디에 어떤 맥락으로 쓰였는지 문장+해석을 보여 준다.
+     w[3](본문 속 표현)이 있으면 그걸로, 없으면 낱말 어간으로 본문에서 찾는다 */
+  function vocabEv(d, w) {
+    if (!d || !d.passage || !w) return [];
+    if (w[3]) return findLines(d, w[3]);
+    var raw = String(w[0] || '').replace(/\(.*?\)|~|…|\.\.\./g, ' ').replace(/\b[A-Z]\b/g, ' ').replace(/-ing\b/g, ' ').toLowerCase()
+      .replace(/one's|oneself|someone|something|\bsb\b|\bsth\b/g, ' ').replace(/^\s*be\s+/, ' ');
+    var toks = raw.split(/\s+/).filter(function (x) { return /^[a-z'-]+$/.test(x); });
+    if (!toks.length || !toks.some(function (t) { return t.length > 2; })) return [];
+    var pat = toks.map(function (t) {
+      if (/e$/.test(t) && t.length > 2) return t.slice(0, -1) + '(?:e|es|ed|ing)';
+      if (/[^aeiou]y$/.test(t)) return t.slice(0, -1) + '(?:y|ies|ied|ying)';
+      if (t.length > 6) return t.replace(/[-']/g, '.') + '[a-z]*';
+      return t.replace(/[-']/g, '.') + '(?:' + t.slice(-1) + ')?(?:s|es|ed|d|ing)?';
+    }).join("(?:\\s+[a-z'-]+){0,3}?\\s+");
+    var re = new RegExp('\\b' + pat + '\\b', 'i'), out = [];
+    d.passage.some(function (l) { if (l[0] === '#' || !l[2]) return false; var m = re.exec(l[1]); if (m) out.push([l[1], l[2], m[0]]); return !!m; });
+    return out;
+  }
   function autoEv(d, type, q) {
     if (!/^(pick|verb|error|blank|insert)$/.test(type)) return [];
     var f = type === 'insert' ? q.lines[q.given] : filled(type, q);
@@ -361,7 +380,7 @@
       if (raw.per) q.per = raw.per.map(function (p, i) { return { o: raw.opts[i], ko: p[0], ev: findLines(d, p[1]), note: p[2] || '' }; });
       return q;
     };
-    if (step.type === 'vocab') return gen0(step).map(function (q) { return lab(q, step.items.filter(function (w) { return w[0] === q.key; })[0]); });
+    if (step.type === 'vocab') return gen0(step).map(function (q) { var w = step.items.filter(function (x) { return x[0] === q.key; })[0]; q = lab(q, w); var v = vocabEv(d, w); if (v.length) { q.ev = v; q.evLabel = '본문에서는 이렇게 쓰였어요'; } return q; });
     var idx = step.items.map(function (_, i) { return i; });
     if (step.type !== 'order') idx = shuffle(idx);
     return idx.map(function (i) {
