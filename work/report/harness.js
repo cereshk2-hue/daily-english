@@ -52,7 +52,7 @@ fs.writeFileSync(__dirname+'/out_report.html',rep);
 fs.writeFileSync(__dirname+'/out_board.html',doGet({parameter:{view:'dW6ypYyx'}}).html);
 console.log(JSON.stringify(reportData('2026-11-04').list.map(s=>({n:s.name,days:s.days,mins:s.mins,solved:s.solved,noteN:s.noteN,types:s.types.map(t=>t.k+':'+t.c+'/'+t.a),prog:s.prog.map(p=>p.done.length+'/'+p.doing.length),wraps:s.wraps.length,nNew:s.nNew,nFix:s.nFix,nLeft:s.nLeft,memo:!!s.memo})),null,0));
 saveMemo('2026-11-06','이준호','좋아요','DAY 7');console.log(JSON.stringify(SH['주간리포트'].rows.map(r=>r.slice(0,4))));
-const rep2=doGet({parameter:{view:'dW6ypYyx',report:'1',from:'2026-10-19',to:'2026-11-06',who:'박서연'}}).html.replace('<head>','<head>'+stub);
+const rep2=doGet({parameter:{view:'dW6ypYyx',report:'1',from:'2026-10-30',to:'2026-11-13',who:'최하늘'}}).html.replace('<head>','<head>'+stub);
 fs.writeFileSync(__dirname+'/out_report2.html',rep2);
 const d2=reportData('', '2026-11-06','2026-10-19');console.log('custom',d2.wk,d2.from,d2.to,d2.custom,d2.list.map(s=>s.name+':'+s.days.length).join(','));
 const d3=reportData('', '2026-11-02','2026-11-08');console.log('fullweek',d3.wk,d3.custom);
