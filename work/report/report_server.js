@@ -76,7 +76,7 @@ function reportData(wk, from, to) {
     if (!ok) s.nLeft++;
     if (typeOf(v[4]) === '어휘' && +v[6] > 0) {
       var q = null; try { q = JSON.parse(String(v[11])).q; } catch (e) {}
-      var wd = q ? String(q.a && q.a[0] || q.key || '') : ''; if (!wd) wd = String(v[5]).slice(0, 30);
+      var wd = q ? String(q.a && q.a[0] || q.key || '') : ''; if (!wd) wd = String(v[5]).slice(0, 30); wd = wd.replace(/^(\d+(?:[~·]\d+)?번|본문 \S+)\s+/, ''); /* 키 앞에 붙은 출처(22번 등) 빼기 */
       var ft = f ? +f[1] : 0, lt = v[9] instanceof Date ? v[9].getTime() : 0;
       if (f && inW(ft) && s.vw.indexOf(wd) < 0) s.vw.push(wd);
       if (inW(lt) && lt - ft > 60000) { s.vRe++; if (ok) s.vDone++; }
