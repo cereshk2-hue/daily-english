@@ -1,12 +1,12 @@
 import json,re
-src=open('/home/claude/srcrepo/sheet/Code.gs').read()
+src=open('work/report/base_Code.gs').read()
 def rep(a,b):
     global src; assert src.count(a)==1,a; src=src.replace(a,b)
 rep("""  if (e && e.parameter && e.parameter.view === VIEW) {
     var t = HtmlService.createTemplate(BOARD_HTML);
     t.data = JSON.stringify(boardData());""","""  if (e && e.parameter && e.parameter.view === VIEW && e.parameter.report) { /* 주간 리포트 (11/6) */
     var rp = HtmlService.createTemplate(REPORT_HTML), J = function (o) { return JSON.stringify(o).replace(/</g, '\\\\u003c'); };
-    rp.data = J(reportData(e.parameter.wk)); rp.url = J(ScriptApp.getService().getUrl()); rp.view = J(VIEW); rp.who = J(String(e.parameter.who || ''));
+    rp.data = J(reportData(e.parameter.wk, e.parameter.from, e.parameter.to)); rp.url = J(ScriptApp.getService().getUrl()); rp.view = J(VIEW); rp.who = J(String(e.parameter.who || ''));
     return rp.evaluate().setTitle('주간 리포트').addMetaTag('viewport', 'width=device-width, initial-scale=1');
   }
   if (e && e.parameter && e.parameter.view === VIEW) {

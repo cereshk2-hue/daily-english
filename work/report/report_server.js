@@ -3,7 +3,7 @@
  * 현황판 위 [주간 리포트] → 주(월~일)와 학생을 고르면 학부모님용 리포트 한 장.
  * 선생님 한마디 · 다음 주 목표는 '주간리포트' 탭에 저장되고, [이미지로 저장]으로 카톡에 올릴 그림을 만든다.
  * 숫자는 모두 '기록' · '현황' · '오답노트' 탭에서 그 주(월 0시 ~ 다음 월 0시, 한국 시간) 것만 모은다. */
-var MEMO = '주간리포트', MEMO_HEAD = ['주(월요일)', '학생', '선생님 한마디', '다음 주 목표', '저장 시각'];
+var MEMO = '주간리포트', MEMO_HEAD = ['주(월요일)·기간', '학생', '선생님 한마디', '다음 주 목표', '저장 시각'];
 function weekStart(wk) {
   var tz = 'Asia/Seoul';
   if (wk && /^\d{4}-\d{2}-\d{2}$/.test(String(wk))) {
@@ -13,10 +13,28 @@ function weekStart(wk) {
   var now = new Date(), u = +Utilities.formatDate(now, tz, 'u');
   return Utilities.formatDate(new Date(now.getTime() - (u - 1) * 86400000), tz, 'yyyy-MM-dd');
 }
-function reportData(wk) {
+/* 기간 직접 고르기(11/6): from·to(yyyy-MM-dd)가 둘 다 맞으면 그 기간, 아니면 wk가 든 주(월~일).
+ * 한마디 저장 키: 주간이면 '2026-11-02', 기간이면 '2026-10-01~2026-10-31'. */
+function rangeOf(wk, from, to) {
+  var re = /^\d{4}-\d{2}-\d{2}$/;
+  from = String(from || ''); to = String(to || '');
+  if (re.test(from) && re.test(to)) {
+    if (from > to) { var x = from; from = to; to = x; }
+    var a = new Date(from + 'T00:00:00+09:00').getTime(), b = new Date(to + 'T00:00:00+09:00').getTime() + 86400000;
+    if (!isNaN(a) && !isNaN(b) && b - a <= 186 * 86400000) {
+      var ws = weekStart(from), we = Utilities.formatDate(new Date(new Date(ws + 'T12:00:00+09:00').getTime() + 6 * 86400000), 'Asia/Seoul', 'yyyy-MM-dd');
+      if (from === ws && to === we) return { key: ws, from: from, to: to, t0: a, t1: b, custom: false };
+      return { key: from + '~' + to, from: from, to: to, t0: a, t1: b, custom: true };
+    }
+  }
+  var w = weekStart(wk), t0 = new Date(w + 'T00:00:00+09:00').getTime();
+  return { key: w, from: w, to: Utilities.formatDate(new Date(t0 + 6 * 86400000 + 43200000), 'Asia/Seoul', 'yyyy-MM-dd'), t0: t0, t1: t0 + 7 * 86400000, custom: false };
+}
+function memoKey(k) { k = String(k || ''); var m = /^(\d{4}-\d{2}-\d{2})~(\d{4}-\d{2}-\d{2})$/.exec(k); return m ? rangeOf('', m[1], m[2]).key : weekStart(k); }
+function reportData(wk, from, to) {
   var ss = SpreadsheetApp.getActiveSpreadsheet(), tz = 'Asia/Seoul';
-  wk = weekStart(wk);
-  var t0 = new Date(wk + 'T00:00:00+09:00').getTime(), t1 = t0 + 7 * 86400000, S = {};
+  var RG = rangeOf(wk, from, to); wk = RG.key;
+  var t0 = RG.t0, t1 = RG.t1, S = {};
   var inW = function (x) { var t = x instanceof Date ? x.getTime() : +x || 0; return t >= t0 && t < t1; };
   function st(n) { return S[n] || (S[n] = { name: n, grades: {}, days: {}, t: [], ty: {}, solved: 0, right: 0, noteDays: {}, noteN: 0, noteC: 0, prog: {}, wraps: [], nNew: 0, nFix: 0, nLeft: 0, memo: '', goal: '', ever: 0 }); }
   var quit = {}, r = ss.getSheetByName(ROSTER);
@@ -68,10 +86,10 @@ function reportData(wk) {
       prog: Object.keys(s.prog).map(function (k) { return s.prog[k]; }).filter(function (p) { return p.done.length || p.doing.length; }),
       wraps: s.wraps.sort(function (a, b) { return a.t - b.t; }), nNew: s.nNew, nFix: s.nFix, nLeft: s.nLeft, memo: s.memo, goal: s.goal };
   }).sort(function (a, b) { return (b.days.length - a.days.length) || (a.name < b.name ? -1 : 1); });
-  return { wk: wk, made: Date.now(), list: list };
+  return { wk: wk, from: RG.from, to: RG.to, custom: RG.custom, made: Date.now(), list: list };
 }
 function saveMemo(wk, name, memo, goal) {
-  wk = weekStart(wk); name = String(name || '').trim(); if (!name) return false;
+  wk = memoKey(wk); name = String(name || '').trim(); if (!name) return false;
   var lock = LockService.getScriptLock(); lock.waitLock(20000);
   try {
     var ss = SpreadsheetApp.getActiveSpreadsheet(), sh = ss.getSheetByName(MEMO);
