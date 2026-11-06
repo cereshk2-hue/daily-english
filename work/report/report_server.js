@@ -51,7 +51,7 @@ function reportData(wk, from, to) {
     var m2 = /^(\d+)\/(\d+)/.exec(String(v[7])); if (!m2 || !+m2[2]) return;
     s.solved += +m2[2]; s.right += +m2[1];
     /* 하루 한 문제(고3 수능실전반 '실전 1문제'): DAY별 맞힘/틀림 — 그 기간 처음 푼 기록만 */
-    if (/실전 \d+문제/.test(String(v[6]))) { var ek = String(v[2]) + '|' + String(v[4]); if (!s.ex[ek] || s.ex[ek].t > v[0].getTime()) s.ex[ek] = { book: String(v[2]), day: String(v[4]), c: +m2[1], a: +m2[2], t: v[0].getTime(), wrong: [], fixed: [] }; }
+    if (/실전 \d+문제/.test(String(v[6]))) { var ek = String(v[2]) + '|' + String(v[4]); if (!s.ex[ek] || s.ex[ek].t > v[0].getTime()) s.ex[ek] = { book: String(v[2]), day: String(v[4]), c: +m2[1], a: +m2[2], t: v[0].getTime(), wrong: (/틀림 ([\d·]+)번/.exec(String(v[6])) || ['', ''])[1].split('·').filter(String).map(Number), fixed: [] }; }
     /* 어휘(11/6): 단어 리스트·핵심어휘 단계에서 처음 푼 단어 수 (같은 DAY·단계는 한 번만) */
     if (/핵심어휘|단어 리스트|단어장/.test(String(v[6]))) { var vk = String(v[2]) + '|' + String(v[4]) + '|' + String(v[6]).replace(/^\d+\.\s*/, ''); if (!s.vk[vk]) s.vk[vk] = { c: +m2[1], a: +m2[2] }; }
     var ty = typeOf(v[6]); if (!ty) return;
@@ -74,6 +74,7 @@ function reportData(wk, from, to) {
     if (f && inW(+f[1])) s.nNew++;
     if (ok && inW(v[9])) s.nFix++;
     if (!ok) s.nLeft++;
+    if (typeOf(v[4]) !== '어휘' && +v[6] > 0) s.nOther = (s.nOther || 0) + 1;
     if (typeOf(v[4]) === '어휘' && +v[6] > 0) {
       var q = null; try { q = JSON.parse(String(v[11])).q; } catch (e) {}
       var wd = q ? String(q.a && q.a[0] || q.key || '') : ''; if (!wd) wd = String(v[5]).slice(0, 30); wd = wd.replace(/^(\d+(?:[~·]\d+)?번|본문 \S+)\s+/, ''); /* 키 앞에 붙은 출처(22번 등) 빼기 */
@@ -100,7 +101,7 @@ function reportData(wk, from, to) {
       types: Object.keys(s.ty).filter(function (k) { return s.ty[k].a >= 4; }).map(function (k) { return { k: k, c: s.ty[k].c, a: s.ty[k].a }; })
         .sort(function (a, b) { return b.c / b.a - a.c / a.a; }),
       prog: Object.keys(s.prog).map(function (k) { return s.prog[k]; }).filter(function (p) { return p.done.length || p.doing.length; }),
-      wraps: s.wraps.sort(function (a, b) { return a.t - b.t; }), nNew: s.nNew, nFix: s.nFix, nLeft: s.nLeft, memo: s.memo, goal: s.goal, exam: exam,
+      wraps: s.wraps.sort(function (a, b) { return a.t - b.t; }), nNew: s.nNew, nFix: s.nFix, nLeft: s.nLeft, memo: s.memo, goal: s.goal, exam: exam, nOther: s.nOther || 0,
       voc: (function () { var c = 0, a = 0; Object.keys(s.vk).forEach(function (k) { c += s.vk[k].c; a += s.vk[k].a; }); return { a: a, c: c, wrong: s.vw, re: s.vRe, done: s.vDone, left: s.vLeft }; })() };
   }).sort(function (a, b) { return (b.days.length - a.days.length) || (a.name < b.name ? -1 : 1); });
   return { wk: wk, from: RG.from, to: RG.to, custom: RG.custom, made: Date.now(), list: list };

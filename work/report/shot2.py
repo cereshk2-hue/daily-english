@@ -10,7 +10,7 @@ with sync_playwright() as p:
   pg.fill('#find','이준');time.sleep(.3);print('after search',pg.inner_text('.ppl'),'|',pg.inner_text('.who b'))
   print('next href',pg.get_attribute('#next','href')[-70:])
   pg.fill('#find','');pg.fill('#find','없는');time.sleep(.2);print(pg.inner_text('.ppl'))
-  pg.fill('#find','최하');pg.press('#find','Enter');time.sleep(.3)
+  pg.fill('#find','김민');pg.press('#find','Enter');time.sleep(.3)
   pg.screenshot(path='r2_mobile.png',full_page=True)
   pg.click('#img');pg.wait_for_selector('#ov img',timeout=15000);print('dl',pg.get_attribute('#ov a','download'))
   src=pg.get_attribute('#ov img','src');import base64;open('r2_img.png','wb').write(base64.b64decode(src.split(',')[1]))
