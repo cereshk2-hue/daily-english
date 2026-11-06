@@ -36,7 +36,7 @@ function reportData(wk, from, to) {
   var RG = rangeOf(wk, from, to); wk = RG.key;
   var t0 = RG.t0, t1 = RG.t1, S = {};
   var inW = function (x) { var t = x instanceof Date ? x.getTime() : +x || 0; return t >= t0 && t < t1; };
-  function st(n) { return S[n] || (S[n] = { name: n, grades: {}, days: {}, t: [], ty: {}, solved: 0, right: 0, noteDays: {}, noteN: 0, noteC: 0, prog: {}, wraps: [], nNew: 0, nFix: 0, nLeft: 0, memo: '', goal: '', ever: 0 }); }
+  function st(n) { return S[n] || (S[n] = { name: n, grades: {}, days: {}, t: [], ty: {}, solved: 0, right: 0, noteDays: {}, noteN: 0, noteC: 0, prog: {}, ex: {}, wraps: [], nNew: 0, nFix: 0, nLeft: 0, memo: '', goal: '', ever: 0 }); }
   var quit = {}, r = ss.getSheetByName(ROSTER);
   if (r && r.getLastRow() > 1) r.getRange(2, 1, r.getLastRow() - 1, 4).getValues().forEach(function (v) { var n = String(v[0]).trim(); if (n && /그만|차단|퇴원|정지/.test(String(v[3]))) quit[n] = 1; });
   var log = ss.getSheetByName('기록');
@@ -50,6 +50,8 @@ function reportData(wk, from, to) {
     if (!/단계 완료|DAY 완료/.test(String(v[5]))) return;
     var m2 = /^(\d+)\/(\d+)/.exec(String(v[7])); if (!m2 || !+m2[2]) return;
     s.solved += +m2[2]; s.right += +m2[1];
+    /* 하루 한 문제(고3 수능실전반 '실전 1문제'): DAY별 맞힘/틀림 — 그 기간 처음 푼 기록만 */
+    if (/실전 \d+문제/.test(String(v[6]))) { var ek = String(v[2]) + '|' + String(v[4]); if (!s.ex[ek] || s.ex[ek].t > v[0].getTime()) s.ex[ek] = { book: String(v[2]), day: String(v[4]), c: +m2[1], a: +m2[2], t: v[0].getTime(), wrong: [], fixed: [] }; }
     var ty = typeOf(v[6]); if (!ty) return;
     var x = s.ty[ty] || (s.ty[ty] = { c: 0, a: 0 }); x.c += +m2[1]; x.a += +m2[2];
   });
@@ -70,6 +72,7 @@ function reportData(wk, from, to) {
     if (f && inW(+f[1])) s.nNew++;
     if (ok && inW(v[9])) s.nFix++;
     if (!ok) s.nLeft++;
+    if (/실전 \d+문제/.test(String(v[4])) && +v[6] > 0) { var nm = /^\s*(\d+)\s*\./.exec(String(v[5])); s.exN = s.exN || []; s.exN.push({ k: String(v[1]) + '|' + String(v[2]), n: nm ? +nm[1] : 0, ok: ok }); }
   });
   var ms = ss.getSheetByName(MEMO);
   if (ms && ms.getLastRow() > 1) ms.getRange(2, 1, ms.getLastRow() - 1, 4).getValues().forEach(function (v) {
@@ -77,14 +80,17 @@ function reportData(wk, from, to) {
     if (w === wk && S[String(v[1]).trim()]) { S[String(v[1]).trim()].memo = String(v[2]); S[String(v[1]).trim()].goal = String(v[3]); }
   });
   var list = Object.keys(S).filter(function (n) { return !quit[n] && S[n].ever; }).map(function (n) {
-    var s = S[n], ts = s.t.sort(function (a, b) { return a - b; }), mins = 0;
+    var s = S[n];
+    (s.exN || []).forEach(function (x) { var e = s.ex[x.k]; if (e && x.n && e.wrong.indexOf(x.n) < 0) { e.wrong.push(x.n); if (x.ok) e.fixed.push(x.n); } });
+    var exam = Object.keys(s.ex).map(function (k) { var e = s.ex[k]; e.wrong.sort(function (a, b) { return a - b; }); return e; }).sort(function (a, b) { return a.t - b.t; });
+    var ts = s.t.sort(function (a, b) { return a - b; }), mins = 0;
     for (var i = 1; i < ts.length; i++) { var g = ts[i] - ts[i - 1]; if (g > 0 && g <= 15 * 60000) mins += g / 60000; }
     return { name: n, grades: Object.keys(s.grades), days: Object.keys(s.days).sort(), mins: Math.round(mins), solved: s.solved, right: s.right,
       noteN: s.noteN, noteC: s.noteC, noteDays: Object.keys(s.noteDays).length,
       types: Object.keys(s.ty).filter(function (k) { return s.ty[k].a >= 4; }).map(function (k) { return { k: k, c: s.ty[k].c, a: s.ty[k].a }; })
         .sort(function (a, b) { return b.c / b.a - a.c / a.a; }),
       prog: Object.keys(s.prog).map(function (k) { return s.prog[k]; }).filter(function (p) { return p.done.length || p.doing.length; }),
-      wraps: s.wraps.sort(function (a, b) { return a.t - b.t; }), nNew: s.nNew, nFix: s.nFix, nLeft: s.nLeft, memo: s.memo, goal: s.goal };
+      wraps: s.wraps.sort(function (a, b) { return a.t - b.t; }), nNew: s.nNew, nFix: s.nFix, nLeft: s.nLeft, memo: s.memo, goal: s.goal, exam: exam };
   }).sort(function (a, b) { return (b.days.length - a.days.length) || (a.name < b.name ? -1 : 1); });
   return { wk: wk, from: RG.from, to: RG.to, custom: RG.custom, made: Date.now(), list: list };
 }

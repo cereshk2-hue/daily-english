@@ -20,6 +20,9 @@ function L(t,n,day,kind,step,s){LOGR.push([t,n,sc,un,day,kind,step,s,'','',''])}
 L(K(2026,10,29,19,0),'김민서','DAY 5 30·31번','단계 완료','3. 어휘선택','5/6');
 L(K(2026,11,4,20,0),'이준호','DAY 6 32번','단계 완료','2. 실전 문항','1/3');L(K(2026,11,4,20,5),'이준호','DAY 6 32번','단계 완료','6. 어법선택','5/7');
 L(K(2026,10,28,20,0),'박서연','DAY 3 23·24번','단계 완료','3. 어휘선택','6/6');
+const sc3='고3 수능실전반',un3='하루 한 문제 · 2026학년도 10월 학평';
+[[2,'DAY 1 20번 주장','1/1'],[3,'DAY 2 22번 요지','0/1'],[4,'DAY 3 23번 주제','1/1'],[5,'DAY 4 24번 제목','0/1'],[6,'DAY 25 43~45번 장문 (순서·지칭·일치)','2/3']].forEach(([d,day,sc_])=>{
+ LOGR.push([K(2026,11,d,21,0),'최하늘',sc3,un3,day,'단계 완료','1. 실전 1문제',sc_,'','','']);LOGR.push([K(2026,11,d,21,6),'최하늘',sc3,un3,day,'DAY 완료','3. 단어 테스트','9/10','','',''])});
 const NOWR=[['학생','학년·교재','단원','DAY','범위','진행','점수','오답 학습','회차','시작','마지막 활동','완료']];
 function N(n,day,rng,prog,score,last,end){NOWR.push([n,sc,un,day,rng,prog,score,'',1,'',last,end||''])}
 N('김민서','DAY 6','32번','완료','92점 (70/76)',K(2026,11,2,20,0),K(2026,11,2,20,0));
@@ -30,7 +33,10 @@ N('김민서','Wrap-up 18~22번','','완료','90점 (18/20)',K(2026,11,4,21,0),K
 N('이준호','DAY 6','32번','2/14단계','',K(2026,11,4,20,5));
 const NOTER=[['학생','교재','DAY','과·DAY','단계','문제','틀린 횟수','헷갈려요','상태','마지막','key','data']];
 for(let i=0;i<14;i++){const first=i<9?K(2026,11,2+(i%4),20,0).getTime():K(2026,10,28,20,0).getTime();NOTER.push(['김민서',sc,'DAY 6 32번','','어법선택','q',1,'',i%3===0?'남음':'맞힘',i%3===0?K(2026,10,30,1,0):K(2026,11,5,21,0),'k'+i,JSON.stringify({id:'x',first:first})])}
-const ROST=[['이름','학생 코드','교재','메모'],['김민서','1234','',''],['이준호','2222','',''],['박서연','3333','','']];
+NOTER.push(['최하늘',sc3,'DAY 2 22번 요지','','실전 1문제','22. 다음 글의 요지로 가장 적절한 것은? ...',1,'','맞힘',K(2026,11,5,21,0),'h1','{"first":'+K(2026,11,3,21,0).getTime()+'}']);
+NOTER.push(['최하늘',sc3,'DAY 4 24번 제목','','실전 1문제','24. 다음 글의 제목으로 가장 적절한 것은? ...',1,'','남음',K(2026,11,5,21,0),'h2','{"first":'+K(2026,11,5,21,0).getTime()+'}']);
+NOTER.push(['최하늘',sc3,'DAY 25 43~45번 장문 (순서·지칭·일치)','','실전 1문제','44. 밑줄 친 (a)~(e) 중에서 ...',1,'','남음',K(2026,11,6,21,0),'h3','{"first":'+K(2026,11,6,21,0).getTime()+'}']);
+const ROST=[['이름','학생 코드','교재','메모'],['김민서','1234','',''],['이준호','2222','',''],['박서연','3333','',''],['최하늘','4444','','']];
 const MEMOR=[['주(월요일)','학생','선생님 한마디','다음 주 목표','저장 시각'],['2026-11-02','김민서','이번 주는 4일 동안 지문을 반복해서 32~35번 내용을 거의 외웠어요. 어법(수일치·분사)에서 실수가 남아 있어서 다음 주는 오답 노트로 어법을 집중해서 볼게요.','DAY 10~13 완료, 남은 오답 0개, 어법 80% 이상',new Date()]];
 const SH={'기록':new Sheet('기록',LOGR),'현황':new Sheet('현황',NOWR),'오답노트':new Sheet('오답노트',NOTER),'학생명단':new Sheet('학생명단',ROST),'주간리포트':new Sheet('주간리포트',MEMOR)};
 global.SpreadsheetApp={getActiveSpreadsheet:()=>({getSheetByName:n=>SH[n]||null,insertSheet:n=>(SH[n]=new Sheet(n,[])),getSheets:()=>Object.values(SH)})};
@@ -41,7 +47,7 @@ global.ContentService={createTextOutput:s=>({setMimeType(){return this},s}),Mime
 global.PropertiesService={getScriptProperties:()=>({getProperty:()=>null})};global.CacheService={getScriptCache:()=>({get(){},put(){}})};
 eval(fs.readFileSync(__dirname+'/Code.gs','utf8')+';global.doGet=doGet;global.reportData=reportData;global.saveMemo=saveMemo;');
 const stub='<script>window.google={script:{run:{_s:null,_f:null,withSuccessHandler(f){this._s=f;return this},withFailureHandler(f){this._f=f;return this},saveMemo(...a){window.__saved=a;setTimeout(()=>this._s&&this._s(true),50)}}}}</script>';
-const rep=doGet({parameter:{view:'dW6ypYyx',report:'1'}}).html.replace('<head>','<head>'+stub);
+const rep=doGet({parameter:{view:'dW6ypYyx',report:'1',who:'최하늘'}}).html.replace('<head>','<head>'+stub);
 fs.writeFileSync(__dirname+'/out_report.html',rep);
 fs.writeFileSync(__dirname+'/out_board.html',doGet({parameter:{view:'dW6ypYyx'}}).html);
 console.log(JSON.stringify(reportData('2026-11-04').list.map(s=>({n:s.name,days:s.days,mins:s.mins,solved:s.solved,noteN:s.noteN,types:s.types.map(t=>t.k+':'+t.c+'/'+t.a),prog:s.prog.map(p=>p.done.length+'/'+p.doing.length),wraps:s.wraps.length,nNew:s.nNew,nFix:s.nFix,nLeft:s.nLeft,memo:!!s.memo})),null,0));
@@ -53,3 +59,5 @@ const d3=reportData('', '2026-11-02','2026-11-08');console.log('fullweek',d3.wk,
 const d4=reportData('', '2026-01-01','2026-11-06');console.log('toolong->week',d4.wk,d4.custom);
 saveMemo('2026-10-19~2026-11-06','박서연','한 달 잘했어요','다음 달 목표');console.log(JSON.stringify(SH['주간리포트'].rows.map(r=>r.slice(0,4))));
 const d5=reportData('', '2026-10-19','2026-11-06');console.log('memo',d5.list.filter(s=>s.memo).map(s=>s.name+':'+s.memo));
+
+console.log('exam',JSON.stringify(reportData('2026-11-04').list.find(x=>x.name==='최하늘').exam));
