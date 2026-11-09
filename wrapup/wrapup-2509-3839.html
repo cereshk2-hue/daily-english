@@ -1,0 +1,369 @@
+<title>9월 학평 38·39번 Wrap-up</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+/* A4 시험지 (10/31): 스크립트가 문항을 A4 쪽(210×297mm)에 왼쪽 단 → 오른쪽 단 → 다음 쪽 순서로 직접 나눠 담고 쪽 번호를 붙인다.
+   화면·인쇄·PDF 어디서나 같은 쪽 구성. 좁은 화면에서는 쪽 전체를 축소해서 보여 준다. */
+.q, .exp p { break-inside: avoid }
+body { font-size: 9.6pt }
+.stem { font-size: 9.8pt } .stem .src { font-size: 8pt }
+.box, .given, .sum { font-size: 9.4pt; line-height: 1.46; padding: 2.2mm 2.8mm }
+.ol, .ol.en li { font-size: 9.3pt; line-height: 1.38 }
+table.ch { font-size: 9.2pt } table.ch th { font-size: 8.4pt }
+.q { margin-bottom: 3.6mm; gap: 1.6mm }
+.exp { font-size: 7.8pt; line-height: 1.36; margin-top: 3mm } .exp p { margin-bottom: 1mm }
+.top, .notice, .idrow, .title .when, .foot { font-size: 8.6pt }
+.title h1 { font-size: 18pt } .title h1 small { font-size: 8.6pt }
+.keygrid div { font-size: 9pt; padding: 1.2mm 0 } .keygrid b { font-size: 10.5pt }
+.page { width: 210mm; max-width: 100%; padding: 11mm }
+.sheets { display: grid; justify-content: center; gap: 16px }
+.sheet { width: 210mm; height: 297mm; padding: 11mm; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); overflow: hidden }
+/* 내용 영역 188×256mm: A4 여백 0~20mm, Letter 기본 여백에서도 한 장에 들어가는 크기 */
+.sheet > .inner { width: 188mm; height: 256mm; display: flex; flex-direction: column; overflow: hidden }
+.inner > .top.run { padding-bottom: 2mm; border-bottom: 1px solid var(--rule); margin-bottom: 1mm }
+.cols { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr);
+  column-gap: 6mm; margin-top: 4mm; position: relative }
+.cols::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid var(--rule) }
+.cols > .col { columns: auto !important; margin: 0 !important; min-height: 0; overflow: hidden }
+.inner > .foot { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center }
+.inner > .foot span:last-child { text-align: right }
+.inner > .foot .pno { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums }
+@page { size: A4; margin: 12mm 11mm }
+@media print {
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  body { padding: 0 !important; margin: 0 }
+  .sheets { display: block }
+  .sheet { zoom: 1 !important; width: auto; height: auto; padding: 0; margin: 0; box-shadow: none; overflow: visible; break-after: page; page-break-after: always }
+  .sheet:last-child { break-after: auto; page-break-after: auto }
+  .sheet > .inner { margin: 0 auto }
+  .page { max-width: none; margin: 0; box-shadow: none; break-after: page }
+}
+</style>
+<script>
+/* A4 쪽 나누기: 왼쪽 단 → 오른쪽 단 → 다음 쪽, 쪽 번호 n / 전체 */
+(function () {
+  function build() {
+    var main = document.querySelector('main'); if (!main || document.querySelector('.sheets')) return;
+    var secs = [].slice.call(main.querySelectorAll('section.page'));
+    var out = document.createElement('div'); out.className = 'sheets'; main.appendChild(out);
+    var pages = [];
+    secs.forEach(function (sec) {
+      var box = sec.querySelector('.qs, .exp'); if (!box) return;
+      var items = [].slice.call(box.children), foot = sec.querySelector('.foot'), top = sec.querySelector('.top');
+      var head = [].slice.call(sec.children).filter(function (e) { return e !== box && e !== foot && !(e.classList.contains('keygrid') && false); });
+      var cols, ci, first = true;
+      function newPage() {
+        var sh = document.createElement('div'); sh.className = 'sheet'; var pg = document.createElement('div'); pg.className = 'inner'; sh.appendChild(pg);
+        if (first) head.forEach(function (e) { pg.appendChild(e); });
+        else { var t = top.cloneNode(true); t.classList.add('run'); pg.appendChild(t); }
+        first = false;
+        cols = document.createElement('div'); cols.className = 'cols';
+        for (var i = 0; i < 2; i++) { var c = document.createElement('div'); c.className = 'col ' + box.className; cols.appendChild(c); }
+        pg.appendChild(cols);
+        var f = foot.cloneNode(true), sp = f.querySelectorAll('span'), mid = document.createElement('span'); mid.className = 'pno';
+        f.insertBefore(mid, sp[1] || null); pg.appendChild(f);
+        out.appendChild(sh); pages.push(pg); ci = 0;
+      }
+      function over(c) { return c.scrollHeight > c.clientHeight + 1; }
+      newPage();
+      items.forEach(function (it) {
+        var c = cols.children[ci]; c.appendChild(it);
+        if (over(c) && c.children.length > 1) {
+          c.removeChild(it); ci++;
+          if (ci > 1) newPage();
+          cols.children[ci].appendChild(it);
+        }
+      });
+      sec.parentNode.removeChild(sec);
+    });
+    pages.forEach(function (p, i) { p.querySelector('.pno').textContent = (i + 1) + ' / ' + pages.length; });
+    fit();
+  }
+  function fit() {
+    var w = document.documentElement.clientWidth - 24, s = Math.min(1, w / 794);
+    [].forEach.call(document.querySelectorAll('.sheet'), function (p) { p.style.zoom = s < 1 ? s : ''; });
+  }
+  function go() { (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(build, build); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  window.addEventListener('resize', function () { if (document.querySelector('.sheets')) fit(); });
+})();
+</script>
+
+
+<main>
+<section class="page">
+  <div class="top"><span>2025학년도 9월 고1 전국연합학력평가 · <b>38·39번 Wrap-up</b></span><span>중산고등학교 1학년 · 내신 대비</span></div>
+  <div class="title">
+    <div class="g">영어</div>
+    <h1>9월 학평 38·39번 Wrap-up<small>비선형 편집 · 도덕적으로 선한 사람</small></h1>
+    <div class="when">20문항 · 각 5점<br>제한 시간 30분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">범위: 38번(타자기 같은 선형 편집 vs. 워드 프로그램 같은 비선형 편집) · 39번(선한 사람: 의도도 결과도 중요하다). 지문은 원문을 일부 바꾼 것이 있어요. 선택지는 본문 표현을 다른 말로 바꿔 썼으니 뜻을 정확히 따져 보세요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>다음 글의 주제로 가장 적절한 것은?<span class="src">[38번]</span></div>
+    <div class="box"><p>All editing systems are now nonlinear computer-based systems that allow random access to any video shot or scene without having to fast forward or fast reverse to find it. Nonlinear systems can create a range of special effects, such as slow motion, wipes and dissolves. Another highlight of a digital nonlinear system is its random access process that makes it easy for an editor to find desired shots or scenes without having to spend time fast forwarding or rewinding videotape. With nonlinear editing, shots or scenes can be easily added or removed anywhere in the program, and the computer adjusts the program length automatically. Linear editing was like composing a paper on a typewriter. If a mistake was made or new information needed to be added the whole piece had to be retyped. Nonlinear editing, on the other hand, is like using a word processing program. If a mistake is made, it is easily deleted and fixed with a few keystrokes, and new information can be added easily.</p></div>
+    <ol class="ol en"><li><span>①</span><span>the advantages of nonlinear editing over linear editing</span></li><li><span>②</span><span>the history of the typewriter and its decline</span></li><li><span>③</span><span>how to create slow-motion effects on videotape</span></li><li><span>④</span><span>why editors still prefer to rewind videotape</span></li><li><span>⑤</span><span>the difficulty of learning word processing programs</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>다음 글의 내용과 일치하지 <u>않는</u> 것은?<span class="src">[38번]</span></div>
+    <div class="box"><p>All editing systems are now nonlinear computer-based systems that allow random access to any video shot or scene without having to fast forward or fast reverse to find it. Nonlinear systems can create a range of special effects, such as slow motion, wipes and dissolves. Another highlight of a digital nonlinear system is its random access process that makes it easy for an editor to find desired shots or scenes without having to spend time fast forwarding or rewinding videotape. With nonlinear editing, shots or scenes can be easily added or removed anywhere in the program, and the computer adjusts the program length automatically. Linear editing was like composing a paper on a typewriter. If a mistake was made or new information needed to be added the whole piece had to be retyped. Nonlinear editing, on the other hand, is like using a word processing program. If a mistake is made, it is easily deleted and fixed with a few keystrokes, and new information can be added easily.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Nonlinear systems let editors go directly to any shot or scene.</span></li><li><span>②</span><span>Effects such as slow motion can be produced with nonlinear systems.</span></li><li><span>③</span><span>In nonlinear editing, the computer changes the program length on its own.</span></li><li><span>④</span><span>Linear editing is compared to writing a paper on a typewriter.</span></li><li><span>⑤</span><span>In linear editing, a mistake could be fixed with just a few keystrokes.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[38번 변형]</span></div>
+    <div class="box"><p>With nonlinear editing, shots or scenes can be easily added or removed anywhere in the program, and the computer adjusts the program length automatically. Linear editing was like composing a paper on a typewriter. If a mistake was made or new information needed to be added, <span class="blank"></span>. Nonlinear editing, on the other hand, is like using a word processing program. If a mistake is made, it is easily deleted and fixed with a few keystrokes, and new information can be added easily.</p></div>
+    <ol class="ol en"><li><span>①</span><span>it could easily be inserted anywhere</span></li><li><span>②</span><span>the entire work had to be done over again</span></li><li><span>③</span><span>the computer corrected it automatically</span></li><li><span>④</span><span>a few keystrokes were enough to fix it</span></li><li><span>⑤</span><span>special effects could be used to hide it</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[38번 변형]</span></div>
+    <div class="box"><p>All editing systems are now nonlinear computer-based systems that allow ①<u>random</u> access to any video shot or scene without having to fast forward or fast reverse to find it. Nonlinear systems can create a range of special effects, such as slow motion, wipes and dissolves. Another highlight of a digital nonlinear system is its random access process that makes it easy for an editor to find ②<u>desired</u> shots or scenes without having to spend time fast forwarding or rewinding videotape. With nonlinear editing, shots or scenes can be easily added or ③<u>removed</u> anywhere in the program, and the computer adjusts the program length ④<u>manually</u>. Linear editing was like composing a paper on a typewriter. If a mistake was made or new information needed to be added the whole piece had to be retyped. Nonlinear editing, on the other hand, is like using a word processing program. If a mistake is made, it is easily deleted and fixed with a few keystrokes, and new information can be added ⑤<u>easily</u>.</p></div>
+    <ol class="ol en"><li><span>①</span><span>random</span></li><li><span>②</span><span>desired</span></li><li><span>③</span><span>removed</span></li><li><span>④</span><span>manually</span></li><li><span>⑤</span><span>easily</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>다음 글의 밑줄 친 부분 중, 어법상 <u>틀린</u> 것은?<span class="src">[38번 변형]</span></div>
+    <div class="box"><p>All editing systems are now nonlinear computer-based systems that ①<u>allow</u> random access to any video shot or scene without ②<u>having</u> to fast forward or fast reverse to find it. … Another highlight of a digital nonlinear system is its random access process that makes ③<u>it</u> easy for an editor ④<u>finding</u> desired shots or scenes. With nonlinear editing, shots or scenes can be easily ⑤<u>added</u> or removed anywhere in the program.</p></div>
+    <ol class="ol en"><li><span>①</span><span>allow</span></li><li><span>②</span><span>having</span></li><li><span>③</span><span>it</span></li><li><span>④</span><span>finding</span></li><li><span>⑤</span><span>added</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>(A), (B), (C)의 각 네모 안에서 어법에 맞는 표현으로 가장 적절한 것은?<span class="src">[38번]</span></div>
+    <div class="box"><p>All editing systems are now nonlinear computer-based systems that <b>(A)</b> [ allow / allows ] random access to any video shot or scene. … Linear editing was like composing a paper on a typewriter. If a mistake was made or new information needed <b>(B)</b> [ to be added / to add ], the whole piece had to be retyped. Nonlinear editing, on the other hand, is like using a word processing program. If a mistake is made, it <b>(C)</b> [ is easily deleted / easily deletes ] and fixed with a few keystrokes.</p></div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th><th>(C)</th></tr></thead><tbody><tr><td>①</td><td>allows</td><td>to be added</td><td>is easily deleted</td></tr><tr><td>②</td><td>allow</td><td>to add</td><td>is easily deleted</td></tr><tr><td>③</td><td>allow</td><td>to be added</td><td>easily deletes</td></tr><tr><td>④</td><td>allows</td><td>to add</td><td>easily deletes</td></tr><tr><td>⑤</td><td>allow</td><td>to be added</td><td>is easily deleted</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?<span class="src">[38번]</span></div>
+    <div class="given">Nonlinear editing, on the other hand, is like using a word processing program.</div>
+    <div class="box"><p>All editing systems are now nonlinear computer-based systems that allow random access to any video shot or scene without having to fast forward or fast reverse to find it. Nonlinear systems can create a range of special effects, such as slow motion, wipes and dissolves. <span class="gap">( ① )</span> Another highlight of a digital nonlinear system is its random access process that makes it easy for an editor to find desired shots or scenes without having to spend time fast forwarding or rewinding videotape. <span class="gap">( ② )</span> With nonlinear editing, shots or scenes can be easily added or removed anywhere in the program, and the computer adjusts the program length automatically. <span class="gap">( ③ )</span> Linear editing was like composing a paper on a typewriter. <span class="gap">( ④ )</span> If a mistake was made or new information needed to be added the whole piece had to be retyped. <span class="gap">( ⑤ )</span> If a mistake is made, it is easily deleted and fixed with a few keystrokes, and new information can be added easily.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?<span class="src">[38번]</span></div>
+    <div class="given">All editing systems are now nonlinear computer-based systems that allow random access to any video shot or scene without having to fast forward or fast reverse to find it.</div>
+    <div class="box"><p><b>(A)</b> Nonlinear systems can create a range of special effects, such as slow motion, wipes and dissolves. Another highlight of a digital nonlinear system is its random access process that makes it easy for an editor to find desired shots or scenes without having to spend time fast forwarding or rewinding videotape. With nonlinear editing, shots or scenes can be easily added or removed anywhere in the program, and the computer adjusts the program length automatically.</p><p><b>(B)</b> Nonlinear editing, on the other hand, is like using a word processing program. If a mistake is made, it is easily deleted and fixed with a few keystrokes, and new information can be added easily.</p><p><b>(C)</b> Linear editing was like composing a paper on a typewriter. If a mistake was made or new information needed to be added the whole piece had to be retyped.</p></div>
+    <ol class="ol"><li><span>①</span><span>(A) − (C) − (B)</span></li><li><span>②</span><span>(B) − (A) − (C)</span></li><li><span>③</span><span>(B) − (C) − (A)</span></li><li><span>④</span><span>(C) − (A) − (B)</span></li><li><span>⑤</span><span>(C) − (B) − (A)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?<span class="src">[38번]</span></div>
+    <div class="box"><p>All editing systems are now nonlinear computer-based systems that allow random access to any video shot or scene without having to fast forward or fast reverse to find it. Nonlinear systems can create a range of special effects, such as slow motion, wipes and dissolves. Another highlight of a digital nonlinear system is its random access process that makes it easy for an editor to find desired shots or scenes without having to spend time fast forwarding or rewinding videotape. With nonlinear editing, shots or scenes can be easily added or removed anywhere in the program, and the computer adjusts the program length automatically. Linear editing was like composing a paper on a typewriter. If a mistake was made or new information needed to be added the whole piece had to be retyped. Nonlinear editing, on the other hand, is like using a word processing program. If a mistake is made, it is easily deleted and fixed with a few keystrokes, and new information can be added easily.</p></div>
+    <div class="sum">Unlike linear editing, which was as <b>(A)</b> <span class="blank"></span> as typing on a typewriter, nonlinear editing makes it <b>(B)</b> <span class="blank"></span> to find, add, or remove scenes.</div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>convenient</td><td>easy</td></tr><tr><td>②</td><td>inconvenient</td><td>easy</td></tr><tr><td>③</td><td>inconvenient</td><td>impossible</td></tr><tr><td>④</td><td>creative</td><td>costly</td></tr><tr><td>⑤</td><td>convenient</td><td>difficult</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>글에서 선형 편집과 비선형 편집을 각각 무엇에 비유했는지 바르게 짝지은 것은?<span class="src">[38번]</span></div>
+    <div class="box"><p>All editing systems are now nonlinear computer-based systems that allow random access to any video shot or scene without having to fast forward or fast reverse to find it. Nonlinear systems can create a range of special effects, such as slow motion, wipes and dissolves. Another highlight of a digital nonlinear system is its random access process that makes it easy for an editor to find desired shots or scenes without having to spend time fast forwarding or rewinding videotape. With nonlinear editing, shots or scenes can be easily added or removed anywhere in the program, and the computer adjusts the program length automatically. Linear editing was like composing a paper on a typewriter. If a mistake was made or new information needed to be added the whole piece had to be retyped. Nonlinear editing, on the other hand, is like using a word processing program. If a mistake is made, it is easily deleted and fixed with a few keystrokes, and new information can be added easily.</p></div>
+    <ol class="ol"><li><span>①</span><span>워드 프로그램 쓰기 – 타자기로 글쓰기</span></li><li><span>②</span><span>비디오테이프 되감기 – 슬로 모션 만들기</span></li><li><span>③</span><span>타자기로 글쓰기 – 워드 프로그램 쓰기</span></li><li><span>④</span><span>손으로 편지 쓰기 – 이메일 보내기</span></li><li><span>⑤</span><span>타자기로 글쓰기 – 손으로 다시 쓰기</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>다음 글의 요지로 가장 적절한 것은?<span class="src">[39번]</span></div>
+    <div class="box"><p>A morally good person is one who does morally bad actions significantly less often than most and does morally good ones significantly more often than most. In judging a person not only her actions but also her intentions and motives are relevant. A morally good person must intend to do morally good actions and intend to avoid morally bad ones. A person who unintentionally prevents harm to others and does not harm them simply because things do not turn out as she intends is not morally good. Although this kind of situation generally occurs only in slapstick movies, it is worth mentioning to avoid the false impression that it is the actual consequences of a person's actions that count toward her being judged morally good or bad. But actual consequences are important. A person who always tries to prevent harm but never does, is not generally thought of as morally good. Of such a person, it may be said that she means well; but, contrary to Kant, some results are necessary before she is regarded as morally good.</p></div>
+    <ol class="ol"><li><span>①</span><span>도덕적으로 선한 사람으로 여겨지려면 선한 의도뿐 아니라 실제 결과도 어느 정도 필요하다.</span></li><li><span>②</span><span>사람을 판단할 때는 오직 행동의 결과만이 중요하다.</span></li><li><span>③</span><span>선한 의도만 있으면 결과와 상관없이 선한 사람이다.</span></li><li><span>④</span><span>슬랩스틱 영화는 사람들의 도덕적 판단에 큰 영향을 준다.</span></li><li><span>⑤</span><span>칸트의 주장은 결과의 중요성에 대해 완전히 옳다.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[39번 변형]</span></div>
+    <div class="box"><p>A morally good person must intend to do morally good actions and intend to avoid morally bad ones. A person who unintentionally prevents harm to others and does not harm them simply because things do not turn out as she intends is not morally good. Although this kind of situation generally occurs only in slapstick movies, it is worth mentioning to avoid the false impression that it is the actual consequences of a person's actions that count toward her being judged morally good or bad. But <span class="blank"></span>. A person who always tries to prevent harm but never does, is not generally thought of as morally good. Of such a person, it may be said that she means well; but, contrary to Kant, some results are necessary before she is regarded as morally good.</p></div>
+    <ol class="ol en"><li><span>①</span><span>intentions are all that count in moral judgment</span></li><li><span>②</span><span>slapstick movies reflect real life accurately</span></li><li><span>③</span><span>what our actions actually bring about also matters</span></li><li><span>④</span><span>harm to others can never be prevented</span></li><li><span>⑤</span><span>motives have nothing to do with being good</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>다음 글의 내용과 일치하지 <u>않는</u> 것은?<span class="src">[39번]</span></div>
+    <div class="box"><p>A morally good person is one who does morally bad actions significantly less often than most and does morally good ones significantly more often than most. In judging a person not only her actions but also her intentions and motives are relevant. A morally good person must intend to do morally good actions and intend to avoid morally bad ones. A person who unintentionally prevents harm to others and does not harm them simply because things do not turn out as she intends is not morally good. Although this kind of situation generally occurs only in slapstick movies, it is worth mentioning to avoid the false impression that it is the actual consequences of a person's actions that count toward her being judged morally good or bad. But actual consequences are important. A person who always tries to prevent harm but never does, is not generally thought of as morally good. Of such a person, it may be said that she means well; but, contrary to Kant, some results are necessary before she is regarded as morally good.</p></div>
+    <ol class="ol en"><li><span>①</span><span>The writer believes good intentions alone make a person morally good.</span></li><li><span>②</span><span>A morally good person does bad actions far less often than most people.</span></li><li><span>③</span><span>Both actions and motives matter when we judge a person.</span></li><li><span>④</span><span>Someone who prevents harm only by accident is not morally good.</span></li><li><span>⑤</span><span>The writer disagrees with Kant about whether results are needed.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[39번 변형]</span></div>
+    <div class="box"><p>A morally good person is one who does morally bad actions significantly ①<u>less</u> often than most and does morally good ones significantly more often than most. In judging a person not only her actions but also her intentions and motives are ②<u>irrelevant</u>. A morally good person must intend to do morally good actions and intend to avoid morally bad ones. A person who ③<u>unintentionally</u> prevents harm to others and does not harm them simply because things do not turn out as she intends is not morally good. Although this kind of situation generally occurs only in slapstick movies, it is worth mentioning to avoid the ④<u>false</u> impression that it is the actual consequences of a person's actions that count toward her being judged morally good or bad. But actual consequences are important. A person who always tries to prevent harm but never does, is not generally thought of as morally good. Of such a person, it may be said that she means well; but, contrary to Kant, some results are ⑤<u>necessary</u> before she is regarded as morally good.</p></div>
+    <ol class="ol en"><li><span>①</span><span>less</span></li><li><span>②</span><span>irrelevant</span></li><li><span>③</span><span>unintentionally</span></li><li><span>④</span><span>false</span></li><li><span>⑤</span><span>necessary</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>다음 글의 밑줄 친 부분 중, 어법상 <u>틀린</u> 것은?<span class="src">[39번 변형]</span></div>
+    <div class="box"><p>In ①<u>judging</u> a person not only her actions but also her intentions and motives are relevant. A morally good person must intend to do morally good actions and intend ②<u>to avoid</u> morally bad ones. A person who unintentionally prevents harm to others and does not harm them simply because things do not turn out as she intends ③<u>are</u> not morally good. Although this kind of situation generally occurs only in slapstick movies, it is worth ④<u>mentioning</u>. … A person who always tries to prevent harm but never does, is not generally ⑤<u>thought</u> of as morally good.</p></div>
+    <ol class="ol en"><li><span>①</span><span>judging</span></li><li><span>②</span><span>to avoid</span></li><li><span>③</span><span>are</span></li><li><span>④</span><span>mentioning</span></li><li><span>⑤</span><span>thought</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>(A), (B), (C)의 각 네모 안에서 어법에 맞는 표현으로 가장 적절한 것은?<span class="src">[39번]</span></div>
+    <div class="box"><p>A morally good person is one who does morally bad actions significantly <b>(A)</b> [ less / fewer ] often than most and does morally good ones significantly more often than most. … Although this kind of situation generally occurs only in slapstick movies, it is worth <b>(B)</b> [ mentioning / to mention ] to avoid the false impression that it is the actual consequences of a person's actions that count toward her being judged morally good or bad. … Of such a person, it may be said that she means well; but, contrary to Kant, some results are necessary before she <b>(C)</b> [ is regarded / regards ] as morally good.</p></div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th><th>(C)</th></tr></thead><tbody><tr><td>①</td><td>fewer</td><td>mentioning</td><td>is regarded</td></tr><tr><td>②</td><td>less</td><td>mentioning</td><td>is regarded</td></tr><tr><td>③</td><td>less</td><td>to mention</td><td>is regarded</td></tr><tr><td>④</td><td>less</td><td>mentioning</td><td>regards</td></tr><tr><td>⑤</td><td>fewer</td><td>to mention</td><td>regards</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?<span class="src">[39번]</span></div>
+    <div class="given">But actual consequences are important.</div>
+    <div class="box"><p>In judging a person not only her actions but also her intentions and motives are relevant. <span class="gap">( ① )</span> A morally good person must intend to do morally good actions and intend to avoid morally bad ones. <span class="gap">( ② )</span> A person who unintentionally prevents harm to others and does not harm them simply because things do not turn out as she intends is not morally good. <span class="gap">( ③ )</span> Although this kind of situation generally occurs only in slapstick movies, it is worth mentioning to avoid the false impression that it is the actual consequences of a person's actions that count toward her being judged morally good or bad. <span class="gap">( ④ )</span> A person who always tries to prevent harm but never does, is not generally thought of as morally good. <span class="gap">( ⑤ )</span> Of such a person, it may be said that she means well; but, contrary to Kant, some results are necessary before she is regarded as morally good.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>밑줄 친 <u>she means well</u>이 의미하는 바로 가장 적절한 것은?<span class="src">[39번]</span></div>
+    <div class="box"><p>A morally good person is one who does morally bad actions significantly less often than most and does morally good ones significantly more often than most. In judging a person not only her actions but also her intentions and motives are relevant. A morally good person must intend to do morally good actions and intend to avoid morally bad ones. A person who unintentionally prevents harm to others and does not harm them simply because things do not turn out as she intends is not morally good. Although this kind of situation generally occurs only in slapstick movies, it is worth mentioning to avoid the false impression that it is the actual consequences of a person's actions that count toward her being judged morally good or bad. But actual consequences are important. A person who always tries to prevent harm but never does, is not generally thought of as morally good. Of such a person, it may be said that <u>she means well</u>; but, contrary to Kant, some results are necessary before she is regarded as morally good.</p></div>
+    <ol class="ol en"><li><span>①</span><span>She always succeeds in helping others.</span></li><li><span>②</span><span>She is skilled at preventing harm.</span></li><li><span>③</span><span>She intends to hurt others.</span></li><li><span>④</span><span>She has good intentions.</span></li><li><span>⑤</span><span>She explains her ideas clearly.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?<span class="src">[39번]</span></div>
+    <div class="box"><p>A morally good person is one who does morally bad actions significantly less often than most and does morally good ones significantly more often than most. In judging a person not only her actions but also her intentions and motives are relevant. A morally good person must intend to do morally good actions and intend to avoid morally bad ones. A person who unintentionally prevents harm to others and does not harm them simply because things do not turn out as she intends is not morally good. Although this kind of situation generally occurs only in slapstick movies, it is worth mentioning to avoid the false impression that it is the actual consequences of a person's actions that count toward her being judged morally good or bad. But actual consequences are important. A person who always tries to prevent harm but never does, is not generally thought of as morally good. Of such a person, it may be said that she means well; but, contrary to Kant, some results are necessary before she is regarded as morally good.</p></div>
+    <div class="sum">Judging whether a person is morally good requires considering both her <b>(A)</b> <span class="blank"></span> and the actual <b>(B)</b> <span class="blank"></span> of her actions.</div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>appearance</td><td>results</td></tr><tr><td>②</td><td>intentions</td><td>speed</td></tr><tr><td>③</td><td>wealth</td><td>costs</td></tr><tr><td>④</td><td>appearance</td><td>speed</td></tr><tr><td>⑤</td><td>intentions</td><td>results</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>다음 (a)~(g) 중 어법상 <u>틀린</u> 것의 개수는?<span class="src">[종합]</span></div>
+    <div class="box"><p>(a) Nonlinear systems allow random access to any scene without <u>having</u> to fast forward.<br>(b) Its random access process makes <u>it</u> easy for an editor to find desired shots.<br>(c) If a mistake was made, the whole piece had to <u>retype</u>.<br>(d) Not only her actions but also her intentions <u>are</u> relevant.<br>(e) A person who always tries to prevent harm but never does <u>is</u> not thought of as morally good.<br>(f) It is the actual consequences of a person's actions that <u>counts</u>.<br>(g) Nonlinear editing is like <u>use</u> a word processing program.</p></div>
+    <ol class="ol"><li><span>①</span><span>1개</span></li><li><span>②</span><span>2개</span></li><li><span>③</span><span>3개</span></li><li><span>④</span><span>4개</span></li><li><span>⑤</span><span>5개</span></li></ol>
+  </div>
+  </div>
+  <div class="foot"><span>2025년 9월 고1 학평 38·39번 · 원문 일부 변형</span><span>중산고 1학년 영어 · Wrap-up</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>9월 학평 38·39번 Wrap-up · <b>정답과 해설</b></span><span>중산고등학교 1학년</span></div>
+  <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">각 5점 · 100점</div></div>
+  <div class="keygrid">
+    <div>1<b>①</b></div><div>2<b>⑤</b></div><div>3<b>②</b></div><div>4<b>④</b></div><div>5<b>④</b></div><div>6<b>⑤</b></div><div>7<b>⑤</b></div><div>8<b>①</b></div><div>9<b>②</b></div><div>10<b>③</b></div>
+    <div>11<b>①</b></div><div>12<b>③</b></div><div>13<b>①</b></div><div>14<b>②</b></div><div>15<b>③</b></div><div>16<b>②</b></div><div>17<b>④</b></div><div>18<b>④</b></div><div>19<b>⑤</b></div><div>20<b>③</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">①</span> 이유 ▶ 비선형 편집은 원하는 장면을 바로 찾고(random access), 특수 효과를 만들고, 장면을 쉽게 넣고 빼며 길이도 자동 조정 — 타자기 같은 선형 편집과 달리 워드 프로그램처럼 편하다 → 비선형 편집의 장점.<br>
+오답 ▶ ② 타자기는 비유일 뿐 ③ 특수 효과는 장점 중 하나, 비디오테이프로 만드는 방법이 아니다 ④ 되감는 시간을 쓰지 않아도 된다(without having to spend time ~ rewinding)고 했다 ⑤ 워드 프로그램은 쉬운 쪽의 비유<br>
+포인트 ▶ 비교·대조 글(on the other hand)의 주제 = 두 대상의 차이와 그 장점.</p>
+    <p><b>2</b> <span class="k">⑤</span> 이유 ▶ 키 몇 번으로 고치는 것(fixed with a few keystrokes)은 비선형 편집(워드 프로그램). 선형 편집은 전체를 다시 쳐야 했다(the whole piece had to be retyped) ✗<br>
+오답 ▶ ① random access to any video shot or scene ✔ ② special effects, such as slow motion ✔ ③ the computer adjusts the program length automatically ✔ (on its own = 스스로) ④ Linear editing was like composing a paper on a typewriter ✔<br>
+포인트 ▶ 대조 글의 일치 문제: 어느 쪽(선형/비선형)의 특징인지 짝을 바꾼 선택지를 조심.</p>
+    <p><b>3</b> <span class="k">②</span> 이유 ▶ 원문: the whole piece had to be retyped(전체를 다시 쳐야 했다). 타자기로 쓴 글은 중간을 고칠 수 없어 처음부터 다시 해야 한다 → the entire work had to be done over again.<br>
+오답 ▶ ①·③·④ 모두 비선형 편집(워드 프로그램)의 특징 ⑤ 특수 효과로 실수를 감춘다는 말은 없다<br>
+포인트 ▶ on the other hand(반면에) 앞뒤는 정반대: 선형(다시 해야 함) ↔ 비선형(쉽게 고침).</p>
+    <p><b>4</b> <span class="k">④</span> 이유 ▶ 컴퓨터가 프로그램 길이를 조정하는 것은 '자동으로' <i>automatically</i>. manually(손으로, 수동으로)는 컴퓨터가 하는 일과 맞지 않고, 비선형 편집이 편리하다는 흐름에도 어긋난다.<br>
+오답 ▶ ① '임의' 접근(어떤 장면이든 바로) ✔ ② 편집자가 '원하는' 장면 ✔ ③ 장면을 쉽게 넣거나 '뺀다' ✔ ⑤ 새 정보도 '쉽게' 더할 수 있다 ✔<br>
+포인트 ▶ automatically ↔ manually 반의어 짝.</p>
+    <p><b>5</b> <span class="k">④</span> 이유 ▶ make + 가목적어 it + 형용사 + for 의미상 주어 + <i>to부정사</i>(진목적어) → to find.<br>
+오답 ▶ ① 선행사 systems(복수) → allow ✔ ② 전치사 without + 동명사 ✔ ③ 뒤의 to부정사를 대신하는 가목적어 it ✔ ⑤ 장면이 '더해지는' 수동 can be added ✔<br>
+포인트 ▶ make it easy(hard, possible) for A to V: 가목적어-진목적어 구문.</p>
+    <p><b>6</b> <span class="k">⑤</span> 이유 ▶ (A) 주격 관계대명사 that의 선행사 computer-based systems(복수) → <i>allow</i> (B) 정보가 '더해질' 필요 → 수동 <i>to be added</i> (C) 실수가 '삭제되는' 수동, 뒤의 and fixed와도 병렬 → <i>is easily deleted</i><br>
+오답 ▶ allows: 선행사를 단수로 착각 / to add: 정보가 직접 무언가를 더하는 게 아니다 / easily deletes: 실수가 스스로 지우는 게 아니고 목적어도 없다<br>
+포인트 ▶ need to be p.p. (~될 필요가 있다), 주어가 동작을 받으면 수동.</p>
+    <p><b>7</b> <span class="k">⑤</span> 이유 ▶ on the other hand(반면에) → 앞의 선형 편집 = 타자기(I5·I6)와 대조되는 비선형 편집 = 워드 프로그램. 뒤 문장 '실수하면 키 몇 번으로 지우고 고친다'(I8)는 워드 프로그램의 특징이므로 주어진 문장 바로 뒤에 와야 한다 → ⑤.<br>
+오답 ▶ ①②③ 아직 선형 편집(타자기)이 나오기 전이라 대조할 대상이 없다 ④ 타자기 비유와 그 설명(I6) 사이를 끊는다<br>
+포인트 ▶ on the other hand 앞뒤 대조 + 뒤 문장의 is made(현재) ↔ was made(과거) 시제 차이도 단서.</p>
+    <p><b>8</b> <span class="k">①</span> 이유 ▶ 주어진 글: 모든 편집 시스템이 이제 비선형, 임의 접근 가능 → (A) Nonlinear systems ~ 특수 효과, Another highlight(또 다른 장점), 장면 추가·삭제 → (C) Linear editing은 타자기 같았다, 실수하면 전부 다시 → (B) on the other hand 비선형 편집은 워드 프로그램 같다.<br>
+오답 ▶ (B)의 on the other hand는 (C)의 선형 편집과 대조하므로 (C) 뒤 / (A)의 Another highlight는 주어진 글의 장점(임의 접근)을 이어받는다<br>
+포인트 ▶ Another(또 하나의)와 on the other hand(반면에)로 순서 잡기.</p>
+    <p><b>9</b> <span class="k">②</span> 이유 ▶ (A) 타자기처럼 실수하면 전부 다시 쳐야 했다 → <i>inconvenient</i>(불편한) (B) 원하는 장면을 쉽게 찾고 쉽게 넣고 뺀다 → <i>easy</i><br>
+오답 ▶ convenient(편리한): 선형 편집과 반대 / impossible(불가능한)·difficult(어려운)·costly(비용이 많이 드는): 비선형 편집의 장점과 반대 / creative: 근거 없음<br>
+포인트 ▶ Unlike A, B: A와 B는 반대 성질.</p>
+    <p><b>10</b> <span class="k">③</span> 이유 ▶ Linear editing was like composing a paper on a typewriter(선형 편집 = 타자기로 글쓰기). Nonlinear editing, on the other hand, is like using a word processing program(비선형 편집 = 워드 프로그램 쓰기).<br>
+오답 ▶ ① 순서를 거꾸로 바꾼 함정 ② 되감기와 슬로 모션은 비유가 아니라 실제 편집 이야기 ④ 편지·이메일은 나오지 않는다 ⑤ 비선형 편집은 다시 쓰지 않아도 된다<br>
+포인트 ▶ like(~와 같은)로 연결된 비유 대상을 정확히 짝짓기.</p>
+    <p><b>11</b> <span class="k">①</span> 이유 ▶ 의도와 동기가 중요하다(intentions and motives are relevant) + But actual consequences are important(하지만 실제 결과도 중요하다) → 선하다고 여겨지려면 어느 정도 결과가 필요하다(some results are necessary).<br>
+오답 ▶ ② 우연히 해를 막은 사람은 선하지 않다 — 결과만으로는 안 된다 ③ 늘 노력만 하고 한 번도 못 막은 사람은 선하다고 여겨지지 않는다 ④ 슬랩스틱 영화는 그런 상황이 드물다는 예 ⑤ contrary to Kant(칸트와 달리)<br>
+포인트 ▶ 양쪽(의도만 X, 결과만 X)을 모두 부정하고 '둘 다'로 가는 글.</p>
+    <p><b>12</b> <span class="k">③</span> 이유 ▶ 원문: actual consequences are important. 앞에서 '결과만 중요하다는 잘못된 인상을 피하자'고 한 뒤 But으로 방향을 돌려 그래도 실제 결과는 중요하다 → 뒤 문장(노력만 하고 한 번도 못 막은 사람은 선하다고 여겨지지 않는다)이 근거.<br>
+오답 ▶ ① But 뒤에는 앞(의도가 중요)과 다른 내용이 와야 하고, 뒤 예시와도 반대 ② 슬랩스틱 영화에서만 생기는 상황이라고 했다 ④ 해를 막지 못한 사람의 예일 뿐 일반화가 아니다 ⑤ 동기는 중요하다(relevant)고 했다<br>
+포인트 ▶ bring about(가져오다) = 결과(consequences).</p>
+    <p><b>13</b> <span class="k">①</span> 이유 ▶ 늘 해를 막으려 하지만 한 번도 막지 못한 사람은 선하다고 여겨지지 않고, 어느 정도 결과가 필요하다(some results are necessary) → 의도만으로 충분하다 ✗<br>
+오답 ▶ ② does morally bad actions significantly less often than most ✔ ③ not only her actions but also her intentions and motives are relevant ✔ ④ unintentionally prevents harm ~ is not morally good ✔ ⑤ contrary to Kant, some results are necessary ✔<br>
+포인트 ▶ contrary to Kant → 칸트는 의도만으로 충분하다고 본다는 뜻(글쓴이와 반대).</p>
+    <p><b>14</b> <span class="k">②</span> 이유 ▶ 바로 다음 문장에서 선한 사람은 선한 행동을 '의도해야' 한다고 하므로, 의도와 동기는 판단에 '관련 있다(중요하다)' → <i>relevant</i>. irrelevant(관련 없는)는 반대.<br>
+오답 ▶ ① 나쁜 행동을 대부분보다 '덜' 한다 ✔ ③ '의도치 않게' 해를 막은 사람은 선하지 않다 ✔ ④ 결과만 중요하다는 것은 '잘못된' 인상 ✔ ⑤ 선하다고 여겨지려면 어느 정도 결과가 '필요하다' ✔<br>
+포인트 ▶ not only A but also B 구문의 주장(행동뿐 아니라 의도도)과 다음 문장(must intend)이 연결.</p>
+    <p><b>15</b> <span class="k">③</span> 이유 ▶ 주어는 A person(단수), who ~ intends까지는 관계절 수식어 → <i>is</i>.<br>
+오답 ▶ ① 전치사 In + 동명사(사람을 판단할 때) ✔ ② intend to V(~할 작정이다) ✔ ④ be worth -ing(~할 가치가 있다) ✔ ⑤ think of A as B의 수동태 be thought of as ✔<br>
+포인트 ▶ 긴 관계절(who ~ intends)이 끼어도 주어(A person)를 찾아 수 일치.</p>
+    <p><b>16</b> <span class="k">②</span> 이유 ▶ (A) 부사 often을 꾸미는 비교급 → <i>less</i> often (fewer는 셀 수 있는 명사 앞) (B) be worth -ing → <i>mentioning</i> (C) 그녀가 선하다고 '여겨지는' 수동 regard A as B → <i>is regarded</i> as<br>
+오답 ▶ fewer: 명사가 아니라 부사(often)를 꾸민다 / to mention: worth 뒤에는 동명사 / regards: 목적어가 없으므로 수동<br>
+포인트 ▶ less often(덜 자주) ↔ more often(더 자주).</p>
+    <p><b>17</b> <span class="k">④</span> 이유 ▶ 앞에서 '결과만 중요하다는 잘못된 인상을 피하자'(J5)고 한 뒤, But(하지만) 실제 결과도 중요하다 → 그 예로 늘 노력하지만 한 번도 해를 막지 못한 사람은 선하다고 여겨지지 않는다(J7). ④.<br>
+오답 ▶ ①②③ 아직 의도의 중요성을 설명하는 중이라 But으로 뒤집을 내용(결과만 중요하다는 잘못된 인상)이 나오기 전 ⑤ J7의 예시가 근거 없이 먼저 나온다<br>
+포인트 ▶ 의도 강조(J2~J5) → But 결과도 중요(주어진 문장) → 예시(J7·J8).</p>
+    <p><b>18</b> <span class="k">④</span> 이유 ▶ mean well = 선의를 가지다(좋은 뜻으로 하다). such a person = 늘 해를 막으려 하지만(always tries) 한 번도 못 막는 사람 → 의도는 좋다.<br>
+오답 ▶ ①·② 한 번도 막지 못했다(never does) ③ 반대 ⑤ mean을 '설명하다, 의미하다'로 직역한 함정<br>
+포인트 ▶ she means well; but ~ (의도는 좋지만, 결과도 필요하다).</p>
+    <p><b>19</b> <span class="k">⑤</span> 이유 ▶ (A) 의도와 동기도 중요하다 → <i>intentions</i>(의도) (B) 실제 결과도 중요하다 → <i>results</i>(결과)<br>
+오답 ▶ appearance(외모)·wealth(재산): 본문에 없다 / speed(속도)·costs(비용): 행동의 '결과'와 다르다<br>
+포인트 ▶ 의도(intentions, motives) + 결과(consequences, results) — 이 글의 두 기준.</p>
+    <p><b>20</b> <span class="k">③</span> 이유 ▶ 틀린 것 (c) (f) (g) 3개. (c) 글이 '다시 쳐져야' 하는 수동 → <i>be retyped</i> (f) It is ~ that 강조 구문, 강조된 주어 the actual consequences(복수) → <i>count</i> (g) 전치사 like 뒤 → 동명사 <i>using</i><br>
+오답 ▶ (a) without + 동명사 ✔ (b) 가목적어 it ✔ (d) not only A but also B → B(intentions)에 일치 ✔ (e) 주어 A person → is ✔<br>
+포인트 ▶ It is A that ~ 강조 구문: that 뒤 동사는 A에 수 일치.</p>
+  </div>
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>중산고 1학년 영어 · Wrap-up</span></div>
+</section>
+</main>

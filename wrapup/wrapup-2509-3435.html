@@ -1,0 +1,367 @@
+<title>9월 학평 34·35번 Wrap-up</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+/* A4 시험지 (10/31): 스크립트가 문항을 A4 쪽(210×297mm)에 왼쪽 단 → 오른쪽 단 → 다음 쪽 순서로 직접 나눠 담고 쪽 번호를 붙인다.
+   화면·인쇄·PDF 어디서나 같은 쪽 구성. 좁은 화면에서는 쪽 전체를 축소해서 보여 준다. */
+.q, .exp p { break-inside: avoid }
+body { font-size: 9.6pt }
+.stem { font-size: 9.8pt } .stem .src { font-size: 8pt }
+.box, .given, .sum { font-size: 9.4pt; line-height: 1.46; padding: 2.2mm 2.8mm }
+.ol, .ol.en li { font-size: 9.3pt; line-height: 1.38 }
+table.ch { font-size: 9.2pt } table.ch th { font-size: 8.4pt }
+.q { margin-bottom: 3.6mm; gap: 1.6mm }
+.exp { font-size: 7.8pt; line-height: 1.36; margin-top: 3mm } .exp p { margin-bottom: 1mm }
+.top, .notice, .idrow, .title .when, .foot { font-size: 8.6pt }
+.title h1 { font-size: 18pt } .title h1 small { font-size: 8.6pt }
+.keygrid div { font-size: 9pt; padding: 1.2mm 0 } .keygrid b { font-size: 10.5pt }
+.page { width: 210mm; max-width: 100%; padding: 11mm }
+.sheets { display: grid; justify-content: center; gap: 16px }
+.sheet { width: 210mm; height: 297mm; padding: 11mm; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); overflow: hidden }
+/* 내용 영역 188×256mm: A4 여백 0~20mm, Letter 기본 여백에서도 한 장에 들어가는 크기 */
+.sheet > .inner { width: 188mm; height: 256mm; display: flex; flex-direction: column; overflow: hidden }
+.inner > .top.run { padding-bottom: 2mm; border-bottom: 1px solid var(--rule); margin-bottom: 1mm }
+.cols { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr);
+  column-gap: 6mm; margin-top: 4mm; position: relative }
+.cols::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid var(--rule) }
+.cols > .col { columns: auto !important; margin: 0 !important; min-height: 0; overflow: hidden }
+.inner > .foot { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center }
+.inner > .foot span:last-child { text-align: right }
+.inner > .foot .pno { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums }
+@page { size: A4; margin: 12mm 11mm }
+@media print {
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  body { padding: 0 !important; margin: 0 }
+  .sheets { display: block }
+  .sheet { zoom: 1 !important; width: auto; height: auto; padding: 0; margin: 0; box-shadow: none; overflow: visible; break-after: page; page-break-after: always }
+  .sheet:last-child { break-after: auto; page-break-after: auto }
+  .sheet > .inner { margin: 0 auto }
+  .page { max-width: none; margin: 0; box-shadow: none; break-after: page }
+}
+</style>
+<script>
+/* A4 쪽 나누기: 왼쪽 단 → 오른쪽 단 → 다음 쪽, 쪽 번호 n / 전체 */
+(function () {
+  function build() {
+    var main = document.querySelector('main'); if (!main || document.querySelector('.sheets')) return;
+    var secs = [].slice.call(main.querySelectorAll('section.page'));
+    var out = document.createElement('div'); out.className = 'sheets'; main.appendChild(out);
+    var pages = [];
+    secs.forEach(function (sec) {
+      var box = sec.querySelector('.qs, .exp'); if (!box) return;
+      var items = [].slice.call(box.children), foot = sec.querySelector('.foot'), top = sec.querySelector('.top');
+      var head = [].slice.call(sec.children).filter(function (e) { return e !== box && e !== foot && !(e.classList.contains('keygrid') && false); });
+      var cols, ci, first = true;
+      function newPage() {
+        var sh = document.createElement('div'); sh.className = 'sheet'; var pg = document.createElement('div'); pg.className = 'inner'; sh.appendChild(pg);
+        if (first) head.forEach(function (e) { pg.appendChild(e); });
+        else { var t = top.cloneNode(true); t.classList.add('run'); pg.appendChild(t); }
+        first = false;
+        cols = document.createElement('div'); cols.className = 'cols';
+        for (var i = 0; i < 2; i++) { var c = document.createElement('div'); c.className = 'col ' + box.className; cols.appendChild(c); }
+        pg.appendChild(cols);
+        var f = foot.cloneNode(true), sp = f.querySelectorAll('span'), mid = document.createElement('span'); mid.className = 'pno';
+        f.insertBefore(mid, sp[1] || null); pg.appendChild(f);
+        out.appendChild(sh); pages.push(pg); ci = 0;
+      }
+      function over(c) { return c.scrollHeight > c.clientHeight + 1; }
+      newPage();
+      items.forEach(function (it) {
+        var c = cols.children[ci]; c.appendChild(it);
+        if (over(c) && c.children.length > 1) {
+          c.removeChild(it); ci++;
+          if (ci > 1) newPage();
+          cols.children[ci].appendChild(it);
+        }
+      });
+      sec.parentNode.removeChild(sec);
+    });
+    pages.forEach(function (p, i) { p.querySelector('.pno').textContent = (i + 1) + ' / ' + pages.length; });
+    fit();
+  }
+  function fit() {
+    var w = document.documentElement.clientWidth - 24, s = Math.min(1, w / 794);
+    [].forEach.call(document.querySelectorAll('.sheet'), function (p) { p.style.zoom = s < 1 ? s : ''; });
+  }
+  function go() { (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(build, build); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  window.addEventListener('resize', function () { if (document.querySelector('.sheets')) fit(); });
+})();
+</script>
+
+
+<main>
+<section class="page">
+  <div class="top"><span>2025학년도 9월 고1 전국연합학력평가 · <b>34·35번 Wrap-up</b></span><span>중산고등학교 1학년 · 내신 대비</span></div>
+  <div class="title">
+    <div class="g">영어</div>
+    <h1>9월 학평 34·35번 Wrap-up<small>재생에너지 전환의 숨은 비용 · 인공지능이라는 꿈</small></h1>
+    <div class="when">20문항 · 각 5점<br>제한 시간 30분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">범위: 34번(재생에너지 기반 시설을 짓는 데도 화석 연료가 든다) · 35번(생각하는 기계라는 오랜 꿈과 인공지능의 탄생). 지문은 원문을 일부 바꾼 것이 있어요. 선택지는 본문 표현을 다른 말로 바꿔 썼으니 뜻을 정확히 따져 보세요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>다음 글의 요지로 가장 적절한 것은?<span class="src">[34번]</span></div>
+    <div class="box"><p>Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. Thus, the harder we push towards a renewable energy system, the faster we have to use fossil energy for the construction process. This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements.</p></div>
+    <ol class="ol"><li><span>①</span><span>재생에너지 체계를 짓는 일 자체에 화석 연료가 많이 들기 때문에 그 건설 비용도 따져 봐야 한다.</span></li><li><span>②</span><span>지구 온난화를 막으려면 화석 연료 사용을 지금 당장 모두 멈춰야 한다.</span></li><li><span>③</span><span>태양광 패널 생산비를 줄이는 기술 개발이 무엇보다 시급하다.</span></li><li><span>④</span><span>재생에너지는 어떤 경우에도 화석 연료보다 경제적이다.</span></li><li><span>⑤</span><span>농업 방식을 바꾸는 것이 탄소 배출을 줄이는 가장 쉬운 방법이다.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[34번 변형]</span></div>
+    <div class="box"><p>Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. Thus, the harder we push towards a renewable energy system, <span class="blank"></span>. This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements.</p></div>
+    <ol class="ol en"><li><span>①</span><span>the sooner we can stop using fossil fuels altogether</span></li><li><span>②</span><span>the more fossil fuel we must burn to build it</span></li><li><span>③</span><span>the cheaper solar panels and wind turbines become</span></li><li><span>④</span><span>the less energy the construction process requires</span></li><li><span>⑤</span><span>the more scarce minerals we can save</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>다음 글의 내용과 일치하는 것은?<span class="src">[34번]</span></div>
+    <div class="box"><p>Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. Thus, the harder we push towards a renewable energy system, the faster we have to use fossil energy for the construction process. This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Making solar panels involves mining rare and costly minerals.</span></li><li><span>②</span><span>Heinberg sees the energy transition as a small-scale project.</span></li><li><span>③</span><span>Concrete and steel can easily be produced with renewable energy alone.</span></li><li><span>④</span><span>Transition proposals usually include the full cost of building new infrastructure.</span></li><li><span>⑤</span><span>Using fossil fuels during construction helps lower global emissions.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[34번 변형]</span></div>
+    <div class="box"><p>Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an ①<u>alternative</u> transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, producing concrete structures and steel elements requires amounts of energy that are only possible to produce with fossil energy. Production of solar panels requires ②<u>scarce</u> and expensive minerals which must be ③<u>excavated</u>, again requiring the use of fossil fuels. Thus, the harder we push towards a renewable energy system, the ④<u>slower</u> we have to use fossil energy for the construction process. This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is ⑤<u>seldom</u> counted in transition proposals, which tend to focus just on energy supply requirements.</p></div>
+    <ol class="ol en"><li><span>①</span><span>alternative</span></li><li><span>②</span><span>scarce</span></li><li><span>③</span><span>excavated</span></li><li><span>④</span><span>slower</span></li><li><span>⑤</span><span>seldom</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>다음 글의 밑줄 친 부분 중, 어법상 <u>틀린</u> 것은?<span class="src">[34번 변형]</span></div>
+    <div class="box"><p>Richard Heinberg, an American journalist, ①<u>argues</u> that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. … Production of solar panels requires scarce and expensive minerals ②<u>which</u> must be excavated, again ③<u>required</u> the use of fossil fuels. … This is not only expensive, but also an ④<u>undermining</u> factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure ⑤<u>is</u> seldom counted in transition proposals, which tend to focus just on energy supply requirements.</p></div>
+    <ol class="ol en"><li><span>①</span><span>argues</span></li><li><span>②</span><span>which</span></li><li><span>③</span><span>required</span></li><li><span>④</span><span>undermining</span></li><li><span>⑤</span><span>is</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>(A), (B), (C)의 각 네모 안에서 어법에 맞는 표현으로 가장 적절한 것은?<span class="src">[34번]</span></div>
+    <div class="box"><p>Richard Heinberg argues that in building the renewable energy infrastructure to stop global warming, we are actually <b>(A)</b> [ involved / involving ] in one of the greatest change projects in human history. … Thus, the harder we push towards a renewable energy system, the <b>(B)</b> [ faster / fast ] we have to use fossil energy for the construction process. … Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, <b>(C)</b> [ which / that ] tend to focus just on energy supply requirements.</p></div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th><th>(C)</th></tr></thead><tbody><tr><td>①</td><td>involving</td><td>faster</td><td>which</td></tr><tr><td>②</td><td>involved</td><td>fast</td><td>which</td></tr><tr><td>③</td><td>involved</td><td>faster</td><td>that</td></tr><tr><td>④</td><td>involved</td><td>faster</td><td>which</td></tr><tr><td>⑤</td><td>involving</td><td>fast</td><td>that</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?<span class="src">[34번]</span></div>
+    <div class="given">This transformation cannot happen without fossil fuels.</div>
+    <div class="box"><p>Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. <span class="gap">( ① )</span> In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. <span class="gap">( ② )</span> For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. <span class="gap">( ③ )</span> Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. <span class="gap">( ④ )</span> Thus, the harder we push towards a renewable energy system, the faster we have to use fossil energy for the construction process. <span class="gap">( ⑤ )</span> This is not only expensive, but also an undermining factor for our efforts to cut global emissions.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?<span class="src">[34번]</span></div>
+    <div class="box"><p>Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. Thus, the harder we push towards a renewable energy system, the faster we have to use fossil energy for the construction process. This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements.</p></div>
+    <div class="sum">Building a renewable energy system <b>(A)</b> <span class="blank"></span> heavily on fossil fuels, but this cost is something that transition proposals often <b>(B)</b> <span class="blank"></span>.</div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>depends</td><td>overlook</td></tr><tr><td>②</td><td>depends</td><td>emphasize</td></tr><tr><td>③</td><td>saves</td><td>overlook</td></tr><tr><td>④</td><td>saves</td><td>calculate</td></tr><tr><td>⑤</td><td>focuses</td><td>exaggerate</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>밑줄 친 <u>an undermining factor for our efforts to cut global emissions</u>가 의미하는 바로 가장 적절한 것은?<span class="src">[34번]</span></div>
+    <div class="box"><p>Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. Thus, the harder we push towards a renewable energy system, the faster we have to use fossil energy for the construction process. This is not only expensive, but also <u>an undermining factor for our efforts to cut global emissions</u>. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements.</p></div>
+    <ol class="ol"><li><span>①</span><span>재생에너지 기술의 발전을 앞당기는 요인</span></li><li><span>②</span><span>기반 시설을 짓는 비용을 줄여 주는 요인</span></li><li><span>③</span><span>희귀 광물을 채굴할 필요를 없애 주는 요인</span></li><li><span>④</span><span>에너지 공급량을 안정적으로 늘려 주는 요인</span></li><li><span>⑤</span><span>건설에 쓰이는 화석 연료가 늘어나 배출량을 줄이려는 노력을 방해하는 요인</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>다음 글의 제목으로 가장 적절한 것은?<span class="src">[34번]</span></div>
+    <div class="box"><p>Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. Thus, the harder we push towards a renewable energy system, the faster we have to use fossil energy for the construction process. This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Wind Turbines: The Cheapest Energy Source</span></li><li><span>②</span><span>The Hidden Fossil Fuel Cost of Going Green</span></li><li><span>③</span><span>Why Journalists Oppose Renewable Energy</span></li><li><span>④</span><span>How New Farming Methods Will Save the Planet</span></li><li><span>⑤</span><span>Fossil Fuels Will Soon Run Out</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>다음 글의 주제로 가장 적절한 것은?<span class="src">[35번]</span></div>
+    <div class="box"><p>Humans for centuries have dreamed of machines that could become intelligent and make human-like decisions. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human-like creatures and thinking machines (e.g., Mary Shelley's <i>Frankenstein</i>). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine's intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans — endowed by their creators with reasoning and learning.</p></div>
+    <ol class="ol en"><li><span>①</span><span>the dangers of robots described in Greek myths</span></li><li><span>②</span><span>how Mary Shelley built the first robot</span></li><li><span>③</span><span>the long-held human dream of thinking machines and the birth of AI</span></li><li><span>④</span><span>the limitations of the Turing test</span></li><li><span>⑤</span><span>why machines will never learn like humans</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>다음 글의 내용과 일치하지 <u>않는</u> 것은?<span class="src">[35번]</span></div>
+    <div class="box"><p>Humans for centuries have dreamed of machines that could become intelligent and make human-like decisions. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human-like creatures and thinking machines (e.g., Mary Shelley's <i>Frankenstein</i>). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine's intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans — endowed by their creators with reasoning and learning.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Stories of artificial beings date back to ancient Greece.</span></li><li><span>②</span><span><i>Frankenstein</i> is an example of literature that imagined human-like creatures.</span></li><li><span>③</span><span>Turing questioned whether machines could reason like people.</span></li><li><span>④</span><span>John McCarthy developed a test to measure machine intelligence.</span></li><li><span>⑤</span><span>The term “artificial intelligence” took the place of an earlier expression.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[35번 변형]</span></div>
+    <div class="box"><p>Humans for centuries have dreamed of machines that could become intelligent and make human-like decisions. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human-like creatures and thinking machines (e.g., Mary Shelley's <i>Frankenstein</i>). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine's intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy <span class="blank"></span>, replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans — endowed by their creators with reasoning and learning.</p></div>
+    <ol class="ol en"><li><span>①</span><span>built the first human-like robot</span></li><li><span>②</span><span>came up with the term “artificial intelligence”</span></li><li><span>③</span><span>proved that machines can never think</span></li><li><span>④</span><span>criticized the Turing test as useless</span></li><li><span>⑤</span><span>wrote a famous novel about thinking machines</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[35번 변형]</span></div>
+    <div class="box"><p>Humans for centuries have dreamed of machines that could become ①<u>intelligent</u> and make human-like decisions. There have been ②<u>myths</u> about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). ③<u>In contrast</u>, literature throughout history has dreamed of creating human-like creatures and thinking machines (e.g., Mary Shelley's <i>Frankenstein</i>). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine's intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy ④<u>coined</u> “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans — ⑤<u>endowed</u> by their creators with reasoning and learning.</p></div>
+    <ol class="ol"><li><span>①</span><span>intelligent</span></li><li><span>②</span><span>myths</span></li><li><span>③</span><span>In contrast</span></li><li><span>④</span><span>coined</span></li><li><span>⑤</span><span>endowed</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>다음 글의 밑줄 친 부분 중, 어법상 <u>틀린</u> 것은?<span class="src">[35번 변형]</span></div>
+    <div class="box"><p>Humans for centuries ①<u>have dreamed</u> of machines ②<u>that</u> could become intelligent and make human-like decisions. There ③<u>have been</u> myths about robots, automatons, and artificial beings since ancient Greece. … In 1950, British mathematician Alan Turing asked ④<u>whether</u> machines could think and reason like humans and then ⑤<u>developing</u> the Turing test to measure a machine's intelligence.</p></div>
+    <ol class="ol"><li><span>①</span><span>have dreamed</span></li><li><span>②</span><span>that</span></li><li><span>③</span><span>have been</span></li><li><span>④</span><span>whether</span></li><li><span>⑤</span><span>developing</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>(A), (B), (C)의 각 네모 안에서 어법에 맞는 표현으로 가장 적절한 것은?<span class="src">[35번]</span></div>
+    <div class="box"><p>In 1950, British mathematician Alan Turing asked <b>(A)</b> [ whether / that ] machines could think and reason like humans. … A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the <b>(B)</b> [ previous / previously ] used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that <b>(C)</b> [ is / are ] programmed to think like humans.</p></div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th><th>(C)</th></tr></thead><tbody><tr><td>①</td><td>that</td><td>previously</td><td>are</td></tr><tr><td>②</td><td>whether</td><td>previous</td><td>are</td></tr><tr><td>③</td><td>whether</td><td>previously</td><td>are</td></tr><tr><td>④</td><td>whether</td><td>previously</td><td>is</td></tr><tr><td>⑤</td><td>that</td><td>previous</td><td>is</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?<span class="src">[35번]</span></div>
+    <div class="given">Humans for centuries have dreamed of machines that could become intelligent and make human-like decisions.</div>
+    <div class="box"><p><b>(A)</b> A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans — endowed by their creators with reasoning and learning.</p><p><b>(B)</b> In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine's intelligence and whether the machines can think autonomously.</p><p><b>(C)</b> There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human-like creatures and thinking machines (e.g., Mary Shelley's <i>Frankenstein</i>).</p></div>
+    <ol class="ol"><li><span>①</span><span>(A) − (C) − (B)</span></li><li><span>②</span><span>(B) − (A) − (C)</span></li><li><span>③</span><span>(B) − (C) − (A)</span></li><li><span>④</span><span>(C) − (A) − (B)</span></li><li><span>⑤</span><span>(C) − (B) − (A)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>다음 글에서 전체 흐름과 관계 <u>없는</u> 문장은?<span class="src">[35번 변형]</span></div>
+    <div class="box"><p>Humans for centuries have dreamed of machines that could become intelligent and make human-like decisions. ①<u>There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world).</u> ②<u>Likewise, literature throughout history has dreamed of creating human-like creatures and thinking machines (e.g., Mary Shelley's <i>Frankenstein</i>).</u> ③<u>In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine's intelligence and whether the machines can think autonomously.</u> ④<u>Today, many people fear that intelligent machines will take away jobs that humans now do.</u> ⑤<u>A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.”</u> Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans — endowed by their creators with reasoning and learning.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?<span class="src">[35번]</span></div>
+    <div class="box"><p>Humans for centuries have dreamed of machines that could become intelligent and make human-like decisions. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human-like creatures and thinking machines (e.g., Mary Shelley's <i>Frankenstein</i>). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine's intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans — endowed by their creators with reasoning and learning.</p></div>
+    <div class="sum">From ancient <b>(A)</b> <span class="blank"></span> to modern science, humans have long imagined thinking machines, a dream that eventually gave rise to the <b>(B)</b> <span class="blank"></span> of artificial intelligence.</div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>myths</td><td>failure</td></tr><tr><td>②</td><td>wars</td><td>field</td></tr><tr><td>③</td><td>machines</td><td>end</td></tr><tr><td>④</td><td>laws</td><td>rejection</td></tr><tr><td>⑤</td><td>myths</td><td>field</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>34·35번 지문에 나온 단어와 영영풀이가 바르게 짝지어지지 <u>않은</u> 것은?<span class="src">[종합]</span></div>
+    <ol class="ol en"><li><span>①</span><span><b>excavate</b> : to build something on top of the ground</span></li><li><span>②</span><span><b>infrastructure</b> : the basic systems and structures that a society needs</span></li><li><span>③</span><span><b>scarce</b> : not available in large amounts</span></li><li><span>④</span><span><b>coin</b> : to invent a new word or phrase</span></li><li><span>⑤</span><span><b>autonomously</b> : without being controlled by others</span></li></ol>
+  </div>
+  </div>
+  <div class="foot"><span>2025년 9월 고1 학평 34·35번 · 원문 일부 변형</span><span>중산고 1학년 영어 · Wrap-up</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>9월 학평 34·35번 Wrap-up · <b>정답과 해설</b></span><span>중산고등학교 1학년</span></div>
+  <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">각 5점 · 100점</div></div>
+  <div class="keygrid">
+    <div>1<b>①</b></div><div>2<b>②</b></div><div>3<b>①</b></div><div>4<b>④</b></div><div>5<b>③</b></div><div>6<b>④</b></div><div>7<b>②</b></div><div>8<b>①</b></div><div>9<b>⑤</b></div><div>10<b>②</b></div>
+    <div>11<b>③</b></div><div>12<b>④</b></div><div>13<b>②</b></div><div>14<b>③</b></div><div>15<b>⑤</b></div><div>16<b>③</b></div><div>17<b>⑤</b></div><div>18<b>④</b></div><div>19<b>⑤</b></div><div>20<b>①</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">①</span> 이유 ▶ 재생에너지 기반 시설로의 전환은 화석 연료 없이는 불가능하고(cannot happen without fossil fuels), 그 건설 비용이 전환 계획에서 거의 고려되지 않는다(seldom counted)는 것이 요지.<br>
+오답 ▶ ② 오히려 전환하려면 화석 연료가 필요하다고 했다 ③ 태양광 패널은 광물 채굴의 예시일 뿐 ④ 비싸다(expensive)고 했다 ⑤ 농업 방식은 지어야 할 것들의 나열 중 하나<br>
+포인트 ▶ 마지막 문장(Heinberg remarks ~ seldom counted)이 글쓴이가 전하려는 핵심.</p>
+    <p><b>2</b> <span class="k">②</span> 이유 ▶ 원문: the faster we have to use fossil energy for the construction process. 콘크리트·철강 생산, 광물 채굴에 모두 화석 연료가 든다(앞 예시) → Thus 재생에너지 체계로 세게 밀어붙일수록 짓는 데 화석 연료를 더 많이(빨리) 써야 한다.<br>
+오답 ▶ ① 전환 과정에서는 오히려 더 써야 한다 ③ 비싸다(expensive)고 했다 ④ 건설에는 많은 에너지가 든다 ⑤ 광물은 채굴해야 한다(must be excavated)<br>
+포인트 ▶ 뒤 문장 This is not only expensive ~ undermining factor: This = 화석 연료를 더 쓰는 것.</p>
+    <p><b>3</b> <span class="k">①</span> 이유 ▶ Production of solar panels requires scarce and expensive minerals which must be excavated = 희귀하고(rare) 값비싼(costly) 광물을 캐야(mining) 한다 ✔<br>
+오답 ▶ ② one of the greatest change projects in human history(인류 역사상 가장 큰 변화 사업 중 하나) ③ 화석 에너지로만 생산 가능한 양의 에너지가 든다 ④ 건설 비용은 거의 계산되지 않는다(seldom counted) ⑤ 배출량 감축 노력을 약화시키는 요인(undermining factor)<br>
+포인트 ▶ excavate = dig out = mine(캐다), scarce = rare.</p>
+    <p><b>4</b> <span class="k">④</span> 이유 ▶ 콘크리트·철강·광물 모두 화석 연료가 필요하므로, 재생에너지 체계로 세게 밀어붙일수록 화석 에너지를 '더 빨리' 써야 한다 → <i>faster</i>. slower(더 느리게)는 반대이고, 뒤 문장 '비싸고 배출 감축을 약화시킨다'와도 맞지 않는다.<br>
+오답 ▶ ① '대체' 교통 기반 시설 ✔ ② '희귀하고' 비싼 광물 ✔ ③ 광물은 '채굴되어야' 한다 ✔ ⑤ 건설 비용은 전환 계획에서 '거의 ~않게' 계산된다 ✔<br>
+포인트 ▶ the 비교급 ~, the 비교급 …에서 두 비교급의 방향(harder ↔ faster)이 맞는지 확인.</p>
+    <p><b>5</b> <span class="k">③</span> 이유 ▶ 앞 절 전체(광물을 채굴해야 한다는 것)가 다시 화석 연료 사용을 '요구하는' 능동 의미의 분사구문 → <i>requiring</i>. required는 동사로 보면 접속사 없이 동사가 하나 더 생긴다.<br>
+오답 ▶ ① 주어 Richard Heinberg(단수), 콤마 사이는 동격 → argues ✔ ② 선행사 minerals(사물), 주어 역할 관계대명사 ✔ ④ factor를 꾸미는 현재분사(약화시키는 요인) ✔ ⑤ 주어 the cost(단수), of building ~은 수식어 → is ✔<br>
+포인트 ▶ 콤마 뒤 접속사 없는 동사 자리 → 분사구문(-ing / p.p.)인지 확인.</p>
+    <p><b>6</b> <span class="k">④</span> 이유 ▶ (A) be involved in(~에 관여하다, 참여하다) → <i>involved</i> (B) the 비교급 ~, the 비교급 … → <i>faster</i> (C) 콤마 뒤 계속적 용법 → <i>which</i> (that은 계속적 용법 불가)<br>
+오답 ▶ involving: 뒤에 목적어 없이 in이 오므로 수동 / fast: the harder와 짝을 이루려면 비교급 / that: 콤마 뒤 불가<br>
+포인트 ▶ 콤마 + that ✗, 전치사 + that ✗ — 관계대명사 that의 두 가지 금지!</p>
+    <p><b>7</b> <span class="k">②</span> 이유 ▶ This transformation(이 변화) = 앞 문장의 태양광·풍력·교통·농업·산업을 모두 새로 짓는 일. 그리고 뒤의 For instance(예를 들어) 콘크리트·철강 생산에 화석 에너지가 든다는 예가 '화석 연료 없이는 불가능하다'를 뒷받침한다 → ②.<br>
+오답 ▶ ① 아직 무엇을 지어야 하는지 나오지 않았다 ③④ For instance 예시가 주장보다 먼저 나오게 된다 ⑤ Thus 결론 뒤라 늦다<br>
+포인트 ▶ For instance 바로 앞에는 그 예시가 뒷받침할 주장이 있어야 한다.</p>
+    <p><b>8</b> <span class="k">①</span> 이유 ▶ (A) 이 전환은 화석 연료 없이는 불가능 → <i>depends</i> heavily on(크게 의존한다) (B) 건설 비용은 전환 계획에서 거의 계산되지 않는다(seldom counted) → <i>overlook</i>(간과하다)<br>
+오답 ▶ saves(아낀다)·focuses(집중한다): 화석 연료에 의존한다는 말과 다르다 / emphasize(강조하다)·calculate(계산하다)·exaggerate(과장하다): 비용을 무시한다는 말과 반대<br>
+포인트 ▶ seldom counted = overlooked = ignored.</p>
+    <p><b>9</b> <span class="k">⑤</span> 이유 ▶ This = 재생에너지 체계를 지으려고 화석 에너지를 더 빨리 쓰는 것. 화석 연료를 쓰면 배출이 늘어나므로 배출량 감축 노력을 약화시키는(undermining) 요인이 된다.<br>
+오답 ▶ ① 기술 발전 이야기가 아니다 ② 비싸다(expensive)고 했다 ③ 광물은 채굴해야 한다 ④ 에너지 공급만 보는 것은 전환 계획의 한계로 나온다<br>
+포인트 ▶ undermine = weaken(약화시키다).</p>
+    <p><b>10</b> <span class="k">②</span> 이유 ▶ 재생에너지 체계를 짓는 데 화석 연료가 많이 들고, 그 비용은 전환 계획에서 잘 계산되지 않는다 → 친환경 전환의 숨은(hidden) 화석 연료 비용.<br>
+오답 ▶ ① 비용이 싸다는 말은 없다 ③ Heinberg는 반대하는 것이 아니라 숨은 비용을 지적할 뿐 ④ 농업은 나열의 일부 ⑤ 화석 연료 고갈은 다루지 않는다<br>
+포인트 ▶ seldom counted(거의 계산되지 않는) = hidden(숨겨진).</p>
+    <p><b>11</b> <span class="k">③</span> 이유 ▶ 수 세기 동안의 꿈(신화·문학) → 튜링의 질문과 테스트 → 매카시의 '인공지능' 명명 → 학문이 된 인공지능. 오랜 꿈이 인공지능으로 이어진 역사.<br>
+오답 ▶ ① 판도라 신화는 예시일 뿐, 위험성이 주제가 아니다 ② 프랑켄슈타인은 소설 속 이야기 ④ 테스트의 한계는 나오지 않는다 ⑤ 오히려 추론·학습 능력을 부여받은(endowed with reasoning and learning) 기계를 만든다<br>
+포인트 ▶ 시간 순서(since ancient Greece → 1950 → a few years later → since then)로 전개되는 글의 주제 = 그 흐름 전체.</p>
+    <p><b>12</b> <span class="k">④</span> 이유 ▶ 기계의 지능을 재는 테스트(Turing test)를 만든 사람은 앨런 튜링. 매카시는 '인공지능'이라는 용어를 만들었다(coined) ✗<br>
+오답 ▶ ① myths ~ since ancient Greece ✔ (date back to 거슬러 올라가다) ② Mary Shelley's Frankenstein ✔ ③ asked whether machines could think and reason like humans ✔ ⑤ replacing the previously used expression "automata studies" ✔ (take the place of = replace)<br>
+포인트 ▶ 인물이 여러 명 나오면 '누가 무엇을 했는지' 짝을 정확히!</p>
+    <p><b>13</b> <span class="k">②</span> 이유 ▶ 원문: coined "artificial intelligence"(인공지능이라는 말을 만들었다). 뒤의 replacing the previously used expression(이전에 쓰던 '표현'을 대체하며)은 새 '용어'가 나왔다는 단서 → came up with the term.<br>
+오답 ▶ ① 로봇 제작은 나오지 않는다 ③ 이후 인공지능이 학문이 되었으므로 반대 ④ 테스트 비판은 없다 ⑤ 소설은 Mary Shelley의 예<br>
+포인트 ▶ coin a word = 새 말을 만들다(= come up with a term).</p>
+    <p><b>14</b> <span class="k">③</span> 이유 ▶ 신화에도 인공 존재가 있었고, 문학도 '마찬가지로' 인간 같은 존재를 꿈꿨다 → 같은 내용의 나열이므로 <i>Likewise</i>. In contrast(대조적으로)는 앞뒤가 반대일 때.<br>
+오답 ▶ ① '지능을 가진' 기계 ✔ ② 고대 그리스 이래 '신화' ✔ ④ 인공지능이라는 말을 '만들었다' ✔ ⑤ 만든 사람에게서 추론·학습 능력을 '부여받은' ✔<br>
+포인트 ▶ 연결어 문제: 앞뒤 내용이 같은 방향(신화도·문학도 꿈꿨다)이면 Likewise / Similarly.</p>
+    <p><b>15</b> <span class="k">⑤</span> 이유 ▶ 주어 Alan Turing의 동사 asked와 and then으로 병렬 → 과거 동사 <i>developed</i>.<br>
+오답 ▶ ① for centuries(수 세기 동안) 지금까지 이어진 일 → 현재완료 ✔ ② 선행사 machines, 주어 역할 관계대명사 ✔ ③ There + be + 복수 주어 myths, since ~ → 현재완료 have been ✔ ④ asked의 목적어 명사절(~인지 아닌지) ✔<br>
+포인트 ▶ and 앞뒤 병렬: asked ~ and then developed (같은 시제·형태).</p>
+    <p><b>16</b> <span class="k">③</span> 이유 ▶ (A) ask의 목적어로 '~인지 아닌지' → <i>whether</i> (B) 과거분사 used(쓰인)를 꾸미는 부사 → <i>previously</i> (이전에 쓰인 표현) (C) 관계대명사 that의 선행사 intelligent machines(복수) → <i>are</i><br>
+오답 ▶ that: ask(묻다)는 의문의 내용이 필요 / previous: 형용사는 분사 used를 꾸밀 수 없다 / is: 선행사를 the study로 착각<br>
+포인트 ▶ 주격 관계대명사 뒤 동사는 선행사에 수 일치!</p>
+    <p><b>17</b> <span class="k">⑤</span> 이유 ▶ 주어진 글: 사람들은 수 세기 동안 생각하는 기계를 꿈꿔 왔다 → (C) 고대 그리스 신화, Likewise 문학도 → (B) 1950년 튜링 → (A) A few years later(몇 년 뒤) 매카시의 '인공지능', Since then(그때부터) 학문이 됨.<br>
+오답 ▶ (A)의 A few years later는 1950년(B) 뒤에만 올 수 있다 / (C)의 since ancient Greece가 가장 오래된 시기<br>
+포인트 ▶ 시간 표현(since ancient Greece → In 1950 → A few years later → Since then)으로 순서 잡기.</p>
+    <p><b>18</b> <span class="k">④</span> 이유 ▶ 글은 생각하는 기계라는 꿈이 신화·문학 → 튜링 → 매카시의 '인공지능'으로 이어진 역사. ④ 오늘날 일자리를 빼앗길까 걱정한다는 내용은 이 역사의 흐름과 관계없다. 또 ④ 때문에 ⑤의 A few years later(1950년의 몇 년 뒤)가 오늘날(Today) 뒤에 오는 어색한 흐름이 된다.<br>
+오답 ▶ ① 고대 신화 ② 문학 ③ 1950년 튜링 ⑤ 몇 년 뒤 매카시 — 모두 시간 순서로 이어진다<br>
+포인트 ▶ 무관한 문장은 소재(기계·인공지능)는 같지만 글의 초점(꿈의 역사)에서 벗어난 문장.</p>
+    <p><b>19</b> <span class="k">⑤</span> 이유 ▶ (A) 고대 그리스 신화(myths)부터 → <i>myths</i> (B) 인공지능이 '지능을 가진 기계를 만드는 연구와 실천'이 되었다 → 인공지능이라는 <i>field</i>(분야)<br>
+오답 ▶ wars·laws: 본문에 없다 / machines: 고대에는 기계가 아니라 신화 속 이야기 / failure(실패)·end(끝)·rejection(거부): 인공지능이 학문이 되었다는 말과 반대<br>
+포인트 ▶ give rise to = ~을 낳다, 생기게 하다.</p>
+    <p><b>20</b> <span class="k">①</span> 이유 ▶ excavate는 '땅을 파내다, 채굴하다'(to dig out of the ground). 땅 위에 무언가를 짓는 것과 반대.<br>
+오답 ▶ ② infrastructure 기반 시설 ✔ ③ scarce 부족한, 희귀한 ✔ ④ coin (새 말을) 만들다 ✔ ⑤ autonomously 자율적으로 ✔<br>
+포인트 ▶ excavate = dig out, mine.</p>
+  </div>
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>중산고 1학년 영어 · Wrap-up</span></div>
+</section>
+</main>

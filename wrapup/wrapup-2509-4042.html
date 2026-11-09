@@ -1,0 +1,368 @@
+<title>9월 학평 40·41~42번 Wrap-up</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+/* A4 시험지 (10/31): 스크립트가 문항을 A4 쪽(210×297mm)에 왼쪽 단 → 오른쪽 단 → 다음 쪽 순서로 직접 나눠 담고 쪽 번호를 붙인다.
+   화면·인쇄·PDF 어디서나 같은 쪽 구성. 좁은 화면에서는 쪽 전체를 축소해서 보여 준다. */
+.q, .exp p { break-inside: avoid }
+body { font-size: 9.6pt }
+.stem { font-size: 9.8pt } .stem .src { font-size: 8pt }
+.box, .given, .sum { font-size: 9.4pt; line-height: 1.46; padding: 2.2mm 2.8mm }
+.ol, .ol.en li { font-size: 9.3pt; line-height: 1.38 }
+table.ch { font-size: 9.2pt } table.ch th { font-size: 8.4pt }
+.q { margin-bottom: 3.6mm; gap: 1.6mm }
+.exp { font-size: 7.8pt; line-height: 1.36; margin-top: 3mm } .exp p { margin-bottom: 1mm }
+.top, .notice, .idrow, .title .when, .foot { font-size: 8.6pt }
+.title h1 { font-size: 18pt } .title h1 small { font-size: 8.6pt }
+.keygrid div { font-size: 9pt; padding: 1.2mm 0 } .keygrid b { font-size: 10.5pt }
+.page { width: 210mm; max-width: 100%; padding: 11mm }
+.sheets { display: grid; justify-content: center; gap: 16px }
+.sheet { width: 210mm; height: 297mm; padding: 11mm; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); overflow: hidden }
+/* 내용 영역 188×256mm: A4 여백 0~20mm, Letter 기본 여백에서도 한 장에 들어가는 크기 */
+.sheet > .inner { width: 188mm; height: 256mm; display: flex; flex-direction: column; overflow: hidden }
+.inner > .top.run { padding-bottom: 2mm; border-bottom: 1px solid var(--rule); margin-bottom: 1mm }
+.cols { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr);
+  column-gap: 6mm; margin-top: 4mm; position: relative }
+.cols::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid var(--rule) }
+.cols > .col { columns: auto !important; margin: 0 !important; min-height: 0; overflow: hidden }
+.inner > .foot { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center }
+.inner > .foot span:last-child { text-align: right }
+.inner > .foot .pno { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums }
+@page { size: A4; margin: 12mm 11mm }
+@media print {
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  body { padding: 0 !important; margin: 0 }
+  .sheets { display: block }
+  .sheet { zoom: 1 !important; width: auto; height: auto; padding: 0; margin: 0; box-shadow: none; overflow: visible; break-after: page; page-break-after: always }
+  .sheet:last-child { break-after: auto; page-break-after: auto }
+  .sheet > .inner { margin: 0 auto }
+  .page { max-width: none; margin: 0; box-shadow: none; break-after: page }
+}
+</style>
+<script>
+/* A4 쪽 나누기: 왼쪽 단 → 오른쪽 단 → 다음 쪽, 쪽 번호 n / 전체 */
+(function () {
+  function build() {
+    var main = document.querySelector('main'); if (!main || document.querySelector('.sheets')) return;
+    var secs = [].slice.call(main.querySelectorAll('section.page'));
+    var out = document.createElement('div'); out.className = 'sheets'; main.appendChild(out);
+    var pages = [];
+    secs.forEach(function (sec) {
+      var box = sec.querySelector('.qs, .exp'); if (!box) return;
+      var items = [].slice.call(box.children), foot = sec.querySelector('.foot'), top = sec.querySelector('.top');
+      var head = [].slice.call(sec.children).filter(function (e) { return e !== box && e !== foot && !(e.classList.contains('keygrid') && false); });
+      var cols, ci, first = true;
+      function newPage() {
+        var sh = document.createElement('div'); sh.className = 'sheet'; var pg = document.createElement('div'); pg.className = 'inner'; sh.appendChild(pg);
+        if (first) head.forEach(function (e) { pg.appendChild(e); });
+        else { var t = top.cloneNode(true); t.classList.add('run'); pg.appendChild(t); }
+        first = false;
+        cols = document.createElement('div'); cols.className = 'cols';
+        for (var i = 0; i < 2; i++) { var c = document.createElement('div'); c.className = 'col ' + box.className; cols.appendChild(c); }
+        pg.appendChild(cols);
+        var f = foot.cloneNode(true), sp = f.querySelectorAll('span'), mid = document.createElement('span'); mid.className = 'pno';
+        f.insertBefore(mid, sp[1] || null); pg.appendChild(f);
+        out.appendChild(sh); pages.push(pg); ci = 0;
+      }
+      function over(c) { return c.scrollHeight > c.clientHeight + 1; }
+      newPage();
+      items.forEach(function (it) {
+        var c = cols.children[ci]; c.appendChild(it);
+        if (over(c) && c.children.length > 1) {
+          c.removeChild(it); ci++;
+          if (ci > 1) newPage();
+          cols.children[ci].appendChild(it);
+        }
+      });
+      sec.parentNode.removeChild(sec);
+    });
+    pages.forEach(function (p, i) { p.querySelector('.pno').textContent = (i + 1) + ' / ' + pages.length; });
+    fit();
+  }
+  function fit() {
+    var w = document.documentElement.clientWidth - 24, s = Math.min(1, w / 794);
+    [].forEach.call(document.querySelectorAll('.sheet'), function (p) { p.style.zoom = s < 1 ? s : ''; });
+  }
+  function go() { (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(build, build); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  window.addEventListener('resize', function () { if (document.querySelector('.sheets')) fit(); });
+})();
+</script>
+
+
+<main>
+<section class="page">
+  <div class="top"><span>2025학년도 9월 고1 전국연합학력평가 · <b>40·41~42번 Wrap-up</b></span><span>중산고등학교 1학년 · 내신 대비</span></div>
+  <div class="title">
+    <div class="g">영어</div>
+    <h1>9월 학평 40·41~42번 Wrap-up<small>기대가 만드는 시각 · "May I help you?"의 함정</small></h1>
+    <div class="when">20문항 · 각 5점<br>제한 시간 30분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">범위: 40번(사물과의 기능적 관계 때문에 우리는 카메라처럼 보지 못한다) · 41~42번(손님을 방어적으로 만드는 "May I help you?"). 지문은 원문을 일부 바꾼 것이 있어요. 선택지는 본문 표현을 다른 말로 바꿔 썼으니 뜻을 정확히 따져 보세요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>다음 글의 요지로 가장 적절한 것은?<span class="src">[40번]</span></div>
+    <div class="box"><p>Vision is influenced by our preconceptions about reality. In viewing a scene, we establish unconscious hierarchies that reflect our functional relationship to objects and our momentary priorities. For example, when visualizing a hammer in our mind's eye, we tend to “see” it in profile or at some other “ready for use” angle. One would probably not visualize a hammer as seen from the top so that the handle is hidden by the hammer's head. The functional relationship we have with objects creates visual expectations that interfere with our ability to see “like a camera.” The camera, like the human eye, sees only shapes and colors. It documents the world impartially through a lens that is similar to the eye. When we look at them carefully, photographs are often surprising because they don't interpret confusing details but simply serve them up to us with a mechanical indifference. And because of their flatness, photographs often contain areas that appear as unrecognizable colors and shapes.</p></div>
+    <ol class="ol"><li><span>①</span><span>카메라는 사람의 눈보다 세상을 더 심하게 왜곡해서 보여 준다.</span></li><li><span>②</span><span>망치는 옆에서 볼 때 가장 쓰기 편한 모양을 하고 있다.</span></li><li><span>③</span><span>사진은 평평하기 때문에 아무런 정보도 전해 주지 못한다.</span></li><li><span>④</span><span>우선순위를 분명히 정하면 시각적 기억력이 좋아진다.</span></li><li><span>⑤</span><span>우리는 사물을 어떻게 쓰는지에서 생긴 기대 때문에 카메라처럼 있는 그대로 보지 못한다.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[40번 변형]</span></div>
+    <div class="box"><p>Vision is influenced by <span class="blank"></span>. In viewing a scene, we establish unconscious hierarchies that reflect our functional relationship to objects and our momentary priorities. For example, when visualizing a hammer in our mind's eye, we tend to “see” it in profile or at some other “ready for use” angle. One would probably not visualize a hammer as seen from the top so that the handle is hidden by the hammer's head. The functional relationship we have with objects creates visual expectations that interfere with our ability to see “like a camera.”</p></div>
+    <ol class="ol en"><li><span>①</span><span>the quality of the camera we use</span></li><li><span>②</span><span>the amount of light in the room</span></li><li><span>③</span><span>the colors that surround us</span></li><li><span>④</span><span>what we already believe about the world</span></li><li><span>⑤</span><span>the actual size of the objects we see</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>다음 글의 내용과 일치하지 <u>않는</u> 것은?<span class="src">[40번]</span></div>
+    <div class="box"><p>Vision is influenced by our preconceptions about reality. In viewing a scene, we establish unconscious hierarchies that reflect our functional relationship to objects and our momentary priorities. For example, when visualizing a hammer in our mind's eye, we tend to “see” it in profile or at some other “ready for use” angle. One would probably not visualize a hammer as seen from the top so that the handle is hidden by the hammer's head. The functional relationship we have with objects creates visual expectations that interfere with our ability to see “like a camera.” The camera, like the human eye, sees only shapes and colors. It documents the world impartially through a lens that is similar to the eye. When we look at them carefully, photographs are often surprising because they don't interpret confusing details but simply serve them up to us with a mechanical indifference. And because of their flatness, photographs often contain areas that appear as unrecognizable colors and shapes.</p></div>
+    <ol class="ol en"><li><span>①</span><span>People usually imagine a hammer as viewed from directly above.</span></li><li><span>②</span><span>The way we see things reflects how we use them.</span></li><li><span>③</span><span>A camera records nothing but shapes and colors.</span></li><li><span>④</span><span>Photographs present confusing details without interpreting them.</span></li><li><span>⑤</span><span>Flat photographs may include parts that are hard to recognize.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[40번 변형]</span></div>
+    <div class="box"><p>Vision is influenced by our preconceptions about reality. In viewing a scene, we establish ①<u>unconscious</u> hierarchies that reflect our functional relationship to objects and our momentary priorities. For example, when visualizing a hammer in our mind's eye, we tend to “see” it in profile or at some other “ready for use” angle. One would probably not visualize a hammer as seen from the top so that the handle is ②<u>hidden</u> by the hammer's head. The functional relationship we have with objects creates visual expectations that ③<u>enhance</u> our ability to see “like a camera.” The camera, like the human eye, sees only shapes and colors. It documents the world ④<u>impartially</u> through a lens that is similar to the eye. When we look at them carefully, photographs are often surprising because they don't interpret confusing details but simply serve them up to us with a mechanical indifference. And because of their flatness, photographs often contain areas that appear as ⑤<u>unrecognizable</u> colors and shapes.</p></div>
+    <ol class="ol en"><li><span>①</span><span>unconscious</span></li><li><span>②</span><span>hidden</span></li><li><span>③</span><span>enhance</span></li><li><span>④</span><span>impartially</span></li><li><span>⑤</span><span>unrecognizable</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>다음 글의 밑줄 친 부분 중, 어법상 <u>틀린</u> 것은?<span class="src">[40번 변형]</span></div>
+    <div class="box"><p>In viewing a scene, we establish unconscious hierarchies ①<u>that</u> reflect our functional relationship to objects and our momentary priorities. For example, when ②<u>visualizing</u> a hammer in our mind's eye, we tend to “see” it in profile or at some other “ready for use” angle. One would probably not visualize a hammer as ③<u>seen</u> from the top so that the handle is hidden by the hammer's head. The functional relationship we have with objects ④<u>create</u> visual expectations that interfere with our ability ⑤<u>to see</u> “like a camera.”</p></div>
+    <ol class="ol en"><li><span>①</span><span>that</span></li><li><span>②</span><span>visualizing</span></li><li><span>③</span><span>seen</span></li><li><span>④</span><span>create</span></li><li><span>⑤</span><span>to see</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>(A), (B), (C)의 각 네모 안에서 어법에 맞는 표현으로 가장 적절한 것은?<span class="src">[40번]</span></div>
+    <div class="box"><p>In <b>(A)</b> [ viewing / viewed ] a scene, we establish unconscious hierarchies that reflect our functional relationship to objects and our momentary priorities. … When we look at them carefully, photographs are often surprising because they don't interpret confusing details but simply <b>(B)</b> [ serve / serving ] them up to us with a mechanical indifference. And because of their flatness, photographs often contain areas that <b>(C)</b> [ appear / appears ] as unrecognizable colors and shapes.</p></div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th><th>(C)</th></tr></thead><tbody><tr><td>①</td><td>viewed</td><td>serve</td><td>appear</td></tr><tr><td>②</td><td>viewing</td><td>serving</td><td>appear</td></tr><tr><td>③</td><td>viewing</td><td>serve</td><td>appears</td></tr><tr><td>④</td><td>viewed</td><td>serving</td><td>appears</td></tr><tr><td>⑤</td><td>viewing</td><td>serve</td><td>appear</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?<span class="src">[40번]</span></div>
+    <div class="given">One would probably not visualize a hammer as seen from the top so that the handle is hidden by the hammer's head.</div>
+    <div class="box"><p>Vision is influenced by our preconceptions about reality. <span class="gap">( ① )</span> In viewing a scene, we establish unconscious hierarchies that reflect our functional relationship to objects and our momentary priorities. <span class="gap">( ② )</span> For example, when visualizing a hammer in our mind's eye, we tend to “see” it in profile or at some other “ready for use” angle. <span class="gap">( ③ )</span> The functional relationship we have with objects creates visual expectations that interfere with our ability to see “like a camera.” <span class="gap">( ④ )</span> The camera, like the human eye, sees only shapes and colors. <span class="gap">( ⑤ )</span> It documents the world impartially through a lens that is similar to the eye.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?<span class="src">[40번]</span></div>
+    <div class="box"><p>Vision is influenced by our preconceptions about reality. In viewing a scene, we establish unconscious hierarchies that reflect our functional relationship to objects and our momentary priorities. For example, when visualizing a hammer in our mind's eye, we tend to “see” it in profile or at some other “ready for use” angle. One would probably not visualize a hammer as seen from the top so that the handle is hidden by the hammer's head. The functional relationship we have with objects creates visual expectations that interfere with our ability to see “like a camera.” The camera, like the human eye, sees only shapes and colors. It documents the world impartially through a lens that is similar to the eye. When we look at them carefully, photographs are often surprising because they don't interpret confusing details but simply serve them up to us with a mechanical indifference. And because of their flatness, photographs often contain areas that appear as unrecognizable colors and shapes.</p></div>
+    <div class="sum">Unlike a camera, which records the world <b>(A)</b> <span class="blank"></span>, we see things through <b>(B)</b> <span class="blank"></span> shaped by how we use them.</div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>neutrally</td><td>expectations</td></tr><tr><td>②</td><td>selectively</td><td>expectations</td></tr><tr><td>③</td><td>neutrally</td><td>accidents</td></tr><tr><td>④</td><td>emotionally</td><td>colors</td></tr><tr><td>⑤</td><td>selectively</td><td>accidents</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>밑줄 친 <u>see “like a camera”</u>가 의미하는 바로 가장 적절한 것은?<span class="src">[40번]</span></div>
+    <div class="box"><p>Vision is influenced by our preconceptions about reality. In viewing a scene, we establish unconscious hierarchies that reflect our functional relationship to objects and our momentary priorities. For example, when visualizing a hammer in our mind's eye, we tend to “see” it in profile or at some other “ready for use” angle. One would probably not visualize a hammer as seen from the top so that the handle is hidden by the hammer's head. The functional relationship we have with objects creates visual expectations that interfere with our ability to <u>see “like a camera.”</u> The camera, like the human eye, sees only shapes and colors. It documents the world impartially through a lens that is similar to the eye. When we look at them carefully, photographs are often surprising because they don't interpret confusing details but simply serve them up to us with a mechanical indifference. And because of their flatness, photographs often contain areas that appear as unrecognizable colors and shapes.</p></div>
+    <ol class="ol en"><li><span>①</span><span>to remember everything we have ever seen</span></li><li><span>②</span><span>to take pictures of objects quickly</span></li><li><span>③</span><span>to focus only on objects that are useful to us</span></li><li><span>④</span><span>to see clearly even in the dark</span></li><li><span>⑤</span><span>to see things just as they are, without interpreting them</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>다음 글의 제목으로 가장 적절한 것은?<span class="src">[41~42번]</span></div>
+    <div class="box"><p>“May I help you?” are the worst four words that a retail salesperson can utter because they don't encourage the customer to talk and put them on the defensive. The four words usually draw out a negative response that stops cold a sales transaction. Examples of better questions to use when approaching customers are “Is there anything in particular that you are looking for?” and “Are you shopping for a gift?” If a fashion salesperson approached you with “May I help you?” chances are you would feel the salesperson didn't care. This line is a rote approach that is so overused by untrained and uninterested salespeople. In fact, most of us shudder in horror on hearing these words. The very meaning of the question “May I help you?” implies that the customer is in trouble of some sort and needs rescuing. This almost always puts the customer on the defense. “No, thank you” is usually the immediate response, even if the customer is actually in need of assistance. The subconscious thought by the customer is often “I'm smart enough to figure out what I want, and I don't need your help!” If customers feel pressured or cornered, then salespeople won't make any sales. The approach has to promote a comfortable environment that makes customers feel there is no rush. Furthermore, if customers just want to look around, they should feel that it is all right to do so. In situations where customers really do want to look around on their own, salespeople should give customers their business cards and keep themselves accessible in case customers have questions or concerns.</p></div>
+    <ol class="ol en"><li><span>①</span><span>How to Rescue Customers Who Are in Trouble</span></li><li><span>②</span><span>Stop Asking “May I Help You?”: Help Customers Feel at Ease</span></li><li><span>③</span><span>Why Customers Never Need Any Help</span></li><li><span>④</span><span>Business Cards: The Secret to Doubling Sales</span></li><li><span>⑤</span><span>Training Salespeople to Talk More Than Customers</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>다음 글의 내용과 일치하는 것은?<span class="src">[41~42번]</span></div>
+    <div class="box"><p>“May I help you?” are the worst four words that a retail salesperson can utter because they don't encourage the customer to talk and put them on the defensive. The four words usually draw out a negative response that stops cold a sales transaction. Examples of better questions to use when approaching customers are “Is there anything in particular that you are looking for?” and “Are you shopping for a gift?” If a fashion salesperson approached you with “May I help you?” chances are you would feel the salesperson didn't care. This line is a rote approach that is so overused by untrained and uninterested salespeople. In fact, most of us shudder in horror on hearing these words. The very meaning of the question “May I help you?” implies that the customer is in trouble of some sort and needs rescuing. This almost always puts the customer on the defense. “No, thank you” is usually the immediate response, even if the customer is actually in need of assistance. The subconscious thought by the customer is often “I'm smart enough to figure out what I want, and I don't need your help!” If customers feel pressured or cornered, then salespeople won't make any sales. The approach has to promote a comfortable environment that makes customers feel there is no rush. Furthermore, if customers just want to look around, they should feel that it is all right to do so. In situations where customers really do want to look around on their own, salespeople should give customers their business cards and keep themselves accessible in case customers have questions or concerns.</p></div>
+    <ol class="ol en"><li><span>①</span><span>“May I help you?” encourages customers to talk freely.</span></li><li><span>②</span><span>Most shoppers are pleased to hear “May I help you?”</span></li><li><span>③</span><span>Salespeople should stay close to customers who want to look around alone.</span></li><li><span>④</span><span>Customers often say “No, thank you” even when they actually need help.</span></li><li><span>⑤</span><span>The writer suggests asking customers whether they are in trouble.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[41~42번 변형]</span></div>
+    <div class="box"><p>The subconscious thought by the customer is often “I'm smart enough to figure out what I want, and I don't need your help!” If customers feel pressured or cornered, then salespeople won't make any sales. The approach has to promote a comfortable environment that makes customers feel <span class="blank"></span>. Furthermore, if customers just want to look around, they should feel that it is all right to do so. In situations where customers really do want to look around on their own, salespeople should give customers their business cards and keep themselves accessible in case customers have questions or concerns.</p></div>
+    <ol class="ol en"><li><span>①</span><span>they must buy something quickly</span></li><li><span>②</span><span>the salesperson is watching them closely</span></li><li><span>③</span><span>they are in trouble and need rescuing</span></li><li><span>④</span><span>they can take their time</span></li><li><span>⑤</span><span>the store is about to close</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[41~42번 변형]</span></div>
+    <div class="box"><p>“May I help you?” are the worst four words that a retail salesperson can utter because they don't encourage the customer to talk and put them on the defensive. The four words usually draw out a ①<u>positive</u> response that stops cold a sales transaction. Examples of ②<u>better</u> questions to use when approaching customers are “Is there anything in particular that you are looking for?” and “Are you shopping for a gift?” If a fashion salesperson approached you with “May I help you?” chances are you would feel the salesperson didn't care. This line is a rote approach that is so ③<u>overused</u> by untrained and uninterested salespeople. In fact, most of us shudder in horror on hearing these words. The very meaning of the question “May I help you?” implies that the customer is in trouble of some sort and needs rescuing. This almost always puts the customer on the defense. “No, thank you” is usually the ④<u>immediate</u> response, even if the customer is actually in need of assistance. … In situations where customers really do want to look around on their own, salespeople should give customers their business cards and keep themselves ⑤<u>accessible</u> in case customers have questions or concerns.</p></div>
+    <ol class="ol en"><li><span>①</span><span>positive</span></li><li><span>②</span><span>better</span></li><li><span>③</span><span>overused</span></li><li><span>④</span><span>immediate</span></li><li><span>⑤</span><span>accessible</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>다음 글의 밑줄 친 부분 중, 어법상 <u>틀린</u> 것은?<span class="src">[41~42번 변형]</span></div>
+    <div class="box"><p>“May I help you?” is the worst question that a retail salesperson can ask because it doesn't encourage the customer ①<u>to talk</u>. Examples of better questions to use when approaching customers ②<u>is</u> “Is there anything in particular that you are looking for?” and “Are you shopping for a gift?” If a fashion salesperson approached you with “May I help you?” chances are you ③<u>would feel</u> the salesperson didn't care. In fact, most of us shudder in horror on ④<u>hearing</u> these words. The very meaning of the question implies that the customer is in trouble of some sort and needs ⑤<u>rescuing</u>.</p></div>
+    <ol class="ol en"><li><span>①</span><span>to talk</span></li><li><span>②</span><span>is</span></li><li><span>③</span><span>would feel</span></li><li><span>④</span><span>hearing</span></li><li><span>⑤</span><span>rescuing</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>(A), (B), (C)의 각 네모 안에서 어법에 맞는 표현으로 가장 적절한 것은?<span class="src">[41~42번]</span></div>
+    <div class="box"><p>If customers feel <b>(A)</b> [ pressured / pressuring ] or cornered, then salespeople won't make any sales. … In situations <b>(B)</b> [ where / which ] customers really do want to look around on their own, salespeople should give customers their business cards and keep <b>(C)</b> [ themselves / them ] accessible in case customers have questions or concerns.</p></div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th><th>(C)</th></tr></thead><tbody><tr><td>①</td><td>pressuring</td><td>where</td><td>themselves</td></tr><tr><td>②</td><td>pressured</td><td>where</td><td>themselves</td></tr><tr><td>③</td><td>pressured</td><td>which</td><td>themselves</td></tr><tr><td>④</td><td>pressured</td><td>where</td><td>them</td></tr><tr><td>⑤</td><td>pressuring</td><td>which</td><td>them</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?<span class="src">[41~42번]</span></div>
+    <div class="given">If a fashion salesperson approached you with “May I help you?” chances are you would feel the salesperson didn't care. This line is a rote approach that is so overused by untrained and uninterested salespeople. In fact, most of us shudder in horror on hearing these words.</div>
+    <div class="box"><p><b>(A)</b> If customers feel pressured or cornered, then salespeople won't make any sales. The approach has to promote a comfortable environment that makes customers feel there is no rush.</p><p><b>(B)</b> The very meaning of the question “May I help you?” implies that the customer is in trouble of some sort and needs rescuing. This almost always puts the customer on the defense.</p><p><b>(C)</b> “No, thank you” is usually the immediate response, even if the customer is actually in need of assistance. The subconscious thought by the customer is often “I'm smart enough to figure out what I want, and I don't need your help!”</p></div>
+    <ol class="ol"><li><span>①</span><span>(A) − (C) − (B)</span></li><li><span>②</span><span>(B) − (A) − (C)</span></li><li><span>③</span><span>(B) − (C) − (A)</span></li><li><span>④</span><span>(C) − (A) − (B)</span></li><li><span>⑤</span><span>(C) − (B) − (A)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?<span class="src">[41~42번]</span></div>
+    <div class="given">Examples of better questions to use when approaching customers are “Is there anything in particular that you are looking for?” and “Are you shopping for a gift?”</div>
+    <div class="box"><p>“May I help you?” are the worst four words that a retail salesperson can utter because they don't encourage the customer to talk and put them on the defensive. <span class="gap">( ① )</span> The four words usually draw out a negative response that stops cold a sales transaction. <span class="gap">( ② )</span> If a fashion salesperson approached you with “May I help you?” chances are you would feel the salesperson didn't care. <span class="gap">( ③ )</span> This line is a rote approach that is so overused by untrained and uninterested salespeople. <span class="gap">( ④ )</span> In fact, most of us shudder in horror on hearing these words. <span class="gap">( ⑤ )</span> The very meaning of the question “May I help you?” implies that the customer is in trouble of some sort and needs rescuing.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>글에 따르면 “May I help you?”라는 말이 손님을 방어적으로 만드는 이유로 가장 적절한 것은?<span class="src">[41~42번]</span></div>
+    <div class="box"><p>“May I help you?” are the worst four words that a retail salesperson can utter because they don't encourage the customer to talk and put them on the defensive. The four words usually draw out a negative response that stops cold a sales transaction. Examples of better questions to use when approaching customers are “Is there anything in particular that you are looking for?” and “Are you shopping for a gift?” If a fashion salesperson approached you with “May I help you?” chances are you would feel the salesperson didn't care. This line is a rote approach that is so overused by untrained and uninterested salespeople. In fact, most of us shudder in horror on hearing these words. The very meaning of the question “May I help you?” implies that the customer is in trouble of some sort and needs rescuing. This almost always puts the customer on the defense. “No, thank you” is usually the immediate response, even if the customer is actually in need of assistance. The subconscious thought by the customer is often “I'm smart enough to figure out what I want, and I don't need your help!” If customers feel pressured or cornered, then salespeople won't make any sales. The approach has to promote a comfortable environment that makes customers feel there is no rush. Furthermore, if customers just want to look around, they should feel that it is all right to do so. In situations where customers really do want to look around on their own, salespeople should give customers their business cards and keep themselves accessible in case customers have questions or concerns.</p></div>
+    <ol class="ol"><li><span>①</span><span>판매원이 너무 많은 정보를 한꺼번에 전해서</span></li><li><span>②</span><span>손님에게 선물을 사라고 강요하는 말이어서</span></li><li><span>③</span><span>손님이 무언가 곤란한 상황에 있어 구조가 필요하다는 뜻을 담고 있어서</span></li><li><span>④</span><span>판매원이 명함을 먼저 건네지 않아서</span></li><li><span>⑤</span><span>질문이 너무 길고 복잡해서</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?<span class="src">[41~42번]</span></div>
+    <div class="box"><p>“May I help you?” are the worst four words that a retail salesperson can utter because they don't encourage the customer to talk and put them on the defensive. The four words usually draw out a negative response that stops cold a sales transaction. Examples of better questions to use when approaching customers are “Is there anything in particular that you are looking for?” and “Are you shopping for a gift?” If a fashion salesperson approached you with “May I help you?” chances are you would feel the salesperson didn't care. This line is a rote approach that is so overused by untrained and uninterested salespeople. In fact, most of us shudder in horror on hearing these words. The very meaning of the question “May I help you?” implies that the customer is in trouble of some sort and needs rescuing. This almost always puts the customer on the defense. “No, thank you” is usually the immediate response, even if the customer is actually in need of assistance. The subconscious thought by the customer is often “I'm smart enough to figure out what I want, and I don't need your help!” If customers feel pressured or cornered, then salespeople won't make any sales. The approach has to promote a comfortable environment that makes customers feel there is no rush. Furthermore, if customers just want to look around, they should feel that it is all right to do so. In situations where customers really do want to look around on their own, salespeople should give customers their business cards and keep themselves accessible in case customers have questions or concerns.</p></div>
+    <div class="sum">Instead of asking “May I help you?”, which tends to make customers <b>(A)</b> <span class="blank"></span>, salespeople should create a(n) <b>(B)</b> <span class="blank"></span> atmosphere where customers can look around freely.</div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>defensive</td><td>urgent</td></tr><tr><td>②</td><td>grateful</td><td>relaxed</td></tr><tr><td>③</td><td>curious</td><td>competitive</td></tr><tr><td>④</td><td>grateful</td><td>formal</td></tr><tr><td>⑤</td><td>defensive</td><td>relaxed</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>40·41~42번 지문에 나온 단어와 영영풀이가 바르게 짝지어지지 <u>않은</u> 것은?<span class="src">[종합]</span></div>
+    <ol class="ol en"><li><span>①</span><span><b>impartially</b> : in a way that favors one side over another</span></li><li><span>②</span><span><b>preconception</b> : an idea formed before having enough information or experience</span></li><li><span>③</span><span><b>utter</b> : to say something out loud</span></li><li><span>④</span><span><b>rote</b> : done from habit, without thinking about the meaning</span></li><li><span>⑤</span><span><b>accessible</b> : easy to reach, approach, or talk to</span></li></ol>
+  </div>
+  </div>
+  <div class="foot"><span>2025년 9월 고1 학평 40·41~42번 · 원문 일부 변형</span><span>중산고 1학년 영어 · Wrap-up</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>9월 학평 40·41~42번 Wrap-up · <b>정답과 해설</b></span><span>중산고등학교 1학년</span></div>
+  <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">각 5점 · 100점</div></div>
+  <div class="keygrid">
+    <div>1<b>⑤</b></div><div>2<b>④</b></div><div>3<b>①</b></div><div>4<b>③</b></div><div>5<b>④</b></div><div>6<b>⑤</b></div><div>7<b>③</b></div><div>8<b>①</b></div><div>9<b>⑤</b></div><div>10<b>②</b></div>
+    <div>11<b>④</b></div><div>12<b>④</b></div><div>13<b>①</b></div><div>14<b>②</b></div><div>15<b>②</b></div><div>16<b>③</b></div><div>17<b>②</b></div><div>18<b>③</b></div><div>19<b>⑤</b></div><div>20<b>①</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">⑤</span> 이유 ▶ Vision is influenced by our preconceptions(시각은 선입견의 영향을 받는다) + 사물과의 기능적 관계가 만든 시각적 기대가 카메라처럼 보는 능력을 방해한다(K5).<br>
+오답 ▶ ① 카메라는 공정하게(impartially) 기록한다 ② 망치는 예시일 뿐, 망치의 모양이 주제가 아니다 ③ 알아보기 힘든 부분이 있을 뿐 정보가 없다는 말은 아니다 ④ 기억력 이야기는 없다<br>
+포인트 ▶ 첫 문장(주제문) + 예시(망치) + 카메라와의 대조.</p>
+    <p><b>2</b> <span class="k">④</span> 이유 ▶ 원문: our preconceptions about reality(현실에 대한 선입견). 망치를 쓰기 좋은 각도로 떠올리듯, 사물과의 관계에서 생긴 기대가 보는 방식을 정한다 = 우리가 이미 믿고 있는 것.<br>
+오답 ▶ ① 카메라는 대조 대상일 뿐 ②·③·⑤ 빛·색·크기 같은 물리적 조건은 다루지 않는다<br>
+포인트 ▶ preconception = pre(미리) + conception(생각) → 이미 가지고 있는 생각.</p>
+    <p><b>3</b> <span class="k">①</span> 이유 ▶ One would probably not visualize a hammer as seen from the top(위에서 본 망치는 아마 떠올리지 않을 것이다) → 옆모습이나 '쓰기 좋은' 각도로 떠올린다 ✗<br>
+오답 ▶ ② hierarchies that reflect our functional relationship to objects ✔ ③ sees only shapes and colors ✔ (nothing but = only) ④ they don't interpret confusing details but simply serve them up ✔ ⑤ because of their flatness ~ unrecognizable colors and shapes ✔<br>
+포인트 ▶ in profile(옆모습) ↔ from the top(위에서).</p>
+    <p><b>4</b> <span class="k">③</span> 이유 ▶ 기능적 관계가 만든 기대 때문에 우리는 카메라처럼 보지 '못한다' → 그 능력을 '방해한다' <i>interfere with</i>. enhance(높이다)는 반대.<br>
+오답 ▶ ① '무의식적인' 위계를 세운다 ✔ ② 위에서 보면 손잡이가 망치 머리에 '가려진다' ✔ ④ 카메라는 세상을 '공정하게(치우침 없이)' 기록한다 ✔ ⑤ 평평해서 '알아볼 수 없는' 색과 모양이 생긴다 ✔<br>
+포인트 ▶ 사람의 눈(기대·해석 있음) ↔ 카메라(공정·기계적) 대조.</p>
+    <p><b>5</b> <span class="k">④</span> 이유 ▶ 주어는 The functional relationship(단수), we have with objects는 목적격 관계대명사가 생략된 수식어 → <i>creates</i>.<br>
+오답 ▶ ① 선행사 hierarchies, 주어 역할 관계대명사 ✔ ② when (we are) visualizing: 접속사 뒤 분사, 우리가 '떠올리는' 능동 ✔ ③ 망치가 위에서 '보이는' 수동 ✔ ⑤ ability를 꾸미는 to부정사 ✔<br>
+포인트 ▶ 명사 + (that) 주어 + 동사 수식어가 붙은 긴 주어 → 맨 앞 명사에 수 일치.</p>
+    <p><b>6</b> <span class="k">⑤</span> 이유 ▶ (A) 전치사 In + 동명사, 뒤에 목적어 a scene → <i>viewing</i> (B) don't interpret과 but으로 병렬, don't에 이어지는 동사원형 → <i>serve</i> (C) 관계대명사 that의 선행사 areas(복수) → <i>appear</i><br>
+오답 ▶ viewed: 전치사 뒤 과거분사 불가, 목적어도 있다 / serving: not A but B 병렬이 깨진다 / appears: 선행사를 단수로 착각<br>
+포인트 ▶ not A but B (A가 아니라 B) — A, B는 같은 형태.</p>
+    <p><b>7</b> <span class="k">③</span> 이유 ▶ 망치를 옆모습이나 '쓰기 좋은' 각도로 떠올린다(K3) → 위에서 본 망치는 떠올리지 않는다(주어진 문장, 같은 예의 반대쪽) → 기능적 관계가 시각적 기대를 만든다는 정리(K5). ③.<br>
+오답 ▶ ①② 망치 예시(For example)가 나오기 전이라 a hammer가 갑자기 나온다 ④⑤ 카메라 이야기로 넘어간 뒤라 흐름이 끊긴다<br>
+포인트 ▶ 같은 예시(망치)의 긍정(see it in profile)과 부정(would not visualize ~ from the top)은 붙어 있다.</p>
+    <p><b>8</b> <span class="k">①</span> 이유 ▶ (A) 카메라는 세상을 공정하게(impartially), 기계적인 무관심으로 기록한다 → <i>neutrally</i>(중립적으로) (B) 사물과의 기능적 관계가 시각적 기대를 만든다 → <i>expectations</i><br>
+오답 ▶ selectively(선택적으로)·emotionally(감정적으로): 카메라와 반대로 사람의 특징에 가깝다 / accidents(우연)·colors: 사물을 쓰는 방식에서 생기는 것은 기대<br>
+포인트 ▶ impartially = neutrally = without bias.</p>
+    <p><b>9</b> <span class="k">⑤</span> 이유 ▶ 카메라는 모양과 색만 보고, 세상을 공정하게 기록하며, 세부를 해석하지 않고 그대로 내놓는다 → 기대나 해석 없이 있는 그대로 보는 것.<br>
+오답 ▶ ① 기억 이야기 아님 ② 사진 찍는 속도가 아니다 ③ 쓸모(기능) 중심으로 보는 것은 오히려 사람의 방식 ④ 어둠 이야기는 없다<br>
+포인트 ▶ 따옴표 친 비유는 뒤의 설명(only shapes and colors, impartially, don't interpret)에서 뜻을 찾는다.</p>
+    <p><b>10</b> <span class="k">②</span> 이유 ▶ "May I help you?"는 손님을 방어적으로 만드는 최악의 말 → 더 나은 질문을 쓰고, 서두르지 않아도 되는 편안한 환경(comfortable environment, no rush)을 만들어야 한다.<br>
+오답 ▶ ① 손님이 곤경에 처했다고 암시하는 것이 문제라고 했다 ③ 실제로 도움이 필요할 때도 거절한다고 했을 뿐 ④ 명함은 혼자 둘러보려는 손님에 대한 방법의 하나 ⑤ 손님이 말하게 하는 것이 좋다(encourage the customer to talk)<br>
+포인트 ▶ 문제(최악의 말) + 해결(편안한 환경)을 모두 담은 제목.</p>
+    <p><b>11</b> <span class="k">④</span> 이유 ▶ "No, thank you" is usually the immediate response, even if the customer is actually in need of assistance ✔<br>
+오답 ▶ ① they don't encourage the customer to talk ✗ ② most of us shudder in horror on hearing these words(대부분 이 말을 들으면 몸서리친다) ③ 명함을 주고 필요할 때 다가갈 수 있게(accessible) 있으라 — 바짝 붙어 있으라는 말이 아니다 ⑤ 곤경에 처했다고 암시하는 것이 바로 문제<br>
+포인트 ▶ accessible(필요할 때 다가갈 수 있는) ≠ stay close(바짝 붙어 있다).</p>
+    <p><b>12</b> <span class="k">④</span> 이유 ▶ 원문: there is no rush(서두를 필요가 없다) = they can take their time(시간을 충분히 가져도 된다). 압박을 느끼면 사지 않고, 그냥 둘러보고 싶으면 그래도 괜찮다고 느껴야 한다.<br>
+오답 ▶ ①·⑤ 압박감(pressured)을 주는 상황 ② 감시받는 느낌도 편안한 환경과 반대 ③ "May I help you?"가 주는 잘못된 느낌<br>
+포인트 ▶ comfortable environment(편안한 환경)와 앞뒤의 pressured(압박을 받는) ↔ all right to look around로 판단.</p>
+    <p><b>13</b> <span class="k">①</span> 이유 ▶ 판매를 즉시 멈추게 하는(stops cold a sales transaction) 반응이므로 '부정적인' 반응 → <i>negative</i>. positive(긍정적인)는 거래를 멈추게 한다는 말과 맞지 않는다.<br>
+오답 ▶ ② '더 나은' 질문의 예 ✔ ③ 훈련받지 않은 판매원들이 '너무 많이 쓰는' 판에 박힌 말 ✔ ④ "괜찮아요"가 보통 '즉각적인' 반응 ✔ ⑤ 질문이 있을 때 '다가갈 수 있게' 있어야 한다 ✔<br>
+포인트 ▶ stop cold(딱 멈추게 하다) → 앞의 response는 부정적.</p>
+    <p><b>14</b> <span class="k">②</span> 이유 ▶ 주어는 Examples(복수), of better questions to use ~ customers는 수식어 → <i>are</i>.<br>
+오답 ▶ ① encourage + 목적어 + to부정사 ✔ ③ If + 과거(approached), 주절 would + 동사원형: 가정법 과거 ✔ ④ on -ing(~하자마자) ✔ ⑤ need -ing = need to be p.p.(구조될 필요가 있다) ✔<br>
+포인트 ▶ 'Examples of ~ are A and B': 주어 Examples에 수 일치.</p>
+    <p><b>15</b> <span class="k">②</span> 이유 ▶ (A) 손님이 압박을 '받는' 느낌 → 과거분사 <i>pressured</i> (뒤의 cornered와 병렬) (B) 선행사 situations + 완전한 절(customers really do want to look around) → 관계부사 <i>where</i> (C) keep의 목적어가 주어 salespeople 자신 → 재귀대명사 <i>themselves</i><br>
+오답 ▶ pressuring: 손님이 남을 압박하는 뜻 / which: 뒤에 빠진 성분이 없는 완전한 절 / them: 주어와 같은 대상이면 재귀대명사<br>
+포인트 ▶ 관계부사(where) + 완전한 절, 관계대명사(which) + 불완전한 절.</p>
+    <p><b>16</b> <span class="k">③</span> 이유 ▶ 주어진 글: 대부분 이 말을 들으면 몸서리친다 → (B) 그 질문의 뜻 자체가 손님이 곤경에 처했다고 암시, 이것이 손님을 방어적으로 만든다 → (C) 그래서 "괜찮아요"가 즉각적인 반응, 속으로는 '도움 필요 없어!' → (A) 손님이 압박을 느끼면 팔지 못하니 편안한 환경을 만들어야 한다.<br>
+오답 ▶ (C)의 "No, thank you"는 (B)의 '방어적이 됨'의 결과 / (A)의 pressured or cornered는 (C)의 방어적인 속마음을 일반화한 해결책<br>
+포인트 ▶ 원인(곤경 암시) → 반응(거절) → 해결(편안한 환경).</p>
+    <p><b>17</b> <span class="k">②</span> 이유 ▶ 앞에서 "May I help you?"가 최악의 말이고 부정적인 반응을 끌어낸다(L1·L2)고 한 뒤 '더 나은 질문의 예(Examples of better questions)'가 와야 한다. 뒤의 L4는 다시 "May I help you?"로 다가오면 어떻게 느끼는지로 이어진다 → ②.<br>
+오답 ▶ ① L2의 The four words(그 네 단어)는 L1의 "May I help you?"를 바로 받아야 하므로 사이에 넣을 수 없다 ③~⑤ This line(L5)·these words(L6)·the question(L7)이 모두 "May I help you?"를 가리켜 흐름이 끊긴다<br>
+포인트 ▶ better(더 나은) → 앞에 나쁜 예가 먼저 나와야 한다.</p>
+    <p><b>18</b> <span class="k">③</span> 이유 ▶ The very meaning of the question implies that the customer is in trouble of some sort and needs rescuing. This almost always puts the customer on the defense. = 곤경에 처해 구조가 필요하다는 뜻이 손님을 방어적으로 만든다.<br>
+오답 ▶ ① 정보량 이야기는 없다 ② "Are you shopping for a gift?"는 오히려 더 나은 질문 ④ 명함은 혼자 둘러보는 손님을 위한 방법 ⑤ 네 단어(four words)로 짧다<br>
+포인트 ▶ 원인 문장(implies that ~) 바로 뒤에 This puts ~ on the defense.</p>
+    <p><b>19</b> <span class="k">⑤</span> 이유 ▶ (A) 이 말은 손님을 방어적으로 만든다(puts them on the defensive) → <i>defensive</i> (B) 서두르지 않아도 되는 편안한 환경(comfortable environment, no rush) → <i>relaxed</i><br>
+오답 ▶ grateful(고마워하는)·curious(호기심 있는): 대부분 몸서리친다(shudder in horror)고 했다 / urgent(급한)·competitive(경쟁적인)·formal(격식 있는): 편안한 분위기와 거리가 멀다<br>
+포인트 ▶ on the defensive = defensive(방어적인).</p>
+    <p><b>20</b> <span class="k">①</span> 이유 ▶ impartially는 '공정하게, 치우침 없이'(without favoring one side). 한쪽 편을 든다는 풀이는 반대(partially, with bias).<br>
+오답 ▶ ② preconception 선입견 ✔ ③ utter (말을) 하다 ✔ ④ rote 기계적인, 판에 박힌 ✔ ⑤ accessible 다가가기 쉬운 ✔<br>
+포인트 ▶ im-(= not) + partial(편파적인) → 편파적이지 않게.</p>
+  </div>
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>중산고 1학년 영어 · Wrap-up</span></div>
+</section>
+</main>
