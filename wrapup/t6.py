@@ -166,7 +166,7 @@ T.flex('글에 따르면 “May I help you?”라는 말이 손님을 방어적�
     "이유 ▶ The very meaning of the question implies that the customer is in trouble of some sort and needs rescuing. This almost always puts the customer on the defense. = 곤경에 처해 구조가 필요하다는 뜻이 손님을 방어적으로 만든다.\n오답 ▶ {1} 정보량 이야기는 없다 {2} \"Are you shopping for a gift?\"는 오히려 더 나은 질문 {3} 명함은 혼자 둘러보는 손님을 위한 방법 {4} 네 단어(four words)로 짧다\n포인트 ▶ 원인 문장(implies that ~) 바로 뒤에 This puts ~ on the defense.",
     [['imply', '암시하다'], ['in trouble', '곤경에 처한'], ['force', '강요하다']], en=False)
 
-T.table('다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?', '41~42번', BOX(P41) + '\n' + SUM(
+T.table('다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?', '41~42번 일부', BOX(' '.join([L1, L2, L4, L5, L6, L7, L8, L9, L10, L11, L12, L13, L14])) + '\n' + SUM(
     'Instead of asking “May I help you?”, which tends to make customers <b>(A)</b> ' + BL + ', salespeople should create a(n) <b>(B)</b> ' + BL + ' atmosphere where customers can look around freely.'),
     ['(A)', '(B)'], [['defensive', 'relaxed'], ['defensive', 'urgent'], ['grateful', 'relaxed'], ['curious', 'competitive'], ['grateful', 'formal']],
     "이유 ▶ (A) 이 말은 손님을 방어적으로 만든다(puts them on the defensive) → <i>defensive</i> (B) 서두르지 않아도 되는 편안한 환경(comfortable environment, no rush) → <i>relaxed</i>\n오답 ▶ grateful(고마워하는)·curious(호기심 있는): 대부분 몸서리친다(shudder in horror)고 했다 / urgent(급한)·competitive(경쟁적인)·formal(격식 있는): 편안한 분위기와 거리가 멀다\n포인트 ▶ on the defensive = defensive(방어적인).",
