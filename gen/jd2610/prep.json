@@ -1,0 +1,539 @@
+{
+ "20": {
+  "sents": [
+   "We might not think of ourselves as global citizens yet, but it’s both necessary and possible to do so.",
+   "Some people are skeptical about the idea of global citizenship, but for most of human history, people didn’t think of themselves as citizens of nation-states.",
+   "After all, for most of human history, nation-states didn’t exist.",
+   "The rise of nation-states over the last few centuries has led people to add state citizenship to other identities, such as family, people group, or religion.",
+   "Given the connections between people around the world and the common challenges we face, we need to layer global citizenship on to these other identities.",
+   "This doesn’t mean that global citizenship replaces these other identities.",
+   "There’s not a single story about our identities.",
+   "Instead, it’s precisely because we have obligations to our families, those in our community, and those around the world."
+  ],
+  "ko": [
+   "우리는 아직 우리 자신을 세계 시민이라고 생각하지 않을 수도 있지만, 그렇게 생각하는 것은 필요하면서도 가능하기도 하다.",
+   "어떤 사람들은 세계 시민이라는 개념에 대해 회의적이지만, 인류 역사 대부분의 기간 동안 사람들은 자기 자신을 국민 국가의 시민이라고 생각하지 않았다.",
+   "어쨌든, 인류 역사 대부분의 기간 동안 국민 국가는 존재하지 않았다.",
+   "지난 몇 세기에 걸친 국민 국가의 부상은 사람들로 하여금 가족, 민족 집단, 혹은 종교와 같은 다른 정체성들에 국가 시민 정체성을 더하게 만들었다.",
+   "전 세계 사람들 간의 연결과 우리가 직면한 공통 과제들을 고려할 때, 우리는 이러한 다른 정체성들 위에 세계 시민 정체성을 쌓을 필요가 있다.",
+   "이것이 세계 시민 정체성이 이러한 다른 정체성들을 대체한다는 것을 의미하지는 않는다.",
+   "우리의 정체성들에 관한 단 하나의 이야기가 있는 것은 아니다.",
+   "오히려, 그것은 정확하게는 우리가 우리의 가족, 공동체 내의 사람들, ‘그리고’ 전 세계 사람들에 대한 의무를 지니고 있기 때문이다."
+  ],
+  "checks": [
+   "We might not think of (us / ourselves) as global citizens yet, but it’s both necessary and possible (doing / to do) so.",
+   "Some people are (skeptical / skeptically) about the idea of global citizenship, but for most of human history, people didn’t think of (them / themselves) as citizens of nation-states.",
+   "After all, for most of human history, nation-states (didn’t exist / wasn't existed).",
+   "The rise of nation-states over the last few centuries (has / have) led people to (add / adding) state citizenship to (other / another) identities, such as family, people group, or religion.",
+   "(Give / Given) the connections between people around the world and the common challenges we (face / face them), we need (to layer / layering) global citizenship on to these other identities.",
+   "This doesn’t mean (that / what) global citizenship replaces these other identities.",
+   "(There’s / There’re) not a single story about our identities.",
+   "Instead, it’s precisely because we have obligations to our families, (that / those) in our community, and (that / those) around the world."
+  ],
+  "given": null
+ },
+ "21": {
+  "sents": [
+   "Among unsatisfied professionals, there’s a repeating theme — the belief that someday (a mysterious day in the future) things will miraculously change and they’ll stumble into the perfect job or career.",
+   "At the same time, they (typically) do little to meaningfully alter their current situation.",
+   "They don’t like their job, so what do they do?",
+   "They head to job boards and search for roles with a similar job title, hoping that the universe will sprinkle a bit of magic on their career if they just hit the refresh button in a different department or company.",
+   "Efforts like this make professionals feel like they are doing something, when really they’re just setting themselves up to take a new role and quickly become just as disenchanted as they were before.",
+   "It’s like rearranging deck chairs on the Titanic.",
+   "You’ve got to completely switch up your approach.",
+   "If you keep playing the same game, you’ll win the same prizes."
+  ],
+  "ko": [
+   "만족하지 못하는 직업인들 사이에는 되풀이해서 나타나는 주제가 있다. 그것은 언젠가 (미래의 알 수 없는 날에) 상황이 기적적으로 바뀌어 자신들이 우연히 완벽한 일자리나 경력을 마주칠 것이라는 믿음이다.",
+   "그러면서도 그들은 (대체로) 자신의 현재 상황을 의미 있게 바꾸기 위해 하는 일이 거의 없다.",
+   "그들이 자신의 일자리를 좋아하지 않는데, 그래서 그들은 무엇을 하는가?",
+   "그들은 구인란으로 가서 비슷한 직책의 일자리를 검색하고, 그들이 다른 부서나 회사에서 그저 새로 고침 버튼만 누르면 우주가 자신의 경력에 약간의 마법 가루를 뿌려 주기를 바란다.",
+   "이와 같은 노력은 직업인들로 하여금 자신들이 무언가를 하고 있는 것처럼 느끼게 하지만, 그때 실제로 그들은 단지 새로운 일자리를 구한 뒤 그들이 이전에 그랬던 것처럼 빠르게 환상이 깨질 상황에 스스로를 처하게 할 뿐이다.",
+   "이는 타이타닉호의 갑판 의자들을 재배치하는 것과 같다.",
+   "여러분은 자신의 접근 방식을 완전히 바꾸어야 한다.",
+   "여러분이 계속해서 같은 게임을 한다면, 똑같은 보상을 얻게 될 것이다."
+  ],
+  "checks": [
+   "Among unsatisfied professionals, (there’s / there’re) a repeating theme — the belief (that / in which) someday (a mysterious day in the future) things will miraculously change and they’ll stumble into the perfect job or career.",
+   "At the same time, they (typically) do little to meaningfully (alter / altering) their current situation.",
+   "They head to job boards and search for roles with a similar job title, (hoping / hoped) (that / what) the universe will sprinkle a bit of magic on their career if they just (hit / will hit) the refresh button in a different department or company.",
+   "It’s like (rearrange / rearranging) deck chairs on the Titanic.",
+   "You’ve got to completely (switch / switching) up your approach.",
+   "If you (keep / will keep) (playing / to play) the same game, you’ll win the same prizes."
+  ],
+  "given": null
+ },
+ "22": {
+  "sents": [
+   "Sociologists argue that our perception and usage of time are not just basic properties of nature, like a clock ticking away in the background, nor are they simply psychological phenomena of individual experience.",
+   "Instead, how we perceive and understand time is to a large degree shaped by tradition and cultural norms.",
+   "Eviatar Zerubavel’s work, The Seven Day Circle: The History and Meaning of the Week, demonstrates how the week, a fundamental unit of time, is a social invention that varies across cultures, influencing how people structure their activities and rhythms of life.",
+   "Why do we consider a nine-to-five job routine?",
+   "Why don’t many of us work on the weekends?",
+   "Why do we usually pay our bills at the end of the month?",
+   "Why is the retirement age sixty-five?",
+   "These numbers and patterns aren’t really dictated by nature or any essential human characteristic, but are rather social creations that we internalize and come to accept as “normal.”"
+  ],
+  "ko": [
+   "사회학자들은 시간에 대한 우리의 인식과 시간 사용이 배경에서 째깍거리며 흘러가는 시계처럼 단순히 자연의 기본적인 속성도 아니고, 단순히 개인적 경험의 심리적 현상도 아니라고 주장한다.",
+   "오히려 우리가 시간을 인식하고 이해하는 방식은 상당한 정도로 전통과 문화적 기준에 의해 형성된다.",
+   "Eviatar Zerubavel의 저서인 The Seven Day Circle: The History and Meaning of the Week는 어떻게 시간의 기본 단위인 일주일이 사람들이 그들의 활동과 삶의 리듬을 구조화하는 방식에 영향을 끼치면서 문화마다 다른 사회적 발명품인지를 보여 준다.",
+   "왜 우리는 9시부터 5시까지 일하는 직업을 일상적인 것으로 여기는가?",
+   "왜 우리 중 많은 사람은 주말마다 일하지 않는가?",
+   "왜 우리는 대개 월말에 고지 금액을 납부하는가?",
+   "왜 은퇴 연령은 65세인가?",
+   "이러한 숫자와 양식은 실제로 자연이나 인간의 어떤 본질적인 특성에 의해 좌우되는 것이 아니라, 오히려 우리가 내면화하여 결국 ‘기준’으로 받아들이게 된 사회적 창조물이다."
+  ],
+  "checks": [
+   "Sociologists argue (that / what) our perception and usage of time are not just basic properties of nature, like a clock (ticking / ticked) away in the background, nor (they are / are they) simply psychological phenomena of individual experience.",
+   "Instead, (how / the way how) we perceive and understand time is to a large degree (shaping / shaped) by tradition and cultural norms.",
+   "Eviatar Zerubavel’s work, The Seven Day Circle: The History and Meaning of the Week, demonstrates (how / what) the week, a fundamental unit of time, (is / to be) a social invention that (vary / varies) across cultures, (influencing / influenced) (how / which) people structure their activities and rhythms of life.",
+   "Why don’t many of us work on the (weekend / weekends)?",
+   "These numbers and patterns aren’t really (dictating / dictated) by nature or any essential human characteristic, but are rather social creations (that / what) we internalize and come to (accept / accepting) as “normal.”"
+  ],
+  "given": null
+ },
+ "23": {
+  "sents": [
+   "In recent years, the number of illegal actions in particular at the corporate level has grown, or at least the number of cases that came to light, increased.",
+   "Such misconduct has often only been exposed because brave informants have risked a great deal in order to put an end to it.",
+   "Hence, it is no surprise that whistleblower protection has come into focus.",
+   "If violations of law and order go undetected and unpunished for years because employees of a company fear to report illegal activities for fear of reprisals or consequences, it can have several negative effects.",
+   "It can harm the company itself, but also third-parties, the economy in general, the general public, and even the rule of law could be affected.",
+   "Protecting those who would assist in reducing unlawful or even criminal behaviour has two main functions: Protecting the individual’s actions as well as protecting the public good.",
+   "A well-balanced whistleblower protection may have positive effects on both of these."
+  ],
+  "ko": [
+   "최근 몇 년 동안 특히 기업 차원에서 발생하는 위법 행위의 수가 증가했거나, 적어도 세상에 드러난 사건의 수가 증가했다.",
+   "그러한 위법 행위는 용기 있는 제보자들이 그것을 끝내기 위해 많은 위험을 무릅써 왔기 때문에 비로소 종종 드러났다.",
+   "따라서 내부 고발자 보호가 주목받게 된 것은 놀라운 일이 아니다.",
+   "기업의 직원들이 보복이나 불이익을 두려워하여 위법 행위를 신고하기를 꺼려서 법과 질서의 위반이 여러 해 동안 적발되지도 처벌받지도 않는다면, 그것은 여러 가지 부정적인 영향을 미칠 수 있다.",
+   "그것은 해당 기업 자체에 해를 끼치지만 또한 제삼자, 경제 전반, 일반 대중, 심지어 법치주의마저도 영향을 받을 수 있다.",
+   "위법하거나 심지어 범죄인 행위를 줄이는 데 도움을 주려는 사람들을 보호하는 것은 두 가지 주요 기능을 지닌다. 즉, 그 사람의 행위를 보호하는 것과 공익을 보호하는 것이다.",
+   "균형이 잘 잡힌 내부 고발자 보호는 이 두 가지 모두에 긍정적인 영향을 미칠 수 있다."
+  ],
+  "checks": [
+   "In recent years, the number of illegal actions in particular at the corporate level (has / have) grown, or at least the number of cases (that / what) came to light, increased.",
+   "Such misconduct has often only (exposed / been exposed) because brave informants have risked a great deal in order to (put / putting) an end to it.",
+   "Hence, it is no surprise (that / what) whistleblower protection has come into focus.",
+   "If violations of law and order (go / goes) undetected and unpunished for years because employees of a company (fear / fears) to (report / reporting) illegal activities for fear of reprisals or consequences, it can have several negative effects.",
+   "It can harm the company (it / itself), but also third-parties, the economy in general, the general public, and even the rule of law could (affect / be affected).",
+   "(Protect / Protecting) those (who / which) would assist in (reduce / reducing) unlawful or even criminal behaviour (has / have) two main functions: Protecting the individual’s actions as well as (to protect / protecting) the public good.",
+   "A well-balanced whistleblower protection may have positive effects on both of (this / these)."
+  ],
+  "given": null
+ },
+ "24": {
+  "sents": [
+   "Unfortunately, sometimes the idea of a goal is disconnected from the daily reality of what it will take to achieve it.",
+   "We fall in love with the idea of a goal, pushing out of mind how different our day-to-day will need to be for us to make it happen.",
+   "In fact, research even suggests that positive fantasies about our future can lead us to put less effort into our goals because our fantasies provide us with a false and premature sense of accomplishment.",
+   "We romanticize a goal — falling in love with the idea of a change.",
+   "In the process, we gloss over the intricacies and challenges of integrating a complex new behavior into our life.",
+   "As one study nicely summed it up, fantasizing about a positive future “seduces a person to mentally enjoy the desired future in the here and now” — and because we don’t reflect on why our fantasy is not yet our future, “a necessity to act is not induced.”"
+  ],
+  "ko": [
+   "안타깝게도 목표에 대한 상상은 때때로 그것을 달성하기 위해 요구되는 것의 일상적인 현실로부터 동떨어져 있다.",
+   "우리는 목표에 대한 ‘상상’과 사랑에 빠져, 우리가 그것을 실현하기 위해서 우리의 하루하루가 얼마나 달라져야 할지를 생각에서 밀어낸다.",
+   "실제로, 연구는 심지어 우리의 환상이 우리에게 거짓되고 때 이른 성취감을 주기 때문에 우리의 미래에 대한 긍정적 환상이 우리가 우리의 목표에 노력을 ‘덜’ 기울이게 할 수 있다는 것을 시사한다.",
+   "우리는 목표를 낭만화한다. 즉, 변화에 대한 상상과 사랑에 빠진다.",
+   "그 과정에서 우리는 복잡한 새로운 행동을 우리의 삶에 통합하는 것의 복잡함과 어려움에 대해 얼버무리고 넘어간다.",
+   "한 연구가 이를 잘 요약했듯이, 긍정적인 미래에 대하여 환상을 품는 것은 “사람을 현혹시켜 원하는 미래를 지금 여기에서 머릿속으로 즐기게 한다.” 그래서 우리가 우리의 환상이 아직 우리의 미래가 아닌 ‘이유’에 대해 돌아보지 않기 때문에 “행동해야 할 필요가 유발되지 않는다.”"
+  ],
+  "checks": [
+   "Unfortunately, sometimes the idea of a goal is disconnected from the daily reality of (that / what) it will take to (achieve / achieving) it.",
+   "We fall in love with the idea of a goal, (push / pushing) out of mind how (different / differently) (will our day-to-day / our day-to-day will) need to be (of / for) us (to make / making) it (happen / to happen).",
+   "In fact, research even suggests (that / what) positive fantasies about our future can lead us to (put / putting) less effort into our goals because our fantasies provide us (to / with) a false and premature sense of accomplishment.",
+   "We romanticize a goal — (falling / fallen) in love with the idea of a change.",
+   "In the process, we gloss over the intricacies and challenges of (integrate / integrating) a complex new behavior into our life."
+  ],
+  "given": null
+ },
+ "28": {
+  "sents": [
+   "2027 Youngpine High School Calendar Design Contest",
+   "Illustrate a memorable moment in your school life and share it in the annual Calendar Design Contest! Have your work featured in our 2027 school calendar!",
+   "Requirements",
+   "• Entries are limited to one per student.",
+   "• Artistic materials such as paint and pastels are accepted.",
+   "(No digitally produced artworks will be allowed.)",
+   "Judging Criteria",
+   "• Artistic Skill, Creativity, Concept",
+   "Prize",
+   "• 12 winners, one for each month, will be awarded a professional-grade art kit.",
+   "• Winning artworks will be displayed on the school website.",
+   "Submission",
+   "• Submit your entry to any art teacher by November 20.",
+   "① 출품작은 학생 1인당 두 개로 제한된다.",
+   "② 디지털로 만든 작품이 허용된다.",
+   "③ 심사 기준에 창의성이 포함된다.",
+   "④ 수상작은 교내 복도에 전시된다.",
+   "⑤ 10월 20일까지 출품작을 제출해야 한다.",
+   "일치·불일치 출제",
+   "✚정답 (일치 내용)",
+   "심사 기준에 창의성이 포함된다.",
+   "✚풀이 근거",
+   "번 Judging Criteria(심사 기준)에서 ‘Artistic Skill, Creativity, Concept’(예술적 기술, 창의성, 콘셉트)라고 제시되어 있으므로, 심사 기준에 창의성이 포함된다.",
+   "3"
+  ],
+  "ko": [
+   "학교생활 중 잊지 못할 순간을 그림으로 그려서 그것을 매년 열리는 달력 디자인 대회에서 나누어 보세요! 여러분의 작품을 2027년 우리 학교 달력에 실어 보세요!",
+   "(디지털로 만든 작품은 허용되지 않습니다.)",
+   "· 예술적 기술, 창의성, 콘셉트",
+   "· 수상작은 학교 웹사이트에 게시될 것입니다.",
+   "· 11월 20일까지 미술 선생님 누구에게나 출품작을 제출하세요."
+  ],
+  "checks": [],
+  "given": null
+ },
+ "29": {
+  "sents": [
+   "Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal.",
+   "This doesn’t mean they don’t die.",
+   "Nor does it even mean that they cannot die of biological causes.",
+   "But, unlike most every animal, their likelihood of dying does not increase with age.",
+   "Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the aging process.",
+   "But their property of being able to regenerate entire body parts, or even a whole organism, making them more similar to trees than to us.",
+   "Although we may learn some fascinating things about their lack of apparent aging, it is not at all clear how relevant those findings will be to human aging.",
+   "Sometimes biology is universal, especially if it relates to fundamental mechanisms.",
+   "But in other cases, even discoveries in rats or mice, which are mammals and biologically much closer to us, are difficult to translate into humans.",
+   "It may be a very long time before any findings gained from hydra or jellyfish are useful to us."
+  ],
+  "ko": [
+   "히드라와 불멸의 해파리는 명백한 노화의 징후들을 보이지 않기 때문에, 그것들은 흔히 생물학적으로 죽지 않는다고 여겨진다.",
+   "서술형 대비 & 문장 삽입",
+   "심지어 그것들이 생물학적 원인으로 죽을 ‘수 없다’는 것을 의미하는 것도 아니다.",
+   "하지만, 대부분의 모든 동물과 달리, 그것들이 죽을 가능성은 나이가 들면서 증가하지 않는다.",
+   "히드라와 불멸의 해파리와 같은 종들은 그것들이 노화 작용을 물리치는 방법에 관한 단서들을 제공할지도 모르기 때문에 노화학자들을 흥분시킨다.",
+   "하지만 전체 신체 부위나 심지어는 한 생물체 전체를 재생할 수 있는 그것들의 특성은 그것들을 우리보다는 나무들과 더 유사하게 만든다.",
+   "비록 우리가 그것들의 명백한 노화의 결여에 관한 몇 가지 흥미로운 사실들을 알게 될 수 있을지라도, 그러한 발견들이 인간의 노화에 얼마나 관련이 있을지는 전혀 명확하지 않다.",
+   "때때로 생명 작용은 보편적인데, 특히 그것이 근본적인 메커니즘과 관련이 있다면 그러하다.",
+   "하지만 다른 경우들에서는, 포유류이며 생물학적으로 우리에게 훨씬 더 가까운, 쥐나 생쥐에서의 발견들조차도 인간에게 적용하기가 어렵다.",
+   "히드라나 해파리로부터 얻은 어떠한 발견들도 우리에게 유용해지기까지는 매우 오랜 시간이 걸릴지도 모른다."
+  ],
+  "checks": [
+   "Since hydra and the immortal jellyfish (don’t / doesn't) exhibit obvious signs of aging, (they / which) are often (calling / called) biologically immortal.",
+   "This doesn’t mean (they / them) don’t die.",
+   "Nor (do / does) it even mean (that / what) they cannot (die / be died) of biological causes.",
+   "But, (unlike / unlikely) most every animal, their likelihood of (die / dying) (do / does) not increase with age.",
+   "Species such as hydra and the immortal jellyfish (excite / excites) gerontologists (because / because of) they may provide clues about how (defeat / to defeat) the aging process.",
+   "But their property (of / that) being able to regenerate entire body parts, or even a whole organism, (make / makes) them more (similar / similarly) to trees than to us.",
+   "(Despite / Although) we may learn some (fascinating / fascinated) things about their lack (of / in) apparent aging, (it / which) is not at all clear how (relevant / relevantly) those findings will be to human aging.",
+   "It may be a very long time before any findings (gained / are gained) from hydra or jellyfish (is / are) useful to us."
+  ],
+  "given": null
+ },
+ "30": {
+  "sents": [
+   "Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal.",
+   "In all cases, profits can be higher from making the transition, even taking the related costs into account.",
+   "The power plants prefer subsidies over regulations or taxes.",
+   "The reason is obvious.",
+   "They prefer to receive money from the government rather than pay the costs themselves.",
+   "But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others.",
+   "The electricity companies’ “freedom” is decreased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy.",
+   "Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions.",
+   "Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced."
+  ],
+  "ko": [
+   "보조금, 세금, 그리고 규제는 모두 석탄에서 (다른 에너지원으로) 전환함으로써 오염을 덜 일으키는 발전소로 이어질 수 있다.",
+   "모든 경우에, 관련된 비용까지 고려하더라도, 그러한 전환을 하는 것으로부터 얻는 이익은 더 높을 수 있다.",
+   "발전소들은 규제나 세금보다 보조금을 선호한다.",
+   "이유는 명백하다.",
+   "그들은 그 비용을 자신들이 직접 지불하기보다는 정부로부터 돈을 받는 것을 선호한다.",
+   "그러나 보조금을 통한 그들의 기회 집합의 ‘확대’는 다른 사람들의 기회 집합의 축소에 의해 맞추어져야 한다.",
+   "전력 회사들의 ‘자유’는 일반 개인을 희생시켜 증가하는데, 이들은 보조금을 지급하기 위해 늘어난 세금으로 인해 고통을 겪어야 한다.",
+   "더욱이 순수한 효율성의 관점에서, 보조금은 전력 회사가 비록 배출량을 제한하는 데 성공하더라도 그것이 하는 것의 전체 비용을 직면하지 않기 때문에 경제를 왜곡한다.",
+   "실제로 전기 가격은 그래야 하는 것보다 결국 더 낮아질 수 있고 전기 소비는 더 높아질 수 있으며, 이는 비록 전기 단위당 배출량은 감소했을지라도 지구 온난화를 더욱 악화시킬 것이다."
+  ],
+  "checks": [
+   "Subsidies, taxes, and regulations can all lead to power plants (pollute / that pollute) less by (switch / switching) away from coal.",
+   "In all cases, profits can be higher from (make / making) the transition, even (take / taking) the (relating / related) costs into account.",
+   "The reason is (obvious / obviously).",
+   "They prefer to (receive / receiving) money from the government rather than (pay / pays) the costs (them / themselves).",
+   "But the “expansion” of their opportunity set through subsidies (has / have) to (match / be matched) by the contraction of the opportunity set of (other / others).",
+   "The electricity companies’ “freedom” is increased at the expense of the ordinary individual, (they / who) must suffer from (increase / increased) taxation (pay / to pay) for the subsidy.",
+   "Moreover, from the perspective of pure efficiency, the subsidy distorts the economy (because / because of) the electricity company is not (facing /  faced) the full costs of (that / what) it does, even if it is successful in (limit / limiting) emissions.",
+   "Indeed, electricity prices may end up lower than (it / they) should be and electricity consumption higher, (it / which) will worsen global warming, (in spite of / even though) the emissions per (unit / a unit) of electricity (has / have) been reduced."
+  ],
+  "given": null
+ },
+ "31": {
+  "sents": [
+   "Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us.",
+   "All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need.",
+   "Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit.",
+   "In Star Trek, however, there isn’t much ______________.",
+   "Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars.",
+   "All of humanity in that world has been fully educated so that they can participate in this prosperity.",
+   "Everyone is an explorer, researcher, engineer, artist, doctor, or counselor.",
+   "Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant."
+  ],
+  "ko": [
+   "빈칸 추론",
+   "고전 경제학 전체는 모든 사람에게 그들이 원하거나 필요로 하는 모든 것을 제공하기에는 대체로 어떤 것이든 충분하지 않다는 개념에 기초하고 있다.",
+   "그 때문에 우리는 그러한 재화와 서비스 및 자원을 그것들이 가장 큰 이익을 낳을 수 있는 곳에 배분하기 위해 시장과 가격 책정을 이용한다.",
+   "그러나 Star Trek에서는 희소성이 별로 없다.",
+   "기술은 그 사회가 그들이 원하는 어떤 음식이든 복제하고, 눈 깜짝할 사이에 그들 자신을 수천 마일 이동시키며, 수 광년의 거리를 넘어 의사소통하고, 별들 사이를 여행할 수 있게 해 왔다.",
+   "그 세계의 모든 인류는 이러한 풍요로움에 참여할 수 있도록 충분히 교육을 받아 왔다.",
+   "모든 사람은 탐험가, 연구원, 기술자, 예술가, 의사 또는 상담사이다.",
+   "생성형 AI는 우리 사회의 많은 측면이 마찬가지로 매우 풍요로워질 수 있게 할 잠재력을 지니고 있다."
+  ],
+  "checks": [
+   "(Few / Little) people may (view / be viewed) the Star Trek universe through an economic lens, but (do / doing) so (provide / provides) a window into a world (that / where) might soon be upon us.",
+   "All of classical economics (is / are) based on the notion (of / that) there (isn’t / aren't) usually enough of anything (give / to give) everyone everything they want or (need / need them).",
+   "(Because / Because of) that, we use markets and pricing (allocate / to allocate) those goods, services, and resources to (what / where) they might result (in / from) the highest benefit.",
+   "In Star Trek, however, there (isn’t / aren't) much scarcity.",
+   "Technology (is / has) allowed that society (reproduce / to reproduce) any food they (want / want it), transport themselves (thousand / thousands) of miles in the blink of an eye, communicate over light-years, and (travel / traveling) among the stars.",
+   "All of humanity in that world (has / have) (fully educated / been fully educated) so (as / that) they can participate in this prosperity.",
+   "Everyone (is / are) an explorer, researcher, engineer, artist, doctor, or counselor.",
+   "Generative AI has the potential (allow / to allow) many dimensions of our own society (be / to be) similarly highly (abundant / abundantly)."
+  ],
+  "given": null
+ },
+ "32": {
+  "sents": [
+   "People, whether customers or otherwise, want to feel heard.",
+   "When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to address them.",
+   "But for someone to feel heard, three things have to happen.",
+   "First, they have to feel like the other person paid attention to what they said.",
+   "Second, they have to feel like the other person understood what they said.",
+   "And third, the other person has to ______________________________.",
+   "This last part is key.",
+   "Imagine talking to someone who provided no response.",
+   "They might have attended to everything we said.",
+   "They might even have understood it completely.",
+   "But without some sort of outward signal that indicates they listened, it’s impossible to know whether or not they actually did."
+  ],
+  "ko": [
+   "사람들은, 고객이든 그렇지 않든, 경청 받고 있다고 느끼기를 원한다.",
+   "누군가가 고객 서비스 센터에 전화를 하거나, 관리자와 이야기하기를 요청하거나, 마음에 어떤 생각을 품은 채 여러분의 사무실로 찾아올 때, 그들은 누군가가 자신의 우려 사항에 귀를 기울이고 그것을 해결해 줄 것처럼 느끼기를 원한다.",
+   "그러나 누군가가 경청 받고 있다고 느끼기 위해서는, 세 가지가 이루어져야 한다.",
+   "첫째, 그들은 상대방이 자신들이 말한 것에 주의를 기울인 것처럼 느껴야 한다.",
+   "둘째, 그들은 상대방이 자신들이 말한 것을 이해한 것처럼 느껴야 한다.",
+   "그리고 셋째, 상대방은 자신이 귀를 기울였다는 것을 보여 줘야 한다.",
+   "이 마지막 부분이 핵심이다.",
+   "아무런 반응도 보여 주지 않는 사람과 이야기한다고 상상해 보라.",
+   "그들은 우리가 말한 모든 것에 주의를 기울였을지도 모른다.",
+   "그들은 심지어 그것을 완전히 이해했을지도 모른다.",
+   "그러나 그들이 귀를 기울였음을 보여 주는 어떤 종류의 외적인 신호가 없이는, 그들이 실제로 그렇게 했는지 아닌지를 아는 것은 불가능하다."
+  ],
+  "checks": [
+   "People, whether customers (and / or) otherwise, want (feel / to feel) (hearing / heard).",
+   "But (of / for) someone (feel / to feel) (hearing / heard), three things have to happen.",
+   "First, they have to feel like (other / the other) person paid attention to (that / what) they said.",
+   "Second, they have to feel like (other / the other) person understood what they (said / said it).",
+   "And third, (other / the other) person has to demonstrate (that / what) they listened.",
+   "(This last / Last this) part is key.",
+   "(Imagine / Imagining) (talking / to talk) to someone (provided / who provided) no response.",
+   "They might have attended to everything we (said / said it).",
+   "They might even have understood it (complete / completely).",
+   "But without some sort of outward signal (indicates / that indicates) (that / what) they listened, it’s impossible (know / to know) (if / whether) or not they actually (did / were)."
+  ],
+  "given": null
+ },
+ "33": {
+  "sents": [
+   "The very fact that all of our experiences “take place” in a physical space makes the space inseparable from what defines it, from the event that took place in it.",
+   "The tree and the ground beneath are inseparable from what took place there.",
+   "This intertwining of space, place, and experience ________________________________________.",
+   "If place and space are central to the very heart of experience, we must accept the possibility that the spatial framework is the medium of all experiences — actions, thoughts, memories, and feelings of every place — not merely a background or context exterior to experience (as commonly supposed).",
+   "Belgian literary critic Georges Poulet made the point elegantly, writing of the space created in Marcel Proust’s great novel In Search of Lost Time: “Beings surround themselves with the places where they find themselves, the way one wraps oneself up in a garment that is at one and the same time a disguise and a characterization.",
+   "Without places, beings would be only abstractions.”"
+  ],
+  "ko": [
+   "우리의 모든 경험이 물리적 공간에서 ‘일어난다’는 바로 그 사실은, 그 공간을 그것을 규정하는 것, 즉 그 공간 ‘안’에서 일어난 사건으로부터 분리될 수 없게 만든다.",
+   "그 나무와 그 아래의 땅은 그곳에서 일어난 일과 분리될 수 없다.",
+   "공간, 장소, 그리고 경험의 이러한 뒤얽힘은 수동적 배경으로서의 장소라는 개념에 이의를 제기한다.",
+   "만약 장소와 공간이 경험의 바로 그 핵심의 중심이라면, 우리는 공간적 틀이 모든 경험, 즉 모든 장소에서의 행동, 생각, 기억, 그리고 감정의 매개체이며, (일반적으로 생각되는 것처럼) 단지 경험의 외부에 있는 배경이나 상황이 아니라는 가능성을 받아들여야 한다.",
+   "벨기에의 문학 평론가 Georges Poulet는 Marcel Proust의 위대한 소설 In Search of Lost Time에서 창조된 공간에 대해 다음과 같이 쓰면서 그 점을 유려하게 말했다. “존재들은 자신들을 발견하게 되는 장소들로 스스로를 둘러싸는데, 이는 어떤 사람이 변장인 동시에 그 사람을 특징짓는 것이기도 한 의복으로 자신을 감싸는 것과 같다. 장소가 없다면, 존재들은 단지 추상적 개념에 불과할 것이다.”"
+  ],
+  "checks": [
+   "The tree and the ground beneath (is / are) inseparable from (that / what) took place there.",
+   "This (intertwine / intertwining) of space, place, and experience (challenge / challenges) the idea of place as passive backdrop.",
+   "If place and space (is / are) central to the very heart of experience, we must accept the possibility (of / that) the spatial framework is the medium of all experiences — actions, thoughts, memories, and feelings of every (place / places) — not merely a background or context (exterior / is exterior) to experience (as commonly (supposing / supposed))."
+  ],
+  "given": null
+ },
+ "34": {
+  "sents": [
+   "No matter how you choose to delineate your evolutionary system of interest — let’s say it’s cell phones — there will be some things that your model just needs to take as a given, such as the fact that new ideas emerge at particular times.",
+   "Indeed, all models must make simplifying assumptions of this nature.",
+   "When Wallace and Darwin presented their verbal model of biological evolution, there was little knowledge of how variation generation and inheritance worked.",
+   "They just took as a given that these things happened somehow.",
+   "Even at the finest level of detail, we need simplifying assumptions.",
+   "Physicists, for example, must take as a given the mass and charge of fundamental particles.",
+   "In a model of atomic bonds, physicists don’t attempt to explain why electrons have their particular mass and charge, they just accept the measured values and move on.",
+   "The key point is that we can build useful models at one level of analysis __________________________________________________."
+  ],
+  "ko": [
+   "여러분이 관심을 두는 진화 시스템(예를 들어 휴대 전화와 같은)의 경계를 어떻게 정할지 선택하든 간에 이를테면 새로운 아이디어가 특정한 시기에 출현한다는 사실 같은, 여러분의 모델이 그저 주어진 것으로 받아들여야만 하는 어떤 것들이 있을 것이다.",
+   "실제로, ‘모든’ 모델은 이러한 성격의 단순화하는 가정들을 세워야만 한다.",
+   "Wallace와 Darwin이 생물학적 진화에 대한 자신들의 언어적 모델을 제시했을 때, 변이 생성과 유전이 어떻게 작동하는지에 관해서는 거의 알지 못했다.",
+   "그들은 이러한 것들이 어떻게든 일어났다는 것을 그저 주어진 것으로 받아들였다.",
+   "가장 미세한 세부 수준에서조차, 우리는 단순화하는 가정들이 필요하다.",
+   "예를 들어, 물리학자들은 기본 입자의 질량과 전하를 주어진 것으로 받아들여야만 한다.",
+   "원자 결합 모델에서, 물리학자들은 ‘왜’ 전자가 그것의 특정한 질량과 전하를 갖는지 설명하려 시도하지 않고, 그들은 그저 측정된 값들을 받아들이고 넘어간다.",
+   "핵심은 우리가 모든 다른 수준에서 일어나고 있는 것에 대한 완전한 설명 없이 하나의 분석 수준에서 유용한 모델을 구축할 수 있다는 것이다."
+  ],
+  "checks": [
+   "Indeed, all models must make (simplify / simplifying) assumptions of this nature.",
+   "When Wallace and Darwin presented their verbal model of biological evolution, there (was / were) (few / little) knowledge of how variation generation and inheritance worked.",
+   "They just took as a given (that / which) these things happened somehow.",
+   "Even at the finest level of detail, we need (simplify / simplifying) assumptions.",
+   "Physicists, for example, must (take / take them) as a given the mass and charge of fundamental particles.",
+   "In a model of atomic bonds, physicists don’t attempt (explaining / to explain) why (electrons / do electrons) have their particular mass and charge, (they / who) just accept the (measuring / measured) values and (move / moving) on.",
+   "The key point is (that / what) we can build useful models at one level of analysis (unless / without)  a complete (accounting / accounting of) what’s happening at (all other / other all) levels."
+  ],
+  "given": null
+ },
+ "35": {
+  "sents": [
+   "The recognition of burnout as an occupational phenomenon by the WHO in 2019 marked an important moment in the discourse on workplace mental health.",
+   "This designation reframes clinical assessment and organizational responsibility, shifting attention to systemic prevention.",
+   "It invites employers to adopt structural interventions rather than relying solely on individual-level remedies.",
+   "In practice, this means clinicians should collaborate with occupational health and leadership to address root causes.",
+   "Individuals can help themselves recover from burnout by changing patterns that contribute to stress.",
+   "It signaled a shift away from viewing burnout as a personal failing or a matter of individual resilience, toward understanding it as a structural issue rooted in organizational culture, leadership practices, and the broader socio-economic context of work.",
+   "This reframing is essential, as it opens the door to systemic interventions and policy-level changes rather than placing the burden solely on individuals to cope or adapt."
+  ],
+  "ko": [
+   "2019년 WHO에 의한 번아웃의 직업적 현상으로서의 인정은 직장에서의 정신 건강에 관한 담론에서 중요한 순간을 나타냈다.",
+   "이러한 지정은 임상적 평가와 조직의 책임을 재구성하여, 관심을 시스템 차원의 예방으로 이동시킨다.",
+   "그것은 고용주들이 오직 개인 수준의 해결책에만 의존하기보다는 구조적 개입을 채택하도록 이끈다.",
+   "실제로, 이것은 임상의들이 근본 원인을 다루기 위해 산업 보건 부서 및 지도부와 협력해야 한다는 것을 의미한다.",
+   "그것은 번아웃을 개인적 실패나 개인의 회복 탄력성의 문제로 보는 것에서 벗어나, 그것을 조직 문화, 지도부 관행, 그리고 더 넓은 노동의 사회 경제적 맥락에 뿌리를 둔 구조적 문제로 이해하는 것으로 향하는 전환을 나타냈다.",
+   "이 재구성은 필수적인데, 왜냐하면 그것은 오직 개인에게만 대처하거나 적응하도록 부담을 지우기보다는 시스템 차원의 개입과 정책 수준의 변화로 향하는 문을 열어 주기 때문이다."
+  ],
+  "checks": [
+   "The recognition of burnout as an occupational (phenomenon / phenomena) by the WHO in 2019 (marked / marking) an important moment in the discourse on workplace mental health.",
+   "This designation reframes clinical assessment and organizational responsibility, (shifts / shifting) attention to systemic prevention.",
+   "It invites employers (adopt / to adopt) structural interventions rather than (relies / relying) solely on individual-level remedies.",
+   "In practice, this means (about / that) clinicians should (collaborate / collaborate with) occupational health and leadership (address / to address) root causes.",
+   "It signaled a shift away from (view / viewing) burnout as a (personal / personally) failing or a matter of individual resilience, toward (understand / understanding) it as a structural issue (rooted / is rooted) in organizational culture, leadership practices, and the broader socio-economic context of work.",
+   "This reframing is essential, as it opens the door to systemic interventions and policy-level changes rather than (place / placing) the burden solely on individuals (cope / to cope) or (adapt / adapting)."
+  ],
+  "given": null
+ },
+ "37": {
+  "sents": [
+   "When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a subset of the communication space.",
+   "(A) So, there is an artificial seam between the communication space and task space.",
+   "This is the type of impact of remote communication technology that needs to be predicted through communication models.",
+   "(B) Ishii, a professor at the MIT Media Lab, describes this as seamless communication because there is no functional separation between the task and communication space.",
+   "However, when people are working remotely, the task space is often separated from the communication space.",
+   "(C) For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another.",
+   "In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space."
+  ],
+  "ko": [
+   "사람들이 대면하여 협업하고 있을 때, 그들은 서로를 그리고 사용되고 있는 다양한 의사소통 단서들의 범위를 쉽게 볼 수 있으며, 그래서 작업 공간은 의사소통 공간의 부분 집합이다.",
+   "MIT Media Lab의 교수인 Ishii는 이것을 갈라진 틈이 없는 의사소통이라고 묘사하는데, 왜냐하면 작업 공간과 의사소통 공간 사이에 기능적 분리가 없기 때문이다.",
+   "그러나 사람들이 원격으로 작업할 때, 그 작업 공간은 흔히 의사소통 공간으로부터 분리된다.",
+   "예를 들어, 화상 회의를 할 때, 사람들은 한 화면에는 협업자의 얼굴을 두고, 동시에 다른 화면에서는 공유 문서를 보고 있을 수 있다.",
+   "이 경우, 작업 공간을 보는 것과 동시에 원격 협업자의 많은 의사소통 단서들을 보는 것은 불가능하다.",
+   "그래서, 의사소통 공간과 작업 공간 사이에는 인위적인 갈라진 틈이 존재한다.",
+   "이것은 의사소통 모델을 통해 예측될 필요가 있는 원격 의사소통 기술이 미치는 영향의 한 유형이다."
+  ],
+  "checks": [
+   "When people are collaborating face to face they can (easy / easily) see each other and the range of different communication cues (using / being used), so the task space is a subset of the communication space.",
+   "Ishii, a professor at the MIT Media Lab, (describes / describing) this as seamless communication (because / because of) there (is / are) no functional separation between the task and communication space.",
+   "However, when people are working remotely, the task space is often (separating / separated) from the communication space.",
+   "For example, when (video conferencing / video conferenced), people may have the face of their collaborator on one screen, while (looking / looked) at a (sharing / shared) document on another.",
+   "In this case, (it / this) is impossible to see many of the remote collaborator’s communication cues at the same time as (looking / looked) at the task space.",
+   "So, there (is / are) an artificial seam between the communication space and task space.",
+   "This is the type of impact of remote communication technology (that / what) needs to (predict / be predicted) through communication models."
+  ],
+  "given": null
+ },
+ "38": {
+  "sents": [
+   "In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certain they were that sixty general-knowledge trivia-like statements were either true or false.",
+   "The students were asked to evaluate the sixty statements three times, at two-week intervals.",
+   "Crucially, only twenty of the statements were repeated each time; the other forty were new.",
+   "The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements.",
+   "What they found was astonishing.",
+   "In other words, the more often you hear a statement, the more ‘true’ it sounds.",
+   "This became known as the illusory truth effect."
+  ],
+  "ko": [
+   "1977년, 심리학자 Lynn Hasher와 David Goldstein은 한 그룹의 대학생들에게 그들이 60개의 일반 상식과 관련된 잡학적 지식 같은 진술문들이 참인지 거짓인지를 얼마나 확신하는지 물었다.",
+   "그 학생들은 그 60개의 진술문을 2주 간격으로 세 번 평가하도록 요청받았다.",
+   "결정적으로, 그 진술문 중 오직 20개만이 매번 반복되었고, 나머지 40개는 새로운 것이었다.",
+   "그런 다음 그 연구자들은 반복된 진술문과 반복되지 않은 진술문의 ‘진실성 평가’를 비교했다.",
+   "그들이 알아낸 것은 놀라웠다.",
+   "그 진술문이 참이든 거짓이든 상관없이, 그 주장의 진실성에 대한 믿음은 반복의 작용에 따라 올라갔다.",
+   "다시 말해, 여러분이 어떤 진술문을 더 자주 들을수록, 그것은 더 ‘참인’ 것처럼 들린다.",
+   "이것은 진실 착각 효과로 알려지게 되었다."
+  ],
+  "checks": [
+   "In 1977, psychologists Lynn Hasher and David Goldstein (asked / were asked) a group of college students how (certain / certainly) they were (that / what) sixty general-knowledge trivia-like statements were either true (or / and) false.",
+   "The students (asked / were asked) (evaluating / to evaluate) the sixty statements three times, at two-week intervals.",
+   "Crucially, only twenty of the statements (repeated / were repeated) each time; the other forty were new.",
+   "The researchers then (compared / were compared) the ‘truth-ratings’ of the (repeating / repeated) versus non-repeated statements.",
+   "(That / What) they found was (astonishing / astonished).",
+   "Regardless of (which / whether) the statement was true (or / and) false, belief in the truth of the claim went up as a function of repetition.",
+   "In other words, the (more / most) often you hear a statement, the more ‘(true / truly)’ it sounds.",
+   "This became (knowing / known) as the illusory truth effect."
+  ],
+  "given": "Regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition."
+ },
+ "39": {
+  "sents": [
+   "The human body on the Earth’s surface experiences constant air pressure equal to 16-18 tons per square meter of its body surface.",
+   "However, this pressure is not felt because external pressure is balanced by internal pressure in the lungs and air cavities of the body.",
+   "During dives, in addition to atmospheric pressure, the pressure of the water also acts on the human body.",
+   "To achieve this, air or a breathing mixture is supplied to the diver under pressure equal to the pressure applied by the surrounding water.",
+   "Water pressure increases proportionally with depth.",
+   "It increases by 1 bar for every 10 meters.",
+   "It follows that a diver at a depth of 10 meters experiences a pressure of 2 bar, and to stabilize pressure, the supply of a breathing mixture under a pressure of 2 atmospheres is required."
+  ],
+  "ko": [
+   "지구 표면 위에서의 인체는 신체 표면 1제곱미터당 16에서 18톤에 달하는 일정한 기압을 겪는다.",
+   "하지만 이러한 압력은 외부 압력이 신체의 폐와 공기가 들어 있는 공간의 내부의 압력과 균형이 맞춰지기 때문에 느껴지지 않는다.",
+   "잠수하는 동안에는 대기압 외에 물의 압력 또한 인체에 영향을 준다.",
+   "물속에 잠겼을 때, 주변 환경의 압력을 느끼는 것을 피하기 위해 동일한 외부와 내부 압력 상태를 유지하는 것이 필요하다.",
+   "이를 달성하기 위해 공기 또는 호흡용 혼합물이 주변의 물에 의해 가해지는 압력과 동일한 압력으로 잠수부에게 제공된다.",
+   "수압은 깊이에 비례하여 증가한다.",
+   "그것은 10미터마다 1바씩 증가한다.",
+   "당연히 10미터 깊이에 있는 잠수부는 2바의 압력을 겪고, 압력을 맞추기 위해서는 2기압의 호흡용 혼합물의 제공이 요구된다."
+  ],
+  "checks": [
+   "The human body on the Earth’s surface (experiences / experience) constant air pressure equal to 16-18 tons per square meter of its body surface.",
+   "However, this pressure is not (feeling / felt) (because / because of) external pressure (balances / is balanced) by internal pressure in the lungs and air cavities of the body.",
+   "(While / During) dives, in addition to atmospheric pressure, the pressure of the water also acts on the human body.",
+   "When (submerging / submerged) underwater, to avoid (feeling / to feel) the pressure of the surrounding environment, (it / this) is necessary to maintain the condition of equal external and internal pressure.",
+   "To achieve this, air or a breathing mixture (supplies / is supplied) to the diver under pressure equal to the pressure (applying / applied) by the surrounding water.",
+   "It follows (that / what) a diver at a depth of 10 meters (experiences / experience) a pressure of 2 bar, and to stabilize pressure, the supply of a breathing mixture under a pressure of 2 atmospheres (requires / require / is required / are required)."
+  ],
+  "given": "When submerged underwater, to avoid feeling the pressure of the surrounding environment, it is necessary to maintain the condition of equal external and internal pressure."
+ },
+ "40": {
+  "sents": [
+   "Researchers recently found that goldenrods that live in peaceful areas without much threat from predators will issue chemical alarm calls that are incredibly specific — comprehensible only to their close kin — on the rare occasion they are attacked.",
+   "But goldenrods in more hostile territory signal to their neighbors using chemical phrases easily understood by all the goldenrod in the area, not just their biological kin.",
+   "Instead of using coded whisper networks, these goldenrod broadcast the threat over loudspeaker, so to speak.",
+   "It is the first time research has confirmed that these chemical communications are beneficial not only to the plant receiving them but also to the sender.",
+   "When times are truly tough, you do not want to be left standing in a field alone.",
+   "There will be no one to mate with, no one to help bring in pollinators. 󰀻 Compared to those in peaceful areas, goldenrods in more hostile environments send more (A)______________ understandable chemical messages, thereby (B)______________ both the senders and the receivers.",
+   "(A)\t\t   (B)"
+  ],
+  "ko": [
+   "연구자들은 포식자들로부터의 많은 위협 없이 평화로운 지역에 사는 미역취들이 그들이 공격받는 드문 경우에, 그들의 가까운 친족만 이해할 수 있는 매우 독특한 화학적 비상 신호를 내보낸다는 것을 최근에 발견했다.",
+   "하지만 더 적대적인 지역에 있는 미역취들은 그들의 생물학적 친족뿐만 아니라 그 지역에 있는 모든 미역취에 의해 쉽게 이해되는 화학적 표현을 사용하여 그들의 이웃들에게 신호를 보낸다.",
+   "암호화된 속삭이는 네트워크를 사용하는 대신에 이 미역취는 말하자면 확성기를 통해서 위협을 널리 알린다.",
+   "그것은 이러한 화학적 교신들이 그것들을 받는 식물뿐만 아니라 보내는 식물에게도 이롭다는 것을 확인한 첫 연구이다.",
+   "정말로 힘든 시기에는, 여러분은 들판에 혼자 서 있는 채로 남겨지길 원하지 않는다.",
+   "짝짓기할 상대, 꽃가루 매개자를 불러들이는 것을 도와줄 상대도 없을 것이다.",
+   "평화로운 지역에 있는 미역취들에 비해, 더 적대적 환경에 있는 미역취들은 더 널리 이해할 수 있는 화학적 신호들을 보내고, 그렇게 함으로써 발신자들과 수신자들 모두를 이롭게 한다."
+  ],
+  "checks": [
+   "Researchers recently found (that / what) goldenrods (that / what) live in peaceful areas without much threat from predators will issue chemical alarm calls (that / what) are incredibly (specific / specifically) — comprehensible only to their close kin — on the rare occasion they (attack / are attacked).",
+   "But goldenrods in more hostile territory (signal / signals) to their neighbors (using / used) chemical phrases easily (understanding / understood) by all the goldenrod in the area, not just their biological kin.",
+   "Instead of (using / to use) (coding / coded) whisper networks, these goldenrod broadcast the threat over loudspeaker, so to speak.",
+   "It is the first time research (has confirmed / has been confirmed) (that / what) these chemical communications are beneficial not only to the plant (receiving / received) (it / them) but also to the sender.",
+   "When times are truly tough, you do not want to (leave / be left) (standing / stood) in a field alone.",
+   "There will be no one (mate / to mate) with, no one to help (bring / bringing) in pollinators."
+  ],
+  "given": null
+ }
+}
