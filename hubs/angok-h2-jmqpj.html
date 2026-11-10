@@ -39,7 +39,7 @@ a.unit:active { transform: scale(.99) }
 /* 11/10 안곡고 2: 본문 + 모의고사를 한 주소에서. 진도는 각 앱이 이 기기에 저장한 기록(daily:<id>:<이름>)을 읽어 보여 줌 */
 var UNITS = [
   { tag: '본문', cls: '', name: '천재(조수경) 영어Ⅱ Lesson 5', sub: '7000 Oaks Make a Forest', id: 'h2-chunjae-cho-L5', days: ['d1','d2','d3','d4'], href: '../h2-chunjae-cho-L5-5aktr/' },
-  { tag: '모의고사', cls: 'mock', name: '2026년 9월 고2 학평', sub: '24·29·30·34·38·40·41~42번 + 10월 · 고3 6월 모평', id: 'h2-mock-2609-angok', days: ['d1','d2','d3','d4','e1','e2','e3','e4','e5','e6','e7','e8','e9','e10'], href: '../h2-mock-2609-angok-etlg7/' }
+  { tag: '모의고사', cls: 'mock', name: '2026년 9월 고2 학평', sub: '24·29·30·34·38·41~42번 + 10월 · 고3 6월 모평', id: 'h2-mock-2609-angok', days: ['q24','q29','q30','q34','q38','q41','e1','e2','e3','e4','e5','e6','e7','e8','e9','e10'], href: '../h2-mock-2609-angok-etlg7/' }
 ];
 function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
 function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
