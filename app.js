@@ -1081,22 +1081,38 @@
     return '';
   }
 
+  /* 11/10 빠르게 누르다 잘못 채점되는 일 막기
+     - 문제가 뜬 직후 0.35초, 답한 직후 '다음' 0.5초는 누름을 무시(두 번 누름·Enter 두 번이 다음 문제로 넘어가는 것 방지)
+     - P.confirmPick(동아 윤정미 중1 문법): 보기를 누르면 '선택'만 되고(다시 고르기 가능), 아래 '확인'을 눌러야 채점 */
+  var QSHOWN = 0, ANSAT = 0;
+  function confirmTap(card, sel, b, grade) {
+    return function () {
+      if (RS.answered || Date.now() - QSHOWN < 350) return;
+      if (!P.confirmPick) { grade(); return; }
+      card.querySelectorAll(sel).forEach(function (x) { x.classList.toggle('picked', x === b); x.setAttribute('aria-pressed', x === b); });
+      var bar = $('#okbar');
+      if (!bar) { bar = document.createElement('div'); bar.className = 'nextbar'; bar.id = 'okbar'; bar.innerHTML = '<button class="btn" id="okb">확인</button>'; card.appendChild(bar); }
+      var okb = $('#okb'); okb.disabled = false;
+      okb.onclick = function () { if (RS.answered) return; okb.disabled = true; bar.remove(); card.querySelectorAll(sel).forEach(function (x) { x.classList.remove('picked'); }); grade(); };
+      okb.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    };
+  }
   function bindQ(q) {
-    var card = $('#qcard');
-    if (q.t === 'choice' || q.t === 'pick') card.querySelectorAll('.opt').forEach(function (b) { b.onclick = function () {
+    var card = $('#qcard'); QSHOWN = Date.now();
+    if (q.t === 'choice' || q.t === 'pick') card.querySelectorAll('.opt').forEach(function (b) { b.onclick = confirmTap(card, '.opt', b, function () {
       var o = q.opts[+b.dataset.i], ok = o === q.ans;
       card.querySelectorAll('.opt').forEach(function (x) { x.disabled = true; if (q.opts[+x.dataset.i] === q.ans) x.classList.add('right'); });
       if (!ok) b.classList.add('wrong');
       var bl = $('#blank');
       if (bl && (q.t === 'pick' || q.fill)) { if (q.t === 'pick') bl.textContent = q.ans; else bl.innerHTML = q.fill; bl.classList.add('ok'); }
       answer(ok, q.ex);
-    }; });
-    if (q.t === 'tf') card.querySelectorAll('.opt').forEach(function (b) { b.onclick = function () {
+    }); });
+    if (q.t === 'tf') card.querySelectorAll('.opt').forEach(function (b) { b.onclick = confirmTap(card, '.opt', b, function () {
       var v = b.dataset.v === '1', ok = v === q.ans;
       card.querySelectorAll('.opt').forEach(function (x) { x.disabled = true; if ((x.dataset.v === '1') === q.ans) x.classList.add('right'); });
       if (!ok) b.classList.add('wrong');
       answer(ok, q.ex);
-    }; });
+    }); });
     if (q.t === 'verb') {
       var inp = $('#vin'); inp.focus({ preventScroll: true });
       $('#vf').addEventListener('submit', function (e) {
@@ -1108,14 +1124,14 @@
         answer(ok, q.ex, ok ? '' : '정답: <b class="en">' + E(q.a.join(' / ')) + '</b>');
       });
     }
-    if (q.t === 'error') card.querySelectorAll('.mark').forEach(function (b) { b.onclick = function () {
+    if (q.t === 'error') card.querySelectorAll('.mark').forEach(function (b) { b.onclick = confirmTap(card, '.mark', b, function () {
       if (RS.answered) return;
       var m = +b.dataset.m, ok = m === q.w;
       card.querySelectorAll('.mark').forEach(function (x) { x.disabled = true; if (+x.dataset.m === q.w) x.classList.add('right'); });
       if (!ok) b.classList.add('wrong');
       var wrongTxt = q.parts.filter(function (p) { return p.mk === q.w; })[0].x;
       answer(ok, q.ex, (ok ? '' : '틀린 곳은 <b>' + CIRC[q.w] + '</b> · ') + '<span class="en">' + E(wrongTxt) + ' → <span class="fix">' + E(q.fix) + '</span></span>');
-    }; });
+    }); });
     if (q.t === 'hunt') {
       var sel = [], hchk = $('#hchk'), hcnt = $('#hcnt'), phase = 1;
       card.querySelectorAll('.hw').forEach(function (b) { b.onclick = function () {
@@ -1219,7 +1235,8 @@
       var on = cf.classList.toggle('on'); if (on) noteAdd(q, 'conf'); else noteUnconf(q);
       cf.setAttribute('aria-pressed', on); cf.textContent = on ? '★ 헷갈려요 (오답 노트에 담김)' : '☆ 헷갈려요';
     };
-    var nx = $('#nx'); nx.onclick = next; nx.focus({ preventScroll: true });
+    ANSAT = Date.now();
+    var nx = $('#nx'); nx.onclick = function () { if (Date.now() - ANSAT < 500) return; next(); }; nx.focus({ preventScroll: true });
     nx.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   }
 
