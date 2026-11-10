@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<title>저동고 1학년 시험 범위</title>
+<title>저동고 기말</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <style>
@@ -31,15 +31,15 @@ a.unit:active { transform: scale(.99) }
 <body>
 <main>
   <div class="top"><div class="planks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-    <h1>저동고 1학년 시험 범위</h1><p>공부할 것을 골라 들어가세요</p><div class="who" id="who"></div></div>
+    <h1>저동고 기말</h1><p>공부할 것을 골라 들어가세요</p><div class="who" id="who"></div></div>
   <div id="list"></div>
   <p class="foot">이름은 한 번만 입력하면 두 곳 모두에서 이어져요.</p>
 </main>
 <script>
 /* 11/10 저동고 1: 본문 + 모의고사를 한 주소에서. 진도는 각 앱이 이 기기에 저장한 기록(daily:<id>:<이름>)을 읽어 보여 줌 */
 var UNITS = [
-  { tag: '본문', cls: '', name: '능률(민병천) 공통영어2 Lesson 3 · 4', sub: 'A Timeless Symbol of Korea · Looking to Nature for Help', id: 'h1-ne-min-L3', days: ['d1','d2','d3','f1','f2','f3','l4a','l4b','l4c','g1','g2','g3'], href: '../h1-ne-min-L3-2chi2/' },
-  { tag: '모의고사', cls: 'mock', name: '2026년 10월 고1 학평', sub: '20~24 · 28~35 · 37~40번 (한 지문 = 하루)', id: 'h1-mock-2610-jeodong', days: ['q20','q21','q22','q23','q24','q28','q29','q30','q31','q32','q33','q34','q35','q37','q38','q39','q40'], href: '../h1-mock-2610-jeodong-9bxzm/' }
+  { tag: '본문', cls: '', name: '능률민 3, 4과', sub: 'A Timeless Symbol of Korea · Looking to Nature for Help', id: 'h1-ne-min-L3', days: ['d1','d2','d3','f1','f2','f3','l4a','l4b','l4c','g1','g2','g3'], href: '../h1-ne-min-L3-2chi2/' },
+  { tag: '모의고사', cls: 'mock', name: '2026년 10월 모의고사', sub: '20~24 · 28~35 · 37~40번 (한 지문 = 하루)', id: 'h1-mock-2610-jeodong', days: ['q20','q21','q22','q23','q24','q28','q29','q30','q31','q32','q33','q34','q35','q37','q38','q39','q40'], href: '../h1-mock-2610-jeodong-9bxzm/' }
 ];
 function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
 function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
