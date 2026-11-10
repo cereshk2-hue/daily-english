@@ -6,6 +6,7 @@
   var P = window.PKG;
   /* Wrap-up 시험(P.tests): 오답 노트·시트 기록에서는 DAY처럼 다루려고 가짜 DAY를 붙인다 (P.days 뒤 번호) */
   var TESTS = P.tests || [], CIRC = '①②③④⑤';
+  var TL = P.testLabel || 'Wrap-up'; /* 11/10 탭 이름을 교재마다 (중1 천재 4과: '실전 문제'). 시트 기록 이름은 그대로 'Wrap-up' */
   var TD = TESTS.map(function (t) { return { id: 'w:' + t.id, name: 'Wrap-up', range: t.short, steps: [{ title: t.title, type: 'mc', items: [] }], test: t }; });
   function DX(i) { return i < P.days.length ? P.days[i] : TD[i - P.days.length]; }
   function ALLD() { return P.days.concat(TD); }
@@ -522,7 +523,7 @@
     }
     var TABS = [['today', '오늘의 학습', '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>'], ['text', '본문', '<path d="M5 3h10l4 4v14H5z"/><path d="M9 12h6M9 16h4"/>'],
       ['types', '유형별 연습', '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>']];
-    if (TESTS.some(function (t) { return !isBoss(t); })) TABS.push(['test', 'Wrap-up', '<path d="M6 3h9l4 4v14H6z"/><path d="M9 13l2 2 4-4"/>']);
+    if (TESTS.some(function (t) { return !isBoss(t); })) TABS.push(['test', TL, '<path d="M6 3h9l4 4v14H6z"/><path d="M9 13l2 2 4-4"/>']);
     if (TESTS.some(isBoss)) TABS.push(['boss', '끝판왕', '<path d="M12 3c1 3 4 4.5 4 8.5a4 4 0 0 1-8 0c0-2 1-3 1-3 .5 1.5 1.5 2 2 2 0-3-1-5 1-7.5z"/><path d="M8 21h8"/>']);
     h += '<div class="stack">';
     if (TAB === 'test' && TESTS.length) h += testsHTML();
@@ -637,7 +638,7 @@
       '<div class="status">' + status + '</div><div class="acts">' + btns + '</div></section>';
   }
   function testsHTML() {
-    return '<h3 class="sech">Wrap-up 시험</h3><p class="sub" style="margin:0 0 12px">종이 시험지 대신 여기에서 답을 입력해요. <b>처음 제출한 점수</b>가 선생님께 전달돼요. 틀린 문제는 해설을 보고 <b>시험지에 정리</b>해요 (오답 노트에는 담기지 않아요).</p>' +
+    return '<h3 class="sech">' + TL + (/시험|문제/.test(TL) ? '' : ' 시험') + '</h3><p class="sub" style="margin:0 0 12px">종이 시험지 대신 여기에서 답을 입력해요. <b>처음 제출한 점수</b>가 선생님께 전달돼요. 틀린 문제는 해설을 보고 <b>시험지에 정리</b>해요 (오답 노트에는 담기지 않아요).</p>' +
       TESTS.map(function (t, ti) { return isBoss(t) ? '' : testCardHTML(ti); }).join('');
   }
   function bossHTML() {
@@ -706,7 +707,7 @@
     RS = null; top();
     var t = TESTS[ti], st = TST(t), f = st.first; rec = rec || f;
     var left = testLeft(t), practice = rec !== f, w = hasW(t), sc = recScore(t, rec), mx = recMax(t, rec), chk = Object.keys(rec.wb || {}).filter(function (k) { return rec.wb[k] === 'chk'; }).length;
-    var h = '<div class="topbar"><div class="row"><button class="link" id="tback">← ' + (isBoss(t) ? '끝판왕' : 'Wrap-up') + ' 목록</button><span class="crumb">' + E(t.title) + ' · <b>결과</b></span></div></div><div class="stack examwrap">';
+    var h = '<div class="topbar"><div class="row"><button class="link" id="tback">← ' + (isBoss(t) ? '끝판왕' : TL) + ' 목록</button><span class="crumb">' + E(t.title) + ' · <b>결과</b></span></div></div><div class="stack examwrap">';
     h += '<section class="card pop stack" style="gap:8px"><div class="eyebrow">' + (practice ? '연습 결과 · 처음 점수는 그대로예요' : '제출 완료 · 선생님께 전달돼요') + '</div>' +
       '<div class="score">' + pctOf(sc, mx) + '<small>점' + (w ? ' (선택형 ' + rec.c + '/' + rec.t + ')' : ' (' + rec.c + '/' + rec.t + ')') + '</small></div>' +
       (chk ? '<p class="note" style="margin:0"><b>서술형 ' + chk + '칸은 선생님이 확인해요.</b> 정해 둔 답과 달라서 아직 점수에 넣지 않았어요.</p>' : '') +
