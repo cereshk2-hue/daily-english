@@ -39,7 +39,7 @@ a.unit:active { transform: scale(.99) }
 /* 11/10 중산중 1: 동아(윤정미) 본문 + 공통 문법을 한 주소에서. 진도는 각 앱이 이 기기에 저장한 기록(daily:<id>:<이름>)을 읽어 보여 줌 */
 var UNITS = [
   { tag: '본문', cls: '', name: '동아(윤정미) Lesson 5~7', sub: 'Zero-Waste Challenge · Let’s Make a Movie! · Who Threw a Cake at the Monalisa?', id: 'm1-donga-yoon-L6', days: ['c6a','c6b','d1','d2','c7a','c7b','d3','d4','c5a','c5b','L5a','L5b'], href: '../m1-donga-yoon-L6-my3ip/' },
-  { tag: '문법', cls: 'mock', name: '공통 문법', sub: 'to부정사 ① 명사적 용법 · 접속사 that', id: 'm1-grammar-to1', days: ['t1','t2','t3','t4','t5','t6','t7','t8','t9','t10','t11','t12','c1','c2','c3','c4','c5','c6','c7','c8'], href: '../m1-grammar-to1-1nn76/' }
+  { tag: '문법', cls: 'mock', name: '공통 문법', sub: 'to부정사 ①② · 접속사 that · 시간 접속사 when / before / after', id: 'm1-grammar-to1', days: ['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10', 't11', 't12', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'w1', 'w2', 'w3', 'w4', 'w5', 'w6', 'w7', 'w8'], href: '../m1-grammar-to1-1nn76/' }
 ];
 function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
 function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
