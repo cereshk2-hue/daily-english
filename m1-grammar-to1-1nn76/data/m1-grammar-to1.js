@@ -4,6 +4,7 @@
 window.PKG = {
   id: 'm1-grammar-to1',
   school: '중1 동아(윤정미)·중1 천재(소영순)',
+  confirmPick: true, /* 11/10 보기를 누르면 선택만, '확인'을 눌러야 채점 (빨리 누르다 잘못 채점되는 것 방지) */
   unit: '공통 문법 · to부정사 ① · 접속사 that',
   title: 'to부정사 ① 명사적 용법 · 접속사 that',
   titleKo: '~하는 것 · 주어 · 목적어 · 보어 / ~라고 생각하다 · 지시사 that과 구별',
