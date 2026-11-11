@@ -1,6 +1,7 @@
 # 11/11 중산고1 · 비밀노트(edu-lab) 2025년 고1 9월 변형문제 18~24번 → h1-mock-2509 '비밀노트 변형문제' 탭 (종이 시험지 + 답안지)
 # t1~t4.txt = hwp 글자(generators/hwpread.py). 문항 번호 = 파일 안 순서(묶음 '다음 글을 읽고 물음에 답하시오' 머리말은 번호 없음 — t3 '위 29번 참조'로 확인)
-import re, json, html as H
+import re, json, sys, html as H
+sys.path.insert(0, '/home/claude/srcrepo/wrapup/bimi'); from exp_bimi import fmt as XF
 D = '/home/claude/proj/data/h1-mock-2509.js'
 CIRC = '①②③④⑤'; ALT = dict(zip('➀➁➂➃➄', CIRC))
 def nc(s): return ''.join(ALT.get(c, c) for c in s)
@@ -69,29 +70,69 @@ NOTE = {
  ('3', 28): '[검수] 시험지 선지 번호 ③이 두 번 나와요(두 번째 ③ Spending time…). 정답은 첫 번째 ③ focus on anything but an object.',
 }
 def esc(s): return H.escape(s, quote=False)
+# 검수 반영: 시험지(인쇄용)와 앱 모두 고친 글로 (파일, 찾을 것, 바꿀 것)
+FIXT = [
+ ('1', 'excitement ❹ washing over me', 'excitement ❹ to wash over me'),          # 18·19-17: have+O+-ing 도 가능 → 확실히 틀린 to부정사로
+ ('2', 'Inefficient teachers overlook _', 'Inefficient teachers _'),              # 20·21-8: 빈칸 위치
+ ('2', '일치하지 않는 것을 고르시오.(20번)', '일치하지 않는 것을 모두 고르시오.(20번)'),  # 20·21-12
+ ('2', '(총 5개)', '(총 4개)'), ('2', 'evaporates→is evaporated, ', ''),          # 20·21-18: evaporates 는 맞음
+ ('2', '② The Endless Recycling of Atoms', '② The Endless Creation of New Atoms'),  # 20·21-27: 복수 정답 소지
+ ('3', 'creating ⓓ visual images', 'creating ⓓ visionary images'),              # 22·23-24: visual 도 자연스러움
+ ('3', '1) ③ Spending', '1) ④ Spending'), ('3', 'can ④ make you feel accomplished. This is ⑤ a key part', 'can ⑤ make you feel accomplished. This is a key part'),  # 22·23-28 번호 중복
+]
+# 서술형: 문항 바로 아래 정답 줄 수 (시험지에는 빼기)
+DROP = {('1', n): 1 for n in (3, 8, 14, 15, 18, 23, 29, 30)}
+DROP.update({('2', 2): 1, ('2', 15): 1, ('2', 16): 1, ('2', 17): 1, ('2', 18): 2, ('2', 31): 3, ('2', 32): 1,
+             ('3', 35): 1, ('3', 36): 1, ('3', 37): 2, ('3', 38): 2, ('3', 39): 1, ('3', 40): 2, ('3', 41): 2, ('3', 42): 2, ('3', 43): 2, ('3', 44): 1, ('3', 45): 2, ('3', 46): 1,
+             ('4', 6): 2, ('4', 10): 1, ('4', 11): 8, ('4', 14): 1})
+TONLY = re.compile(r'^\s*(요약문 해석|제목 해석|요지 해석|해석은 위|정답\s*$)')   # 정답지에만 있던 줄
+HDR = re.compile(r'^\s*다음 글을 읽고 (질문|물음)에 답하시오')
 def parse(fk):
-    L = open('/home/claude/srcrepo/wrapup/bimi/t%s.txt' % fk, encoding='utf-8').read().split('\n')
+    raw = open('/home/claude/srcrepo/wrapup/bimi/t%s.txt' % fk, encoding='utf-8').read()
+    for f, a, b in FIXT:
+        if f == fk: assert raw.count(a) == 1, (fk, a); raw = raw.replace(a, b)
+    L = raw.split('\n')
     if fk in END: L = L[:END[fk]]
     S = STEMS[fk]; items = []
+    HS = [i for i, l in enumerate(L) if HDR.match(l)]
+    groups = {}
+    for h in HS:   # 묶음 지문: 머리말 다음 줄부터 다음 문항 전까지
+        nx = min([x for x in S if x > h] + [len(L)])
+        groups[h] = {'head': L[h].strip(), 'text': '\n'.join(l.rstrip() for l in L[h + 1:nx] if not l.strip().startswith(SKIP)).strip()}
     for n, j in enumerate(S, 1):
-        stop = S[n] if n < len(S) else len(L)
+        stop = min([x for x in S if x > j] + [h for h in HS if h > j] + [len(L)])
         seg = [l for l in L[j + 1:stop] if not l.strip().startswith(SKIP) and l.strip() not in ('/',)]
         stem = L[j].strip()
         key = (fk, n)
         if key in W:
-            body = [l for l in seg]
+            body = seg[:]; k_ = DROP.get(key, 0)
+            while k_ and body:   # 정답 줄 = 앞에서부터 빈 줄 아닌 줄 k_개
+                if body.pop(0).strip(): k_ -= 1
+            body = [l for l in body if not TONLY.match(l)]
             ans_line = ''
         else:
             ai = next(i for i, l in enumerate(seg) if re.match(r'\s*[①-⑤➀-➄]', nc(l)) and l.startswith(' '))
-            ans_line = nc(seg[ai].strip()); body = seg[:ai] + seg[ai + 1:]
+            ans_line = nc(seg[ai].strip()); body = [l for l in seg[:ai] + seg[ai + 1:] if not TONLY.match(l)]
+            if key == ('3', 28):   # 제시문 해석(정답지용 우리말 정리) 빼기
+                a0 = next(i for i, l in enumerate(body) if l.strip().startswith('제시문 해석')); a1 = next(i for i, l in enumerate(body) if l.strip().startswith('Gardening is Good'))
+                body = body[:a0] + body[a1:]
+        hb = [h for h in HS if h < j]; g = hb[-1] if hb else None
+        def haspass(lines): return any(len(re.sub(r'[^A-Za-z]', '', l)) > 450 for l in lines)   # 지문 한 덩어리가 있는 문항
+        it_g = g if g is not None and not haspass(seg) and not any(g < x < j and haspass(L[x + 1:min([y for y in S if y > x] + [h for h in HS if h > x] + [len(L)])]) for x in S) else None
         it = {'n': str(n), 'src': ('%s번' % m.group(1)) if (m := re.search(r'\((\d\d)번?\)', stem)) else '', 'stem': esc(stem), 'pts': 2}
-        txt = '\n'.join(l.rstrip() for l in body).strip()
+        BL = lambda l: re.sub(r'(?<=\S)[ \t\u3000]{6,}(?=\S|$)', ' ________ ', l.rstrip()).strip()   # 공백으로만 된 빈칸 → 밑줄
+        body = [BL(l) for l in body]
+        for i_ in range(1, len(body)):   # 줄 끝 공백 빈칸이 다음 줄 '.'로 이어진 경우
+            if body[i_][:1] in '.,' and body[i_] and body[i_ - 1]: body[i_ - 1] += ' ________' + body[i_]; body[i_] = ''
+        txt = '\n'.join(body).strip()
+        if it_g is not None:
+            it['grp'] = it_g; it['ctx'] = '<b>' + esc(groups[it_g]['head']) + '</b><br>' + esc(groups[it_g]['text']).replace('\n', '<br>')
         if key in W:
             bl = W[key]; per = round(2 / len(bl), 2)
             for b in bl: b['pts'] = per
             bl[-1]['pts'] = round(2 - per * (len(bl) - 1), 2)
             it.update({'kind': 'write', 'blanks': bl, 'body': esc(txt).replace('\n', '<br>'), 'model': ' / '.join(b['ans'][0] for b in bl),
-                       'ex': (NOTE.get(key, '') + '\n' if key in NOTE else '') + ('여러 가지로 쓸 수 있는 답은 선생님이 확인해요.' if any(b['review'] for b in bl) else '')})
+                       'ex': XF(key, '') + ('\n(여러 가지로 쓸 수 있는 답은 선생님이 확인해요.)' if any(b['review'] for b in bl) else '')})
             items.append(it); continue
         m = re.match(r'([①-⑤]+)\s*:?\s*(.*)', ans_line)
         ans = [CIRC.index(c) for c in m.group(1)]
@@ -110,20 +151,23 @@ def parse(fk):
             i += 1
         if not all(opts): opts = [o or CIRC[k] for k, o in enumerate(opts)]
         note = m.group(2).strip()
+        rest = [re.sub(r'(?<=\S)[ \t\u3000]{6,}(?=\S|$)', ' ________ ', l.rstrip()).strip() for l in rest]
         orig = [l.strip() for l in rest if l.strip().startswith('[원문]')]
         rest = [l for l in rest if not l.strip().startswith('[원문]')]
-        exs = []
-        if key in NOTE: exs.append(NOTE[key])
-        exs.append('정답 ▶ ' + ''.join(CIRC[a] for a in ans) + ((' ' + note) if note else ''))
+        exs = [XF(key, ''.join(CIRC[a] for a in ans))]
+        if note and not note.startswith(':'): exs.append('출제 메모 ▶ ' + note.lstrip('* ').strip())
         exs += orig
         it.update({'body': esc('\n'.join(rest).strip()).replace('\n', '<br>'), 'opts': [esc(o) for o in opts], 'en': sum(c.isascii() and c.isalpha() for c in opts[0]) > len(opts[0]) * .5,
-                   'ans': ans[0] if len(ans) == 1 else ans, 'ex': '\n'.join(exs), 'ctx': ''})
+                   'ans': ans[0] if len(ans) == 1 else ans, 'ex': '\n'.join(exs)})
+        it.setdefault('ctx', '')
         items.append(it)
-    return items
+    return items, groups
 META = [('1', 'bimi-1819', '18·19번'), ('2', 'bimi-2021', '20·21번'), ('3', 'bimi-2223', '22·23번'), ('4', 'bimi-24', '24번')]
-tests = []
+tests = []; GR = {}
+GFORCE, GSOFT = set(), set()
 for fk, tid, sh in META:
-    its = parse(fk)
+    its, grs = parse(fk)
+    GR[tid] = {str(k): v for k, v in grs.items()}
     tests.append({'id': tid, 'kind': 'bimi', 'title': '비밀노트 변형문제 ' + sh, 'short': '비밀노트 ' + sh, 'school': '중산고 1학년', 'minutes': 50, 'items': its})
     mc = [i for i in its if i.get('kind') != 'write']
     print(tid, len(its), '문항 · 객관식', len(mc), '·', ' '.join('%s:%s' % (i['n'], ''.join(CIRC[a] for a in (i['ans'] if isinstance(i['ans'], list) else [i['ans']]))) for i in mc))
@@ -133,4 +177,4 @@ blk = ('/* BIMI-TESTS: 중산고1 비밀노트 변형문제 (wrapup/bimi/build_b
 if '/* BIMI-TESTS' in js: js = re.sub(r'/\* BIMI-TESTS.*?/\* /BIMI-TESTS \*/\n', lambda m: blk, js, flags=re.S)
 else: js = js.rstrip('\n') + '\n' + blk
 open(D, 'w', encoding='utf-8').write(js)
-json.dump(tests, open('/home/claude/work/jsan/tests.json', 'w'), ensure_ascii=False, indent=1)
+json.dump({'tests': tests, 'groups': GR}, open('/home/claude/work/jsan/tests.json', 'w'), ensure_ascii=False, indent=1)
