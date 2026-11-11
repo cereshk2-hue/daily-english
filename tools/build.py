@@ -25,7 +25,11 @@ for f in sorted(glob.glob(os.path.join(R,'data','*.js'))):
     units.append({'folder':folder,'grade':grade,'publisher':publisher,'unit':unit,'title':title,'days':days})
     page=src.replace('__TITLE__',title+' Daily').replace('__DATA__',did)
     out=os.path.join(gh,folder); os.makedirs(os.path.join(out,'data'))
-    open(os.path.join(out,'index.html'),'w',encoding='utf-8').write(wrap(page))
+    # 11/11 캐시 때문에 새 문제가 안 보이는 일 막기: 파일 내용이 바뀌면 주소(?v=)도 바뀜
+    import hashlib; hv=lambda fp: hashlib.md5(open(fp,'rb').read()).hexdigest()[:8]
+    vpage=page.replace('src="data/%s.js"'%did,'src="data/%s.js?v=%s"'%(did,hv(f))).replace('src="app.js"','src="app.js?v=%s"'%hv(os.path.join(R,'app.js')))
+    assert vpage!=page
+    open(os.path.join(out,'index.html'),'w',encoding='utf-8').write(wrap(vpage))
     shutil.copy(os.path.join(R,'app.js'),out); shutil.copy(f,os.path.join(out,'data'))
     prev=re.sub(r'<script src="([^"]+)"></script>',lambda m:'<script>\n'+open(os.path.join(R,m.group(1)),encoding='utf-8').read()+'\n</script>',page)
     prev=prev.replace('<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n','')
