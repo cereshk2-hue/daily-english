@@ -6,6 +6,7 @@
   var P = window.PKG;
   /* Wrap-up 시험(P.tests): 오답 노트·시트 기록에서는 DAY처럼 다루려고 가짜 DAY를 붙인다 (P.days 뒤 번호) */
   var TESTS = P.tests || [], CIRC = '①②③④⑤';
+  var TL = P.testLabel || 'Wrap-up'; /* 11/10 탭 이름을 교재마다 (중1 천재 4과: '실전 문제'). 시트 기록 이름은 그대로 'Wrap-up' */
   var TD = TESTS.map(function (t) { return { id: 'w:' + t.id, name: 'Wrap-up', range: t.short, steps: [{ title: t.title, type: 'mc', items: [] }], test: t }; });
   function DX(i) { return i < P.days.length ? P.days[i] : TD[i - P.days.length]; }
   function ALLD() { return P.days.concat(TD); }
@@ -57,7 +58,7 @@
   try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(function () {}); } catch (e) {}
   var app = document.getElementById('app');
   var CIRC = '①②③④⑤⑥⑦⑧⑨⑩';
-  var SHORT = { hunt: '틀린곳', vocab: '어휘', tf: 'TF', verb: '동사변형', error: '오류찾기', order: '문장순서', scramble: '주요문장', mc: '문법', insert: '삽입', odd: '어색한문장', blank: '빈칸' };
+  var SHORT = { multi: '모두고르기', hunt: '틀린곳', vocab: '어휘', tf: 'TF', verb: '동사변형', error: '오류찾기', order: '문장순서', scramble: '주요문장', mc: '문법', insert: '삽입', odd: '어색한문장', blank: '빈칸' };
 
   /* ---------- 저장 ---------- */
   /* 학생별 저장: 같은 기기(학원 아이패드)를 여러 학생이 써도 기록이 섞이지 않게 이름마다 따로 저장한다.
@@ -223,7 +224,7 @@
     return weakList(d).map(function (w) { return stepShort(w.s) + ' ' + w.sc[0] + '/' + w.sc[1] + ' → ' + (w.n ? '보충 ' + w.best.c + '/' + w.best.t + (w.ok ? ' ✓' : '') + (w.n > 1 ? ' (' + w.n + '번)' : '') + ' ' + fmtTime(w.last.at) : '보충 안 함'); }).join(' / ');
   }
   function stepShort(st) { return st.type === 'pick' ? st.title : st.type === 'mc' && /실전/.test(st.title) ? '실전' : st.type === 'mc' && /일치/.test(st.title) ? '일치' : st.type === 'mc' && /요약/.test(st.title) ? '요약문' : SHORT[st.type]; }
-  var CARD = { hunt: '틀린곳', vocab: '단어', tf: 'T/F', verb: '동사', error: '오류', order: '순서', scramble: '스크램블', mc: '문법', insert: '삽입', odd: '어색', blank: '빈칸' };
+  var CARD = { multi: '모두', hunt: '틀린곳', vocab: '단어', tf: 'T/F', verb: '동사', error: '오류', order: '순서', scramble: '스크램블', mc: '문법', insert: '삽입', odd: '어색', blank: '빈칸' };
   function cardLabel(st) { return st.type === 'pick' ? (/어법/.test(st.title) ? '어법' : '어휘') : st.type === 'mc' && /실전/.test(st.title) ? '실전' : st.type === 'mc' && /일치/.test(st.title) ? '일치' : st.type === 'mc' && /요약/.test(st.title) ? '요약' : CARD[st.type]; }
   function fmtTime(t) { var d = new Date(t); return (d.getMonth() + 1) + '/' + d.getDate() + ' ' + String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); }
   function top() { window.scrollTo(0, 0); }
@@ -449,6 +450,8 @@
       return { t: 'choice', prompt: '<span class="en">' + E(q.s).replace('____', '<span class="blank" id="blank">&nbsp;</span>') + '</span>', fill: E(q.opts[0]),
         opts: shuffle(q.opts).map(E), ans: E(q.opts[0]), ex: q.ex, key: q.opts[0], optEn: true };
     });
+    if (t === 'multi') return shuffle(it).map(function (q) { /* 알맞은 것 모두 고르기: 정답 1개~전부, 고른 것이 정답과 똑같아야 정답 */
+      return { t: 'multi', prompt: q.q, opts: shuffle(q.opts), ans: q.ans.slice(), ex: q.ex, key: strip(q.ans.slice().sort().join(' / ')), sub: q.sub || '뜻이 같은(비슷한) 말을 <b>모두</b> 고르세요 · 정답은 1개 ~ 전부' }; });
     if (t === 'mc') return shuffle(it).map(function (q) { var ai = q.keep ? q.a : 0; return { t: 'choice', prompt: q.q, opts: q.keep ? q.opts.slice() : q.sort ? q.opts.slice().sort() : shuffle(q.opts), /* sort: 개수·기호 묶음은 차례대로 · keep: 시험지 ①~⑤ 순서 그대로(정답 번호 a) */ ans: q.opts[ai], ex: q.ex, key: strip(q.opts[ai]), num: !!q.keep }; });
     return [];
   }
@@ -522,7 +525,7 @@
     }
     var TABS = [['today', '오늘의 학습', '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>'], ['text', '본문', '<path d="M5 3h10l4 4v14H5z"/><path d="M9 12h6M9 16h4"/>'],
       ['types', '유형별 연습', '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>']];
-    if (TESTS.some(function (t) { return !isBoss(t); })) TABS.push(['test', 'Wrap-up', '<path d="M6 3h9l4 4v14H6z"/><path d="M9 13l2 2 4-4"/>']);
+    if (TESTS.some(function (t) { return !isBoss(t); })) TABS.push(['test', TL, '<path d="M6 3h9l4 4v14H6z"/><path d="M9 13l2 2 4-4"/>']);
     if (TESTS.some(isBoss)) TABS.push(['boss', '끝판왕', '<path d="M12 3c1 3 4 4.5 4 8.5a4 4 0 0 1-8 0c0-2 1-3 1-3 .5 1.5 1.5 2 2 2 0-3-1-5 1-7.5z"/><path d="M8 21h8"/>']);
     h += '<div class="stack">';
     if (TAB === 'test' && TESTS.length) h += testsHTML();
@@ -637,7 +640,7 @@
       '<div class="status">' + status + '</div><div class="acts">' + btns + '</div></section>';
   }
   function testsHTML() {
-    return '<h3 class="sech">Wrap-up 시험</h3><p class="sub" style="margin:0 0 12px">종이 시험지 대신 여기에서 답을 입력해요. <b>처음 제출한 점수</b>가 선생님께 전달돼요. 틀린 문제는 해설을 보고 <b>시험지에 정리</b>해요 (오답 노트에는 담기지 않아요).</p>' +
+    return '<h3 class="sech">' + TL + (/시험|문제/.test(TL) ? '' : ' 시험') + '</h3><p class="sub" style="margin:0 0 12px">종이 시험지 대신 여기에서 답을 입력해요. <b>처음 제출한 점수</b>가 선생님께 전달돼요. 틀린 문제는 해설을 보고 <b>시험지에 정리</b>해요 (오답 노트에는 담기지 않아요).</p>' +
       TESTS.map(function (t, ti) { return isBoss(t) ? '' : testCardHTML(ti); }).join('');
   }
   function bossHTML() {
@@ -706,9 +709,14 @@
     RS = null; top();
     var t = TESTS[ti], st = TST(t), f = st.first; rec = rec || f;
     var left = testLeft(t), practice = rec !== f, w = hasW(t), sc = recScore(t, rec), mx = recMax(t, rec), chk = Object.keys(rec.wb || {}).filter(function (k) { return rec.wb[k] === 'chk'; }).length;
-    var h = '<div class="topbar"><div class="row"><button class="link" id="tback">← ' + (isBoss(t) ? '끝판왕' : 'Wrap-up') + ' 목록</button><span class="crumb">' + E(t.title) + ' · <b>결과</b></span></div></div><div class="stack examwrap">';
+    var h = '<div class="topbar"><div class="row"><button class="link" id="tback">← ' + (isBoss(t) ? '끝판왕' : TL) + ' 목록</button><span class="crumb">' + E(t.title) + ' · <b>결과</b></span></div></div><div class="stack examwrap">';
+    /* 테스트 결과 카드: 학생이 캡처해 선생님 → 학부모께 보내는 화면. 빨간 띠 + TEST 표시로 '테스트 본 것'이 한눈에 보이게 */
+    var kind = isBoss(t) ? '끝판왕 테스트' : TL + ' 테스트', score = pctOf(sc, mx);
+    h += '<section class="tcard' + (practice ? ' prac' : '') + '" id="tcard"><div class="tc-band"><span class="tc-badge">TEST</span><div><b>' + E(kind) + '</b><small>' + (practice ? '다시 풀기(연습) 결과' : '테스트 결과') + '</small></div></div>' +
+      '<div class="tc-body"><div class="tc-who"><div class="tc-name">' + E(S.name || '') + '</div><div class="tc-unit">' + E(P.school) + ' · ' + E(P.unit) + '</div><div class="tc-title">' + E(t.title) + '</div></div>' +
+      '<div class="tc-score"><b>' + score + '</b><span>점</span><small>' + rec.c + ' / ' + rec.t + (w ? ' (선택형)' : '') + '</small></div></div>' +
+      '<div class="tc-foot"><span>' + fmtTime(rec.at) + ' 제출</span><span>' + (rec.wrong.length ? '틀린 문제 ' + rec.wrong.length + '개' : '모두 맞힘 ✔') + '</span></div></section>';
     h += '<section class="card pop stack" style="gap:8px"><div class="eyebrow">' + (practice ? '연습 결과 · 처음 점수는 그대로예요' : '제출 완료 · 선생님께 전달돼요') + '</div>' +
-      '<div class="score">' + pctOf(sc, mx) + '<small>점' + (w ? ' (선택형 ' + rec.c + '/' + rec.t + ')' : ' (' + rec.c + '/' + rec.t + ')') + '</small></div>' +
       (chk ? '<p class="note" style="margin:0"><b>서술형 ' + chk + '칸은 선생님이 확인해요.</b> 정해 둔 답과 달라서 아직 점수에 넣지 않았어요.</p>' : '') +
       (practice ? '<p class="note" style="margin:0">처음 제출: ' + pctOf(recScore(t, f), recMax(t, f)) + '점 · ' + fmtTime(f.at) + '</p>' : '') +
       (rec.wrong.length ? '<p class="note" style="margin:0">틀린 문제: ' + rec.wrong.map(function (k) { return t.items[k].n + (isW(t.items[k]) ? '' : '번'); }).join(', ') + '</p>' +
@@ -1050,6 +1058,9 @@
     if (q.t === 'choice') return (q.sub ? '<div class="guide" style="margin:0 0 6px">' + q.sub + '</div>' : '') +
       '<div class="prompt' + (q.big ? ' big' : '') + (q.en ? ' en' : '') + '">' + q.prompt + '</div>' +
       '<div class="opts' + (q.num ? ' num' : '') + '">' + q.opts.map(function (o, i) { return '<button class="opt' + (q.optEn ? ' en' : '') + '" data-i="' + i + '">' + o + '</button>'; }).join('') + '</div>';
+    if (q.t === 'multi') return '<div class="guide" style="margin:0 0 6px">' + q.sub + '</div><div class="prompt big">' + q.prompt + '</div>' +
+      '<div class="opts">' + q.opts.map(function (o, i) { return '<button class="opt en" data-i="' + i + '" aria-pressed="false">' + E(o) + '</button>'; }).join('') + '</div>' +
+      '<div class="nextbar"><button class="btn" id="mok" disabled>골랐어요 · 확인</button></div>';
     if (q.t === 'pick') return '<div class="prompt en">' + E(q.pre) + '<span class="blank" id="blank">?</span>' + E(q.post) + '</div>' +
       '<div class="opts two">' + q.opts.map(function (o, i) { return '<button class="opt en" data-i="' + i + '">' + E(o) + '</button>'; }).join('') + '</div>';
     if (q.t === 'tf') return '<div class="prompt en">' + E(q.s) + '</div><div class="opts two"><button class="opt tfbtn" data-v="1">T</button><button class="opt tfbtn" data-v="0">F</button></div>';
@@ -1080,22 +1091,56 @@
     return '';
   }
 
+  /* 11/10 빠르게 누르다 잘못 채점되는 일 막기
+     - 문제가 뜬 직후 0.35초, 답한 직후 '다음' 0.5초는 누름을 무시(두 번 누름·Enter 두 번이 다음 문제로 넘어가는 것 방지)
+     - P.confirmPick(동아 윤정미 중1 문법): 보기를 누르면 '선택'만 되고(다시 고르기 가능), 아래 '확인'을 눌러야 채점 */
+  var QSHOWN = 0, ANSAT = 0;
+  function confirmTap(card, sel, b, grade) {
+    return function () {
+      if (RS.answered || Date.now() - QSHOWN < 350) return;
+      if (!P.confirmPick) { grade(); return; }
+      card.querySelectorAll(sel).forEach(function (x) { x.classList.toggle('picked', x === b); x.setAttribute('aria-pressed', x === b); });
+      var bar = $('#okbar');
+      if (!bar) { bar = document.createElement('div'); bar.className = 'nextbar'; bar.id = 'okbar'; bar.innerHTML = '<button class="btn" id="okb">확인</button>'; card.appendChild(bar); }
+      var okb = $('#okb'); okb.disabled = false;
+      okb.onclick = function () { if (RS.answered) return; okb.disabled = true; bar.remove(); card.querySelectorAll(sel).forEach(function (x) { x.classList.remove('picked'); }); grade(); };
+      okb.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    };
+  }
   function bindQ(q) {
-    var card = $('#qcard');
-    if (q.t === 'choice' || q.t === 'pick') card.querySelectorAll('.opt').forEach(function (b) { b.onclick = function () {
+    var card = $('#qcard'); QSHOWN = Date.now();
+    if (q.t === 'choice' || q.t === 'pick') card.querySelectorAll('.opt').forEach(function (b) { b.onclick = confirmTap(card, '.opt', b, function () {
       var o = q.opts[+b.dataset.i], ok = o === q.ans;
       card.querySelectorAll('.opt').forEach(function (x) { x.disabled = true; if (q.opts[+x.dataset.i] === q.ans) x.classList.add('right'); });
       if (!ok) b.classList.add('wrong');
       var bl = $('#blank');
       if (bl && (q.t === 'pick' || q.fill)) { if (q.t === 'pick') bl.textContent = q.ans; else bl.innerHTML = q.fill; bl.classList.add('ok'); }
       answer(ok, q.ex);
-    }; });
-    if (q.t === 'tf') card.querySelectorAll('.opt').forEach(function (b) { b.onclick = function () {
+    }); });
+    if (q.t === 'multi') {
+      var mok = $('#mok');
+      card.querySelectorAll('.opt').forEach(function (b) { b.onclick = function () {
+        if (RS.answered || Date.now() - QSHOWN < 350) return;
+        var on = b.classList.toggle('picked'); b.setAttribute('aria-pressed', on);
+        mok.disabled = !card.querySelector('.opt.picked');
+      }; });
+      mok.onclick = function () {
+        if (RS.answered || mok.disabled) return;
+        var pk = [].slice.call(card.querySelectorAll('.opt.picked')).map(function (x) { return q.opts[+x.dataset.i]; });
+        var miss = q.ans.filter(function (a) { return pk.indexOf(a) < 0; }), extra = pk.filter(function (a) { return q.ans.indexOf(a) < 0; });
+        var ok = !miss.length && !extra.length;
+        card.querySelectorAll('.opt').forEach(function (x) { var o = q.opts[+x.dataset.i]; x.disabled = true; x.classList.remove('picked');
+          if (q.ans.indexOf(o) >= 0) x.classList.add('right'); else if (pk.indexOf(o) >= 0) x.classList.add('wrong'); });
+        mok.parentNode.remove();
+        answer(ok, q.ex, '정답(' + q.ans.length + '개): <b class="en">' + E(q.ans.join(', ')) + '</b>' + (ok ? '' : (miss.length ? '<br>놓친 것: <span class="en">' + E(miss.join(', ')) + '</span>' : '') + (extra.length ? '<br>잘못 고른 것: <span class="en">' + E(extra.join(', ')) + '</span>' : '')));
+      };
+    }
+    if (q.t === 'tf') card.querySelectorAll('.opt').forEach(function (b) { b.onclick = confirmTap(card, '.opt', b, function () {
       var v = b.dataset.v === '1', ok = v === q.ans;
       card.querySelectorAll('.opt').forEach(function (x) { x.disabled = true; if ((x.dataset.v === '1') === q.ans) x.classList.add('right'); });
       if (!ok) b.classList.add('wrong');
       answer(ok, q.ex);
-    }; });
+    }); });
     if (q.t === 'verb') {
       var inp = $('#vin'); inp.focus({ preventScroll: true });
       $('#vf').addEventListener('submit', function (e) {
@@ -1107,14 +1152,14 @@
         answer(ok, q.ex, ok ? '' : '정답: <b class="en">' + E(q.a.join(' / ')) + '</b>');
       });
     }
-    if (q.t === 'error') card.querySelectorAll('.mark').forEach(function (b) { b.onclick = function () {
+    if (q.t === 'error') card.querySelectorAll('.mark').forEach(function (b) { b.onclick = confirmTap(card, '.mark', b, function () {
       if (RS.answered) return;
       var m = +b.dataset.m, ok = m === q.w;
       card.querySelectorAll('.mark').forEach(function (x) { x.disabled = true; if (+x.dataset.m === q.w) x.classList.add('right'); });
       if (!ok) b.classList.add('wrong');
       var wrongTxt = q.parts.filter(function (p) { return p.mk === q.w; })[0].x;
       answer(ok, q.ex, (ok ? '' : '틀린 곳은 <b>' + CIRC[q.w] + '</b> · ') + '<span class="en">' + E(wrongTxt) + ' → <span class="fix">' + E(q.fix) + '</span></span>');
-    }; });
+    }); });
     if (q.t === 'hunt') {
       var sel = [], hchk = $('#hchk'), hcnt = $('#hcnt'), phase = 1;
       card.querySelectorAll('.hw').forEach(function (b) { b.onclick = function () {
@@ -1218,7 +1263,8 @@
       var on = cf.classList.toggle('on'); if (on) noteAdd(q, 'conf'); else noteUnconf(q);
       cf.setAttribute('aria-pressed', on); cf.textContent = on ? '★ 헷갈려요 (오답 노트에 담김)' : '☆ 헷갈려요';
     };
-    var nx = $('#nx'); nx.onclick = next; nx.focus({ preventScroll: true });
+    ANSAT = Date.now();
+    var nx = $('#nx'); nx.onclick = function () { if (Date.now() - ANSAT < 500) return; next(); }; nx.focus({ preventScroll: true });
     nx.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   }
 
