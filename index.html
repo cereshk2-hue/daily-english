@@ -272,11 +272,12 @@ h2 { font: 400 24px/1.2 var(--f-display); margin: 0; text-wrap: balance }
 .tbl td { padding: 9px 4px; border-bottom: 1px solid var(--line) }
 .tbl td:last-child { text-align: right; font-weight: 600; white-space: nowrap }
 .tbl tr.low td:last-child { color: var(--bad) }
-.tres { --tg: #1d8549; --tg-soft: #e3f3e9; --to: #d9730d; --to-soft: #fdeedd }
-@media (prefers-color-scheme: dark) { .tres { --tg: #52c584; --tg-soft: #173325; --to: #f5a04a; --to-soft: #3a2a17 } }
+/* 결과 카드 색: 신뢰감 있는 남색(점수·맞은 유형) + 차분한 버건디(틀린 유형) — 성적표 느낌 */
+.tres { --tg: #1f3a68; --tg-soft: #e9eef7; --to: #a8323a; --to-soft: #f7e8e9; --track: #e6eaf1 }
+@media (prefers-color-scheme: dark) { .tres { --tg: #8fb0ea; --tg-soft: #1e2a40; --to: #ef8a90; --to-soft: #3a1f22; --track: #2a3346 } }
 .tsum { display: flex; align-items: center; gap: 16px }
 .donut { --p: 0; flex: none; width: 104px; height: 104px; border-radius: 50%; display: grid; place-items: center;
-  background: conic-gradient(var(--tg) calc(var(--p) * 1%), var(--to-soft) 0) }
+  background: conic-gradient(var(--tg) calc(var(--p) * 1%), var(--track) 0) }
 .donut span { width: 78px; height: 78px; border-radius: 50%; background: var(--surface); display: grid; place-items: center; align-content: center; font-size: 13px; color: var(--muted); line-height: 1.1 }
 .donut b { font: 800 32px/1 var(--f-display); color: var(--tg); letter-spacing: -.02em }
 .tsum-name { font: 800 20px/1.25 var(--f-display) }
