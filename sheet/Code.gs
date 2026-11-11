@@ -24,6 +24,7 @@ var VIEW = 'dW6ypYyx'; // 현황판 열쇠: 주소 끝 ?view=dW6ypYyx 가 있어
 function doGet(e) {
   if (e && e.parameter && e.parameter.check) return checkRoster(e.parameter);
   if (e && e.parameter && e.parameter.notes) return getNotes(e.parameter);
+  if (e && e.parameter && e.parameter.progress) return getProgress(e.parameter);
   if (e && e.parameter && e.parameter.view === VIEW && e.parameter.report) { /* 주간 리포트 (11/6) */
     var rp = HtmlService.createTemplate(REPORT_HTML), J = function (o) { return JSON.stringify(o).replace(/</g, '\\u003c'); };
     rp.data = J(reportData(e.parameter.wk, e.parameter.from, e.parameter.to)); rp.url = J(ScriptApp.getService().getUrl()); rp.view = J(VIEW); rp.who = J(String(e.parameter.who || ''));
@@ -316,6 +317,25 @@ function saveNotes(list) {
     });
   } finally { lock.releaseLock(); }
 }
+/* 11/11: 다른 기기(학원 아이패드 등)에서 이름+코드로 들어오면 '현황' 탭에서 이 학생·이 단원의 완료 기록을 돌려준다.
+   학생 앱은 이걸로 완료한 DAY에 '이전 완료'를 찍고, 테스트 점수를 보여 준다. 코드 확인은 오답 노트와 같다. */
+function getProgress(p) {
+  var res = { ok: false, rows: [] };
+  try {
+    var ss = SpreadsheetApp.getActiveSpreadsheet(), name = String(p.name || '').replace(/\s+/g, ''), unit = String(p.ut || '').replace(/\s+/g, '');
+    if (!name || !unit) throw 0;
+    var r = ss.getSheetByName(ROSTER), rows = r && r.getLastRow() > 1 ? r.getRange(2, 1, r.getLastRow() - 1, 2).getValues().filter(function (v) { return String(v[0]).trim(); }) : [];
+    if (rows.length && !rows.some(function (v) { return String(v[0]).replace(/\s+/g, '') === name && nc(v[1]) === nc(p.code) && nc(p.code); })) return json(res);
+    var sh = ss.getSheetByName('현황'); res.ok = true;
+    var ms = function (v) { return v instanceof Date ? v.getTime() : (v ? new Date(v).getTime() || 0 : 0); };
+    if (sh && sh.getLastRow() > 1) sh.getRange(2, 1, sh.getLastRow() - 1, 12).getValues().forEach(function (v) {
+      if (String(v[0]).replace(/\s+/g, '') !== name || String(v[2]).replace(/\s+/g, '') !== unit) return;
+      res.rows.push([String(v[3]), String(v[5]), String(v[6]), ms(v[11]), ms(v[10])]); /* DAY, 진행, 점수, 완료, 마지막 활동 */
+    });
+  } catch (err) {}
+  return json(res);
+}
+
 function getNotes(p) {
   var res = { ok: false, notes: [] };
   try {
