@@ -22,6 +22,7 @@ for(const d of P.days){
       if(st.type==='scramble'&&q.chunks&&q.chunks.join(' ')!==q.en)err(d.id,tag,'덩어리를 이으면 문장과 다름');
       if(st.type==='hunt'){const m=[...q.s.matchAll(/\[\[([^|\]]*)\|([^\]]*)\]\]/g)];if(m.length<2)err(d.id,tag,'틀린 곳 2개 이상');m.forEach(x=>{if(n(x[1])===n(x[2]))err(d.id,tag,'틀린 말=바른 말')});const f=n(q.s.replace(/\[\[([^|\]]*)\|([^\]]*)\]\]/g,'$2'));f.split(/(?<=[.!?]["”]?)\s+/).forEach(x=>{if(!has(x))err(d.id,tag,'고친 문장이 본문에 없음: '+x)});if(q.why&&q.why.length!==m.length)err(d.id,tag,'why 개수')}
       if(st.type==='mc'&&new Set(q.opts).size!==q.opts.length)err(d.id,tag,'선택지 중복');
+      if(st.type==='multi'){if(new Set(q.opts).size!==q.opts.length)err(d.id,tag,'선택지 중복');if(!q.ans.length||q.ans.some(x=>!q.opts.includes(x)))err(d.id,tag,'정답이 선택지에 없음');}
       if(st.type==='tf'&&typeof q[1]!=='boolean')err(d.id,tag,'T/F 값');
       if(st.type==='vocab'&&(q.length<2||q.length>4||(q[3]!=null&&typeof q[3]!=='string')))err(d.id,tag,'어휘 형식');
     });
