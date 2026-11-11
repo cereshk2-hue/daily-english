@@ -272,22 +272,19 @@ h2 { font: 400 24px/1.2 var(--f-display); margin: 0; text-wrap: balance }
 .tbl td { padding: 9px 4px; border-bottom: 1px solid var(--line) }
 .tbl td:last-child { text-align: right; font-weight: 600; white-space: nowrap }
 .tbl tr.low td:last-child { color: var(--bad) }
-.tcard { --tc: #1e2b4a; --tc-acc: #b4232b; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: 0 1px 2px rgba(20,30,50,.06), 0 8px 24px rgba(20,30,50,.10) }
-.tcard.prac { --tc: #59606b; --tc-acc: #59606b }
-.tc-band { background: var(--tc); color: #fff; display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 3px solid var(--tc-acc) }
-.tc-badge { font: 700 12px/1 var(--f-body); letter-spacing: .18em; background: var(--tc-acc); color: #fff; border-radius: 4px; padding: 5px 7px 5px 9px }
-.tc-band b { display: block; font: 700 17px/1.25 var(--f-body); letter-spacing: -.01em }
-.tc-band small { display: block; font-size: 12px; opacity: .75; letter-spacing: .02em }
-.tc-body { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 16px 10px }
-.tc-name { font: 700 20px/1.25 var(--f-body); letter-spacing: -.01em }
-.tc-unit { font-size: 12.5px; color: var(--muted); margin-top: 2px }
-.tc-title { font-weight: 600; font-size: 14.5px; margin-top: 4px }
-.tc-score { text-align: right; white-space: nowrap; color: var(--tc); font-variant-numeric: tabular-nums; padding-left: 14px; border-left: 1px solid var(--line) }
-.tc-score b { font: 700 48px/1 var(--f-body); letter-spacing: -.03em }
-.tc-score span { font: 600 16px var(--f-body); margin-left: 2px; color: var(--muted) }
-.tc-score small { display: block; font-size: 12.5px; color: var(--muted); margin-top: 4px }
-.tc-foot { display: flex; justify-content: space-between; gap: 8px; margin: 0 16px; padding: 9px 0 12px; font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--line) }
-@media (prefers-color-scheme: dark) { .tcard { --tc: #2c3d66 } .tc-score { color: var(--ink) } }
+.tsum { display: flex; align-items: center; gap: 16px }
+.donut { --p: 0; flex: none; width: 104px; height: 104px; border-radius: 50%; display: grid; place-items: center;
+  background: conic-gradient(var(--accent) calc(var(--p) * 1%), var(--plank-empty) 0) }
+.donut span { width: 78px; height: 78px; border-radius: 50%; background: var(--surface); display: grid; place-items: center; align-content: center; font-size: 13px; color: var(--muted); line-height: 1.1 }
+.donut b { font: 800 32px/1 var(--f-display); color: var(--ink); letter-spacing: -.02em }
+.tsum-name { font: 800 20px/1.25 var(--f-display) }
+.tsum-t { font-weight: 600; font-size: 14.5px }
+.ttypes { display: flex; flex-wrap: wrap; gap: 6px }
+.ttypes span { font-size: 13px; padding: 3px 9px; border-radius: 999px; background: var(--ok-soft); color: var(--ok) }
+.ttypes span.no { background: var(--bad-soft); color: var(--bad) }
+.ttypes b { font-variant-numeric: tabular-nums }
+.twrong { margin: 0; font-size: 14px }
+.twrong b { color: var(--bad); margin-right: 4px }
 .rcard { background: var(--surface); border: 2px solid var(--plank); border-radius: 18px; padding: 16px; display: grid; gap: 12px; box-shadow: var(--shadow) }
 .rc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px }
 .rc-name { font: 400 26px/1.15 var(--f-display) }

@@ -705,21 +705,33 @@
     reportTest((isBoss(t) ? '끝판왕' : 'Wrap-up') + (first ? ' 제출' : ' 연습'), t, { stepScore: (first ? '' : '연습 ') + g.score + '/' + g.max + '점' });
     var ti = TV.ti; TV = null; testResult(ti, rec);
   }
+  function qtype(it) { /* 문항 유형: 발문으로 판별 (결과 카드의 유형별 결과) */
+    if (isW(it)) return '서술형';
+    var q = String(it.stem || '').replace(/<[^>]+>/g, '');
+    var R = [[/요약/, '요약문'], [/영영풀이|낱말|어휘|문맥|단어의 쓰임|단어의 관계|뜻이 바르지|의미가 서로|설명하는 단어|바꿔 쓴|바꿔 쓸/, '어휘'], [/어법|쓰임|역할|동명사|배열|영어로 옮길|원형과 과거형/, '어법·문법'],
+      [/순서/, '글의 순서'], [/주어진 문장|들어가기에/, '문장 삽입'], [/관계\s*없는|무관/, '무관한 문장'], [/대화의 연결/, '대화'], [/빈칸/, '빈칸'], [/밑줄 친.*의미|함축/, '함축 의미'],
+      [/주제|제목|요지|주장|목적/, '대의 파악'], [/일치|내용|답할 수 없는|언급되지|추론|옳은|설명으로|답한 것|이유로|비유|짝지은|알 수 없는|질문에 대한/, '내용 이해'], [/심경|분위기/, '심경·분위기'], [/가리키는|지칭/, '지칭'], [/도표/, '도표']];
+    for (var i = 0; i < R.length; i++) if (R[i][0].test(q)) return R[i][1];
+    return '기타';
+  }
   function testResult(ti, rec) {
     RS = null; top();
     var t = TESTS[ti], st = TST(t), f = st.first; rec = rec || f;
     var left = testLeft(t), practice = rec !== f, w = hasW(t), sc = recScore(t, rec), mx = recMax(t, rec), chk = Object.keys(rec.wb || {}).filter(function (k) { return rec.wb[k] === 'chk'; }).length;
     var h = '<div class="topbar"><div class="row"><button class="link" id="tback">← ' + (isBoss(t) ? '끝판왕' : TL) + ' 목록</button><span class="crumb">' + E(t.title) + ' · <b>결과</b></span></div></div><div class="stack examwrap">';
-    /* 테스트 결과 카드: 학생이 캡처해 선생님 → 학부모께 보내는 화면. 빨간 띠 + TEST 표시로 '테스트 본 것'이 한눈에 보이게 */
-    var kind = isBoss(t) ? '끝판왕 테스트' : TL + ' 테스트', score = pctOf(sc, mx);
-    h += '<section class="tcard' + (practice ? ' prac' : '') + '" id="tcard"><div class="tc-band"><span class="tc-badge">TEST</span><div><b>' + E(kind) + '</b><small>' + (practice ? '다시 풀기(연습) 결과' : '테스트 결과') + '</small></div></div>' +
-      '<div class="tc-body"><div class="tc-who"><div class="tc-name">' + E(S.name || '') + '</div><div class="tc-unit">' + E(P.school) + ' · ' + E(P.unit) + '</div><div class="tc-title">' + E(t.title) + '</div></div>' +
-      '<div class="tc-score"><b>' + score + '</b><span>점</span><small>' + rec.c + ' / ' + rec.t + (w ? ' (선택형)' : '') + '</small></div></div>' +
-      '<div class="tc-foot"><span>' + fmtTime(rec.at) + ' 제출</span><span>' + (rec.wrong.length ? '틀린 문제 ' + rec.wrong.length + '개' : '모두 맞힘 ✔') + '</span></div></section>';
-    h += '<section class="card pop stack" style="gap:8px"><div class="eyebrow">' + (practice ? '연습 결과 · 처음 점수는 그대로예요' : '제출 완료 · 선생님께 전달돼요') + '</div>' +
+    /* 11/11 결과 카드: 원형 그래프(정답률) + 유형별 결과 + 틀린 유형 한 줄 — 캡처해서 학부모님께 보내기 좋게 */
+    var score = pctOf(sc, mx), TY = {}, order = [];
+    t.items.forEach(function (it, k) { var ty = qtype(it); if (!TY[ty]) { TY[ty] = { n: 0, c: 0, wn: [] }; order.push(ty); } TY[ty].n++;
+      if (rec.wrong.indexOf(k) < 0) TY[ty].c++; else TY[ty].wn.push(isW(it) ? it.n : it.n + '번'); });
+    var wty = order.filter(function (ty) { return TY[ty].wn.length; });
+    h += '<section class="card pop stack tres" style="gap:10px"><div class="eyebrow">' + E(isBoss(t) ? '끝판왕' : TL) + ' · ' + (practice ? '연습 결과 · 처음 점수는 그대로예요' : '제출 완료 · 선생님께 전달돼요') + '</div>' +
+      '<div class="tsum"><div class="donut" style="--p:' + score + '" role="img" aria-label="' + score + '점"><span><b>' + score + '</b>점</span></div>' +
+      '<div class="tsum-r"><div class="tsum-name">' + E(S.name || '') + '</div><div class="tsum-t">' + E(t.title) + '</div><div class="note" style="margin:0">맞은 문제 <b>' + rec.c + ' / ' + rec.t + '</b>' + (w ? ' (선택형)' : '') + '<br>' + fmtTime(rec.at) + ' 제출</div></div></div>' +
+      '<div class="ttypes">' + order.map(function (ty) { var x = TY[ty]; return '<span class="' + (x.wn.length ? 'no' : 'ok') + '">' + E(ty) + ' <b>' + x.c + '/' + x.n + '</b></span>'; }).join('') + '</div>' +
+      (wty.length ? '<p class="twrong"><b>틀린 유형</b> ' + wty.map(function (ty) { return E(ty) + ' (' + TY[ty].wn.join('·') + ')'; }).join(' · ') + '</p>' : '') +
       (chk ? '<p class="note" style="margin:0"><b>서술형 ' + chk + '칸은 선생님이 확인해요.</b> 정해 둔 답과 달라서 아직 점수에 넣지 않았어요.</p>' : '') +
       (practice ? '<p class="note" style="margin:0">처음 제출: ' + pctOf(recScore(t, f), recMax(t, f)) + '점 · ' + fmtTime(f.at) + '</p>' : '') +
-      (rec.wrong.length ? '<p class="note" style="margin:0">틀린 문제: ' + rec.wrong.map(function (k) { return t.items[k].n + (isW(t.items[k]) ? '' : '번'); }).join(', ') + '</p>' +
+      (rec.wrong.length ? 
         '<p class="wguide"><b>시험지에 적어 오기</b> 틀린 문제마다 아래 해설을 보고 시험지에 ① 정답과 이유 ② 모르는 단어 뜻 ③ 문장 해석을 적어서 선생님께 내요.</p>' : '<p class="note" style="margin:0">모두 맞혔어요!</p>') +
       '</section>';
     h += '<h3 class="sech">문항별 정답과 해설</h3>' + t.items.map(function (it, k) {
