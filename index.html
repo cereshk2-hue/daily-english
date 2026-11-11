@@ -272,6 +272,23 @@ h2 { font: 400 24px/1.2 var(--f-display); margin: 0; text-wrap: balance }
 .tbl td { padding: 9px 4px; border-bottom: 1px solid var(--line) }
 .tbl td:last-child { text-align: right; font-weight: 600; white-space: nowrap }
 .tbl tr.low td:last-child { color: var(--bad) }
+.tcard { background: var(--surface); border: 3px solid #d62828; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 22px rgba(214,40,40,.22) }
+.tcard.prac { border-color: #8a8f99; box-shadow: var(--shadow) }
+.tc-band { background: #d62828; color: #fff; display: flex; align-items: center; gap: 12px; padding: 12px 16px }
+.tcard.prac .tc-band { background: #6b7280 }
+.tc-badge { font: 800 22px/1 var(--f-display); letter-spacing: .08em; border: 3px solid #fff; border-radius: 10px; padding: 6px 10px; transform: rotate(-4deg) }
+.tc-band b { display: block; font: 800 20px/1.2 var(--f-display) }
+.tc-band small { display: block; font-size: 13px; opacity: .9 }
+.tc-body { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 16px 8px }
+.tc-name { font: 800 22px/1.2 var(--f-display) }
+.tc-unit { font-size: 13px; color: var(--muted) }
+.tc-title { font-weight: 700; margin-top: 2px }
+.tc-score { text-align: right; white-space: nowrap; color: #d62828; font-variant-numeric: tabular-nums }
+.tcard.prac .tc-score { color: var(--ink) }
+.tc-score b { font: 800 60px/1 var(--f-display) }
+.tc-score span { font: 800 20px var(--f-display) }
+.tc-score small { display: block; font-size: 13px; color: var(--muted) }
+.tc-foot { display: flex; justify-content: space-between; gap: 8px; padding: 8px 16px 12px; font-size: 13px; color: var(--muted); border-top: 1px dashed var(--line); margin: 0 16px; padding-left: 0; padding-right: 0 }
 .rcard { background: var(--surface); border: 2px solid var(--plank); border-radius: 18px; padding: 16px; display: grid; gap: 12px; box-shadow: var(--shadow) }
 .rc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px }
 .rc-name { font: 400 26px/1.15 var(--f-display) }

@@ -710,8 +710,13 @@
     var t = TESTS[ti], st = TST(t), f = st.first; rec = rec || f;
     var left = testLeft(t), practice = rec !== f, w = hasW(t), sc = recScore(t, rec), mx = recMax(t, rec), chk = Object.keys(rec.wb || {}).filter(function (k) { return rec.wb[k] === 'chk'; }).length;
     var h = '<div class="topbar"><div class="row"><button class="link" id="tback">← ' + (isBoss(t) ? '끝판왕' : TL) + ' 목록</button><span class="crumb">' + E(t.title) + ' · <b>결과</b></span></div></div><div class="stack examwrap">';
+    /* 테스트 결과 카드: 학생이 캡처해 선생님 → 학부모께 보내는 화면. 빨간 띠 + TEST 표시로 '테스트 본 것'이 한눈에 보이게 */
+    var kind = isBoss(t) ? '끝판왕 테스트' : TL + ' 테스트', score = pctOf(sc, mx);
+    h += '<section class="tcard' + (practice ? ' prac' : '') + '" id="tcard"><div class="tc-band"><span class="tc-badge">TEST</span><div><b>' + E(kind) + '</b><small>' + (practice ? '다시 풀기(연습) 결과' : '테스트 결과') + '</small></div></div>' +
+      '<div class="tc-body"><div class="tc-who"><div class="tc-name">' + E(S.name || '') + '</div><div class="tc-unit">' + E(P.school) + ' · ' + E(P.unit) + '</div><div class="tc-title">' + E(t.title) + '</div></div>' +
+      '<div class="tc-score"><b>' + score + '</b><span>점</span><small>' + rec.c + ' / ' + rec.t + (w ? ' (선택형)' : '') + '</small></div></div>' +
+      '<div class="tc-foot"><span>' + fmtTime(rec.at) + ' 제출</span><span>' + (rec.wrong.length ? '틀린 문제 ' + rec.wrong.length + '개' : '모두 맞힘 ✔') + '</span></div></section>';
     h += '<section class="card pop stack" style="gap:8px"><div class="eyebrow">' + (practice ? '연습 결과 · 처음 점수는 그대로예요' : '제출 완료 · 선생님께 전달돼요') + '</div>' +
-      '<div class="score">' + pctOf(sc, mx) + '<small>점' + (w ? ' (선택형 ' + rec.c + '/' + rec.t + ')' : ' (' + rec.c + '/' + rec.t + ')') + '</small></div>' +
       (chk ? '<p class="note" style="margin:0"><b>서술형 ' + chk + '칸은 선생님이 확인해요.</b> 정해 둔 답과 달라서 아직 점수에 넣지 않았어요.</p>' : '') +
       (practice ? '<p class="note" style="margin:0">처음 제출: ' + pctOf(recScore(t, f), recMax(t, f)) + '점 · ' + fmtTime(f.at) + '</p>' : '') +
       (rec.wrong.length ? '<p class="note" style="margin:0">틀린 문제: ' + rec.wrong.map(function (k) { return t.items[k].n + (isW(t.items[k]) ? '' : '번'); }).join(', ') + '</p>' +
