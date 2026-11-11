@@ -728,6 +728,7 @@
       '<div class="tsum"><div class="donut" style="--p:' + score + '" role="img" aria-label="' + score + '점"><span><b>' + score + '</b>점</span></div>' +
       '<div class="tsum-r"><div class="tsum-name">' + E(S.name || '') + '</div><div class="tsum-t">' + E(t.title) + '</div><div class="note" style="margin:0">맞은 문제 <b>' + rec.c + ' / ' + rec.t + '</b>' + (w ? ' (선택형)' : '') + '<br>' + fmtTime(rec.at) + ' 제출</div></div></div>' +
       '<div class="ttypes">' + order.map(function (ty) { var x = TY[ty]; return '<span class="' + (x.wn.length ? 'no' : 'ok') + '">' + E(ty) + ' <b>' + x.c + '/' + x.n + '</b>' + (x.wn.length ? ' <small>' + E(x.wn.join('·')) + '</small>' : '') + '</span>'; }).join('') + '</div>' +
+      (wty.length ? '<p class="twrong"><b>학습이 필요한 약한 유형</b> ' + wty.map(E).join(' · ') + '</p>' : '<p class="twrong ok"><b>모든 유형 통과</b></p>') +
       (chk ? '<p class="note" style="margin:0"><b>서술형 ' + chk + '칸은 선생님이 확인해요.</b> 정해 둔 답과 달라서 아직 점수에 넣지 않았어요.</p>' : '') +
       (practice ? '<p class="note" style="margin:0">처음 제출: ' + pctOf(recScore(t, f), recMax(t, f)) + '점 · ' + fmtTime(f.at) + '</p>' : '') +
       (rec.wrong.length ? 
