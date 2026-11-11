@@ -58,7 +58,7 @@
   try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(function () {}); } catch (e) {}
   var app = document.getElementById('app');
   var CIRC = '①②③④⑤⑥⑦⑧⑨⑩';
-  var SHORT = { hunt: '틀린곳', vocab: '어휘', tf: 'TF', verb: '동사변형', error: '오류찾기', order: '문장순서', scramble: '주요문장', mc: '문법', insert: '삽입', odd: '어색한문장', blank: '빈칸' };
+  var SHORT = { multi: '모두고르기', hunt: '틀린곳', vocab: '어휘', tf: 'TF', verb: '동사변형', error: '오류찾기', order: '문장순서', scramble: '주요문장', mc: '문법', insert: '삽입', odd: '어색한문장', blank: '빈칸' };
 
   /* ---------- 저장 ---------- */
   /* 학생별 저장: 같은 기기(학원 아이패드)를 여러 학생이 써도 기록이 섞이지 않게 이름마다 따로 저장한다.
@@ -224,7 +224,7 @@
     return weakList(d).map(function (w) { return stepShort(w.s) + ' ' + w.sc[0] + '/' + w.sc[1] + ' → ' + (w.n ? '보충 ' + w.best.c + '/' + w.best.t + (w.ok ? ' ✓' : '') + (w.n > 1 ? ' (' + w.n + '번)' : '') + ' ' + fmtTime(w.last.at) : '보충 안 함'); }).join(' / ');
   }
   function stepShort(st) { return st.type === 'pick' ? st.title : st.type === 'mc' && /실전/.test(st.title) ? '실전' : st.type === 'mc' && /일치/.test(st.title) ? '일치' : st.type === 'mc' && /요약/.test(st.title) ? '요약문' : SHORT[st.type]; }
-  var CARD = { hunt: '틀린곳', vocab: '단어', tf: 'T/F', verb: '동사', error: '오류', order: '순서', scramble: '스크램블', mc: '문법', insert: '삽입', odd: '어색', blank: '빈칸' };
+  var CARD = { multi: '모두', hunt: '틀린곳', vocab: '단어', tf: 'T/F', verb: '동사', error: '오류', order: '순서', scramble: '스크램블', mc: '문법', insert: '삽입', odd: '어색', blank: '빈칸' };
   function cardLabel(st) { return st.type === 'pick' ? (/어법/.test(st.title) ? '어법' : '어휘') : st.type === 'mc' && /실전/.test(st.title) ? '실전' : st.type === 'mc' && /일치/.test(st.title) ? '일치' : st.type === 'mc' && /요약/.test(st.title) ? '요약' : CARD[st.type]; }
   function fmtTime(t) { var d = new Date(t); return (d.getMonth() + 1) + '/' + d.getDate() + ' ' + String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); }
   function top() { window.scrollTo(0, 0); }
@@ -450,6 +450,8 @@
       return { t: 'choice', prompt: '<span class="en">' + E(q.s).replace('____', '<span class="blank" id="blank">&nbsp;</span>') + '</span>', fill: E(q.opts[0]),
         opts: shuffle(q.opts).map(E), ans: E(q.opts[0]), ex: q.ex, key: q.opts[0], optEn: true };
     });
+    if (t === 'multi') return shuffle(it).map(function (q) { /* 알맞은 것 모두 고르기: 정답 1개~전부, 고른 것이 정답과 똑같아야 정답 */
+      return { t: 'multi', prompt: q.q, opts: shuffle(q.opts), ans: q.ans.slice(), ex: q.ex, key: strip(q.ans.slice().sort().join(' / ')), sub: q.sub || '뜻이 같은(비슷한) 말을 <b>모두</b> 고르세요 · 정답은 1개 ~ 전부' }; });
     if (t === 'mc') return shuffle(it).map(function (q) { var ai = q.keep ? q.a : 0; return { t: 'choice', prompt: q.q, opts: q.keep ? q.opts.slice() : q.sort ? q.opts.slice().sort() : shuffle(q.opts), /* sort: 개수·기호 묶음은 차례대로 · keep: 시험지 ①~⑤ 순서 그대로(정답 번호 a) */ ans: q.opts[ai], ex: q.ex, key: strip(q.opts[ai]), num: !!q.keep }; });
     return [];
   }
@@ -1051,6 +1053,9 @@
     if (q.t === 'choice') return (q.sub ? '<div class="guide" style="margin:0 0 6px">' + q.sub + '</div>' : '') +
       '<div class="prompt' + (q.big ? ' big' : '') + (q.en ? ' en' : '') + '">' + q.prompt + '</div>' +
       '<div class="opts' + (q.num ? ' num' : '') + '">' + q.opts.map(function (o, i) { return '<button class="opt' + (q.optEn ? ' en' : '') + '" data-i="' + i + '">' + o + '</button>'; }).join('') + '</div>';
+    if (q.t === 'multi') return '<div class="guide" style="margin:0 0 6px">' + q.sub + '</div><div class="prompt big">' + q.prompt + '</div>' +
+      '<div class="opts">' + q.opts.map(function (o, i) { return '<button class="opt en" data-i="' + i + '" aria-pressed="false">' + E(o) + '</button>'; }).join('') + '</div>' +
+      '<div class="nextbar"><button class="btn" id="mok" disabled>골랐어요 · 확인</button></div>';
     if (q.t === 'pick') return '<div class="prompt en">' + E(q.pre) + '<span class="blank" id="blank">?</span>' + E(q.post) + '</div>' +
       '<div class="opts two">' + q.opts.map(function (o, i) { return '<button class="opt en" data-i="' + i + '">' + E(o) + '</button>'; }).join('') + '</div>';
     if (q.t === 'tf') return '<div class="prompt en">' + E(q.s) + '</div><div class="opts two"><button class="opt tfbtn" data-v="1">T</button><button class="opt tfbtn" data-v="0">F</button></div>';
@@ -1107,6 +1112,24 @@
       if (bl && (q.t === 'pick' || q.fill)) { if (q.t === 'pick') bl.textContent = q.ans; else bl.innerHTML = q.fill; bl.classList.add('ok'); }
       answer(ok, q.ex);
     }); });
+    if (q.t === 'multi') {
+      var mok = $('#mok');
+      card.querySelectorAll('.opt').forEach(function (b) { b.onclick = function () {
+        if (RS.answered || Date.now() - QSHOWN < 350) return;
+        var on = b.classList.toggle('picked'); b.setAttribute('aria-pressed', on);
+        mok.disabled = !card.querySelector('.opt.picked');
+      }; });
+      mok.onclick = function () {
+        if (RS.answered || mok.disabled) return;
+        var pk = [].slice.call(card.querySelectorAll('.opt.picked')).map(function (x) { return q.opts[+x.dataset.i]; });
+        var miss = q.ans.filter(function (a) { return pk.indexOf(a) < 0; }), extra = pk.filter(function (a) { return q.ans.indexOf(a) < 0; });
+        var ok = !miss.length && !extra.length;
+        card.querySelectorAll('.opt').forEach(function (x) { var o = q.opts[+x.dataset.i]; x.disabled = true; x.classList.remove('picked');
+          if (q.ans.indexOf(o) >= 0) x.classList.add('right'); else if (pk.indexOf(o) >= 0) x.classList.add('wrong'); });
+        mok.parentNode.remove();
+        answer(ok, q.ex, '정답(' + q.ans.length + '개): <b class="en">' + E(q.ans.join(', ')) + '</b>' + (ok ? '' : (miss.length ? '<br>놓친 것: <span class="en">' + E(miss.join(', ')) + '</span>' : '') + (extra.length ? '<br>잘못 고른 것: <span class="en">' + E(extra.join(', ')) + '</span>' : '')));
+      };
+    }
     if (q.t === 'tf') card.querySelectorAll('.opt').forEach(function (b) { b.onclick = confirmTap(card, '.opt', b, function () {
       var v = b.dataset.v === '1', ok = v === q.ans;
       card.querySelectorAll('.opt').forEach(function (x) { x.disabled = true; if ((x.dataset.v === '1') === q.ans) x.classList.add('right'); });
