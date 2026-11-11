@@ -631,6 +631,7 @@
     var status = f ? '<b>' + pctOf(recScore(t, f), recMax(t, f)) + '점</b>' + (w ? '' : ' (' + f.c + '/' + n + ')') + ' · ' + fmtTime(f.at) + ' 제출' +
         (f.wrong.length ? ' · 틀린 문제 <b>' + f.wrong.length + '개</b> → 시험지에 정리' : ' · 만점!') +
         (f.wb && Object.keys(f.wb).some(function (k) { return f.wb[k] === 'chk'; }) ? '<br><small>서술형 일부는 선생님이 확인해요 (점수에 아직 안 들어감)</small>' : '')
+      : !dr && st.remote ? '<b>다른 기기에서 제출 · ' + st.remote.pct + '점</b>' + (st.remote.c != null ? ' (' + st.remote.c + '/' + st.remote.tt + ')' : '') + (st.remote.at ? ' · ' + fmtTime(st.remote.at) : '') + '<br><small>결과 · 해설은 제출한 기기에서 볼 수 있어요</small>'
       : dr ? '<b>푸는 중</b> · ' + Object.keys(dr.a).filter(function (k) { return dr.a[k] !== '' && dr.a[k] != null; }).length + '칸 답함' : '아직 안 풀었어요';
     var btns = f ? '<button class="btn plank" data-tres="' + ti + '">결과 · 해설 보기</button>' +
         '<button class="btn ghost" data-tgo2="' + ti + '">' + (dr ? '연습 이어서 풀기' : '처음부터 다시 풀기 (연습)') + '</button>'
@@ -785,7 +786,7 @@
     var i;
     for (i = 0; i < P.days.length; i++) if (needReview(P.days[i])) return i;
     for (i = 0; i < P.days.length; i++) { var d = P.days[i], g = dayProgress(d); if (!g.finished && (g.done || DS(d.id).run)) return i; }
-    for (i = 0; i < P.days.length; i++) if (!SKIP(i) && !dayProgress(P.days[i]).finished) return i; /* SKIP: 선생님이 건너뛰게 정한 DAY(startAt 앞 또는 skip 목록) */
+    for (i = 0; i < P.days.length; i++) if (!SKIP(i) && !dayProgress(P.days[i]).finished && !prevDone(P.days[i])) return i; /* SKIP: 선생님이 건너뛰게 정한 DAY(startAt 앞 또는 skip 목록) */
     for (i = 0; i < P.days.length; i++) if (!dayProgress(P.days[i]).finished) return i;
     return P.days.length - 1;
   }
@@ -810,7 +811,7 @@
     return 'wait';
   }
   function pickGridHTML() { /* 모의고사: 번호를 골라서 학습 */
-    var done = P.days.filter(function (d) { return dayState(d) === 'done'; }).length;
+    var done = P.days.filter(function (d) { return dayState(d) === 'done' || prevDone(d); }).length;
     var isDay = /^DAY/.test(P.days[0].name);
     return '<h3 class="sech">' + (isDay ? 'DAY 고르기' : '문항 고르기') + ' <span>완료 ' + done + ' / ' + P.days.length + '</span></h3><p class="note" style="margin:-4px 0 10px">공부할 ' + (isDay ? 'DAY' : '번호') + '를 누르면 아래에 단계가 나와요. 순서는 자유예요.</p><div class="qgrid">' + P.days.map(function (d, di) {
       var s = dayState(d), g = dayProgress(d), prev = s === 'wait' && hist(d).some(function (x) { return x.restored; });
@@ -850,15 +851,17 @@
     if (S.name && S.newCode) h += '<section class="card notecard" id="newcode" style="border-color:var(--accent)"><b>' + E(S.name) + ' 학생의 코드는 <span style="font-size:20px;letter-spacing:.1em">' + E(S.newCode) + '</span> 예요</b><span class="note">다른 기기나 학원 아이패드에서 들어올 때 필요해요. 꼭 기억하세요!</span><button class="btn ghost" id="codeok">기억했어요</button></section>';
     if (S.name && !nTop2) { h += noteHTML(); setTimeout(noteSync, 0); }
     /* 학습 진도 */
-    h += '<h3 class="sech">학습 진도 <span>완료 ' + P.days.filter(function (d) { return dayState(d) === 'done'; }).length + ' / ' + P.days.length + '</span></h3><div class="drows">' + P.days.map(function (d, di) {
+    h += '<h3 class="sech">학습 진도 <span>완료 ' + P.days.filter(function (d) { return dayState(d) === 'done' || prevDone(d); }).length + ' / ' + P.days.length + '</span></h3><div class="drows">' + P.days.map(function (d, di) {
       var g = dayProgress(d), st = DS(d.id), s = dayState(d), hs = hist(d);
       var line = s === 'done' ? pctOf(g.c, g.t) + '점 · ' + (st.finished ? fmtTime(st.finished).split(' ')[0] + ' 완료' : '완료') + (wrongCount(d) ? ' · 오답 학습 완료' : ' · 틀린 문제 없음')
         : s === 'rev' ? pctOf(g.c, g.t) + '점 · 오답 학습 ' + wrongCount(d) + '개 남음'
         : s === 'now' ? g.done + ' / ' + d.steps.length + '단계 진행 중' : E(d.story);
-      var skip = s === 'wait' && SKIP(di);
+      var pv = prevDone(d), lh = pv ? hs[hs.length - 1] : null;
+      if (pv) line = lh.pct + '점 · ' + (lh.finished ? fmtTime(lh.finished).split(' ')[0] + ' ' : '') + '다른 기기에서 완료';
+      var skip = s === 'wait' && !pv && SKIP(di);
       if (skip) line = '선생님이 건너뛰도록 정했어요 · 눌러서 해도 돼요';
-      var badge = skip ? '건너뜀' : { done: '완료' + (hs.length ? ' ×' + (hs.length + 1) : ''), rev: '오답 남음', now: '진행 중', wait: '시작 전' }[s];
-      return '<button class="drow ' + s + (di === SEL ? ' sel' : '') + '" data-sel="' + di + '"><span class="dn"><small>DAY</small>' + E(d.name.replace(/^DAY\s*/, '')) + '</span>' +
+      var badge = pv ? '이전 완료' : skip ? '건너뜀' : { done: '완료' + (hs.length ? ' ×' + (hs.length + 1) : ''), rev: '오답 남음', now: '진행 중', wait: '시작 전' }[s];
+      return '<button class="drow ' + s + (pv ? ' prev' : '') + (di === SEL ? ' sel' : '') + '" data-sel="' + di + '"><span class="dn"><small>DAY</small>' + E(d.name.replace(/^DAY\s*/, '')) + '</span>' +
         '<span class="dt"><b>' + E(d.range) + '</b><span>' + line + '</span>' + (s === 'now' ? '<span class="mini"><i style="width:' + Math.round(g.done / d.steps.length * 100) + '%"></i></span>' : '') + '</span><span class="badge">' + badge + '</span></button>';
     }).join('') + '</div>';
     h += dayDetailHTML();
@@ -1399,6 +1402,7 @@
   }
   function pctOf(c, t) { return t ? Math.round(c / t * 100) : 0; }
   function hist(d) { return DS(d.id).history || []; }
+  function prevDone(d) { return dayState(d) === 'wait' && hist(d).some(function (x) { return x.restored; }); } /* 다른 기기·예전 기록으로 끝낸 DAY */
   function attemptNo(d) { return hist(d).length + 1; }
   function revText(rv) {
     if (rv.first == null) return rv.n + '개 모두 맞힘 (' + rv.tries + '번 풀이)';
@@ -1475,7 +1479,37 @@
         function () { nFlushing = false; });
   }
   try { window.addEventListener('online', noteFlush); } catch (e) {}
+  var pSynced = {};
+  function progressSync() { /* 11/11: 다른 기기에서 끝낸 DAY · 테스트를 시트 '현황'에서 받아 온다 (이름+코드 확인) */
+    if (!SHEET || !S.name || !window.fetch || pSynced[S.name]) return;
+    var who = S.name, pc = myPass(who); pSynced[who] = true;
+    fetch(SHEET + (SHEET.indexOf('?') < 0 ? '?' : '&') + 'progress=1&name=' + encodeURIComponent(who) + '&code=' + encodeURIComponent(pc ? pc.c : '') + '&ut=' + encodeURIComponent(P.unit + ' ' + P.title) + '&_=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { return r.text(); }).then(function (t) {
+        var j = null; try { j = JSON.parse(t); } catch (e) {}
+        if (!j || !j.ok || S.name !== who) return; /* 시트가 아직 옛 코드거나 코드가 틀리면 이번엔 그만 */
+        if (applyProgress(j.rows || [])) { save(); if (app.querySelector('.drows, .qgrid, [data-tgo2]')) { var y = window.scrollY; home(); window.scrollTo(0, y); } }
+      }, function () { pSynced[who] = false; });
+  }
+  function applyProgress(rows) { /* rows: [DAY, 진행, 점수, 완료 ms, 마지막 활동 ms] → 바뀐 게 있으면 true */
+    var changed = false, mn = function (x) { return Math.round((x || 0) / 60000); };
+    rows.forEach(function (r) {
+      var name = String(r[0] || ''), prog = String(r[1] || ''), m = /(\d+)점(?:\s*\((\d+)\/(\d+)\))?/.exec(String(r[2] || '')), end = +r[3] || 0;
+      if (!m || !end || !/^(완료|오답 학습 남음)$/.test(prog)) return;
+      var pct = +m[1], c = m[2] != null ? +m[2] : null, tt = m[3] != null ? +m[3] : null;
+      var t = TESTS.filter(function (x) { return 'Wrap-up ' + x.short === name; })[0];
+      if (t) { var ts = TST(t); if (ts.first || (ts.remote && ts.remote.at >= end)) return;
+        ts.remote = { pct: pct, c: c, tt: tt, at: end }; changed = true; return; }
+      var d = P.days.filter(function (x) { return x.name === name; })[0]; if (!d) return;
+      var st = DS(d.id), hs = st.history || (st.history = []);
+      if ((st.finished && mn(st.finished) === mn(end)) || hs.some(function (h) { return mn(h.finished) === mn(end); })) return;
+      if (dayProgress(d).finished && st.finished && st.finished > end) return; /* 이 기기에서 더 나중에 끝냄 */
+      hs.push({ c: c != null ? c : 0, t: tt != null ? tt : 0, pct: pct, started: null, finished: end, review: null, restored: true });
+      hs.sort(function (p, q) { return p.finished - q.finished; }); changed = true;
+    });
+    return changed;
+  }
   function noteSync() {
+    progressSync();
     if (!SHEET || !S.name || !window.fetch || nSynced[S.name]) return;
     var who = S.name, pc = myPass(who); nSynced[who] = true;
     fetch(SHEET + (SHEET.indexOf('?') < 0 ? '?' : '&') + 'notes=1&name=' + encodeURIComponent(who) + '&code=' + encodeURIComponent(pc ? pc.c : '') + '&unit=' + encodeURIComponent(P.id) + '&_=' + Date.now(), { cache: 'no-store' })
