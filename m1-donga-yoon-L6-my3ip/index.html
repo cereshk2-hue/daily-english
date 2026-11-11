@@ -516,6 +516,7 @@ h2 { font-size: 19px }
 .bnav.four { grid-template-columns: repeat(4, 1fr) }
 .bnav.five { grid-template-columns: repeat(5, 1fr) }
 .bnav.five button { font-size: 10.5px }
+.bnav.six { grid-template-columns: repeat(6, 1fr); align-items: start } .bnav.six button { font-size: 10px; line-height: 1.2; word-break: keep-all; padding: 2px 1px }
 .examwrap { padding-bottom: 40px }
 .wq { font-size: 15.5px; line-height: 1.6; text-align: left }
 .prompt .wq { font-size: 15.5px }
@@ -566,10 +567,11 @@ details.wctx summary { cursor: pointer; color: var(--accent); font-weight: 700 }
 .orow:last-child { border-bottom: 0 }
 .orow.w { align-items: flex-start }
 .onum { flex: none; width: 2.4em; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; padding-top: 2px }
+.onum small { display: block; font-size: .62em; font-weight: 700; color: var(--muted); letter-spacing: -.02em }
 .obub { flex: 1; display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px }
 .bub { height: 40px; border-radius: 99px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); font-size: 19px; line-height: 1; padding: 0 }
 .bub.sel { background: var(--accent); border-color: var(--accent); color: var(--on-accent) }
-.orow .wins { flex: 1; margin: 0 }
+.orow .wins { flex: 1; margin: 0; min-width: 0; grid-template-columns: minmax(0, 1fr) }
 .wko { display: block; color: var(--muted); font-size: 13px; line-height: 1.45; margin-top: 2px }
 .wwords { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; font-size: 13.5px; align-items: center }
 .wwords > b { margin-right: 2px }
@@ -589,6 +591,6 @@ details.wkos small { display: block; color: var(--muted); font-size: 13px }
 
 <script src="data/m1-donga-yoon-L6.js?v=7c3ffb13"></script>
 <script src="../config.js" data-cfg="1"></script>
-<script src="app.js?v=13688d78"></script>
+<script src="app.js?v=60642162"></script>
 </body>
 </html>

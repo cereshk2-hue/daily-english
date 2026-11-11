@@ -525,15 +525,17 @@
     }
     var TABS = [['today', '오늘의 학습', '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>'], ['text', '본문', '<path d="M5 3h10l4 4v14H5z"/><path d="M9 12h6M9 16h4"/>'],
       ['types', '유형별 연습', '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>']];
-    if (TESTS.some(function (t) { return !isBoss(t); })) TABS.push(['test', TL, '<path d="M6 3h9l4 4v14H6z"/><path d="M9 13l2 2 4-4"/>']);
+    if (TESTS.some(function (t) { return !isBoss(t) && !isBimi(t); })) TABS.push(['test', TL, '<path d="M6 3h9l4 4v14H6z"/><path d="M9 13l2 2 4-4"/>']);
     if (TESTS.some(isBoss)) TABS.push(['boss', '끝판왕', '<path d="M12 3c1 3 4 4.5 4 8.5a4 4 0 0 1-8 0c0-2 1-3 1-3 .5 1.5 1.5 2 2 2 0-3-1-5 1-7.5z"/><path d="M8 21h8"/>']);
+    if (TESTS.some(isBimi)) TABS.push(['bimi', '비밀노트 변형문제', '<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v3"/>']);
     h += '<div class="stack">';
     if (TAB === 'test' && TESTS.length) h += testsHTML();
     if (TAB === 'boss' && TESTS.length) h += bossHTML();
+    if (TAB === 'bimi' && TESTS.length) h += bimiHTML();
     if (TAB === 'today') h += todayHTML();
     if (TAB === 'text') h += '<h3 class="sech">본문</h3>' + daySwitch() + (inProgress(P.days[SEL]) ? lockHTML(P.days[SEL], '본문') : P.passLock && !DS(P.days[SEL].id).scores[0] ? '<section class="card"><b>먼저 실전 1문제를 풀어 보세요.</b><p class="note" style="margin:6px 0 0">문제를 풀고 나면 문장별 해석과 노트 정리용 핵심 문장이 여기에 열려요.</p></section>' : passageHTML(P.days[SEL]));
     if (TAB === 'types') h += '<h3 class="sech">유형별 연습</h3>' + daySwitch() + (inProgress(P.days[SEL]) ? lockHTML(P.days[SEL], '유형별 연습') : typesHTML(P.days[SEL]));
-    h += '</div></div><nav class="bnav tabs' + (TABS.length > 4 ? ' five' : TABS.length > 3 ? ' four' : '') + '" role="tablist">' + TABS.map(function (t) {
+    h += '</div></div><nav class="bnav tabs' + (TABS.length > 5 ? ' six' : TABS.length > 4 ? ' five' : TABS.length > 3 ? ' four' : '') + '" role="tablist">' + TABS.map(function (t) {
       return '<button role="tab" aria-selected="' + (TAB === t[0]) + '" class="' + (TAB === t[0] ? 'on' : '') + '" data-tab="' + t[0] + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true">' + t[2] + '</svg>' + t[1] + '</button>';
     }).join('') + '</nav>';
     app.innerHTML = h;
@@ -549,8 +551,16 @@
   function TST(t) { S.tests = S.tests || {}; return S.tests[t.id] || (S.tests[t.id] = { draft: null, first: null, tries: [] }); }
   function testDay(t) { return TD.filter(function (x) { return x.test === t; })[0]; }
   function isW(it) { return it.kind === 'write'; }
+  /* 11/11 '모두 고르기' 문항(정답이 여러 개): it.ans 가 배열 → 답안지에서 여러 개 눌러 고르고, 고른 것이 정답과 똑같아야 맞음 */
+  function isM(it) { return Array.isArray(it.ans); }
+  function inAns(it, i) { return isM(it) ? it.ans.indexOf(i) >= 0 : i === it.ans; }
+  function picked(v, i) { return Array.isArray(v) ? v.indexOf(i) >= 0 : v === i; }
+  function sameAns(it, v) { return isM(it) ? Array.isArray(v) && v.slice().sort().join() === it.ans.slice().sort().join() : v === it.ans; }
+  function ansTxt(v) { return v == null || (Array.isArray(v) && !v.length) ? '안 씀' : Array.isArray(v) ? v.slice().sort().map(function (i) { return CIRC[i]; }).join('') : CIRC[v]; }
   function isBoss(t) { return t.kind === 'boss'; } /* 11/2 요약문 끝판왕 챌린지: 아래 '끝판왕' 탭에 따로 (주말 도전) */
-  function listTab(t) { return isBoss(t) ? 'boss' : 'test'; }
+  function isBimi(t) { return t.kind === 'bimi'; } /* 11/11 중산고1 비밀노트 변형문제: 아래 '비밀노트 변형문제' 탭에 따로 (종이 시험지 + 답안지) */
+  function tlOf(t) { return isBoss(t) ? '끝판왕' : isBimi(t) ? '비밀노트 변형문제' : TL; }
+  function listTab(t) { return isBoss(t) ? 'boss' : isBimi(t) ? 'bimi' : 'test'; }
   function hasW(t) { return t.items.some(isW); }
   function wnorm(s) { return norm(String(s || '').replace(/[“”]/g, '"')).replace(/[.\s]+$/, ''); }
   function testQ(t, k, b) {
@@ -560,7 +570,7 @@
         key: t.short + ' ' + it.n + (bl.label ? ' ' + bl.label : ''), stepTitle: t.title, guide: '' }; }
     return { t: 'choice', prompt: '<div class="wq">' + (it.ctx ? '<details class="wctx" open><summary>지문</summary>' + it.ctx + '</details>' : '') +
         '<div class="wq-stem">' + it.n + '. ' + it.stem + '</div>' + it.body + '</div>',
-      opts: it.opts.slice(), ans: it.opts[it.ans], ex: '정답 ▶ ' + CIRC[it.ans] + ' ' + strip(it.opts[it.ans]) + (it.okos ? ' (' + it.okos[it.ans] + ')' : '') + '\n' + it.ex + ((it.words || []).length ? '\n단어 ▶ ' + it.words.map(function (w) { return w[0] + ' ' + w[1]; }).join(' · ') : ''),
+      opts: it.opts.slice(), ans: it.opts[isM(it) ? it.ans[0] : it.ans], ex: '정답 ▶ ' + (isM(it) ? ansTxt(it.ans) : CIRC[it.ans] + ' ' + strip(it.opts[it.ans]) + (it.okos ? ' (' + it.okos[it.ans] + ')' : '')) + '\n' + it.ex + ((it.words || []).length ? '\n단어 ▶ ' + it.words.map(function (w) { return w[0] + ' ' + w[1]; }).join(' · ') : ''),
       key: t.short + ' ' + it.n + '번', num: true, fixed: true, optEn: it.en, stepTitle: t.title, guide: '' };
   }
   /* 채점: { score, max, c(선택형 맞은 수), mcN, wrong: [문항 번호(k)], wb: {'k_b': 'ok'|'no'|'chk'} } */
@@ -568,7 +578,7 @@
     var r = { score: 0, max: 0, c: 0, mcN: 0, wrong: [], wb: {} };
     t.items.forEach(function (it, k) {
       r.max += it.pts;
-      if (!isW(it)) { r.mcN++; if (a[k] === it.ans) { r.c++; r.score += it.pts; } else r.wrong.push(k); return; }
+      if (!isW(it)) { r.mcN++; if (sameAns(it, a[k])) { r.c++; r.score += it.pts; } else r.wrong.push(k); return; }
       var bad = false;
       it.blanks.forEach(function (bl, b) {
         var v = wnorm(a[k + '_' + b]), st = !v ? 'no' : bl.ans.some(function (x) { return wnorm(x) === v; }) ? 'ok' : (bl.review || (bl.chk || []).some(function (x) { return wnorm(x) === v; })) ? 'chk' : 'no';
@@ -632,7 +642,7 @@
         (f.wrong.length ? ' · 틀린 문제 <b>' + f.wrong.length + '개</b> → 시험지에 정리' : ' · 만점!') +
         (f.wb && Object.keys(f.wb).some(function (k) { return f.wb[k] === 'chk'; }) ? '<br><small>서술형 일부는 선생님이 확인해요 (점수에 아직 안 들어감)</small>' : '')
       : !dr && st.remote ? '<b>다른 기기에서 제출 · ' + st.remote.pct + '점</b>' + (st.remote.c != null ? ' (' + st.remote.c + '/' + st.remote.tt + ')' : '') + (st.remote.at ? ' · ' + fmtTime(st.remote.at) : '') + '<br><small>결과 · 해설은 제출한 기기에서 볼 수 있어요</small>'
-      : dr ? '<b>푸는 중</b> · ' + Object.keys(dr.a).filter(function (k) { return dr.a[k] !== '' && dr.a[k] != null; }).length + '칸 답함' : '아직 안 풀었어요';
+      : dr ? '<b>푸는 중</b> · ' + Object.keys(dr.a).filter(function (k) { return dr.a[k] !== '' && dr.a[k] != null && !(Array.isArray(dr.a[k]) && !dr.a[k].length); }).length + '칸 답함' : '아직 안 풀었어요';
     var btns = f ? '<button class="btn plank" data-tres="' + ti + '">결과 · 해설 보기</button>' +
         '<button class="btn ghost" data-tgo2="' + ti + '">' + (dr ? '연습 이어서 풀기' : '처음부터 다시 풀기 (연습)') + '</button>'
       : '<button class="btn plank" data-tgo2="' + ti + '">' + (dr ? '이어서 풀기' : '시험 시작하기') + '</button>';
@@ -642,7 +652,11 @@
   }
   function testsHTML() {
     return '<h3 class="sech">' + TL + (/시험|문제/.test(TL) ? '' : ' 시험') + '</h3><p class="sub" style="margin:0 0 12px">종이 시험지 대신 여기에서 답을 입력해요. <b>처음 제출한 점수</b>가 선생님께 전달돼요. 틀린 문제는 해설을 보고 <b>시험지에 정리</b>해요 (오답 노트에는 담기지 않아요).</p>' +
-      TESTS.map(function (t, ti) { return isBoss(t) ? '' : testCardHTML(ti); }).join('');
+      TESTS.map(function (t, ti) { return isBoss(t) || isBimi(t) ? '' : testCardHTML(ti); }).join('');
+  }
+  function bimiHTML() {
+    return '<h3 class="sech">비밀노트 변형문제</h3><p class="sub" style="margin:0 0 12px">선생님이 나눠 준 <b>비밀노트 변형문제</b> 시험지로 풀고, 여기에는 <b>답만</b> 입력해요. 시험지 번호 그대로 입력하면 돼요. <b>모두</b>라고 적힌 번호는 정답을 모두 골라요. 서술형은 시험지에 쓴 답을 그대로 옮겨 적어요. <b>처음 제출한 점수</b>가 선생님께 전달돼요.</p>' +
+      TESTS.map(function (t, ti) { return isBimi(t) ? testCardHTML(ti) : ''; }).join('');
   }
   function bossHTML() {
     return '<h3 class="sech">요약문 끝판왕 챌린지</h3><p class="sub" style="margin:0 0 12px">한 주의 <b>마지막 날</b>에 도전하는 <b>최상위 난이도</b> 요약문 시험이에요. 지문 하나로 요약문 10개, 어휘를 꼬아 만든 선택지라 단어 뜻을 정확히 따져야 해요. 종이 시험지로 풀고 여기에는 답만 입력해요. <b>처음 제출한 점수</b>가 선생님께 전달돼요.</p>' +
@@ -650,8 +664,8 @@
   }
   function expHTML(it, my, wrong) { /* 정답 이유 · 선택지 해석 · 단어 뜻 · 문장 해석 (시험지에 옮겨 적기) */
     var o = it.okos || [];
-    return '<p class="wex"><b>정답 ' + CIRC[it.ans] + '</b> ' + E(it.ex) + '</p>' +
-      '<ol class="wopts">' + it.opts.map(function (x, i) { return '<li class="' + (i === it.ans ? 'right' : i === my ? 'wrong' : '') + '"><span>' + CIRC[i] + '</span><span><span' + (it.en ? ' class="en"' : '') + '>' + x + '</span>' + (o[i] && strip(x) !== o[i] ? '<small class="wko">' + E(o[i]) + '</small>' : '') + '</span></li>'; }).join('') + '</ol>' +
+    return '<p class="wex"><b>정답 ' + ansTxt(it.ans) + '</b> ' + E(it.ex) + '</p>' +
+      '<ol class="wopts">' + it.opts.map(function (x, i) { return '<li class="' + (inAns(it, i) ? 'right' : picked(my, i) ? 'wrong' : '') + '"><span>' + CIRC[i] + '</span><span><span' + (it.en ? ' class="en"' : '') + '>' + x + '</span>' + (o[i] && strip(x) !== o[i] ? '<small class="wko">' + E(o[i]) + '</small>' : '') + '</span></li>'; }).join('') + '</ol>' +
       ((it.words || []).length ? '<div class="wwords"><b>단어</b>' + it.words.map(function (w) { return '<span><i class="en">' + E(w[0]) + '</i> ' + E(w[1]) + '</span>'; }).join('') + '</div>' : '') +
       ((it.kos || []).length ? '<details class="wkos"' + (wrong ? ' open' : '') + '><summary>문장 해석 (' + it.kos.length + '문장)</summary>' + it.kos.map(function (p) { return '<p><span class="en">' + E(p[0]) + '</span><small>' + E(p[1]) + '</small></p>'; }).join('') + '</details>' : '');
   }
@@ -663,17 +677,17 @@
   function examView() { /* 답안지만: 문제는 종이 시험지로 풀고 여기에는 답만 입력 */
     RS = null; top();
     var t = TESTS[TV.ti], st = TST(t), dr = st.draft, a = dr.a, n = t.items.length;
-    var filled = function (k) { var it = t.items[k]; return isW(it) ? it.blanks.every(function (_, b) { return wnorm(a[k + '_' + b]); }) : a[k] != null; };
+    var filled = function (k) { var it = t.items[k]; return isW(it) ? it.blanks.every(function (_, b) { return wnorm(a[k + '_' + b]); }) : isM(it) ? (a[k] || []).length > 0 : a[k] != null; };
     var cnt = function () { return t.items.filter(function (_, k) { return filled(k); }).length; };
     var h = '<div class="topbar"><div class="row"><button class="xbtn" id="tquit" aria-label="나가기"><span aria-hidden="true">✕</span></button><span class="crumb"><b>' + E(t.title) + '</b>' +
       (dr.retake ? ' · 연습 (점수 그대로)' : ' · 답안지') + '</span><span class="qpill" id="tcount">' + cnt() + ' / ' + n + '</span></div></div>';
     h += '<div class="stack examwrap"><p class="note" style="margin:0">' + (dr.retake ? '처음 제출한 점수는 그대로 남아요. 연습으로 다시 풀어 보세요.'
-      : '문제는 종이 시험지로 풀고, 여기에는 <b>답만</b> 입력해요. 고른 답은 바로 저장돼요. 다 입력하고 <b>제출하기</b>를 누르면 점수가 선생님께 전달되고, 해설이 나와요. 틀린 문제는 해설을 보고 시험지에 정리해요.') + '</p>';
+      : (t.items.some(isM) ? '<b>모두</b>라고 적힌 번호는 정답을 <b>모두</b> 눌러요 (다시 누르면 취소). ' : '') + '문제는 종이 시험지로 풀고, 여기에는 <b>답만</b> 입력해요. 고른 답은 바로 저장돼요. 다 입력하고 <b>제출하기</b>를 누르면 점수가 선생님께 전달되고, 해설이 나와요. 틀린 문제는 해설을 보고 시험지에 정리해요.') + '</p>';
     h += '<section class="card omrsheet">' + t.items.map(function (it, k) {
       if (isW(it)) return '<div class="orow w" id="tq' + k + '"><span class="onum">' + it.n.replace('서술형 ', '서') + '</span><div class="wins">' + it.blanks.map(function (bl, b) {
         return '<label class="win">' + (bl.label ? '<b>' + bl.label + '</b>' : '') + '<input class="en" data-tw="' + k + '_' + b + '" value="' + E(a[k + '_' + b] || '') + '" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="' + E(it.n) + (bl.label ? ' ' + bl.label : '') + ' 답 쓰기"></label>'; }).join('') + '</div></div>';
-      return '<div class="orow" id="tq' + k + '"><span class="onum">' + it.n + '</span><div class="obub">' + [0, 1, 2, 3, 4].map(function (i) {
-        return '<button class="bub' + (a[k] === i ? ' sel' : '') + '" data-tq="' + k + ':' + i + '" aria-label="' + it.n + '번 ' + (i + 1) + '번" aria-pressed="' + (a[k] === i) + '">' + CIRC[i] + '</button>'; }).join('') + '</div></div>';
+      return '<div class="orow' + (isM(it) ? ' multi' : '') + '" id="tq' + k + '"><span class="onum">' + it.n + (isM(it) ? '<small>모두</small>' : '') + '</span><div class="obub">' + [0, 1, 2, 3, 4].map(function (i) {
+        return '<button class="bub' + (picked(a[k], i) ? ' sel' : '') + '" data-tq="' + k + ':' + i + '" aria-label="' + it.n + '번 ' + (i + 1) + '번" aria-pressed="' + picked(a[k], i) + '">' + CIRC[i] + '</button>'; }).join('') + '</div></div>';
     }).join('') + '</section>' +
       '<p class="note" id="tleft" style="margin:0" hidden></p><button class="btn plank" id="tsubmit" style="width:100%">' + (dr.retake ? '채점하기 (연습)' : '제출하기') + '</button></div>';
     app.innerHTML = h;
@@ -681,8 +695,10 @@
     $('#tquit').onclick = function () { TV = null; home(listTab(t)); };
     app.querySelectorAll('[data-tq]').forEach(function (b) { b.onclick = function () {
       var p = b.dataset.tq.split(':'), k = +p[0], i = +p[1];
-      dr.a[k] = i; save();
-      app.querySelectorAll('[data-tq^="' + k + ':"]').forEach(function (x) { var on = x === b; x.classList.toggle('sel', on); x.setAttribute('aria-pressed', on); });
+      if (isM(t.items[k])) { var v = Array.isArray(dr.a[k]) ? dr.a[k] : [], j = v.indexOf(i); if (j < 0) v.push(i); else v.splice(j, 1); v.sort(); dr.a[k] = v; }
+      else dr.a[k] = i;
+      save();
+      app.querySelectorAll('[data-tq^="' + k + ':"]').forEach(function (x) { var on = picked(dr.a[k], +x.dataset.tq.split(':')[1]); x.classList.toggle('sel', on); x.setAttribute('aria-pressed', on); });
       upd();
     }; });
     app.querySelectorAll('[data-tw]').forEach(function (inp) { inp.oninput = function () { dr.a[inp.dataset.tw] = inp.value; save(); upd(); }; });
@@ -703,15 +719,15 @@
     if (first) st.first = rec; else (st.tries = st.tries || []).push(rec);
     st.draft = null;
     save();
-    reportTest((isBoss(t) ? '끝판왕' : 'Wrap-up') + (first ? ' 제출' : ' 연습'), t, { stepScore: (first ? '' : '연습 ') + g.score + '/' + g.max + '점' });
+    reportTest((isBoss(t) ? '끝판왕' : isBimi(t) ? '비밀노트' : 'Wrap-up') + (first ? ' 제출' : ' 연습'), t, { stepScore: (first ? '' : '연습 ') + g.score + '/' + g.max + '점' });
     var ti = TV.ti; TV = null; testResult(ti, rec);
   }
   function qtype(it) { /* 문항 유형: 발문으로 판별 (결과 카드의 유형별 결과) */
     if (isW(it)) return '서술형';
     var q = String(it.stem || '').replace(/<[^>]+>/g, '');
-    var R = [[/요약/, '요약문'], [/영영풀이|낱말|어휘|문맥|뜻의 연결|우리말 뜻|단어의 쓰임|단어의 관계|뜻이 바르지|의미가 서로|설명하는 단어|바꿔 쓴|바꿔 쓸/, '어휘'], [/어법|쓰임|역할|문장의 형식|문법적|동명사|배열|영어로 옮길|원형과 과거형/, '어법·문법'],
-      [/순서/, '글의 순서'], [/주어진 문장|들어가기에/, '문장 삽입'], [/관계\s*없는|무관/, '무관한 문장'], [/대화의 연결/, '대화'], [/빈칸/, '빈칸'], [/밑줄 친.*의미|함축/, '함축 의미'],
-      [/주제|제목|요지|주장|목적/, '대의 파악'], [/일치|내용|답할 수 없는|언급되지|추론|옳은|설명으로|답한 것|이유로|비유|짝지은|알 수 없는|질문에 대한/, '내용 이해'], [/심경|분위기/, '심경·분위기'], [/가리키는|지칭/, '지칭'], [/도표/, '도표']];
+    var R = [[/요약/, '요약문'], [/영영풀이|낱말|어휘|문맥|뜻의 연결|우리말 뜻|단어의 쓰임|단어의 관계|뜻이 바르지|의미가 서로|설명하는 단어|바꿔 쓴|바꿔 쓸/, '어휘'], [/어법|쓰임|역할|문장의 형식|문법적|에 관한 아래의 설명|동명사|배열|영어로 옮길|원형과 과거형/, '어법·문법'],
+      [/순서/, '글의 순서'], [/주어진 문장|들어가기에/, '문장 삽입'], [/관계\s*없는|무관/, '무관한 문장'], [/대화의 연결/, '대화'], [/빈칸|들어갈 말/, '빈칸'], [/밑줄 친.*의미|함축/, '함축 의미'],
+      [/주제|제목|요지|주장|목적/, '대의 파악'], [/일치|내용|답할 수 없는|언급되지|추론|옳은|설명으로|답한 것|이유로|비유|짝지은|알 수 없는|질문에 대한/, '내용 이해'], [/심경|분위기|감정/, '심경·분위기'], [/가리키는|지칭/, '지칭'], [/도표/, '도표']];
     for (var i = 0; i < R.length; i++) if (R[i][0].test(q)) return R[i][1];
     return '기타';
   }
@@ -719,13 +735,13 @@
     RS = null; top();
     var t = TESTS[ti], st = TST(t), f = st.first; rec = rec || f;
     var left = testLeft(t), practice = rec !== f, w = hasW(t), sc = recScore(t, rec), mx = recMax(t, rec), chk = Object.keys(rec.wb || {}).filter(function (k) { return rec.wb[k] === 'chk'; }).length;
-    var h = '<div class="topbar"><div class="row"><button class="link" id="tback">← ' + (isBoss(t) ? '끝판왕' : TL) + ' 목록</button><span class="crumb">' + E(t.title) + ' · <b>결과</b></span></div></div><div class="stack examwrap">';
+    var h = '<div class="topbar"><div class="row"><button class="link" id="tback">← ' + tlOf(t) + ' 목록</button><span class="crumb">' + E(t.title) + ' · <b>결과</b></span></div></div><div class="stack examwrap">';
     /* 11/11 결과 카드: 원형 그래프(정답률) + 유형별 결과 + 틀린 유형 한 줄 — 캡처해서 학부모님께 보내기 좋게 */
     var score = pctOf(sc, mx), TY = {}, order = [];
     t.items.forEach(function (it, k) { var ty = qtype(it); if (!TY[ty]) { TY[ty] = { n: 0, c: 0, wn: [] }; order.push(ty); } TY[ty].n++;
       if (rec.wrong.indexOf(k) < 0) TY[ty].c++; else TY[ty].wn.push(isW(it) ? it.n : it.n + '번'); });
     var wty = order.filter(function (ty) { return TY[ty].wn.length; });
-    h += '<section class="card pop stack tres" style="gap:10px"><div class="eyebrow">' + E(isBoss(t) ? '끝판왕' : TL) + ' · ' + (practice ? '연습 결과 · 처음 점수는 그대로예요' : '제출 완료 · 선생님께 전달돼요') + '</div>' +
+    h += '<section class="card pop stack tres" style="gap:10px"><div class="eyebrow">' + E(tlOf(t)) + ' · ' + (practice ? '연습 결과 · 처음 점수는 그대로예요' : '제출 완료 · 선생님께 전달돼요') + '</div>' +
       '<div class="tsum"><div class="donut" style="--p:' + score + '" role="img" aria-label="' + score + '점"><span><b>' + score + '</b>점</span></div>' +
       '<div class="tsum-r"><div class="tsum-name">' + E(S.name || '') + '</div><div class="tsum-t">' + E(t.title) + '</div><div class="note" style="margin:0">맞은 문제 <b>' + rec.c + ' / ' + rec.t + '</b>' + (w ? ' (선택형)' : '') + '<br>' + fmtTime(rec.at) + ' 제출</div></div></div>' +
       '<div class="ttypes">' + order.map(function (ty) { var x = TY[ty]; return '<span class="' + (x.wn.length ? 'no' : 'ok') + '">' + E(ty) + ' <b>' + x.c + '/' + x.n + '</b>' + (x.wn.length ? ' <small>' + E(x.wn.join('·')) + '</small>' : '') + '</span>'; }).join('') + '</div>' +
@@ -743,8 +759,8 @@
             return '<li class="' + sts[b] + '">' + (bl.label ? '<b>' + bl.label + '</b> ' : '') + '<span class="en">' + E(rec.a[k + '_' + b] || '(안 씀)') + '</span> <i>' + ({ ok: '✔ ' + bl.pts + '점', no: '✗', chk: '선생님 확인' }[sts[b]]) + '</i></li>'; }).join('') + '</ul>' +
           '<p class="wex"><b>모범 답안</b> <span class="en">' + E(it.model) + '</span>\n' + E(it.ex) + '</p></div></details>';
       }
-      var my = rec.a[k], ok = my === it.ans;
-      return '<details class="card wres' + (ok ? ' ok' : ' no') + '"' + (ok ? '' : ' open') + '><summary><span class="wmark">' + (ok ? '✔' : '✗') + '</span><b>' + it.n + '번</b> <span class="note">내 답 ' + (my != null ? CIRC[my] : '안 씀') + ' · 정답 ' + CIRC[it.ans] + '</span></summary>' +
+      var my = rec.a[k], ok = sameAns(it, my);
+      return '<details class="card wres' + (ok ? ' ok' : ' no') + '"' + (ok ? '' : ' open') + '><summary><span class="wmark">' + (ok ? '✔' : '✗') + '</span><b>' + it.n + '번</b> <span class="note">내 답 ' + ansTxt(my) + ' · 정답 ' + ansTxt(it.ans) + '</span></summary>' +
         '<div class="wq">' + expHTML(it, my, !ok) + '<details class="wctx"><summary>문제 보기</summary><div class="wq-stem">' + it.stem + '</div>' + (it.ctx ? it.ctx : '') + it.body + '</details></div></details>';
     }).join('') + '</div>';
     app.innerHTML = h;
