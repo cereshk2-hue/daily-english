@@ -5,7 +5,7 @@ global.Date=class extends RealDate{constructor(...a){if(!a.length)super(NOWT);el
 const K=(y,m,d,h,mi)=>new Date(Date.UTC(y,m-1,d,h-9,mi||0));
 function fmt(date,tz,f){const p=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false,weekday:'short'}).formatToParts(date).map(x=>[x.type,x.value]));
  const u={Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6,Sun:7}[p.weekday];
- return f.replace('yyyy',p.year).replace('MM',p.month).replace('dd',p.day).replace('HH',p.hour==='24'?'00':p.hour).replace('mm',p.minute).replace(/^u$/,String(u)).replace(/^M\//,String(+p.month)+'/').replace(/\/d /,'/'+(+p.day)+' ');}
+ return f.replace('yyyy',p.year).replace('MM',p.month).replace('dd',p.day).replace('HH',p.hour==='24'?'00':p.hour).replace('mm',p.minute).replace(/^u$/,String(u)).replace(/^M\//,String(+p.month)+'/').replace(/\/d /,'/'+(+p.day)+' ').replace(/\/d$/,'/'+(+p.day));}
 class Sheet{constructor(name,rows){this.name=name;this.rows=rows}getLastRow(){return this.rows.length}
  getRange(r,c,nr,nc){const self=this;return{getValues(){return self.rows.slice(r-1,r-1+nr).map(x=>{const a=x.slice(c-1,c-1+nc);while(a.length<nc)a.push('');return a})},
   setValues(v){v.forEach((row,i)=>{self.rows[r-1+i]=self.rows[r-1+i]||[];row.forEach((x,j)=>self.rows[r-1+i][c-1+j]=x)});return this},setFontWeight(){return this},setBackground(){return this},setFontColor(){return this},setNumberFormat(){return this},getValue(){return (self.rows[r-1]||[])[c-1]}}}
@@ -31,6 +31,7 @@ N('김민서','DAY 8','34번','오답 학습 남음','84점 (63/75)',K(2026,11,5
 N('김민서','DAY 9','35번','8/14단계','',K(2026,11,6,19,0));
 N('김민서','Wrap-up 18~22번','','완료','90점 (18/20)',K(2026,11,4,21,0),K(2026,11,4,21,0));
 N('이준호','DAY 6','32번','2/14단계','',K(2026,11,4,20,5));
+[[2,'DAY 1','20번 주장','86점 (19/22)'],[3,'DAY 2','22번 요지','71점 (15/21)']].forEach(([d,dy,r,s_])=>NOWR.push(['최하늘',sc3,un3,dy,r,'완료',s_,'',1,'',K(2026,11,d,21,6),K(2026,11,d,21,6)]));NOWR.push(['최하늘',sc3,un3,'DAY 3','23번 주제','2/3단계','',  '',1,'',K(2026,11,4,21,3),'']);
 const NOTER=[['학생','교재','DAY','과·DAY','단계','문제','틀린 횟수','헷갈려요','상태','마지막','key','data']];
 for(let i=0;i<14;i++){const first=i<9?K(2026,11,2+(i%4),20,0).getTime():K(2026,10,28,20,0).getTime();NOTER.push(['김민서',sc,'DAY 6 32번','','어법선택','q',1,'',i%3===0?'남음':'맞힘',i%3===0?K(2026,10,30,1,0):K(2026,11,5,21,0),'k'+i,JSON.stringify({id:'x',first:first})])}
 NOTER.push(['최하늘',sc3,'DAY 2 22번 요지','','실전 1문제','22. 다음 글의 요지로 가장 적절한 것은? ...',1,'','맞힘',K(2026,11,5,21,0),'h1','{"first":'+K(2026,11,3,21,0).getTime()+'}']);
@@ -64,3 +65,5 @@ const d5=reportData('', '2026-10-19','2026-11-06');console.log('memo',d5.list.fi
 
 console.log('exam',JSON.stringify(reportData('2026-11-04').list.find(x=>x.name==='최하늘').exam));
 console.log('voc',JSON.stringify(reportData('2026-11-04').list.find(x=>x.name==='최하늘').voc));
+
+fs.writeFileSync(__dirname+'/out_report3.html',doGet({parameter:{view:'dW6ypYyx',report:'1',who:'김민서'}}).html.replace('<head>','<head>'+stub));
