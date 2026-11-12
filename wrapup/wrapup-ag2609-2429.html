@@ -1,0 +1,368 @@
+<title>안곡고2 9월 학평 24·29번 Wrap-up</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+/* A4 시험지 (10/31): 스크립트가 문항을 A4 쪽(210×297mm)에 왼쪽 단 → 오른쪽 단 → 다음 쪽 순서로 직접 나눠 담고 쪽 번호를 붙인다.
+   화면·인쇄·PDF 어디서나 같은 쪽 구성. 좁은 화면에서는 쪽 전체를 축소해서 보여 준다. */
+.q, .exp p { break-inside: avoid }
+body { font-size: 9.6pt }
+.stem { font-size: 9.8pt } .stem .src { font-size: 8pt }
+.box, .given, .sum { font-size: 9.4pt; line-height: 1.46; padding: 2.2mm 2.8mm }
+.ol, .ol.en li { font-size: 9.3pt; line-height: 1.38 }
+table.ch { font-size: 9.2pt } table.ch th { font-size: 8.4pt }
+.q { margin-bottom: 3.6mm; gap: 1.6mm }
+.exp { font-size: 7.8pt; line-height: 1.36; margin-top: 3mm } .exp p { margin-bottom: 1mm }
+.top, .notice, .idrow, .title .when, .foot { font-size: 8.6pt }
+.title h1 { font-size: 18pt } .title h1 small { font-size: 8.6pt }
+.keygrid div { font-size: 9pt; padding: 1.2mm 0 } .keygrid b { font-size: 10.5pt }
+.page { width: 210mm; max-width: 100%; padding: 11mm }
+.sheets { display: grid; justify-content: center; gap: 16px }
+.sheet { width: 210mm; height: 297mm; padding: 11mm; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); overflow: hidden }
+/* 내용 영역 188×256mm: A4 여백 0~20mm, Letter 기본 여백에서도 한 장에 들어가는 크기 */
+.sheet > .inner { width: 188mm; height: 256mm; display: flex; flex-direction: column; overflow: hidden }
+.inner > .top.run { padding-bottom: 2mm; border-bottom: 1px solid var(--rule); margin-bottom: 1mm }
+.cols { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr);
+  column-gap: 6mm; margin-top: 4mm; position: relative }
+.cols::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid var(--rule) }
+.cols > .col { columns: auto !important; margin: 0 !important; min-height: 0; overflow: hidden }
+.inner > .foot { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center }
+.inner > .foot span:last-child { text-align: right }
+.inner > .foot .pno { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums }
+@page { size: A4; margin: 12mm 11mm }
+@media print {
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  body { padding: 0 !important; margin: 0 }
+  .sheets { display: block }
+  .sheet { zoom: 1 !important; width: auto; height: auto; padding: 0; margin: 0; box-shadow: none; overflow: visible; break-after: page; page-break-after: always }
+  .sheet:last-child { break-after: auto; page-break-after: auto }
+  .sheet > .inner { margin: 0 auto }
+  .page { max-width: none; margin: 0; box-shadow: none; break-after: page }
+}
+</style>
+<script>
+/* A4 쪽 나누기: 왼쪽 단 → 오른쪽 단 → 다음 쪽, 쪽 번호 n / 전체 */
+(function () {
+  function build() {
+    var main = document.querySelector('main'); if (!main || document.querySelector('.sheets')) return;
+    var secs = [].slice.call(main.querySelectorAll('section.page'));
+    var out = document.createElement('div'); out.className = 'sheets'; main.appendChild(out);
+    var pages = [];
+    secs.forEach(function (sec) {
+      var box = sec.querySelector('.qs, .exp'); if (!box) return;
+      var items = [].slice.call(box.children), foot = sec.querySelector('.foot'), top = sec.querySelector('.top');
+      var head = [].slice.call(sec.children).filter(function (e) { return e !== box && e !== foot && !(e.classList.contains('keygrid') && false); });
+      var cols, ci, first = true;
+      function newPage() {
+        var sh = document.createElement('div'); sh.className = 'sheet'; var pg = document.createElement('div'); pg.className = 'inner'; sh.appendChild(pg);
+        if (first) head.forEach(function (e) { pg.appendChild(e); });
+        else { var t = top.cloneNode(true); t.classList.add('run'); pg.appendChild(t); }
+        first = false;
+        cols = document.createElement('div'); cols.className = 'cols';
+        for (var i = 0; i < 2; i++) { var c = document.createElement('div'); c.className = 'col ' + box.className; cols.appendChild(c); }
+        pg.appendChild(cols);
+        var f = foot.cloneNode(true), sp = f.querySelectorAll('span'), mid = document.createElement('span'); mid.className = 'pno';
+        f.insertBefore(mid, sp[1] || null); pg.appendChild(f);
+        out.appendChild(sh); pages.push(pg); ci = 0;
+      }
+      function over(c) { return c.scrollHeight > c.clientHeight + 1; }
+      newPage();
+      items.forEach(function (it) {
+        var c = cols.children[ci]; c.appendChild(it);
+        if (over(c) && c.children.length > 1) {
+          c.removeChild(it); ci++;
+          if (ci > 1) newPage();
+          cols.children[ci].appendChild(it);
+        }
+      });
+      sec.parentNode.removeChild(sec);
+    });
+    pages.forEach(function (p, i) { p.querySelector('.pno').textContent = (i + 1) + ' / ' + pages.length; });
+    fit();
+  }
+  function fit() {
+    var w = document.documentElement.clientWidth - 24, s = Math.min(1, w / 794);
+    [].forEach.call(document.querySelectorAll('.sheet'), function (p) { p.style.zoom = s < 1 ? s : ''; });
+  }
+  function go() { (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(build, build); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  window.addEventListener('resize', function () { if (document.querySelector('.sheets')) fit(); });
+})();
+</script>
+
+
+<main>
+<section class="page">
+  <div class="top"><span>2026학년도 9월 고2 전국연합학력평가 · <b>24·29번 Wrap-up</b></span><span>안곡고등학교 2학년 · 내신 대비</span></div>
+  <div class="title">
+    <div class="g">영어</div>
+    <h1>9월 학평 24·29번 Wrap-up<small>주의력 문해력 · 자본주의와 값싼 자연</small></h1>
+    <div class="when">20문항 · 각 5점<br>제한 시간 30분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">범위: 24번(주의를 빼앗도록 설계된 디지털 환경을 알아보는 교육) · 29번(값싼 자연과 변경에 기대는 자본주의). 지문은 원문을 일부 바꾼 것이 있어요. 선택지는 본문 표현을 다른 말로 바꿔 썼으니 뜻을 정확히 따져 보세요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[24번 변형]</span></div>
+    <div class="box"><p>This means helping students recognize how the architecture of a social media feed is ①<u>deliberately</u> designed to distract or provoke them. Classes in media literacy traditionally cover how to evaluate the ②<u>credibility</u> of sources. A student might be tasked with tracking how many times they check their phone in an hour of homework, to ③<u>reduce</u> self-awareness about fragmentation. Another lesson might involve ④<u>unpacking</u> the design of popular apps. By treating these as deliberate design choices, young people become more ⑤<u>critical</u> users rather than passive consumers.</p></div>
+    <ol class="ol en"><li><span>①</span><span>deliberately</span></li><li><span>②</span><span>credibility</span></li><li><span>③</span><span>reduce</span></li><li><span>④</span><span>unpacking</span></li><li><span>⑤</span><span>critical</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>다음 글의 주제로 가장 적절한 것은?<span class="src">[24번]</span></div>
+    <div class="box"><p>Progressive educators and librarians are developing curricula to teach what we might call attention literacy. This means helping students recognize, for example, how the architecture of a social media feed or a news site is deliberately designed to distract or provoke them. Classes in media literacy traditionally cover how to evaluate the credibility of sources — now they also include recognizing clickbait, understanding the role of algorithms in what content is served up, and observing one's own patterns of distraction. A student might be tasked with tracking how many times they switch tasks or check their phone in an hour of homework, to raise self-awareness about fragmentation. Another lesson might involve unpacking the design of popular apps: Why does an app use infinite scrolling instead of pages? Why do notifications appear with specific colors and sounds? By treating these as deliberate design choices (often rooted in psychology and profit motives), young people become more critical users rather than passive consumers.</p></div>
+    <ol class="ol en"><li><span>①</span><span>teaching students to see how digital media is designed to capture attention</span></li><li><span>②</span><span>the benefits of infinite scrolling for students' learning</span></li><li><span>③</span><span>why librarians should ban smartphones in schools</span></li><li><span>④</span><span>the history of media literacy classes in schools</span></li><li><span>⑤</span><span>how app designers learn psychology to earn profits</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>다음 글의 내용과 일치하는 것은?<span class="src">[24번]</span></div>
+    <div class="box"><p>Progressive educators and librarians are developing curricula to teach what we might call attention literacy. This means helping students recognize, for example, how the architecture of a social media feed or a news site is deliberately designed to distract or provoke them. Classes in media literacy traditionally cover how to evaluate the credibility of sources — now they also include recognizing clickbait, understanding the role of algorithms in what content is served up, and observing one's own patterns of distraction. A student might be tasked with tracking how many times they switch tasks or check their phone in an hour of homework, to raise self-awareness about fragmentation. Another lesson might involve unpacking the design of popular apps: Why does an app use infinite scrolling instead of pages? Why do notifications appear with specific colors and sounds? By treating these as deliberate design choices (often rooted in psychology and profit motives), young people become more critical users rather than passive consumers.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Media literacy classes no longer teach how to judge the credibility of sources.</span></li><li><span>②</span><span>The design features of popular apps are presented as accidental.</span></li><li><span>③</span><span>Attention literacy aims to make students passive consumers of media.</span></li><li><span>④</span><span>Students may be asked to monitor how often they check their phones while studying.</span></li><li><span>⑤</span><span>Notifications are said to be designed without any colors or sounds.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[24번 변형]</span></div>
+    <div class="box"><p>Progressive educators and librarians are developing curricula to teach what we might call attention literacy. This means helping students recognize, for example, how the architecture of a social media feed or a news site is deliberately designed to distract or provoke them. Classes in media literacy traditionally cover how to evaluate the credibility of sources — now they also include recognizing clickbait, understanding the role of algorithms in what content is served up, and observing one's own patterns of distraction. A student might be tasked with tracking how many times they switch tasks or check their phone in an hour of homework, to raise self-awareness about fragmentation. Another lesson might involve unpacking the design of popular apps: Why does an app use infinite scrolling instead of pages? Why do notifications appear with specific colors and sounds? By treating these as deliberate design choices (often rooted in psychology and profit motives), young people become more critical users rather than <span class="blank"></span>.</p></div>
+    <ol class="ol en"><li><span>①</span><span>passive consumers</span></li><li><span>②</span><span>creative designers</span></li><li><span>③</span><span>expert programmers</span></li><li><span>④</span><span>careful librarians</span></li><li><span>⑤</span><span>active critics</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>다음 글의 밑줄 친 부분 중, 어법상 <u>틀린</u> 것은?<span class="src">[24번 변형]</span></div>
+    <div class="box"><p>This means ①<u>helping</u> students recognize how the architecture of a social media feed ②<u>is</u> deliberately designed to distract or provoke them. Classes in media literacy now also include ③<u>recognizing</u> clickbait. A student might be tasked with ④<u>tracking</u> how many times they switch tasks. By ⑤<u>treat</u> these as deliberate design choices, young people become more critical users.</p></div>
+    <ol class="ol en"><li><span>①</span><span>helping</span></li><li><span>②</span><span>is</span></li><li><span>③</span><span>recognizing</span></li><li><span>④</span><span>tracking</span></li><li><span>⑤</span><span>treat</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>(A), (B), (C)의 각 네모 안에서 어법에 맞는 표현으로 가장 적절한 것은?<span class="src">[24번]</span></div>
+    <div class="box"><p>Progressive educators and librarians are developing curricula to teach <b>(A)</b> [ what / that ] we might call attention literacy. … A student might be tasked with tracking how many times they switch tasks or <b>(B)</b> [ check / checking ] their phone in an hour of homework. Another lesson might involve <b>(C)</b> [ unpacking / to unpack ] the design of popular apps.</p></div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th><th>(C)</th></tr></thead><tbody><tr><td>①</td><td>that</td><td>check</td><td>unpacking</td></tr><tr><td>②</td><td>what</td><td>checking</td><td>unpacking</td></tr><tr><td>③</td><td>what</td><td>check</td><td>to unpack</td></tr><tr><td>④</td><td>that</td><td>checking</td><td>to unpack</td></tr><tr><td>⑤</td><td>what</td><td>check</td><td>unpacking</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>밑줄 친 <u>fragmentation</u>이 의미하는 바로 가장 적절한 것은?<span class="src">[24번]</span></div>
+    <div class="box"><p>Progressive educators and librarians are developing curricula to teach what we might call attention literacy. This means helping students recognize, for example, how the architecture of a social media feed or a news site is deliberately designed to distract or provoke them. Classes in media literacy traditionally cover how to evaluate the credibility of sources — now they also include recognizing clickbait, understanding the role of algorithms in what content is served up, and observing one's own patterns of distraction. A student might be tasked with tracking how many times they switch tasks or check their phone in an hour of homework, to raise self-awareness about <u>fragmentation</u>. Another lesson might involve unpacking the design of popular apps: Why does an app use infinite scrolling instead of pages? Why do notifications appear with specific colors and sounds? By treating these as deliberate design choices (often rooted in psychology and profit motives), young people become more critical users rather than passive consumers.</p></div>
+    <ol class="ol"><li><span>①</span><span>여러 일과 휴대폰 사이를 오가면서 주의가 조각조각 나뉘는 상태</span></li><li><span>②</span><span>공부할 과목을 여러 개로 나누어 계획하는 습관</span></li><li><span>③</span><span>스마트폰 화면이 깨져서 사용하기 어려운 상태</span></li><li><span>④</span><span>친구들과의 관계가 멀어져 고립되는 현상</span></li><li><span>⑤</span><span>숙제 시간을 일정하게 지키는 능력</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?<span class="src">[24번]</span></div>
+    <div class="given">A student might be tasked with tracking how many times they switch tasks or check their phone in an hour of homework, to raise self-awareness about fragmentation.</div>
+    <div class="box"><p>Progressive educators and librarians are developing curricula to teach what we might call attention literacy. <span class="gap">( ① )</span> This means helping students recognize, for example, how the architecture of a social media feed or a news site is deliberately designed to distract or provoke them. <span class="gap">( ② )</span> Classes in media literacy traditionally cover how to evaluate the credibility of sources — now they also include recognizing clickbait, understanding the role of algorithms in what content is served up, and observing one's own patterns of distraction. <span class="gap">( ③ )</span> Another lesson might involve unpacking the design of popular apps: Why does an app use infinite scrolling instead of pages? Why do notifications appear with specific colors and sounds? <span class="gap">( ④ )</span> By treating these as deliberate design choices (often rooted in psychology and profit motives), young people become more critical users rather than passive consumers. <span class="gap">( ⑤ )</span> </p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?<span class="src">[24번]</span></div>
+    <div class="box"><p>Progressive educators and librarians are developing curricula to teach what we might call attention literacy. This means helping students recognize, for example, how the architecture of a social media feed or a news site is deliberately designed to distract or provoke them. Classes in media literacy traditionally cover how to evaluate the credibility of sources — now they also include recognizing clickbait, understanding the role of algorithms in what content is served up, and observing one's own patterns of distraction. A student might be tasked with tracking how many times they switch tasks or check their phone in an hour of homework, to raise self-awareness about fragmentation. Another lesson might involve unpacking the design of popular apps: Why does an app use infinite scrolling instead of pages? Why do notifications appear with specific colors and sounds? By treating these as deliberate design choices (often rooted in psychology and profit motives), young people become more critical users rather than passive consumers.</p></div>
+    <div class="sum">Attention literacy teaches students to <b>(A)</b> <span class="blank"></span> how digital platforms are designed to grab their attention so that they can become <b>(B)</b> <span class="blank"></span> users.</div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>ignore</td><td>critical</td></tr><tr><td>②</td><td>recognize</td><td>passive</td></tr><tr><td>③</td><td>design</td><td>loyal</td></tr><tr><td>④</td><td>ignore</td><td>frequent</td></tr><tr><td>⑤</td><td>recognize</td><td>critical</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>다음 글의 요지로 가장 적절한 것은?<span class="src">[29번]</span></div>
+    <div class="box"><p>Capitalism is not a system where cash is everywhere but rather one in which islands of cash exchange exist within oceans of cheap — or potentially cheap — natures. Reproducing life within the cash nexus is expensive, and it grows more expensive over time. Workers' wages can be frozen, even rolled back, but in the end inequality leads to crises of the kind we've recently seen bring about populist protests in the United States and the United Kingdom. Workers demand dignity, and their labor becomes expensive. Production processes burn through an island, and energy is no longer cheap. The climate changes, and crops can no longer grow as abundantly as they once did. Frontiers are so important in these processes because they offer places where the new cheap things can be seized — and the cheap work of humans and other natures can be forcefully taken.</p></div>
+    <ol class="ol"><li><span>①</span><span>현금이 모든 곳에서 쓰이게 되면 자본주의는 더 안정된다.</span></li><li><span>②</span><span>자본주의는 비용이 계속 오르기 때문에 값싼 자원과 노동을 차지할 수 있는 새로운 변경을 끊임없이 필요로 한다.</span></li><li><span>③</span><span>노동자의 임금을 동결하면 불평등을 해소할 수 있다.</span></li><li><span>④</span><span>기후 변화는 자본주의와 아무 관련이 없는 자연 현상이다.</span></li><li><span>⑤</span><span>변경을 보호하면 값싼 노동이 자연스럽게 늘어난다.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[29번 변형]</span></div>
+    <div class="box"><p>Capitalism is not a system where cash is everywhere but rather one in which islands of cash exchange exist within oceans of cheap — or potentially cheap — natures. Reproducing life within the cash nexus is expensive, and it grows more expensive over time. Workers' wages can be frozen, even rolled back, but in the end inequality leads to crises of the kind we've recently seen bring about populist protests in the United States and the United Kingdom. Workers demand dignity, and their labor becomes expensive. Production processes burn through an island, and energy is no longer cheap. The climate changes, and crops can no longer grow as abundantly as they once did. Frontiers are so important in these processes because they offer places where <span class="blank"></span>.</p></div>
+    <ol class="ol en"><li><span>①</span><span>workers are finally paid with dignity</span></li><li><span>②</span><span>cash exchange becomes completely unnecessary</span></li><li><span>③</span><span>crops grow less abundantly than before</span></li><li><span>④</span><span>new cheap things and labor can be seized</span></li><li><span>⑤</span><span>energy becomes more expensive than ever</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>다음 글의 내용과 일치하지 <u>않는</u> 것은?<span class="src">[29번]</span></div>
+    <div class="box"><p>Capitalism is not a system where cash is everywhere but rather one in which islands of cash exchange exist within oceans of cheap — or potentially cheap — natures. Reproducing life within the cash nexus is expensive, and it grows more expensive over time. Workers' wages can be frozen, even rolled back, but in the end inequality leads to crises of the kind we've recently seen bring about populist protests in the United States and the United Kingdom. Workers demand dignity, and their labor becomes expensive. Production processes burn through an island, and energy is no longer cheap. The climate changes, and crops can no longer grow as abundantly as they once did. Frontiers are so important in these processes because they offer places where the new cheap things can be seized — and the cheap work of humans and other natures can be forcefully taken.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Workers' wages can never be reduced under capitalism.</span></li><li><span>②</span><span>Cash exchange takes place only in limited areas.</span></li><li><span>③</span><span>Maintaining life within the cash economy grows costlier over time.</span></li><li><span>④</span><span>Climate change can reduce the amount of crops produced.</span></li><li><span>⑤</span><span>Frontiers allow cheap labor to be taken by force.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[29번 변형]</span></div>
+    <div class="box"><p>Capitalism is a system in which islands of cash exchange exist within oceans of ①<u>cheap</u> natures. Reproducing life within the cash nexus is ②<u>expensive</u>, and it grows more expensive over time. Workers' wages can be ③<u>frozen</u>, but in the end inequality leads to crises. The climate changes, and crops can no longer grow as ④<u>poorly</u> as they once did. Frontiers are important because the cheap work of humans and other natures can be ⑤<u>forcefully</u> taken there.</p></div>
+    <ol class="ol en"><li><span>①</span><span>cheap</span></li><li><span>②</span><span>expensive</span></li><li><span>③</span><span>frozen</span></li><li><span>④</span><span>poorly</span></li><li><span>⑤</span><span>forcefully</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>다음 글의 밑줄 친 부분 중, 어법상 <u>틀린</u> 것은?<span class="src">[29번 변형]</span></div>
+    <div class="box"><p>Capitalism is not a system ①<u>where</u> cash is everywhere but rather one in ②<u>that</u> islands of cash exchange exist within oceans of cheap natures. Reproducing life within the cash nexus ③<u>is</u> expensive. In the end inequality leads to crises of the kind we've recently seen ④<u>bring</u> about populist protests. Frontiers offer places where the cheap work of humans can be forcefully ⑤<u>taken</u>.</p></div>
+    <ol class="ol en"><li><span>①</span><span>where</span></li><li><span>②</span><span>that</span></li><li><span>③</span><span>is</span></li><li><span>④</span><span>bring</span></li><li><span>⑤</span><span>taken</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?<span class="src">[29번]</span></div>
+    <div class="given">Capitalism is not a system where cash is everywhere but rather one in which islands of cash exchange exist within oceans of cheap — or potentially cheap — natures.</div>
+    <div class="box"><p><b>(A)</b> Workers demand dignity, and their labor becomes expensive. Production processes burn through an island, and energy is no longer cheap. The climate changes, and crops can no longer grow as abundantly as they once did.</p><p><b>(B)</b> Reproducing life within the cash nexus is expensive, and it grows more expensive over time. Workers' wages can be frozen, even rolled back, but in the end inequality leads to crises of the kind we've recently seen bring about populist protests in the United States and the United Kingdom.</p><p><b>(C)</b> Frontiers are so important in these processes because they offer places where the new cheap things can be seized — and the cheap work of humans and other natures can be forcefully taken.</p></div>
+    <ol class="ol"><li><span>①</span><span>(A) − (C) − (B)</span></li><li><span>②</span><span>(B) − (A) − (C)</span></li><li><span>③</span><span>(B) − (C) − (A)</span></li><li><span>④</span><span>(C) − (A) − (B)</span></li><li><span>⑤</span><span>(C) − (B) − (A)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>밑줄 친 <u>islands of cash exchange exist within oceans of cheap natures</u>가 의미하는 바로 가장 적절한 것은?<span class="src">[29번]</span></div>
+    <div class="box"><p>Capitalism is not a system where cash is everywhere but rather one in which <u>islands of cash exchange exist within oceans of cheap — or potentially cheap — natures</u>. Reproducing life within the cash nexus is expensive, and it grows more expensive over time. Workers' wages can be frozen, even rolled back, but in the end inequality leads to crises of the kind we've recently seen bring about populist protests in the United States and the United Kingdom. Workers demand dignity, and their labor becomes expensive. Production processes burn through an island, and energy is no longer cheap. The climate changes, and crops can no longer grow as abundantly as they once did. Frontiers are so important in these processes because they offer places where the new cheap things can be seized — and the cheap work of humans and other natures can be forcefully taken.</p></div>
+    <ol class="ol"><li><span>①</span><span>자본주의는 섬나라에서 시작되어 바다를 건너 퍼졌다.</span></li><li><span>②</span><span>현금이 오가는 영역은 일부일 뿐이고, 그 바깥의 값싼 자원과 노동이 훨씬 넓게 자본주의를 떠받친다.</span></li><li><span>③</span><span>현금 거래는 바다를 통한 무역에서만 이루어진다.</span></li><li><span>④</span><span>자연은 현금으로 사고팔 수 없는 영역이라 자본주의와 무관하다.</span></li><li><span>⑤</span><span>값싼 자연은 곧 사라지고 현금 거래가 모든 곳을 덮을 것이다.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?<span class="src">[29번]</span></div>
+    <div class="box"><p>Capitalism is not a system where cash is everywhere but rather one in which islands of cash exchange exist within oceans of cheap — or potentially cheap — natures. Reproducing life within the cash nexus is expensive, and it grows more expensive over time. Workers' wages can be frozen, even rolled back, but in the end inequality leads to crises of the kind we've recently seen bring about populist protests in the United States and the United Kingdom. Workers demand dignity, and their labor becomes expensive. Production processes burn through an island, and energy is no longer cheap. The climate changes, and crops can no longer grow as abundantly as they once did. Frontiers are so important in these processes because they offer places where the new cheap things can be seized — and the cheap work of humans and other natures can be forcefully taken.</p></div>
+    <div class="sum">As the costs of sustaining life within capitalism <b>(A)</b> <span class="blank"></span>, frontiers become essential as sources of <b>(B)</b> <span class="blank"></span> resources and labor.</div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>fall</td><td>cheap</td></tr><tr><td>②</td><td>rise</td><td>expensive</td></tr><tr><td>③</td><td>stabilize</td><td>rare</td></tr><tr><td>④</td><td>rise</td><td>cheap</td></tr><tr><td>⑤</td><td>fall</td><td>protected</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?<span class="src">[29번]</span></div>
+    <div class="given">Workers demand dignity, and their labor becomes expensive.</div>
+    <div class="box"><p>Capitalism is not a system where cash is everywhere but rather one in which islands of cash exchange exist within oceans of cheap — or potentially cheap — natures. <span class="gap">( ① )</span> Reproducing life within the cash nexus is expensive, and it grows more expensive over time. <span class="gap">( ② )</span> Workers' wages can be frozen, even rolled back, but in the end inequality leads to crises of the kind we've recently seen bring about populist protests in the United States and the United Kingdom. <span class="gap">( ③ )</span> Production processes burn through an island, and energy is no longer cheap. <span class="gap">( ④ )</span> The climate changes, and crops can no longer grow as abundantly as they once did. <span class="gap">( ⑤ )</span> Frontiers are so important in these processes because they offer places where the new cheap things can be seized — and the cheap work of humans and other natures can be forcefully taken.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>24·29번 지문에 나온 단어와 영영풀이가 바르게 짝지어지지 <u>않은</u> 것은?<span class="src">[종합]</span></div>
+    <ol class="ol en"><li><span>①</span><span>credibility: the quality of being trusted and believed</span></li><li><span>②</span><span>fragmentation: the process of breaking into small parts</span></li><li><span>③</span><span>frontier: an area where new things can be found or developed</span></li><li><span>④</span><span>seize: to take something quickly and by force</span></li><li><span>⑤</span><span>abundantly: in small and insufficient amounts</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>다음 (a)~(g) 중 어법상 <u>틀린</u> 것의 개수는?<span class="src">[종합]</span></div>
+    <div class="box"><p>Educators are developing curricula to teach <span class="tag">(a)</span><u>what</u> we might call attention literacy. A student might be tasked with <span class="tag">(b)</span><u>track</u> how many times they check their phone. Why <span class="tag">(c)</span><u>does</u> an app use infinite scrolling? Young people become more critical users rather than passive <span class="tag">(d)</span><u>consumers</u>. Reproducing life within the cash nexus <span class="tag">(e)</span><u>are</u> expensive. Workers' wages can <span class="tag">(f)</span><u>be frozen</u>. Frontiers offer places <span class="tag">(g)</span><u>which</u> the new cheap things can be seized.</p></div>
+    <ol class="ol"><li><span>①</span><span>1개</span></li><li><span>②</span><span>2개</span></li><li><span>③</span><span>3개</span></li><li><span>④</span><span>4개</span></li><li><span>⑤</span><span>5개</span></li></ol>
+  </div>
+  </div>
+  <div class="foot"><span>2026년 9월 고2 학평 24·29번 · 원문 일부 변형</span><span>안곡고 2학년 영어 · Wrap-up</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>9월 학평 24·29번 Wrap-up · <b>정답과 해설</b></span><span>안곡고등학교 2학년</span></div>
+  <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">각 5점 · 100점</div></div>
+  <div class="keygrid">
+    <div>1<b>③</b></div><div>2<b>①</b></div><div>3<b>④</b></div><div>4<b>①</b></div><div>5<b>⑤</b></div><div>6<b>⑤</b></div><div>7<b>①</b></div><div>8<b>③</b></div><div>9<b>⑤</b></div><div>10<b>②</b></div>
+    <div>11<b>④</b></div><div>12<b>①</b></div><div>13<b>④</b></div><div>14<b>②</b></div><div>15<b>②</b></div><div>16<b>②</b></div><div>17<b>④</b></div><div>18<b>③</b></div><div>19<b>⑤</b></div><div>20<b>③</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">③</span> 이유 ▶ 휴대폰을 몇 번 확인하는지 기록하는 것은 주의가 쪼개지는 것에 대한 자기 인식을 '높이기' 위해서 → <i>raise</i>가 맞다.<br>
+오답 ▶ ① 피드가 '의도적으로' 설계됨 ✔ ② 출처의 '신뢰성'을 평가 ✔ ④ 앱 디자인을 '뜯어보는' 수업 ✔ ⑤ 더 '비판적인' 사용자 ✔<br>
+포인트 ▶ 활동의 목적(to 부정사)이 글의 방향(알아차리게 하기)과 맞는지 확인!</p>
+    <p><b>2</b> <span class="k">①</span> 이유 ▶ attention literacy = 피드·앱이 주의를 빼앗도록 의도적으로 설계된 방식을 알아보게 하는 교육 → 비판적 사용자로 키움.<br>
+오답 ▶ ② 무한 스크롤은 분석 대상일 뿐 이점이 아니다 ③ 금지는 언급 없음 ④ 역사는 일부 배경 ⑤ 설계자의 학습이 아니라 학생 교육이 중심<br>
+포인트 ▶ 첫 문장(attention literacy)과 마지막 문장(critical users)이 주제를 감싼다.</p>
+    <p><b>3</b> <span class="k">④</span> 이유 ▶ tracking how many times they switch tasks or check their phone in an hour of homework = 공부 중 휴대폰 확인 횟수를 살펴봄 ✔<br>
+오답 ▶ ① traditionally cover ~ now they also include(전부터 가르쳤고 이제 더 가르침) ② deliberate design choices(의도적인 선택) ③ critical users rather than passive consumers ⑤ specific colors and sounds<br>
+포인트 ▶ no longer / also, accidental / deliberate 같은 반대 표현 함정!</p>
+    <p><b>4</b> <span class="k">①</span> 이유 ▶ rather than(~가 아니라) 앞의 more critical users와 반대 → 비판 없이 받아들이기만 하는 '수동적인 소비자'.<br>
+오답 ▶ ②·③·④ 학생이 되는 대상과 관계없음 ⑤ active critics는 critical users와 같은 쪽이라 rather than 대비가 깨진다<br>
+포인트 ▶ A rather than B: A와 B는 반대 개념.</p>
+    <p><b>5</b> <span class="k">⑤</span> 이유 ▶ 전치사 By 뒤에는 동명사 → <i>treating</i>.<br>
+오답 ▶ ① means의 목적어 동명사 ✔ ② 주어 the architecture(단수), 설계'되는' 수동 ✔ ③ include의 목적어 동명사 ✔ ④ be tasked with + 동명사 ✔<br>
+포인트 ▶ 전치사(by, with, of) 뒤 동사는 -ing.</p>
+    <p><b>6</b> <span class="k">⑤</span> 이유 ▶ (A) teach의 목적어 + call의 목적어가 빠진 불완전한 절 → 선행사를 품은 <i>what</i> (B) they switch tasks or check: switch와 병렬인 동사 → <i>check</i> (C) involve는 동명사를 목적어로 → <i>unpacking</i><br>
+오답 ▶ that은 앞에 선행사가 필요 / checking은 tracking과 병렬로 착각 / involve + to부정사는 불가<br>
+포인트 ▶ 병렬: 접속사 or 앞뒤의 형태를 맞춘다.</p>
+    <p><b>7</b> <span class="k">①</span> 이유 ▶ 숙제하는 한 시간 동안 일을 바꾸거나 휴대폰을 확인하는 횟수를 세는 활동 → 주의가 계속 끊기고 쪼개지는 상태(fragmentation)를 스스로 알아차리게 함.<br>
+오답 ▶ ② 계획 세우기 ③ 화면 파손 ④ 인간관계 ⑤ 시간 지키기 → 모두 근거 없음<br>
+포인트 ▶ 함축 의미는 바로 앞 활동(switch tasks, check their phone)에서 찾는다.</p>
+    <p><b>8</b> <span class="k">③</span> 이유 ▶ 앞 문장 끝의 observing one's own patterns of distraction(자신의 주의 산만 패턴 관찰)의 구체적인 예가 주어진 문장(휴대폰 확인 횟수 기록) → 그 뒤, Another lesson(또 다른 수업) 앞 ③.<br>
+오답 ▶ ①② 아직 주의 산만 관찰 이야기가 나오기 전 ④⑤ Another lesson 뒤라 첫 번째 수업 예시가 빠진다<br>
+포인트 ▶ A student might ~ / Another lesson might ~ : 예시 1 → 예시 2 순서.</p>
+    <p><b>9</b> <span class="k">⑤</span> 이유 ▶ (A) helping students recognize ~ deliberately designed → <i>recognize</i> (B) become more critical users rather than passive consumers → <i>critical</i><br>
+오답 ▶ ignore(무시하다)는 recognize와 반대 / passive는 rather than 뒤의 반대 개념 / design·loyal·frequent는 근거 없음<br>
+포인트 ▶ 요약문은 첫 문장(무엇을 가르치나)과 마지막 문장(어떤 사용자가 되나)을 합친다.</p>
+    <p><b>10</b> <span class="k">②</span> 이유 ▶ 현금 경제 안의 삶은 갈수록 비싸짐(노동·에너지·농작물) → 그래서 값싼 것을 빼앗을 수 있는 변경(frontiers)이 중요하다.<br>
+오답 ▶ ① 현금이 어디에나 있는 체제가 아니라고 했다 ③ 동결해도 결국 불평등이 위기를 부른다 ④ 기후 변화도 비용 상승 과정의 일부 ⑤ 변경은 보호가 아니라 빼앗는(seized) 곳<br>
+포인트 ▶ 마지막 문장 Frontiers are so important ~ because ~ 가 요지.</p>
+    <p><b>11</b> <span class="k">④</span> 이유 ▶ 앞 내용: 노동·에너지·농작물이 모두 비싸짐 → 변경이 중요한 이유는 새로운 '값싼' 것과 노동을 차지할 수 있기 때문.<br>
+오답 ▶ ① 존엄한 대우는 노동을 비싸게 만드는 원인 ② 현금 거래가 없어진다는 말은 없다 ③·⑤ 변경이 아니라 기존 '섬'에서 일어나는 비용 상승<br>
+포인트 ▶ 빈칸 문장은 앞의 문제(비싸짐)에 대한 해결(값싼 것 확보).</p>
+    <p><b>12</b> <span class="k">①</span> 이유 ▶ wages can be frozen, even rolled back(동결되고 심지어 깎일 수도 있다) → '결코 줄어들 수 없다'는 불일치.<br>
+오답 ▶ ② islands of cash exchange ✔ ③ it grows more expensive over time ✔ ④ crops can no longer grow as abundantly ✔ ⑤ forcefully taken ✔<br>
+포인트 ▶ roll back = 되돌리다, (임금을) 삭감하다.</p>
+    <p><b>13</b> <span class="k">④</span> 이유 ▶ 기후가 변해 농작물이 '예전만큼 풍부하게' 자라지 못한다 → <i>abundantly</i>. poorly면 '예전만큼 형편없이 자라지 못한다'로 뜻이 반대.<br>
+오답 ▶ ① 값싼 자연 ✔ ② 비싸다 ✔ ③ 임금 동결 ✔ ⑤ 강제로 빼앗김 ✔<br>
+포인트 ▶ no longer ~ as … as once: 예전만큼 …하지 않다 → 예전에는 좋았음.</p>
+    <p><b>14</b> <span class="k">②</span> 이유 ▶ 전치사 in 뒤에는 관계대명사 that을 쓸 수 없다 → <i>in which</i>.<br>
+오답 ▶ ① 뒤가 완전한 절 + a system → 관계부사 where ✔ ③ 동명사 주어 Reproducing(단수) ✔ ④ 지각동사 see + 목적어 + 동사원형 ✔ ⑤ 노동이 '빼앗기는' 수동 ✔<br>
+포인트 ▶ 전치사 + which ⭕ / 전치사 + that ❌</p>
+    <p><b>15</b> <span class="k">②</span> 이유 ▶ 주어진 글(현금 거래의 섬 + 값싼 자연의 바다) → (B) 현금 경제 안의 삶은 점점 비싸짐·임금 동결도 결국 위기 → (A) 노동·에너지·농작물이 모두 비싸짐 → (C) 그래서 이런 과정(these processes)에서 변경이 중요<br>
+오답 ▶ (C)가 먼저 오면 these processes가 가리킬 내용이 없다<br>
+포인트 ▶ these processes = 앞에 나열된 비용 상승 과정.</p>
+    <p><b>16</b> <span class="k">②</span> 이유 ▶ 현금이 어디에나 있는 체제가 아니라(not ~ everywhere), 현금 거래는 '섬'처럼 일부이고 그 주변의 '바다' 같은 값싼 자연(자원·노동)에 기대고 있다는 비유.<br>
+오답 ▶ ①·③ 실제 섬·바다로 착각한 함정 ④ 무관하다면 변경이 중요할 이유가 없다 ⑤ 오히려 값싼 것을 계속 새로 찾는다<br>
+포인트 ▶ 비유(islands ↔ oceans)는 크기의 대비: 작은 현금 영역 ↔ 넓은 값싼 자연.</p>
+    <p><b>17</b> <span class="k">④</span> 이유 ▶ (A) it grows more expensive over time → <i>rise</i> (B) places where the new cheap things can be seized → <i>cheap</i><br>
+오답 ▶ fall·stabilize는 비용 상승과 반대 / expensive·rare·protected는 변경이 주는 것(값싼 것)과 반대<br>
+포인트 ▶ 원인(비용 상승) → 결과(값싼 것을 찾아 변경으로).</p>
+    <p><b>18</b> <span class="k">③</span> 이유 ▶ 불평등이 위기·시위를 부른다는 문장 뒤에, 노동자들이 존엄을 요구해 노동이 비싸진다는 주어진 문장 → 이어서 에너지(Production processes ~)·농작물 순으로 비용 상승이 나열됨 → ③.<br>
+오답 ▶ ①② 임금·위기 이야기가 나오기 전 ④⑤ 에너지·기후 이야기 사이에 끼면 노동 이야기가 흐름을 끊는다<br>
+포인트 ▶ 나열 순서: 노동 → 에너지 → 농작물 → 그래서 변경.</p>
+    <p><b>19</b> <span class="k">⑤</span> 이유 ▶ abundantly는 '풍부하게(in large amounts)'. 적고 부족한 양은 반대 뜻.<br>
+오답 ▶ ① credibility 신뢰성 ✔ ② fragmentation 파편화 ✔ ③ frontier 변경, 개척지 ✔ ④ seize 빼앗다 ✔<br>
+포인트 ▶ 영영풀이 문제는 반의어로 바꾼 풀이를 찾는다.</p>
+    <p><b>20</b> <span class="k">③</span> 이유 ▶ 틀린 것 (b) (e) (g) 3개. (b) be tasked with + 동명사 → <i>tracking</i> (e) 동명사 주어는 단수 → <i>is</i> (g) 뒤가 완전한 수동태 절 → 관계부사 <i>where</i><br>
+오답 ▶ (a) 불완전한 절을 이끄는 what ✔ (c) 의문문 does + 주어 + 동사원형 ✔ (d) rather than 뒤 명사 ✔ (f) 임금이 '동결되는' 수동 ✔<br>
+포인트 ▶ 관계대명사 which(불완전) ↔ 관계부사 where(완전).</p>
+  </div>
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>안곡고 2학년 영어 · Wrap-up</span></div>
+</section>
+</main>

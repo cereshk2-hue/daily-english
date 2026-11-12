@@ -1,0 +1,368 @@
+<title>안곡고2 9월 학평 30·34번 Wrap-up</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+/* A4 시험지 (10/31): 스크립트가 문항을 A4 쪽(210×297mm)에 왼쪽 단 → 오른쪽 단 → 다음 쪽 순서로 직접 나눠 담고 쪽 번호를 붙인다.
+   화면·인쇄·PDF 어디서나 같은 쪽 구성. 좁은 화면에서는 쪽 전체를 축소해서 보여 준다. */
+.q, .exp p { break-inside: avoid }
+body { font-size: 9.6pt }
+.stem { font-size: 9.8pt } .stem .src { font-size: 8pt }
+.box, .given, .sum { font-size: 9.4pt; line-height: 1.46; padding: 2.2mm 2.8mm }
+.ol, .ol.en li { font-size: 9.3pt; line-height: 1.38 }
+table.ch { font-size: 9.2pt } table.ch th { font-size: 8.4pt }
+.q { margin-bottom: 3.6mm; gap: 1.6mm }
+.exp { font-size: 7.8pt; line-height: 1.36; margin-top: 3mm } .exp p { margin-bottom: 1mm }
+.top, .notice, .idrow, .title .when, .foot { font-size: 8.6pt }
+.title h1 { font-size: 18pt } .title h1 small { font-size: 8.6pt }
+.keygrid div { font-size: 9pt; padding: 1.2mm 0 } .keygrid b { font-size: 10.5pt }
+.page { width: 210mm; max-width: 100%; padding: 11mm }
+.sheets { display: grid; justify-content: center; gap: 16px }
+.sheet { width: 210mm; height: 297mm; padding: 11mm; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); overflow: hidden }
+/* 내용 영역 188×256mm: A4 여백 0~20mm, Letter 기본 여백에서도 한 장에 들어가는 크기 */
+.sheet > .inner { width: 188mm; height: 256mm; display: flex; flex-direction: column; overflow: hidden }
+.inner > .top.run { padding-bottom: 2mm; border-bottom: 1px solid var(--rule); margin-bottom: 1mm }
+.cols { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr);
+  column-gap: 6mm; margin-top: 4mm; position: relative }
+.cols::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid var(--rule) }
+.cols > .col { columns: auto !important; margin: 0 !important; min-height: 0; overflow: hidden }
+.inner > .foot { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center }
+.inner > .foot span:last-child { text-align: right }
+.inner > .foot .pno { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums }
+@page { size: A4; margin: 12mm 11mm }
+@media print {
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  body { padding: 0 !important; margin: 0 }
+  .sheets { display: block }
+  .sheet { zoom: 1 !important; width: auto; height: auto; padding: 0; margin: 0; box-shadow: none; overflow: visible; break-after: page; page-break-after: always }
+  .sheet:last-child { break-after: auto; page-break-after: auto }
+  .sheet > .inner { margin: 0 auto }
+  .page { max-width: none; margin: 0; box-shadow: none; break-after: page }
+}
+</style>
+<script>
+/* A4 쪽 나누기: 왼쪽 단 → 오른쪽 단 → 다음 쪽, 쪽 번호 n / 전체 */
+(function () {
+  function build() {
+    var main = document.querySelector('main'); if (!main || document.querySelector('.sheets')) return;
+    var secs = [].slice.call(main.querySelectorAll('section.page'));
+    var out = document.createElement('div'); out.className = 'sheets'; main.appendChild(out);
+    var pages = [];
+    secs.forEach(function (sec) {
+      var box = sec.querySelector('.qs, .exp'); if (!box) return;
+      var items = [].slice.call(box.children), foot = sec.querySelector('.foot'), top = sec.querySelector('.top');
+      var head = [].slice.call(sec.children).filter(function (e) { return e !== box && e !== foot && !(e.classList.contains('keygrid') && false); });
+      var cols, ci, first = true;
+      function newPage() {
+        var sh = document.createElement('div'); sh.className = 'sheet'; var pg = document.createElement('div'); pg.className = 'inner'; sh.appendChild(pg);
+        if (first) head.forEach(function (e) { pg.appendChild(e); });
+        else { var t = top.cloneNode(true); t.classList.add('run'); pg.appendChild(t); }
+        first = false;
+        cols = document.createElement('div'); cols.className = 'cols';
+        for (var i = 0; i < 2; i++) { var c = document.createElement('div'); c.className = 'col ' + box.className; cols.appendChild(c); }
+        pg.appendChild(cols);
+        var f = foot.cloneNode(true), sp = f.querySelectorAll('span'), mid = document.createElement('span'); mid.className = 'pno';
+        f.insertBefore(mid, sp[1] || null); pg.appendChild(f);
+        out.appendChild(sh); pages.push(pg); ci = 0;
+      }
+      function over(c) { return c.scrollHeight > c.clientHeight + 1; }
+      newPage();
+      items.forEach(function (it) {
+        var c = cols.children[ci]; c.appendChild(it);
+        if (over(c) && c.children.length > 1) {
+          c.removeChild(it); ci++;
+          if (ci > 1) newPage();
+          cols.children[ci].appendChild(it);
+        }
+      });
+      sec.parentNode.removeChild(sec);
+    });
+    pages.forEach(function (p, i) { p.querySelector('.pno').textContent = (i + 1) + ' / ' + pages.length; });
+    fit();
+  }
+  function fit() {
+    var w = document.documentElement.clientWidth - 24, s = Math.min(1, w / 794);
+    [].forEach.call(document.querySelectorAll('.sheet'), function (p) { p.style.zoom = s < 1 ? s : ''; });
+  }
+  function go() { (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(build, build); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  window.addEventListener('resize', function () { if (document.querySelector('.sheets')) fit(); });
+})();
+</script>
+
+
+<main>
+<section class="page">
+  <div class="top"><span>2026학년도 9월 고2 전국연합학력평가 · <b>30·34번 Wrap-up</b></span><span>안곡고등학교 2학년 · 내신 대비</span></div>
+  <div class="title">
+    <div class="g">영어</div>
+    <h1>9월 학평 30·34번 Wrap-up<small>도덕적 면허와 환경 죄책감 · 전자레인지와 보이지 않는 변화</small></h1>
+    <div class="when">20문항 · 각 5점<br>제한 시간 30분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">범위: 30번(친환경 행동과 도덕적 균형) · 34번(새 기술의 뚜렷한 면에 가려진 미묘한 변화). 지문은 원문을 일부 바꾼 것이 있어요. 선택지는 본문 표현을 다른 말로 바꿔 썼으니 뜻을 정확히 따져 보세요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[30번 변형]</span></div>
+    <div class="box"><p>Some people are more likely to cheat after purchasing "eco-friendly" products, probably because they feel ①<u>licensed</u> to do so. When people are reminded of deeds that they know were ②<u>harmful</u> to the environment, they might be left with a feeling of "eco-guilt." People who experience eco-guilt seek pro-environmental actions to ③<u>compensate</u> for this guilt. People are inclined to believe in "quick-fixes," because they want to escape the guilt as ④<u>slowly</u> and easily as possible. For instance, people are ⑤<u>more</u> likely to sign a petition after viewing evidence of human-caused environmental damage.</p></div>
+    <ol class="ol en"><li><span>①</span><span>licensed</span></li><li><span>②</span><span>harmful</span></li><li><span>③</span><span>compensate</span></li><li><span>④</span><span>slowly</span></li><li><span>⑤</span><span>more</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>다음 글의 주제로 가장 적절한 것은?<span class="src">[30번]</span></div>
+    <div class="box"><p>Some people are more likely to cheat and steal after purchasing "eco-friendly" products, probably because they feel licensed to do so since they morally account the "eco-friendly" choice as a "good" deed. Moral licensing has also been observed in the context of cooperation for the good of the environment. When people are reminded of deeds they have done that they know were harmful to the environment, they might be left with a feeling of "eco-guilt." People who experience eco-guilt seek pro-environmental actions to compensate for this guilt and restore balance. In their search for such a balance, people are inclined to believe in "quick-fixes," because they want to re-establish the moral balance and escape the guilt as quickly and easily as possible. In the same way that people may change their attitudes to reduce inconsistencies between attitudes and behavior, people may also change their evaluation of past environmentally burdening behaviors and future environmentally friendly behaviors. For instance, people are more likely to sign a petition addressing environmental damage after viewing evidence of human-caused environmental damage.</p></div>
+    <ol class="ol en"><li><span>①</span><span>why eco-friendly products are more expensive than others</span></li><li><span>②</span><span>how people try to keep their moral balance through environmental behavior</span></li><li><span>③</span><span>the long-term effects of petitions on environmental laws</span></li><li><span>④</span><span>ways to stop people from buying eco-friendly products</span></li><li><span>⑤</span><span>the history of the environmental movement</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>다음 글의 내용과 일치하는 것은?<span class="src">[30번]</span></div>
+    <div class="box"><p>Some people are more likely to cheat and steal after purchasing "eco-friendly" products, probably because they feel licensed to do so since they morally account the "eco-friendly" choice as a "good" deed. Moral licensing has also been observed in the context of cooperation for the good of the environment. When people are reminded of deeds they have done that they know were harmful to the environment, they might be left with a feeling of "eco-guilt." People who experience eco-guilt seek pro-environmental actions to compensate for this guilt and restore balance. In their search for such a balance, people are inclined to believe in "quick-fixes," because they want to re-establish the moral balance and escape the guilt as quickly and easily as possible. In the same way that people may change their attitudes to reduce inconsistencies between attitudes and behavior, people may also change their evaluation of past environmentally burdening behaviors and future environmentally friendly behaviors. For instance, people are more likely to sign a petition addressing environmental damage after viewing evidence of human-caused environmental damage.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Buying eco-friendly products makes people more honest.</span></li><li><span>②</span><span>Feeling eco-guilt can push people to seek pro-environmental actions.</span></li><li><span>③</span><span>Moral licensing has never been seen in environmental cooperation.</span></li><li><span>④</span><span>People with eco-guilt prefer slow and difficult solutions.</span></li><li><span>⑤</span><span>Evidence of environmental damage makes people less likely to sign petitions.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[30번 변형]</span></div>
+    <div class="box"><p>Some people are more likely to cheat and steal after purchasing "eco-friendly" products, probably because they feel licensed to do so since they morally account the "eco-friendly" choice as a "good" deed. Moral licensing has also been observed in the context of cooperation for the good of the environment. When people are reminded of deeds they have done that they know were harmful to the environment, they might be left with a feeling of "eco-guilt." People who experience eco-guilt seek pro-environmental actions to compensate for this guilt and restore balance. In their search for such a balance, people are inclined to believe in <span class="blank"></span>, because they want to re-establish the moral balance and escape the guilt as quickly and easily as possible.</p></div>
+    <ol class="ol en"><li><span>①</span><span>quick-fixes</span></li><li><span>②</span><span>long-term plans</span></li><li><span>③</span><span>strict rules</span></li><li><span>④</span><span>expert advice</span></li><li><span>⑤</span><span>public promises</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>다음 글의 밑줄 친 부분 중, 어법상 <u>틀린</u> 것은?<span class="src">[30번 변형]</span></div>
+    <div class="box"><p>Some people are more likely ①<u>to cheat</u> and steal after purchasing "eco-friendly" products, probably because they feel licensed ②<u>to do</u> so. When people are reminded of deeds they have done ③<u>that</u> they know were harmful to the environment, they might be left with a feeling of "eco-guilt." People who experience eco-guilt ④<u>seeks</u> pro-environmental actions to compensate for this guilt. For instance, people are more likely to sign a petition ⑤<u>after</u> viewing evidence of human-caused environmental damage.</p></div>
+    <ol class="ol en"><li><span>①</span><span>to cheat</span></li><li><span>②</span><span>to do</span></li><li><span>③</span><span>that</span></li><li><span>④</span><span>seeks</span></li><li><span>⑤</span><span>after</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>(A), (B), (C)의 각 네모 안에서 어법에 맞는 표현으로 가장 적절한 것은?<span class="src">[30번]</span></div>
+    <div class="box"><p>Some people are more likely to cheat and steal after <b>(A)</b> [ purchasing / purchased ] "eco-friendly" products. … People <b>(B)</b> [ who / which ] experience eco-guilt seek pro-environmental actions. … For instance, people are more likely to sign a petition <b>(C)</b> [ addressing / addressed ] environmental damage.</p></div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th><th>(C)</th></tr></thead><tbody><tr><td>①</td><td>purchased</td><td>who</td><td>addressing</td></tr><tr><td>②</td><td>purchasing</td><td>which</td><td>addressing</td></tr><tr><td>③</td><td>purchasing</td><td>who</td><td>addressed</td></tr><tr><td>④</td><td>purchased</td><td>which</td><td>addressed</td></tr><tr><td>⑤</td><td>purchasing</td><td>who</td><td>addressing</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>밑줄 친 <u>they feel licensed to do so</u>가 의미하는 바로 가장 적절한 것은?<span class="src">[30번]</span></div>
+    <div class="box"><p>Some people are more likely to cheat and steal after purchasing "eco-friendly" products, probably because <u>they feel licensed to do so</u> since they morally account the "eco-friendly" choice as a "good" deed. Moral licensing has also been observed in the context of cooperation for the good of the environment. When people are reminded of deeds they have done that they know were harmful to the environment, they might be left with a feeling of "eco-guilt." People who experience eco-guilt seek pro-environmental actions to compensate for this guilt and restore balance. In their search for such a balance, people are inclined to believe in "quick-fixes," because they want to re-establish the moral balance and escape the guilt as quickly and easily as possible. In the same way that people may change their attitudes to reduce inconsistencies between attitudes and behavior, people may also change their evaluation of past environmentally burdening behaviors and future environmentally friendly behaviors. For instance, people are more likely to sign a petition addressing environmental damage after viewing evidence of human-caused environmental damage.</p></div>
+    <ol class="ol"><li><span>①</span><span>친환경 제품을 사며 착한 일을 했으니 나쁜 행동을 해도 된다고 스스로 허락한다.</span></li><li><span>②</span><span>정부로부터 친환경 제품을 팔 수 있는 허가를 받았다고 느낀다.</span></li><li><span>③</span><span>친환경 제품을 샀으니 앞으로도 계속 친환경 제품만 사야 한다고 느낀다.</span></li><li><span>④</span><span>친환경 제품의 품질을 보증할 자격이 있다고 생각한다.</span></li><li><span>⑤</span><span>환경을 해친 것에 대해 벌을 받아야 한다고 느낀다.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?<span class="src">[30번]</span></div>
+    <div class="given">People who experience eco-guilt seek pro-environmental actions to compensate for this guilt and restore balance.</div>
+    <div class="box"><p>Some people are more likely to cheat and steal after purchasing "eco-friendly" products, probably because they feel licensed to do so since they morally account the "eco-friendly" choice as a "good" deed. <span class="gap">( ① )</span> Moral licensing has also been observed in the context of cooperation for the good of the environment. <span class="gap">( ② )</span> When people are reminded of deeds they have done that they know were harmful to the environment, they might be left with a feeling of "eco-guilt." <span class="gap">( ③ )</span> In their search for such a balance, people are inclined to believe in "quick-fixes," because they want to re-establish the moral balance and escape the guilt as quickly and easily as possible. <span class="gap">( ④ )</span> In the same way that people may change their attitudes to reduce inconsistencies between attitudes and behavior, people may also change their evaluation of past environmentally burdening behaviors and future environmentally friendly behaviors. <span class="gap">( ⑤ )</span> For instance, people are more likely to sign a petition addressing environmental damage after viewing evidence of human-caused environmental damage.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?<span class="src">[30번]</span></div>
+    <div class="box"><p>Some people are more likely to cheat and steal after purchasing "eco-friendly" products, probably because they feel licensed to do so since they morally account the "eco-friendly" choice as a "good" deed. Moral licensing has also been observed in the context of cooperation for the good of the environment. When people are reminded of deeds they have done that they know were harmful to the environment, they might be left with a feeling of "eco-guilt." People who experience eco-guilt seek pro-environmental actions to compensate for this guilt and restore balance. In their search for such a balance, people are inclined to believe in "quick-fixes," because they want to re-establish the moral balance and escape the guilt as quickly and easily as possible. In the same way that people may change their attitudes to reduce inconsistencies between attitudes and behavior, people may also change their evaluation of past environmentally burdening behaviors and future environmentally friendly behaviors. For instance, people are more likely to sign a petition addressing environmental damage after viewing evidence of human-caused environmental damage.</p></div>
+    <div class="sum">Doing something eco-friendly can make people feel <b>(A)</b> <span class="blank"></span> to act badly, while eco-guilt drives them to seek <b>(B)</b> <span class="blank"></span> ways to restore their moral balance.</div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>afraid</td><td>easy</td></tr><tr><td>②</td><td>entitled</td><td>difficult</td></tr><tr><td>③</td><td>forced</td><td>costly</td></tr><tr><td>④</td><td>unwilling</td><td>slow</td></tr><tr><td>⑤</td><td>entitled</td><td>easy</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>다음 글의 요지로 가장 적절한 것은?<span class="src">[34번]</span></div>
+    <div class="box"><p>When we focus on the obvious aspects of media, we miss the changes that accumulate over time but are not apparent day to day. Most of us notice the obvious aspects of a new medium or technology while missing the more subtle aspects. Take, for example, the microwave oven. It was introduced in the early 1980s and revolutionized food preparation. Traditionally, one person spent the better part of an afternoon fixing an evening meal for a family. Now, it was possible to prepare foods very quickly, and this shortening of preparation time was liberating for the cooks in the family, most of whom tended to be women. But the short-term, obvious implications of greater convenience made it easy to overlook the long-term implications of no longer having one person fix food for the family to eat together at an evening meal. As time went on, fewer and fewer families sat down together to eat dinner. Meals that took a long time to prepare became a luxury of the past, except perhaps for special occasions. The effects of the microwave oven on family life were not anticipated and would have been difficult to foresee.</p></div>
+    <ol class="ol"><li><span>①</span><span>전자레인지는 가족 식사를 더 풍성하게 만들었다.</span></li><li><span>②</span><span>새로운 기술의 뚜렷한 이점에 가려, 시간이 지나며 쌓이는 미묘한 영향을 놓치기 쉽다.</span></li><li><span>③</span><span>새로운 기술은 처음부터 모든 영향을 정확히 예측할 수 있다.</span></li><li><span>④</span><span>요리 시간이 짧아지면 가족이 더 자주 함께 식사한다.</span></li><li><span>⑤</span><span>특별한 날에는 전자레인지를 쓰지 않는 것이 좋다.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[34번 변형]</span></div>
+    <div class="box"><p>When we focus on the obvious aspects of media, we miss the changes that <span class="blank"></span>. Most of us notice the obvious aspects of a new medium or technology while missing the more subtle aspects. Take, for example, the microwave oven. It was introduced in the early 1980s and revolutionized food preparation. Traditionally, one person spent the better part of an afternoon fixing an evening meal for a family. Now, it was possible to prepare foods very quickly, and this shortening of preparation time was liberating for the cooks in the family, most of whom tended to be women. But the short-term, obvious implications of greater convenience made it easy to overlook the long-term implications of no longer having one person fix food for the family to eat together at an evening meal. As time went on, fewer and fewer families sat down together to eat dinner. Meals that took a long time to prepare became a luxury of the past, except perhaps for special occasions. The effects of the microwave oven on family life were not anticipated and would have been difficult to foresee.</p></div>
+    <ol class="ol en"><li><span>①</span><span>are clearly visible from the very beginning</span></li><li><span>②</span><span>make cooking faster and more convenient</span></li><li><span>③</span><span>happen only on special occasions</span></li><li><span>④</span><span>accumulate over time but are not apparent day to day</span></li><li><span>⑤</span><span>are carefully planned by inventors</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>다음 글의 내용과 일치하지 <u>않는</u> 것은?<span class="src">[34번]</span></div>
+    <div class="box"><p>When we focus on the obvious aspects of media, we miss the changes that accumulate over time but are not apparent day to day. Most of us notice the obvious aspects of a new medium or technology while missing the more subtle aspects. Take, for example, the microwave oven. It was introduced in the early 1980s and revolutionized food preparation. Traditionally, one person spent the better part of an afternoon fixing an evening meal for a family. Now, it was possible to prepare foods very quickly, and this shortening of preparation time was liberating for the cooks in the family, most of whom tended to be women. But the short-term, obvious implications of greater convenience made it easy to overlook the long-term implications of no longer having one person fix food for the family to eat together at an evening meal. As time went on, fewer and fewer families sat down together to eat dinner. Meals that took a long time to prepare became a luxury of the past, except perhaps for special occasions. The effects of the microwave oven on family life were not anticipated and would have been difficult to foresee.</p></div>
+    <ol class="ol en"><li><span>①</span><span>The microwave oven led families to eat together more often.</span></li><li><span>②</span><span>The microwave oven was introduced in the early 1980s.</span></li><li><span>③</span><span>Traditionally, preparing dinner took a large part of the afternoon.</span></li><li><span>④</span><span>Most of the family cooks were women.</span></li><li><span>⑤</span><span>The microwave's effects on family life were hard to predict.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[34번 변형]</span></div>
+    <div class="box"><p>Most of us notice the ①<u>obvious</u> aspects of a new technology while missing the more subtle aspects. The microwave oven was introduced in the early 1980s and ②<u>revolutionized</u> food preparation. This shortening of preparation time was ③<u>liberating</u> for the cooks in the family. But the obvious implications of greater convenience made it easy to ④<u>overlook</u> the long-term implications. As time went on, ⑤<u>more and more</u> families sat down together to eat dinner.</p></div>
+    <ol class="ol en"><li><span>①</span><span>obvious</span></li><li><span>②</span><span>revolutionized</span></li><li><span>③</span><span>liberating</span></li><li><span>④</span><span>overlook</span></li><li><span>⑤</span><span>more and more</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>다음 글의 밑줄 친 부분 중, 어법상 <u>틀린</u> 것은?<span class="src">[34번 변형]</span></div>
+    <div class="box"><p>The microwave oven ①<u>was introduced</u> in the early 1980s. Traditionally, one person spent the better part of an afternoon ②<u>fixing</u> an evening meal for a family. This shortening of preparation time was liberating for the cooks in the family, most of ③<u>them</u> tended to be women. But the obvious implications of greater convenience made it easy ④<u>to overlook</u> the long-term implications. Meals that ⑤<u>took</u> a long time to prepare became a luxury of the past.</p></div>
+    <ol class="ol en"><li><span>①</span><span>was introduced</span></li><li><span>②</span><span>fixing</span></li><li><span>③</span><span>them</span></li><li><span>④</span><span>to overlook</span></li><li><span>⑤</span><span>took</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?<span class="src">[34번]</span></div>
+    <div class="given">Take, for example, the microwave oven.</div>
+    <div class="box"><p><b>(A)</b> It was introduced in the early 1980s and revolutionized food preparation. Traditionally, one person spent the better part of an afternoon fixing an evening meal for a family.</p><p><b>(B)</b> As time went on, fewer and fewer families sat down together to eat dinner. Meals that took a long time to prepare became a luxury of the past, except perhaps for special occasions. The effects of the microwave oven on family life were not anticipated and would have been difficult to foresee.</p><p><b>(C)</b> Now, it was possible to prepare foods very quickly, and this shortening of preparation time was liberating for the cooks in the family, most of whom tended to be women. But the short-term, obvious implications of greater convenience made it easy to overlook the long-term implications of no longer having one person fix food for the family to eat together at an evening meal.</p></div>
+    <ol class="ol"><li><span>①</span><span>(A) − (C) − (B)</span></li><li><span>②</span><span>(B) − (A) − (C)</span></li><li><span>③</span><span>(B) − (C) − (A)</span></li><li><span>④</span><span>(C) − (A) − (B)</span></li><li><span>⑤</span><span>(C) − (B) − (A)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>밑줄 친 <u>a luxury of the past</u>가 의미하는 바로 가장 적절한 것은?<span class="src">[34번]</span></div>
+    <div class="box"><p>When we focus on the obvious aspects of media, we miss the changes that accumulate over time but are not apparent day to day. Most of us notice the obvious aspects of a new medium or technology while missing the more subtle aspects. Take, for example, the microwave oven. It was introduced in the early 1980s and revolutionized food preparation. Traditionally, one person spent the better part of an afternoon fixing an evening meal for a family. Now, it was possible to prepare foods very quickly, and this shortening of preparation time was liberating for the cooks in the family, most of whom tended to be women. But the short-term, obvious implications of greater convenience made it easy to overlook the long-term implications of no longer having one person fix food for the family to eat together at an evening meal. As time went on, fewer and fewer families sat down together to eat dinner. Meals that took a long time to prepare became <u>a luxury of the past</u>, except perhaps for special occasions. The effects of the microwave oven on family life were not anticipated and would have been difficult to foresee.</p></div>
+    <ol class="ol"><li><span>①</span><span>과거에는 비싼 재료로만 만들 수 있었다.</span></li><li><span>②</span><span>예전에는 흔했지만 이제는 특별한 날에나 누리는 드문 것이 되었다.</span></li><li><span>③</span><span>부유한 집안에서만 먹던 음식이었다.</span></li><li><span>④</span><span>오래 걸려서 아무도 원하지 않게 되었다.</span></li><li><span>⑤</span><span>전자레인지로 더 쉽게 만들 수 있게 되었다.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?<span class="src">[34번]</span></div>
+    <div class="box"><p>When we focus on the obvious aspects of media, we miss the changes that accumulate over time but are not apparent day to day. Most of us notice the obvious aspects of a new medium or technology while missing the more subtle aspects. Take, for example, the microwave oven. It was introduced in the early 1980s and revolutionized food preparation. Traditionally, one person spent the better part of an afternoon fixing an evening meal for a family. Now, it was possible to prepare foods very quickly, and this shortening of preparation time was liberating for the cooks in the family, most of whom tended to be women. But the short-term, obvious implications of greater convenience made it easy to overlook the long-term implications of no longer having one person fix food for the family to eat together at an evening meal. As time went on, fewer and fewer families sat down together to eat dinner. Meals that took a long time to prepare became a luxury of the past, except perhaps for special occasions. The effects of the microwave oven on family life were not anticipated and would have been difficult to foresee.</p></div>
+    <div class="sum">The <b>(A)</b> <span class="blank"></span> convenience of the microwave oven hid its long-term <b>(B)</b> <span class="blank"></span> on family meals.</div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>delayed</td><td>impact</td></tr><tr><td>②</td><td>immediate</td><td>benefit</td></tr><tr><td>③</td><td>limited</td><td>demand</td></tr><tr><td>④</td><td>immediate</td><td>impact</td></tr><tr><td>⑤</td><td>delayed</td><td>cost</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?<span class="src">[34번]</span></div>
+    <div class="given">As time went on, fewer and fewer families sat down together to eat dinner.</div>
+    <div class="box"><p>Traditionally, one person spent the better part of an afternoon fixing an evening meal for a family. <span class="gap">( ① )</span> Now, it was possible to prepare foods very quickly, and this shortening of preparation time was liberating for the cooks in the family, most of whom tended to be women. <span class="gap">( ② )</span> But the short-term, obvious implications of greater convenience made it easy to overlook the long-term implications of no longer having one person fix food for the family to eat together at an evening meal. <span class="gap">( ③ )</span> Meals that took a long time to prepare became a luxury of the past, except perhaps for special occasions. <span class="gap">( ④ )</span> The effects of the microwave oven on family life were not anticipated and would have been difficult to foresee. <span class="gap">( ⑤ )</span> </p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>30·34번 지문에 나온 단어와 영영풀이가 바르게 짝지어지지 <u>않은</u> 것은?<span class="src">[종합]</span></div>
+    <ol class="ol en"><li><span>①</span><span>compensate: to make up for something bad</span></li><li><span>②</span><span>inclined: likely or wanting to do something</span></li><li><span>③</span><span>petition: a written request signed by many people</span></li><li><span>④</span><span>anticipate: to expect something to happen</span></li><li><span>⑤</span><span>subtle: very obvious and easy to notice</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>다음 (a)~(g) 중 어법상 <u>틀린</u> 것의 개수는?<span class="src">[종합]</span></div>
+    <div class="box"><p>Some people are more likely to cheat after <span class="tag">(a)</span><u>purchasing</u> eco-friendly products, probably because they <span class="tag">(b)</span><u>feels</u> licensed to do so. People are inclined <span class="tag">(c)</span><u>to believe</u> in quick-fixes. When we focus on the obvious aspects of media, we miss the changes that <span class="tag">(d)</span><u>accumulates</u> over time. Most of us <span class="tag">(e)</span><u>notice</u> the obvious aspects of a new medium. The microwave oven was introduced in the early 1980s and <span class="tag">(f)</span><u>revolutionizing</u> food preparation. As time went on, fewer and fewer families <span class="tag">(g)</span><u>sat</u> down together to eat dinner.</p></div>
+    <ol class="ol"><li><span>①</span><span>1개</span></li><li><span>②</span><span>2개</span></li><li><span>③</span><span>3개</span></li><li><span>④</span><span>4개</span></li><li><span>⑤</span><span>5개</span></li></ol>
+  </div>
+  </div>
+  <div class="foot"><span>2026년 9월 고2 학평 30·34번 · 원문 일부 변형</span><span>안곡고 2학년 영어 · Wrap-up</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>9월 학평 30·34번 Wrap-up · <b>정답과 해설</b></span><span>안곡고등학교 2학년</span></div>
+  <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">각 5점 · 100점</div></div>
+  <div class="keygrid">
+    <div>1<b>④</b></div><div>2<b>②</b></div><div>3<b>②</b></div><div>4<b>①</b></div><div>5<b>④</b></div><div>6<b>⑤</b></div><div>7<b>①</b></div><div>8<b>③</b></div><div>9<b>⑤</b></div><div>10<b>②</b></div>
+    <div>11<b>④</b></div><div>12<b>①</b></div><div>13<b>⑤</b></div><div>14<b>③</b></div><div>15<b>①</b></div><div>16<b>②</b></div><div>17<b>④</b></div><div>18<b>③</b></div><div>19<b>⑤</b></div><div>20<b>③</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">④</span> 이유 ▶ quick-fixes(빠른 해결책)를 믿는 이유 → 죄책감에서 최대한 '빨리' 벗어나고 싶어서 → <i>quickly</i>.<br>
+오답 ▶ ① 나쁜 짓을 해도 된다고 '허락받은' 느낌 ✔ ② 환경에 '해로운' 행동 ✔ ③ 죄책감을 '만회하려고' ✔ ⑤ 피해 증거를 보면 서명할 가능성이 '더' 높다 ✔<br>
+포인트 ▶ 빈칸 근처의 핵심어(quick-fixes)와 어울리는지 확인.</p>
+    <p><b>2</b> <span class="k">②</span> 이유 ▶ 착한 일(친환경 구매) 뒤엔 나쁜 행동을 허락하고(도덕적 면허), 해로운 일 뒤엔 죄책감을 만회하려 함 → 도덕적 균형(moral balance)을 맞추려는 심리.<br>
+오답 ▶ ① 가격 이야기 없음 ③ 청원은 예시일 뿐 ④ 구매를 막자는 말 없음 ⑤ 역사 언급 없음<br>
+포인트 ▶ 반복어 balance가 주제의 열쇠.</p>
+    <p><b>3</b> <span class="k">②</span> 이유 ▶ People who experience eco-guilt seek pro-environmental actions ✔<br>
+오답 ▶ ① cheat and steal(속이고 훔친다) ③ has also been observed(관찰되었다) ④ quick-fixes, quickly and easily ⑤ more likely to sign<br>
+포인트 ▶ 비교·부정 표현(more/less, never)을 꼼꼼히!</p>
+    <p><b>4</b> <span class="k">①</span> 이유 ▶ 빈칸 뒤 because ~ as quickly and easily as possible(최대한 빠르고 쉽게) → 빠른 해결책(quick-fixes).<br>
+오답 ▶ ② 장기 계획은 빠르고 쉬운 것과 반대 ③·④·⑤ 빠르고 쉽다는 이유와 연결되지 않는다<br>
+포인트 ▶ 빈칸 뒤 이유(because)가 단서.</p>
+    <p><b>5</b> <span class="k">④</span> 이유 ▶ 주어는 People(복수), who experience eco-guilt는 꾸미는 말 → <i>seek</i>.<br>
+오답 ▶ ① be likely to + 동사원형 ✔ ② feel licensed to do ✔ ③ deeds를 꾸미는 관계대명사(they know는 삽입) ✔ ⑤ 전치사 after + 동명사 ✔<br>
+포인트 ▶ 주어 뒤 관계절은 괄호로 묶고 동사와 수 일치!</p>
+    <p><b>6</b> <span class="k">⑤</span> 이유 ▶ (A) 전치사 after + 동명사 → <i>purchasing</i> (B) 선행사 People(사람) → <i>who</i> (C) 청원서가 환경 피해를 '다루는' 능동, 뒤에 목적어 environmental damage → <i>addressing</i><br>
+오답 ▶ purchased는 전치사 뒤에 못 옴 / which는 사물 / addressed는 수동이라 목적어를 못 받음<br>
+포인트 ▶ 명사 뒤 분사: 뒤에 목적어가 있으면 -ing.</p>
+    <p><b>7</b> <span class="k">①</span> 이유 ▶ 친환경 선택을 '착한 일(good deed)'로 계산하기 때문에 속이고 훔치는 것(cheat and steal)을 해도 된다고 스스로 허락한다는 뜻.<br>
+오답 ▶ ② license를 실제 면허로 착각 ③ 계속 친환경만 산다는 말은 없다 ④ 품질 보증과 무관 ⑤ 벌이 아니라 허락<br>
+포인트 ▶ do so = cheat and steal.</p>
+    <p><b>8</b> <span class="k">③</span> 이유 ▶ 앞 문장에서 환경 죄책감(eco-guilt)이 생기고, 주어진 문장에서 그 죄책감을 만회하려고 균형(balance)을 찾음 → 다음 문장 In their search for such a balance(그런 균형을 찾는 과정에서)로 이어짐 → ③.<br>
+오답 ▶ ①② eco-guilt가 아직 나오지 않음 ④⑤ such a balance가 가리킬 말이 앞에 없어짐<br>
+포인트 ▶ such a balance ← restore balance.</p>
+    <p><b>9</b> <span class="k">⑤</span> 이유 ▶ (A) feel licensed to do so = 나쁜 행동을 할 자격이 있다고 느낌 → <i>entitled</i> (B) quick-fixes, quickly and easily → <i>easy</i><br>
+오답 ▶ afraid·unwilling은 licensed와 반대 / difficult·slow·costly는 quick-fixes와 반대 / forced(강요된)는 스스로 허락한 것과 다름<br>
+포인트 ▶ licensed ≒ entitled(자격이 있다고 여기는).</p>
+    <p><b>10</b> <span class="k">②</span> 이유 ▶ 첫 두 문장(뚜렷한 면만 보고 미묘한 변화를 놓친다)이 주장, 전자레인지는 그 예시(편리함에 가려 가족 식사가 사라짐).<br>
+오답 ▶ ① 가족 식사는 줄었다 ③ not anticipated, difficult to foresee ④ fewer and fewer families ⑤ 특별한 날 이야기는 세부 내용<br>
+포인트 ▶ Take, for example ~ 앞이 요지.</p>
+    <p><b>11</b> <span class="k">④</span> 이유 ▶ 뒤에서 전자레인지가 가족 식사를 '서서히(As time went on)' 줄였고 예상하지 못했다(not anticipated) → 시간이 지나며 쌓이지만 당장은 안 보이는 변화.<br>
+오답 ▶ ① 우리가 놓치는 것은 보이지 않는 변화 ② 이건 뚜렷한(obvious) 면 ③ 특별한 날은 세부 내용 ⑤ 계획된 것이 아니라 예상 못 한 것<br>
+포인트 ▶ miss(놓치다)의 대상 = 눈에 잘 안 띄는 것.</p>
+    <p><b>12</b> <span class="k">①</span> 이유 ▶ As time went on, fewer and fewer families sat down together to eat dinner → '더 자주 함께 식사'는 불일치.<br>
+오답 ▶ ② introduced in the early 1980s ✔ ③ spent the better part of an afternoon ✔ ④ most of whom tended to be women ✔ ⑤ difficult to foresee ✔<br>
+포인트 ▶ the better part of = ~의 대부분.</p>
+    <p><b>13</b> <span class="k">⑤</span> 이유 ▶ 장기적인 영향을 간과했고, 오랜 준비가 필요한 식사가 과거의 사치가 되었다 → 함께 식사하는 가족은 '점점 줄었다' → <i>fewer and fewer</i>.<br>
+오답 ▶ ① 뚜렷한 면을 알아챔 ✔ ② 음식 준비를 '혁신했다' ✔ ③ 요리하는 사람에게 '해방감' ✔ ④ 장기 영향을 '간과' ✔<br>
+포인트 ▶ But 뒤 흐름(부정적 장기 영향)과 맞추기.</p>
+    <p><b>14</b> <span class="k">③</span> 이유 ▶ 콤마 뒤에서 두 절을 접속사 없이 이으려면 관계대명사가 필요 → most of <i>whom</i>.<br>
+오답 ▶ ① 전자레인지가 '소개된' 수동 ✔ ② spend + 시간 + -ing ✔ ④ 가목적어 it ~ 진목적어 to부정사 ✔ ⑤ 과거의 일 ✔<br>
+포인트 ▶ 접속사 없이 '대명사 them'으로 절을 이을 수 없다 → 관계대명사 whom.</p>
+    <p><b>15</b> <span class="k">①</span> 이유 ▶ 주어진 글(전자레인지를 예로 들자) → (A) 1980년대 초 도입·전통적으로는 오후 내내 저녁 준비 → (C) Now 빨라져서 해방감, But 장기 영향을 간과 → (B) 시간이 지나며 함께 식사하는 가족이 줄고 예상하지 못함<br>
+오답 ▶ (C)의 Now는 (A)의 Traditionally와 대비되므로 (A) 뒤<br>
+포인트 ▶ Traditionally → Now → As time went on: 시간 흐름.</p>
+    <p><b>16</b> <span class="k">②</span> 이유 ▶ 예전에는 매일 오후 내내 저녁을 준비했지만, 이제 오래 걸리는 식사는 특별한 날(special occasions)을 빼면 보기 어려운 드문 것이 됨.<br>
+오답 ▶ ①·③ luxury를 '비싼 것'으로만 해석한 함정 ④ 원하지 않게 된 것이 아니라 드물어진 것 ⑤ 반대로 전자레인지로 대체됨<br>
+포인트 ▶ except perhaps for special occasions가 의미를 정해 준다.</p>
+    <p><b>17</b> <span class="k">④</span> 이유 ▶ (A) the short-term, obvious implications of greater convenience → <i>immediate</i>(즉각적인) (B) the long-term implications ~ fewer families ate together → <i>impact</i>(영향)<br>
+오답 ▶ delayed(지연된)는 short-term과 반대 / benefit(이점)은 가족 식사가 줄어든 결과와 맞지 않음 / limited·demand는 근거 없음<br>
+포인트 ▶ short-term ↔ long-term 대비를 요약문에 옮긴다.</p>
+    <p><b>18</b> <span class="k">③</span> 이유 ▶ 장기적인 영향을 간과했다(overlook the long-term implications)는 문장 뒤에, 그 영향의 구체적 내용(함께 식사하는 가족이 줄어듦)이 오고 → 오래 걸리는 식사가 과거의 사치가 됨 → ③.<br>
+오답 ▶ ①② 아직 편리함(장점) 이야기 중 ④⑤ 결과가 원인보다 늦게 나와 흐름이 어색<br>
+포인트 ▶ As time went on: 장기 영향이 시작되는 신호.</p>
+    <p><b>19</b> <span class="k">⑤</span> 이유 ▶ subtle은 '미묘한, 알아차리기 어려운'. 매우 뚜렷하다는 obvious의 뜻.<br>
+오답 ▶ ① compensate 만회하다 ✔ ② inclined ~하는 경향이 있는 ✔ ③ petition 청원 ✔ ④ anticipate 예상하다 ✔<br>
+포인트 ▶ 34번의 핵심 대비 obvious ↔ subtle.</p>
+    <p><b>20</b> <span class="k">③</span> 이유 ▶ 틀린 것 (b) (d) (f) 3개. (b) 주어 they → <i>feel</i> (d) 선행사 the changes(복수) → <i>accumulate</i> (f) was introduced와 and로 병렬인 과거 동사 → <i>revolutionized</i><br>
+오답 ▶ (a) 전치사 + 동명사 ✔ (c) be inclined to + 동사원형 ✔ (e) Most of us → 복수 동사 ✔ (g) 과거의 일 ✔<br>
+포인트 ▶ 관계대명사 that의 동사는 선행사에 수 일치.</p>
+  </div>
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>안곡고 2학년 영어 · Wrap-up</span></div>
+</section>
+</main>
