@@ -1,0 +1,368 @@
+<title>중산고2 9월 학평 23·24·26·27번 Wrap-up</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+/* A4 시험지 (10/31): 스크립트가 문항을 A4 쪽(210×297mm)에 왼쪽 단 → 오른쪽 단 → 다음 쪽 순서로 직접 나눠 담고 쪽 번호를 붙인다.
+   화면·인쇄·PDF 어디서나 같은 쪽 구성. 좁은 화면에서는 쪽 전체를 축소해서 보여 준다. */
+.q, .exp p { break-inside: avoid }
+body { font-size: 9.6pt }
+.stem { font-size: 9.8pt } .stem .src { font-size: 8pt }
+.box, .given, .sum { font-size: 9.4pt; line-height: 1.46; padding: 2.2mm 2.8mm }
+.ol, .ol.en li { font-size: 9.3pt; line-height: 1.38 }
+table.ch { font-size: 9.2pt } table.ch th { font-size: 8.4pt }
+.q { margin-bottom: 3.6mm; gap: 1.6mm }
+.exp { font-size: 7.8pt; line-height: 1.36; margin-top: 3mm } .exp p { margin-bottom: 1mm }
+.top, .notice, .idrow, .title .when, .foot { font-size: 8.6pt }
+.title h1 { font-size: 18pt } .title h1 small { font-size: 8.6pt }
+.keygrid div { font-size: 9pt; padding: 1.2mm 0 } .keygrid b { font-size: 10.5pt }
+.page { width: 210mm; max-width: 100%; padding: 11mm }
+.sheets { display: grid; justify-content: center; gap: 16px }
+.sheet { width: 210mm; height: 297mm; padding: 11mm; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); overflow: hidden }
+/* 내용 영역 188×256mm: A4 여백 0~20mm, Letter 기본 여백에서도 한 장에 들어가는 크기 */
+.sheet > .inner { width: 188mm; height: 256mm; display: flex; flex-direction: column; overflow: hidden }
+.inner > .top.run { padding-bottom: 2mm; border-bottom: 1px solid var(--rule); margin-bottom: 1mm }
+.cols { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr);
+  column-gap: 6mm; margin-top: 4mm; position: relative }
+.cols::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid var(--rule) }
+.cols > .col { columns: auto !important; margin: 0 !important; min-height: 0; overflow: hidden }
+.inner > .foot { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center }
+.inner > .foot span:last-child { text-align: right }
+.inner > .foot .pno { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums }
+@page { size: A4; margin: 12mm 11mm }
+@media print {
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  body { padding: 0 !important; margin: 0 }
+  .sheets { display: block }
+  .sheet { zoom: 1 !important; width: auto; height: auto; padding: 0; margin: 0; box-shadow: none; overflow: visible; break-after: page; page-break-after: always }
+  .sheet:last-child { break-after: auto; page-break-after: auto }
+  .sheet > .inner { margin: 0 auto }
+  .page { max-width: none; margin: 0; box-shadow: none; break-after: page }
+}
+</style>
+<script>
+/* A4 쪽 나누기: 왼쪽 단 → 오른쪽 단 → 다음 쪽, 쪽 번호 n / 전체 */
+(function () {
+  function build() {
+    var main = document.querySelector('main'); if (!main || document.querySelector('.sheets')) return;
+    var secs = [].slice.call(main.querySelectorAll('section.page'));
+    var out = document.createElement('div'); out.className = 'sheets'; main.appendChild(out);
+    var pages = [];
+    secs.forEach(function (sec) {
+      var box = sec.querySelector('.qs, .exp'); if (!box) return;
+      var items = [].slice.call(box.children), foot = sec.querySelector('.foot'), top = sec.querySelector('.top');
+      var head = [].slice.call(sec.children).filter(function (e) { return e !== box && e !== foot && !(e.classList.contains('keygrid') && false); });
+      var cols, ci, first = true;
+      function newPage() {
+        var sh = document.createElement('div'); sh.className = 'sheet'; var pg = document.createElement('div'); pg.className = 'inner'; sh.appendChild(pg);
+        if (first) head.forEach(function (e) { pg.appendChild(e); });
+        else { var t = top.cloneNode(true); t.classList.add('run'); pg.appendChild(t); }
+        first = false;
+        cols = document.createElement('div'); cols.className = 'cols';
+        for (var i = 0; i < 2; i++) { var c = document.createElement('div'); c.className = 'col ' + box.className; cols.appendChild(c); }
+        pg.appendChild(cols);
+        var f = foot.cloneNode(true), sp = f.querySelectorAll('span'), mid = document.createElement('span'); mid.className = 'pno';
+        f.insertBefore(mid, sp[1] || null); pg.appendChild(f);
+        out.appendChild(sh); pages.push(pg); ci = 0;
+      }
+      function over(c) { return c.scrollHeight > c.clientHeight + 1; }
+      newPage();
+      items.forEach(function (it) {
+        var c = cols.children[ci]; c.appendChild(it);
+        if (over(c) && c.children.length > 1) {
+          c.removeChild(it); ci++;
+          if (ci > 1) newPage();
+          cols.children[ci].appendChild(it);
+        }
+      });
+      sec.parentNode.removeChild(sec);
+    });
+    pages.forEach(function (p, i) { p.querySelector('.pno').textContent = (i + 1) + ' / ' + pages.length; });
+    fit();
+  }
+  function fit() {
+    var w = document.documentElement.clientWidth - 24, s = Math.min(1, w / 794);
+    [].forEach.call(document.querySelectorAll('.sheet'), function (p) { p.style.zoom = s < 1 ? s : ''; });
+  }
+  function go() { (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(build, build); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  window.addEventListener('resize', function () { if (document.querySelector('.sheets')) fit(); });
+})();
+</script>
+
+
+<main>
+<section class="page">
+  <div class="top"><span>2026학년도 9월 고2 전국연합학력평가 · <b>23·24·26·27번 Wrap-up</b></span><span>중산고등학교 2학년 · 내신 대비</span></div>
+  <div class="title">
+    <div class="g">영어</div>
+    <h1>9월 학평 23·24·26·27번 Wrap-up<small>음악의 긴장과 해소 · 주의력 문해력 · 조경가 Olmsted · 숲 가꾸기 행사</small></h1>
+    <div class="when">20문항 · 각 5점<br>제한 시간 30분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">범위: 23번(음악에서 긴장이 만들어지고 풀리는 과정) · 24번(주의를 빼앗도록 설계된 디지털 환경을 알아보는 교육) · 26번(Frederick Law Olmsted) · 27번(Ashwood Dunes 숲 가꾸기 행사). 지문은 원문을 일부 바꾼 것이 있어요. 선택지는 본문 표현을 다른 말로 바꿔 썼으니 뜻을 정확히 따져 보세요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>다음 글의 주제로 가장 적절한 것은?<span class="src">[23번]</span></div>
+    <div class="box"><p>Music can bring us into a very comfortable rhythm, and it can be satisfying in and of itself. Most of the time, however, we want something more to happen. There needs to be a process that creates tension and drives the movement towards something in particular. The excitement that arises in this process creates satisfaction and pleasure. This is seen in the measureless prelude as well. But there the tension might be caused by the ambiguity of the rhythm. Therefore, the fluid movement in the prelude usually creates a tension that can be released in the subsequent movement with a set rhythm. This, in turn, creates new and other types of tensions, where the rhythm is unambiguous and predictable, but where unexpected chords and modulations create drama and an experience of development in the piece.</p></div>
+    <ol class="ol en"><li><span>①</span><span>how tension in music is created and released to give pleasure</span></li><li><span>②</span><span>why measureless preludes contain no tension at all</span></li><li><span>③</span><span>the importance of keeping one comfortable rhythm in music</span></li><li><span>④</span><span>ways to compose chords that avoid any surprise</span></li><li><span>⑤</span><span>the history of the prelude in classical music</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[23번 변형]</span></div>
+    <div class="box"><p>Music can bring us into a very comfortable rhythm, and it can be satisfying in and of itself. Most of the time, however, we want something more to happen. There needs to be a process that creates <span class="blank"></span> and drives the movement towards something in particular. The excitement that arises in this process creates satisfaction and pleasure. This is seen in the measureless prelude as well. But there the tension might be caused by the ambiguity of the rhythm.</p></div>
+    <ol class="ol en"><li><span>①</span><span>comfort</span></li><li><span>②</span><span>tension</span></li><li><span>③</span><span>silence</span></li><li><span>④</span><span>repetition</span></li><li><span>⑤</span><span>balance</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[23번 변형]</span></div>
+    <div class="box"><p>The excitement that arises in this process creates ①<u>satisfaction</u> and pleasure. This is seen in the ②<u>measureless</u> prelude as well. But there the tension might be caused by the ③<u>ambiguity</u> of the rhythm. Therefore, the fluid movement in the prelude usually creates a tension that can be ④<u>released</u> in the subsequent movement with a set rhythm. This, in turn, creates new types of tensions, where the rhythm is unambiguous and ⑤<u>unpredictable</u>, but where unexpected chords and modulations create drama.</p></div>
+    <ol class="ol en"><li><span>①</span><span>satisfaction</span></li><li><span>②</span><span>measureless</span></li><li><span>③</span><span>ambiguity</span></li><li><span>④</span><span>released</span></li><li><span>⑤</span><span>unpredictable</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>다음 글의 밑줄 친 부분 중, 어법상 <u>틀린</u> 것은?<span class="src">[23번 변형]</span></div>
+    <div class="box"><p>There needs ①<u>to be</u> a process that ②<u>creates</u> tension. The excitement that ③<u>arises</u> in this process creates satisfaction and pleasure. Therefore, the fluid movement in the prelude usually creates a tension that can ④<u>release</u> in the subsequent movement with a set rhythm. This, in turn, creates new types of tensions, ⑤<u>where</u> the rhythm is unambiguous and predictable.</p></div>
+    <ol class="ol en"><li><span>①</span><span>to be</span></li><li><span>②</span><span>creates</span></li><li><span>③</span><span>arises</span></li><li><span>④</span><span>release</span></li><li><span>⑤</span><span>where</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>다음 글의 내용과 일치하는 것은?<span class="src">[23번]</span></div>
+    <div class="box"><p>Music can bring us into a very comfortable rhythm, and it can be satisfying in and of itself. Most of the time, however, we want something more to happen. There needs to be a process that creates tension and drives the movement towards something in particular. The excitement that arises in this process creates satisfaction and pleasure. This is seen in the measureless prelude as well. But there the tension might be caused by the ambiguity of the rhythm. Therefore, the fluid movement in the prelude usually creates a tension that can be released in the subsequent movement with a set rhythm. This, in turn, creates new and other types of tensions, where the rhythm is unambiguous and predictable, but where unexpected chords and modulations create drama and an experience of development in the piece.</p></div>
+    <ol class="ol en"><li><span>①</span><span>In a measureless prelude, tension may come from an unclear rhythm.</span></li><li><span>②</span><span>Music cannot be satisfying without any tension.</span></li><li><span>③</span><span>The movement after the prelude usually has no set rhythm.</span></li><li><span>④</span><span>Unexpected chords make a piece feel less dramatic.</span></li><li><span>⑤</span><span>Listeners usually want nothing more than a comfortable rhythm.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?<span class="src">[23번]</span></div>
+    <div class="given">Music can bring us into a very comfortable rhythm, and it can be satisfying in and of itself.</div>
+    <div class="box"><p><b>(A)</b> Therefore, the fluid movement in the prelude usually creates a tension that can be released in the subsequent movement with a set rhythm. This, in turn, creates new and other types of tensions, where the rhythm is unambiguous and predictable, but where unexpected chords and modulations create drama and an experience of development in the piece.</p><p><b>(B)</b> Most of the time, however, we want something more to happen. There needs to be a process that creates tension and drives the movement towards something in particular. The excitement that arises in this process creates satisfaction and pleasure.</p><p><b>(C)</b> This is seen in the measureless prelude as well. But there the tension might be caused by the ambiguity of the rhythm.</p></div>
+    <ol class="ol"><li><span>①</span><span>(A) − (C) − (B)</span></li><li><span>②</span><span>(B) − (A) − (C)</span></li><li><span>③</span><span>(B) − (C) − (A)</span></li><li><span>④</span><span>(C) − (A) − (B)</span></li><li><span>⑤</span><span>(C) − (B) − (A)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>다음 글의 주제로 가장 적절한 것은?<span class="src">[24번]</span></div>
+    <div class="box"><p>Progressive educators and librarians are developing curricula to teach what we might call attention literacy. This means helping students recognize, for example, how the architecture of a social media feed or a news site is deliberately designed to distract or provoke them. Classes in media literacy traditionally cover how to evaluate the credibility of sources — now they also include recognizing clickbait, understanding the role of algorithms in what content is served up, and observing one's own patterns of distraction. A student might be tasked with tracking how many times they switch tasks or check their phone in an hour of homework, to raise self-awareness about fragmentation. Another lesson might involve unpacking the design of popular apps: Why does an app use infinite scrolling instead of pages? Why do notifications appear with specific colors and sounds? By treating these as deliberate design choices (often rooted in psychology and profit motives), young people become more critical users rather than passive consumers.</p></div>
+    <ol class="ol en"><li><span>①</span><span>the benefits of infinite scrolling for students' learning</span></li><li><span>②</span><span>why librarians should ban smartphones in schools</span></li><li><span>③</span><span>the history of media literacy classes in schools</span></li><li><span>④</span><span>teaching students to see how digital media is designed to capture attention</span></li><li><span>⑤</span><span>how app designers learn psychology to earn profits</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>다음 글의 내용과 일치하는 것은?<span class="src">[24번]</span></div>
+    <div class="box"><p>Progressive educators and librarians are developing curricula to teach what we might call attention literacy. This means helping students recognize, for example, how the architecture of a social media feed or a news site is deliberately designed to distract or provoke them. Classes in media literacy traditionally cover how to evaluate the credibility of sources — now they also include recognizing clickbait, understanding the role of algorithms in what content is served up, and observing one's own patterns of distraction. A student might be tasked with tracking how many times they switch tasks or check their phone in an hour of homework, to raise self-awareness about fragmentation. Another lesson might involve unpacking the design of popular apps: Why does an app use infinite scrolling instead of pages? Why do notifications appear with specific colors and sounds? By treating these as deliberate design choices (often rooted in psychology and profit motives), young people become more critical users rather than passive consumers.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Students may be asked to monitor how often they check their phones while studying.</span></li><li><span>②</span><span>Media literacy classes no longer teach how to judge the credibility of sources.</span></li><li><span>③</span><span>The design features of popular apps are presented as accidental.</span></li><li><span>④</span><span>Attention literacy aims to make students passive consumers of media.</span></li><li><span>⑤</span><span>Notifications are said to be designed without any colors or sounds.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[24번 변형]</span></div>
+    <div class="box"><p>Progressive educators and librarians are developing curricula to teach what we might call attention literacy. This means helping students recognize, for example, how the architecture of a social media feed or a news site is deliberately designed to distract or provoke them. Classes in media literacy traditionally cover how to evaluate the credibility of sources — now they also include recognizing clickbait, understanding the role of algorithms in what content is served up, and observing one's own patterns of distraction. A student might be tasked with tracking how many times they switch tasks or check their phone in an hour of homework, to raise self-awareness about fragmentation. Another lesson might involve unpacking the design of popular apps: Why does an app use infinite scrolling instead of pages? Why do notifications appear with specific colors and sounds? By treating these as deliberate design choices (often rooted in psychology and profit motives), young people become more critical users rather than <span class="blank"></span>.</p></div>
+    <ol class="ol en"><li><span>①</span><span>creative designers</span></li><li><span>②</span><span>expert programmers</span></li><li><span>③</span><span>careful librarians</span></li><li><span>④</span><span>passive consumers</span></li><li><span>⑤</span><span>active critics</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>다음 글의 밑줄 친 부분 중, 어법상 <u>틀린</u> 것은?<span class="src">[24번 변형]</span></div>
+    <div class="box"><p>This means ①<u>helping</u> students recognize how the architecture of a social media feed ②<u>is</u> deliberately designed to distract or provoke them. Classes in media literacy now also include ③<u>recognizing</u> clickbait. A student might be tasked with ④<u>tracking</u> how many times they switch tasks. By ⑤<u>treat</u> these as deliberate design choices, young people become more critical users.</p></div>
+    <ol class="ol en"><li><span>①</span><span>helping</span></li><li><span>②</span><span>is</span></li><li><span>③</span><span>recognizing</span></li><li><span>④</span><span>tracking</span></li><li><span>⑤</span><span>treat</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?<span class="src">[24번]</span></div>
+    <div class="given">A student might be tasked with tracking how many times they switch tasks or check their phone in an hour of homework, to raise self-awareness about fragmentation.</div>
+    <div class="box"><p>Progressive educators and librarians are developing curricula to teach what we might call attention literacy. <span class="gap">( ① )</span> This means helping students recognize, for example, how the architecture of a social media feed or a news site is deliberately designed to distract or provoke them. <span class="gap">( ② )</span> Classes in media literacy traditionally cover how to evaluate the credibility of sources — now they also include recognizing clickbait, understanding the role of algorithms in what content is served up, and observing one's own patterns of distraction. <span class="gap">( ③ )</span> Another lesson might involve unpacking the design of popular apps: Why does an app use infinite scrolling instead of pages? Why do notifications appear with specific colors and sounds? <span class="gap">( ④ )</span> By treating these as deliberate design choices (often rooted in psychology and profit motives), young people become more critical users rather than passive consumers. <span class="gap">( ⑤ )</span> </p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?<span class="src">[24번]</span></div>
+    <div class="box"><p>Progressive educators and librarians are developing curricula to teach what we might call attention literacy. This means helping students recognize, for example, how the architecture of a social media feed or a news site is deliberately designed to distract or provoke them. Classes in media literacy traditionally cover how to evaluate the credibility of sources — now they also include recognizing clickbait, understanding the role of algorithms in what content is served up, and observing one's own patterns of distraction. A student might be tasked with tracking how many times they switch tasks or check their phone in an hour of homework, to raise self-awareness about fragmentation. Another lesson might involve unpacking the design of popular apps: Why does an app use infinite scrolling instead of pages? Why do notifications appear with specific colors and sounds? By treating these as deliberate design choices (often rooted in psychology and profit motives), young people become more critical users rather than passive consumers.</p></div>
+    <div class="sum">Attention literacy teaches students to <b>(A)</b> <span class="blank"></span> how digital platforms are designed to grab their attention so that they can become <b>(B)</b> <span class="blank"></span> users.</div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>ignore</td><td>critical</td></tr><tr><td>②</td><td>recognize</td><td>critical</td></tr><tr><td>③</td><td>recognize</td><td>passive</td></tr><tr><td>④</td><td>design</td><td>loyal</td></tr><tr><td>⑤</td><td>ignore</td><td>frequent</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>Frederick Law Olmsted에 관한 다음 글의 내용과 일치하지 <u>않는</u> 것은?<span class="src">[26번]</span></div>
+    <div class="box"><p>Frederick Law Olmsted, known as the father of American landscape architecture, was born in 1822. When Olmsted was young, he often went on trips to the countryside with his father, who loved scenery. At age 14, he was preparing himself to study at Yale College, but he could not enter due to a severe sumac poisoning that damaged his eyesight. Instead of attending a college, he gained experience working as a clerk, a sailor, and a farmer. In 1858, he worked with Calvert Vaux and won the design competition for New York City's Central Park with the "Greensward Plan." During the Civil War, Olmsted served as General Secretary of the United States Sanitary Commission. Although he passed away in 1903, his sons and successors continued his design philosophy. In 1979, the National Park Service designated his home and office in Brookline, Massachusetts, as a National Historic Site to honor his legacy.</p></div>
+    <ol class="ol en"><li><span>①</span><span>He often traveled to the countryside with his father when young.</span></li><li><span>②</span><span>He worked as a sailor and a farmer instead of going to college.</span></li><li><span>③</span><span>He entered Yale College at the age of 14.</span></li><li><span>④</span><span>He won the Central Park design competition with Calvert Vaux.</span></li><li><span>⑤</span><span>His home and office became a National Historic Site in 1979.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>Frederick Law Olmsted에 관한 다음 글의 내용과 일치하는 것은?<span class="src">[26번]</span></div>
+    <div class="box"><p>Frederick Law Olmsted, known as the father of American landscape architecture, was born in 1822. When Olmsted was young, he often went on trips to the countryside with his father, who loved scenery. At age 14, he was preparing himself to study at Yale College, but he could not enter due to a severe sumac poisoning that damaged his eyesight. Instead of attending a college, he gained experience working as a clerk, a sailor, and a farmer. In 1858, he worked with Calvert Vaux and won the design competition for New York City's Central Park with the "Greensward Plan." During the Civil War, Olmsted served as General Secretary of the United States Sanitary Commission. Although he passed away in 1903, his sons and successors continued his design philosophy. In 1979, the National Park Service designated his home and office in Brookline, Massachusetts, as a National Historic Site to honor his legacy.</p></div>
+    <ol class="ol"><li><span>①</span><span>1858년에 혼자서 Central Park 설계 공모전에 당선되었다.</span></li><li><span>②</span><span>사고로 다쳐서 시력이 나빠졌다.</span></li><li><span>③</span><span>그가 세상을 떠난 뒤 그의 디자인 철학은 잊혔다.</span></li><li><span>④</span><span>남북 전쟁 동안 미국 위생 위원회의 사무총장으로 일했다.</span></li><li><span>⑤</span><span>1822년에 국립공원관리청에서 일하기 시작했다.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>다음 글의 밑줄 친 부분 중, 어법상 <u>틀린</u> 것은?<span class="src">[26번 변형]</span></div>
+    <div class="box"><p>Frederick Law Olmsted, ①<u>known</u> as the father of American landscape architecture, was born in 1822. When Olmsted was young, he often went on trips to the countryside with his father, ②<u>which</u> loved scenery. At age 14, he could not enter Yale College due to a severe sumac poisoning ③<u>that</u> damaged his eyesight. Instead of ④<u>attending</u> a college, he gained experience working as a clerk, a sailor, and a farmer. Although he passed away in 1903, his sons and successors ⑤<u>continued</u> his design philosophy.</p></div>
+    <ol class="ol en"><li><span>①</span><span>known</span></li><li><span>②</span><span>which</span></li><li><span>③</span><span>that</span></li><li><span>④</span><span>attending</span></li><li><span>⑤</span><span>continued</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[26번 변형]</span></div>
+    <div class="box"><p>Frederick Law Olmsted, known as the father of American landscape architecture, was born in 1822. When Olmsted was young, he often went on trips to the countryside with his father, who loved scenery. At age 14, he was preparing himself to study at Yale College, but he could not enter due to a severe sumac poisoning that damaged his eyesight. Instead of attending a college, he gained experience working as a clerk, a sailor, and a farmer. In 1858, he worked with Calvert Vaux and won the design competition for New York City's Central Park with the "Greensward Plan." During the Civil War, Olmsted served as General Secretary of the United States Sanitary Commission. Although he passed away in 1903, his sons and successors <span class="blank"></span> his design philosophy. In 1979, the National Park Service designated his home and office in Brookline, Massachusetts, as a National Historic Site to honor his legacy.</p></div>
+    <ol class="ol en"><li><span>①</span><span>gave up</span></li><li><span>②</span><span>carried on</span></li><li><span>③</span><span>criticized</span></li><li><span>④</span><span>forgot about</span></li><li><span>⑤</span><span>kept secret</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>Ashwood Dunes Reforestation Event에 관한 다음 안내문의 내용과 일치하지 <u>않는</u> 것은?<span class="src">[27번]</span></div>
+    <div class="box"><p><b>Ashwood Dunes Reforestation Event</b></p><p>Join us for a meaningful morning at the annual Ashwood Dunes Reforestation. Volunteers will plant native tree seedlings to help restore the local environment. No special skills required, feel free to join us.</p><p>■ <b>When and Where</b>: September 5th, 2026, 8 a.m.–11 a.m., Ashwood Dunes Wilderness<br>■ <b>Participation Fee</b>: Free<br>■ <b>Rewards</b>: All participants will get a commemorative badge.<br>&nbsp;&nbsp;– Plant 5 trees: Receive a reusable water bottle<br>&nbsp;&nbsp;– Plant 10 or more trees: Receive a T-shirt<br>■ <b>Registration</b>: Online registration is encouraged, but on-site sign-ups will be available on the day of the event.<br>■ <b>Event Guidelines</b>: Bring a hat and gloves; shovels and water will be prepared. Follow instructions from the event staff.</p><p>For more information, please visit www.ashwooddunes.com.</p></div>
+    <ol class="ol"><li><span>①</span><span>자원봉사자들은 토종 나무 묘목을 심는다.</span></li><li><span>②</span><span>특별한 기술이 없어도 참가할 수 있다.</span></li><li><span>③</span><span>참가비는 심은 나무 수에 따라 다르다.</span></li><li><span>④</span><span>나무를 10그루 이상 심으면 티셔츠를 받는다.</span></li><li><span>⑤</span><span>행사 당일 현장 등록이 가능하다.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>Ashwood Dunes Reforestation Event에 관한 다음 안내문의 내용과 일치하는 것은?<span class="src">[27번]</span></div>
+    <div class="box"><p><b>Ashwood Dunes Reforestation Event</b></p><p>Join us for a meaningful morning at the annual Ashwood Dunes Reforestation. Volunteers will plant native tree seedlings to help restore the local environment. No special skills required, feel free to join us.</p><p>■ <b>When and Where</b>: September 5th, 2026, 8 a.m.–11 a.m., Ashwood Dunes Wilderness<br>■ <b>Participation Fee</b>: Free<br>■ <b>Rewards</b>: All participants will get a commemorative badge.<br>&nbsp;&nbsp;– Plant 5 trees: Receive a reusable water bottle<br>&nbsp;&nbsp;– Plant 10 or more trees: Receive a T-shirt<br>■ <b>Registration</b>: Online registration is encouraged, but on-site sign-ups will be available on the day of the event.<br>■ <b>Event Guidelines</b>: Bring a hat and gloves; shovels and water will be prepared. Follow instructions from the event staff.</p><p>For more information, please visit www.ashwooddunes.com.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Participants must bring their own shovels.</span></li><li><span>②</span><span>Only those who plant 5 trees will get a badge.</span></li><li><span>③</span><span>Online registration is required for everyone.</span></li><li><span>④</span><span>The event will be held in the afternoon.</span></li><li><span>⑤</span><span>Shovels and water will be provided at the event.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>Ashwood Dunes Reforestation Event 안내문에서 언급되지 <u>않은</u> 것은?<span class="src">[27번]</span></div>
+    <div class="box"><p><b>Ashwood Dunes Reforestation Event</b></p><p>Join us for a meaningful morning at the annual Ashwood Dunes Reforestation. Volunteers will plant native tree seedlings to help restore the local environment. No special skills required, feel free to join us.</p><p>■ <b>When and Where</b>: September 5th, 2026, 8 a.m.–11 a.m., Ashwood Dunes Wilderness<br>■ <b>Participation Fee</b>: Free<br>■ <b>Rewards</b>: All participants will get a commemorative badge.<br>&nbsp;&nbsp;– Plant 5 trees: Receive a reusable water bottle<br>&nbsp;&nbsp;– Plant 10 or more trees: Receive a T-shirt<br>■ <b>Registration</b>: Online registration is encouraged, but on-site sign-ups will be available on the day of the event.<br>■ <b>Event Guidelines</b>: Bring a hat and gloves; shovels and water will be prepared. Follow instructions from the event staff.</p><p>For more information, please visit www.ashwooddunes.com.</p></div>
+    <ol class="ol en"><li><span>①</span><span>the maximum number of participants</span></li><li><span>②</span><span>the date and time of the event</span></li><li><span>③</span><span>the participation fee</span></li><li><span>④</span><span>the rewards for planting trees</span></li><li><span>⑤</span><span>the items participants should bring</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>다음 안내문의 밑줄 친 부분 중, 어법상 <u>틀린</u> 것은?<span class="src">[27번 변형]</span></div>
+    <div class="box"><p>Volunteers will plant native tree seedlings to help ①<u>restore</u> the local environment. No special skills ②<u>required</u>, feel free to join us. All participants will get a ③<u>commemorative</u> badge. Online registration is encouraged, but on-site sign-ups will ④<u>be</u> available on the day of the event. Bring a hat and gloves; shovels and water will ⑤<u>prepare</u>.</p></div>
+    <ol class="ol en"><li><span>①</span><span>restore</span></li><li><span>②</span><span>required</span></li><li><span>③</span><span>commemorative</span></li><li><span>④</span><span>be</span></li><li><span>⑤</span><span>prepare</span></li></ol>
+  </div>
+  </div>
+  <div class="foot"><span>2026년 9월 고2 학평 23·24·26·27번 · 원문 일부 변형</span><span>중산고 2학년 영어 · Wrap-up</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>9월 학평 23·24·26·27번 Wrap-up · <b>정답과 해설</b></span><span>중산고등학교 2학년</span></div>
+  <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">각 5점 · 100점</div></div>
+  <div class="keygrid">
+    <div>1<b>①</b></div><div>2<b>②</b></div><div>3<b>⑤</b></div><div>4<b>④</b></div><div>5<b>①</b></div><div>6<b>③</b></div><div>7<b>④</b></div><div>8<b>①</b></div><div>9<b>④</b></div><div>10<b>⑤</b></div>
+    <div>11<b>③</b></div><div>12<b>②</b></div><div>13<b>③</b></div><div>14<b>④</b></div><div>15<b>②</b></div><div>16<b>②</b></div><div>17<b>③</b></div><div>18<b>⑤</b></div><div>19<b>①</b></div><div>20<b>⑤</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">①</span> 이유 ▶ 편안한 리듬만으로는 부족 → 긴장을 만들고 몰고 가는 과정이 만족·즐거움을 줌 → 전주곡의 모호한 리듬이 만든 긴장이 다음 악장에서 풀리고, 다시 예상 못한 화음이 새 긴장을 만든다.<br>
+오답 ▶ ② 전주곡에도 긴장이 있다(리듬의 모호함) ③ 편안한 리듬 그 이상을 원한다고 했다 ④ 예상치 못한 화음이 극적 효과를 준다 ⑤ 역사 이야기는 없다<br>
+포인트 ▶ tension(긴장) → released(해소) → new tensions의 반복이 글의 뼈대.</p>
+    <p><b>2</b> <span class="k">②</span> 이유 ▶ 편안한 리듬 '이상의 무언가'가 일어나야 함(however) → 흥분을 일으키는 과정 → '긴장'. 뒤 문장의 the tension(그곳에서 긴장은)이 같은 말을 받는다.<br>
+오답 ▶ ① 편안함은 however 앞의 내용(이미 있는 것) ③·④·⑤ 흥분(excitement)을 만드는 과정과 거리가 멀다<br>
+포인트 ▶ 빈칸 뒤에 같은 단어(the tension)가 다시 나오는지 확인!</p>
+    <p><b>3</b> <span class="k">⑤</span> 이유 ▶ 다음 악장은 정해진 리듬(set rhythm)이라 리듬이 분명하고 '예측 가능한' 대신(but), 예상 못한 화음이 긴장을 만든다 → <i>predictable</i>.<br>
+오답 ▶ ① 흥분이 '만족'을 만든다 ✔ ② '마디 없는' 전주곡 ✔ ③ 리듬의 '모호함'이 긴장을 만든다 ✔ ④ 긴장이 다음 악장에서 '해소된다' ✔<br>
+포인트 ▶ unambiguous and ___ , but unexpected ~ : but 앞은 '예측 가능', 뒤는 '예상 밖'.</p>
+    <p><b>4</b> <span class="k">④</span> 이유 ▶ 긴장이 '해소되는' 것 → 수동 <i>be released</i>. release는 '풀어 주다'라는 타동사라 목적어 없이 쓰면 틀린다.<br>
+오답 ▶ ① There needs to be ~ (~이 있어야 한다) ✔ ② 선행사 a process(단수) ✔ ③ arise는 자동사(생기다) → 능동 ✔ ⑤ 뒤가 완전한 절 → 관계부사 where ✔<br>
+포인트 ▶ arise(자동사, 수동 ❌) ↔ release(타동사, 목적어 없으면 수동).</p>
+    <p><b>5</b> <span class="k">①</span> 이유 ▶ the tension might be caused by the ambiguity of the rhythm ✔<br>
+오답 ▶ ② it can be satisfying in and of itself(그 자체로도 만족을 줄 수 있다) ③ the subsequent movement with a set rhythm ④ unexpected chords ~ create drama ⑤ Most of the time, however, we want something more<br>
+포인트 ▶ ambiguity = unclear, 모호함.</p>
+    <p><b>6</b> <span class="k">③</span> 이유 ▶ 주어진 글(편안한 리듬도 그 자체로 만족) → (B) however, 대개는 그 이상을 원함: 긴장을 만드는 과정이 즐거움을 줌 → (C) This(긴장의 즐거움)는 마디 없는 전주곡에서도 보임, 다만 그곳의 긴장은 리듬의 모호함에서 → (A) Therefore 전주곡의 긴장이 다음 악장에서 풀리고, 이것이 다시 새 긴장을 만든다.<br>
+오답 ▶ (C)의 This is seen ~ as well은 앞에 긴장 이야기가 있어야 함 / (A)의 Therefore, the prelude는 전주곡이 먼저 소개된 뒤<br>
+포인트 ▶ however(전환) → as well(추가) → Therefore(결과) 연결어 순서.</p>
+    <p><b>7</b> <span class="k">④</span> 이유 ▶ attention literacy = 피드·앱이 주의를 빼앗도록 의도적으로 설계된 방식을 알아보게 하는 교육 → 비판적 사용자로 키움.<br>
+오답 ▶ ① 무한 스크롤은 분석 대상일 뿐 이점이 아니다 ② 금지는 언급 없음 ③ 역사는 일부 배경 ⑤ 설계자의 학습이 아니라 학생 교육이 중심<br>
+포인트 ▶ 첫 문장(attention literacy)과 마지막 문장(critical users)이 주제를 감싼다.</p>
+    <p><b>8</b> <span class="k">①</span> 이유 ▶ tracking how many times they switch tasks or check their phone in an hour of homework = 공부 중 휴대폰 확인 횟수를 살펴봄 ✔<br>
+오답 ▶ ② traditionally cover ~ now they also include(전부터 가르쳤고 이제 더 가르침) ③ deliberate design choices(의도적인 선택) ④ critical users rather than passive consumers ⑤ specific colors and sounds<br>
+포인트 ▶ no longer / also, accidental / deliberate 같은 반대 표현 함정!</p>
+    <p><b>9</b> <span class="k">④</span> 이유 ▶ rather than(~가 아니라) 앞의 more critical users와 반대 → 비판 없이 받아들이기만 하는 '수동적인 소비자'.<br>
+오답 ▶ ①·②·③ 학생이 되는 대상과 관계없음 ⑤ active critics는 critical users와 같은 쪽이라 rather than 대비가 깨진다<br>
+포인트 ▶ A rather than B: A와 B는 반대 개념.</p>
+    <p><b>10</b> <span class="k">⑤</span> 이유 ▶ 전치사 By 뒤에는 동명사 → <i>treating</i>.<br>
+오답 ▶ ① means의 목적어 동명사 ✔ ② 주어 the architecture(단수), 설계'되는' 수동 ✔ ③ include의 목적어 동명사 ✔ ④ be tasked with + 동명사 ✔<br>
+포인트 ▶ 전치사(by, with, of) 뒤 동사는 -ing.</p>
+    <p><b>11</b> <span class="k">③</span> 이유 ▶ 앞 문장 끝의 observing one's own patterns of distraction(자신의 주의 산만 패턴 관찰)의 구체적인 예가 주어진 문장(휴대폰 확인 횟수 기록) → 그 뒤, Another lesson(또 다른 수업) 앞 ③.<br>
+오답 ▶ ①② 아직 주의 산만 관찰 이야기가 나오기 전 ④⑤ Another lesson 뒤라 첫 번째 수업 예시가 빠진다<br>
+포인트 ▶ A student might ~ / Another lesson might ~ : 예시 1 → 예시 2 순서.</p>
+    <p><b>12</b> <span class="k">②</span> 이유 ▶ (A) helping students recognize ~ deliberately designed → <i>recognize</i> (B) become more critical users rather than passive consumers → <i>critical</i><br>
+오답 ▶ ignore(무시하다)는 recognize와 반대 / passive는 rather than 뒤의 반대 개념 / design·loyal·frequent는 근거 없음<br>
+포인트 ▶ 요약문은 첫 문장(무엇을 가르치나)과 마지막 문장(어떤 사용자가 되나)을 합친다.</p>
+    <p><b>13</b> <span class="k">③</span> 이유 ▶ he was preparing ~ but he could not enter due to a severe sumac poisoning → 준비했지만 입학하지 '못했다'.<br>
+오답 ▶ ① went on trips to the countryside with his father ✔ ② Instead of attending a college ~ a clerk, a sailor, and a farmer ✔ ④ worked with Calvert Vaux and won ✔ ⑤ In 1979 ~ designated ~ National Historic Site ✔<br>
+포인트 ▶ 인물 글: 'prepare(준비)'와 'enter(입학)'처럼 비슷하지만 다른 사실을 구분.</p>
+    <p><b>14</b> <span class="k">④</span> 이유 ▶ During the Civil War, Olmsted served as General Secretary of the United States Sanitary Commission ✔<br>
+오답 ▶ ① worked with Calvert Vaux(함께) ② 사고가 아니라 옻나무 중독(sumac poisoning) ③ his sons and successors continued his design philosophy(이어 감) ⑤ 1822년은 태어난 해<br>
+포인트 ▶ 연도와 사건을 하나씩 짝지어 확인한다.</p>
+    <p><b>15</b> <span class="k">②</span> 이유 ▶ 선행사 his father는 사람 → 계속적 용법 관계대명사 <i>who</i>.<br>
+오답 ▶ ① Olmsted가 '알려진' 수동 분사구 ✔ ③ 선행사 poisoning(사물), 제한적 용법 that ✔ ④ 전치사 Instead of 뒤 동명사 ✔ ⑤ 주절의 과거 동사 ✔<br>
+포인트 ▶ 사람 선행사 + 콤마 → , who (, which ❌ / , that ❌)</p>
+    <p><b>16</b> <span class="k">②</span> 이유 ▶ Although(비록 ~지만) 그는 세상을 떠났'지만' → 그의 철학은 '계속 이어졌다'(continued). 뒤 문장의 유산을 기린다는 내용과도 연결.<br>
+오답 ▶ ①·③·④·⑤ 모두 Although의 대비(죽었지만 → 남았다)를 깨뜨린다<br>
+포인트 ▶ Although 절과 주절은 반대 방향.</p>
+    <p><b>17</b> <span class="k">③</span> 이유 ▶ Participation Fee: Free(무료) → 나무 수에 따라 달라지는 것은 참가비가 아니라 보상(Rewards).<br>
+오답 ▶ ① plant native tree seedlings ✔ ② No special skills required ✔ ④ Plant 10 or more trees: Receive a T-shirt ✔ ⑤ on-site sign-ups will be available ✔<br>
+포인트 ▶ 안내문은 항목(Fee / Rewards)을 섞어 놓은 함정을 조심!</p>
+    <p><b>18</b> <span class="k">⑤</span> 이유 ▶ shovels and water will be prepared(준비되어 있다) ✔<br>
+오답 ▶ ① 가져올 것은 모자와 장갑 ② All participants will get a commemorative badge(모든 참가자) ③ Online registration is encouraged(권장), 현장 등록도 가능 ④ 8 a.m.–11 a.m.(오전)<br>
+포인트 ▶ encouraged(권장) ≠ required(필수).</p>
+    <p><b>19</b> <span class="k">①</span> 이유 ▶ 인원 제한(최대 몇 명)은 어디에도 나오지 않는다.<br>
+오답 ▶ ② September 5th, 2026, 8 a.m.–11 a.m. ③ Free ④ badge, water bottle, T-shirt ⑤ a hat and gloves<br>
+포인트 ▶ 언급되지 않은 것: 항목 제목(When and Where, Fee, Rewards, Registration, Guidelines)을 하나씩 지운다.</p>
+    <p><b>20</b> <span class="k">⑤</span> 이유 ▶ 삽과 물이 '준비되는' 것 → 수동 <i>be prepared</i>.<br>
+오답 ▶ ① help + (to) 동사원형 ✔ ② 기술이 '요구되는' 과거분사(No special skills (are) required) ✔ ③ 명사 badge를 꾸미는 형용사 ✔ ④ will + be available ✔<br>
+포인트 ▶ 주어가 사물(shovels and water)이면 동사가 능동인지 수동인지 먼저 확인!</p>
+  </div>
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>중산고 2학년 영어 · Wrap-up</span></div>
+</section>
+</main>

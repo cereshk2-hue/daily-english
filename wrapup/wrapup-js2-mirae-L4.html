@@ -1,0 +1,368 @@
+<title>중산고2 미래엔 L4 ❶~❽ Wrap-up</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+/* A4 시험지 (10/31): 스크립트가 문항을 A4 쪽(210×297mm)에 왼쪽 단 → 오른쪽 단 → 다음 쪽 순서로 직접 나눠 담고 쪽 번호를 붙인다.
+   화면·인쇄·PDF 어디서나 같은 쪽 구성. 좁은 화면에서는 쪽 전체를 축소해서 보여 준다. */
+.q, .exp p { break-inside: avoid }
+body { font-size: 9.6pt }
+.stem { font-size: 9.8pt } .stem .src { font-size: 8pt }
+.box, .given, .sum { font-size: 9.4pt; line-height: 1.46; padding: 2.2mm 2.8mm }
+.ol, .ol.en li { font-size: 9.3pt; line-height: 1.38 }
+table.ch { font-size: 9.2pt } table.ch th { font-size: 8.4pt }
+.q { margin-bottom: 3.6mm; gap: 1.6mm }
+.exp { font-size: 7.8pt; line-height: 1.36; margin-top: 3mm } .exp p { margin-bottom: 1mm }
+.top, .notice, .idrow, .title .when, .foot { font-size: 8.6pt }
+.title h1 { font-size: 18pt } .title h1 small { font-size: 8.6pt }
+.keygrid div { font-size: 9pt; padding: 1.2mm 0 } .keygrid b { font-size: 10.5pt }
+.page { width: 210mm; max-width: 100%; padding: 11mm }
+.sheets { display: grid; justify-content: center; gap: 16px }
+.sheet { width: 210mm; height: 297mm; padding: 11mm; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); overflow: hidden }
+/* 내용 영역 188×256mm: A4 여백 0~20mm, Letter 기본 여백에서도 한 장에 들어가는 크기 */
+.sheet > .inner { width: 188mm; height: 256mm; display: flex; flex-direction: column; overflow: hidden }
+.inner > .top.run { padding-bottom: 2mm; border-bottom: 1px solid var(--rule); margin-bottom: 1mm }
+.cols { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr);
+  column-gap: 6mm; margin-top: 4mm; position: relative }
+.cols::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid var(--rule) }
+.cols > .col { columns: auto !important; margin: 0 !important; min-height: 0; overflow: hidden }
+.inner > .foot { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center }
+.inner > .foot span:last-child { text-align: right }
+.inner > .foot .pno { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums }
+@page { size: A4; margin: 12mm 11mm }
+@media print {
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  body { padding: 0 !important; margin: 0 }
+  .sheets { display: block }
+  .sheet { zoom: 1 !important; width: auto; height: auto; padding: 0; margin: 0; box-shadow: none; overflow: visible; break-after: page; page-break-after: always }
+  .sheet:last-child { break-after: auto; page-break-after: auto }
+  .sheet > .inner { margin: 0 auto }
+  .page { max-width: none; margin: 0; box-shadow: none; break-after: page }
+}
+</style>
+<script>
+/* A4 쪽 나누기: 왼쪽 단 → 오른쪽 단 → 다음 쪽, 쪽 번호 n / 전체 */
+(function () {
+  function build() {
+    var main = document.querySelector('main'); if (!main || document.querySelector('.sheets')) return;
+    var secs = [].slice.call(main.querySelectorAll('section.page'));
+    var out = document.createElement('div'); out.className = 'sheets'; main.appendChild(out);
+    var pages = [];
+    secs.forEach(function (sec) {
+      var box = sec.querySelector('.qs, .exp'); if (!box) return;
+      var items = [].slice.call(box.children), foot = sec.querySelector('.foot'), top = sec.querySelector('.top');
+      var head = [].slice.call(sec.children).filter(function (e) { return e !== box && e !== foot && !(e.classList.contains('keygrid') && false); });
+      var cols, ci, first = true;
+      function newPage() {
+        var sh = document.createElement('div'); sh.className = 'sheet'; var pg = document.createElement('div'); pg.className = 'inner'; sh.appendChild(pg);
+        if (first) head.forEach(function (e) { pg.appendChild(e); });
+        else { var t = top.cloneNode(true); t.classList.add('run'); pg.appendChild(t); }
+        first = false;
+        cols = document.createElement('div'); cols.className = 'cols';
+        for (var i = 0; i < 2; i++) { var c = document.createElement('div'); c.className = 'col ' + box.className; cols.appendChild(c); }
+        pg.appendChild(cols);
+        var f = foot.cloneNode(true), sp = f.querySelectorAll('span'), mid = document.createElement('span'); mid.className = 'pno';
+        f.insertBefore(mid, sp[1] || null); pg.appendChild(f);
+        out.appendChild(sh); pages.push(pg); ci = 0;
+      }
+      function over(c) { return c.scrollHeight > c.clientHeight + 1; }
+      newPage();
+      items.forEach(function (it) {
+        var c = cols.children[ci]; c.appendChild(it);
+        if (over(c) && c.children.length > 1) {
+          c.removeChild(it); ci++;
+          if (ci > 1) newPage();
+          cols.children[ci].appendChild(it);
+        }
+      });
+      sec.parentNode.removeChild(sec);
+    });
+    pages.forEach(function (p, i) { p.querySelector('.pno').textContent = (i + 1) + ' / ' + pages.length; });
+    fit();
+  }
+  function fit() {
+    var w = document.documentElement.clientWidth - 24, s = Math.min(1, w / 794);
+    [].forEach.call(document.querySelectorAll('.sheet'), function (p) { p.style.zoom = s < 1 ? s : ''; });
+  }
+  function go() { (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(build, build); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  window.addEventListener('resize', function () { if (document.querySelector('.sheets')) fit(); });
+})();
+</script>
+
+
+<main>
+<section class="page">
+  <div class="top"><span>고2 영어Ⅱ 미래엔(김성연) Lesson 4 What-If Science · <b>L4 ❶~❽ Wrap-up</b></span><span>중산고등학교 2학년 · 내신 대비</span></div>
+  <div class="title">
+    <div class="g">영어</div>
+    <h1>미래엔 L4 ❶~❽ Wrap-up<small>What-If Science · 거인 · 달이 없다면 · 산소가 두 배라면</small></h1>
+    <div class="when">20문항 · 각 5점<br>제한 시간 30분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">범위: 4과 본문 ❶~❽ (Galileo의 사고 실험 · 거인이 될 수 없는 이유 · 달이 없다면 · 산소 농도가 두 배라면). 지문은 본문을 일부 바꾼 것이 있어요. 선택지는 본문 표현을 다른 말로 바꿔 썼으니 뜻을 정확히 따져 보세요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[본문 ❶]</span></div>
+    <div class="box"><p>Have you ever wondered, "What if I could run so fast that nobody could see me?" If you have asked this kind of question, you may be ready to become the next Galileo. The Italian scientist Galileo Galilei is famous for a thought experiment, which is an imaginary experiment designed to explore a mathematical or scientific hypothesis. With only his thoughts, he demonstrated that objects with different masses should fall at <span class="blank"></span> when dropped from the same height in the absence of air resistance. With a hypothesis based on creativity and imagination, anyone can become a great scientist.</p></div>
+    <ol class="ol en"><li><span>①</span><span>the same speed</span></li><li><span>②</span><span>different speeds</span></li><li><span>③</span><span>a speed that depends on their mass</span></li><li><span>④</span><span>a slower speed than lighter objects</span></li><li><span>⑤</span><span>the speed of sound</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>다음 글의 밑줄 친 부분 중, 어법상 <u>틀린</u> 것은?<span class="src">[본문 ❶ 변형]</span></div>
+    <div class="box"><p>If you ①<u>have asked</u> this kind of question, you may be ready to become the next Galileo. The Italian scientist Galileo Galilei is famous for a thought experiment, ②<u>that</u> is an imaginary experiment ③<u>designed</u> to explore a mathematical or scientific hypothesis. With only his thoughts, he demonstrated that objects with different masses should fall at the same speed when ④<u>dropped</u> from the same height. With a hypothesis ⑤<u>based</u> on creativity and imagination, anyone can become a great scientist.</p></div>
+    <ol class="ol en"><li><span>①</span><span>have asked</span></li><li><span>②</span><span>that</span></li><li><span>③</span><span>designed</span></li><li><span>④</span><span>dropped</span></li><li><span>⑤</span><span>based</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>본문의 내용에 따를 때, 어떤 물체의 길이가 3배가 되면 그 용적(부피)은 몇 배가 되는가?<span class="src">[본문 ❷]</span></div>
+    <div class="box"><p>Unfortunately, the answer to this hypothetical question is that it is impossible due to the scale effect. When the length of an object doubles, its area increases by a factor of four (2x2), and its volume by a factor of eight (2x2x2). These changes can create many problems that would put the giant's life in danger.</p></div>
+    <ol class="ol"><li><span>①</span><span>9배</span></li><li><span>②</span><span>6배</span></li><li><span>③</span><span>3배</span></li><li><span>④</span><span>81배</span></li><li><span>⑤</span><span>27배</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[본문 ❷ 변형]</span></div>
+    <div class="box"><p>Have you ever wondered what would happen if humans could grow to ①<u>enormous</u> sizes like the giant in Jack and the Beanstalk? Unfortunately, the answer to this ②<u>hypothetical</u> question is that it is ③<u>possible</u> due to the scale effect. When the length of an object doubles, its area ④<u>increases</u> by a factor of four, and its volume by a factor of eight. These changes can create many problems that would put the giant's life in ⑤<u>danger</u>.</p></div>
+    <ol class="ol en"><li><span>①</span><span>enormous</span></li><li><span>②</span><span>hypothetical</span></li><li><span>③</span><span>possible</span></li><li><span>④</span><span>increases</span></li><li><span>⑤</span><span>danger</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>다음 글의 내용과 일치하는 것은?<span class="src">[본문 ❸]</span></div>
+    <div class="box"><p>One issue is that the giant would not be able to stand properly on his own because of the weight pushing down on his feet. If a person's height increased ten times, his weight would increase by a factor of 1,000 (10x10x10) because weight changes in proportion to volume. However, the area of the feet supporting his body would only increase by a factor of 100 (10x10). This means that his feet would be under too much pressure to support the increased weight because the mass would have increased far more than the area of his feet.</p></div>
+    <ol class="ol en"><li><span>①</span><span>If a person's height increased ten times, the area of his feet would increase 100 times.</span></li><li><span>②</span><span>Weight changes in proportion to the area of the feet.</span></li><li><span>③</span><span>A giant's feet could easily support his increased weight.</span></li><li><span>④</span><span>The mass would increase less than the area of the feet.</span></li><li><span>⑤</span><span>If his height increased ten times, his weight would increase ten times.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[본문 ❸ 변형]</span></div>
+    <div class="box"><p>One issue is that the giant would not be able to stand properly on his own because of the weight pushing down on his feet. If a person's height increased ten times, his weight would increase by a factor of 1,000 (10x10x10) because weight changes in proportion to volume. However, the area of the feet supporting his body would only increase by a factor of 100 (10x10). This means that his feet would be under too much pressure to support the increased weight because the mass would have increased <span class="blank"></span> the area of his feet.</p></div>
+    <ol class="ol en"><li><span>①</span><span>far less than</span></li><li><span>②</span><span>exactly as much as</span></li><li><span>③</span><span>at the same rate as</span></li><li><span>④</span><span>slightly less than</span></li><li><span>⑤</span><span>far more than</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>(A), (B), (C)의 각 네모 안에서 어법에 맞는 표현으로 가장 적절한 것은?<span class="src">[본문 ❸]</span></div>
+    <div class="box"><p>One issue is <b>(A)</b> [ that / what ] the giant would not be able to stand properly on his own because of the weight <b>(B)</b> [ pushing / pushed ] down on his feet. … However, the area of the feet <b>(C)</b> [ supporting / supported ] his body would only increase by a factor of 100.</p></div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th><th>(C)</th></tr></thead><tbody><tr><td>①</td><td>what</td><td>pushing</td><td>supporting</td></tr><tr><td>②</td><td>that</td><td>pushing</td><td>supporting</td></tr><tr><td>③</td><td>that</td><td>pushed</td><td>supporting</td></tr><tr><td>④</td><td>that</td><td>pushing</td><td>supported</td></tr><tr><td>⑤</td><td>what</td><td>pushed</td><td>supported</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?<span class="src">[본문 ❹]</span></div>
+    <div class="given">In addition, there is an issue of heat emission.</div>
+    <div class="box"><p><b>(A)</b> If a person's height were to increase ten times, the amount of heat generated would increase a thousand times in proportion to the body's volume. However, the surface area of the person's skin would only increase a hundred times, and as a result, not enough heat would be released from the body through the skin.</p><p><b>(B)</b> This shows that while we may wish to grow as tall as a giant, we would not be able to survive in that form.</p><p><b>(C)</b> Heat is generated in the human body, and it is constantly released from the surface of the skin to prevent heat from accumulating in the body.</p></div>
+    <ol class="ol"><li><span>①</span><span>(A) − (C) − (B)</span></li><li><span>②</span><span>(B) − (A) − (C)</span></li><li><span>③</span><span>(B) − (C) − (A)</span></li><li><span>④</span><span>(C) − (A) − (B)</span></li><li><span>⑤</span><span>(C) − (B) − (A)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?<span class="src">[본문 ❹]</span></div>
+    <div class="box"><p>In addition, there is an issue of heat emission. Heat is generated in the human body, and it is constantly released from the surface of the skin to prevent heat from accumulating in the body. If a person's height were to increase ten times, the amount of heat generated would increase a thousand times in proportion to the body's volume. However, the surface area of the person's skin would only increase a hundred times, and as a result, not enough heat would be released from the body through the skin. This shows that while we may wish to grow as tall as a giant, we would not be able to survive in that form.</p></div>
+    <div class="sum">If a giant's height increased ten times, the heat produced would rise in proportion to his <b>(A)</b> <span class="blank"></span>, while the skin area that <b>(B)</b> <span class="blank"></span> heat would grow much less.</div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>height</td><td>releases</td></tr><tr><td>②</td><td>volume</td><td>absorbs</td></tr><tr><td>③</td><td>volume</td><td>releases</td></tr><tr><td>④</td><td>skin</td><td>stores</td></tr><tr><td>⑤</td><td>height</td><td>generates</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>본문 ❸·❹에서 말한, 사람이 거인처럼 커지면 살 수 없는 이유로 가장 적절한 것은?<span class="src">[본문 ❸·❹]</span></div>
+    <ol class="ol"><li><span>①</span><span>발이 늘어난 몸무게를 지탱하지 못하고, 몸의 열을 충분히 내보내지 못한다.</span></li><li><span>②</span><span>키가 너무 커서 숨쉬기 어렵고, 먹을 것을 구하기 어렵다.</span></li><li><span>③</span><span>뼈가 가벼워지고, 피부가 얇아져 쉽게 다친다.</span></li><li><span>④</span><span>발 면적이 너무 넓어지고, 열이 너무 많이 빠져나가 춥다.</span></li><li><span>⑤</span><span>몸무게가 오히려 줄고, 체온이 계속 떨어진다.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>밑줄 친 <u>the inconstant moon</u>이 뜻하는 내용으로 가장 적절한 것은?<span class="src">[본문 ❺]</span></div>
+    <div class="box"><p>"O, swear not by the moon, <u>the inconstant moon</u>." This is a famous line from Romeo and Juliet. Juliet warns Romeo not to swear his love by the Moon as it may change just as the Moon changes its shape. Although its appearance changes, the Moon is always present in the night sky and plays a crucial role in regulating the length of the day on Earth as well as the Earth's seasons and weather patterns.</p></div>
+    <ol class="ol"><li><span>①</span><span>달은 늘 밤하늘에 있어 믿을 수 있다.</span></li><li><span>②</span><span>달의 중력이 바다를 움직인다.</span></li><li><span>③</span><span>모양이 자꾸 바뀌는 달처럼, 사랑도 변할 수 있다.</span></li><li><span>④</span><span>달이 없으면 하루가 짧아진다.</span></li><li><span>⑤</span><span>달빛 아래에서 한 약속은 반드시 지켜진다.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?<span class="src">[본문 ❺]</span></div>
+    <div class="given">Without the Moon, our day would no longer be 24 hours.</div>
+    <div class="box"><p><b>(A)</b> According to some scientists, when the Earth first formed, there was no Moon and a day was only five hours long. This indicates that without the Moon, we would see the Sun rise every five hours.</p><p><b>(B)</b> The Moon's gravity causes the Earth's ocean to rise and fall. Since the ocean is moving and the Earth is also spinning, friction occurs between them.</p><p><b>(C)</b> This friction leads to a decrease in the rotation rate of the planet. Without the Moon, however, the Earth's rotation would not slow down, resulting in a change in the length of a day.</p></div>
+    <ol class="ol"><li><span>①</span><span>(A) − (C) − (B)</span></li><li><span>②</span><span>(B) − (A) − (C)</span></li><li><span>③</span><span>(B) − (C) − (A)</span></li><li><span>④</span><span>(C) − (A) − (B)</span></li><li><span>⑤</span><span>(C) − (B) − (A)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[본문 ❺ 변형]</span></div>
+    <div class="box"><p>Although its appearance changes, the Moon is always ①<u>present</u> in the night sky and plays a ②<u>crucial</u> role in regulating the length of the day on Earth. The Moon's gravity causes the Earth's ocean to rise and fall. Since the ocean is moving and the Earth is also spinning, ③<u>friction</u> occurs between them. This friction leads to an ④<u>increase</u> in the rotation rate of the planet. Without the Moon, however, the Earth's rotation would not ⑤<u>slow down</u>, resulting in a change in the length of a day.</p></div>
+    <ol class="ol en"><li><span>①</span><span>present</span></li><li><span>②</span><span>crucial</span></li><li><span>③</span><span>friction</span></li><li><span>④</span><span>increase</span></li><li><span>⑤</span><span>slow down</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>다음 글의 내용과 일치하는 것은?<span class="src">[본문 ❺]</span></div>
+    <div class="box"><p>"O, swear not by the moon, the inconstant moon." This is a famous line from Romeo and Juliet. Juliet warns Romeo not to swear his love by the Moon as it may change just as the Moon changes its shape. Although its appearance changes, the Moon is always present in the night sky and plays a crucial role in regulating the length of the day on Earth as well as the Earth's seasons and weather patterns. Then, what would happen if there were no Moon? Without the Moon, our day would no longer be 24 hours. The Moon's gravity causes the Earth's ocean to rise and fall. Since the ocean is moving and the Earth is also spinning, friction occurs between them. This friction leads to a decrease in the rotation rate of the planet. Without the Moon, however, the Earth's rotation would not slow down, resulting in a change in the length of a day. According to some scientists, when the Earth first formed, there was no Moon and a day was only five hours long. This indicates that without the Moon, we would see the Sun rise every five hours.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Some scientists say a day was only five hours long when the Earth first formed.</span></li><li><span>②</span><span>Juliet asks Romeo to swear his love by the Moon.</span></li><li><span>③</span><span>Friction between the ocean and the Earth speeds up the Earth's rotation.</span></li><li><span>④</span><span>Without the Moon, a day would become longer than 24 hours.</span></li><li><span>⑤</span><span>The Moon only affects the Earth's weather, not the length of a day.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[본문 ❻ 변형]</span></div>
+    <div class="box"><p>Additionally, the absence of the Moon would completely change weather patterns on Earth. We experience the beauty of different seasons because the Earth is tilted on its axis. The axis of rotation of the Earth is tilted at an angle of 23.5 degrees, and the Moon's gravity holds the Earth in place by <span class="blank"></span> the tilt. However, if there were no Moon, the tilt could vary wildly between 0 and 85 degrees.</p></div>
+    <ol class="ol en"><li><span>①</span><span>increasing</span></li><li><span>②</span><span>stabilizing</span></li><li><span>③</span><span>removing</span></li><li><span>④</span><span>reversing</span></li><li><span>⑤</span><span>doubling</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>다음 글의 밑줄 친 부분 중, 어법상 <u>틀린</u> 것은?<span class="src">[본문 ❻ 변형]</span></div>
+    <div class="box"><p>We experience the beauty of different seasons because the Earth ①<u>is tilted</u> on its axis. However, if there ②<u>were</u> no Moon, the tilt could vary wildly between 0 and 85 degrees. Suppose the Earth were ③<u>tilted</u> at an angle of 60 degrees. The hemisphere of the Earth ④<u>facing</u> the Sun would receive much more energy than the other hemisphere. This could bring about extreme shifts in weather patterns, potentially ⑤<u>make</u> summers hotter and winters colder.</p></div>
+    <ol class="ol en"><li><span>①</span><span>is tilted</span></li><li><span>②</span><span>were</span></li><li><span>③</span><span>tilted</span></li><li><span>④</span><span>facing</span></li><li><span>⑤</span><span>make</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?<span class="src">[본문 ❻]</span></div>
+    <div class="given">However, if there were no Moon, the tilt could vary wildly between 0 and 85 degrees.</div>
+    <div class="box"><p>We experience the beauty of different seasons because the Earth is tilted on its axis. <span class="gap">( ① )</span> The axis of rotation of the Earth is tilted at an angle of 23.5 degrees, and the Moon's gravity holds the Earth in place by stabilizing the tilt. <span class="gap">( ② )</span> Suppose the Earth were tilted at an angle of 60 degrees. <span class="gap">( ③ )</span> The hemisphere of the Earth facing the Sun would receive much more energy from the sun than the other hemisphere. <span class="gap">( ④ )</span> This could bring about extreme shifts in weather patterns, potentially making summers hotter and winters colder. <span class="gap">( ⑤ )</span> If this trend continued, the Earth would become uninhabitable.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>다음 글의 내용과 일치하지 <u>않는</u> 것은?<span class="src">[본문 ❼]</span></div>
+    <div class="box"><p>Oxygen is a vital gas for life, making up 21 percent of the Earth's atmosphere. It is essential for breathing and is also necessary to burn common fuels like wood and oil to generate heat and light. Undoubtedly, it is an indispensable element for organisms on Earth. Then, would it be better to have a higher concentration of oxygen in the atmosphere? What would happen if the oxygen concentration were to double? While more oxygen may seem beneficial, it could have unexpected consequences, especially for insects. Insects, such as bees and dragonflies, do not have lungs and instead take in air through external openings called spiracles. Although insects can survive without lungs, their spiracles are not as efficient as lungs at taking in air.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Oxygen makes up 21 percent of the Earth's atmosphere.</span></li><li><span>②</span><span>Oxygen is needed to burn fuels like wood and oil.</span></li><li><span>③</span><span>Spiracles are less efficient than lungs at taking in air.</span></li><li><span>④</span><span>Insects breathe through both lungs and spiracles.</span></li><li><span>⑤</span><span>Bees and dragonflies take in air through external openings.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[본문 ❽ 변형]</span></div>
+    <div class="box"><p>With the current oxygen concentration, insects cannot evolve to be ①<u>larger</u> than their current size. However, if the concentration of oxygen were to double, insects could grow in size as oxygen would be more ②<u>readily</u> available. This increase in insect size could have a significant influence on the ecological environment, potentially ③<u>disrupting</u> the food chain. Dragonflies, for example, may become as large as eagles, ④<u>maintaining</u> the balance of predators and prey in the ecosystem. The increase in oxygen would help to use energy more ⑤<u>efficiently</u>.</p></div>
+    <ol class="ol en"><li><span>①</span><span>larger</span></li><li><span>②</span><span>readily</span></li><li><span>③</span><span>disrupting</span></li><li><span>④</span><span>maintaining</span></li><li><span>⑤</span><span>efficiently</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[본문 ❽ 변형]</span></div>
+    <div class="box"><p>If the oxygen concentration were to double, you would be able to run faster than you can right now. Considering that oxygen is used to break down energy so that muscles can use it, the increase in oxygen would help to use energy more efficiently and improve our capability for physical exercise. This leads us to expect that athletes would set new world records at the Olympics. While these three thought experiments offer interesting possibilities, it is important to consider that they are simply based on imagination and <span class="blank"></span> through scientific research.</p></div>
+    <ol class="ol en"><li><span>①</span><span>have been fully proven</span></li><li><span>②</span><span>were rejected</span></li><li><span>③</span><span>cannot be imagined</span></li><li><span>④</span><span>are widely used</span></li><li><span>⑤</span><span>have not been tested</span></li></ol>
+  </div>
+  </div>
+  <div class="foot"><span>미래엔(김성연) 영어Ⅱ L4 ❶~❽ · 원문 일부 변형</span><span>중산고 2학년 영어 · Wrap-up</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>미래엔 L4 ❶~❽ Wrap-up · <b>정답과 해설</b></span><span>중산고등학교 2학년</span></div>
+  <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">각 5점 · 100점</div></div>
+  <div class="keygrid">
+    <div>1<b>①</b></div><div>2<b>②</b></div><div>3<b>⑤</b></div><div>4<b>③</b></div><div>5<b>①</b></div><div>6<b>⑤</b></div><div>7<b>②</b></div><div>8<b>④</b></div><div>9<b>③</b></div><div>10<b>①</b></div>
+    <div>11<b>③</b></div><div>12<b>③</b></div><div>13<b>④</b></div><div>14<b>①</b></div><div>15<b>②</b></div><div>16<b>⑤</b></div><div>17<b>②</b></div><div>18<b>④</b></div><div>19<b>④</b></div><div>20<b>⑤</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">①</span> 이유 ▶ Galileo의 사고 실험: 공기 저항이 없으면 질량이 다른 물체도 같은 높이에서 '같은 속도로' 떨어진다.<br>
+오답 ▶ ②·③·④ 모두 질량에 따라 속도가 달라진다는 뜻으로 사고 실험의 결론과 반대 ⑤ 근거 없음<br>
+포인트 ▶ with different masses(다른 질량) ↔ the same speed(같은 속도)의 대비.</p>
+    <p><b>2</b> <span class="k">②</span> 이유 ▶ 콤마 뒤 계속적 용법에는 that을 쓸 수 없다 → <i>which</i>.<br>
+오답 ▶ ① 경험의 현재완료 ✔ ③ 실험이 '설계된' 과거분사 ✔ ④ when (they are) dropped: 물체가 '떨어뜨려지는' 수동 ✔ ⑤ 가설이 창의성에 '근거한' 과거분사 ✔<br>
+포인트 ▶ , which ⭕ / , that ❌</p>
+    <p><b>3</b> <span class="k">⑤</span> 이유 ▶ 길이가 2배 → 면적 4배(2×2), 용적 8배(2×2×2). 같은 원리로 길이 3배 → 용적 3×3×3 = 27배.<br>
+오답 ▶ ① 9배는 면적(3×3) ② 6배·③ 3배는 길이를 곱하는 원리와 맞지 않음 ④ 81배는 3을 네 번 곱한 값<br>
+포인트 ▶ 면적 ∝ 길이², 용적(부피·무게) ∝ 길이³ — 거인 문제의 핵심.</p>
+    <p><b>4</b> <span class="k">③</span> 이유 ▶ Unfortunately(불행히도) + 거인의 생명을 위험에 빠뜨리는 문제 → 거인처럼 크게 자라는 것은 크기 효과 때문에 '불가능하다' → <i>impossible</i>.<br>
+오답 ▶ ① '엄청난' 크기 ✔ ② '가상적인' 질문 ✔ ④ 면적이 4배로 '증가' ✔ ⑤ 생명을 '위험'에 빠뜨림 ✔<br>
+포인트 ▶ Unfortunately 뒤에는 부정적인 결론.</p>
+    <p><b>5</b> <span class="k">①</span> 이유 ▶ the area of the feet ~ would only increase by a factor of 100 (10x10) ✔<br>
+오답 ▶ ② weight changes in proportion to volume(부피에 비례) ③ under too much pressure to support(지탱하기에 압력이 너무 큼) ④ increased far more than the area(훨씬 더 많이 늘어남) ⑤ by a factor of 1,000 (10x10x10)<br>
+포인트 ▶ 키 10배 → 발 면적 100배 / 몸무게 1,000배.</p>
+    <p><b>6</b> <span class="k">⑤</span> 이유 ▶ 몸무게(질량)는 1,000배, 발 면적은 100배 → 질량이 면적보다 '훨씬 더 많이' 늘어서 발이 지나친 압력을 받는다.<br>
+오답 ▶ ①·④ 질량이 덜 늘면 압력이 커질 이유가 없다 ②·③ 같은 비율이면 압력은 그대로<br>
+포인트 ▶ 1,000배 vs 100배 → 차이 10배 = too much pressure.</p>
+    <p><b>7</b> <span class="k">②</span> 이유 ▶ (A) 뒤가 완전한 절(주어 the giant + 동사) → 보어절을 이끄는 접속사 <i>that</i> (B) 무게가 발을 '누르는' 능동 → <i>pushing</i> (C) 발이 몸을 '지탱하는' 능동 + 뒤에 목적어 his body → <i>supporting</i><br>
+오답 ▶ what은 뒤가 불완전할 때 / pushed·supported는 수동이라 뜻이 맞지 않고, (C)는 뒤의 목적어와도 맞지 않는다<br>
+포인트 ▶ 분사 뒤에 목적어가 있으면 -ing.</p>
+    <p><b>8</b> <span class="k">④</span> 이유 ▶ 주어진 글(열 배출 문제) → (C) 열은 몸에서 생겨 피부로 계속 내보내진다(원리) → (A) 키 10배면 열은 1,000배, 피부 면적은 100배라 열이 충분히 빠지지 못함(문제) → (B) This shows ~ 그 형태로는 살 수 없다(결론).<br>
+오답 ▶ (A)의 the amount of heat generated는 열이 생긴다는 원리(C) 뒤 / (B)의 This shows는 앞의 계산 결과를 받는 결론이라 맨 끝<br>
+포인트 ▶ 원리 → 계산(문제) → 결론 순서.</p>
+    <p><b>9</b> <span class="k">③</span> 이유 ▶ (A) the amount of heat generated would increase ~ in proportion to the body's volume → <i>volume</i> (B) 열은 피부 표면으로 '배출된다(released)' → <i>releases</i><br>
+오답 ▶ height(키)는 10배만 늘어 열의 1,000배와 맞지 않음 / absorbs(흡수)·stores(저장)·generates(생성)는 피부가 하는 역할이 아니다<br>
+포인트 ▶ 열 생성 ∝ 부피(1,000배), 열 배출 ∝ 피부 면적(100배).</p>
+    <p><b>10</b> <span class="k">①</span> 이유 ▶ ❸ 몸무게 1,000배 vs 발 면적 100배 → 똑바로 서지 못함 / ❹ 열 생성 1,000배 vs 피부 면적 100배 → 열이 충분히 배출되지 않음.<br>
+오답 ▶ ② 숨쉬기·음식 이야기는 없다 ③ 뼈·피부 두께 이야기는 없다 ④·⑤ 열이 너무 '적게' 빠져나가 몸에 쌓이는 것이 문제, 몸무게는 늘어난다<br>
+포인트 ▶ 두 문제 모두 '부피(세제곱)는 면적(제곱)보다 훨씬 빨리 커진다'는 크기 효과.</p>
+    <p><b>11</b> <span class="k">③</span> 이유 ▶ Juliet warns Romeo not to swear his love by the Moon as it may change just as the Moon changes its shape → 모양이 변하는 달 = 변할 수 있는 사랑.<br>
+오답 ▶ ① 달이 늘 있다는 것은 뒤의 과학 설명이지 '변덕스러운 달'의 뜻이 아니다 ②·④ 뒤 문단의 과학 내용 ⑤ 반대 뜻<br>
+포인트 ▶ inconstant = 변덕스러운(in + constant 변함없는).</p>
+    <p><b>12</b> <span class="k">③</span> 이유 ▶ 주어진 글(달이 없으면 하루가 24시간이 아님) → (B) 달의 중력이 바다를 움직이고, 바다와 자전하는 지구 사이에 마찰 → (C) This friction이 자전 속도를 줄임, 달이 없으면 줄지 않음 → (A) 지구가 처음 생겼을 때 달이 없었고 하루는 5시간 → 달이 없으면 5시간마다 해가 뜬다.<br>
+오답 ▶ (C)의 This friction은 마찰이 처음 나오는 (B) 뒤 / (A)의 예(5시간)는 원리 설명이 끝난 뒤<br>
+포인트 ▶ 지시어(This friction)와 원인 → 결과 → 근거 흐름.</p>
+    <p><b>13</b> <span class="k">④</span> 이유 ▶ 마찰은 자전을 '느리게' 한다 → 자전율의 <i>decrease</i>(감소). 뒤 문장 '달이 없으면 자전이 느려지지 않는다'와 짝이 맞아야 한다.<br>
+오답 ▶ ① 늘 밤하늘에 '존재한다' ✔ ② '중요한' 역할 ✔ ③ 바다와 지구 사이 '마찰' ✔ ⑤ 달이 없으면 '느려지지' 않음 ✔<br>
+포인트 ▶ 마찰(friction) → 속도 감소.</p>
+    <p><b>14</b> <span class="k">①</span> 이유 ▶ According to some scientists, when the Earth first formed, there was no Moon and a day was only five hours long ✔<br>
+오답 ▶ ② warns Romeo not to swear(맹세하지 말라고 경고) ③ leads to a decrease in the rotation rate(속도 감소) ④ 자전이 느려지지 않으니 하루는 더 '짧아진다'(5시간마다 일출) ⑤ regulating the length of the day as well as seasons and weather<br>
+포인트 ▶ 달 없음 → 자전 그대로 빠름 → 하루가 짧음.</p>
+    <p><b>15</b> <span class="k">②</span> 이유 ▶ 달의 중력이 지구를 '제자리에' 붙잡아 둔다 + 달이 없으면 기울기가 0~85도로 크게 흔들린다(However) → 달은 기울기를 '안정시킨다'.<br>
+오답 ▶ ①·⑤ 기울기를 바꾸면 제자리에 붙잡아 둔다는 말과 맞지 않음 ③ 기울기가 없으면 계절이 없다 ④ 뒤집는다는 근거 없음<br>
+포인트 ▶ hold ~ in place(제자리에 두다) = stabilize(안정시키다).</p>
+    <p><b>16</b> <span class="k">⑤</span> 이유 ▶ 앞 절의 결과를 덧붙이는 분사구문 → <i>making</i> (summers hotter: make + 목적어 + 형용사).<br>
+오답 ▶ ① 지구가 '기울어져 있는' 수동 ✔ ② 가정법 과거 if there were ✔ ③ Suppose the Earth were tilted: 지구가 '기울어진' 상태(수동) ✔ ④ 반구가 태양을 '향하는' 능동 + 목적어 the Sun ✔<br>
+포인트 ▶ 콤마 뒤 접속사 없이 동사가 또 오면 분사구문(-ing)!</p>
+    <p><b>17</b> <span class="k">②</span> 이유 ▶ 달의 중력이 기울기(23.5도)를 안정시킨다 → However 달이 없으면 기울기가 0~85도로 크게 변한다 → Suppose 60도로 기울었다면 ~. 따라서 ②.<br>
+오답 ▶ ① 아직 달이 기울기를 안정시킨다는 말이 나오기 전 ③ Suppose(60도라고 가정)는 기울기가 크게 변할 수 있다는 말 뒤에 와야 한다 ④⑤ 60도의 결과 설명 사이라 흐름이 끊긴다<br>
+포인트 ▶ However = 달이 있을 때(안정) ↔ 없을 때(크게 변함).</p>
+    <p><b>18</b> <span class="k">④</span> 이유 ▶ Insects ~ do not have lungs and instead take in air through ~ spiracles → 곤충은 폐가 '없다'.<br>
+오답 ▶ ① making up 21 percent ✔ ② necessary to burn common fuels like wood and oil ✔ ③ not as efficient as lungs ✔ ⑤ take in air through external openings called spiracles ✔<br>
+포인트 ▶ not as ~ as = ~만큼 …하지 않다 = less ~ than.</p>
+    <p><b>19</b> <span class="k">④</span> 이유 ▶ 잠자리가 독수리만큼 커지면 먹이사슬이 무너져 포식자와 먹이의 균형이 '바뀐다' → <i>altering</i>. maintaining(유지)은 앞의 disrupting the food chain과 반대.<br>
+오답 ▶ ① 현재 크기보다 '더 크게' 진화할 수 없다 ✔ ② 산소를 더 '쉽게' 이용 ✔ ③ 먹이사슬을 '붕괴시킴' ✔ ⑤ 에너지를 더 '효율적으로' 사용 ✔<br>
+포인트 ▶ for example 뒤의 예는 앞 문장(disrupting)과 같은 방향.</p>
+    <p><b>20</b> <span class="k">⑤</span> 이유 ▶ While(~이지만) 흥미로운 가능성 ↔ 그저 상상에 근거한 것(simply based on imagination) → 과학적 연구로 '시험되지 않았다'는 한계.<br>
+오답 ▶ ① 증명되었다면 '상상에 근거할 뿐'이라는 말과 반대 ② 거부된 것이 아니라 아직 시험되지 않음 ③ 이미 상상으로 한 실험 ④ 근거 없음<br>
+포인트 ▶ 사고 실험 = 상상(가설) 단계, 아직 검증 전.</p>
+  </div>
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>중산고 2학년 영어 · Wrap-up</span></div>
+</section>
+</main>
