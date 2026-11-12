@@ -1,0 +1,249 @@
+<title>저동고 능률 L4 Wrap-up</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@media (max-width: 700px) {
+  .page { padding: 18px 14px }
+  .qs, .exp { columns: 1 }
+  .title { grid-template-columns: 1fr } .title .g, .title .when { text-align: center }
+  .idrow { grid-template-columns: repeat(2, 1fr) }
+  .keygrid { grid-template-columns: repeat(5, minmax(0, 1fr)) }
+  .keygrid div:nth-child(10n) { border-right: 1px solid var(--rule) } .keygrid div:nth-child(5n) { border-right: 0 }
+  .keygrid div:nth-last-child(-n+10) { border-bottom: 1px solid var(--rule) } .keygrid div:nth-last-child(-n+5) { border-bottom: 0 }
+}
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+</style>
+
+<main>
+<section class="page">
+  <div class="top"><span>공통영어2 NE능률(민병천) Lesson 4 · <b>본문 ❶~❺ Wrap-up</b></span><span>저동고등학교 1학년 · 2학기 기말 대비</span></div>
+  <div class="title">
+    <div class="g">영어</div>
+    <h1>능률 L4 본문 Wrap-up<small>Looking to Nature for Help · 어휘 심화</small></h1>
+    <div class="when">20문항 · 각 5점<br>제한 시간 30분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">범위: 데일리 학습 DAY 7~9 (4과 본문 ❶~❺). 지문은 일부 바꾼 것이 있어요. 내용 일치 문항의 선택지는 본문 표현을 어려운 어휘로 바꿔 썼으니 뜻을 정확히 따져 보세요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>다음 글의 내용과 일치하지 <u>않는</u> 것은?<span class="src">[본문 ❶]</span></div>
+    <div class="box"><p>Our environment is in trouble. With the planet becoming warmer, sea levels are rising and natural disasters such as forest fires and floods are increasing. More and more waste is also being produced. Plastic, in particular, is causing problems with soil and water pollution. It is clear that humans are a major contributor to the destruction of nature. Will we be able to protect the environment from mountains of plastic? Can we stop climate change from reaching dangerous levels? Achieving these goals seems difficult. Nature, however, may have provided us with solutions to these problems. Here are three areas where changes are already happening.</p></div>
+    <ol class="ol en"><li><span>①</span><span>The rise in global temperatures is linked to higher sea levels.</span></li><li><span>②</span><span>The quantity of waste being generated keeps growing.</span></li><li><span>③</span><span>Humans play only a minor role in damaging the natural world.</span></li><li><span>④</span><span>Plastic contributes to the contamination of both land and water.</span></li><li><span>⑤</span><span>Nature might already offer answers to our environmental problems.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>다음 글의 밑줄 친 (a)~(g) 중 어법상 <u>틀린</u> 것의 개수는?<span class="src">[본문 ❶ 변형]</span></div>
+    <div class="box"><p>Our environment is in trouble. With the planet <span class="tag">(a)</span><u>becoming</u> warmer, sea levels <span class="tag">(b)</span><u>is rising</u> and natural disasters such as forest fires and floods are increasing. More and more waste is also <span class="tag">(c)</span><u>producing</u>. Plastic, in particular, <span class="tag">(d)</span><u>are causing</u> problems with soil and water pollution. It is clear <span class="tag">(e)</span><u>what</u> humans are a major contributor to the destruction of nature. Can we stop climate change from <span class="tag">(f)</span><u>reaching</u> dangerous levels? Achieving these goals <span class="tag">(g)</span><u>seem</u> difficult.</p></div>
+    <ol class="ol"><li><span>①</span><span>1개</span></li><li><span>②</span><span>2개</span></li><li><span>③</span><span>3개</span></li><li><span>④</span><span>4개</span></li><li><span>⑤</span><span>5개</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[본문 ❶ 변형]</span></div>
+    <div class="box"><p>Our environment is in trouble. With the planet becoming warmer, sea levels are ①<u>rising</u> and natural disasters such as forest fires and floods are ②<u>decreasing</u>. More and more waste is also being produced. It is clear that humans are a major ③<u>contributor</u> to the destruction of nature. Achieving these goals seems ④<u>difficult</u>. Nature, however, may have provided us with ⑤<u>solutions</u> to these problems.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[본문 ❷]</span></div>
+    <div class="box"><p>With this in mind, scientists are turning to mealworms. Mealworms are the larvae of a certain species of beetle. Special bacteria live inside them. These bacteria can <span class="blank"></span> plastic. This means that mealworms can actually feed on plastic.</p></div>
+    <ol class="ol en"><li><span>①</span><span>give off</span></li><li><span>②</span><span>pile up</span></li><li><span>③</span><span>make up</span></li><li><span>④</span><span>break down</span></li><li><span>⑤</span><span>turn down</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>다음 글의 내용과 일치하는 것은?<span class="src">[본문 ❷]</span></div>
+    <div class="box"><p>About fifty percent of plastic is produced for single-use products. That means the items are used just once and then discarded. Do you ever stop to think about where these plastic items go after you throw them away? Recycling can help reduce the amount of plastic in our landfills. However, less than ten percent of the world's plastic waste has been recycled so far. Often, plastic waste is moved to places where it is just dumped or burned. Furthermore, between 8 and 14 million metric tons of plastic end up in the ocean every year. This puts many marine species in danger. With this in mind, scientists are turning to mealworms. Mealworms are the larvae of a certain species of beetle. Special bacteria live inside them. These bacteria can break down plastic. This means that mealworms can actually feed on plastic. Scientists are now looking for ways to cultivate the bacteria outside of mealworms. They also want to speed up the process by which the bacteria break down plastic.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Roughly half of all plastic is manufactured for disposable items.</span></li><li><span>②</span><span>Most of the world's plastic waste has already been recycled.</span></li><li><span>③</span><span>Less than one million tons of plastic flow into the ocean each year.</span></li><li><span>④</span><span>Mealworms are the fully grown adult form of a beetle.</span></li><li><span>⑤</span><span>Scientists have already mass-produced the bacteria outside mealworms.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>(A), (B), (C)의 각 네모 안에서 어법에 맞는 표현으로 가장 적절한 것은?<span class="src">[본문 ❷]</span></div>
+    <div class="box"><p>That means the items are used just once and then <b>(A)</b> [discarded / discarding]. ... Often, plastic waste is moved to places <b>(B)</b> [where / which] it is just dumped or burned. ... They also want to speed up the process <b>(C)</b> [by which / which] the bacteria break down plastic.</p></div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th><th>(C)</th></tr></thead><tbody><tr><td>①</td><td>discarding</td><td>where</td><td>by which</td></tr><tr><td>②</td><td>discarded</td><td>where</td><td>by which</td></tr><tr><td>③</td><td>discarded</td><td>which</td><td>by which</td></tr><tr><td>④</td><td>discarded</td><td>where</td><td>which</td></tr><tr><td>⑤</td><td>discarding</td><td>which</td><td>which</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?<span class="src">[본문 ❷]</span></div>
+    <div class="given">Special bacteria live inside them.</div>
+    <div class="box"><p>Furthermore, between 8 and 14 million metric tons of plastic end up in the ocean every year. ( ① ) This puts many marine species in danger. ( ② ) With this in mind, scientists are turning to mealworms. ( ③ ) Mealworms are the larvae of a certain species of beetle. ( ④ ) These bacteria can break down plastic. ( ⑤ ) This means that mealworms can actually feed on plastic.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?<span class="src">[본문 ❷]</span></div>
+    <div class="given">About fifty percent of plastic is produced for single-use products.</div>
+    <div class="box"><p><span class="tag">(A)</span> Often, plastic waste is moved to places where it is just dumped or burned. Furthermore, between 8 and 14 million metric tons of plastic end up in the ocean every year.</p><p><span class="tag">(B)</span> That means the items are used just once and then discarded. Do you ever stop to think about where these plastic items go after you throw them away?</p><p><span class="tag">(C)</span> Recycling can help reduce the amount of plastic in our landfills. However, less than ten percent of the world's plastic waste has been recycled so far.</p></div>
+    <ol class="ol"><li><span>①</span><span>(A) − (C) − (B)</span></li><li><span>②</span><span>(B) − (A) − (C)</span></li><li><span>③</span><span>(B) − (C) − (A)</span></li><li><span>④</span><span>(C) − (A) − (B)</span></li><li><span>⑤</span><span>(C) − (B) − (A)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[본문 ❸]</span></div>
+    <div class="box"><p>Mining and other industries are causing soil pollution across the globe. Although polluted soil can be dug up and transported to a landfill, this process is expensive. Moreover, it only moves the problem to another area and does not really solve it. Fortunately, there is an eco-friendly and <span class="blank"></span> way to restore polluted soil — planting willow trees.</p></div>
+    <ol class="ol en"><li><span>①</span><span>costly</span></li><li><span>②</span><span>temporary</span></li><li><span>③</span><span>complicated</span></li><li><span>④</span><span>dangerous</span></li><li><span>⑤</span><span>cost-effective</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>다음 글의 내용과 일치하지 <u>않는</u> 것은?<span class="src">[본문 ❸]</span></div>
+    <div class="box"><p>Mining and other industries are causing soil pollution across the globe. Although polluted soil can be dug up and transported to a landfill, this process is expensive. Moreover, it only moves the problem to another area and does not really solve it. Fortunately, there is an eco-friendly and cost-effective way to restore polluted soil — planting willow trees. These amazing trees have extensive and well-developed root systems. As a result, they naturally extract a wide range of harmful materials from the soil. They can also grow quickly, even in soil with a high acidity level or a lot of heavy metals in it. Research on the effectiveness of using willow trees for this purpose is in development. Scientists have found that some species of willow trees are able to absorb harmful materials better than others. Therefore, this promising area should be further explored to find out which trees are the most effective.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Moving polluted soil to a landfill is a cheap and permanent solution.</span></li><li><span>②</span><span>Mining is one of the causes of soil contamination worldwide.</span></li><li><span>③</span><span>Willow trees possess wide and well-developed roots.</span></li><li><span>④</span><span>Willows can grow rapidly even in highly acidic soil.</span></li><li><span>⑤</span><span>Some willow species absorb harmful substances more effectively than others.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>다음 글의 밑줄 친 (a)~(e) 중 어법상 <u>틀린</u> 것끼리 짝지은 것은?<span class="src">[본문 ❸ 변형]</span></div>
+    <div class="box"><p>Although polluted soil can <span class="tag">(a)</span><u>be dug up</u> and transported to a landfill, this process is expensive. Moreover, it only moves the problem to another area and does not really <span class="tag">(b)</span><u>solve</u> it. ... These amazing trees have extensive and well-developed root systems. As a result, they naturally <span class="tag">(c)</span><u>extracts</u> a wide range of harmful materials from the soil. They can also grow <span class="tag">(d)</span><u>quickly</u>, even in soil with a high acidity level. ... Scientists have found that some species of willow trees are able to absorb harmful materials better than <span class="tag">(e)</span><u>another</u>.</p></div>
+    <ol class="ol"><li><span>①</span><span>(a), (c)</span></li><li><span>②</span><span>(b), (d)</span></li><li><span>③</span><span>(a), (e)</span></li><li><span>④</span><span>(c), (e)</span></li><li><span>⑤</span><span>(d), (e)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>다음 글에서 전체 흐름과 관계 <u>없는</u> 문장은?<span class="src">[본문 ❸ 변형]</span></div>
+    <div class="box"><p>Fortunately, there is an eco-friendly and cost-effective way to restore polluted soil — planting willow trees. ① These amazing trees have extensive and well-developed root systems. ② Willow branches have long been used to make baskets and furniture. ③ As a result, they naturally extract a wide range of harmful materials from the soil. ④ They can also grow quickly, even in soil with a high acidity level or a lot of heavy metals in it. ⑤ Research on the effectiveness of using willow trees for this purpose is in development.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?<span class="src">[본문 ❸]</span></div>
+    <div class="box"><p>Mining and other industries are causing soil pollution across the globe. Although polluted soil can be dug up and transported to a landfill, this process is expensive. Moreover, it only moves the problem to another area and does not really solve it. Fortunately, there is an eco-friendly and cost-effective way to restore polluted soil — planting willow trees. These amazing trees have extensive and well-developed root systems. As a result, they naturally extract a wide range of harmful materials from the soil. They can also grow quickly, even in soil with a high acidity level or a lot of heavy metals in it. Research on the effectiveness of using willow trees for this purpose is in development. Scientists have found that some species of willow trees are able to absorb harmful materials better than others. Therefore, this promising area should be further explored to find out which trees are the most effective.</p></div>
+    <div class="sum">Willow trees offer a(n) <b>(A)</b> ________ way to clean polluted soil, but further <b>(B)</b> ________ is needed to identify the most effective species.</div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>affordable</td><td>research</td></tr><tr><td>②</td><td>expensive</td><td>research</td></tr><tr><td>③</td><td>affordable</td><td>funding</td></tr><tr><td>④</td><td>temporary</td><td>testing</td></tr><tr><td>⑤</td><td>harmful</td><td>planting</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>다음 글의 내용과 일치하는 것은?<span class="src">[본문 ❹]</span></div>
+    <div class="box"><p>Statistics show that about thirty to forty percent of people in the world drink coffee each day. The coffee-making process, however, generates used coffee grounds, which are normally sent to landfills. There, they can create a harmful greenhouse gas. Unfortunately, there's no way to stop everyone in the world from drinking coffee. However, we can reduce greenhouse gas emissions by turning used coffee grounds into biofuel. Biofuel is a natural fuel that is made from plant or animal sources. Researchers have found that they can grow algae on old coffee grounds without adding any other nutrients. If these algae are exposed to twenty hours of light and four hours of darkness each day, they eventually produce high-quality biofuel. The biofuel is renewable and sustainable, and it creates only a small amount of emissions.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Less than a fifth of the world's population drinks coffee daily.</span></li><li><span>②</span><span>Used coffee grounds are usually recycled into fertilizer.</span></li><li><span>③</span><span>Coffee grounds in landfills can release a harmful greenhouse gas.</span></li><li><span>④</span><span>Algae need extra nutrients to grow on coffee grounds.</span></li><li><span>⑤</span><span>The algae produce biofuel only when kept in constant light.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?<span class="src">[본문 ❹]</span></div>
+    <div class="given">Statistics show that about thirty to forty percent of people in the world drink coffee each day.</div>
+    <div class="box"><p><span class="tag">(A)</span> Biofuel is a natural fuel that is made from plant or animal sources. Researchers have found that they can grow algae on old coffee grounds without adding any other nutrients.</p><p><span class="tag">(B)</span> Unfortunately, there's no way to stop everyone in the world from drinking coffee. However, we can reduce greenhouse gas emissions by turning used coffee grounds into biofuel.</p><p><span class="tag">(C)</span> The coffee-making process, however, generates used coffee grounds, which are normally sent to landfills. There, they can create a harmful greenhouse gas.</p></div>
+    <ol class="ol"><li><span>①</span><span>(A) − (C) − (B)</span></li><li><span>②</span><span>(B) − (A) − (C)</span></li><li><span>③</span><span>(B) − (C) − (A)</span></li><li><span>④</span><span>(C) − (A) − (B)</span></li><li><span>⑤</span><span>(C) − (B) − (A)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[본문 ❹ 변형]</span></div>
+    <div class="box"><p>The coffee-making process, however, ①<u>generates</u> used coffee grounds, which are normally sent to landfills. There, they can create a ②<u>harmful</u> greenhouse gas. Unfortunately, there's no way to stop everyone in the world from drinking coffee. However, we can ③<u>increase</u> greenhouse gas emissions by turning used coffee grounds into biofuel. Researchers have found that they can grow algae on old coffee grounds ④<u>without</u> adding any other nutrients. The biofuel is ⑤<u>renewable</u> and sustainable, and it creates only a small amount of emissions.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?<span class="src">[본문 ❹]</span></div>
+    <div class="given">There, they can create a harmful greenhouse gas.</div>
+    <div class="box"><p>The coffee-making process, however, generates used coffee grounds, which are normally sent to landfills. ( ① ) Unfortunately, there's no way to stop everyone in the world from drinking coffee. ( ② ) However, we can reduce greenhouse gas emissions by turning used coffee grounds into biofuel. ( ③ ) Biofuel is a natural fuel that is made from plant or animal sources. ( ④ ) Researchers have found that they can grow algae on old coffee grounds without adding any other nutrients. ( ⑤ ) If these algae are exposed to twenty hours of light and four hours of darkness each day, they eventually produce high-quality biofuel.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>밑줄 친 <u>Mother Nature has given us one more chance</u>가 의미하는 바로 가장 적절한 것은?<span class="src">[본문 ❺]</span></div>
+    <div class="box"><p>These are just a few solutions we can find in nature. There could be many more possible solutions to the problems we currently face. It seems that <u>Mother Nature has given us one more chance</u>. In return, we need to look for more ways to keep the environment healthy and clean. If we do, the future of our planet may be bright after all.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Nature will solve every environmental problem by itself.</span></li><li><span>②</span><span>Humans no longer need to worry about the environment.</span></li><li><span>③</span><span>Natural disasters will soon stop happening.</span></li><li><span>④</span><span>We should return to a life without any technology.</span></li><li><span>⑤</span><span>Nature's solutions give us an opportunity to repair the damage we have caused.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[본문 ❺]</span></div>
+    <div class="box"><p>These are just a few solutions we can find in nature. There could be many more possible solutions to the problems we currently face. It seems that Mother Nature has given us one more chance. In return, we need to <span class="blank"></span>. If we do, the future of our planet may be bright after all.</p></div>
+    <ol class="ol en"><li><span>①</span><span>stop using natural resources altogether</span></li><li><span>②</span><span>wait for nature to recover on its own</span></li><li><span>③</span><span>rely only on recycling programs</span></li><li><span>④</span><span>actively seek further ways to protect the environment</span></li><li><span>⑤</span><span>focus on protecting the oceans alone</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>다음 글의 제목으로 가장 적절한 것은?<span class="src">[본문 ❶·❺]</span></div>
+    <div class="box"><p>Our environment is in trouble. With the planet becoming warmer, sea levels are rising and natural disasters such as forest fires and floods are increasing. More and more waste is also being produced. Plastic, in particular, is causing problems with soil and water pollution. It is clear that humans are a major contributor to the destruction of nature. Will we be able to protect the environment from mountains of plastic? Can we stop climate change from reaching dangerous levels? Achieving these goals seems difficult. Nature, however, may have provided us with solutions to these problems. Here are three areas where changes are already happening. ... These are just a few solutions we can find in nature. There could be many more possible solutions to the problems we currently face. It seems that Mother Nature has given us one more chance. In return, we need to look for more ways to keep the environment healthy and clean.</p></div>
+    <ol class="ol en"><li><span>①</span><span>The Dangers of Drinking Too Much Coffee</span></li><li><span>②</span><span>Nature-Inspired Solutions to Environmental Problems</span></li><li><span>③</span><span>Why Recycling Is the Only Answer</span></li><li><span>④</span><span>The Life Cycle of Beetles</span></li><li><span>⑤</span><span>How Willow Trees Became Popular in Gardens</span></li></ol>
+  </div>
+  </div>
+  <div class="foot"><span>NE능률(민병천) 공통영어2 Lesson 4 · 본문 ❶~❺ · 원문 일부 변형</span><span>저동고 1학년 영어 · Wrap-up</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>능률 L4 본문 Wrap-up · <b>정답과 해설</b></span><span>저동고등학교 1학년</span></div>
+  <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">각 5점 · 100점</div></div>
+  <div class="keygrid">
+    <div>1<b>③</b></div><div>2<b>⑤</b></div><div>3<b>②</b></div><div>4<b>④</b></div><div>5<b>①</b></div><div>6<b>②</b></div><div>7<b>④</b></div><div>8<b>③</b></div><div>9<b>⑤</b></div><div>10<b>①</b></div>
+    <div>11<b>④</b></div><div>12<b>②</b></div><div>13<b>①</b></div><div>14<b>③</b></div><div>15<b>⑤</b></div><div>16<b>③</b></div><div>17<b>①</b></div><div>18<b>⑤</b></div><div>19<b>④</b></div><div>20<b>②</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">③</span> 인간이 자연 파괴의 주된 원인(a major contributor)이라고 했으므로 '작은 역할(a minor role)'은 불일치. ① rise in global temperatures = the planet becoming warmer ② quantity = amount · generate = produce ④ contamination = pollution ⑤ offer answers = provide solutions</p>
+    <p><b>2</b> <span class="k">⑤</span> 틀린 것 (b) (c) (d) (e) (g) 5개. (b) 주어 sea levels(복수) → <i>are rising</i> (c) 쓰레기가 '만들어지는' 수동 진행 → <i>being produced</i> (d) 주어 Plastic(단수) → <i>is causing</i> (e) 가주어 It ~ 진주어 that절(완전한 절) → <i>that</i> (g) 동명사 주어 Achieving은 단수 → <i>seems</i>. (a) with + 명사 + 분사(지구가 '따뜻해지는' 능동) (f) stop A from -ing</p>
+    <p><b>3</b> <span class="k">②</span> 산불·홍수 같은 자연재해가 '늘고 있다' → <i>increasing</i>. decreasing은 반대.</p>
+    <p><b>4</b> <span class="k">④</span> 박테리아가 플라스틱을 '분해할' 수 있어서 밀웜이 플라스틱을 먹고 살 수 있다 → break down. give off 내뿜다 · pile up 쌓이다 · make up 구성하다 · turn down 거절하다</p>
+    <p><b>5</b> <span class="k">①</span> About fifty percent ~ single-use products → roughly half · disposable = single-use. ② 10% 미만만 재활용 ③ 800만~1,400만 톤 ④ larvae 애벌레 ⑤ 밖에서 기르는 방법을 '찾는 중'</p>
+    <p><b>6</b> <span class="k">②</span> (A) 물건이 '버려지는' 수동, used와 병렬 → <i>discarded</i> (B) 뒤가 완전한 절(it is just dumped) → 관계부사 <i>where</i> (C) 뒤가 완전한 절 + by the process → <i>by which</i></p>
+    <p><b>7</b> <span class="k">④</span> 주어진 문장의 them = mealworms, 다음 문장의 These bacteria가 주어진 문장의 Special bacteria를 받음 → ④</p>
+    <p><b>8</b> <span class="k">③</span> (B) That means(일회용이라는 것은) 한 번 쓰고 버려짐·버린 뒤 어디로 가는지 → (C) 재활용이 도움이 되지만 10% 미만 → (A) 종종 그냥 버려지거나 태워지고, 게다가(Furthermore) 바다로</p>
+    <p><b>9</b> <span class="k">⑤</span> 흙을 파서 옮기는 방법은 비싸고 문제를 옮길 뿐 → Fortunately 뒤에는 '친환경적이고 비용 효율적인' 방법 → cost-effective</p>
+    <p><b>10</b> <span class="k">①</span> 흙을 옮기는 방법은 비싸고(expensive) 문제를 다른 곳으로 옮길 뿐(only moves the problem)이라 '싸고 영구적인 해결책'은 불일치. ② contamination = pollution ③ possess = have ④ rapidly = quickly ⑤ substances = materials</p>
+    <p><b>11</b> <span class="k">④</span> (c) 주어 they(복수) → <i>extract</i> (e) 다른 종들'과' 비교 → <i>others</i>. (a) 흙이 '파내지는' 수동 (b) does not + 동사원형 (d) 동사 grow를 꾸미는 부사</p>
+    <p><b>12</b> <span class="k">②</span> 버드나무가 오염된 흙을 정화한다는 흐름 → 버드나무 가지로 바구니·가구를 만든다는 ②는 관계없음. ③ As a result는 ①의 뿌리 이야기와 이어짐</p>
+    <p><b>13</b> <span class="k">①</span> 비용 효율적인(cost-effective = affordable) 방법이고, 어떤 나무가 가장 효과적인지 더 연구(further explored = research)해야 함. funding(자금)은 언급 없음</p>
+    <p><b>14</b> <span class="k">③</span> 매립지로 간 커피 찌꺼기는 해로운 온실가스를 만들 수 있다(There, they can create a harmful greenhouse gas). ① 30~40% ② 보통 매립지로 감 ④ 다른 영양분 없이 ⑤ 빛 20시간 + 어둠 4시간</p>
+    <p><b>15</b> <span class="k">⑤</span> (C) 그러나(however) 커피를 만들면 찌꺼기가 생기고 매립지에서 온실가스 → (B) 커피를 끊게 할 수는 없지만 바이오 연료로 바꿔 배출을 줄일 수 있음 → (A) 바이오 연료란·커피 찌꺼기에 조류를 기름</p>
+    <p><b>16</b> <span class="k">③</span> 바이오 연료로 바꾸면 온실가스 배출을 '줄일' 수 있다 → <i>reduce</i>. increase는 반대.</p>
+    <p><b>17</b> <span class="k">①</span> There = landfills(매립지), they = used coffee grounds → 매립지로 보내진다는 문장 바로 뒤 ①</p>
+    <p><b>18</b> <span class="k">⑤</span> 자연이 해결책을 보여 주어 우리가 망친 환경을 되돌릴 기회를 한 번 더 준 것 같다는 뜻. 그 대가로(In return) 우리도 방법을 더 찾아야 함 → ①~④는 지나친 해석</p>
+    <p><b>19</b> <span class="k">④</span> 자연이 기회를 주었으니 그 대가로 우리는 환경을 건강하고 깨끗하게 지킬 방법을 더 찾아야 한다(look for more ways to keep the environment healthy and clean) → actively seek further ways</p>
+    <p><b>20</b> <span class="k">②</span> 환경 문제 → 자연이 준 해결책(밀웜·버드나무·조류) → 더 많은 해결책을 찾자 = 자연에서 얻은 환경 문제 해결책</p>
+  </div>
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>저동고 1학년 영어 · Wrap-up</span></div>
+</section>
+</main>
