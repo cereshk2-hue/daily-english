@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>중산고 2학년 시험 범위</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root { --bg: #f3f6f1; --card: #fff; --ink: #1c2822; --muted: #5b6a61; --line: #dfe5dc; --accent: #2f6b4f; --plank: #c98a1b; --plank-empty: #e6ebe4 }
+@media (prefers-color-scheme: dark) { :root { --bg: #111613; --card: #1a211d; --ink: #e6ede8; --muted: #9aa8a0; --line: #2b342e; --accent: #7cc19c; --plank: #e0a645; --plank-empty: #28302b; color-scheme: dark } }
+* { box-sizing: border-box }
+html, body { background: var(--bg); color: var(--ink); margin: 0; font: 16px/1.55 "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif }
+main { max-width: 520px; margin: 0 auto; padding: 28px 16px 40px }
+.top { text-align: center; margin-bottom: 22px }
+.planks { display: flex; gap: 4px; justify-content: center; margin-bottom: 10px } .planks i { width: 24px; height: 7px; border-radius: 2px; background: var(--plank-empty) } .planks i:nth-child(-n+2) { background: var(--plank) }
+h1 { font-size: 22px; margin: 0 } .top p { margin: 4px 0 0; color: var(--muted); font-size: 14px }
+.who { margin-top: 8px; font-size: 14px; color: var(--accent); font-weight: 700 }
+a.unit { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 18px 16px; margin-bottom: 14px; color: inherit; text-decoration: none; box-shadow: 0 1px 2px rgba(0,0,0,.04) }
+a.unit:active { transform: scale(.99) }
+.tag { display: inline-block; font-size: 12px; font-weight: 800; color: #fff; background: var(--accent); border-radius: 999px; padding: 2px 10px }
+.tag.mock { background: var(--plank) }
+.name { font-size: 19px; font-weight: 800; margin: 8px 0 2px }
+.sub { color: var(--muted); font-size: 14px }
+.row { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; gap: 10px }
+.bar { flex: 1; height: 8px; border-radius: 99px; background: var(--plank-empty); overflow: hidden } .bar b { display: block; height: 100%; background: var(--accent); width: 0 }
+.cnt { font-size: 13px; color: var(--muted); white-space: nowrap }
+.go { font-weight: 800; color: var(--accent); white-space: nowrap }
+.foot { text-align: center; color: var(--muted); font-size: 13px; margin-top: 18px }
+</style>
+</head>
+<body>
+<main>
+  <div class="top"><div class="planks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <h1>중산고 2학년 시험 범위</h1><p>공부할 것을 골라 들어가세요</p><div class="who" id="who"></div></div>
+  <div id="list"></div>
+  <p class="foot">이름은 한 번만 입력하면 세 곳 모두에서 이어져요.</p>
+</main>
+<script>
+/* 11/12 중산고 2: 미래엔 L4 본문 + 9월 학평(중산고) + 고3 수능실전반을 한 주소에서. 진도는 각 앱이 이 기기에 저장한 기록(daily:<id>:<이름>)을 읽어 보여 줌 */
+var UNITS = [
+  { tag: '본문', cls: '', name: '미래엔(김성연) 영어Ⅱ Lesson 4', sub: 'What-If Science', id: 'h2-mirae-kim-L4', days: ['d1','d2','d3'], href: '../h2-mirae-kim-L4-w93ol/' },
+  { tag: '모의고사', cls: 'mock', name: '2026년 9월 고2 학평', sub: '19~24 · 26~27 · 29~30번 · 요약문 끝판왕', id: 'h2-mock-2609-jungsan', days: ['d1','d2','d3','d4','d5'], href: '../h2-mock-2609-jungsan-q66hr/' },
+  { tag: '수능 실전', cls: 'mock', name: '고3 수능실전반', sub: '하루 한 문제 · 2026학년도 10월 학평', id: 'h3-suneung-2510', days: ['q20','q22','q23','q24','q36','q21','q31','q37','q38','q40','q18','q32','q26','q35','q29','q19','q33','q27','q39','q30','q25','q34','q28','q41','q43'], href: '../h3-suneung-2510-kb7so/' }
+];
+function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+var who = get('daily:who') || '';
+if (who) document.getElementById('who').textContent = who + ' 학생';
+document.getElementById('list').innerHTML = UNITS.map(function (u) {
+  var done = 0;
+  if (who) { try { var S = JSON.parse(get('daily:' + u.id + ':' + who)) || {}; u.days.forEach(function (d) { if (S.days && S.days[d] && S.days[d].finished) done++; }); } catch (e) {} }
+  var pct = Math.round(done / u.days.length * 100);
+  return '<a class="unit" href="' + u.href + '"><span class="tag ' + u.cls + '">' + u.tag + '</span><div class="name">' + esc(u.name) + '</div><div class="sub">' + esc(u.sub) + '</div>' +
+    '<div class="row"><div class="bar"><b style="width:' + pct + '%"></b></div><span class="cnt">DAY ' + done + ' / ' + u.days.length + ' 완료</span><span class="go">들어가기 →</span></div></a>';
+}).join('');
+</script>
+</body>
+</html>
