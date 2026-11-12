@@ -1,0 +1,247 @@
+<title>저동고 능률 3·4과 통합 Wrap-up 2차</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@media (max-width: 700px) {
+  .page { padding: 18px 14px }
+  .qs, .exp { columns: 1 }
+  .title { grid-template-columns: 1fr } .title .g, .title .when { text-align: center }
+  .idrow { grid-template-columns: repeat(2, 1fr) }
+  .keygrid { grid-template-columns: repeat(5, minmax(0, 1fr)) }
+  .keygrid div:nth-child(10n) { border-right: 1px solid var(--rule) } .keygrid div:nth-child(5n) { border-right: 0 }
+  .keygrid div:nth-last-child(-n+10) { border-bottom: 1px solid var(--rule) } .keygrid div:nth-last-child(-n+5) { border-bottom: 0 }
+}
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+</style>
+
+<main>
+<section class="page">
+  <div class="top"><span>공통영어2 NE능률(민병천) Lesson 3·4 · <b>통합 Wrap-up 2차</b></span><span>저동고등학교 1학년 · 2학기 기말 대비</span></div>
+  <div class="title">
+    <div class="g">영어</div>
+    <h1>능률 3·4과 통합 Wrap-up 2차<small>고난도 · 어휘 비틀기</small></h1>
+    <div class="when">20문항 · 각 5점<br>제한 시간 30분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">범위: 3과 본문 ❶~❺ + 4과 본문 ❶~❺. 2차는 고난도예요. 선택지와 지문의 낱말을 어려운 동의어로 바꿔 쓴(어휘 비틀기) 문제가 많으니, 뜻을 하나하나 따져 보세요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>다음 글의 내용과 일치하는 것은?<span class="src">[3과 본문 ❶❷]</span></div>
+    <div class="box"><p>Children around the world learned a bit more about Korean culture when writer Tae Keller published her book <i>When You Trap a Tiger</i> in 2020. Its story starts with a girl who meets a tiger. Her grandmother knows the tiger as well. When her grandmother gets sick, the girl makes a deal with the tiger. Keller's inspiration for her award-winning book was an old folktale that her <i>halmoni</i> (grandmother) used to tell her. It is called "The Sun and the Moon," and it is about a brother, a sister, and a tiger. Keller wanted to revive the public's interest in tigers by writing her own book. Long ago, tigers were so abundant in Korea that people often called the country the "Land of Tigers." It is estimated that tigers lived in Korea for at least 100,000 years. The first appearance of a tiger in Korean culture dates back to the rock art of the Bronze Age. It depicts people hunting various animals, including tigers. Since then, tigers have appeared in many aspects of Korean culture, from legends to art and musical instruments. Some of you may have heard Korean folktales featuring tigers. In fact, approximately forty percent of Korean folktales about animals include a tiger.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Keller's book came out before 2020 to promote tourism to Korea.</span></li><li><span>②</span><span>"The Sun and the Moon" revolves around a grandmother and a tiger.</span></li><li><span>③</span><span>Tigers were once so sparse in Korea that sightings were considered legendary.</span></li><li><span>④</span><span>The earliest trace of tigers in Korean culture lies in prehistoric rock carvings.</span></li><li><span>⑤</span><span>Roughly four in ten Korean folktales of every kind feature a tiger.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>다음 글의 밑줄 친 (a)~(e)를 바꿔 쓴 말로 적절하지 <u>않은</u> 것은?<span class="src">[3과 본문 ❷]</span></div>
+    <div class="box"><p>Long ago, tigers were so <span class="tag">(a)</span><u>abundant</u> in Korea that people often called the country the "Land of Tigers." It is <span class="tag">(b)</span><u>estimated</u> that tigers lived in Korea for at least 100,000 years. The rock art of the Bronze Age <span class="tag">(c)</span><u>depicts</u> people hunting various animals. Some of you may have heard Korean folktales <span class="tag">(d)</span><u>featuring</u> tigers. In fact, <span class="tag">(e)</span><u>approximately</u> forty percent of Korean folktales about animals include a tiger.</p></div>
+    <ol class="ol"><li><span>①</span><span>(a) → plentiful</span></li><li><span>②</span><span>(b) → verified</span></li><li><span>③</span><span>(c) → portrays</span></li><li><span>④</span><span>(d) → showcasing</span></li><li><span>⑤</span><span>(e) → roughly</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?<span class="src">[3과 본문 ❸]</span></div>
+    <div class="box"><p>In another story, a tiger hears a mother tell her crying baby, "Don't cry. Here's a <i>gotgam</i>." Because the baby stops crying, the tiger mistakenly thinks the <i>gotgam</i> is a very scary creature and runs away. It seems that people at the time had conflicting feelings about tigers. They had respect for tigers' power and courage. However, they were also scared of tigers because being injured or even killed by tigers was common in the past. They may have made tigers into foolish characters in order to be less scared of them.</p></div>
+    <div class="sum">People's <b>(A)</b> ________ attitude toward tigers — admiring yet fearing them — may explain why folktales sometimes <b>(B)</b> ________ them as foolish.</div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>indifferent</td><td>portrayed</td></tr><tr><td>②</td><td>hostile</td><td>glorified</td></tr><tr><td>③</td><td>consistent</td><td>portrayed</td></tr><tr><td>④</td><td>ambivalent</td><td>glorified</td></tr><tr><td>⑤</td><td>ambivalent</td><td>portrayed</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[3과 본문 ❸]</span></div>
+    <div class="box"><p>It seems that people at the time had conflicting feelings about tigers. They had respect for tigers' power and courage. However, they were also scared of tigers because being injured or even killed by tigers was common in the past. They may have made tigers into foolish characters in order to <span class="blank"></span>.</p></div>
+    <ol class="ol en"><li><span>①</span><span>alleviate their dread of the animals</span></li><li><span>②</span><span>glorify the animals' bravery</span></li><li><span>③</span><span>warn children against hunting</span></li><li><span>④</span><span>justify the extinction of tigers</span></li><li><span>⑤</span><span>attract foreign visitors</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>다음 글에서 전체 흐름과 관계 <u>없는</u> 문장은?<span class="src">[3과 본문 ❸ 변형]</span></div>
+    <div class="box"><p>Tigers in Korea faced a decline in population due to hunting during the Joseon period and nearly went extinct during the Japanese colonial era. ① With the disappearance of tigers in Korea, their use as a symbol of the nation faded away. ② However, their symbolism was revived in modern times through their selection as the mascot for both Olympics hosted by Korea. ③ Tiger hunting was banned around the world in the early 1900s. ④ Hodori was the mascot for the Seoul Summer Olympics in 1988. ⑤ The PyeongChang Winter Olympics in 2018 created Soohorang, a white tiger, as its mascot.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>다음 글의 내용과 일치하지 <u>않는</u> 것은?<span class="src">[3과 본문 ❺]</span></div>
+    <div class="box"><p>These days, only a few wild tigers have been reported to be living in North Korea. However, the history, stories, and cultural meaning of tigers still have a place among modern Korean people. Who can deny that the tiger is a symbol of Korea? In 2021, the National Folk Museum of Korea published a book that collects all the stories about tigers in Korea. How about looking for tigers around you now?</p></div>
+    <ol class="ol en"><li><span>①</span><span>Wild tigers are now reportedly limited to a handful in North Korea.</span></li><li><span>②</span><span>The cultural significance of tigers has largely vanished from modern Korean life.</span></li><li><span>③</span><span>The writer regards the tiger's status as a national symbol as indisputable.</span></li><li><span>④</span><span>A national museum compiled Korean tiger stories into a single book.</span></li><li><span>⑤</span><span>Readers are encouraged to spot tigers in their surroundings.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>다음 (a)~(g) 중 어법상 <u>틀린</u> 것의 개수는?<span class="src">[3과 본문 변형]</span></div>
+    <div class="box"><p>Its story starts with a girl <span class="tag">(a)</span><u>who</u> meets a tiger. Keller's inspiration was an old folktale that her <i>halmoni</i> used to <span class="tag">(b)</span><u>telling</u> her. Long ago, people often called the country <span class="tag">(c)</span><u>as</u> the "Land of Tigers." The rock art depicts people <span class="tag">(d)</span><u>hunting</u> various animals. The tiger mistakenly thinks the <i>gotgam</i> is a very <span class="tag">(e)</span><u>scared</u> creature. Being injured or even killed by tigers <span class="tag">(f)</span><u>were</u> common in the past. White tigers are <span class="tag">(g)</span><u>considered</u> sacred guardians.</p></div>
+    <ol class="ol"><li><span>①</span><span>1개</span></li><li><span>②</span><span>2개</span></li><li><span>③</span><span>3개</span></li><li><span>④</span><span>4개</span></li><li><span>⑤</span><span>5개</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[3과 본문 ❸ 어휘 변형]</span></div>
+    <div class="box"><p>Tigers in Korea faced a ①<u>dwindling</u> population due to hunting during the Joseon period and nearly ②<u>vanished</u> during the Japanese colonial era. With their disappearance, their role as a national emblem ③<u>waned</u>. However, their symbolism was ④<u>resurrected</u> through their selection as the mascot for both Olympics hosted by Korea. White tigers are regarded as ⑤<u>profane</u> guardians.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?<span class="src">[4과 본문 ❷]</span></div>
+    <div class="given">About fifty percent of plastic is produced for single-use products.</div>
+    <div class="box"><p><span class="tag">(A)</span> That means the items are used just once and then discarded. Do you ever stop to think about where these plastic items go after you throw them away? Recycling can help reduce the amount of plastic in our landfills. However, less than ten percent of the world's plastic waste has been recycled so far.</p><p><span class="tag">(B)</span> With this in mind, scientists are turning to mealworms. Mealworms are the larvae of a certain species of beetle. Special bacteria live inside them.</p><p><span class="tag">(C)</span> Often, plastic waste is moved to places where it is just dumped or burned. Furthermore, between 8 and 14 million metric tons of plastic end up in the ocean every year. This puts many marine species in danger.</p></div>
+    <ol class="ol"><li><span>①</span><span>(A) − (C) − (B)</span></li><li><span>②</span><span>(B) − (A) − (C)</span></li><li><span>③</span><span>(B) − (C) − (A)</span></li><li><span>④</span><span>(C) − (A) − (B)</span></li><li><span>⑤</span><span>(C) − (B) − (A)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[4과 본문 ❷ 어휘 변형]</span></div>
+    <div class="box"><p>Mealworms are the larvae of a certain species of beetle. Special bacteria live inside them. These bacteria can break down plastic. This means that mealworms can actually feed on plastic. Scientists are now looking for ways to <span class="blank"></span> outside of mealworms. They also want to speed up the process by which the bacteria break down plastic.</p></div>
+    <ol class="ol en"><li><span>①</span><span>eliminate the beetles</span></li><li><span>②</span><span>dispose of the larvae</span></li><li><span>③</span><span>propagate the plastic-degrading microbes</span></li><li><span>④</span><span>export the plastic waste</span></li><li><span>⑤</span><span>burn the landfills</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>다음 글의 내용과 일치하는 것은?<span class="src">[4과 본문 ❸]</span></div>
+    <div class="box"><p>Mining and other industries are causing soil pollution across the globe. Although polluted soil can be dug up and transported to a landfill, this process is expensive. Moreover, it only moves the problem to another area and does not really solve it. Fortunately, there is an eco-friendly and cost-effective way to restore polluted soil — planting willow trees. These amazing trees have extensive and well-developed root systems. As a result, they naturally extract a wide range of harmful materials from the soil. They can also grow quickly, even in soil with a high acidity level or a lot of heavy metals in it. Research on the effectiveness of using willow trees for this purpose is in development. Scientists have found that some species of willow trees are able to absorb harmful materials better than others. Therefore, this promising area should be further explored to find out which trees are the most effective. In time, we may be able to clean up our land with willow trees.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Excavating polluted soil is an inexpensive and lasting remedy.</span></li><li><span>②</span><span>Willow trees can survive only in soil free of heavy metals.</span></li><li><span>③</span><span>Willows have shallow roots that limit their cleaning ability.</span></li><li><span>④</span><span>All willow species absorb toxins equally well.</span></li><li><span>⑤</span><span>Further investigation is needed to identify the most efficient willow species.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="src">[4과 본문 ❸ 어휘 변형]</span></div>
+    <div class="box"><p>Mining and other industries are causing soil pollution across the globe. Although polluted soil can be dug up and transported to a landfill, this process is expensive. Moreover, it only moves the problem to another area and does not really solve it. Fortunately, there is an eco-friendly and <span class="blank"></span> way to restore polluted soil — planting willow trees.</p></div>
+    <ol class="ol en"><li><span>①</span><span>labor-intensive</span></li><li><span>②</span><span>short-lived</span></li><li><span>③</span><span>hazardous</span></li><li><span>④</span><span>economically viable</span></li><li><span>⑤</span><span>prohibitively costly</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>다음 글의 내용과 일치하지 <u>않는</u> 것은?<span class="src">[4과 본문 ❹]</span></div>
+    <div class="box"><p>Statistics show that about thirty to forty percent of people in the world drink coffee each day. The coffee-making process, however, generates used coffee grounds, which are normally sent to landfills. There, they can create a harmful greenhouse gas. Unfortunately, there's no way to stop everyone in the world from drinking coffee. However, we can reduce greenhouse gas emissions by turning used coffee grounds into biofuel. Biofuel is a natural fuel that is made from plant or animal sources. Researchers have found that they can grow algae on old coffee grounds without adding any other nutrients. If these algae are exposed to twenty hours of light and four hours of darkness each day, they eventually produce high-quality biofuel. The biofuel is renewable and sustainable, and it creates only a small amount of emissions.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Roughly a third of the world's population consumes coffee every day.</span></li><li><span>②</span><span>Used coffee grounds are usually composted instead of being thrown away.</span></li><li><span>③</span><span>Coffee grounds in landfills can emit a gas that warms the planet.</span></li><li><span>④</span><span>Algae can thrive on coffee grounds without extra nourishment.</span></li><li><span>⑤</span><span>The resulting biofuel is renewable and low in emissions.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?<span class="src">[4과 본문 ❹]</span></div>
+    <div class="given">However, we can reduce greenhouse gas emissions by turning used coffee grounds into biofuel.</div>
+    <div class="box"><p>Unfortunately, there's no way to stop everyone in the world from drinking coffee. ( ① ) Biofuel is a natural fuel that is made from plant or animal sources. ( ② ) Researchers have found that they can grow algae on old coffee grounds without adding any other nutrients. ( ③ ) If these algae are exposed to twenty hours of light and four hours of darkness each day, they eventually produce high-quality biofuel. ( ④ ) The biofuel is renewable and sustainable, and it creates only a small amount of emissions. ( ⑤ ) </p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>다음 글의 요지로 가장 적절한 것은?<span class="src">[4과 본문 ❺]</span></div>
+    <div class="box"><p>These are just a few solutions we can find in nature. There could be many more possible solutions to the problems we currently face. It seems that Mother Nature has given us one more chance. In return, we need to look for more ways to keep the environment healthy and clean. If we do, the future of our planet may be bright after all.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Technology alone will resolve every ecological crisis.</span></li><li><span>②</span><span>Nature's remedies make human effort unnecessary.</span></li><li><span>③</span><span>Nature's solutions are a second chance that we must repay by protecting the environment.</span></li><li><span>④</span><span>Environmental problems are too complex to be addressed.</span></li><li><span>⑤</span><span>Humanity should abandon modern industry altogether.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>다음 (a)~(g) 중 어법상 <u>틀린</u> 것의 개수는?<span class="src">[4과 본문 변형]</span></div>
+    <div class="box"><p>Sea levels <span class="tag">(a)</span><u>are rising</u>. More and more waste is also <span class="tag">(b)</span><u>producing</u>. The items are used just once and then <span class="tag">(c)</span><u>discarding</u>. Plastic waste is moved to places <span class="tag">(d)</span><u>which</u> it is just dumped. Scientists want to speed up the process <span class="tag">(e)</span><u>by which</u> the bacteria break down plastic. Willow trees naturally <span class="tag">(f)</span><u>extracts</u> harmful materials. If these algae <span class="tag">(g)</span><u>expose</u> to twenty hours of light, they produce biofuel.</p></div>
+    <ol class="ol"><li><span>①</span><span>1개</span></li><li><span>②</span><span>2개</span></li><li><span>③</span><span>3개</span></li><li><span>④</span><span>4개</span></li><li><span>⑤</span><span>5개</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[4과 본문 어휘 변형]</span></div>
+    <div class="box"><p>Plastic, in particular, is ①<u>alleviating</u> problems with soil and water pollution. It is clear that humans are a major ②<u>culprit</u> in the destruction of nature. The items are used just once and then ③<u>disposed of</u>. Willow trees naturally ④<u>draw out</u> a wide range of harmful materials from the soil. The biofuel is ⑤<u>replenishable</u> and sustainable.</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>4과 본문 전체의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?<span class="src">[4과 본문 ❶~❺]</span></div>
+    <div class="box"><p>Nature, however, may have provided us with solutions to these problems. With this in mind, scientists are turning to mealworms. Mealworms are the larvae of a certain species of beetle. Special bacteria live inside them. These bacteria can break down plastic. Fortunately, there is an eco-friendly and cost-effective way to restore polluted soil — planting willow trees. These amazing trees have extensive and well-developed root systems. As a result, they naturally extract a wide range of harmful materials from the soil. However, we can reduce greenhouse gas emissions by turning used coffee grounds into biofuel. Biofuel is a natural fuel that is made from plant or animal sources. Researchers have found that they can grow algae on old coffee grounds without adding any other nutrients. If these algae are exposed to twenty hours of light and four hours of darkness each day, they eventually produce high-quality biofuel. These are just a few solutions we can find in nature.</p></div>
+    <div class="sum">Nature offers <b>(A)</b> ________ solutions to environmental problems, from bacteria that <b>(B)</b> ________ plastic to willows that purify soil and algae that turn waste into fuel.</div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>costly</td><td>produce</td></tr><tr><td>②</td><td>artificial</td><td>degrade</td></tr><tr><td>③</td><td>eco-friendly</td><td>produce</td></tr><tr><td>④</td><td>eco-friendly</td><td>degrade</td></tr><tr><td>⑤</td><td>temporary</td><td>store</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>3·4과 본문에 나온 단어와 영영풀이가 바르게 짝지어지지 <u>않은</u> 것은?<span class="src">[종합]</span></div>
+    <ol class="ol en"><li><span>①</span><span>sacred: considered holy and deserving respect</span></li><li><span>②</span><span>larva: the young form of an insect</span></li><li><span>③</span><span>acidity: the state of being completely free of chemicals</span></li><li><span>④</span><span>emission: a gas or substance sent out into the air</span></li><li><span>⑤</span><span>reinterpret: to explain or present something in a new way</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>3과와 4과 본문의 제목으로 바르게 짝지어진 것은?<span class="src">[종합]</span></div>
+    <table class="ch"><thead><tr><th></th><th>3과</th><th>4과</th></tr></thead><tbody><tr><td>①</td><td>The Fall of the Korean Tiger</td><td>Plastic: A Modern Miracle</td></tr><tr><td>②</td><td>A Lasting Emblem of Korean Culture</td><td>Nature's Answers to Our Environmental Crises</td></tr><tr><td>③</td><td>Tigers Only in K-pop</td><td>Why Coffee Harms Us</td></tr><tr><td>④</td><td>Olympic Mascots of Asia</td><td>Nature's Answers to Our Environmental Crises</td></tr><tr><td>⑤</td><td>A Lasting Emblem of Korean Culture</td><td>How to Recycle Plastic at Home</td></tr></tbody></table>
+  </div>
+  </div>
+  <div class="foot"><span>NE능률(민병천) 공통영어2 Lesson 3·4 · 원문 일부 변형</span><span>저동고 1학년 영어 · 통합 Wrap-up</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>능률 3·4과 통합 Wrap-up 2차 · <b>정답과 해설</b></span><span>저동고등학교 1학년</span></div>
+  <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">각 5점 · 100점</div></div>
+  <div class="keygrid">
+    <div>1<b>④</b></div><div>2<b>②</b></div><div>3<b>⑤</b></div><div>4<b>①</b></div><div>5<b>③</b></div><div>6<b>②</b></div><div>7<b>④</b></div><div>8<b>⑤</b></div><div>9<b>①</b></div><div>10<b>③</b></div>
+    <div>11<b>⑤</b></div><div>12<b>④</b></div><div>13<b>②</b></div><div>14<b>①</b></div><div>15<b>③</b></div><div>16<b>⑤</b></div><div>17<b>①</b></div><div>18<b>④</b></div><div>19<b>③</b></div><div>20<b>②</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">④</span> The first appearance ~ dates back to the rock art of the Bronze Age = 가장 이른 흔적은 선사 시대 바위 그림. ① in 2020, 관광 홍보 아님 ② a brother, a sister, and a tiger ③ sparse(드문) ↔ abundant ⑤ 모든 설화가 아니라 '동물 설화'의 약 40%. revolve around ~을 중심으로 전개되다 · trace 흔적</p>
+    <p><b>2</b> <span class="k">②</span> estimate는 '추정하다'. verify는 '사실임을 확인(입증)하다'라서 뜻이 다르다. plentiful 풍부한 · portray 묘사하다 · showcase 보여 주다 · roughly 대략</p>
+    <p><b>3</b> <span class="k">⑤</span> 존경(respect)과 두려움(scared)이 함께 → (A) ambivalent(상반된 감정을 지닌) = conflicting / 덜 무서워하려고 어리석은 캐릭터로 '그렸다' → (B) portrayed. indifferent 무관심한 · hostile 적대적인 · consistent 한결같은 · glorify 미화하다</p>
+    <p><b>4</b> <span class="k">①</span> 호랑이에게 다치거나 죽는 일이 흔해서 두려워함 → 어리석은 캐릭터로 만들어 '두려움을 덜려고'(= to be less scared of them). alleviate 덜다 · dread 두려움 · glorify 미화하다 · justify 정당화하다</p>
+    <p><b>5</b> <span class="k">③</span> 호랑이의 감소·상징성 쇠퇴 → 올림픽 마스코트로 되살아남(호돌이·수호랑)의 흐름. 전 세계 호랑이 사냥 금지는 본문과 관계없고 사실과도 다르다</p>
+    <p><b>6</b> <span class="k">②</span> the history, stories, and cultural meaning of tigers still have a place among modern Korean people → 문화적 의미가 '사라졌다'는 불일치. ① a handful = only a few ③ indisputable(논쟁의 여지가 없는) = Who can deny ~? ④ compile 엮다 ⑤ spot 찾아내다</p>
+    <p><b>7</b> <span class="k">④</span> 틀린 것 (b) (c) (e) (f) 4개. (b) used to + 동사원형 → <i>tell</i> (c) call + 목적어 + 명사(보어), as 불필요 (e) 무서움을 '주는' 존재 → <i>scary</i> (f) 동명사 주어는 단수 → <i>was</i>. (a) 사람 선행사 who (d) 지각 대상의 능동 hunting (g) 수동 considered</p>
+    <p><b>8</b> <span class="k">⑤</span> 백호는 '신성한(sacred)' 수호자로 여겨진다 → profane(불경한, 세속적인)은 반대. ① dwindling 줄어드는 = decline ② vanish 사라지다 = go extinct ③ wane 약해지다 = fade away ④ resurrect 되살리다 = revive</p>
+    <p><b>9</b> <span class="k">①</span> 일회용 플라스틱 50% → (A) 한 번 쓰고 버림·재활용은 10% 미만 → (C) 그냥 버리거나 태우고, 게다가 바다로 → 해양 생물 위험 → (B) 이를 염두에 두고(With this in mind) 밀웜에 주목, 몸속 박테리아</p>
+    <p><b>10</b> <span class="k">③</span> 원문: cultivate the bacteria outside of mealworms → 플라스틱을 분해하는 미생물을 밀웜 밖에서 '번식시키다(propagate)'. eliminate 없애다 · dispose of 처리하다 · degrade 분해하다 · microbe 미생물</p>
+    <p><b>11</b> <span class="k">⑤</span> this promising area should be further explored to find out which trees are the most effective ✔. ① 비싸고 문제를 옮길 뿐 ② 중금속이 많은 흙에서도 잘 자람 ③ extensive and well-developed root systems ④ some species ~ better than others. excavate 파내다 · remedy 해결책 · toxin 독소</p>
+    <p><b>12</b> <span class="k">④</span> 흙을 파서 옮기는 방법은 비싸다(expensive) → Fortunately 뒤에는 '경제적으로 실행 가능한(= cost-effective)' 방법. labor-intensive 노동력이 많이 드는 · short-lived 오래가지 않는 · hazardous 위험한 · prohibitively costly 엄두를 못 낼 만큼 비싼</p>
+    <p><b>13</b> <span class="k">②</span> used coffee grounds, which are normally sent to landfills → 보통 매립지로 간다. 퇴비로 만든다(composted)는 불일치. ① 30~40% ≒ 약 3분의 1 ③ emit 내뿜다 · greenhouse gas ④ without adding any other nutrients ⑤ renewable, a small amount of emissions</p>
+    <p><b>14</b> <span class="k">①</span> 모두가 커피를 끊게 할 수는 없다(Unfortunately) → 그러나(However) 커피 찌꺼기를 바이오 연료로 바꿔 배출을 줄일 수 있다 → 이어서 바이오 연료의 정의 → ①</p>
+    <p><b>15</b> <span class="k">③</span> 자연이 해결책(기회)을 한 번 더 주었고, 그 대가로(In return) 우리는 환경을 지킬 방법을 더 찾아야 한다 → repay 보답하다. ② 노력이 필요 없다는 반대 ①④⑤ 근거 없음</p>
+    <p><b>16</b> <span class="k">⑤</span> 틀린 것 (b) (c) (d) (f) (g) 5개. (b) 수동 진행 being produced (c) used와 병렬인 수동 → discarded (d) 완전한 절 → where (f) 주어 trees(복수) → extract (g) 조류가 빛에 '노출되는' 수동 → are exposed. (a) 진행형 ✔ (e) 전치사 + 관계대명사 ✔</p>
+    <p><b>17</b> <span class="k">①</span> 플라스틱은 토양·수질 오염 문제를 '일으킨다(causing)' → alleviate(완화하다)는 반대. ② culprit 주범 = major contributor ③ dispose of 버리다 = discard ④ draw out 뽑아내다 = extract ⑤ replenishable 다시 채울 수 있는 = renewable</p>
+    <p><b>18</b> <span class="k">④</span> (A) 자연에서 얻은 친환경적인(eco-friendly) 해결책 (B) 박테리아는 플라스틱을 분해한다(break down = degrade). costly·artificial·temporary는 근거 없음, produce·store는 반대</p>
+    <p><b>19</b> <span class="k">③</span> acidity는 '산성(도)'. 화학 물질이 전혀 없는 상태라는 뜻이 아니다. ① 신성한 ② 애벌레 ④ 배출(물) ⑤ 재해석하다</p>
+    <p><b>20</b> <span class="k">②</span> 3과: 옛날부터 지금까지 한국 문화 속에 이어진 호랑이 = 오래 지속되는 상징(A Lasting Emblem) / 4과: 밀웜·버드나무·조류처럼 자연이 주는 환경 문제의 해답. ①③ 일부 소재 ④ 3과 제목이 좁다 ⑤ 4과 제목이 재활용에만 한정</p>
+  </div>
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>저동고 1학년 영어 · 통합 Wrap-up</span></div>
+</section>
+</main>
