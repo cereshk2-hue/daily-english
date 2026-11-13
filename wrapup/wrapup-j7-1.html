@@ -1,0 +1,354 @@
+<title>중3 7과 실전 변형 1회</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+/* A4 시험지 (10/31): 스크립트가 문항을 A4 쪽(210×297mm)에 왼쪽 단 → 오른쪽 단 → 다음 쪽 순서로 직접 나눠 담고 쪽 번호를 붙인다.
+   화면·인쇄·PDF 어디서나 같은 쪽 구성. 좁은 화면에서는 쪽 전체를 축소해서 보여 준다. */
+.q, .exp p { break-inside: avoid }
+body { font-size: 9.6pt }
+.stem { font-size: 9.8pt } .stem .src { font-size: 8pt }
+.box, .given, .sum { font-size: 9.4pt; line-height: 1.46; padding: 2.2mm 2.8mm }
+.ol, .ol.en li { font-size: 9.3pt; line-height: 1.38 }
+table.ch { font-size: 9.2pt } table.ch th { font-size: 8.4pt }
+.q { margin-bottom: 3.6mm; gap: 1.6mm }
+.exp { font-size: 7.8pt; line-height: 1.36; margin-top: 3mm } .exp p { margin-bottom: 1mm }
+.top, .notice, .idrow, .title .when, .foot { font-size: 8.6pt }
+.title h1 { font-size: 18pt } .title h1 small { font-size: 8.6pt }
+.keygrid div { font-size: 9pt; padding: 1.2mm 0 } .keygrid b { font-size: 10.5pt }
+.page { width: 210mm; max-width: 100%; padding: 11mm }
+.sheets { display: grid; justify-content: center; gap: 16px }
+.sheet { width: 210mm; height: 297mm; padding: 11mm; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); overflow: hidden }
+/* 내용 영역 188×256mm: A4 여백 0~20mm, Letter 기본 여백에서도 한 장에 들어가는 크기 */
+.sheet > .inner { width: 188mm; height: 256mm; display: flex; flex-direction: column; overflow: hidden }
+.inner > .top.run { padding-bottom: 2mm; border-bottom: 1px solid var(--rule); margin-bottom: 1mm }
+.cols { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr);
+  column-gap: 6mm; margin-top: 4mm; position: relative }
+.cols::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid var(--rule) }
+.cols > .col { columns: auto !important; margin: 0 !important; min-height: 0; overflow: hidden }
+.inner > .foot { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center }
+.inner > .foot span:last-child { text-align: right }
+.inner > .foot .pno { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums }
+@page { size: A4; margin: 12mm 11mm }
+@media print {
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  body { padding: 0 !important; margin: 0 }
+  .sheets { display: block }
+  .sheet { zoom: 1 !important; width: auto; height: auto; padding: 0; margin: 0; box-shadow: none; overflow: visible; break-after: page; page-break-after: always }
+  .sheet:last-child { break-after: auto; page-break-after: auto }
+  .sheet > .inner { margin: 0 auto }
+  .page { max-width: none; margin: 0; box-shadow: none; break-after: page }
+}
+</style>
+<script>
+/* A4 쪽 나누기: 왼쪽 단 → 오른쪽 단 → 다음 쪽, 쪽 번호 n / 전체 */
+(function () {
+  function build() {
+    var main = document.querySelector('main'); if (!main || document.querySelector('.sheets')) return;
+    var secs = [].slice.call(main.querySelectorAll('section.page'));
+    var out = document.createElement('div'); out.className = 'sheets'; main.appendChild(out);
+    var pages = [];
+    secs.forEach(function (sec) {
+      var box = sec.querySelector('.qs, .exp'); if (!box) return;
+      var items = [].slice.call(box.children), foot = sec.querySelector('.foot'), top = sec.querySelector('.top');
+      var head = [].slice.call(sec.children).filter(function (e) { return e !== box && e !== foot && !(e.classList.contains('keygrid') && false); });
+      var cols, ci, first = true;
+      function newPage() {
+        var sh = document.createElement('div'); sh.className = 'sheet'; var pg = document.createElement('div'); pg.className = 'inner'; sh.appendChild(pg);
+        if (first) head.forEach(function (e) { pg.appendChild(e); });
+        else { var t = top.cloneNode(true); t.classList.add('run'); pg.appendChild(t); }
+        first = false;
+        cols = document.createElement('div'); cols.className = 'cols';
+        for (var i = 0; i < 2; i++) { var c = document.createElement('div'); c.className = 'col ' + box.className; cols.appendChild(c); }
+        pg.appendChild(cols);
+        var f = foot.cloneNode(true), sp = f.querySelectorAll('span'), mid = document.createElement('span'); mid.className = 'pno';
+        f.insertBefore(mid, sp[1] || null); pg.appendChild(f);
+        out.appendChild(sh); pages.push(pg); ci = 0;
+      }
+      function over(c) { return c.scrollHeight > c.clientHeight + 1; }
+      newPage();
+      items.forEach(function (it) {
+        var c = cols.children[ci]; c.appendChild(it);
+        if (over(c) && c.children.length > 1) {
+          c.removeChild(it); ci++;
+          if (ci > 1) newPage();
+          cols.children[ci].appendChild(it);
+        }
+      });
+      sec.parentNode.removeChild(sec);
+    });
+    pages.forEach(function (p, i) { p.querySelector('.pno').textContent = (i + 1) + ' / ' + pages.length; });
+    fit();
+  }
+  function fit() {
+    var w = document.documentElement.clientWidth - 24, s = Math.min(1, w / 794);
+    [].forEach.call(document.querySelectorAll('.sheet'), function (p) { p.style.zoom = s < 1 ? s : ''; });
+  }
+  function go() { (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(build, build); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  window.addEventListener('resize', function () { if (document.querySelector('.sheets')) fit(); });
+})();
+</script>
+
+
+<main>
+<section class="page">
+  <div class="top"><span>중3 영어 지학사(민찬규) Lesson 7 If I Lived There · <b>1회</b></span><span>중학교 3학년 · 지학사(민찬규) · 내신 대비</span></div>
+  <div class="title">
+    <div class="g">영어</div>
+    <h1>7과 실전 변형 1회<small>대화문 · 본문 · 문법</small></h1>
+    <div class="when">20문항 · 각 5점<br>제한 시간 30분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">범위: 7과 대화문(L&S 1·2, Real Life) · 본문(푸에블로 · 베니스 · 토루) · 문법(가정법 과거, keep/make + 목적어 + 형용사, It is ~ that). 교과서 문장을 일부 바꾼 문항이 있어요. 끝까지 읽고 고르세요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>다음 대화의 빈칸에 들어갈 말로 가장 알맞은 것은?<span class="src">[대화문]</span></div>
+    <div class="box"><p>G: Oh, look at those cave houses! They look so unique, don't they? <span class="blank"></span><br>B: I like those balloons. They look so beautiful!<br>G: I think Türkiye is a wonderful place to visit. I hope to visit there some day.</p></div>
+    <ol class="ol en"><li><span>①</span><span>I'm glad that I live there now.</span></li><li><span>②</span><span>I don't want to visit there at all.</span></li><li><span>③</span><span>I wish I could not see them.</span></li><li><span>④</span><span>I wish I could try living there.</span></li><li><span>⑤</span><span>I can't wait to leave there.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>밑줄 친 말에 담긴 의도로 가장 알맞은 것은?<span class="src">[대화문]</span></div>
+    <div class="box"><p>B: I got a new sled for my birthday. I can't wait to test it out.<br>G: Let me check the weather. Umm, there will be no snow for a while.<br>B: <u>I wish I could live in Alaska.</u> Then I could go sledding all day!</p></div>
+    <ol class="ol en"><li><span>①</span><span>후회 표현하기</span></li><li><span>②</span><span>소망 표현하기</span></li><li><span>③</span><span>허락 구하기</span></li><li><span>④</span><span>충고하기</span></li><li><span>⑤</span><span>불평하기</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>다음 대화의 내용과 일치하는 것은?<span class="src">[대화문]</span></div>
+    <div class="box"><p>B: Will it snow today?<br>G: I have no idea. Why are you waiting for snow, Taeho?<br>B: I got a new sled for my birthday. I can't wait to test it out.<br>G: Let me check the weather. Umm, there will be no snow for a while.<br>B: I wish I could live in Alaska. Then I could go sledding all day!<br>G: No kidding! Alaska is a very cold place.<br>B: I think it would be fun. I want to build a snow house and stay there on vacation.</p></div>
+    <ol class="ol en"><li><span>①</span><span>당분간 눈이 많이 올 예정이다.</span></li><li><span>②</span><span>여학생은 알래스카에 살아 본 적이 있다.</span></li><li><span>③</span><span>태호는 눈집에서 지내는 것이 지루할 거라고 생각한다.</span></li><li><span>④</span><span>태호는 생일 선물로 새 썰매를 받았다.</span></li><li><span>⑤</span><span>여학생은 날씨를 확인해 주지 않았다.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>주어진 말 다음에 이어질 대화의 순서로 가장 알맞은 것은?<span class="src">[대화문]</span></div>
+    <div class="box"><p>B: This is my dream house, Alice. What do you think?</p></div>
+    <div class="box"><p><b>(A)</b> B: Yes, it can move like a car.<br><b>(B)</b> G: Oh, the house has wheels! Is it a kind of car?<br><b>(C)</b> G: So what would you do if you lived in that house?</p></div>
+    <ol class="ol en"><li><span>①</span><span>(A) − (C) − (B)</span></li><li><span>②</span><span>(B) − (A) − (C)</span></li><li><span>③</span><span>(B) − (C) − (A)</span></li><li><span>④</span><span>(C) − (A) − (B)</span></li><li><span>⑤</span><span>(C) − (B) − (A)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>다음 대화의 빈칸에 들어갈 말로 가장 알맞은 것은?<span class="src">[대화문]</span></div>
+    <div class="box"><p>A: What would you do if you became a millionaire?<br>B: <span class="blank"></span></p></div>
+    <ol class="ol en"><li><span>①</span><span>I would build my own house.</span></li><li><span>②</span><span>I built my own house last year.</span></li><li><span>③</span><span>I will be a millionaire someday.</span></li><li><span>④</span><span>Yes, I would.</span></li><li><span>⑤</span><span>I wish I were a millionaire.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>다음 중 짝지어진 대화가 <u>어색한</u> 것은?<span class="src">[대화문]</span></div>
+    <ol class="ol en"><li><span>①</span><span>A: I wish I could fly. — B: Me too. It would be fun.</span></li><li><span>②</span><span>A: Does anybody live in the upside-down house? — B: No, it would not be easy to live there.</span></li><li><span>③</span><span>A: What would you do if you lived in a tree house? — B: I lived there last year.</span></li><li><span>④</span><span>A: Which country do you want to visit? — B: In my case, I want to visit Spain.</span></li><li><span>⑤</span><span>A: Living in a jungle would be exciting. Don't you think so? — B: But there are dangerous animals there.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>다음 글 뒤에 이어질 내용으로 가장 알맞은 것은?<span class="src">[본문]</span></div>
+    <div class="box"><p>Different people live in different houses. Some use ladders to enter their houses. Others live in houses on the water. And others share their houses with many people. Imagine you live in one of these houses. How would that change your life?</p></div>
+    <ol class="ol en"><li><span>①</span><span>사다리를 안전하게 사용하는 방법</span></li><li><span>②</span><span>물 위에 집을 짓는 공사 과정</span></li><li><span>③</span><span>대가족이 함께 사는 것의 단점</span></li><li><span>④</span><span>도시와 시골 집값의 차이</span></li><li><span>⑤</span><span>세계 여러 지역의 독특한 집에서 사는 삶을 상상해 보는 글</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>다음 글의 내용과 일치하지 <u>않는</u> 것은?<span class="src">[본문]</span></div>
+    <div class="box"><p>If I lived in a pueblo, I would climb up a ladder to enter my house. There's a hidden opening on top of the house. If unwelcome visitors appeared, I would pull the ladder up to stop them from entering. The thick walls are made of earth, straw, and water. They would keep me cool in summer and warm in winter. The house has a flat roof. I would sometimes sleep up on the roof under the moon and stars.</p></div>
+    <ol class="ol en"><li><span>①</span><span>There is a hidden opening on top of the house.</span></li><li><span>②</span><span>The walls of the house are made of wood and stone.</span></li><li><span>③</span><span>People use a ladder to enter the house.</span></li><li><span>④</span><span>The thick walls keep the house cool in summer.</span></li><li><span>⑤</span><span>The house has a flat roof.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>다음 글의 밑줄 친 부분 중, 어법상 <u>틀린</u> 것은?<span class="src">[본문]</span></div>
+    <div class="box"><p>If I ①<u>lived</u> in a pueblo, I would climb up a ladder ②<u>to enter</u> my house. If unwelcome visitors appeared, I would pull the ladder up to stop them from ③<u>enter</u>. The thick walls ④<u>are made</u> of earth, straw, and water. They would keep me ⑤<u>cool</u> in summer and warm in winter.</p></div>
+    <ol class="ol en"><li><span>①</span><span>lived</span></li><li><span>②</span><span>to enter</span></li><li><span>③</span><span>enter</span></li><li><span>④</span><span>are made</span></li><li><span>⑤</span><span>cool</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>다음 빈칸에 들어갈 말로 가장 알맞은 것은?<span class="src">[본문]</span></div>
+    <div class="box"><p>Venice is known as the "<span class="blank"></span> city." In Venice, there are many colorful houses on the water.</p></div>
+    <ol class="ol en"><li><span>①</span><span>sinking</span></li><li><span>②</span><span>frozen</span></li><li><span>③</span><span>hidden</span></li><li><span>④</span><span>moving</span></li><li><span>⑤</span><span>floating</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?<span class="src">[본문]</span></div>
+    <div class="box"><p>At high tide, the water from the Adriatic Sea often ①<u>rises</u> and leaves the streets ②<u>full</u> of water. However, I would be able to walk around the town through the ③<u>raised</u> walkways. The old Venetians decided to live there to keep themselves ④<u>safe</u> from invaders. But it was ⑤<u>easy</u> for them to build their homes on this swampy surface. So they installed more than 10 million wooden poles in the ground.</p></div>
+    <ol class="ol en"><li><span>①</span><span>rises</span></li><li><span>②</span><span>full</span></li><li><span>③</span><span>raised</span></li><li><span>④</span><span>safe</span></li><li><span>⑤</span><span>easy</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>Why did the old Venetians decide to live on the water?<span class="src">[본문]</span></div>
+    <div class="box"><p>Venice is known as the "floating city." In Venice, there are many colorful houses on the water. You may wonder how and why they built the houses on the water. The old Venetians decided to live there to keep themselves safe from invaders. But it was not easy for them to build their homes on this swampy surface. So they installed more than 10 million wooden poles in the ground. It is these wooden poles that support Venice to this day.</p></div>
+    <ol class="ol en"><li><span>①</span><span>To catch more fish in the sea.</span></li><li><span>②</span><span>Because the land was too expensive.</span></li><li><span>③</span><span>Because they wanted to travel by gondola.</span></li><li><span>④</span><span>To keep themselves safe from invaders.</span></li><li><span>⑤</span><span>Because they liked colorful houses.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>다음 글의 내용과 일치하는 것은?<span class="src">[본문]</span></div>
+    <div class="box"><p>If I lived in a tulou, a huge round house in Fujian, China, I would always have friends at home to play with. I would sometimes hear my neighbor calling me to come over for tea or dinner. In a tulou, there are usually three to five floors. The first floor is used for cooking and eating. And people store food and tools on the second floor. Do you wonder where I would sleep? My bedroom would be on the third or fourth floor.</p></div>
+    <ol class="ol en"><li><span>①</span><span>2층에는 주로 침실이 있다.</span></li><li><span>②</span><span>토루는 보통 6층 이상이다.</span></li><li><span>③</span><span>1층은 요리하고 식사하는 데 쓰인다.</span></li><li><span>④</span><span>글쓴이의 침실은 1층에 있을 것이다.</span></li><li><span>⑤</span><span>이웃과는 거의 왕래하지 않는다.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>다음 빈칸에 들어갈 말로 가장 알맞은 것은?<span class="src">[본문]</span></div>
+    <div class="box"><p>A tulou is like a <span class="blank"></span>. The people living in a tulou mostly have the same family name. Some large tulou can house up to 50 families. They work together and share many things.</p></div>
+    <ol class="ol en"><li><span>①</span><span>village</span></li><li><span>②</span><span>castle</span></li><li><span>③</span><span>school</span></li><li><span>④</span><span>market</span></li><li><span>⑤</span><span>museum</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[문법]</span></div>
+    <div class="box"><p>If I <span class="blank"></span> a tulou, I would always have friends at home to play with.</p></div>
+    <ol class="ol en"><li><span>①</span><span>live in</span></li><li><span>②</span><span>lived in</span></li><li><span>③</span><span>will live in</span></li><li><span>④</span><span>living in</span></li><li><span>⑤</span><span>to live in</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>다음 문장과 의미가 같은 것은?<span class="src">[문법]</span></div>
+    <div class="box"><p>As I don't live in Venice, I can't take a gondola to school.</p></div>
+    <ol class="ol en"><li><span>①</span><span>If I lived in Venice, I could take a gondola to school.</span></li><li><span>②</span><span>If I live in Venice, I can take a gondola to school.</span></li><li><span>③</span><span>If I didn't live in Venice, I couldn't take a gondola to school.</span></li><li><span>④</span><span>If I lived in Venice, I couldn't take a gondola to school.</span></li><li><span>⑤</span><span>Though I live in Venice, I can't take a gondola to school.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[문법]</span></div>
+    <div class="box"><p>Living together in one building keeps them <span class="blank"></span>.</p></div>
+    <ol class="ol en"><li><span>①</span><span>safely</span></li><li><span>②</span><span>safety</span></li><li><span>③</span><span>to safe</span></li><li><span>④</span><span>safe</span></li><li><span>⑤</span><span>be safe</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>다음 밑줄 친 부분과 쓰임이 같은 것은?<span class="src">[문법]</span></div>
+    <div class="box"><p><u>It</u> is these wooden poles <u>that</u> support Venice to this day.</p></div>
+    <ol class="ol en"><li><span>①</span><span>It is true that he is honest.</span></li><li><span>②</span><span>It is interesting to see the house.</span></li><li><span>③</span><span>It was Tom that broke the window yesterday.</span></li><li><span>④</span><span>It is so cold that I want to stay home.</span></li><li><span>⑤</span><span>It is a pity that she left early.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>주어진 문장 다음에 이어질 글의 순서로 가장 알맞은 것은?<span class="src">[본문]</span></div>
+    <div class="box"><p>In a tulou, there are usually three to five floors.</p></div>
+    <div class="box"><p><b>(A)</b> The first floor is used for cooking and eating.<br><b>(B)</b> Do you wonder where I would sleep? My bedroom would be on the third or fourth floor.<br><b>(C)</b> And people store food and tools on the second floor.</p></div>
+    <ol class="ol en"><li><span>①</span><span>(A) − (C) − (B)</span></li><li><span>②</span><span>(B) − (A) − (C)</span></li><li><span>③</span><span>(B) − (C) − (A)</span></li><li><span>④</span><span>(C) − (A) − (B)</span></li><li><span>⑤</span><span>(C) − (B) − (A)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>7과 본문 전체의 제목으로 가장 알맞은 것은?<span class="src">[본문]</span></div>
+    <ol class="ol en"><li><span>①</span><span>How to Build a House on Water</span></li><li><span>②</span><span>The Long History of Venice</span></li><li><span>③</span><span>Why Big Families Should Live Together</span></li><li><span>④</span><span>Dangerous Animals in the Jungle</span></li><li><span>⑤</span><span>Homes Around the World: Imagining Life in Them</span></li></ol>
+  </div>
+  </div>
+  <div class="foot"><span>지학사(민찬규) 7과 1회 · 원문 일부 변형</span><span>중3 영어 · 7과 실전 변형</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>7과 실전 변형 1회 · <b>정답과 해설</b></span><span>중학교 3학년 · 지학사(민찬규)</span></div>
+  <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">각 5점 · 100점</div></div>
+  <div class="keygrid">
+    <div>1<b>④</b></div><div>2<b>②</b></div><div>3<b>④</b></div><div>4<b>②</b></div><div>5<b>①</b></div><div>6<b>③</b></div><div>7<b>⑤</b></div><div>8<b>②</b></div><div>9<b>③</b></div><div>10<b>⑤</b></div>
+    <div>11<b>⑤</b></div><div>12<b>④</b></div><div>13<b>③</b></div><div>14<b>①</b></div><div>15<b>②</b></div><div>16<b>①</b></div><div>17<b>④</b></div><div>18<b>③</b></div><div>19<b>①</b></div><div>20<b>⑤</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">④</span> 이유 ▶ 동굴 집이 독특해 보인다 → 그곳에서 살아 보고 싶다는 소망(I wish I could ~). 뒤의 '언젠가 방문하고 싶다'와도 이어진다.<br>
+오답 ▶ ① 지금 사는 게 아니다 ②·③·⑤ 독특하다고 감탄한 말과 반대<br>
+포인트 ▶ I wish I could + 동사원형 = ~할 수 있으면 좋겠다(지금은 못 함)</p>
+    <p><b>2</b> <span class="k">②</span> 이유 ▶ I wish I could ~ = 실제로는 할 수 없지만 '~하면 좋겠다'는 소망.<br>
+오답 ▶ ① 후회는 과거 일에 대한 아쉬움 ③ 허락 구하기는 May I ~? ④ 충고는 You'd better ~ ⑤ 눈이 안 와서 아쉽지만 표현 자체는 소망<br>
+포인트 ▶ 소망 = I wish I could ~ / I hope to ~ / I'd love to ~</p>
+    <p><b>3</b> <span class="k">④</span> 이유 ▶ I got a new sled for my birthday ✔<br>
+오답 ▶ ① there will be no snow for a while(당분간 눈 없음) ② 근거 없음 ③ I think it would be fun(재미있을 것) ⑤ Let me check the weather → 확인해 줌</p>
+    <p><b>4</b> <span class="k">②</span> 이유 ▶ 꿈의 집 소개 → (B) 바퀴가 있네! 차의 일종이야? → (A) 응, 차처럼 움직여 → (C) 그럼 그 집에 산다면 뭘 할 거야?<br>
+포인트 ▶ (A)의 Yes는 (B)의 질문(Is it a kind of car?)에 대한 대답, (C)의 So는 앞 내용을 받아 묻는 말.</p>
+    <p><b>5</b> <span class="k">①</span> 이유 ▶ What would you do if ~? (가정) → I would ~ 로 대답.<br>
+오답 ▶ ② 과거 사실 ③ 무엇을 할지에 대한 답이 아님 ④ 의문사 의문문에 Yes ❌ ⑤ 소망일 뿐 무엇을 할지 답하지 않음<br>
+포인트 ▶ 상상해서 묻기 What would you do if ~? → 답 I would ~</p>
+    <p><b>6</b> <span class="k">③</span> 이유 ▶ 나무 집에 산다면 '무엇을 할지' 물었는데 작년에 살았다는 과거 사실로 답함 → 어색. (예: I would watch the birds.)<br>
+오답 ▶ ① 소망에 동의 ✔ ② 살기 쉽지 않을 것 ✔ ④ 나라 질문 → 스페인 ✔ ⑤ 반대 의견 제시 ✔</p>
+    <p><b>7</b> <span class="k">⑤</span> 이유 ▶ 여러 종류의 집을 소개하고 '그중 하나에 산다면 삶이 어떻게 바뀔지 상상해 보라' → 이어서 각 집에 사는 모습을 상상(If I lived in ~).<br>
+오답 ▶ ①·②·③·④ 집의 예일 뿐이거나 언급 없음</p>
+    <p><b>8</b> <span class="k">②</span> 이유 ▶ The thick walls are made of earth, straw, and water(흙, 지푸라기, 물) → 나무와 돌이 아님.<br>
+오답 ▶ ① hidden opening on top ✔ ③ climb up a ladder to enter ✔ ④ keep me cool in summer ✔ ⑤ a flat roof ✔</p>
+    <p><b>9</b> <span class="k">③</span> 이유 ▶ stop A from -ing(A가 ~하지 못하게 하다) → from 뒤에 동명사 <i>entering</i>.<br>
+오답 ▶ ① 가정법 과거(If + 과거형, would) ✔ ② 목적(~하기 위해) ✔ ③ 벽이 '만들어진' 수동 ✔ ⑤ keep + 목적어 + 형용사 ✔<br>
+포인트 ▶ 전치사 뒤에는 동명사!</p>
+    <p><b>10</b> <span class="k">⑤</span> 이유 ▶ 물 위에 집들이 있는 베니스 = '떠 있는' 도시(floating city).<br>
+오답 ▶ ① 가라앉는 ② 얼어붙은 ③ 숨겨진 ④ 움직이는 — 본문 표현이 아님</p>
+    <p><b>11</b> <span class="k">⑤</span> 이유 ▶ But(하지만) + So 나무 기둥을 천만 개 이상 설치했다 → 습지 위에 집 짓기가 '쉽지 않았다' → <i>not easy</i> (difficult).<br>
+오답 ▶ ① 물이 '불어나' ② 거리를 물로 '가득' ③ '높이 올린' 통로 ④ 침략자로부터 '안전하게'</p>
+    <p><b>12</b> <span class="k">④</span> 이유 ▶ The old Venetians decided to live there to keep themselves safe from invaders ✔<br>
+오답 ▶ ①·②·③·⑤ 본문에 없는 이유</p>
+    <p><b>13</b> <span class="k">③</span> 이유 ▶ The first floor is used for cooking and eating ✔<br>
+오답 ▶ ① 2층은 식량·도구 보관 ② three to five floors ④ third or fourth floor ⑤ 이웃이 차·저녁 먹으러 오라고 부름</p>
+    <p><b>14</b> <span class="k">①</span> 이유 ▶ 같은 성을 가진 사람들, 50가구까지, 함께 일하고 나눔 → '마을'과 같다.<br>
+오답 ▶ 다른 장소들은 뒤 설명과 이어지지 않음</p>
+    <p><b>15</b> <span class="k">②</span> 이유 ▶ 주절이 would + 동사원형 → 가정법 과거: If + 주어 + 동사의 과거형.<br>
+오답 ▶ ① 현재형(직설법 조건) ③ 조건절에 will ❌ ④·⑤ 동사 자리가 아님<br>
+포인트 ▶ If + 과거형, 주어 + would/could + 동사원형 = 현재 사실의 반대</p>
+    <p><b>16</b> <span class="k">①</span> 이유 ▶ 직설법(현재 부정) → 가정법 과거(긍정): don't live → lived, can't → could.<br>
+오답 ▶ ② 가정법이 아님 ③ 긍정·부정이 반대 ④ 주절이 반대 ⑤ 실제로 산다는 뜻<br>
+포인트 ▶ 직설 ↔ 가정: 시제는 한 칸 과거로, 긍정 ↔ 부정은 뒤집기</p>
+    <p><b>17</b> <span class="k">④</span> 이유 ▶ keep + 목적어 + 형용사(목적격 보어) = ~을 …한 상태로 유지하다 → safe.<br>
+오답 ▶ ① 부사는 보어 자리에 못 옴 ② 명사(안전)는 them과 같은 대상이 아님 ③·⑤ 형태 오류<br>
+포인트 ▶ keep/make + 목적어 + 형용사 (부사 ❌)</p>
+    <p><b>18</b> <span class="k">③</span> 이유 ▶ It is[was] + 강조할 말 + that ~: 'Tom'을 강조(어제 창문을 깬 사람은 바로 Tom이었다).<br>
+오답 ▶ ①·⑤ 가주어 it, 진주어 that절 ② 가주어 it, 진주어 to부정사 ④ 날씨 it + so ~ that(너무 ~해서 …하다)<br>
+포인트 ▶ It is ~ that에서 It is와 that을 지워도 문장이 완전하면 강조 구문(These wooden poles support Venice.)</p>
+    <p><b>19</b> <span class="k">①</span> 이유 ▶ 3~5층 → (A) 1층: 요리·식사 → (C) And 2층: 식량·도구 보관 → (B) 내 침실은 3·4층.<br>
+포인트 ▶ 층 순서(1층 → 2층 → 3·4층)와 연결어 And</p>
+    <p><b>20</b> <span class="k">⑤</span> 이유 ▶ 푸에블로·베니스·토루 등 세계의 다양한 집을 소개하며 그곳에 산다면 어떨지 상상하는 글.<br>
+오답 ▶ ①·②·③ 한 부분만 다룸 ④ 대화문 내용</p>
+  </div>
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>중3 영어 · 7과 실전 변형</span></div>
+</section>
+</main>
