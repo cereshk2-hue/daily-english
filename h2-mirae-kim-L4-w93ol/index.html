@@ -466,6 +466,7 @@ h2 { font-size: 19px }
 .opt { border-radius: 14px; border-width: 1.5px; display: flex; align-items: center; gap: 12px; padding: 13px 14px }
 .opt:not(.tfbtn)::before { counter-increment: o; content: counter(o, upper-alpha); flex: none; width: 28px; height: 28px; border-radius: 8px; background: var(--plank-empty); display: grid; place-items: center; font: 800 13px var(--f-body); color: var(--muted) }
 .opts.two .opt { justify-content: center }
+.opt > .ot { flex: 1; min-width: 0 } /* 선택지 속 <u>·<b>가 flex 칸으로 쪼개지지 않게 (11/13) */
 .opts.num .opt:not(.tfbtn)::before { content: counter(o); border-radius: 50% }
 .opt.right::before { background: var(--ok); color: #fff } .opt.wrong::before { background: var(--bad); color: #fff }
 .tfbtn { justify-content: center }
@@ -591,6 +592,6 @@ details.wkos small { display: block; color: var(--muted); font-size: 13px }
 
 <script src="data/h2-mirae-kim-L4.js?v=452035df"></script>
 <script src="../config.js" data-cfg="1"></script>
-<script src="app.js?v=60642162"></script>
+<script src="app.js?v=033e452f"></script>
 </body>
 </html>

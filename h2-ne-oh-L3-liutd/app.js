@@ -223,7 +223,7 @@
   function weakText(d) {
     return weakList(d).map(function (w) { return stepShort(w.s) + ' ' + w.sc[0] + '/' + w.sc[1] + ' → ' + (w.n ? '보충 ' + w.best.c + '/' + w.best.t + (w.ok ? ' ✓' : '') + (w.n > 1 ? ' (' + w.n + '번)' : '') + ' ' + fmtTime(w.last.at) : '보충 안 함'); }).join(' / ');
   }
-  function stepShort(st) { return st.type === 'pick' ? st.title : st.type === 'mc' && /실전/.test(st.title) ? '실전' : st.type === 'mc' && /일치/.test(st.title) ? '일치' : st.type === 'mc' && /요약/.test(st.title) ? '요약문' : SHORT[st.type]; }
+  function stepShort(st) { return st.type === 'pick' ? st.title : st.type === 'mc' && /실전/.test(st.title) ? '실전' : st.type === 'mc' && /일치/.test(st.title) ? '일치' : st.type === 'mc' && /요약/.test(st.title) ? '요약문' : st.type === 'mc' && /대의/.test(st.title) ? '대의' : st.type === 'mc' && /어휘/.test(st.title) ? '어휘' : st.type === 'mc' && /순서/.test(st.title) ? '순서' : SHORT[st.type]; }
   var CARD = { multi: '모두', hunt: '틀린곳', vocab: '단어', tf: 'T/F', verb: '동사', error: '오류', order: '순서', scramble: '스크램블', mc: '문법', insert: '삽입', odd: '어색', blank: '빈칸' };
   function cardLabel(st) { return st.type === 'pick' ? (/어법/.test(st.title) ? '어법' : '어휘') : st.type === 'mc' && /실전/.test(st.title) ? '실전' : st.type === 'mc' && /일치/.test(st.title) ? '일치' : st.type === 'mc' && /요약/.test(st.title) ? '요약' : CARD[st.type]; }
   function fmtTime(t) { var d = new Date(t); return (d.getMonth() + 1) + '/' + d.getDate() + ' ' + String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); }
@@ -726,6 +726,7 @@
     if (isW(it)) return '서술형';
     var q = String(it.stem || '').replace(/<[^>]+>/g, '');
     var R = [[/요약/, '요약문'], [/영영풀이|낱말|어휘|문맥|뜻의 연결|우리말 뜻|단어의 쓰임|단어의 관계|뜻이 바르지|의미가 서로|설명하는 단어|바꿔 쓴|바꿔 쓸/, '어휘'], [/어법|쓰임|역할|문장의 형식|문법적|에 관한 아래의 설명|동명사|배열|영어로 옮길|원형과 과거형/, '어법·문법'],
+      [/원급|비교급|최상급|옮긴 것|바꾼 것|there의 쓰임|가장 어린|가장 무거운/, '어법·문법'],
       [/순서/, '글의 순서'], [/주어진 문장|들어가기에/, '문장 삽입'], [/관계\s*없는|무관/, '무관한 문장'], [/대화의 연결/, '대화'], [/빈칸|들어갈 말/, '빈칸'], [/밑줄 친.*의미|함축/, '함축 의미'],
       [/주제|제목|요지|주장|목적/, '대의 파악'], [/일치|내용|답할 수 없는|언급되지|추론|옳은|설명으로|답한 것|이유로|비유|짝지은|알 수 없는|질문에 대한/, '내용 이해'], [/심경|분위기|감정/, '심경·분위기'], [/가리키는|지칭/, '지칭'], [/도표/, '도표']];
     for (var i = 0; i < R.length; i++) if (R[i][0].test(q)) return R[i][1];
@@ -1088,7 +1089,7 @@
   function qHTML(q) {
     if (q.t === 'choice') return (q.sub ? '<div class="guide" style="margin:0 0 6px">' + q.sub + '</div>' : '') +
       '<div class="prompt' + (q.big ? ' big' : '') + (q.en ? ' en' : '') + '">' + q.prompt + '</div>' +
-      '<div class="opts' + (q.num ? ' num' : '') + '">' + q.opts.map(function (o, i) { return '<button class="opt' + (q.optEn ? ' en' : '') + '" data-i="' + i + '">' + o + '</button>'; }).join('') + '</div>';
+      '<div class="opts' + (q.num ? ' num' : '') + '">' + q.opts.map(function (o, i) { return '<button class="opt' + (q.optEn ? ' en' : '') + '" data-i="' + i + '"><span class="ot">' + o + '</span></button>'; }).join('') + '</div>';
     if (q.t === 'multi') return '<div class="guide" style="margin:0 0 6px">' + q.sub + '</div><div class="prompt big">' + q.prompt + '</div>' +
       '<div class="opts">' + q.opts.map(function (o, i) { return '<button class="opt en" data-i="' + i + '" aria-pressed="false">' + E(o) + '</button>'; }).join('') + '</div>' +
       '<div class="nextbar"><button class="btn" id="mok" disabled>골랐어요 · 확인</button></div>';

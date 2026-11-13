@@ -1089,7 +1089,7 @@
   function qHTML(q) {
     if (q.t === 'choice') return (q.sub ? '<div class="guide" style="margin:0 0 6px">' + q.sub + '</div>' : '') +
       '<div class="prompt' + (q.big ? ' big' : '') + (q.en ? ' en' : '') + '">' + q.prompt + '</div>' +
-      '<div class="opts' + (q.num ? ' num' : '') + '">' + q.opts.map(function (o, i) { return '<button class="opt' + (q.optEn ? ' en' : '') + '" data-i="' + i + '">' + o + '</button>'; }).join('') + '</div>';
+      '<div class="opts' + (q.num ? ' num' : '') + '">' + q.opts.map(function (o, i) { return '<button class="opt' + (q.optEn ? ' en' : '') + '" data-i="' + i + '"><span class="ot">' + o + '</span></button>'; }).join('') + '</div>';
     if (q.t === 'multi') return '<div class="guide" style="margin:0 0 6px">' + q.sub + '</div><div class="prompt big">' + q.prompt + '</div>' +
       '<div class="opts">' + q.opts.map(function (o, i) { return '<button class="opt en" data-i="' + i + '" aria-pressed="false">' + E(o) + '</button>'; }).join('') + '</div>' +
       '<div class="nextbar"><button class="btn" id="mok" disabled>골랐어요 · 확인</button></div>';
