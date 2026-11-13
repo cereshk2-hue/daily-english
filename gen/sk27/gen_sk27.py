@@ -5,6 +5,7 @@
 import sys, re, json, glob, html, importlib.util
 sys.path.insert(0, '/home/claude/srcrepo/generators')
 from gencommon import write
+sys.path.insert(0, '/home/claude/srcrepo/gen/sk27'); from structp import parse_struct, split_opts
 W = '/home/claude/srcrepo/gen/sk27/'
 B = json.load(open(W + 'book_items.json', encoding='utf-8'))
 K = json.load(open(W + 'key_items.json', encoding='utf-8'))
@@ -23,7 +24,7 @@ def clean(s): return re.sub(r'\s+', ' ', s).strip()
 GLUE = set(json.load(open(W + 'glue.json', encoding='utf-8')))
 def kclean(s):
     """해설(2단) 줄바꿈: 낱말 중간에서 끊긴 줄은 붙이고, 띄어쓰기에서 끊긴 줄은 한 칸 띄움"""
-    ls = [l.strip() for l in s.split('\n') if l.strip()]
+    ls = [l.strip() for l in s.split('\n') if l.strip() and not re.fullmatch(r'(Part|I|II|III|유형편|\d{1,3}|정답과 해설 \d+쪽)', l.strip())]
     out = ''
     for i, l in enumerate(ls):
         out += l
@@ -58,21 +59,15 @@ def build(l):
             code = c0 + i; bk = B[str(code)]; kr = keyrec(l, i); au = A.get(code)
             if au is None: return False
             ai = CIR.index(ans[i])
-            opts = [clean(o)[1:].strip() for o in bk['opts']] if len(bk['opts']) == 5 else list(CIR)
+            opts = split_opts(bk['opts']) or list(CIR)
             if 'opts' in au: opts = au['opts']
             stem = au.get('stem') or bk['stem']
             q = '<b>%s · %s</b><span class="note" style="display:block;margin-top:4px">교재 %s강 %s — 지문은 교재에서 읽고 답을 고르세요.</span>' % (label(l, i), esc(stem), l, label(l, i))
             wrong = '\n'.join('%s %s' % (CIR[k - 1], t) for k, t in sorted(au['wrong'].items()))
             keys = au.get('keys', [])
             if not keys and au.get('kt'):
-                st = [x for x in re.split(r'■■', kr['struct']) if x.strip()]
-                pairs = []
-                for x in st:
-                    x = re.sub(r'\n\s*본문.*$', '', x, flags=re.S).strip()
-                    m = re.match(r'(.*?[.?!”"])\s*\n\s*(\[|it|첫|두|세|「|‘|이|그|\( \)|< >|\{ \}|“)', x, re.S)
-                    en, note = (m.group(1), x[m.end(1):]) if m else (x.split('\n')[0], '\n'.join(x.split('\n')[1:]))
-                    en = clean(re.sub(r'[\[\]{}<>]', '', en)); note = re.sub(r'\s*\d\d$', '', kclean(note))
-                    pairs.append((en, note))
+                pairs = [(e, re.sub(r'\s*\d\d$', '', kclean(n))) for e, n in parse_struct(kr['struct'])]
+                assert len(pairs) == len(au['kt']), (code, len(pairs), len(au['kt']))
                 keys = [(e, ko, nt) for (e, nt), ko in zip(pairs, au['kt'])]
             ex = '정답 ▶ %s %s\n소재: %s\n이유: %s\n오답 ▶ %s\n포인트 ▶ %s' % (ans[i], opts[ai] if opts[ai] not in CIR else '', kclean(kr['topic']), au['why'], wrong, au['point'])
             if keys: ex += '\n핵심 문장 ▶\n' + '\n'.join('%d) %s\n   → %s\n   ✎ %s' % (k + 1, e, ko, p) for k, (e, ko, p) in enumerate(keys))

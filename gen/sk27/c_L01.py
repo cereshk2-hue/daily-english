@@ -28,6 +28,6 @@ A = {
  why="새 직장 안부는 인사말이에요. 목적은 We're writing to ask when we can expect repayment of the $1,500 loan(1,500달러 대출금을 언제 갚을지 묻습니다)이에요. You agreed to pay ~ by June(6월까지 갚기로 동의함)과 we do need to receive at least half(최소 절반은 꼭 받아야 함) → 차량 구매 대출금을 갚아야 한다는 것을 일깨우는 글이에요.",
  wrong={1: "자동차 구입은 이미 끝났어요(We were glad to help you with the purchase). 정보 제공이 아니에요.", 3: "자동차 판매원이 된 게 아니라 '새 일자리'로 출퇴근하려고 차를 샀어요.", 4: "할부 구입 절차를 안내하는 글이 아니에요.", 5: "글쓴이가 묻는 쪽(재무 고문)이에요. 지불 방법을 묻는 게 아니라 언제 갚을지 확인하는 거예요."},
  point="We're writing to ~ / I'm writing to ~ 뒤가 바로 목적이에요. 앞의 안부와 뒤의 덕담(차 마음에 들기를)은 꾸밈이에요.",
- kt=["우리는 귀하의 자동차 대출금 1,500달러의 상환을 언제 기대할 수 있는지 묻기 위해 글을 씁니다.", "만약 귀하가 1,500달러 전액을 한 번에 상환할 수 없다고 결정했다면, 우리는 이해합니다."],
+ kt=["우리는 귀하의 자동차 대출금 1,500달러의 상환을 언제 기대할 수 있는지 묻기 위해 글을 씁니다.", "우리는 귀하가 선택한 차에 만족하시기를 바랍니다."],
  voc=[("settle into", "~에 자리 잡다, 적응하다"), ("enthusiastic", "열정적인"), ("tiresome", "지루한, 성가신"), ("all in all", "대체로"), ("repayment", "상환"), ("loan", "대출(금)"), ("transportation", "교통수단"), ("back and forth", "왔다 갔다"), ("at once", "한 번에"), ("financial advisor", "재무 고문")]),
 }
