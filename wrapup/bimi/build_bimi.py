@@ -1,5 +1,5 @@
 # 11/11 중산고1 · 비밀노트(edu-lab) 2025년 고1 9월 변형문제 18~24번 → h1-mock-2509 '비밀노트 변형문제' 탭 (종이 시험지 + 답안지)
-# t1~t4.txt = hwp 글자(generators/hwpread.py). 문항 번호 = 파일 안 순서(묶음 '다음 글을 읽고 물음에 답하시오' 머리말은 번호 없음 — t3 '위 29번 참조'로 확인)
+# t1~t4.txt = hwp 글자(generators/hwpread.py). 11/13부터 t1u~t4u.txt(hwpread_u.py: 밑줄 구간 \ue000…\ue001 → <u>) 를 읽음. 문항 번호 = 파일 안 순서(묶음 '다음 글을 읽고 물음에 답하시오' 머리말은 번호 없음 — t3 '위 29번 참조'로 확인)
 import re, json, sys, html as H
 sys.path.insert(0, '/home/claude/srcrepo/wrapup/bimi'); from exp_bimi import fmt as XF
 D = '/home/claude/proj/data/h1-mock-2509.js'
@@ -69,7 +69,7 @@ NOTE = {
  ('3', 24): '[검수] ⓓ visual images(시각적 이미지)도 자연스러운 표현이라 2개로 볼 여지가 있어요.',
  ('3', 28): '[검수] 시험지 선지 번호 ③이 두 번 나와요(두 번째 ③ Spending time…). 정답은 첫 번째 ③ focus on anything but an object.',
 }
-def esc(s): return H.escape(s, quote=False)
+def esc(s): return H.escape(s, quote=False).replace('\ue000', '<u>').replace('\ue001', '</u>').replace('<u>http://edu-lab.kr 교육연구소</u>', 'http://edu-lab.kr 교육연구소')
 # 검수 반영: 시험지(인쇄용)와 앱 모두 고친 글로 (파일, 찾을 것, 바꿀 것)
 FIXT = [
  ('1', 'excitement ❹ washing over me', 'excitement ❹ to wash over me'),          # 18·19-17: have+O+-ing 도 가능 → 확실히 틀린 to부정사로
@@ -88,9 +88,16 @@ DROP.update({('2', 2): 1, ('2', 15): 1, ('2', 16): 1, ('2', 17): 1, ('2', 18): 2
 TONLY = re.compile(r'^\s*(요약문 해석|제목 해석|요지 해석|해석은 위|정답\s*$)')   # 정답지에만 있던 줄
 HDR = re.compile(r'^\s*다음 글을 읽고 (질문|물음)에 답하시오')
 def parse(fk):
-    raw = open('/home/claude/srcrepo/wrapup/bimi/t%s.txt' % fk, encoding='utf-8').read()
+    raw = open('/home/claude/srcrepo/wrapup/bimi/t%su.txt' % fk, encoding='utf-8').read()
     for f, a, b in FIXT:
-        if f == fk: assert raw.count(a) == 1, (fk, a); raw = raw.replace(a, b)
+        if f == fk:
+            pat = '[\ue000\ue001]*'.join(re.escape(ch) for ch in a)
+            ms = list(re.finditer(pat, raw)); assert len(ms) == 1, (fk, a)
+            span = ms[0].group(0); bb = b
+            for w in re.findall('\ue000(.*?)\ue001', span):
+                w = w.strip()
+                if w and w in bb: bb = bb.replace(w, '\ue000' + w + '\ue001', 1)
+            raw = raw[:ms[0].start()] + bb + raw[ms[0].end():]
     L = raw.split('\n')
     if fk in END: L = L[:END[fk]]
     S = STEMS[fk]; items = []

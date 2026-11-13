@@ -78,4 +78,5 @@ def text(path):
             i += size
     return '\n'.join(out)
 
-sys.stdout.write(text(sys.argv[1]).encode("utf-16","surrogatepass").decode("utf-16","replace")+"\n")
+if __name__ == "__main__":
+    sys.stdout.write(text(sys.argv[1]).encode("utf-16","surrogatepass").decode("utf-16","replace")+"\n")

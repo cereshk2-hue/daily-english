@@ -1,0 +1,816 @@
+{
+"ANS": {
+"1": "②③⑤①②",
+"2": "①⑤③③④",
+"3": "②⑤④④③",
+"4": "①②④②⑤",
+"5": "②⑤②①①",
+"6": "③②⑤④④",
+"7": "②⑤①④①",
+"8": "④⑤③⑤④",
+"9": "③④③③⑤",
+"10": "④④④④③",
+"11": "②③⑤②③",
+"12": "⑤③④③⑤",
+"13": "①④④②④",
+"14": "④②①①③",
+"15": "④③③④④",
+"16": "④④④⑤②⑤②",
+"17": "⑤②③⑤②④⑤",
+"18": "③①④②③",
+"19": "②⑤⑤④①④②②②⑤",
+"20": "⑤③⑤⑤⑤③③④③④④②⑤⑤⑤"
+},
+"CODE0": {
+"1": 1,
+"2": 6,
+"3": 11,
+"4": 16,
+"5": 21,
+"6": 26,
+"7": 31,
+"8": 36,
+"9": 41,
+"10": 46,
+"11": 51,
+"12": 56,
+"13": 61,
+"14": 66,
+"15": 71,
+"16": 76,
+"17": 83,
+"18": 90,
+"19": 95,
+"20": 105
+},
+"K": {
+"1": [
+{
+"ans": "②",
+"topic": "동아리 개설",
+"ko": "학생 여러분께\n저는 학교 동아리 담당 교사 Amanda Clark이며, 학교 동아리\n와 관련해 여러분께 글을 씁니다. 지난 몇 학기 동안 더 다양한 학\n교 동아리에 대한 요청이 있었습니다. 이런 이유로, 학교에서는\n과외 활동을 위한 동아리 수를 확대하기로 했습니다. 이는 동아리\n를 추가로 만들 기회를 학생들에게 제공합니다. 학생들은 힙합,\n케이팝 댄스, 또는 코딩과 같은 다양한 관심사를 바탕으로 어떤\n종류의 동아리든 개설할 수 있습니다. 따라서 여러분이 만들고 싶\n은 새로운 동아리에 대한 제안서를 제출해 주기를 권합니다. 이번\n주가 끝나기 전까지 이것(제안서)을 제 사무실로 제출해 주세요.\n여러분의 멋진 아이디어를 보기를 기대합니다.\nAmanda Clark 드림",
+"sol": "",
+"struct": "■■This provides students with an opportunity [to make\n additional clubs].\n [ ]는 an opportunity를 구체적으로 설명하는 to부정사구이\n 다.\n■■Therefore, I am encouraging you [to submit a\n proposal for a new club {that you would like to\n create}].\n [ ]는 encouraging의 목적격 보어 역할을 하는 to부정사구\n 이고, 그 안의 { }는 a new club을 수식하는 관계절이다.\n\n\n\n 본문 12~15쪽"
+},
+{
+"ans": "③",
+"topic": "온라인 요리책 이용 권장",
+"ko": "학부모님께\nGreenwood 고등학교는 우리 공동체를 풍요롭게 하는 문화적\n다양성에 큰 자부심을 가지고 있습니다. 전 세계 가정의 전통과\n맛을 기념하기 위해 만들어진 우리의 특별한 새 프로젝트인 요리\n책을 학부모님과 공유하게 되어 매우 기쁩니다. 이 특별한 모음집\n은 26개국의 100가지 요리법을 담고 있으며, 세대를 거쳐 전해\n내려온 사랑받는 요리를 강조합니다. 그것은 세계의 요리를 살펴\n보고 자녀와 함께 의미 있는 순간을 나눌 특별한 기회를 제공합니\n다. 저희는 학부모님께서 여름 동안 이 요리법 중 몇 가지를 함께\n시도해 보시길 권장합니다. 학부모님께서는 이 온라인 요리책을\n우리 학교 웹사이트에서 내려받으실 수 있습니다. 음식은 우리를\n하나로 모으며, 이 프로젝트는 다양성이 우리 학교에 가져다주는\n기쁨과 화합을 반영합니다. 늘 그렇듯이, 학부모님의 지속적인 지\n원에 감사드립니다.\nGreenwood 고등학교 교장\nHelen Brooks 박사 드림",
+"sol": "전 세계 가정의 전통 요리를 소개하는 온라인 요리책을 제작하여\n학부모와 공유하고, 여름 동안 자녀와 함께 요리해 보길 권장하고\n있으므로, 글의 목적으로 가장 적절한 것은 ③이다.",
+"struct": "■■We are very pleased [to share with you our special\n new project, a recipe book, {created to celebrate the\n traditions and flavors of families from around the\n world}].\n [ ]는 pleased의 의미를 보충하는 to부정사구이고, 그 안의\n { }는 our special new project, a recipe book을 수식하\n 는 분사구이다.\n■■It offers a special chance [to explore global cuisine\n and share meaningful moments with your children].\n [ ]는 a special chance를 구체적으로 설명하는 to부정사구\n 이다.\n\n\n\n02"
+},
+{
+"ans": "⑤",
+"topic": "원고 수정 요청",
+"ko": "Langford 교수님께\n우선, 휴가 기간에 연락을 드리게 된 점 사과드립니다. 이때가 바\n쁜 시기라는 것을 이해하지만, 교수님의 원고 수정 마감일(12월\n27일)이 빠르게 다가오고 있으니, 제한된 이용 가능 시간 내에 가\n능한 한 철저하게 검토자들의 의견을 처리하는 것에 협조를 간곡\n히 부탁드립니다. 검토자들은 교수님의 원고를 신중히 검토하였\n고, 통찰력 있고 중대한 피드백을 제공했습니다. 교수님께서 수정\n하시는 것을 돕기 위해, 검토자 두 분 모두가 제기한 주요 사항들\n을 요약해 놓았습니다. 이 의견들을 신중히 검토하시고 원고의 수\n정본을 제출해 주시기 바랍니다. 이 제안 사항들을 포함하는 것이\n원고를 크게 향상시키고 교수님의 주요 주장에 대한 더 강한 근거\n\f\n를 제공할 것이라고 확신합니다. 수정된 원고가 검토자들을 만족\n시켜 저희 학술지에 게재가 승인되기를 소망합니다. 교수님의 관\n심과 협조에 감사드립니다.\n부편집장, Nora Ellison 드림",
+"sol": "검토자들의 피드백을 바탕으로 수정 마감일 내에 원고를 수정해\n제출해 달라고 요청하고 있으므로, 글의 목적으로 가장 적절한 것\n은 ⑤이다.",
+"struct": "■■\u0007Please [review these comments carefully] and [submit\n a revised version of your manuscript].\n 두 개의 [ ]는 and로 연결되어 명령문을 이룬다.\n■■We hope [that the revised manuscript will {satisfy the\n reviewers} and {be accepted in our journal}].\n [ ]는 hope의 목적어 역할을 하는 명사절이고, 그 안의 두 개\n 의 { }는 and로 연결되어 will에 이어져 명사절의 술어를 이\n 룬다.\n\n\n\n\n03"
+},
+{
+"ans": "①",
+"topic": "구매한 꽃의 환불 요청",
+"ko": "관계자분께\n본론으로 들어가기 전에 저는 귀하의 매장과의 과거 경험을 언급\n하고자 합니다. 1년 전, 저는 귀하로부터 제 웨딩 부케를 주문했\n고, 제 남편인 Nicholas는 저에게 데이비드 오스틴 장미를 약속\n했었습니다. 하지만, 결혼식 당일에 저는 일반 장미를 대신 받았\n습니다. 그 실수에 대해 정식으로 불만을 제기할까 잠시 고민했지\n만, 저는 특별한 날을 즐기는 데 집중하기로 선택했습니다. 어제,\n결혼 1주년을 기념하기 위해 남편이 귀하의 매장에서 데이비드\n오스틴 장미를 다시 주문했습니다. 하지만, 오늘 제가 받은 꽃은\n도착했을 때 생기가 없고, 얼룩이 있으며, 갈색으로 변하고 있었\n습니다. 이번에는, 이 문제를 해결하기 위해 귀하에게 조치를 취\n해 주시기를 요청하는 것이 지극히 공정하다고 생각합니다. 제가\n1년 전 꽃에 대한 보상을 요구하는 것은 아닙니다만, 이번 주문에\n대해서는 환불을 정말로 기대합니다. 이 문제를 해결하기 위해,\n전액 환불해 주시면 감사하겠습니다. 귀하의 답변을 기다리겠습\n니다.\nCheryl 드림",
+"sol": "결혼 1주년을 기념해 주문한 꽃이 도착 당시 이미 생기가 없고 얼\n룩도 있었으며 갈색으로 변하고 있었다는 불만을 표현하며 환불\n\f\n을 요청하고 있으므로, 글의 목적으로 가장 적절한 것은 ①이다.",
+"struct": "■■However, the flowers [I received today] were lifeless,\n spotted, and browning upon arrival.\n\n\n\n\n Part\n [ ]는 the flowers를 수식하는 관계절이다.\n■■This time, I believe [it’s only fair {to ask you to take\n\n\n\n\n I\n action to resolve this matter}].\n [ ]는 believe의 목적어 역할을 하는 명사절이고, 그 안의 it\n\n\n\n\n 유형편\n 은 형식상의 주어이며, { }는 내용상의 주어이다.\n\n\n04"
+},
+{
+"ans": "②",
+"topic": "차량 구입 대출 상환 일정 문의",
+"ko": "Johnson 씨께\n지금쯤 새 일자리에 ‘자리 잡으셔서’ 처음에 그랬던 것처럼 그 일\n자리에 여전히 열정을 느끼고 계신가요? 물론 어떤 일자리든 지\n루한 과업이 있겠지만, 말씀하신 내용을 종합해 볼 때, 대체로 이\n직업이 귀하에게 잘 맞는 것처럼 들립니다. 귀하의 자동차 대출금\n1,500달러의 상환을 언제쯤 기대할 수 있는지 문의드리기 위해\n글을 씁니다. 저희는 귀하가 새 일자리로 오가는 교통수단을 마련\n할 수 있도록 차량 구입을 도와드리게 되어 기뻤습니다. 귀하는\n6월까지 대출금 전액 또는 최소 절반을 상환하기로 동의하셨습니\n다. 만약 귀하가 1,500달러 전액을 한 번에 상환할 수 없다고 결\n정하셨다면, 저희는 이해합니다. 하지만 저희는 앞으로 2주나 3\n주 이내에 최소한 그 금액의 절반을 꼭 받아야 합니다. 귀하가 선\n택하신 차가 만족스럽기를 바랍니다. 저희도 좋은 구입이라고 생\n각했습니다. 일이 어떻게 되어 가고 있는지 알려주세요.\n재무 고문 Joseph Brown 드림",
+"sol": "수신자의 자동차 대출금 상환 일정 약속을 상기시키며, 2주나 3주\n이내에 최소한 1,500달러의 절반을 받아야 한다고 말하는 내용\n이므로, 글의 목적으로 가장 적절한 것은 ②이다.",
+"struct": "■■We’re writing to ask [when we can expect repayment\n of the $1,500 loan for your car].\n [ ]는 ask의 목적어 역할을 하는 명사절이다.\n■■We hope [you are satisfied with the car {you chose}].\n [ ]는 hope의 목적어 역할을 하는 명사절이고, 그 안의 { }는\n the car를 수식하는 관계절이다."
+}
+],
+"2": [
+{
+"ans": "①",
+"topic": "자신이 자라난 집을 찾아낸 Sophie",
+"ko": "“그것이 어디에 있을까?”라고 Sophie는 자신에게 물었다.\n그녀가 자신이 자라난 지역을 마지막으로 방문한 이후로 십 년이\n넘는 시간이 흘렀다. 시간이 흐르면서 그 마을은 많이 변해 있었\n다. 확신이 서지 않아, 그녀는 어색하게 주변을 둘러보았다. 그녀\n는 마을의 좁은 골목길을 걸었지만, 어느 방향으로 가야 할지 확\n신하지 못했다. 갑자기, Sophie는 익숙한 광경을 보았다. “맞아,\n여기가 분명해.”라고 그녀는 생각했다. 그녀 앞에는 꽃이 그려진\n벽이 있었다. 지금은 색이 바랬지만, 그 벽 위의 익숙한 모양들은\n그녀가 어린 시절 아버지와 함께 그렸던 바로 그것이었다.\nSophie는 고개를 끄덕이고, 환하게 미소 지으며, 문 쪽으로 걸어\n갔다. 마침내, 그녀는 자신이 자라난 집을 드디어 찾아냈다.",
+"sol": "",
+"struct": "■■In front of her was [a wall with flowers {painted on\n it}].\n [ ]는 문장의 주어 역할을 하는 명사구이고, 전치사구인 In\n front of her로 문장이 시작되어 동사 was가 주어 앞에 놓이\n 는 어순이 되었다. [ ] 안의 { }는 flowers를 수식하는 분사\n 구이다.\n■■[Although the colors were now faded], the familiar\n shapes on the wall were the same ones [she had\n painted with her father as a child].\n 첫 번째 [ ]는 양보를 나타내는 부사절이고, 두 번째 [ ]는\n the same ones를 수식하는 관계절이다.\n\n\n\n 본문 18~19쪽"
+},
+{
+"ans": "⑤",
+"topic": "비자 신청 과정에서 겪은 기대와 좌절",
+"ko": "그날은 내가 준비해 온 날이었다. 나는 비자를 신청하기\n위해 한 시간 반 동안 운전했다. 가슴이 두근거렸지만, 나는 준비\n가 되었다고 느꼈다. 같은 날, 나는 영어를 모르는 세 사람을 도와\n이민국 직원을 위해 통역해 주었다. 그들 중 두 명은 운 좋게 비자\n를 받았다. 그러고 나서 나는 내 이름이 불리는 것을 들었다. 일이\n순조롭게 진행되고 있다고 생각하며, 나는 창구로 향했다. 나는\n내 아이들을 방문한 뒤 귀국할 것임을 증명하기 위해 나의 문서와\n재산 관련 서류를 보여주었다. 불행하게도, 그 직원은 내가 도와\n줄 때는 미소를 지었는데, 갑자기 심각한 표정으로 바뀌었다. 그\n녀는 내 서류를 무시하고 내 신청서에 빨간 스탬프를 찍었다. 나\n는 한마디도 할 기회를 얻지 못했다. 나는 마치 무거운 바위가 내\n마음을 짓누르고 있는 듯 느껴졌다. 나는 그녀의 거절의 말을 듣\n게 되리라고는 예상치 못했다. 나는 어지러웠고, 눈에는 눈물이\n가득 고였다. 그 순간 아무것도 보이지 않았다.",
+"sol": "비자 신청을 위해 모든 준비를 마치고 일이 순조롭게 진행되고 있\n다고 생각했지만, 예기치 못한 거절로 인해 좌절하고 있다. 따라서\n‘I’의 심경 변화로 가장 적절한 것은 ⑤ ‘기대하는 → 낙담한’이다.\n① 자랑스러워하는 → 부끄러워하는\n② 신이 난 → 후회하는\n③ 혼란스러워하는 → 감사하는\n④ 걱정하는 → 만족한",
+"struct": "■■That same day, I helped three people [who didn’t\n know English] by translating for the immigration\n officer.\n [ ]는 three people을 수식하는 관계절이다.\n■■[Believing things were going smoothly], I made my\n way to the counter.\n [ ]는 I를 의미상 주어로 하여 주절이 기술하는 내용의 부수적\n 상황을 나타내는 분사구문이다.\n\n\n\n02"
+},
+{
+"ans": "③",
+"topic": "과한 자신감으로 일행에 짐이 된 산행",
+"ko": "며칠 밤을 보낸 후, 우리는 (해발) 16,000피트까지 가는\n산행에 과감히 나섰다. 일행 구성원들은 모두 경험이 많았으므로\n나는 그들이 왜 그렇게 천천히 오르고 있는지 이해할 수 없었는\n데, 내 생각에는 말도 안 되는 속도였다. 이 등반을 위해 열심히\n훈련했기에, 나는 내 인생 최고의 몸 상태였다. 그리고 신참자였\n던 나는 일행에게 나 자신을 증명하고 싶었다. 나의 우월한 몸 상\n태를 과시해 보면 어떨까? 그래서 나는 앞장서서 갔다. 그런데 우\n리가 16,000피트에 접근했을 때, 나는 갑자기 어지럽기 시작했\n다. 얼마 지나지 않아 나는 비틀거리고 있었다. 일행이 내 배낭을\n챙겨야 했다. 몇 분 만에 나는 완전 무능력자가 되어 걷는 것조차\n\f\n도움이 필요하게 되었다. 나는 산장으로 내려오는 길에 메스꺼움\n과 두통, 현기증 때문에 거의 똑바로 걷지도 못했다. 이제 내가 느\n끼는 것이라곤 일행에게 짐이 되었다는 죄책감뿐이었다. 나는 내\n가 그렇게 무리하지 않았더라면 좋았을 텐데 하는 생각이 들었다.",
+"sol": "해발 16,000피트까지 가는 산행에 나서면서 자기의 몸 상태를\n과시하기 위해 경험이 많은 일행보다 앞장서서 갔지만, 갑자기 어\n지러움을 느끼고 완전 무능력자가 되어 일행의 도움을 받으면서\n일행에게 짐이 되었다는 죄책감과 후회를 느꼈다는 내용의 글이\n다. 따라서 ‘I’의 심경 변화로 가장 적절한 것은 ③ ‘자신만만한 → 후\n회하는’이다.\n① 기쁜 → 놀란\n② 불안해하는 → 안도한\n④ 즐거워하는 → 무관심한\n⑤ 실망한 → 만족한",
+"struct": "■■In a matter of minutes, I became a basket case,\n [needing assistance just to walk].\n [ ]는 주절의 상황에서 비롯된 결과를 나타내는 분사구문이\n 다.\n■■Now all [I felt] was guilt for [becoming a burden to\n the group].\n 첫 번째 [ ]는 all을 수식하는 관계절이고, 두 번째 [ ]는 for\n 의 목적어 역할을 하는 동명사구이다.\n\n\n\n03"
+},
+{
+"ans": "③",
+"topic": "군인들을 피해 숨는 Francis와 Ellen",
+"ko": "Francis Pohan은 Borneo 자택의 오르간 앞에 앉아 자\n신이 몇 주 동안 연습해 온 찬송가가 손가락 아래에서 부드럽게\n흘러나오자 얼굴에 미소를 지었다. 그 선율은 정글의 부드러운 소\n리와 섞여 그를 행복으로 가득 채웠다. 그의 가장 소중한 소유물\n인 오르간은 특히 이러한 불확실한 시기에 위로와 기쁨의 원천이\n었다. 하지만 고요함을 깨는 멀리서 나는 엔진의 굉음으로 그의\n평화는 중단되었다. 군인들이 정글 도로에 나타났는데, 그들이 다\n가오면서 그들의 군화는 흙바닥 위에서 요란한 소리를 냈고, 무기\n는 그들의 어깨에 헐렁하게 걸쳐져 있었다. Francis의 심장이 요\n동쳤는데, 전쟁 중이었고, 군인들은 자주 자신들이 원하는 것을\n가져갔기 때문이었다. 그는 여동생 Ellen에게 다급하게 속삭이면\n서 키 큰 나무 뒤에 숨도록 그녀를 이끌었는데, 그것의 굵은 몸통\n이 그들을 보호해 주었다. 밖을 엿보며 Francis는 조심스럽게 밖\n으로 나와 집을 향해 걸어오는 군인들을 바라보았다. 그들의 시끄\n\f\n러운 목소리와 육중한 발걸음이 조용한 정글을 가득 채웠다. 자신\n들이 눈에 띄지 않기를 바라며, Francis의 마음은 기도하며 요동\n쳤다.",
+"sol": "Part\n전쟁 기간에 Francis가 정글 안에 있는 집에서 가장 소중한 소유\n물인 오르간 연주를 하며 행복해하던 중, 군인들의 접근을 감지하\n\n\n\n\n I\n고 여동생 Ellen과 함께 나무 뒤에 몸을 숨긴 채 발각되지 않기를\n기도하는 내용이다. 따라서 Francis Pohan의 심경 변화로 가장\n\n\n\n\n 유형편\n적절한 것은 ③ ‘기쁜 → 겁먹은’이다.\n① 설레는 → 지루해하는\n② 두려워하는 → 안도한\n④ 편안한 → 부러워하는\n⑤ 희망적인 → 실망한",
+"struct": "■■[Whispering urgently to his sister, Ellen], he led her\n to hide behind a tall tree, [its thick trunk shielding\n them].\n 첫 번째 [ ]는 he를 의미상 주어로 하여 주절이 기술하는 내용\n 의 부수적인 상황을 나타내는 분사구문이고, 두 번째 [ ]는 its\n thick trunk를 의미상 주어로 하여 앞선 내용의 부수적인 상황\n 을 나타내는 분사구문이다.\n■■[Peeking out], Francis [stepped outside carefully] and\n [looked at the soldiers walking toward their home].\n 첫 번째 [ ]는 Francis를 의미상 주어로 하여 주절이 기술하\n 는 내용의 부수적인 상황을 나타내는 분사구문이고, 두 번째와\n 세 번째 [ ]는 and로 연결되어 주어 Francis에 이어지는 술\n 어이다.\n\n\n\n04"
+},
+{
+"ans": "④",
+"topic": "지친 Vera의 저녁",
+"ko": "Vera는 자신의 차가 수리되기를 간절히 바랐지만, 그것은\n처음에 예상했던 것보다 더 오랜 시간이 필요할 것으로 보였다.\n불행히도, 그것은 그녀가 통근을 위해 버스에 의존해야 한다는 것\n을 의미했다. 이 가혹한 얄궂음에 더해, 지난 3일 동안 비가 한 번\n도 그치지 않고 내렸다. 그녀가 버스에서 내렸을 때는 이미 오후\n7시가 넘었고, 체육관에 우산을 두고 와서 추위에 떨며 뼛속까지\n흠뻑 젖어 있었다. 그녀의 집은 길 아래 단 한 블록 떨어진 곳에\n있었지만, 이 날씨에는 10마일이나 되는 거리처럼 느껴졌다. 그\n녀의 다리가 스스로 알아서 움직였는데, 갑자기 그녀의 머리 위에\n서 Cups & Blossoms의 종이 울리고 있었다. 따뜻한 꽃의 향기\n가 담요처럼 그녀를 감쌌지만, 그녀를 놀라게 한 것은 바로 또 다\n른 종류의 환영이었는데, 그것은 카페 주인의 부드럽고 겸손한 미\n소였다. 그녀는 또한 Vera가 왜 그렇게 피곤해 보이는지 묻지 않\n을 만큼 정중했는데, 고맙게 여겨졌다. Vera는 이제 자신이 무엇\n을 진정 필요로 했는지를 깨달은 것 같았다. 그녀가 짊어진 무게\n를 덜어 줄 그저 다정한 얼굴이었다.",
+"sol": "Vera는 자동차 수리가 예상보다 많이 지체되어 버스로 통근해야\n하는데 3일째 비가 내려 힘든 상황이고, 우산을 놓고 와 흠뻑 젖\n은 채 걷고 있어서 매우 지쳤으나 우연히 들어간 카페에서 따뜻한\n꽃향기와 주인의 친절한 미소에 마음이 편안해졌다는 내용이다.\n따라서 Vera의 심경 변화로 가장 적절한 것은 ④ ‘매우 지친 →\n편안한’이다.\n① 부끄러워하는 → 감사하는\n② 무관심한 → 만족스러운\n③ 궁금한 → 실망한\n⑤ 격려받은 → 좌절한",
+"struct": "■■ ~, but it was [another kind of welcome] that\n surprised her — a smile from the café owner, soft and\n unassuming.\n [ ]는 it was와 that절 사이에 놓여 의미가 강조되고 있다.\n■■She was also polite enough not to ask [why Vera\n looked so tired], [which was appreciated].\n 첫 번째 [ ]는 ask의 목적어 역할을 하는 명사절이고, 두 번째\n [ ]는 앞 절의 내용을 부가적으로 설명하는 관계절이다."
+}
+],
+"3": [
+{
+"ans": "②",
+"topic": "디지털 플랫폼이 사업 수행에 끼친 영향",
+"ko": "디지털 플랫폼은 많은 일을 덜 끈끈하게 만들었다. 일이\n점점 더 모듈화되고, 상품화되고, 표준화되면서, 그리고 디지털\n노동을 위한 시장이 만들어지면서, 서비스 노동과 특정 장소 사이\n의 연결은 끊어질 수 있다. 1990년대에 등장한 아웃소싱이라는\n비즈니스 과정이 대기업이 콜센터를 값싸고 먼 노동 시장으로 옮\n김으로써 ‘글로벌 산업예비군’을 활용하도록 해 준 한편, 클라우드\n노동은 지리적으로 가까이 있지 않은 곳에서 일이 이루어질 수 있\n는 규모와 과립상(세분화 수준)을 변화시킨다. 뉴욕의 작은 기업\n이 어느 날은 나이로비의 프리랜서 녹취 전사 작업자를, 다음 날\n에는 뉴델리의 녹취 전사 작업자를 고용할 수 있다. 사무실이나\n공장을 지을 필요가 없고, 현지 규정을 준수하지 않으며, 대부분\n의 경우 현지 세금도 내지 않는다. 노동 생산 네트워크의 전환은\n단순히 몇 통의 이메일을 보내거나 디지털 노동 플랫폼에서 버튼\n을 몇 개 클릭하는 것으로 이루어진다. 그리고 이런 방식으로, 고\n용주는 한때 고용주였던 장소들에 어떠한 물질적 흔적도 남기지\n않는다.",
+"sol": "",
+"struct": "■■While the business process of outsourcing [that\n emerged in the 1990s] allowed large companies to\n take advantage of a ‘global reserve army’ by moving\n their call centres to cheap and distant labour markets,\n cloudwork changes the volume and granularity [at\n which geographically non-proximate work can take\n place].\n 첫 번째 [ ]는 the business process of outsourcing을 수\n 식하는 관계절이고, 두 번째 [ ]는 the volume and\n granularity를 수식하는 관계절이다.\n■■[The switch in the production network of work]\n happens by simply [sending some emails] or [clicking\n some buttons on a digital work platform].\n 첫 번째 [ ]는 주어 역할을 하는 명사구이고, 두 번째와 세 번\n 째 [ ]는 or로 연결되어 by의 목적어 역할을 하는 동명사구이\n 다.\n\f\n 본문 22~25쪽"
+},
+{
+"ans": "⑤",
+"topic": "전략적 재배 기법",
+"ko": "(기온을 포함해서) 기후는 일반적으로 인간의 통제를 벗어\n난 것으로 여겨지더라도, 야외에서조차 국지적인 온도 조절은 미\n기후 수준에서는 때때로 효과를 발휘한다. 캐나다 Vancouver는\n위도 49도선에서 몇 마일 북쪽에 있으며, 겨울철 기온이 혹독하\n기로 유명한 North Dakota 주 Minot보다 약 60마일 더 북쪽\n에 있다. 하지만 태평양에서 끊임없이 불어오는 푄 바람 덕분에\nVancouver의 겨울은 일조량은 부족하지만 온화하고 습하다. 내\n가 1940년대 후반에 그곳에 텃밭을 가지고 있었을 때, 한 이웃은\n내가 다른 누구보다 더 일찍 상추와 토마토를 거두기 위해 ‘신을\n속였다’라고 말하곤 했다. (나는) 채소가 자라는 바닥을 약 50도\n정도 남쪽으로 향하도록 경사지게 했고, 식물 사이의 공간을 인근\n해변에서 모아온 넓적한 돌들로 덮어 늦겨울에서 초봄까지의 약\n한 햇빛으로 지중가온(地中加溫)을 최대화했다.",
+"sol": "밑줄 친 부분은 일조량이 부족한 늦겨울에서 초봄까지의 약한 햇\n빛으로 지중가온(地中加溫)을 최대화하려고 필자가 몇 가지 방법\n을 사용하였고, 그 결과 다른 누구보다 더 일찍 상추와 토마토를\n생산한 것을 두고 이웃이 한 말이다. 따라서 밑줄 친 부분이 글에\n서 의미하는 바로 가장 적절한 것은 ⑤ ‘전략적인 재배 방법을 사\n용하여 더 따뜻한 미기후를 만들어냈다’이다.\n① 다른 누구보다 더 많은 채소를 얻기 위해 기도했다\n② 강한 바람에도 불구하고 훨씬 더 많은 작물을 생산했다\n③ 최신 기술로 혹독한 기후에 맞섰다\n④ 다른 사람들이 거친 기상 조건을 극복하도록 도왔다",
+"struct": "■■When I had a garden there in the late 1940s, a\n neighbor used to say [that I “cheated God” to bring in\n my lettuce and tomatoes earlier than anyone else].\n [ ]는 say의 목적어 역할을 하는 명사절이다.\n■■The bed [in which the vegetables grew] was banked\n toward the south at approximately 50 degrees, and the\n area between the plants was covered with flat stones,\n [gathered from the nearby beach], to maximize soil\n heating from the weak late winter-early spring sun.\n 첫 번째 [ ]는 The bed를 수식하는 관계절이고, 두 번째 [ ]\n 는 flat stones를 부가적으로 설명하는 분사구이다.\n\f\n02"
+},
+{
+"ans": "④",
+"topic": "직장에 대한 충성심의 의미",
+"ko": "에너지는 사람들이 일하도록 동기를 부여하기 위해 항상\n\n\n\n\n Part\n조직에 주입될 수 있다. 보너스, 승진, 다른 당근(유인책), 심지어\n얼마간의 회초리(처벌)조차도 확실히 사람들이 더 열심히 일하게\n\n\n\n\n I\n만들 수는 있지만, 모든 조작이 그렇듯 그 이득은 단기적이다. 시\n간이 지나면서 그러한 책략은 더 큰 비용이 들게 하고 직원과 고\n\n\n\n\n 유형편\n용주 모두에게 스트레스를 증가시켜, 결국에는 사람들이 매일 직\n장에 출근하는 주된 이유가 될 것이다. 그것은 충성심이 아니다.\n그것은 재방문 고객의 직원 버전이다. 직원들 사이에서 충성심은\n같은 회사에서 계속 일하기 위해 더 많은 돈이나 혜택을 거절할\n때 존재한다. 회사에 대한 충성심은 급여와 혜택을 능가한다. 그\n리고 우주 비행사가 아닌 이상, 우리에게 영감을 주는 것은 우리\n가 하는 일 또한 아니다. 우리가 일하러 오는 이유는 바로 대의명\n분이다. 우리는 벽을 쌓기 위해 출근하고 싶어 하는 것이 아니라,\n대성당을 짓기 위해 출근하고 싶어 한다.",
+"sol": "조직이 구성원들에게 동기를 부여하기 위해 보상과 처벌을 활용\n하는 것은 단기적인 이득을 가져오지만, 진정한 충성심은 같은 회\n사에 남기 위해 직원이 더 많은 돈이나 혜택을 거절할 때 존재한\n다고 하며 궁극적으로 직원들이 일터로 나오는 주된 이유는 급여\n나 혜택이 아니라, 대의명분이라고 했다. 따라서 밑줄 친 부분이\n글에서 의미하는 바로 가장 적절한 것은 ④ ‘더 높은 목적이나 의\n미 있는 대의명분을 위해 일하기’이다.\n① 직장에서 종교적 신념을 고취시키기\n② 일을 통해 개인의 재정적 이득에 집중하기\n③ 업무의 모든 세부 사항에서 완벽을 이루기\n⑤ 전반적인 상황에 의문을 제기하지 않고 명령을 따르기",
+"struct": "■■[Bonuses, promotions, other carrots, and even a few\n sticks can get people to work harder, for sure], but [the\n gains are, like all manipulations, short-term].\n 두 개의 [ ]는 but으로 연결되어 문장을 이룬다.\n■■Over time, such tactics [cost more money and increase\n stress for employee and employer alike], and\n [eventually will become the main reason {people\n show up for work every day}].\n 두 개의 [ ]는 and로 연결되어 주어 such tactics에 이어지는\n 술어이다. 두 번째 [ ] 안의 { }는 the main reason을 수식\n 하는 관계절이다.\n03"
+},
+{
+"ans": "④",
+"topic": "생물학적 역사 기록인 DNA",
+"ko": "1960년대 초반, 위대한 미국 작가 James Baldwin은\n“사람들은 역사에 갇혀 있고, 역사는 그들 안에 갇혀 있다.”라고\n썼다. 그가 그 말을 쓸 때 그는 인종에 관해 언급하고 있는 것이었\n다. 하지만 ‘사람들’이라는 단어가 ‘현재와 과거의 지구상의 모든\n생명체’로 대체되더라도 그 말은 똑같이 사실인데, 우리의 각 세\n포에서 각 DNA의 가닥은 생물학적 역사의 아주 오래된 기록이\n기 때문이고, (이것은) 단순한 코드로 기록되어 세대를 거쳐 전해\n져 내려왔다. 혹자는 DNA란 ‘다름’ 아닌 역사, 모든 현상 중 가\n장 무자비한 현상, 즉 자연 선택에 의해 셀 수 없이 많은 억겁에\n걸쳐 서서히 혼합되고 축적된 물리적 발현물을 가진 역사라고 말\n할 수 있다. DNA는 우리 안에 ‘있는’ 역사요, 그럼에도 우리의\n주인이기도 한 역사이며, 우리 몸의 설계도이고, 우리가 자녀에게\n물려‘줄’ 것의 절대 권력자인데, 축복일 수 있는 선물이거나 치명\n적인 시한폭탄이다. 우리는 진정 이 역사의 특정 매개물이 우리\n안에 갇혀 있는 것과 마찬가지로 그것에 갇혀 있다.",
+"sol": "DNA를 생물학적 역사의 오래된 기록에 비유하여, 그 속에 세대\n를 거쳐 내려온 우리의 과거 및 현재의 유전적 특성, 즉 우리의 운명\n에 영향을 미치는 것이 담겨 있고 이는 우리의 자녀가 물려받을 것이\n라는 내용의 글이다. 따라서 밑줄 친 부분이 글에서 의미하는 바로\n가장 적절한 것은 ④ ‘우리는 DNA에 의해 형성되는데, 이는 우리\n의 특성과 운명에, 그리고 우리의 후손에게 영향을 미친다.’이다.\n① ‌\u0007우리는 역사, 언어, 도구를 발전시킴으로써 생물학을 넘어 진\n 화한다.\n② ‌\u0007역사는 우리가 전달하는 유전적 및 사회적 제약 속에서 반복된\n 다.\n③ ‌\u0007우리는 상호 의존 의식을 가진 사회적 존재로 태어나고 성장한다.\n⑤ 자연 선택을 통해, 종은 끝없는 적응의 순환 속에 갇힌다.",
+"struct": "■■But the statement is equally true if the word “people”\n is replaced with “all of life on Earth, present and\n past,” [for each strand of DNA, in each of our cells, is\n an ancient record of biological history, {written in\n simple code and passed down from generation to\n generation}].\n [ ]는 이유를 나타내는 절이고, 그 안의 { }는 an ancient\n record of biological history를 부가적으로 설명하는 분사\n 구이다.\n■■One could say [that DNA is nothing but history, one\nwith a physical manifestation {that was slowly\n blended and accumulated over countless eons by the\n most pitiless of all phenomena — natural selection}].\n [ ]는 say의 목적어 역할을 하는 명사절이고, 그 안의 { }는\n a physical manifestation을 수식하는 관계절이다.\n\n\n04"
+},
+{
+"ans": "③",
+"topic": "비판적 사고를 가로막는 두려움",
+"ko": "사람들은 게으름과 무능 같은 다양한 이유로 비판적으로\n사고하지 않을 수도 있지만, 두려움이 하나의 큰 이유다. 왜 그럴\n까? 사람들은 그것이 단지 어렵기 때문만이 아니라, 또한 자신들\n이 오랫동안 간직해 온 신념에 의문을 품게 할까 봐 두려워서 사\n고하기를 원치 않는다. 여러분의 학생들은 아마도 틀림없이 정치,\n윤리, 철학처럼 매우 논쟁의 여지가 있을 수 있는 것들에 대해 사\n고하고 싶어 할 수 있다. 하지만 훨씬 더 깊이 조사해 보라. 우리\n가 깊이 사고하기 시작하면 오랫동안 간직해 온 가정을 의심하게\n된다. 사고는 우리가 균형을 잃고 세상을 다른 방식으로 봐야 할\n까 봐 걱정하게 만든다. 우리는 자신과 다른 사람들의 생각에 신\n경을 쓰기 때문에 사고에 대해 걱정한다. 아무리 억지스러운 생각\n이라도 세상에 영향을 미친다. 비(非)유클리드 기하학과 기호 논\n리학은 거의 사고가 도달할 수 있는 한도만큼 추상적이라 하겠지\n만, 전자가 없으면 여러분은 아인슈타인의 중력을 이해할 수 없고\n후자가 없으면 컴퓨터를 실행할 수 없다. 사고는 우리, 다른 사람\n들, 그리고 우리가 사는 세상에 중요하다. 이것이 우리가 그것을\n그토록 두려워하는 하나의 이유인데, 그것은 우리를 송두리째 흔\n든다.",
+"sol": "사람들이 비판적으로 사고하는 것을 두려워하는 이유는, 깊이 있\n는 사고가 오랫동안 믿어 온 신념을 흔들고, 세상을 바라보는 방\n식을 바꾸게 만들 수 있기 때문이다. 즉, 비판적 사고는 고정 관념\n이나 기존의 세계관에 도전하며, 이로 인해 우리는 정서적으로 불\n안해지고 두려움을 느끼게 된다고 설명하고 있다. 따라서 밑줄 친\n부분이 글에서 의미하는 바로 가장 적절한 것은 ③ ‘세상에 대한\n우리의 이해를 형성하는 확립된 신념에 도전한다’이다.\n① ‌\u0007현실 세계 적용이 부족한 추상적인 이론을 받아들이도록 우리\n 에게 압력을 가한다\n② ‌\u0007우리가 오해받을까 두려워서 다른 사람들과 상대하는 것을 단\n 념하게 한다\n④ ‌\u0007우리에게 논리적 의사 결정을 방해하는 감정적 반응을 일으키\n 게 한다\n⑤ ‌\u0007우리가 오랫동안 가지고 있던 신념보다 다른 사람의 신념을 우\n\f\n 월한 것으로 여기게 한다",
+"struct": "■■People don’t want to think not just [because it’s\n hard], but also [because they’re afraid it will make\n them question their long-held beliefs].\n 두 개의 [ ]는 이유를 나타내는 부사절로, ‘~뿐 아니라 …도’라\n 는 의미의 「not just ~ but also ...」으로 연결되어 있다.\n■■Thought makes us [worry {that we’ll lose our balance\n and have to look at the world in a different way}].\n [ ]는 makes의 목적격 보어 역할을 하는 원형부정사구이고,\n 그 안의 { }는 worry의 목적어 역할을 하는 명사절이다."
+}
+],
+"4": [
+{
+"ans": "①",
+"topic": "스포츠 생태계에서의 협조적 경쟁",
+"ko": "스포츠 생태계는 존재하는 협조적 경쟁의 유형과 빈도에\n기반하여 존재한다. 협조적 경쟁은 ‘보다 높은 가치 창출을 위해\n전략적으로 중요한 자원을 활용하기 위한 기업 간의 협력과 경쟁\n의 동시적 추구’로 정의된다. 그것은 자원 효율성 목적을 위해 협\n력해야 하지만, 잠재적으로 서로 경쟁해야 하는 스포츠 사업체의\n역동적 특성을 이해하기 위한 유용한 방식이다. 이 특별한 관계는\n신뢰와 신용 문제가 최고이기 때문에 적절히 관리되어야 한다. 스\n포츠에서 협력적이면서 경쟁적인 것은 서로 다른 형태의 행동을\n수반하기 때문에 어려울 수 있다. 이는 각 활동에 두는 강조의 정\n도 면에서 주의 깊은 균형 잡기가 필요할 수도 있음을 의미한다.\n흔히 스포츠 관리자들은 성과의 이유로 더 경쟁적이고, 덜 협력적\n이려고 애쓸 것이다. 필요에 의해 그들은 정보를 공유해야 할 수\n도 있지만, 신중한 방식으로 그렇게 한다. 이는 둘을 동시에 추구\n하는 방법에 대한 계획을 준비해 두는 것이 더 나을 수도 있음을\n의미한다. 이렇게 함으로써 어느 하나가 다른 하나를 대가로 소홀\n히 다루어지지 않도록 확실히 할 것이다.",
+"sol": "",
+"struct": "■■This special relationship should be managed properly\n due to [trust and confidence issues being paramount].\n [ ]는 due to의 목적어 역할을 하는 동명사구이고, trust and\n confidence issues는 동명사구의 의미상 주어이다.\n■■This means [a careful balancing act may be required\n in terms of the amount of emphasis {placed on each\n activity}].\n [ ]는 means의 목적어 역할을 하는 명사절이고, 그 안의 { }\n 는 emphasis를 수식하는 분사구이다.\n\n\n\n 본문 28~31쪽"
+},
+{
+"ans": "②",
+"topic": "에너지 활용 지식의 축적을 통한 인류의 번영",
+"ko": "“정보는 먹을 수 없다.”라는 말이 있다. 그럴지도 모르지\n만, 오늘날 우리가 먹는 음식은 수천 년 동안 점점 더 양질이 된\n정보, 즉 어떤 씨앗, 어떤 도구를 어떻게 사용하고, 한 해 중 언\n제, 어떤 관개법, 같은 땅에 어떤 순서로 한 작물 다음에 다른 작\n물을 재배하는지와 같은 농사 지식의 결실이다. 우리가 먹는 것은\n태양 에너지로, 인간의 지식 렌즈를 통해 여과되고, 농축되고, 증\n류된다. 지구가 매년 태양으로부터 받는 에너지는 인류 문명 내내\n어느 정도 일정하게 유지되어 왔다. 우리를 번영하게 한 것은 그\n에너지의 계속 늘어나고는 있으나 여전히 극히 작은 일부분을 우\n리 몸에 연료를 공급할 수 있는 형태로 획득하는 방법에 대한 우\n리의 점점 더 정교해진 지식이다. 우리 지식의 진보에 있어서 모\n든 단계는 우리가 활용할 수 있는 에너지 양의 증가를 가져왔다.",
+"sol": "우리가 먹는 음식은 수천 년간 축적된 지식의 결실이자, 인간의\n지식을 통해 여과되고, 농축되고, 증류된 태양 에너지이고, 인류\n는 에너지를 활용하는 점점 더 정교한 지식을 발전시켜 번영했으\n며, 이는 우리가 활용할 수 있는 에너지의 양을 증가시켰다는 내\n용의 글이므로, 글의 요지로 가장 적절한 것은 ②이다.",
+"struct": "■■The energy [the Earth receives from the sun each\n year] has remained more or less constant through all\n of human civilization.\n [ ]는 The energy를 수식하는 관계절이다.\n■■[What’s allowed us to flourish] is our increasingly\n sophisticated knowledge of [how to capture an ever-\n growing but still tiny fraction of that energy in a form\n {that can fuel our bodies}].\n 첫 번째 [ ]는 문장의 주어 역할을 하는 명사절이고, 두 번째\n [ ]는 of의 목적어 역할을 하는 「의문사+ to부정사구」 구조의\n 명사구이며, 그 안의 { }는 a form을 수식하는 관계절이다.\n\n\n\n02"
+},
+{
+"ans": "④",
+"topic": "정보 민주화와 일반 시민의 언론인 역할",
+"ko": "전문 언론인들이 지역 사회에 점점 더 관여하는 것은 그\n자체로 뉴스를 모든 사람에게 더 관련성 있게 만드는 문제를 해결\n하지 못할 것인데, 전통적인 뉴스 기관들이 이미 많은 지역 사회\n를 버리고 떠나 뉴스 사막을 남겨두었기 때문이다. 그런 지역에서\n는 시민들이 정보를 찾아내고 권력층의 책임을 추궁하며, 그들 자\n신과 그들의 이웃을 위한 뉴스를 전달하는 책임을 맡아야 한다.\n컴퓨터와 인터넷에 의해 초래된 (기술) 격변을 통한 정보 민주화\n는 시민들이 이전에는 없었던 방식으로 지역 뉴스 통제권을 되찾\n도록 해주고, 그들이 발견하거나 안다고 생각하는 것의 수집과 전\n파에 대해 더욱 신중할 것을 요구한다. 언론은 아마도 전에 없이\n전문 언론인, 부유한 (신문) 발행인, 혹은 심지어 기업 주주들이\n아니라 일반 시민에게 속한다. 일반 시민에게로 권력의 균형을 이\n동시킨 그 동일한 기술이 그들에게 인근 지역 사회에 필수적인 정\n보의 방송사와 발행인 역할을 하는, 더 중요하게는 그들 주변의\n다른 사람들을 위한 정보 문지기 역할을 하는 도구를 제공한다.\n Culture Note\n■ \u0007news desert(뉴스 사막) 지역 신문, 방송사, 기타 뉴스 매체가 운\n 영을 축소하거나 폐쇄함에 따라 신뢰할 수 있고 포괄적인 지역 뉴스 보\n 도를 거의 또는 전혀 접할 수 없는 지역이나 지역 사회를 의미한다.",
+"sol": "전통적인 뉴스 기관들이 많은 지역 사회를 떠나면서 일반 시민이\n정보 수집, 권력 감시, 뉴스 전달의 책임을 맡아야 하는데, 일반\n시민의 이러한 언론인 역할은 기술 격변을 통한 정보의 민주화로\n인해 가능해지고 있다는 내용의 글이다. 따라서 글의 요지로 가장\n적절한 것은 ④이다.",
+"struct": "■■The democratization of information — through the\n disruptions caused by computers and the internet —\n allows citizens [to retake control of local news in\n ways {that never have existed before}], and it calls\n them to take greater care in the gathering and\n dissemination of [what they discover or think they\n know].\n 첫 번째 [ ]는 allows의 목적격 보어 역할을 하는 to부정사구\n 이고, 그 안의 { }는 ways를 수식하는 관계절이다. 두 번째\n [ ]는 of의 목적어 역할을 하는 명사절이다.\n■■[The same technology {that has shifted the balance of\n power toward the people}] gives them the tools [to act\n as broadcasters and publishers of information\n essential to their immediate community] — and, more\n critically, [to serve as gatekeepers to information for\n other people around them].\n 첫 번째 [ ]는 문장의 주어 역할을 하는 명사구이고, 그 안의\n { }는 The same technology를 수식하는 관계절이다. 두 번\n 째와 세 번째 [ ]는 and로 연결되어 the tools의 구체적인 내\n 용을 설명하는 to부정사구이다.\n\n\n\n03"
+},
+{
+"ans": "②",
+"topic": "과학적 검증을 통한 직관의 사실 확인",
+"ko": "모든 생각이, 심지어 객관적인 증거가 거의 없거나 전혀 없\n\f\n는 생각까지도, 똑같이 타당하다는 것은 근거 없는 믿음이다. 과학\n의 존재는 객관적 사실에 대한 전념이다. 결국 과학은 사실인데,\n불은 뜨겁고, 바퀴는 효율적이며, 새와 비행기는 날 수 있고, 우리\n는 혜성에 착륙했고 달까지 여행했으며, 항생제는 질병을 치료하\n고, 예방 접종은 우리가 병에 걸리지 않게 한다. 이러한 성과는 객\n관적인 사실에 의해 가능해진다. 그럴듯한 이론은 과학을 발전시\n킬 수 있으며, 실제로도 자주 그렇다. 그러나 직관은 그것의 진실\n성을 입증하거나 반증하는 검증이 반드시 뒤따라야 한다. 만약 어\n떤 이론이 반증된다면, 우리는 그것을 그 가설을 거부하거나 변경\n할 이유로 여겨야지, 본능적으로 그 가설에 집착한다는 이유로 그\n저 그것을 계속해서 굳게 고수하기 위한 구실로 삼아서는 안 된다.\n비판적 사고는 절대적으로 필요한 것이며, 우리는 증거를 존중해\n야 한다. 그것이야말로 누구나 현실에 관한 어떤 것도 신뢰할 수\n있는 유일한 이유이다. 검증과 증거가 없으면 직관은 유용하기는\n하지만, 절대로 최종적인 판정은 아니다.",
+"sol": "직관은 유용할 수는 있지만, 과학의 세계에서는 반드시 객관적인\n검증과 증거를 통해 그 타당성이 입증되어야만 사실로 받아들여\n질 수 있다는 내용의 글이므로, 글의 요지로 가장 적절한 것은 ②\n이다.",
+"struct": "■■It is a myth [that all ideas are equally valid, even\n those with little or no objective proof].\n It은 형식상의 주어이고, [ ]는 내용상의 주어이다. those는\n ideas를 대신한다.\n■■If a theory is disproved, one should consider it as a\n reason [to reject or alter the hypothesis], not a\n justification [to just keep firmly holding to the\n hypothesis {because you are instinctively wedded to\n it}].\n 두 개의 [ ]는 각각 a reason과 a justification의 구체적 내\n 용을 설명하는 to부정사구이고, 두 번째 [ ] 안의 { }는 이유\n 를 나타내는 부사절이다.\n\n\n\n04"
+},
+{
+"ans": "⑤",
+"topic": "불안을 공감과 연민으로 전환하기",
+"ko": "만약 여러분이 사회적 불안, 어색함, 또는 두려움을 겪고\n있다면, 그것은 지극히 정상적인 반응이라는 것을 알라. 그것이\n어떻게 보이든 간에, 많은 사람이 사회적 상황에서 내면의 불안을\n처리하고 있다. 하지만 실제로는 사회성 근육을 길러 그것을 인간\n관계를 향상하는 데 사용하는 것이 가능하며, 여러분의 불안은 여\n\f\n러분이 어떤 아이스브레이커(어색함을 푸는 말)와 생명선(큰 도\n움)을 건네야 다른 사람들이 고마워할지에 대한 단서를 여러분에\n게 제공하고 있다. 여러분이 불확실하거나 불안하다고 느끼는 부\n분에 대해 여러분의 불안이 여러분에게 신호하고 있는 것에 진정\n\n\n\n\n Part\n으로 귀를 기울이고, 같은 처지에 있을 수 있는 다른 사람들에게\n손을 내밀어 공감을 실천해 보라. 불안을 연민으로 바꾸는 것은\n\n\n\n\n I\n여러분 안에 내재하는 것임을 기억하라. 사실, 그것이 바로 여러\n분의 불안이 여러분을 위해 하도록 고안된 것이다. 한데 합쳐지\n\n\n\n\n 유형편\n면, 연민과 공감은 해로운 불안을 완화할 수 있다. 여러분은 여러\n분의 불안을 더 외부 지향적이 되도록 활용할 수 있다. 그 결과\n는? 여러분의 동료 인간, 다른 종들, 그리고 지구에 대한 연민의\n확산이다!",
+"sol": "사회적 상황에서 내면의 불안을 겪고 있다면, 그것은 정상적인 반\n응이며, 이러한 불안을 외향적으로 활용하여 공감과 연민으로 전\n환함으로써 다른 사람과의 관계를 향상할 수 있다는 내용이므로,\n글의 요지로 가장 적절한 것은 ⑤이다.",
+"struct": "■■But it is actually possible [to build your social muscle\n and use it to boost your connections] — and your\n anxiety is giving you clues to [what icebreakers and\n lifelines other people might be grateful for you to\n extend].\n it은 형식상의 주어이고, 첫 번째 [ ]는 내용상의 주어이다. 두\n 번째 [ ]는 to의 목적어 역할을 하는 명사절이다.\n■■Truly listen to [what your anxiety is signaling to you\n about {where you feel uncertain or insecure}], and\n practice empathy by offering a hand to others [who\n might be in the same boat].\n 첫 번째 [ ]는 to의 목적어 역할을 하는 명사절이고, 그 안의\n { }는 about의 목적어 역할을 하는 명사절이다. 두 번째 [ ]\n 는 others를 수식하는 관계절이다."
+}
+],
+"5": [
+{
+"ans": "②",
+"topic": "현대 음악 작사가가 언어 및 문학 발전에 미친 영향",
+"ko": "문학 연구는 현대 음악 작사가들의 영향과 그들이 언어의\n발전에 기여한 바를 인식하는 데 계속적으로 실패해 왔다. 특히\n어휘와 문법 구조에서 영어의 발전을 이끌었다고 연구되고 기려\n져 온 셰익스피어와 달리, 현대 작사가들은 그들의 기여가 인정되\n는 데 제약을 겪어 왔고 대체로 무시당해 왔다. 지난 한 세기 동안\n우리는 이 예술가들에 의한 엄청난 문학 작품의 폭발적 증가를 목\n격해 왔는데, 그들은 음악을 통해 언어적 조작과 스토리텔링을 사\n용하여 우리의 언어와 문학을 풍요롭게 했다. 독특하고 복잡한 심\n상을 담은 가사를 만들어 내며, 작사가들은 우리의 언어에 엄청난\n문학적 영향을 미쳐 왔다. 현대 언어 발전에 미친 영향을 포함하\n여 그들의 훌륭한 작품은 현대 문학 분야에서 인정받아야 한다.",
+"sol": "",
+"struct": "■■Over the past century, we have witnessed an explosion\n of incredible literary works by these artists, [who,\n through their music, have used linguistic manipulation\n and storytelling {to enrich our language and\n literature}].\n [ ]는 these artists를 부가적으로 설명하는 관계절이고, 그\n 안의 { }는 결과를 나타내는 to부정사구이다.\n■■[Producing lyrics of distinct and complex imagery],\n songwriters have had an incredible literary impact on\n our language.\n [ ]는 주어인 songwriters를 부가적으로 설명하는 분사구문\n 이다.\n\n\n\n\n 본문 34~37쪽"
+},
+{
+"ans": "⑤",
+"topic": "큰 위기에 대처하는 방법",
+"ko": "가령 대침체 같은 오늘날의 많은 위기는 통제는 고사하고\n완전히 이해하기에도 정녕 너무 크고 너무 압도적이다. 이러한 종\n류의 위기는 그것을 극복하는 여러분의 능력을 방해하는 파괴적인\n반응으로 여러분을 쉽게 집어삼킬 수 있는, 정확히 그런 류이다.\n이렇게 너무 큰 위기에 집중하는 것은 여러분이 겪을 자연스러운\n심리적, 정서적, 신체적 반응을 악화할 것이다. 이런 종류의 위기\n상황에서, 여러분의 최선의 방법은 여러분의 통제력 내에 있는 그\n측면들을 파악하는 것이다. 그런 다음, 여러분은 더 큰 위기를 여\n러분이 에너지를 그쪽으로 향하게 해 해결책을 찾을 수 있는 더 작\n고 더 감당할 수 있는 문제들로 나눌 수 있다. 예를 들어 대침체를\n돌이켜 보라. 어쩌면 경제 정책에 영향을 미칠 능력은 없었겠지만,\n여러분은 투자 분포를 재검토하고 더 다양한 포트폴리오를 구성하\n기로 선택할 수는 있었다.\n Culture Note\n■ \u0007Great Recession(대침체) 2007년 후반부터 2009년 중반까지\n 전 세계 경제에서 발생한 시장 침체 기간을 나타낸다. 미국의 서브프라임\n 모기지 사태가 미국의 주택 시장뿐만 아니라 전 세계 금융에 불러일으킨\n 위기를 말한다.",
+"sol": "위기의 전모를 이해하거나 통제하기 어려울수록, 자신이 통제할\n수 있는 부분을 파악하고, 작은 문제로 나누어 이를 하나씩 해결하\n려는 노력이 중요하다는 내용이므로, 필자가 주장하는 바로 가장\n적절한 것은 ⑤이다.",
+"struct": "■■Crises of this ilk are precisely the kind [that can easily\n engulf you with destructive reactions {that interfere\n with your ability to overcome them}].\n [ ]는 the kind 를 수식하는 관계절이고, 그 안의 { }는\n destructive reactions를 수식하는 관계절이다.\n■■[Focusing on these oversized crises] will exacerbate\n the natural psychological, emotional, and physical\n reactions [you are going to experience].\n 첫 번째 [ ]는 문장의 주어 역할을 하는 동명사구이고, 두 번\n 째 [ ]는 the natural psychological, emotional, and\n physical reactions를 수식하는 관계절이다.\n\n\n\n02"
+},
+{
+"ans": "②",
+"topic": "건강 및 영양 정보의 올바른 출처",
+"ko": "소비자 조사는 미국인 대부분(91%)이 자신의 건강을 어\n느 정도 통제한다고 믿으며, 72%는 식품과 영양이 가장 중요한\n역할을 한다고 믿는다는 것을 보여준다. 그러나 소비자의 75%는\n건강과 영양 정보의 주요 출처로 인터넷을 포함한 매스컴에 의존\n\f\n하고 있으며, 오직 절반만이 의학적 출처를 이용한다. ‘영양 리스\n트서브’를 구글에서 검색한 결과 10만 개가 넘는 사이트가 나왔지\n만, 이 글 중 많은 수는 영양 전문가들에 의해 검토되지 않았을 가\n능성이 있다. 약초, 약물, 건강 기기를 판매하는 인터넷 사이트는\n정부 규제 기관의 감시를 받지 않으며, 흔히 오해의 소지가 있는\n정보를 담고 있다. 평판이 좋은 식품 회사는 자사 제품의 영양 성\n분에 대해 도움이 되는 사실을 제공하지만, 판매에 전념하는 상업\n적 사이트는 흔히 오해의 소지가 있는 건강 관련 주장을 게시한\n다. 정부 기관, 대학, 주 확장 서비스, 의료 시설이 운영하는 인터\n넷 사이트는 증거 기반의 정보를 제공하며, 식품, 영양, 건강에 관\n한 공적 정보의 첫 번째 출처가 되어야 한다.\n Culture Note\n■ \u0007state extension service(주 확장 서비스) 미국의 각 주에서\n 지원하는 사회교육 프로그램으로, 지역 주민들에게 연구에 기반한 지식\n 을 보급하여 삶의 질을 높이는 것을 목표로 한다.",
+"sol": "소비자가 건강과 영양에 관심이 많지만, 신뢰할 수 없는 인터넷\n정보에 의존하는 경향이 있으므로, 공신력 있는 기관이 제공하는\n증거에 기반한 정보를 우선으로 활용해야 한다는 내용의 글이다.\n따라서 필자가 주장하는 바로 가장 적절한 것은 ②이다.",
+"struct": "■■Consumer surveys indicate [that {the majority of\n Americans (91%) believe they have some control over\n their health}, and {72% believe that food and nutrition\n play the greatest role}].\n [ ]는 indicate의 목적어 역할을 하는 명사절이고, 그 안에서\n 두 개의 { }가 and로 연결되어 있다.\n■■Internet sites [maintained by government agencies,\n universities, state extension services, and medical\n facilities] [provide evidence-based information] and\n [should be the first source for public information on\n foods, nutrition, and health].\n 첫 번째 [ ]는 Internet sites를 수식하는 분사구이고, 두 번\n 째와 세 번째 [ ]는 and로 연결되어 문장의 술어 역할을 한다.\n\n\n\n03"
+},
+{
+"ans": "①",
+"topic": "섬기는 리더십",
+"ko": "내 사업 동업자인 Charles와 나는 섬기는 리더의 업무 수\n행 방식을 받아들였다. 다시 말해, 그 어떤 것도 우리보다 아래에\n있는 것은 없었다. 우리는 솔선수범하여 일을 했다. 누구든 새로\n운 영업사원이 매장에 들어오면 그는 주위를 둘러보다가\n\f\nCharles가 바닥 어느 구석을 닦고 있고 내가 밀가루를 뒤집어쓰\n고 있는 것을 알아차리고는 의사 결정권자가 없다고 생각하곤 했\n다. 그러면 그는 자신이 팔려는 어떤 물건이든 나에게 건네며 “이\n것을 사장님께 전해 주시겠습니까?”라고 말하곤 했다. 자, 그런\n\n\n\n\n Part\n데, 만약 Charles와 내가 제빵실에 너무 오래 머물렀다면 성장하\n고 확장할 수 없었을 것이므로, 영원히 바닥을 쓸고 있어야 한다\n\n\n\n\n I\n고 말하고 있는 것은 아니다. 그것은 오히려 중요한 것을 몸소 보\n여주는 것에 관한 것이다. 청결과 세세한 부분이 중요하다면, 여\n\n\n\n\n 유형편\n러분이 그 일을 하고 협력하는 것을 마다하지 말라. 업무 공간에\n들어가서 어떻게 도울 수 있는지 물어보라. 팀이 어려움에 처해\n있는 것이 분명하다면 묻지 말고 뛰어들어라.",
+"sol": "리더가 솔선수범하여, 조직에 필요한 일이 있을 때 먼저 나서서\n행동함으로써 중요한 것을 몸소 보여주는 것이 중요하다는 내용\n의 글이므로, 필자가 주장하는 바로 가장 적절한 것은 ①이다.",
+"struct": "■■When any new salesman came into the store, he\n would [look around], [notice Charles polishing some\n corner of the floor and me covered in flour], and\n [assume {the decision-maker was not present}].\n 세 개의 [ ]는 and로 연결되어 would에 이어져 주절의 술어\n 를 이룬다. 세 번째 [ ] 안의 { }는 assume의 목적어 역할을\n 하는 명사절이다.\n■■If cleanliness and details are important, be sure [you\n aren’t above {doing the work} and {pitching in}].\n [ ]는 sure의 의미를 보충하는 절이고, 그 안의 두 개의 { }는\n above의 목적어이다.\n\n\n\n04"
+},
+{
+"ans": "①",
+"topic": "운동 외 시간에 느린 호흡 연습의 필요성",
+"ko": "훈련과 경기는 자연스럽게 호흡이 빨라지게 하는데, 이는\n교감 신경계를 활성화한다. 운동 중일 때, 이는 운동선수가 아드\n레날린을 분비하고 고조된 상태에서 경기하고 훈련하기를 원하기\n때문에 수용 가능하다. 그러나 운동선수가 스포츠에서 겪는 급격\n한 교감 활동으로부터 정신적으로, 신체적으로 속도를 줄이는 방\n법을 배워 경기 외의 상황에서 교감 활동을 줄이고 투쟁/도피 상\n태를 해결하기 위해 자신의 주의력을 느린 호흡에 집중하는 것이\n그에 못지않게 중요하다. Feinstein Institutes 연구에서, 참가\n자들은 자신의 호흡 속도를 사용하여 뇌의 특정 부위를 활성화할\n수 있었다. 운동 영역에서 이것은 운동선수가 호흡 속도를 사용하\n여 고조 상태를 관리할 수 있다는 것을 의미한다. 훈련과 경기 중\n에는, 아드레날린의 유입과 더불어 호흡 속도가 증가하는데, 운동\n선수는 적응하고 회복할 수 있도록 이를 조절할 수 있어야 한다.\n한 가지 방법은 훈련과 경기 외에서 더 느린 호흡 지침을 연습하는\n것이다.",
+"sol": "훈련과 경기 중에 운동선수는 교감 신경계 활성화에 따라 고조 상\n태에서 호흡이 빨라지는데, 이때 적응력과 회복력을 확보할 수 있\n도록 운동 외 시간에 느린 호흡을 연습하여 교감 신경 활동을 줄여\n야 한다는 내용이므로, 필자가 주장하는 바로 가장 적절한 것은 ①\n이다.",
+"struct": "■■However, it is equally important [for an athlete to\n learn how to mentally and physically downshift from\n the acute sympathetic activity {experienced in sport},\n and outside of performance focus their attention on\n slow breathing to reduce the sympathetic activity and\n resolve the fight-or-flight state].\n it은 형식상의 주어이고, [ ]는 내용상의 주어이며, for an\n athlete은 to부정사구의 의미상 주어를 나타낸다. [ ] 안의\n { }는 the acute sympathetic activity를 수식하는 분사구\n 이다.\n■■One way is [to practice slower breathing protocols\n outside of training and competition].\n [ ]는 is의 주격 보어 역할을 하는 to부정사구이다."
+}
+],
+"6": [
+{
+"ans": "③",
+"topic": "대중교통에서의 운행 빈도",
+"ko": "‘빈도보다 속도’를 강조하는 것은, 가장 붐비는 시간대에만\n운행하는 통근 서비스와 수요가 적은 아주 긴 거리의 운행을 포함\n하여, 모든 사람이 시간표에 맞춰 계획을 짜야 하는 상황에서는\n타당할 수 있다. 그러나 그 외의 모든 다른 상황에서, 그것은 운전\n자의 흔한 오류인 것으로 보인다. 도로는 항상 거기에 존재하기\n에, 그것(도로)의 속도가 그것을 구분 짓는 가장 중요한 사실이다.\n하지만 대중교통은 그것(대중교통)이 곧 도착하는 경우에만 거기\n에 존재한다. 만약에 여러분이 차가 있다면 여러분은 원하는 어느\n때든지 도로를 이용해 그것의 속도를 경험할 수 있다. 그러나 대\n중교통은 여러분이 그것을 필요로 할 때 존재해야 하고(운행 시간\n대의 범위), 그것은 곧 도착해야 한다(운행 빈도). 그렇지 않으면,\n기다림으로 인해 빠른 서비스로 절약된 시간이 모두 없어져 버릴\n것이다. 여러분이 특정한 운행 일정에 맞춰 삶을 계획하는 것이\n편안하지 않다면, 속도는 빈도 없이는 가치가 없으므로, 속도에\n대해선 소리치고(강조하고) 빈도에 대해선 속삭이는(드러내지 않\n는) 교통 지도는 단지 혼란을 심어줄 수도 있다.",
+"sol": "",
+"struct": "■■[Emphasizing speed over frequency] can make sense\n in contexts [where everyone is expected to plan\n around the timetable, including peak-only commute\n services and very long trips with low demand].\n 첫 번째 [ ]는 주어 역할을 하는 동명사구이고, 두 번째 [ ]는\n contexts를 수식하는 관계절이다.\n■■[Unless you’re comfortable planning your life around\n a particular scheduled trip], speed is worthless without\n frequency, so a transit map [that screams about speed\n and whispers about frequency] may simply be\n planting confusion.\n 첫 번째 [ ]는 조건을 나타내는 부사절이고, 두 번째 [ ]는 a\n transit map를 수식하는 관계절이다.\n\f\n 본문 40~43쪽"
+},
+{
+"ans": "②",
+"topic": "적극적 민주주의에서 투표권의 기준",
+"ko": "미국에서 외국인이 투표할 수 있도록 허용하는 관행은 배\n타적 시민권 개념과 양립될 수 있는 것으로 여겨질 수 있지만, 그\n것은 유지하기 어려운 균형이다. 만약 모든 권리 중에서 투표권이\n비시민의 손에 있다면, 왜 그들이 시민으로 인정되지 않아야 하\n며, 왜 거주 외국인과 시민의 완전한 구분이 폐지되지 않아야 하\n는가? 실제로, 이 생각과 같은 뭔가가 아마도 외국인 투표 폐지의\n배경에 있었을 텐데, 1920년 이후 성인 시민에게 보통 선거권이\n주어지면서 배타적 형태의 시민권을 유지하는 유일한 방법은 투\n표권을 시민으로 제한하고 거주자에게는 그러지 않는 것이었다.\n그러나 어떤 ‘적극적’ 민주주의 이론도 이 구분을 지지할 수 없는\n데, 우리의 공동생활에 관한 법은 그것에 참여하고 있는 모든 사\n람에 의해 만들어져야 하고, 거주는 누군가가 참여하고 있는지에\n대한 유일하게 설득력 있는 기준이며, 이는 지방 정부에서 어떤\n시민이 발언권을 가져야 할지에 관한 문제에 있어서 거의 보편적\n으로 이해되는 것과 마찬가지이다.",
+"sol": "적극적 민주주의 이론의 관점에서, 공동생활에 관해서라면 거주\n외국인이든 시민권 소유자이든 모두 의사 결정에 참여할 권리가\n있다는, 즉, 외국인 거주자도 거주를 이유로 투표권을 가져야 한\n다는 내용이므로, 글의 주제로 가장 적절한 것은 ② ‘진정한 민주\n주의를 위해 모든 거주민을 투표에 포함할 필요성’이다.\n① 시민이 가져야 할 정치적 권리에 관한 일반적인 견해\n③ 민주주의에서 충분히 대표되는 후보자를 선출하는 것의 중요성\n④ 의사 결정 과정에 거주민 참여를 촉진하는 것의 어려움\n⑤ 다양한 이익을 충족하면서 정치적 안정을 유지하는 방법",
+"struct": "■■~: with universal adult citizen suffrage after 1920, the\n only way [to maintain an exclusionary kind of\n citizenship] was [to restrict the vote to citizens and\n not residents].\n 첫 번째 [ ]는 the only way의 구체적인 내용을 설명하는 to\n 부정사구이고, 두 번째 [ ]는 was의 주격 보어 역할을 하는 to\n 부정사구이다.\n■■~: the laws concerning our common life must be made\n by all those [who are taking part in it], and residence\n is the only convincing test of [whether someone is\n taking part] — as is understood almost universally\n when it comes to questions of [which citizens should\n\f\n have a voice in local government].\n 첫 번째 [ ]는 all those를 수식하는 관계절이고, 두 번째와\n 세 번째 [ ]는 각각 of의 목적어 역할을 하는 명사절이다.\n\n\n\n\n Part"
+},
+{
+"ans": "⑤",
+"topic": "위치에 따른 물체의 다양한 해석 가능성\n\n\n\n\n 유형편",
+"ko": "사람들은 미술관 벽에 걸려 있는 어떤 그림이든 그것이 ‘무\n엇’을 의미하는지 질문을 받을 때면, 대부분의 추상 표현주의 그\n림이 그러하듯, 그것이 아무리 이상하게 보일 수 있더라도 그것이\n미술관에 ‘있기’ 때문에 그 그림 안에서 의미를 찾는 경향이 있다.\n도시 거리에 버려져 발견된 탄산음료 캔을 생각해 보라. 만약 우\n리가 거리에서 이 물건을 우연히 보게 된다면, 우리는 의심할 여\n지 없이 그것을 쓰레기 조각이나 폐품으로 볼 것이다. 하지만 우\n리는 똑같은 바로 그 물체가 받침대 위에 놓여 있는 것을 보게 되\n는데, (그것이) 미술관에 전시되어 있고, 어떤 예술가의 서명이 있\n으며, ‘폐기물’과 같은 제목이 붙어 있다면, 그땐 그것의 의미를 매\n우 다른 방식으로 해석할 것이다. 실제로 우리는 그것을 예술 형\n태로 해석하는 경향이 있을 것이고, 낭비적인 또는 물질주의적인\n사회를 발견하게 될 것이다. 분명히 그 캔이 인도 위에 놓여 있는\n지 아니면 미술관의 받침대 위에 전시되어 있는지는 우리가 그것\n을 해석하는 방식에 영향을 미칠 것이다.",
+"sol": "같은 물체라도 미술관에 전시되면 예술로 해석되고, 거리에서 발\n견되면 쓰레기로 인식된다는 사례를 통해, 물체의 의미가 그것이\n놓인 장소에 따라 달라질 수 있음을 설명하는 글이다. 따라서 글\n의 주제로 가장 적절한 것은 ⑤ ‘위치하고 있는 곳에 따른 물체에\n관한 다양한 해석’이다.\n① 예술 운동의 변화가 예술 감상에 영향을 미치는 방식\n② 무용지물로 보이는 재료를 재활용하는 신흥 예술 형태\n③ 도시 지역 오염원으로 여겨지는 거리에서의 예술가들의 활동\n④ 예술가의 명성이 미술관 전시 결정에 미치는 영향",
+"struct": "■■But if we saw the very same object on a pedestal,\n [displayed in an art gallery], [signed by some artist],\n and [given a title such as “Waste,”] then we would\n interpret its meaning in a vastly different way.\n 세 개의 [ ]는 and로 연결되어 the very same object on a\n pedestal을 부가적으로 설명하는 분사구이다.\n■■Clearly, the can’s location on a sidewalk versus its\n display on a pedestal in an art gallery will influence\n [how we will interpret it].\n[ ]는 influence의 목적어 역할을 하는 명사절이다.\n\n\n03"
+},
+{
+"ans": "④",
+"topic": "인간의 인지에 대한 컴퓨터 모델의 한계",
+"ko": "인간 마음의 작용을 설명하는 모델로 컴퓨터에 의존하는\n것은 아마도 과거 행동주의에 매료되었던 것만큼이나 제한적임이\n드러날 것이다. 심리학자들은 이미 마음을 컴퓨터로 비유하는 것\n의 결함을 인식하기 시작했다. 일부는 어떤 특정 개인이 세상을\n이해하도록 돕는, 그 개인의 두뇌 밖에 존재하는 요인들을 이해하\n는 하나의 방법으로 문화 인류학에 눈을 돌렸다. 인지 심리학의\n창시자 중 한 명인 Jerome Bruner와 같은 다른 이들은 컴퓨터\n에 비유하는 방식이 “의미의 ‘구성’에서 정보의 ‘처리’로”라는 불행\n한 전환을 수반한다고 본다. 기계 모델의 한계에 대한 Bruner의\n성찰은 그를 인간의 인지를 이해하는 데 필수적인 요인으로서 이\n야기와 스토리텔링에 대한 인본주의적 강조로 돌아가도록 이끄는\n데, 이는 우리가 사고하는 방식에 대한 안내자로서 컴퓨터가 지닌\n힘과 한계를 모두 드러내는 흥미로운 지적 여정이다.",
+"sol": "인간의 마음을 컴퓨터에 비유하는 것은 인간의 인지를 이해하는\n데 한계가 있어, 문화 인류학과 인본주의적 접근이 그 대안이 될\n수 있다는 내용이므로, 글의 주제로 가장 적절한 것은 ④ ‘컴퓨터\n모델을 넘어서는 인간의 인지에 대한 대안적 관점’이다.\n① 인간이 사고하는 방식과 컴퓨터가 작동하는 방식 사이의 유사성\n② 개인이 세상을 이해하는 방식에 영향을 미치는 다양한 요인들\n③ 인간의 마음을 논할 때 컴퓨터 비유를 사용하는 이유\n⑤ 컴퓨터 기반 사고 모델의 정확성을 높이는 기술",
+"struct": "■■Some have turned to cultural anthropology as a way\n of understanding the factors outside any particular\n individual’s brain [that help the individual {make\n sense out of the world}].\n [ ]는 the factors outside any particular individual’s\n brain을 수식하는 관계절이고, 그 안의 { }는 help의 목적격\n 보어 역할을 하는 원형부정사구이다.\n■■Others, such as Jerome Bruner, [one of the founders\n of cognitive psychology], find [that the computer\n analogy carries with it an unfortunate shift “from the\n construction of meaning to the processing of\n information.”]\n 첫 번째 [ ]는 Jerome Bruner와 동격 관계이고, 두 번째 [ ]\n 는 find의 목적어 역할을 하는 명사절이다.\n04"
+},
+{
+"ans": "④",
+"topic": "문학이 활성화하는 상상력",
+"ko": "문학을 읽는 것이 다른 삶, 다른 장소, 다른 시대와의 대리\n적 동일시와 비교를 통해 제공하는 도피 속에서, 우리는 상상력,\n즉 현재 우리의 환경 밖에 있고 심지어 실제가 아닐 수도 있는 일\n단의 대안적 개념과 경험을 탐색할 수 있는, 인간에게만 고유한\n그 능력을 활성화한다. 외부 세계로부터 빛, 소리, 형태 같은 정보\n를 받아들이고 처리하여, 노을, 교향곡, 집 같이 그것에서 의미를\n찾는 지각과 반대로, 상상에서는 그 과정이 역전된다. 우리가 읽\n는 단어를 그것이 의미하는 것으로 바꾸면서, 우리는 심상이 기억\n으로부터 창조되는 내적 세계에 산다. 예를 들어, 우리는 ‘집’이라\n는 단어를 읽고, 기억 속에서 집에 대한 표상을 떠올린다. 문학이\n활성화하는 것은 바로 우리의 상상력, 즉 지각과 기억의 복잡한\n얽힘인데, 이는 즐거움을 주는 잠재적 창의성을 일깨워 준다. 작\n가는 청사진을 제공할 수는 있지만, 문학의 많은 방을 짓는 것은\n독자이며, 만족감을 주는 다른 어떤 활동과 마찬가지로, 문학은\n우리의 상상력과 창의력을 만족시킨다.",
+"sol": "문학을 읽는 것은 다른 삶이나 시대와의 대리적 동일시와 비교를\n통해 상상력을 자극하며, 지각과 기억이 상호 작용하는 내적 세계\n에서 독자가 창의적으로 의미를 구성하면서 즐거움을 얻는다는\n내용이므로, 글의 주제로 가장 적절한 것은 ④ ‘문학적 경험이 부\n여하는 상상력의 즐거움’이다.\n① 언어가 서사 구조에 미치는 영향\n② 문학의 역사적 진실 보존 역할\n③ 문학에서 상상력과 사실주의의 충돌\n⑤ 문학 분석에서 상상력에 대한 논리의 우위",
+"struct": "■■In the escape [that reading literature provides through\n vicarious identification and comparison with other\n lives, places, and times], we activate our imagination,\n [that uniquely human ability {to explore an alternative\n set of ideas and experiences < that are outside our\n present environment > and < that may not even be\n real>}].\n 첫 번째 [ ]는 the escape를 수식하는 관계절이고, 두 번째\n [ ]는 our imagination과 동격 관계이다. 두 번째 [ ] 안의\n { }는 that uniquely human ability의 구체적 내용을 설명\n 하는 to부정사구이고, 그 안의 두 개의 < >는 an alternative\n set of ideas and experiences를 수식하는 관계절이다.\n■■It is [our imagination, {the complex interweaving of\n perception and memory}] that literature activates,\n\f\n[releasing a latent creativity that pleases].\n첫 번째 [ ]는 It is와 that 사이에 놓여 그 의미가 강조되고 있\n고, 그 안의 { }는 our imagination과 동격 관계이다. 두 번\n째 [ ]는 앞 절의 내용을 부가적으로 설명하는 분사구문이다."
+}
+],
+"7": [
+{
+"ans": "②",
+"topic": "문화적 요소와 엔터테인먼트가 결합한 컬처테인먼트",
+"ko": "컬처테인먼트의 경제적 이점은 정치인과 정책 입안자에게\n동등하게 매력적이다. 관련 상품과 서비스(여행, 숙박, 소매)에 대\n한 수요와 더불어 국내 유입 방문객 수의 증가 가능성은 정부 및\n관련 기관 사람들이 축제와 기념행사를 더 크고 더 이목을 끄는\n행사로 발전시키기 위해 문화 단체와 협력하게 하는 장려책이 된\n다. 하지만 그와 같은 상업화는 컬처테인먼트가 동종화하고 그것\n의 원래의 ‘메시지’를 잃어버려 관객의 희석화를 초래할 수도 있는\n위험이 있다. 이것은 또한 관객을 더욱 분산시키는 역할만 할 더\n소규모의 비상업적 독립 행사가 생겨나는 것으로 이어질 수 있다.\n이것은 계획자와 이해관계자가 잠재적인 재정적 이익에 맞서 균\n형을 맞춰야 할 필요가 있는 일이다. 정치적, 사회적, 종교적 경관\n을 바꾸는 것은 새로운 문화의 출현 및 그와 더불어 새로운 컬처\n테인먼트 경험의 출현을 이끌 것이다. 전반적으로 이것은 엔터테\n인먼트 산업의 건전한 성장 영역이지만, 바로 그 본질상 착취와\n마주하는 경우엔 취약한 영역이기도 하다.",
+"sol": "",
+"struct": "■■A potential increase in inbound visitor numbers\n [coupled with their demand for related goods and\n services (travel, accommodation, retail)] is an\n incentive for those within governments and authorities\n to work with cultural groups [in order to develop\n celebrations and commemorations into larger and\n more high-profile events].\n 첫 번째 [ ]는 A potential increase in inbound visitor\n numbers를 수식하는 분사구이고, 두 번째 [ ]는 목적을 나타\n 내는 to부정사구이다.\n■■This could also lead to [smaller non-commercial\n independent events being set up {that would only\n serve to divide audiences further}].\n [ ]는 to의 목적어 역할을 하는 동명사구이고, smaller non-\n commercial independent events는 동명사구의 의미상 주\n 어이며, 그 안의 { }는 s m a l l e r n o n - c o m m e r c i a l\n independent events를 수식하는 관계절이다."
+},
+{
+"ans": "⑤",
+"topic": "전문가 수준이 되기 위해 필요한 것",
+"ko": "여러분은 아마도 어떤 것에든, 예컨대 악기, 스포츠, 체스,\n요리, 또는 외국어 같은 것에 전문가가 되기 위해서라면, 약 1만\n시간의 연습이 필요하다는 말을 들어보았을 것이다. 이 주제에 관\n한 K. Anders Ericsson의 연구는 여러 글에서 다루어졌으며,\nMalcolm Gladwell이 자신의 베스트셀러 Outliers에서 이를\n설명하면서 더욱더 유명해졌다. 하지만, 최근에 한 연구자 집단이\n이 1만 시간이라는 수치 뒤에 있는 연구와 조사를 다시 검토했고,\n상당히 극적이게도, 1만 시간 법칙은 완전히 터무니없는 주장이\n라고 말했다. 구체적으로 말하면, 1만 시간에 대해 특별히 대단한\n것은 전혀 없으며, 연습이 수행력을 높이는 데 분명히 중요하긴\n하지만, 다른 요인이 훨씬 더 중요한 역할을 할지도 모른다. 전문\n가 수준의 수행력에 도달하게 하는 그 밖의 요인은 무엇일까? 순\n수한 타고난 재능? 지능? 운수? 인내심? 노력? 그렇다, 이 모든\n것이 작용할 수 있으며… 그 외에도 더 많은 것이 있다. 나이, 경\n험, 환경이 모두 어떤 역할을 한다. 즉, 어떤 것에 대한 숙달이나\n최적의 수행력을 예측하거나 보장할 수 있는 단 하나의 확실한 요\n인은 존재하지 않는다.",
+"sol": "특정 분야에서 숙달된 전문가가 되기 위해서는 1만 시간의 연습\n이 필요하다고 말하지만, 실제로 전문가 수준의 수행력에 도달하\n기 위해서는 많은 연습 이외에도 다른 여러 가지 요인이 필요하다\n는 내용이므로, 글의 제목으로 가장 적절한 것은 ⑤ ‘10,000시간\n신화: 숙련은 연습 이상의 것을 요구한다’이다.\n① 연습이 완벽을 만든다: 그것이 필요한 전부이다\n② 군중을 따르라: 대중의 믿음 속에 진실이 있다\n③ 위대할 운명으로 태어난: 타고난 재능이 노력을 이기는 이유\n④ 천재성 발휘하기: 운보다 지능이 더 중요하다!",
+"struct": "■■You’ve probably heard [that it takes about ten\n thousand hours of practice {to become an expert in\n anything — a musical instrument, a sport, chess,\n cooking, or a foreign language}].\n [ ]는 heard의 목적어 역할을 하는 명사절이고, 그 안의 it은\n 형식상의 주어이며, { }는 내용상의 주어이다.\n■■In other words, there’s no one certain factor [that can\n predict or ensure mastery or optimal performance of\n anything].\n [ ]는 one certain factor를 수식하는 관계절이다.\n02"
+},
+{
+"ans": "①",
+"topic": "상대방의 우선순위를 고려한 협상 전략",
+"ko": "구소련에서 미국의 한 유명 음료 회사가 병입 공장과 유통\n망을 구축하고자 했다. 당시 구소련의 지배적인 이데올로기는 개\n인 대비 집단의 중요성과 소비재를 희생해서라도 산업 역량을 개\n발할 필요성을 강조했다. 탄산음료는 그 나라의 이념적 우선순위\n와 거의 들어맞지 않는 것처럼 보였다. 실제로 한 정부 관계자는\n그 제품을 ‘쓸모없는 음료’라고 일축했다. 결국 양측은 협상을 타\n결했지만, 그 음료가 현지 주민들의 갈증을 풀어주리라는 것에 기\n반한 것이 아니었다. 대신, 미국 협상가들은 그 프로젝트가 그 나\n라의 산업 발전에 기여할 것이라는 이유로 그것을 정당화했다. 그\n들은 그 프로젝트가 현지 노동자와 관리자를 위한 집중적인 교육\n구성 요소, 게다가 음료의 일부 재료를 재배할 농장도 포함하도록\n재구성했다. 또한 그 회사는 다른 미국 기업들에도 그 나라에 투\n자를 고려하도록 설득하는 노력을 하겠다고 약속했다.",
+"sol": "미국의 한 음료 회사가 구소련에 병입 공장과 유통망을 구축하기\n위해 협상을 하면서 구소련의 이념적, 경제적 우선순위를 고려해\n단순한 제품 판매가 아닌 산업 발전 기여라는 명분으로 접근했다\n는 내용이므로, 글의 제목으로 가장 적절한 것은 ① ‘상대방의 등\n을 긁어주면 거래를 얻는다’이다.\n② 한 음료 회사가 소련의 이데올로기를 바꾼 방법\n③ 미국 상품: 냉전 시대의 문화적 상징\n④ 상대의 입장에서 생각하면 용서가 더 쉬워진다\n⑤ 중간은 없다: 승리하는 결과를 위한 협상 전략",
+"struct": "■■The prevailing ideology in the old Soviet Union at the\n time stressed [the importance of the group over the\n individual] and [the need {to develop industrial\n capacity at the expense of consumer goods}].\n 두 개의 [ ]는 and로 연결되어 stressed의 목적어 역할을 하\n 는 명사구이고, 두 번째 [ ] 안의 { }는 the need의 구체적\n 내용을 설명하는 to부정사구이다.\n■■In addition, the company promised to make efforts [to\n persuade other American companies {to consider\n investments in the country}].\n [ ]는 efforts의 구체적 내용을 설명하는 to부정사구이고, 그\n 안의 { }는 persuade의 목적격 보어 역할을 하는 to부정사구\n 이다.\n\f\n03"
+},
+{
+"ans": "④",
+"topic": "컴퓨터 건축 설계 도입이 초래한 결과",
+"ko": "2012년, 예일대학교 건축대학원은 ‘제도는 죽었는가?’라\n는 학술 토론회를 개최했다. 이 대담한 제목은 건축가의 손으로만\n그린 스케치가 컴퓨터에 의해 대체되고 있다는 인식이 커지고 있\n음을 반영한다. 많은 건축가들은 스케치북에서 스크린으로의 전\n환이 창의성과 모험심의 상실을 수반한다고 믿는다. 컴퓨터로 작\n업하는 설계자는 화면 렌더링의 정밀성과 외견상의 완성도 덕분\n에 초기 단계에서 시각적, 인지적으로 하나의 설계에 고정되는 경\n향이 있다. 그는 스케치하기의 불확실함과 모호함에서 비롯되는\n많은 성찰적이고 탐구적인 유희를 건너뛴다. 연구자들은 이러한\n현상을 ‘조기 고착’이라고 부르며 ‘일단 많은 양의 세부 사항과 상\n호 연결성이 CAD(컴퓨터 지원 설계) 모델에 너무 빨리 구축되면\n설계 변경의 의욕을 꺾는 것’이라고 그 원인을 추적한다. 또한 컴\n퓨터로 작업하는 설계자는 표현력을 희생하면서 형식적인 실험을\n강조하는 경향이 있다. 미국의 유명한 건축가이자 설계자인\nMichael Graves는 CAD 소프트웨어가 건축가의 ‘작품과의 개\n인적, 정서적 연결’을 약화시킴으로써 ‘그 나름대로는 복잡하고 흥\n미롭지만’ 흔히 ‘손에서 나온 설계에 담긴 정서적 내용이 부족한’\n설계를 만들어낸다고 주장한다.",
+"sol": "컴퓨터 작업은 초기 단계에서 설계 고착화를 유발하고, 스케치의\n탐구적 유희를 생략하게 하는데, 연구자들이 이를 ‘조기 고착’이라\n부르고, CAD 모델에 너무 빨리 세부 사항이 추가되어 설계 변경\n을 방해하는 것을 원인으로 지목한다는 내용이다. 또한 Michael\nGraves는 CAD 소프트웨어가 건축가의 작품과의 개인적, 정서\n적 연결을 약화시키고, 정서적인 내용이 부족한 설계를 양산한다\n고 비판했다는 글이다. 따라서 글의 제목으로 가장 적절한 것은\n④ ‘디지털 장악: 건축가의 설계에 어떤 영향을 미쳤는가?’이다.\n① 설계의 정밀성을 위한 핵심 도구는 무엇인가?\n② 건축 역사가 설계에서 중요한 이유는 무엇인가?\n③ 스케치하기: 디지털 시대의 구시대적 관행\n⑤ CAD: 무한한 자유로 건축상의 창의성을 향상하기",
+"struct": "■■The transition from sketchpad to screen entails, [many\n architects believe], [a loss of creativity, of\n adventurousness].\n 첫 번째 [ ]는 술어 동사와 목적어 사이에 삽입된 삽입절이고,\n 두 번째 [ ]는 entails의 목적어 역할을 하는 명사구이다.\n■■[By weakening an architect’s “personal, emotional\n connection with the work,”] a renowned American\n architect and designer Michael Graves argues, CAD\n\f\n software produces designs [that, “while complex and\n interesting in their own way,” often “lack the\n emotional content of a design derived from hand.”]\n 첫 번째 [ ]는 수단을 나타내는 전치사구이고, 두 번째 [ ]는\n\n\n\n\n Part\n designs를 수식하는 관계절이다.\n\n\n\n\n I"
+},
+{
+"ans": "①",
+"topic": "리미티드 애니메이션의 예술적 가치",
+"ko": "리미티드 애니메이션은 ‘사실적인’ 접근 방식을 따르지 않\n는 만화영화 제작 과정이다. 1930 년대와 1940 년대 Walt\nDisney의 단편 만화와 장편 영화는 모든 프레임에 정교한 세부\n묘사를 담아 현실의 애니메이션화된 시뮬레이션을 묘사한 것으로\n널리 격찬을 받는다. 그러나 이러한 애니메이션 스타일은 매우 시\n간이 많이 걸리고 비용이 많이 든다. ‘리미티드’ 애니메이션은 같\n은 효과를 만들기 위해 추상 예술, 상징성, 제한된 움직임을 사용\n하는 이미지를 만들지만, 훨씬 더 낮은 제작 비용으로 만든다. 이\n러한 스타일의 애니메이션은 이야기를 전달하기 위해 불신의 유\n예(현실에서는 말이 안 되지만, 작품 안에서는 진짜라고 믿고 받\n아들이는 태도)에 더 많이 의존하며, 이야기는 관객의 상상 속에\n더 많이 존재한다. 그것은 또한 애니메이터가 반드시 현실 세계의\n한계에 얽매이는 것은 아닌 예술적 스타일에 몰두하도록 장려한\n다. 그 결과는 만약 애니메이션이 오직 현실의 시뮬레이션을 만들\n어 내는 데만 전념한다면 발전할 수 없었을 새로운 예술적 스타일\n이다. 리미티드 애니메이션이 없었다면, Yellow Submarine,\nChuck Jones의 The Dot and the Line, 그리고 그 밖의 많은\n작품 같은 획기적인 영화들은 결코 제작될 수 없었을 것이다.",
+"sol": "리미티드 애니메이션은 현실을 사실적으로 흉내 내는 전통적인\n애니메이션과는 달리, 추상성과 상징성, 제한된 움직임을 사용해\n저비용으로 독창적인 예술 스타일을 가능하게 했다는 내용이므\n로, 글의 제목으로 가장 적절한 것은 ① ‘사실성이 낮은 리미티드\n애니메이션의 장점’이다.\n② ‌\u0007애니메이션은 왜 그렇게 비용이 많이 들고 시간이 오래 걸리는\n 가?\n③ ‌\u0007예술가와 애니메이터는 어떻게 자신만의 독특한 스타일을 찾\n 는가?\n④ 리미티드 애니메이션 시대 이전의 초기 애니메이션\n⑤ 애니메이션 영상 제작 방법: 여러분이 알아야 할 모든 것",
+"struct": "■■“Limited” animation creates an image [that uses\n abstract art, symbolism, and limited movement] [to\ncreate the same effect], but at a much lower\n production cost.\n 첫 번째 [ ]는 an image를 수식하는 관계절이고, 두 번째\n [ ] 목적을 나타내는 to부정사구이다.\n■■It also encourages the animators [to indulge in artistic\n styles {that are not necessarily bound to the limits of\n the real world}].\n [ ]는 encourages의 목적격 보어 역할을 하는 to부정사구이\n 고, 그 안의 { }는 artistic styles를 수식하는 관계절이다."
+}
+],
+"8": [
+{
+"ans": "④",
+"topic": "의사소통 유형별로 친구와 시간을 보낸 미국 십 대의 비율",
+"ko": "위 도표는 2014년에서 2015년 사이에 실시된 조사를 토\n대로, 친구와 시간을 보낸 미국 십 대의 비율을 의사소통 유형별\n로 보여준다. ‘매일’의 범주에서, 문자 메시지 주고받기는 십 대가\n친구와 시간을 보내기 위해 사용하는 네 가지 의사소통 유형 중에\n서 가장 높은 비율을 보였다. ‘덜 자주’의 범주에서, 전화 통화로\n친구와 시간을 보내는 십 대의 비율은 문자 메시지 주고받기로 그\n렇게 하는 십 대의 비율의 두 배를 넘어섰다. ‘매일’의 범주에서 전\n화 통화로 친구와 시간을 보내는 십 대의 비율은 ‘덜 자주’의 범주\n에서 그렇게 하는 십 대의 비율보다 더 낮았다. ‘덜 자주’의 범주에\n서, 이메일 주고받기는 위에 열거된 의사소통 유형 중에 두 번째\n로 비율이 높았다. ‘덜 자주’의 범주에서 화상 채팅으로 친구와 시\n간을 보내는 십 대의 비율은 ‘매일’의 범주에서 그렇게 하는 십 대\n의 비율보다 더 높았다.",
+"sol": "",
+"struct": "■■In the category of Every Day, text messaging showed\n the highest percentage among the four types of\n communication [that teenagers used to spend time\n with friends].\n [ ]는 the four types of communication을 수식하는 관계\n 절이다.\n■■In the category of Less Often, the percentage of\n teenagers [who spent time with friends through\n talking on the phone] was more than twice that of\n teenagers who did so through text messaging.\n [ ]는 teenagers 를 수식하는 관계절이다. that 은 the\n percentage를 대신하고, did so는 spent time with friends\n 를 대신한다.\n\f\n 본문 52~55쪽"
+},
+{
+"ans": "⑤",
+"topic": "유학 목적지 숙소 유형별 학생 주택",
+"ko": "위 도표는 2022년 선정된 유학 목적지에 대한 숙소 유형\n별 학생 주택의 비율을 보여준다. 특히, ‘기타 민간 숙소’는 영국을\n제외하고는 학생 주택의 가장 큰 비중을 차지했는데, 영국에서는\n‘학생 전용 숙소’가 가장 흔한 유형이었다. 유학 목적지 중, 영국이\n‘대학 숙소’와 ‘학생 전용 숙소’의 비율이 가장 높았다. ‘대학 숙소’\n는 모든 유학 목적지에서 학생의 3분의 1 미만이 이용했으며, 오\n스트레일리아가 가장 낮은 비율을 보였다. 오스트레일리아는 ‘대\n학 숙소’와 ‘학생 전용 숙소’ 간 차이가 10%포인트로 가장 큰 차\n이를 보였던 반면, 미국은 1%포인트로 가장 작은 차이를 보여주\n었다. 유럽은 ‘학생 전용 숙소’의 비율이 ‘대학 숙소’의 비율보다 더\n높은 유일한 유학 목적지로, 다른 유학 목적지와는 반대의 패턴을\n보였다.",
+"sol": "유럽은 ‘학생 전용 숙소’의 비율(17% )이 ‘대학 숙소’의 비율\n(21%)보다 더 낮은 유일한 유학 목적지이므로, 도표의 내용과 일\n치하지 않는 것은 ⑤이다.",
+"struct": "■■Europe was the only study destination [where the\n percentage of PBSAs was greater than that of\n University Accommodations], [showing the opposite\n pattern to the other study destinations].\n 첫 번째 [ ]는 the only study destination을 수식하는 관계\n 절이고, 그 안의 that은 the percentage를 대신한다. 두 번째\n [ ]는 Europe을 의미상 주어로 하는 분사구문이다.\n\n\n\n02"
+},
+{
+"ans": "③",
+"topic": "AI 채택과 일자리 기회에 대한 소득 수준별 전망",
+"ko": "위 도표는 2024년에 성인 취업자가 AI 채택이 자신의 일\n자리 기회에 미치는 영향을 어떻게 인식했는지를 소득 수준별로\n보여준다. 모든 성인 취업자 가운데, AI로 인해 일자리 기회가 줄\n어들 것이라고 예상하는 사람은 늘어날 것이라고 예상하는 사람\n보다 더 많았던 반면, 거의 3분의 1은 영향이 거의 없을 것으로\n예상했으며, 20% 미만은 직장에서의 AI 활용에 대해 알지 못하\n는 상태였다. 상위 소득 근로자의 약 4분의 1에 비해, 3분의 1이\n넘는 하위 소득 근로자와 약 3분의 1의 중위 소득 근로자는 AI가\n더 적은 일자리 기회로 이어질 것이라고 말했다. 40％가 넘는 상\n\f\n위 소득 근로자는 AI가 큰 변화를 일으키지 않을 것이라고 말했\n는데, 이는 같은 응답을 한 중위 소득 근로자 비율의 두 배가 넘었\n다. 하위 소득 근로자 중 AI가 더 많은 일자리를 만들 것으로 생\n각하는 사람은 단 5%에 불과했던 반면, 이 수치는 상위 소득 근\n\n\n\n\n Part\n로자에게서는 8％로 올라갔다. 4분의 1이 넘는 하위 소득 근로자\n는 직장에서의 AI 사용에 대해 들어본 적이 없었는데, 이는 상위\n\n\n\n\n I\n소득 근로자 비율의 세 배가 넘었다.",
+"sol": "유형편\nAI가 큰 변화를 일으키지 않을 것이라고 말한 상위 소득 근로자\n의 비율은 44%로, 같은 응답을 한 중위 소득 근로자의 비율인\n32%의 두 배를 넘지 않았으므로, 도표의 내용과 일치하지 않는\n것은 ③이다.",
+"struct": "■■Over 40% of upper-income workers said AI would\n not make much difference, [which was more than\n twice the share of middle-income workers who said\n the same].\n [ ]는 주절의 내용을 부가적으로 설명하는 관계절이다.\n■■Only 5% of lower-income workers thought AI would\n create more jobs, [while this figure rose to 8% among\n upper-income workers].\n [ ]는 대조를 나타내는 부사절이다.\n\n\n\n\n03"
+},
+{
+"ans": "⑤",
+"topic": "스포츠나 운동에 참여한 미국 성인 남녀 비율",
+"ko": "위 도표는 2022년부터 2023년까지 적어도 가끔은 스포\n츠나 운동에 참여했다고 보고한 미국의 성인 남녀 비율을 보여준\n다. 피트니스, 에어로빅, 유산소 운동은 참여 면에서 여성에게는\n가장 높은 순위의 활동이었지만, 남성에게는 순위가 다섯 번째였\n다. 남성의 경우, 응답자들 사이에서 가장 흔하게 보고된 활동은\n농구였으며, 그다음은 미식축구/플래그 풋볼이었는데, 둘 다 여\n성의 활동 목록에는 나타나지 않았다. 하이킹은 남녀 둘 다 상위\n세 가지 활동 중 하나였으며, 남성에 비해 그것에 참여한 여성의\n비율이 약간 더 높았다. 사냥/낚시는 여성보다 남성에서 더 높은\n순위를 차지했으며, 양쪽 성별 모두에서 참여율은 30% 미만이었\n다. 춤, 수영/다이빙, 요가/필라테스, 달리기/조깅은 여성의 목록\n에만 등장했으며, 30% 미만의 여성이 이 활동 각각에 참여했다\n고 보고했다.",
+"sol": "춤과 수영/다이빙에 참여했다고 답한 여성의 비율이 각각 35%와\n32%였으므로, 도표의 내용과 일치하지 않는 것은 ⑤이다.",
+"struct": "■■For men, the most commonly reported activity among\n respondents was Basketball, [followed by American\n Football/Flag Football], [neither of which appeared\n on the list of activities for women].\n 첫 번째 [ ]는 Basketball을 부가적으로 설명하는 분사구이\n 고, 두 번째 [ ]는 Basketball과 American Football/Flag\n Football을 부가적으로 설명하는 관계절이다.\n■■Hiking was one of the top three activities for both\n men and women, [with a slightly higher percentage of\n women participating in it compared to men].\n [ ]는 「with +명사구+분사구」의 구조로, 주절이 기술하는 상\n 황에 부수하는 상황을 나타낸다.\n\n\n\n04"
+},
+{
+"ans": "④",
+"topic": "유형별 전자 폐기물의 양과 수거율",
+"ko": "위 도표는 2022년 여러 다른 유형의 기기별로 발생한 전\n자 폐기물(e-waste)의 양을 메가톤(Mt) 단위로 측정하여 수거율\n과 함께 보여준다. 모든 기기 유형에서 미수거 전자 폐기물의 양\n이 수거된 전자 폐기물의 양을 초과했으며, 소형 장비에서 가장\n큰 격차를 보였다. 대형 장비는 총 전자 폐기물 발생량에서 소형\n장비의 뒤를 이어 약 15메가톤이 발생했으나 수거된 전자 폐기물\n의 양이 다른 어떤 유형보다 더 많았고, 수거율이 30%를 초과했\n다. 소형 장비에서 발생된 전자 폐기물 총량은 냉난방 장비에서\n발생된 전자 폐기물의 총량보다 더 많았지만, 후자로부터 수거된\n전자 폐기물 양은 전자에서 수거된 양보다 더 많았다. 모니터와\n소형 정보 기술 및 통신 장비 둘 다 소형 장비, 대형 장비, 냉난방\n장비보다 전자 폐기물 발생량은 더 적었지만, 수거율은 세 가지\n모두보다 더 높았다. 램프는 전체 기기 유형 중 전자 폐기물 발생\n량이 가장 적었고, 수거율도 가장 낮았다.",
+"sol": "모니터와 소형 정보 기술 및 통신 장비의 전자 폐기물 수거율은\n소형 장비보다는 높았지만, 대형 장비나 냉난방 장비보다는 낮았\n으므로, 도표의 내용과 일치하지 않는 것은 ④이다.",
+"struct": "■■Large equipment followed small equipment in total\n e-waste generation, [producing approximately 15 Mt],\n but it had a higher volume of collected e-waste than\n any other type, [with a collection rate exceeding\n 30%].\n첫 번째 [ ]는 주어를 부가적으로 설명하는 분사구문이고, 두\n 번째 [ ]는 「with +명사구+분사구」의 구조로, but 이하 절에\n 서의 주절이 기술하는 상황에 부수하는 상황을 나타낸다.\n■■[Although the total e-waste {generated by small\n equipment} was more than that of temperature\n exchange equipment], the volume of e-waste\n [collected from the latter] was greater than that of the\n former.\n 첫 번째 [ ]는 양보를 나타내는 부사절이고, 그 안의 { }는\n the total e-waste를 수식하는 분사구이며, that은 the total\n e-waste를 대신한다. 두 번째 [ ]는 e-waste를 수식하는 분\n 사구이다."
+}
+],
+"9": [
+{
+"ans": "③",
+"topic": "동물 생물학 연구의 선구자인 Max Kleiber",
+"ko": "동물 생물학 연구의 선구자인 Max Kleiber는 동물 영양\n(학)과 신진대사에 관한 연구로 가장 잘 알려져 있었다. 그는\n1893년 스위스의 Zurich에서 태어났다. Kleiber는 1920년에\nSwiss Federal Institute of Technology를 졸업했고, 1924\n년에 박사 학위를 받았다. 그는 1929 년에 University of\nCalifornia at Davis(UC Davis)에 와서 동물의 에너지 신진대\n사에 관한 연구를 수행했다. 1952년, Kleiber는 American\nInstitute of Nutrition으로부터 저명한 Borden Award를 수상\n했으며, 1년 후 American Society for Animal Production\n으로부터 Morrison Award 를 수상했다. Kleiber 의 저서인\nThe Fire of Life는 1961년에 출간되었고, 이후에 독일어, 폴란\n드어, 스페인어, 일본어로 번역되었다. Kleiber는 대학생과 대학\n원생 모두에게 인기 있는 뛰어난 선생님이었다. 사망 전, UC\nDavis의 새 강의동은 그를 기념하여 Kleiber Hall로 명명되었\n다.",
+"sol": "",
+"struct": "■■Max Kleiber, [a pioneer in the study of animal\n biology], was best known for his research on animal\n nutrition and metabolism.\n [ ]는 Max Kleiber와 동격 관계이다.\n■■Kleiber [graduated from the Swiss Federal Institute of\n Technology in 1920] and [earned his doctoral degree\n in 1924].\n 두 개의 [ ]는 and로 연결되어 문장의 술어 역할을 한다.\n\n\n\n 본문 58~61쪽"
+},
+{
+"ans": "④",
+"topic": "William Henry Perkin의 생애",
+"ko": "William Henry Perkin은 1838년 런던의 한 건축업자\n가정에서 태어났고, 같은 길을 따를 것으로 기대되었다. 그러나\n그의 인생은 12세 때 친구가 그에게 간단한 화학 세트를 소개해\n\f\n주었을 때 바뀌었다. 그는 이후 Royal College of Chemistry\n에서 공부했는데, 그곳에서 그는 저명한 독일 화학자 August\nWilhelm von Hofmann에게 가르침을 받았다. Perkin은 호기\n심으로 인해 집에 작은 실험실을 만들게 되었고, 그곳에서 그는\n\n\n\n\n Part\n자신의 실험을 계속했다. 18세 때, 그는 자신의 인생을 바꿀 실험\n을 진행했다. 그는 말라리아를 치료하는 고가의 약물인 퀴닌을 만\n\n\n\n\n I\n들기 위해 노력했다. 그는 실패했고 그저 흉한 검은 물질만을 만\n들어 냈는데, 그는 그것에 흥미를 갖게 되었다. 그가 그것을 변성\n\n\n\n\n 유형편\n알코올에 녹이자, 그 혼합물이 풍부하고 밝은 보라색으로 피어났\n다. 이것은 최초의 합성염료인 모브의 탄생으로 이어졌다.\nPerkin의 발견은 합성염료 산업의 시작에 도움을 주었고, 전 세\n계적으로 생생한 색상을 더 쉽게 접하고 저렴하게 구할 수 있게\n했다.\n Culture Note\n■ \u0007methylated spirit(변성 알코올) 에탄올에 메탄올, 피리딘, 아세\n 톤 등의 변성제를 첨가하여 음용이 불가능하게 만든 알코올이다. 주로 소\n 독, 세척, 연료, 실험실 시약 등의 용도로 사용된다.",
+"sol": "고가의 말라리아 치료제 퀴닌을 만들기 위해 노력했지만 실패했\n다(He tried to make quinine , a costly medicine for\nmalaria. He failed and produced only an ugly black\nsubstance, ~.)고 했으므로, 글의 내용과 일치하지 않는 것은 ④\n이다.",
+"struct": "■■He later studied at the Royal College of Chemistry,\n [where he was taught by the distinguished German\n chemist August Wilhelm von Hofmann].\n [ ]는 the Royal College of Chemistry를 부가적으로 설\n 명하는 관계절이다.\n■■Perkin’s discovery helped start the synthetic dye\n industry, [making vibrant colors more accessible and\n affordable around the world].\n [ ]는 주절의 내용을 부가적으로 설명하는 분사구문이다.\n\n\n\n02"
+},
+{
+"ans": "③",
+"topic": "패션 디자이너 Charles Frederick Worth",
+"ko": "Charles Frederick Worth는 19세기의 가장 유명한 패\n션 디자이너였다. 그는 1825년 Lincolnshire의 Bourne에서\n태어났으며, 다섯 자녀 중 한 명이었다. 그의 아버지는 그가 11살\n이 될 무렵 가족을 버렸고, 그들을 빈곤에 빠뜨렸다. 그의 어머니\n에게는 그에게 인쇄소의 수습직을 찾아 주는 것 외에는 거의 선택\n지가 남아 있지 않았지만, 이 어린 소년은 그 일을 몹시 싫어했다.\n그는 자신이 런던으로 가서 Swan & Edgar에서 일자리를 얻도\n록 허락해 달라고 어머니를 설득했는데, 최근에 건설된 Regent\nStreet에 위치한 남성복점이었다. 그곳에서 그는 옷감을 다룰 기\n회를 얻었는데, 그것은 그에게 미래를 위한 중요한 기초 지식을\n제공해 주었다. 아마도 똑같이 중요했던 것은 그가 Swan &\nEdgar 에서 걸어서 갈 수 있는 거리에 새로 생긴 National\nGallery를 자주 방문한 것이었다. Worth의 의상 역사에 관한 지\n식은 National Gallery의 초상화를 관찰하면서 얻었는데, 그것\n은 그의 경력에 매우 도움이 되었다.",
+"sol": "런던으로 갈 수 있게 해 달라고 어머니를 설득했다(He persuaded\nhis mother to allow him to move to London ~.)고 했으므\n로, 글의 내용과 일치하지 않는 것은 ③이다.",
+"struct": "■■He persuaded his mother to allow him to move to\n London to gain employment at Swan & Edgar, [a\n haberdashery {located in the recently constructed\n Regent Street}].\n [ ]는 Swan & Edgar와 동격 관계이며, 그 안의 { }는 a\n haberdashery를 수식하는 분사구이다.\n■■Perhaps equally important were [his frequent visits to\n the new National Gallery, within walking distance of\n Swan & Edgar].\n [ ]는 문장의 주어 역할을 하는 명사구이고, 보어인 equally\n important로 문장이 시작되어 동사 were가 주어 앞에 놓이는\n 어순이 되었다.\n\n\n\n03"
+},
+{
+"ans": "③",
+"topic": "지질학자 Charles Lyell의 생애",
+"ko": "Principles of Geology 의 저자로 가장 잘 알려진\nCharles Lyell(1797~1875)은 스코틀랜드의 부유한 가정에서\n10명의 자녀 중 맏이로 태어났다. 아주 어렸을 때 그는 가족과 함\n께 잉글랜드 남부의 Hampshire로 이주하여, 그곳에서 자연을\n즐기고 나방을 채집했다. 옥스퍼드 Exeter 대학에서 그는\nBuckland 교수 밑에서 공부했지만, 지질학에 대한 스승의 성경\n적 해석에 실망하게 되었다. Lyell은 고전학 학사 학위를 취득한\n후 법학을 계속 공부했지만, 시력이 약해 법학 공부가 어려웠다.\n그는 1822년 Lincoln’s Inn에서 변호사 자격을 얻었지만, 아버\n지의 재정적 지원 덕분에 어린 시절 좋아했던 자연과 지질학을 계\n속 연구할 수 있었다. 그는 1823년에 런던 지질학회의 서기가 되\n었고, 두 번의 임기 동안 회장을 역임하면서 널리 여행하며 잉글\n랜드에서뿐만 아니라 프랑스, 시칠리아, 알프스, 카나리아 제도,\n북미(Nova Scotia에서 Mississippi Delta까지)에서 지질학을\n연구했다.",
+"sol": "고전학 학사 학위를 취득한 후 법학을 계속 공부했다(After\nearning his bachelor’s degree in the classics, Lyell\npursued law, ~.)고 했으므로, 글의 내용과 일치하지 않는 것은\n③이다.",
+"struct": "■■[When he was quite young], he moved with his family\n to Hampshire in southern England, [where he\n luxuriated in nature and collected moths].\n 첫 번째 [ ]는 시간을 나타내는 부사절이고, 두 번째 [ ]는\n Hampshire in southern England를 부가적으로 설명하는\n 관계절이다.\n■■[Although he was called to the bar in 1822 at\n Lincoln’s Inn], his father’s financing allowed him [to\n pursue his childhood love of nature and geology].\n 첫 번째 [ ]는 양보를 나타내는 부사절이고, 두 번째 [ ]는\n allowed의 목적격 보어 역할을 하는 to부정사구이다.\n\n\n\n04"
+},
+{
+"ans": "⑤",
+"topic": "Ivan Beltrami의 생애",
+"ko": "Ivan Beltrami는 1920년 6월 14일 프랑스 Marseille\n의 의료계 집안에서 태어났는데, 그의 아버지는 의사였고, 어머니\n는 간호사였다. 가톨릭 환경에서 자란 그는 연민과 정의를 중요시\n하며 성장했고, 특히 그의 유대인 친구들이 직면한 차별에 영향을\n받았다. 제2차 세계 대전 중 Beltrami는 의학을 공부하며 비밀\n리에 프랑스 레지스탕스를 도왔다. 1942년부터 그는 전령으로\n일하며 도움이 필요한 사람들에게 의료 도움을 제공했다. 그는 또\n한 목숨을 걸고 자신의 집에서 유대인을 보호했으며, 후에 이 활\n동으로 1984년 Yad Vashem으로부터 Righteous Among\nthe Nations로 서훈되었다. 전쟁이 끝난 후에는 서비스가 충분\n하지 못한 지역 사회의 의료 접근성을 개선하는 데 헌신해 프랑스\n남부 시골 지역에 병원을 설립했다. 그는 1991년 11월 12일 사\n망했으며, 친절과 용기의 유산을 남겼다.\n Culture Note\n■ \u0007Yad Vashem 이스라엘 예루살렘에 있는 홀로코스트 유대인 희생\n 자들을 위한 공식 기념관이자 세계적인 연구, 교육, 기념 센터이다. 1953\n 년 나치 독일에 의해 학살된 600만 명의 유대인 희생자들을 추모하고,\n\f\n 홀로코스트의 역사를 보존하며, 미래 세대에게 그 기억을 전달하고자 설\n 립되었다.\n■ \u0007Righteous Among the Nations 이스라엘의 홀로코스트 기\n 념관인 Yad Vashem이 나치 홀로코스트 기간에 유대인들을 구하기 위\n 해 자기 생명의 위험을 무릅쓴 비유대인들에게 수여하는 명예 칭호이다.",
+"sol": "전쟁이 끝난 후에는 프랑스 남부 시골 지역에 병원을 설립했다\n(After the war, he dedicated himself ~, establishing\nclinics in rural areas of southern France.)고 했으므로, 글\n의 내용과 일치하지 않는 것은 ⑤이다.",
+"struct": "■■[Raised in a Catholic environment], he grew up\n valuing compassion and justice, [particularly\n influenced by the discrimination {faced by his Jewish\n friends}].\n 첫 번째 [ ]는 주어인 he의 부수적인 상황을 나타내는 분사구\n 문이고, 두 번째 [ ]는 앞서 기술된 내용을 보충 설명하는 분\n 사구문이다. 그 안의 { }는 the discrimination을 수식하는\n 분사구이다.\n■■After the war, he dedicated himself to improving\n healthcare access in underserved communities,\n [establishing clinics in rural areas of southern France].\n [ ]는 he를 의미상 주어로 하여 주절이 기술하는 내용의 부수\n 적인 상황을 나타내는 분사구문이다."
+}
+],
+"10": [
+{
+"ans": "④",
+"topic": "Wakeville 고등학교 학교 종소리 경연 대회",
+"ko": "학교 종소리 경연 대회\nWakeville 고등학교는 학교 종소리 경연 대회를 엽니다. 이 경\n연 대회의 주제는 ‘행복한 학교생활’입니다.\n마감 일자: 2025년 12월 12일\n참가자: Wakeville 고등학교의 모든 학년 학생들\n신청 세부 사항\n•MP3 형식으로만 출품작을 제출하세요.\n•\u0007우리 학교 웹사이트에 출품작을 업로드하세요(파일 크기 제한:\n 1MB).\n•소리 창작 과정에 대한 설명을 포함하세요.\n선정 방법\n•\u0007창의성과 적합성에 근거하여 학생 투표에 의해 세 개의 학교 종\n 소리가 선택될 것입니다.\n상\n•우승한 학교 종소리가 우리의 현재 종소리를 대체할 것입니다.\n•경연 대회의 우승자들은 각각 무선 스피커를 받을 것입니다.",
+"sol": "",
+"struct": "■■Three school bell sounds will be selected by student\n vote, [based on creativity and suitability].\n [ ]는 주절이 기술하는 내용의 부수적인 상황을 나타내는 분사\n 구문이다.\n\n\n\n\n 본문 64~67쪽"
+},
+{
+"ans": "④",
+"topic": "박물관에서의 요가 수업",
+"ko": "Movement in the Museum: Heart Centering Yoga\n화석에 둘러싸여 고대 요가 기술을 수련하는 Movement in the\nMuseum: Heart Centering Yoga 수업에서 내면의 힘과 평화\n를 찾으세요.\n일시: 5월 19일 화요일 오후 5시 45분부터 오후 6시 30분까지\n장소: Chesterfield 자연사 박물관\n수업\n- ‌\u0007두 개의 별개 수업(초급과 중급)이 동시에 진행되며, 각각 숙련\n 된 요가 강사가 지도할 것입니다.\n- 초급 수업에는 필요한 분들을 위해 의자가 있을 것입니다.\n참가비\n- 박물관 회원: 5달러\n- 조기 등록(비회원): 15달러\n- 당일 등록(비회원): 20달러\n일반 정보\n- ‌\u0007참가자는 18세 이상이어야 하며 참가 동의서에 서명해야 합니다.\n- 요가 매트와 물은 제공되지 않으므로 직접 가져오세요.\n- 온라인으로 수업에 등록하세요.\n- 박물관 내 주차는 오후 5시 이후에는 무료입니다.\n연락처 정보\n질문이 있으시면 305-349-6483 으로 전화하여 Grace\nHarrell(Chesterfield 자연사 박물관 교육 지원 코디네이터)에\n게 문의하십시오.",
+"sol": "요가 매트와 물은 제공되지 않으니 직접 가져오라(Please bring\nyour yoga mat and water as they are not provided.)고 했\n으므로, 안내문의 내용과 일치하지 않는 것은 ④이다.",
+"struct": "■■Participants [must be 18 years or older] and [will be\n required to sign a participation agreement].\n 두 개의 [ ]는 and로 연결되어 문장의 술어 역할을 한다.\n\n\n\n02"
+},
+{
+"ans": "④",
+"topic": "Maple 초등학교 방과 후 프로그램",
+"ko": "2026 Maple 초등학교 어린이 방과 후 프로그램\n방과 후에 아이들이 계속해서 학습하고, 활동적이며, (학교 활동\n에) 참여하게 하세요! 5~12세 어린이를 위해 계획된 흥미진진한\n2026 Maple 초등학교 방과 후 프로그램에 참여하세요.\n● 일정: 월요일부터 목요일까지, 오후 3시~오후 6시\n● 장소: Maple 길 123번지 Maple 초등학교\n● 요일별 활동:\n- 월요일: 미술 및 공예\n- 화요일: 숙제 도움\n- 수요일: 스포츠, 야외 게임\n- 목요일: 음악, 댄스, 연극\n● 프로그램 하이라이트:\n- 모든 활동과 재료는 무료로 제공됩니다.\n- 프로그램은 숙련되고 경험이 풍부한 직원이 감독합니다.\n● 등록 마감일: 4월 3일\n● 프로그램 시작일: 5월 4일\n● 등록 방법:\n- mapleelemschool.com\n ‌\u0007 을 방문하여 온라인 등록 양식을 작\n 성하세요.\n (전화로 등록을 마칠 수 없습니다.)\n아이들이 익숙한 환경에서 탐험하고, 놀고, 성장할 기회를 주세요!",
+"sol": "프로그램 등록 마감일은 4 월 3 일(Registration Deadline :\nApril 3 )이고, 프로그램 시작일은 5 월 4 일(Program Start\nDate: May 4)이라고 했으므로, 안내문의 내용과 일치하는 것은\n④이다.",
+"struct": "■■Keep your kids [learning, active, and engaged after\n school]!\n [ ]는 Keep의 목적격 보어 역할을 한다.\n■■Join our exciting 2026 Maple Elementary After\n School Program [designed for kids {aged 5-12}].\n [ ]는 our exciting 2026 Maple Elementary After\n School Program을 수식하는 분사구이고, 그 안의 { }는\n kids를 수식하는 분사구이다.\n\n\n\n03"
+},
+{
+"ans": "④",
+"topic": "2026 Family Green Day",
+"ko": "2026 Family Green Day\n2026 Family Green Day에 오셔서 계절에 맞는 환경을 주제\n로 한 활동을 즐겨보세요!\n날짜: 4월 7일 화요일\n시간: 오전 9시 및 오후 1시 30분\n* 각 수업은 2시간 30분 동안 진행됩니다. 예약 시, 한 수업만 선\n택해 주십시오.\n장소: Avioly 환경 센터\n입장권\n3세 이상 어린이: 25달러\n3세 미만 어린이: 12달러\n활동\n1. 다양한 종류의 잎과 솔방울을 가지고 장난감 동물 만들기\n2. 나비와\n ‌\u0007 꽃과 같은 자연을 주제로 한 디자인으로 페이스 페인팅\n\f\n 하기\n기타 정보\n- ‌\u0007주로 3~11세 어린이를 대상으로 하지만, 이 행사는 온 가족이\n 함께 즐길 수 있습니다!\n자주 받는 질문\n1. 동반하는 성인은 입장권이 필요한가요?\n- ‌\u0007아니요! 어린이 입장권 구매 시 성인은 무료로 입장할 수 있습\n 니다.\n2. 현장에 주차장이 있나요?\n- ‌\u0007네, 유료 주차장을 이용하실 수 있습니다.",
+"sol": "동반하는 성인은 어린이 입장권 구매 시 무료라고 했으므로\n(Adults can enter free with the purchase of a child’s\nticket.), 안내문의 내용과 일치하지 않는 것은 ④이다.",
+"struct": "■■[Aimed primarily at 3-11 year olds], this event is\n enjoyable for the whole family!\n [ ]는 this event를 의미상 주어로 하는 분사구문으로, While\n it is 정도가 생략된 것으로 이해할 수 있다.\n\n\n\n04"
+},
+{
+"ans": "③",
+"topic": "스포츠 장비 기부 행사",
+"ko": "Gear Up for Good\nBlue Ridge YMCA는 다가오는 깨끗하게 사용된 스포츠 장비\n모으기 운동인 Gear Up for Good을 알리게 되어 자랑스럽게\n생각합니다. 모두에게 고른 기회를 주어, 올해 더 많은 아이들이\n운동할 수 있도록 도웁시다!\n•장비를 기부하세요: 7월 7일~7월 21일\n새것이나 깨끗하게 사용된 스포츠 장비를 Blue Ridge YMCA,\nCedar Creek Family YMCA 또는 Harbor Point Family\nYMCA로 가져오세요.\n•다음 종목의 장비를 받습니다:\n야구     농구        축구\n테니스    수영        골프\n요가     서핑        복싱\n자전거    스케이트보드    치어리딩\n*참고: 스포츠 의류나 수영복은 받지 않습니다.\n•할인 물품을 구매하세요: 7월 25일(오후 2시~오후 5시)\n기부된 모든 스포츠 장비는 Blue Ridge YMCA에서 구매할 수\n있습니다. 지역사회 구성원들을 가격이 알맞고 질 좋은 스포츠 장\n비를 구매하도록 초대합니다!\n\f\n자원하세요!\n우리는 기부 물품을 정리하고 판매 행사를 준비하는 데 도움을 줄\n자원봉사자를 찾고 있습니다. 자원봉사자는 공식 웹사이트에서\n신청해야 합니다.\n\n\n\n\n Part",
+"sol": "기부 물품으로 스포츠 의류나 수영복은 받지 않는다(We do not\n\n\n\n\n I\naccept sports clothing or swimwear.)고 했으므로, 안내문의\n내용과 일치하는 것은 ③이다.\n\n\n\n\n 유형편",
+"struct": "■■We are looking for volunteers [to help organize\n donations and prepare for the sale].\n [ ]는 volunteers를 수식하는 to부정사구이다."
+}
+],
+"11": [
+{
+"ans": "②",
+"topic": "인간의 적응적 정보 축적",
+"ko": "우리는 대단히 똑똑하며, 이는 우리가 다양한 환경에 적응\n하는 데 도움이 된다. 하지만 개인으로서 우리는, 현대 인류가 지\n구 전역으로 퍼져나가면서 직면했던 적응상의 문제를 해결할 만\n큼은 결코 충분히 똑똑하지 않다. 어떤 수렵 · 채집 집단이 사용하\n는 도구, 채집 기술, 생태 지식, 사회적 설비의 모음은 어느 한 개\n인이 만들어 내기에는 너무나 복잡하다. 우리가 살아가는 여러 다\n른 각각의 환경에서 알아야 할 필요가 있는 모든 것을 배울 수 있\n는 것은 오직 우리가 타인으로부터 정보를 습득하기 때문이다. 우\n리는 다른 종들보다 타인으로부터 배우는 데 훨씬 더 능숙하며,\n우리의 모델이 왜 그런 행동을 하는지 이해하지 못할 때조차도 타\n인으로부터 배우려는 동기를 지닌다. 이러한 심리는 인간 집단이\n개인의 발명 능력을 훨씬 능가하는 방대한 적응적 정보 축적을 가\n능하게 한다.",
+"sol": "",
+"struct": "■■But we are not nearly smart enough as individuals to\n solve the adaptive problems [that confronted modern\n humans {as they spread across the globe}].\n [ ]는 the adaptive problems를 수식하는 관계절이고, 그\n 안의 { }는 시간을 나타내는 부사절이다.\n■■We are much better at learning from others than other\n species are, and we are motivated to learn from others\n even when we do not understand [why our models are\n doing {what they are doing}].\n [ ]는 understand의 목적어 역할을 하는 명사절이고, 그 안\n 의 { }는 doing의 목적어 역할을 하는 명사절이다.\n\n\n\n\n 본문 70~71쪽"
+},
+{
+"ans": "③",
+"topic": "은유를 활용한 조사 보고서 작성 방법 교육",
+"ko": "여기 은유를 조사 보고서에 적용한 것이 있다. 내가 다니\n는 도회지 중학교의 학년 수준 이하의 읽기 능력을 가진 학생들은\n조사하는 데 많은 어려움을 겪는다. ‘보고서’를 작성하라는 과제를\n받을 때 그들의 해결책은 미디어 센터에 와서 백과사전 글 또는\n자신들이 찾아낸 어떤 출처에서, 그것이 인터넷이든 인쇄물이든\n또는 무엇이든, 말 그대로 모든 것을 베끼는 것이다. 학생들이 기\n사의 모든 내용을 베낄 필요가 없는 이유를 이해하도록 하기 위한\n노력으로, 나는 슈퍼마켓에 대한 비유를 이용한다. 나는 학생들에\n게 슈퍼마켓에 있는 모든 것이 유용한지 묻고, 우리는 이를 토론\n하는데, 일반적인 결론은 그것이 유용하지만 항상 모든 것을 사지\n는 않는다는 것이다. 그런 다음 그들이 매번 갈 때마다 모든 것을\n사지 않는 이유와 부모님과 함께 갈 때 무엇을 사야 할지 어떻게\n결정하는지를 물어본다. 누군가는 대개 그들에게 목록이 있다고\n말한다. 그 시점부터 나아가 나는 어떻게 선생님들이 요구했던 모\n든 것이 조사를 위한 ‘쇼핑 목록’이 되고, 그들은 그 정보만을 읽고\n메모 형식으로 적어야 하는가에 관한 토론을 이끈다. 그것은 모든\n것을 베끼는 것은 헛된 노력이라는 것을 이해시키는 데 때때로 도\n움이 된다.",
+"sol": "③ ‌\u0007앞에 나온 is useful 을 대신하는 대동사가 쓰여야 하므로\n does를 is로 고쳐야 한다.\n① ‌\u0007they(below-grade-level readers) are assigned의 형태에\n 서 they are가 생략된 형태로 이해되므로 어법상 옳다.\n② ‌\u0007목적을 나타내는 to부정사구를 이끄는 to부정사는 어법상 옳다.\n④ ‌\u0007how 가 이끄는 절의 주어 역할을 하는 관계절을 이끌면서\n asked for의 목적어 역할을 하는 관계사가 필요하므로 선행사\n 를 포함한 관계사 whatever는 어법상 옳다.\n⑤ ‌\u0007that 절의 주어 역할을 하는 동명사구를 이끄는 동명사\n copying은 어법상 옳다.",
+"struct": "■■Then I ask them [why they don’t buy everything each\n time they go] and [how they determine {what to buy}\n when they go with their parents].\n 두 개의 [ ]는 and로 연결되어 ask의 직접목적어 역할을 하는\n 명사절이고, 두 번째 [ ] 안의 { }는 determine의 목적어 역\n 할을 하는 「의문사+ to부정사구」 구조의 명사구이다.\n■■It sometimes helps them [to understand {that copying\n everything is a wasteful endeavor}].\n [ ]는 help의 목적격 보어 역할을 하는 to부정사구이고, 그 안\n 의 { }는 understand의 목적어 역할을 하는 명사절이다.\n\f\n02"
+},
+{
+"ans": "⑤",
+"topic": "시장 효율성이 사회적 · 환경적 가치에 미치는 영향",
+"ko": "개혁주의적 접근법은 시장이 더 공정하고 환경적으로 합\n리적인 방식으로 운영될 수 있으며, 시장이 이용할 수 있는 가장\n효율적인 선택지라고 가정한다. 그러나 시장 효율성 논리는 일반\n적으로 ‘순전히 금전적’ 계산을 중심으로 움직이는데, 이는 실질적\n으로는 거울의 방에서 사고하며(자기 논리에 스스로 갇혀 현실을\n제대로 보지 못하며) 진정한 사회적 및 환경적 가치를 주변화한\n다. 친숙한 사례는 슈퍼마켓 같은 전통적인 식품 소매업체인데,\n그곳은 과일과 채소를 가능한 한 값싸게 구매한다. 저렴한 농산물\n은 저임금 불법 이주 노동자에 의해 토양과 물을 훼손하는 비료를\n사용하여 재배되어 값싼 노동력과 환경을 훼손하는 관행을 더 많\n이 사용하여 장거리 운송될지도 모른다. 그러나 유기농 농민들은\n식품 가격이 더 높아야만 생태적으로 건전한 관행을 따르고 노동\n자에게 공정한 임금을 지급하는 것을 확실히 할 수 있는데, 이는\n엘리트 수요를 위한 공급을 의미한다. 바로 그 본질로 인해, 그 누\n구도 절대 거래를 위한 생산이 수반하는 난제를 용케 벗어날 수\n없다. 사람과 지구를 돌보는 데 수반되는 진정한 사회적 및 환경\n적 가치는 시장 지향적 활동의 불평등과 피해를 부각한다.",
+"sol": "⑤ ‌\u0007주어 역할을 하는 명사구인 Real social and environmental\n values involved in caring for people and Earth 뒤에 이\n 어지는 술어 동사가 필요하므로, highlighting을 highlight\n 로 고쳐야 한다.\n① ‌\u0007주어의 핵이 logic이므로 단수형 동사 rotates는 어법상 옳다.\n② ‌\u0007동사구인 purchase fruit and vegetables를 수식하는 부사\n 구를 이끄는 부사 cheaply는 어법상 옳다.\n③ 주어\n ‌\u0007 Inexpensive produce는 문맥상 transport가 나타내는\n 동작의 대상이므로, 과거분사 transported가 쓰여 grown과\n and로 연결되어 might be에 이어지는 것은 어법상 옳다.\n④ ‌\u0007선행사 the conundrums를 수식하는 관계절을 이끄는 관계\n 대명사 that은 어법상 옳다.",
+"struct": "■■Reformist approaches assume [that markets could\n operate in more equitable and environmentally\n reasonable ways], and [that a market is the most\n efficient option available].\n 두 개의 [ ]는 and로 연결되어 assume의 목적어 역할을 하\n 는 명사절이다.\n■■Yet the logic of market efficiencies generally rotates\n on purely monetary calculations, [effectively\n reasoning in a hall of mirrors] and [marginalising real\n\f\n social and environmental values].\n 두 개의 [ ]는 and로 연결되어 주절의 내용을 부가적으로 설\n 명하는 분사구문이다.\n\n\n\n\n Part"
+},
+{
+"ans": "②",
+"topic": "사회적 구성으로서의 인종\n\n\n\n\n 유형편",
+"ko": "‘인종’이라는 용어에 대한 과학적 근거는 없다. 대부분의\n인간은 유전적으로 매우 유사하며 우리 사이에 변이가 너무 적어\n서 사람들 주위에 깔끔한 경계를 그어 그들을 뚜렷한 인종 집단으\n로 분류하는 것은 불가능하다. 인종은 사회적 구성의 한 예로, 여\n기에서 사회적 과정은 본질적으로 존재하지 않지만 사람들의 삶\n에 실제적인 영향력을 갖는 무언가를 만들어낸다. 사회학자들은\n이러한 과정을 ‘인종화’라고 부르기를 선호한다. 인종이 항상 문제\n가 되었다는 역사적 증거는 찾기 어렵다. 예를 들어, 고대 로마에\n는 Septimius Severus 황제(서기 193~211년 재위)와 같은 다\n양한 지도자가 있었는데, 그들은 흑인이었다. 당시 기록된 설명에\n는 그들의 피부색에 대한 언급이 거의 없는데, 고대 로마인들은\n그것이 어떤 차이를 가져온다고 생각하지 않았기 때문이다. 그들\n은 사람들을 문명화되었는지 미개인인지로 판단한다는 측면에서\n더 많이 생각했다.\n Culture Note\n■ \u0007E mperor Septimius Severus (Lucius Septimius\n Severus) 193년부터 211년까지 로마를 통치한 황제이다. 북아프리카\n 출신으로, 혼란스러웠던 ‘다섯 황제의 해’에 경쟁자들을 물리치고 황제의\n 지위에 올라 세베루스 왕조를 세웠다. 그는 로마 제국의 안정과 군사력\n 회복에 힘썼으며, 군대 복지 개선, 관료제 개혁 등을 통해 황권을 강화했\n 다. 또한 정부 체제를 군사적인 성격이 강한 군주제로 전환한 인물로 평\n 가되기도 한다. 아들 카라칼라에게 황위를 물려주면서 로마 황제 자리의\n 세습제를 사실상 시작한 것으로 알려져 있다.",
+"sol": "② ‌\u0007‘여기에서(그 사회적 구성에서)’라는 의미를 나타내도록 선행사\n social construction을 부가적으로 설명하는 관계절을 이끄\n 는 관계사가 필요하므로 which를 where 또는 in which로\n 고쳐야 한다.\n① ‌\u0007내용상의 주어 역할을 하는 to부정사구가 to draw ~ and\n label ~의 구조이므로 어법상 옳다.\n③ ‌\u0007Historical evidence와 동격 관계를 이루는 절을 유도하는\n 접속사 that은 어법상 옳다.\n④ ‌\u0007선행사 various leading figures에 수를 일치시킨 관계절의\n 동사이므로 were는 어법상 옳다.\n⑤ accounts\n ‌\u0007 는 write가 나타내는 동작의 대상이므로 과거분사\nwritten이 이끄는 분사구가 accounts를 수식하는 것은 어법\n 상 옳다.",
+"struct": "■■Most humans are genetically very similar and there is\n so little variation amongst us that it is not possible [to\n draw neat boundaries around people and label them as\n a distinct racial group].\n ‘너무 ~해서 (결과적으로) …하다’라는 의미의 「so ~ that ...」이\n 사용되었다. it은 형식상의 주어이고, [ ]는 내용상의 주어이\n 다.\n■■Little is said of their skin colour in accounts [written\n at the time], [because the ancient Romans did not\n think {it made any difference}].\n 첫 번째 [ ]는 accounts를 수식하는 분사구이고, 두 번째 [ ]\n 는 이유를 나타내는 부사절이며, 그 안의 { }는 think의 목적\n 어 역할을 하는 명사절이다.\n\n\n\n04"
+},
+{
+"ans": "③",
+"topic": "1인분 양이 증가한 결과",
+"ko": "많은 요인이 미국인들의 허리둘레가 늘어나는 원인이지\n만, 특히 한 가지 의견을 간과해서는 안 되는데, 비만 발생률은 늘\n어나는 1인분 양과 나란히 증가해 왔다는 것이다. 오늘날 성인은\n그들이 1985년에 그랬던 것보다 하루 평균 300칼로리를 더 섭\n취한다는 것을 생각해 보라. 이것이 단순한 우연일까, 아니면 더\n커진 1인분 양이 그것과 관련이 있는 것일까? 거의 모든 식사 상\n황에서 우리는 이제 거대한 1인분과 마주하게 되며, 그것은 ‘정상’\n이거나 ‘(가격 대비) 훌륭한 가치’로 인식된다. 미국인들은 큰 1인\n분 양이 적절하다는 인식을 만들어냈으며, 이로 인해 ‘1인분의 왜\n곡’이라는 환경을 만들어냈다. 우리는 음식점에서 1인분의 왜곡을\n발견하는데, 점보 사이즈 1인분은 일반적인 1인분보다 일관되게\n250% 더 크다. 우리는 심지어 가정에서도 1인분의 왜곡을 발견\n하는데, 그릇과 유리잔의 크기가 꾸준히 증가해 왔고, 평균적인\n주요리용 접시의 표면 면적이 1960년 이후로 36% 증가했다. 연\n구는 더 큰 1인분이 제공될 때 사람들이 의도하지 않게 더 많은\n칼로리를 섭취한다는 것을 보여준다. 더 큰 1인분 양을 섭취하는\n것은 에너지 과잉 상태의 원인이 될 수 있으며, 이는 시간이 지남에\n따라 체중 증가로 이어지고, 궁극적으로 비만을 야기할 수 있다.",
+"sol": "③ the\n ‌\u0007 perception과 동격 관계의 절을 이끄는 접속사가 필요하\n 므로 what을 that으로 바꿔야 한다.\n① ‌\u0007내용상 consume을 대신하며 문맥상 과거 시제의 대동사가\n필요하므로 did는 어법상 옳다.\n② ‌\u0007앞 문장 전체 내용(Adults today consume an average of\n 300 more calories per day than they did in the year\n 1985.), 즉 같은 문장의 this가 가리키는 내용을 지칭하는 대\n 명사 it은 어법상 옳다.\n④ ‌\u0007비교급 형용사 larger 가 핵인 형용사구를 수식하는 부사\n consistently는 어법상 옳다.\n⑤ when\n ‌\u0007 ~ portions는 when 다음에 they(people) are가 생략\n 된 시간의 부사절로 이해할 수 있는데, they는 offer가 나타내\n 는 동작의 대상이므로 offered는 어법상 옳다.",
+"struct": "■■Americans have created the perception [that large\n portion sizes are appropriate], [creating an\n environment of portion distortion].\n 첫 번째 [ ]는 the perception과 동격 관계이고, 두 번째 [ ]\n 는 주절의 상황에서 비롯된 결과를 나타내는 분사구문이다.\n■■We find portion distortions in restaurants, [where the\n jumbo-sized portions are consistently 250 percent\n larger than the regular portions].\n [ ]는 restaurants를 부가적으로 설명하는 관계절이다."
+}
+],
+"12": [
+{
+"ans": "⑤",
+"topic": "목적을 위해 수단을 정당화하는 상황 윤리",
+"ko": "‘상황 윤리’는 어떤 상황이나 행위가 윤리적인지를 판단할\n때 그것의 맥락을 고려하는 윤리 이론이다. 이 이론의 지지자들은\n기꺼이 절대적 도덕 기준을 버리는 것을 허용한다. 보편적인 기준\n이나 법이 부재할 때 중요한 것은 결과나 결과의 영향이며, 따라\n서 목적이 수단을 정당화한다. 아마 다음과 같은 대조적인 현실\n상황이 상황 윤리의 적용을 설명하는 데 도움이 될 수 있다. 친구\n들끼리 하는 즉석 농구 경기에서는 모두가 자신의 파울을 스스로\n선언하거나 공을 경기장 밖으로 쳐낸(아웃시킨) 것을 인정할 것으\n로 기대된다. 친구들을 배려하고 아마도 그 그룹과 함께 경기를\n계속할 수 있다는 점이 이러한 행동으로 이어진다. 그러나 정식\n경기가 심판이 있는 상태에서 진행되면, 선수 대부분은 상대방에\n대한 배려를 표현하는 것보다 승리라는 최종 목표가 더 중요하기\n때문에 같은 파울이나 바이얼레이션을 인정하지 않을 것이다. 상\n황 윤리는 많은 선수와 코치에 의해, 경쟁적 이점을 버리려고(→\n얻으려고) 경기장이나 코트에서 가능한 한 많은 행동을 저지르고\n도 넘어가려고 애쓰는 것을 의미하는 것으로 확대되어 왔다.",
+"sol": "",
+"struct": "■■Situational ethics is an ethical theory [that takes into\n account the context of a situation or an act when\n judging {whether it is ethical}].\n [ ]는 an ethical theory를 수식하는 관계절이고, 그 안의\n { }는 judging의 목적어 역할을 하는 명사절이다.\n■■[Caring about one’s friends and maybe getting to keep\n playing with the group] leads to these actions.\n [ ]는 문장의 주어 역할을 하는 동명사구이다.\n\n\n\n\n 본문 74~75쪽"
+},
+{
+"ans": "③",
+"topic": "도덕적 분노로 촉발되는 징벌",
+"ko": "도덕적 분노는 사람들이 자신에게 올 비용이나 위험을 감\n수하더라도 악행을 저지른 자를 징벌하도록 동기를 부여하는 심\n리적 도구이다. 그것은 ‘이행 장치’, 즉 사람들이 누군가를 징벌하\n려고 하는 것이 위험할 수 있을지라도 징벌을 이행하도록 만드는\n\n\n\n\n Part\n것이다. 누군가가 개인 간의 폭력을 저지르건 명백한 사기를 저지\n르건 간에 우리가 부당한 피해를 목격할 때, 우리에게 구현되는\n\n\n\n\n I\n신체적 반응이 있다. 우리는 화가 나고, 혈압이 급상승하며, 심장\n이 더 빨리 뛰는데, 우리가 징벌을 갈망하는 것이다. 분노는 우리\n\n\n\n\n 유형편\n가 누군가를 징벌하고자 우리 자신의 안전을 위험에 빠뜨리는 비\n합리성을 인식하게(→ 무시하게) 한다. 어떤 단일 상황에서도 징\n벌을 내리는 것에 관한 즉각적인 개인적 이익은 거의 없으며, 흔\n히 실제적 위험이 있는데, 여러분이 정의를 실현하려는 대상이 여\n러분을 공격하거나 장차 복수할 수도 있기 때문이다. 하지만 분노\n라는 강력한 느낌은 우리가 이 불리한 판단을 일시적으로 잊게 하\n고, 피하는 것이 더 나을 상황에 관여하게 하며, 과학은 어떻게 이\n느낌과 잊음이 협력적인 사회를 유지하는 데 필수적인지를 밝힌\n다.",
+"sol": "도덕적 분노는 개인에게 비용이나 위험이 따르더라도 불의를 징\n벌하도록 동기를 부여하는 심리적 도구이고 협력적인 사회를 유\n지하는 데 중요한 역할을 한다는 내용의 글이다. 누군가를 징벌하\n는 일에는 공격이나 복수와 같은 위험이 따를 수도 있지만 악행에\n대한 분노는 이 불리한 판단을 잊게 만든다고 했으므로, 우리는 위\n험을 감수해서라도 악행을 징벌한다는 비합리성을 분노로 인해 무\n시하게 됨을 추론할 수 있다. 따라서 ③의 recognize를 ignore와\n같은 낱말로 바꿔야 한다.",
+"struct": "■■It is a “commitment device,” [something {that\n commits people to punishment, even though trying to\n punish someone can be dangerous}].\n [ ]는 a “commitment device”와 동격 관계이고, 그 안의\n { }는 something을 수식하는 관계절이다.\n■■But the powerful feeling of outrage leads us [to\n momentarily forget this unfavorable evaluation and\n get involved in a situation {we would be better off\n avoiding}], and science reveals [how this feeling and\n forgetting is essential for maintaining a cooperative\n society].\n 첫 번째 [ ]는 leads의 목적격 보어 역할을 하는 to부정사구이\n 고, 그 안의 { }는 a situation을 수식하는 관계절이다. 두 번\n 째 [ ]는 reveals의 목적어 역할을 하는 명사절이다.\n02"
+},
+{
+"ans": "④",
+"topic": "천연 제품에 대한 인간의 선호",
+"ko": "왜 인간은 천연 제품의 이점이나 해로울 가능성에 관한 지\n식이 없을 때도 천연 제품을 선호하는 비생산적인 본능을 가지고\n있을까? 그 답은 아마도 우리의 유전자에 있을 것이다. 인류는 진\n화 역사의 대부분 내내 어떤 것을 섭취하는 것이 유익한지(즉, 영\n양적 가치가 있거나 약효가 있는지) 아니면 위험한지(즉, 독이 있\n는지)를 판단하는 데 경험에 크게 의존했다. 우리는 우리를 아프\n게 하는 식물을 피하는 본능을 진화시켰고, 우리를 건강하게 하는\n식물을 선호했다. 알려지지 않은 것을 매우 조심스럽게 대하는 것\n은 생존에 엄청난 이점을 제공했다. 오늘날 우리는 천연 제품이\n섭취하기에 안전하다고 믿는다. 하지만 제약 생산 라인에서 나오\n는 그 알약은 우리의 본능이 먹어도 안전하다고 말하는 것과는 전\n혀 달라 보인다. 그 성분은 우리에게 고등학교 화학 실험실을 연\n상시킨다. 하지만 우리는 그것들을 섭취해야 한다. 따라서 우리는\n먼 조상들이 새로운 식물을 대했던 것과 꼭 마찬가지로 그것들을\n호의적으로(→ 조심스럽게) 대한다. 치료약이 필요할 때, 우리는\n우리가 안전하다고 여기는 음식의 파생물, 즉 식물성 제품에 끌리\n며, 과학의 인공적인 산물에는 끌리지 않는다.",
+"sol": "인간은 진화의 역사 속에서 유해한 식물을 피하고 유익한 식물을\n선호하도록 적응해 왔으며, 이러한 본능은 오늘날에도 작용하여,\n우리는 자연에서 유래한 것을 신뢰하고 인공적인 것은 본능적으\n로 멀리하려는 경향을 보인다는 내용의 글이다. 인간은 인공적으\n로 제조된 의약품을 본능적으로 신뢰하지 않으며, 그것들을 새로\n운 식물에 대해 조심스럽게 접근하던 조상들처럼 경계하는 태도\n로 대한다는 맥락이 되어야 한다. 따라서 ④의 favor를 caution\n과 같은 낱말로 바꿔야 한다.",
+"struct": "■■Our species, through most of its evolutionary history,\n relied heavily upon experience to judge [whether\n ingestion of something was beneficial (i.e., nutritional\n or medicinal) versus whether it was dangerous (i.e.,\n poisonous)].\n [ ]는 judge의 목적어 역할을 하는 명사절이다.\n■■When in need of a remedy, we are drawn to\n derivatives of our food, plant products, [which we\n perceive to be safe], and not artificial products of\n science.\n [ ]는 derivatives of our food, plant products를 부가적\n 으로 설명하는 관계절이다.\n03"
+},
+{
+"ans": "③",
+"topic": "식이 보충제의 안전성 문제",
+"ko": "식이 보충제는 의약품이 ‘아니다’. 의약품이란 질병을 진단\n하거나, 고치거나, 완화하거나, 치료하거나, 예방하기 위해 의도\n된 것이다. 의약품은 시판 전에 효과, 안전성, 다른 물질과의 상호\n작용, 그리고 복용에 관한 광범위한 연구를 거쳐야 한다. 식품의\n약국은 의약품에 대해 공식적인 시판 전 승인을 부여하고 의약품\n이 시판된 후에도 그 안전성을 감시한다. 만약 이후에 의약품이\n위험한 것으로 밝혀지면, 식품의약국은 그것이 시장에서 퇴출되\n도록 신속하게 조치를 취할 수 있다. 이런 사항 중 어느 것도 식이\n보충제에 적용되지 않는다. 현행 법률은 식이 보충제에 대해 식품\n의약국에 제한적인 권한만을 부여하고 있다. 이것은 정부가 위험\n한 식이 보충제를 시장에서 제거하는 것을 가능하게(→ 어렵게)\n한다. 식품의약국은 식이 보충제가 시장에 출시되기 전에 그 안전\n성과 효과를 평가하지 않는다. 식이 보충제 제조업체가 더 안전한\n제품을 매대에 올리고 제품에 더 명확하게 라벨을 부착하도록 요\n구하는 방식으로 법을 개선하고자 하는 일부 의원이 의회에 있다.\n그 목적은 소비자가 안전한 식이 보충제와 잠재적으로 심각한 부\n작용이나 약물 상호 작용이 있는 식이 보충제를 구분할 수 있도록\n보장하는 것이다.\n Culture Note\n■ \u0007FDA (Food and Drug Administration) 미국 식품의약국은 미국\n 보건복지부 산하의 식품과 의약품에 대해 관리 규제하는 기관이다. 대부\n 분 식품의 규격과 관련 규제 제정, 영양소 기준, 약품, 백신, 의학 관련 물\n 품, 혈액 관련 물품, 의료 기구, 방사능 측정 기구, 화장품에 이르기까지\n 다양한 분야의 안전 규칙을 정하는 기관이다.",
+"sol": "의약품은 광범위한 연구를 거쳐 시판 전후에 식품의약국에 의해\n관리 감독이 이루어지는 반면에, 식이 보충제는 안전성과 효과가\n제대로 관리 감독되지 않는다는 내용이다. 식이 보충제에 대해 식\n품의약국은 제한적 권한만을 부여하고 있으므로, 정부가 위험한\n식이 보충제를 시장에서 제거하는 것은 어렵다는 맥락이므로, ③\n의 possible은 difficult와 같은 낱말로 바꿔야 한다.",
+"struct": "■■This makes it difficult [for the government to\n remove unsafe supplements from the marketplace].\n it은 형식상의 목적어이고, [ ]는 내용상의 목적어이며, for\n the government는 to부정사구의 의미상 주어를 나타낸다.\n■■There are some legislators in Congress [who want to\n improve the law by requiring supplement makers to\n {put safer products on the shelves} and {label\n\f\n products more clearly}].\n [ ]는 some legislators를 수식하는 관계절이고, 그 안의 두\n 개의 { }는 to에 이어져 requiring의 목적격 보어 역할을 하\n 는 to부정사구를 이룬다.\n\n\n\n04"
+},
+{
+"ans": "⑤",
+"topic": "문학 읽기의 역동성",
+"ko": "문학은 정보 덩어리의 일회용 전달 매개체가 아니다. 문학\n은 (일상적인 읽기와는 달리) 그것이 제공하는 것을 다시 경험하\n고 그 의미를 재평가하도록 우리를 다시 반복해서 불러들인다. 문\n학은 세월이 흘러도 계속해서 의미와 의의를 전달하고, 가장 주목\n할 만하게는, 우리의 관점에 따라 계속해서 그 의미를 변화시킨\n다. 우리는 모두 고전 문학 작품을 여러 해가 지난 후 다시 읽기\n시작하고, 처음 (혹은 다섯 번째) 다 읽고서도 놓쳤던 세부 사항과\n의의를 그 안에서 발견하는 경험을 한 적이 있다. 바뀐 것은 정확\n히는 문학 작품이 아니라, 현재 그 텍스트에 반영되는 우리의 경\n험이다. 존재론적 위협 속에서 나이 들어 가는 것을 다룬 셰익스\n피어의 위대한 희곡 King Lear에 대한 한 사람의 인식은, 20대\n에 읽을 때와 70대에 읽을 때 서로 다른 경험이다. 이것이 사실인\n이유는, 일상적인 읽기와는 달리, 문학 읽기는 우리의 정보 처리\n능력뿐 아니라 분석, 상상, 감정도 활성화하면서, 독자의 전면적\n인 참여를 요구하기 때문이다. 이것들은 모든 사람에게서 시간에\n따라 변하고, 그러한 변화는 문학 작품이 일상적인 읽기보다 어떻\n게 더 변하지 않는지(→ 역동적인지)를 설명해 준다.",
+"sol": "문학 작품은 세월이 흘러도 읽을 때마다 계속해서 새로운 의미를\n전달하며, 독자의 경험 변화에 따라 그 의미가 달라질 수 있다는\n내용의 글이다. 문학 읽기는 독자의 정보 처리 능력, 분석, 상상,\n감정을 활성화하면서 독자의 전면적인 참여를 요구하는데, 이러\n한 독자의 경험은 시간에 따라 변하므로 문학 작품이 주는 의미\n또한 새롭게 바뀌게 된다는 흐름이 되어야 한다. 따라서 ⑤의\ninvariable을 dynamic과 같은 낱말로 바꿔야 한다.",
+"struct": "■■We have all had the experience of [taking up a classic\n work of literature after several years] and [finding in\n it details and significance {we missed the first (or\n fifth) time through}].\n 두 개의 [ ]는 and로 연결되어 of의 목적어 역할을 하는 동명\n 사구이다. 두 번째 [ ] 안의 { }는 details and significance\n 를 수식하는 관계절이다.\n■■This is true [because reading literature, as opposed to\n\f\neveryday reading, requires full reader participation,\n{activating not just our informational processing skills\nbut our analysis, imagination, and emotions}].\n[ ]는 이유를 나타내는 부사절이고, 그 안의 { }는 앞 절의 상\n\n\n\n\n Part\n황에 부수하는 상황을 나타내는 분사구문이다.\n\n\n\n\n I\n 유형편"
+}
+],
+"13": [
+{
+"ans": "①",
+"topic": "초기 곡물 무역 회사의 성공 전략",
+"ko": "초기 곡물 무역 회사들은 잉여 생산 지역과 식량 부족 지\n역 둘 다에서 활발히 활동했으며, 이들 회사는 두 지역의 공급과\n수요 상태를 아는 것을 자신들의 일로 삼았다. 이 정보가 수익성\n의 열쇠였기 때문에, 이들 회사는 상대적으로 비밀리에 운영되었\n으며, 흔히 가족 간의 유대, 신뢰, 충성심을 기반으로 했다. 게다\n가 이들 회사는 1800년대 중반에 생긴 상품 거래소와 상품 선물\n시장의 부상(浮上)으로 이익을 얻을 수 있었다. 농업 시장은 변동\n하는 기상 패턴 및 기타 요인으로 인한 수확량 변화 때문에 당연\n히 불안정하다. 미래 인도를 위해 곡물을 사고팔아 가격을 고정하\n는 방식은 이들 회사가 그러한 위험을 최소화하는 데 도움이 되었\n다. 곡물 무역 회사들은 서로 거래하는 독립적인 국가별 회사로\n운영되기보다는 여러 국가에서 운영되는 단일 기업 내에서 자신\n들의 위험을 관리하는 것이 합리적이었다. 다수의 시장에 대한 그\n들의 정보 접근성은 그들이 농산물 상품 거래와 관련된 위험을 쉽\n게 상쇄할 수 있게 해 주었다.",
+"sol": "",
+"struct": "■■The early grain trade firms were active in both\n surplus-producing and food deficit regions, and these\n firms made it their business [to know the state of\n supply and demand in both].\n it은 형식상의 목적어이고, [ ]는 내용상의 목적어이다.\n■■It made sense [for the grain trading companies to\n manage their risks within a single firm {that was\n operating in more than one country}, rather than\n operating as independent national companies {trading\n with each other}].\n It은 형식상의 주어이고, [ ]는 내용상의 주어이며, [ ] 안의\n for the grain trading companies는 to부정사구의 의미상\n 주어를 나타낸다. [ ]의 첫 번째 { }는 a single firm을 수식\n 하는 관계절이고, 두 번째 { }는 independent national\n companies를 수식하는 분사구이다."
+},
+{
+"ans": "④",
+"topic": "자연 현상과 사물의 목적성",
+"ko": "Physics에서 아리스토텔레스는 자연이 무언가를 위해 작\n용하는 것인지를 묻는다. 그는 비에 대해 태양에 의해 가열되어\n상승한 후 냉각되고 응축하여 지구로 떨어지는 물이라는 설명을\n제공하지만, 비를 그런 식으로 설명하는 데는 특별히 관심을 두지\n않는다. 오히려, 그는 규칙적으로 나타나는 자연의 사물, 사건, 과\n정을 어떻게 설명하는가라는 더 일반적인 질문을 다룬다. 그는 앞\n니의 날카로움과 어금니의 뭉툭함이 우연의 일치인지에 의문을\n제기하고 그런 가능성을 거부하는데, 이러한 배열은 규칙성을 가\n지고 발생하고 그 규칙성은 목적성과 연결되어 있기 때문이다. 앞\n니의 날카로움은 앞니가 (음식을) 찢을 수 있게 하고, 반면에 뒤에\n있는 이의 뭉툭함은 뒷니가 음식을 부수는 것을 가능하게 하며,\n둘 다 먹는 데 유용하다. 아리스토텔레스의 관점에서 보면, 모든\n자연의 일은 특정한 방식으로 일어나며, 무언가를 위해 발생하며,\n그것이 바로 최종 원인이다.",
+"sol": "아리스토텔레스는 모든 자연 현상이 우연이 아니라, 일정한 규칙\n과 목적성을 바탕으로 발생한다고 보았다는 내용이므로, 빈칸에\n들어갈 말로 가장 적절한 것은 ④이다.\n① 신속성   \n② 창의성   \n③ 독창성   \n⑤ 아름다움",
+"struct": "■■He offers an account of rain as water [that rises {when\n heated by the Sun}, then cools, condenses, and falls\n to Earth], but is not particularly concerned with\n explaining rain as such.\n [ ]는 water를 수식하는 관계절이고, 그 안의 { }는 when it\n is heated by the Sun의 의미로 이해할 수 있다.\n■■He queries [whether the sharpness of front teeth and\n the bluntness of molars is coincidental] and rejects\n that possibility, [because this arrangement occurs with\n regularity and that regularity is linked to\n purposefulness].\n 첫 번째 [ ]는 queries의 목적어 역할을 하는 명사절이고, 두\n 번째 [ ]는 이유를 나타내는 부사절이다.\n\f\n02"
+},
+{
+"ans": "④",
+"topic": "판단하지 않고 아이디어 생성하기",
+"ko": "AI는 많은 아이디어를 만들어 내는 생성기이다. 인간 브\n레인스토밍 그룹은 창의적인 아이디어의 질에 초점을 맞추고, 거\n의 즉각적으로 첫 번째 제안의 변형으로 기우는 경향이 있지만,\n좋은 아이디어는 그룹이 양에 먼저 초점을 맞출 때 더 가능성이\n높다. Linus Pauling의 말처럼, “좋은 아이디어를 얻는 가장 좋\n은 방법은 많은 아이디어를 갖는 것이다.” 심리학자 Dean Keith\nSimonton은 이를 ‘동일 확률 법칙’이라고 부르며 창의적 성공은\n만들어진 총 작품 수와 상관관계가 있다고 주장했다. 많은 연구에\n서 창의적 질은 아이디어의 양(디자인 및 혁신 컨설팅 회사의\nBob Sutton이 ‘아이디어 비율’이라고 부른 것)에서 나온다는 사\n실이 확인되었으며, Stanford 대학의 한 연구는 성공적인 제품과\n실패작을 가르는 아이디어의 수를 2,000개가 넘는 것으로 못박\n았다. 이런 이유로 디자인 사고와 혁신은 판단하지 않고 가능성을\n만들어 내는 과정(Utley와 Klebahn이 ‘아이디어 흐름’이라고 부\n르는 것)에 매우 초점을 맞추고 있다.",
+"sol": "좋은 아이디어를 얻는 가장 좋은 방법은 많은 아이디어를 갖는 것\n이며 창의적 질(창의성의 수준)은 아이디어의 양에서 나오므로,\n아이디어의 질을 판단하지 않고 많은 아이디어를 제시하여 가능\n성을 만들어 내는 것이 중요하다는 내용이다. 따라서 빈칸에 들어\n갈 말로 가장 적절한 것은 ④이다.\n① 모든 것 중에서 최고의 아이디어를 선택하는\n② 즉각적인 결과를 도출해 내는\n③ 분석을 통해 선택지를 걸러내는\n⑤ 브레인스토밍을 하면서 창의성을 판단하는",
+"struct": "■■Psychologist Dean Keith Simonton called this the\n “equal odds rule” [arguing {that creative success is\n correlated to the total number of works created}].\n [ ]는 주절의 상황과 동시에 일어나는 상황을 나타내는 분사구\n 문이고, 그 안의 { }는 arguing의 목적어 역할을 하는 명사절\n 이다.\n■■Many studies have confirmed [that creative quality\n comes from quantity of ideas (what Bob Sutton at a\n design and innovation consulting company called\n “idea ratio”)], and one Stanford study pegged the\n number of ideas [that distinguish a successful product\n from a failure] at more than two thousand.\n 첫 번째 [ ]는 confirmed의 목적어 역할을 하는 명사절이고,\n 두 번째 [ ]는 ideas를 수식하는 관계절이다.\n\f\n03"
+},
+{
+"ans": "②",
+"topic": "공감 능력에 있어서 내부 감각 수용 능력의 역할",
+"ko": "내적 감각을 인식하게 되는 것은 우리가 우리 자신의 감정\n\n\n\n\n Part\n을 다스리는 데 도움이 될 수 있다. 아마 더 놀라운 사실은 신체의\n내부 감각 수용 기능이 또한 ‘다른’ 사람의 감정을 더 긴밀하게 접할\n\n\n\n\n I\n수 있게 한다는 것이다. 그것은 뇌가 그 자체로는 다른 사람의 마음\n속에 있는 내용에 직접 접근할 수 있는 방법, 즉 다른 사람이 느끼\n\n\n\n\n 유형편\n고 있는 것을 느낄 방법이 없기 때문이다. 다른 사람의 말과 표정을\n해석하는 것은 내면에서 일어나는 감정에 대한 냉담하게 추상적인\n느낌만 생기게 할 수도 있다. 신체는 중요한 전달자 역할을 해, 뇌\n에 부족한 본능적 정보를 그것에 공급한다. 신체는 그것을 다음의\n방식으로 하는데, 즉 다른 사람과 상호 작용할 때 우리는 미묘하고\n무의식적으로 그들의 표정, 몸짓, 자세, 목소리의 높낮이를 따라 한\n다. 그런 다음 우리 자신의 신체 신호의 내부 감각 수용을 통하여\n우리는 ‘상대방이 느끼는 감정을 우리 자신 안에서 느끼기 때문에’\n그것을 인식한다. 우리는 다른 사람의 감정을 승선시키고, 신체가\n그 가교 역할을 한다. 파트너의 접시에서 한 입 베어 물거나, 친구\n가 듣고 있는 노래를 듣기 위해 이어버드를 빌리는 것과 유사한 행\n위에서, 우리는 상대방의 감정을 조금 느껴 보고 있는 것이다.",
+"sol": "뇌는 다른 사람의 감정을 직접 느낄 수 없기에, 신체가 다른 사람\n의 표정, 몸짓, 목소리를 무의식적으로 따라 하며 그 본능적인 정\n보를 뇌에 공급한다는 내용의 글이므로, 빈칸에 들어갈 말로 가장\n적절한 것은 ②이다.\n① 감정적 편견을 피하고\n③ 그들의 말을 이성적으로 분석하고\n④ 진정한 공감 없이 반응하고\n⑤ 그들의 경험으로부터 우리 자신을 멀어지게 하고",
+"struct": "■■[Becoming aware of our internal sensations] can help\n us [handle our own emotions].\n 첫 번째 [ ]는 문장의 주어 역할을 하는 동명사구이고, 두 번\n 째 [ ]는 help의 목적격 보어 역할을 하는 원형부정사구이다.\n■■Then, [via the interoception of our own bodies’\n signals], we perceive [what the other person is\n feeling] because we feel it in ourselves.\n 첫 번째 [ ]는 수단의 의미를 나타내는 전치사구이고, 두 번째\n [ ]는 perceive의 목적어 역할을 하는 명사절이다.\n\n\n\n04"
+},
+{
+"ans": "④",
+"topic": "기술의 과도한 확장에 대한 비판",
+"ko": "기술의 과도한 확장에 대한 가장 강력한 비판은 비인간화\n에 관한 주장과 관련이 있는데, 이러한 주장이 새로운 것은 아니\n다. 전자 시대의 캐나다 철학자 Marshall McLuhan은 기본적\n으로 기술 낙관론자였지만, 또한 비판적 사상가이기도 했으며, 그\n는 수십 년 전에 인간의 지나친 기술 확장에 대해 경고했다.\nMcLuhan은 인간의 모든 매체 확장은 잘라내기라고 유명하게\n주장했다. 예를 들어, 차를 갖게 되면 더는 걸어서 상점에 가지 않\n게 되고, 컴퓨터 하드 드라이브가 있으면 사물을 기억할 필요가\n없게 되며, 그리고 이제 휴대 전화에 개인용 GPS(위성 위치 확인\n시스템)가 있으므로 아무도 그것 없이는 길을 찾지 못한다.\nMcLuhan의 철학에 따르면, 우리는 점점 탈문해화 되어가고 있\n는데 책과 같은 인쇄 매체보다 그림으로 가득한 화면에 의존하기\n때문이다. 따라서 기술적 · 생물학적 향상을 통해 인간 능력의 확\n장이, 인간 고등 능력의 자연스러운 진화에 발달 정지를 초래하게\n되는 일이 가능하다.\n Culture Note\n■ \u0007post-literate(탈문해화의) 문자 해독 능력(읽고 쓰는 능력)이 더는\n 사회에서 필수적이거나 중요하게 여겨지지 않는, 멀티미디어 기술이 지\n 배하는 가상 미래의 특성을 가리킨다.",
+"sol": "기술의 과도한 확장이 비인간화를 초래하고, 인간의 모든 활동 능\n력의 잘라내기(amputation)라는 부정적인 결과를 가져온다는\n내용이므로, 빈칸에 들어갈 말로 가장 적절한 것은 ④이다.\n① 현대 사회에서 전통적인 문해력에 대한 새로운 강조\n② 인간 인지의 지적 성장에서 가속된 진전\n③ 인간 능력이 일상생활에서 활용되는 방식의 급속한 변화\n⑤ 인간의 능력과 인공 지능 사이에 전례 없는 경쟁",
+"struct": "■■Canadian philosopher of the electronic age, Marshall\n McLuhan was primarily a techno-utopian, but he was\n also a critical thinker, [who cautioned decades ago\n against too much human extension into technology].\n [ ]는 a critical thinker를 부가적으로 설명하는 관계절이다.\n■■For example, [once we have a car], we don’t walk to\n the shops any more; [once we have a computer hard-\n drive], we don’t have to remember things; and [now\n that we have personal GPS (Global Positioning\n System) on our cell phones], no one can find their\n way about without it.\n 첫 번째와 두 번째 [ ]는 시간을 나타내는 부사절이고, 세 번\n 째 [ ]는 이유를 나타내는 부사절이다."
+}
+],
+"14": [
+{
+"ans": "④",
+"topic": "건축 설계 시 사용자 참여의 중요성",
+"ko": "진행 중인 여러분의 설계 작업에 대해 고객들이 반응할 충\n분한 기회를 제공하는 것은 전문적 성공의 핵심이다. 마찬가지로,\n고객뿐 아니라 예상되는 건물 사용자들을 참여시키는 것은 장기\n적으로 훨씬 더 가치가 있다. 이를테면, 여러분의 고객이 의료 서\n비스 제공 기관과 같은 대규모 기업이라고 하자. 병원 행정 부서\n가 여러분의 고객 역할을 할 수는 있겠지만, 틀림없이 행정 부서\n직원들의 관점은 그 건물을 정기적으로 사용하는 의사, 인턴, 레\n지던트, 간호사, 그리고 다른 의료 직원들의 관점과 크게 다를 것\n이다. 게다가 그 건물을 비정기적으로 사용하는 환자와 방문객들\n의 경험은, 흔히 생명을 위협하는 응급 상황의 결과로 찾아오게\n되는 만큼, 또한 완전히 다르다. 각 사용자 유형이 현재의 의료 환\n경을 어떻게 경험하는지, 그리고 각각 여러분의 예상 설계안에 어\n떻게 반응하는지를 이해하는 것은 필연적으로 더 나은 건물을 만\n들어낸다. 사람들은 자신들이 설계 과정에서 자문을 받았을 경우\n새로운 건물이나 증축에 대해 더 만족할 가능성이 높다. 대규모\n기관의 경우, 이것은 업무 생산성 향상, 장기 결근 감소, 이직률\n감소, 비용 절감으로 이어질 수 있다.",
+"sol": "",
+"struct": "■■[While the hospital administration may serve as your\n client], no doubt the perspectives of administration\n personnel will differ significantly from those [of\n doctors, interns, residents, nurses, and other medical\n staff {who use the building regularly}].\n 첫 번째 [ ]는 양보를 나타내는 부사절이다. 두 번째 [ ]는\n those를 수식하는 전치사구이고, 그 안의 { }는 doctors,\n interns, residents, nurses, and other medical staff를 수\n 식하는 관계절이다. those는 the perspectives를 대신한다.\n■■[Understanding {how each type of user experiences\n the current medical environment} as well as {how\n each reacts to your prospective designs}] inevitably\n produces a better building.\n [ ]는 주어 역할을 하는 동명사구이고, 그 안의 두 개의 { }는\n as well as로 연결되어 Understanding의 목적어 역할을 하\n 는 명사절이다.\n\f\n 본문 84~87쪽"
+},
+{
+"ans": "②",
+"topic": "같은 경험에 대한 의미 해석의 차이",
+"ko": "의미와 경험을 공유하는 것은 간단한, 자동적인 과정이 아\n닌데, 두 사람 이상이 진행 중인 같은 사건을 관찰하거나 참여할\n때마다, 그들은 서로 다른 관점, 서로 다른 이력, 서로 다른 배경\n지식을 가지고 그것을 경험한다. 관련된 사람에 아기 또는 아주\n어린 아이와 성인이 포함될 때 이러한 차이가 가장 두드러지지만,\n아기를 위해 어떤 일을 준비하는 성인은 이러한 차이를 염두에 두\n는 것이 어려울 수도 있다. 예를 들어, 목욕을 시킬 때, 물놀이 경\n험이 즐거웠고, 물의 원천과 성질에 대한 지식이 자신감을 주며,\n자신의 신체 조절 능력으로 아기가 안전하게 안겨 있어 위험하지\n않게 하는 부모는 아기가 물을 튀기는 것을 즐길 것이라고 기대한\n다. 그러나 아기는 (아마도 겁에 질린 울음을 통해) 자신의 관점이\n성인의 관점과 상당히 다르다는 것을 분명히 보여줄 수도 있다.\n그 둘은 경험은 공유하지만, 의미는 공유하지 않는다.",
+"sol": "같은 상황을 함께 경험하더라도, 사람들은 서로 다른 관점과 이\n력, 배경지식을 바탕으로 다르게 받아들이기 때문에, 경험은 공유\n할 수 있어도 그 의미까지 항상 공유하는 것은 아니라는 내용이\n되어야 하므로, 빈칸에 들어갈 말로 가장 적절한 것은 ②이다.\n① 자신의 감정 조절에 실패한다\n③ 자신의 독특한 경험을 공유하는 것을 주저한다\n④ 서로의 관점을 이해하려고 노력한다\n⑤ 차이에 개방적이고 협력할 준비가 되어 있다",
+"struct": "■■When giving a bath, for example, a parent [whose\n experience with water play has been fun], [whose\n knowledge about the source of the water and its\n disposition provides confidence], and [whose body\n control ensures {that the baby is safely held and not\n in danger}], expects the infant to enjoy splashing\n water.\n 세 개의 [ ]는 and로 연결되어 a parent를 수식하는 관계절이\n 고, 세 번째 [ ] 안의 { }는 ensures의 목적어 역할을 하는 명\n 사절이다.\n■■Yet the baby may make it clear (perhaps by terrified\n crying) [that her perspective is quite different from\n that of the adult].\n it은 형식상의 목적어이고, [ ]는 내용상의 목적어이다. [ ]\n 안의 두 번째 that은 the perspective를 대신한다.\n\f\n02"
+},
+{
+"ans": "①",
+"topic": "공로 인정과 시점 특정의 어려움",
+"ko": "캘리포니아 La Jolla에 있는 Salk Institute 실험실에서\n\n\n\n\n Part\n의 일상적인 과학 활동에 대한 상세한 인류학적 연구는, 공로를\n인정하고 시점을 특정하는 것이 얼마나 어려운지를 보여준다.\n\n\n\n\n I\nBruno Latour는 과학자들이 TRF(갑상선 자극 호르몬 방출 인\n자)라는, 뇌에서 분비되는 호르몬을 어떻게 규명했는지를 설명한\n\n\n\n\n 유형편\n다. 그는 자신의 관찰이, ‘외부인에 의해 잘 조직되고, 논리적이\n며, 일관된 것으로 널리 여겨지는 일군의 행위가 실제로는 과학자\n가 질서를 만들어 내기 위해 고군분투하는 무질서하게 배열된 관\n찰 결과로 이루어져 있다는 확신’으로 자신을 이끌었다고 말한다.\nTRF의 최종적인 합의 공식화(즉, 그것이 과학적 ‘사실’이 되었을\n때)는 1968년 1월과 1970년 1월 사이의 어느 시점에 나타났다.\n이 발견에 대해 1977년 노벨 의학상의 절반은 Salk 그룹과 뉴올\n리언스에 있는 또 다른 경쟁 집단 사이에 나누어졌지만(나머지 절\n반은 이 연구들에서 사용된 기술을 개발한 Rosalind Yalow에게\n수여됨), 이 두 경쟁 집단은 각자 자신만이 단독으로 공로를 인정\n받을 자격이 있고, 상대방은 그 상의 일부조차 받을 자격이 없다\n고 강하게 느꼈다.\n Culture Note\n■ \u0007TRF(갑상선 자극 호르몬 방출 인자) 시상하부의 뉴런에 의해 생성되\n 는 뇌하수체 자극 호르몬으로서, 뇌하수체에서 갑상선 자극 호르몬(TSH)\n 과 프로락틴의 방출을 자극한다.",
+"sol": "이 글은 TRF 발견 과정에서 과학적 사실이 정립되기까지의 시점\n이 명확하지 않고, 두 연구 집단이 각기 공로를 주장하는 상황을\n보여준다. 노벨상이 Salk 그룹과 경쟁 집단에 나누어 수여되자,\n두 집단 모두 자신만이 온전히 공로를 인정받아야 한다며 강하게\n반발했는데, 이는 발견의 시점과 공로가 불분명했기 때문에 생긴\n갈등으로, 과학 활동에서 그것을 특정하고 인정하는 것이 얼마나\n어려운지를 보여주므로, 빈칸에 들어갈 말로 가장 적절한 것은 ①\n이다.\n② 의도와 방법을 추적하는\n③ 변인과 조건을 통제하는\n④ 절차와 도구를 표준화하는\n⑤ 증거와 결론을 비교하는",
+"struct": "■■He says [that his observations led him to “the\n conviction {that <a body of practices widely regarded\n by outsiders as well organized, logical, and coherent>,\n in fact consists of a disordered array of observations\n<with which scientists struggle to produce order>}.”]\n [ ]는 says의 목적어 역할을 하는 명사절이고, 그 안의 { }는\n the conviction과 동격 관계이다. { } 안의 첫 번째 < >는\n 동격 관계인 that절의 주어 역할을 하는 명사구이고, 두 번째\n < >는 a disordered array of observations를 수식하는 관\n 계절이다.\n■■~, but each of these two competing groups strongly\n felt [that they deserved sole credit] and [that the other\n did not deserve even a share of the award].\n 두 개의 [ ]는 and로 연결되어 felt의 목적어 역할을 하는 명\n 사절이다.\n\n\n\n03"
+},
+{
+"ans": "①",
+"topic": "음악 공연에서 지휘자의 존재",
+"ko": "누군가가 음악 공연을 만들고 이끈다는 의미에서의 음악\n지휘의 개념은 음악의 기원까지 거슬러 올라간다. 심지어 고대 인\n도네시아의 가믈란에도 박자와 템포의 변화, 시작과 끝, 곡에서\n곡으로의 전환을 연주단에 신호하던 리더가 있었다. 그러나 듣는\n관객은 어떠한 음악적 리더십도 거의 알지 못하며, 그것에는 충분\n한 미학적 이유가 있다. 그들이 자신의 경험을 충족시키기 위해\n알 필요는 없으며, 실제로 불필요하게 눈에 띄는 음악 리더의 존\n재는 그것을 손상할 것이다. 관객은 대부분의 경우 무대 작품을\n실현하는 데 들어가는 기법에 관여하기보다는 무대 작품 전체를\n받아들이는 편이 더 낫다. 이것은 오케스트라가 단독으로 연주할\n때 관객 구성원들의 눈이 (연주가 진행되는) 대부분의 시간 동안\n지휘자에게 고정되어 있지 않다는 뜻은 아니며, 아마 그들의 눈은\n그럴 것이다. 그러나 음악이 무대 위에서 일어나고 있는 무언가의\n반주를 할 때, 모든 시선이 무대로 향하고, (음악 지휘자의 귀를\n포함해서) 모든 이의 귀도 마찬가지로 무대로 향한다.",
+"sol": "음악 공연에서 지휘자는 중요한 역할을 하지만, 관객의 몰입과 미\n학적 경험을 위해 그 존재는 눈에 띄지 않는 것이 바람직하다는\n내용이다. 따라서 관객은 음악적 리더십의 존재를 거의 알지 못한\n다고 해야 하므로, 빈칸에 들어갈 말로 가장 적절한 것은 ①이다.\n② 공연에서 미묘한 실수를 신경 쓰지 않으며\n③ 공연이 의미를 갖기 위해서 항상 필수적인 것은 아니며\n④ 음악이 어떻게 들리는지에 대한 기술적 측면을 이해하지 못하며\n⑤ 작곡가의 의도보다 개인적인 해석을 선호해서는 안 되며",
+"struct": "■■An audience is better off, for the most part, [taking in\n the whole of a stage work] rather than [being party to\nthe techniques {that go into realizing it}].\n 두 개의 [ ]는 rather than으로 연결되어 is better off에 이\n 어진다. 두 번째 [ ] 안의 { }는 the techniques를 수식하는\n 관계절이다.\n■■When music is accompanying something [happening\n on stage], however, all eyes turn to the stage, and so\n do everyone’s ears, too (including the music\n director’s).\n [ ]는 something을 수식하는 분사구이고, do는 turn to the\n stage를 대신한다.\n\n\n\n\n04"
+},
+{
+"ans": "③",
+"topic": "배경 지식의 중요성",
+"ko": "독자가 페이지에 가져오는 것(독자의 배경 지식)의 중요성\n은 Hirsch가 The Knowledge Deficit에서 논의한 연구에서 강\n조된다. 이 연구는 야구에 관한 글을 읽도록 요청받은 두 집단의\n학생으로 구성되었다. 첫 번째 집단은 야구에 대해 거의 알지 못\n하는 독해력이 뛰어난 학생들로 구성되었다. 두 번째 집단은 야구\n에 대해 잘 알고 있는 독해에 어려움을 겪는 학생들로 구성되었\n다. 글을 읽은 후 각 집단의 학생들은 이해력 테스트를 받았다. 어\n느 집단의 점수가 더 높았을까? 독해에 어려움을 겪는 독자들이\n었다. 주제에 대한 지식이 부족한 상태로 그 페이지에 이른 학생\n들에게는 뛰어난 읽기 능력만으로는 충분하지 않았다. 두 번째 집\n단의 독자들은 독해력이 뛰어나지는 않았지만, 그들의 배경 지식\n으로 인해 훨씬 더 뛰어난 능력을 가진 독자들보다 더 높은 점수\n를 받을 수 있었다. 배경 지식, 혹은 우수 독자의 경우 배경 지식\n의 부족이, (성공을 좌우하는) 미지의 요인이었다.",
+"sol": "야구를 주제로 한 이해력 테스트에서 독해력이 뛰어난 학생들보\n다 독해력이 뛰어나지는 않지만 야구에 대한 배경 지식을 가진 학\n생들이 더 높은 점수를 받았다는 연구를 소개하며, 배경 지식이\n성공을 좌우하는 미지의 요인이었다고 말하는 내용이므로, 빈칸\n에 들어갈 말로 가장 적절한 것은 ③이다.\n① 학생이 문제를 해결하는 방법\n② 학생들이 새로운 주제를 배우는 곳\n④ 독자들이 복잡한 텍스트에 접근하는 방법\n⑤ 학생이 어려움을 해결할 때 하는 것",
+"struct": "■■[Having strong reading skills] was not enough for the\n students [who came to the page with a knowledge\n\f\n deficit about the topic].\n 첫 번째 [ ]는 문장의 주어 역할을 하는 동명사구이고, 두 번\n 째 [ ]는 the students를 수식하는 관계절이다.\n■■[Though the second group of readers were not strong\n readers], their prior knowledge enabled them [to\n outscore readers with far better abilities].\n 첫 번째 [ ]는 양보를 나타내는 부사절이고, 두 번째 [ ]는\n enabled의 목적격 보어 역할을 하는 to부정사구이다."
+}
+],
+"15": [
+{
+"ans": "④",
+"topic": "자기돌봄에 우선순위를 두기",
+"ko": "우리 중에 최소한 운동, 취미, 혹은 휴식과 같은 자기돌봄\n활동을 위한 시간을 만들고자 하지 않는 사람은 거의 없다. 우리\n는 가장 좋은 의도를 가지고 날마다 시작하지만, 그러고는 이메일\n메시지의 홍수에 갇히거나 예상치 못한 회의로 끌려간다. 마감 전\n에 모든 일을 끝낼 수 있도록 우선순위를 다시 정하려고 애쓸 때,\n흔히 우리의 자기돌봄 활동은 가장 먼저 포기되는 것이다. 우리가\n아무리 계획을 세워도, 우리는 모두 그런 일이 일어나는 날을 때\n때로 겪는다. 단기적으로는, 그 보조금 신청 마감일을 놓치는 영\n향은 목공 수업을 놓치는 영향보다 더 클 수 있다. (말할 필요도\n없이, 우리는 디자인 수업에 앞서 목공 수업에 등록하려고 노력해\n야 하는데, 그 이유는 그것이 들어가는 데 더 경쟁이 치열하고 우\n리에게 더 유익하기 때문이다.) 그러나 자기돌봄에 우선순위를 두\n지 않는 것의 누적된 영향을 인식하고, 장기적으로는 이것이 일반\n적인 것이 아니라 예외가 되도록 하는 것이 중요하다.",
+"sol": "",
+"struct": "■■[No matter how much we plan], we all occasionally\n have days [when that happens].\n 첫 번째 [ ]는 양보를 나타내는 부사절이고, 두 번째 [ ]는\n days를 수식하는 관계절이다.\n■■But it’s important [{to recognize the cumulative\n impact of not prioritizing self-care} and {to make\n sure that in the long term, this is the exception rather\n than the norm}].\n it은 형식상의 주어이고, [ ]는 내용상의 주어이다. [ ] 안의\n 두 개의 { }는 and로 연결되어 그 내용상의 주어를 이룬다.\n\n\n\n\n 본문 90~91쪽"
+},
+{
+"ans": "③",
+"topic": "참가자의 감정을 이용한 운동 강습",
+"ko": "운동에서 감정의 활용은 중요할 수 있는데, 특히 운동 강\n사들 사이에서 그렇다. 운동의 즐거움은 운동 지속성 증가와 관련\n이 있다는 것이 입증되었다. 강사는 프로그램 지속성을 높이기 위\n한 수단으로 참가자의 즐거움을 조성하는 것을 목표로 할 수 있\n다. 강사는 또한 학생들로부터 더 많은 노력을 이끌어 내기 위해\n감정을 활용할 수도 있다. 유산소 킥복싱 수업 중에 참가자에게\n분노와 좌절감 같은 감정을 유도하면, 더 노력을 기울인 펀치와\n강한 발차기로 이어질 수 있다. (이처럼, 스포츠 강사들은 부상을\n예방하는데 도움을 주기 위해 학생들이 운동하는 신체적인 상태\n를 점검하는 것을 고려하고 싶을 수 있다.) 반대로, 요가 강사는\n학생들이 수련에 적합한 마음가짐을 갖도록 긍정적인 감정이나\n연민 같은 감정 관련 상태를 활용할 수 있다. 분명히, 스포츠와 운\n동에서 수행을 향상하기 위해 감정을 활용할 수 있는 많은 방법이\n있다.",
+"sol": "강사는 참가자의 프로그램 지속성을 높이기 위해 그들의 즐거움\n을 조성하고, 운동 강습 시 감정을 활용해서 운동 수행을 향상할\n수 있다는 내용의 글이므로, 부상 예방을 위해 학생들이 운동할\n때의 신체 상태를 점검하는 것을 고려하고 싶을 수 있다는 내용의\n③은 글의 전체 흐름과 관계가 없다.",
+"struct": "■■[Cuing participants to feelings of anger and frustration\n {during a cardio kickboxing class}] might lead to\n more effortful punches and stronger kicks.\n [ ]는 주어 역할을 하는 동명사구이고, 그 안의 { }는 시간의\n 전치사구이다.\n■■Evidently, there are a number of ways [emotions\n could be used to enhance performance in sport and\n exercise].\n [ ]는 a number of ways를 수식하는 관계절이다.\n\n\n\n02"
+},
+{
+"ans": "③",
+"topic": "정밀한 측정을 위한 자릿수 기록",
+"ko": "모든 측정 기기의 사용에 관하여 가장 기본적인 규칙은,\n그 기기가 정밀도에 관해서는 항상 최고 능력까지 읽혀야 한다는\n것이다. 정밀도는 측정값의 자릿수 개수에 나타나며, 이 측정값이\n더 많은 자릿수를 가질수록, 그것은 더 정밀한 것이다. 예를 들어,\n345.2인치라는 측정값은 345인치라는 측정값보다 더 정밀하다.\n(또한, 오늘날 많은 계산기는 수학 함수를 시각화하는 데 유용한\n고급 그래프 작성 기능을 제공한다.) 만약 어떤 기기에서 소수점\n오른쪽의 첫 번째 자릿수를 얻을 수 있다면, 그 자릿수는 기록되\n어야 하며, 만약 소수점 오른쪽의 두 번째 자릿수를 얻을 수 있다\n면, 그 자릿수가 기록되어야 하는 등 계속 그런 식이어야 한다. 따\n라서, 실험실 연구원은 사용되고 있는 기기가 무엇이든, 그것이\n디지털이든 디지털이 아니든, 그 기기로부터 가능한 한 가장 많은\n자릿수를 얻기 위해 노력해야 한다.",
+"sol": "측정 기기를 사용할 때는 최고 정밀도를 위해 가능한 한 자릿수를\n많이 기록해야 하며, 이것이 정밀한 측정을 위해 중요하다는 내용\n의 글이므로, 많은 계산기가 고급 그래프 작성 기능을 제공한다는\n내용의 ③은 글의 전체 흐름과 관계가 없다.",
+"struct": "■■[The most fundamental rule regarding the use of any\n measuring device] is [that the device should always\n be read to its optimum capability with regard to\n precision].\n 첫 번째 [ ]는 문장의 주어 역할을 하는 명사구이고, 두 번째\n [ ]는 is의 주격 보어 역할을 하는 명사절이다.\n■■Thus, a laboratory worker should endeavor to obtain\n the most digits possible from [whatever device is\n being used] [whether it is digital or nondigital].\n 첫 번째 [ ]는 from의 목적어 역할을 하는 명사절이고, 두 번\n 째 [ ]는 양보를 나타내는 부사절이다.\n\n\n\n\n03"
+},
+{
+"ans": "④",
+"topic": "수학에서의 추상화",
+"ko": "표준 학교 수학 교육 과정은 수학이 온통 추상화에 관한\n것이라는 점을 충분히 강조하지 않는다. 수학자는 특정 객체를 연\n구하지만, 보통은 그것을 한데 모아서 그것 모두를 동시에 연구하\n는 것을 목표로 한다. 이렇게 하면 각 객체를 개별적으로 연구하\n는 대신 객체 전체 집합에 대해 한 번만 특성을 증명하면 되므로,\n막대한 양의 시간과 노력을 절약하게 된다. 훨씬 더 중요한 것은\n이것이 아직 정의되지 않은 객체까지 포함하여 집합 내의 모든 객\n체가 특정 속성을 가지고 있다는 것을 보장한다는 것이다. 흔히\n중요한 객체가 특정 방식으로 기능한다는 것을 증명하고자 할 때,\n수학자는 대신에 그 객체가 이미 이 속성을 가진 것으로 알려진\n집합에 속한다는 것을 증명한다. (수학적 계산 능력은 학업 발달\n의 핵심 지표 역할을 하는데, 이는 그것이 학생의 수치적 숙달도,\n문제 해결 기술, 그리고 인지 발달을 반영하기 때문이다.) 우리는\n일상생활에서도 비슷하게 추론하는데, 즉 모든 과일에는 씨앗이\n있는데 사과는 과일이니, 그렇다면 사과에는 씨앗이 있어야 한다\n는 식이다.",
+"sol": "수학에서 추상화가 중요한데 추상화를 통해 객체 전체 집합에 대\n해 한 번만 특성을 증명하면 되는 등의 효율성이 있다는 내용의\n글이므로, 학업 발달의 핵심 지표로서의 수학적 계산 능력에 관한\n내용의 ④는 글의 전체 흐름과 관계가 없다.",
+"struct": "■■Even more importantly, this guarantees [that every\n object within a class has a particular property, even\n the objects {that haven’t been defined yet}].\n [ ]는 guarantees의 목적어 역할을 하는 명사절이고, 그 안의\n { }는 the objects를 수식하는 관계절이다.\n■■Often, when mathematicians want to prove [that an\n important object behaves in a particular way], they\n prove instead [that it belongs to a class {already\n known to have this property}].\n 두 개의 [ ]는 각각 prove의 목적어 역할을 하는 명사절이고,\n 두 번째 [ ] 안의 { }는 a class를 수식하는 분사구이다.\n\n\n\n\n04"
+},
+{
+"ans": "④",
+"topic": "위약(僞藥) 효과의 새로운 적용",
+"ko": "위약 효과에서 믿음은 매우 중요하기 때문에, 환자가 복용\n하게 될 수 있는 실제 약에 대한 신뢰를 유발하기 위해서는 속임\n수가 필요한 듯 보일 것이다. 하지만 하버드 대학의 선도적인 위\n약 연구자인 Ted Kaptchuk는 속임수라는 요소를 없앨 가능성\n을 연구하고 있다. 그는 환자에게 위약을 복용하게 될 것이라고\n솔직하게 말하지만, 위약이 얼마나 강력하고 효과적일 수 있는지\n도 알려준다. 과민성대장증후군을 대상으로 한 한 실험에서 아무\n런 치료를 받지 않은 대조군의 35% 대비, 공개적인 위약 치료를\n받은 환자의 대략 59%가 개선 효과를 보고한 것으로 나타났다.\n(환자가 위약을 투여받은 사실을 알게 되면, 의료 서비스 제공자\n에 대한 신뢰가 손상되어 향후 치료에 대한 의구심이 생길 가능성\n이 있다.) 이 결과는 대단해 보이지 않을 수도 있지만, 위약을 투\n여하는 것이 아무것도 하지 않는 것과 같지 않다는 점을 분명히\n보여준다.",
+"sol": "환자에게 솔직하게 위약을 복용하게 될 것이라고 알리고 그 효과\n를 설명하는 공개적인 위약 치료를 통해 속임수 없이도 위약 효과\n를 유발할 수 있음을 입증하는 연구를 소개하는 글이므로, 환자가\n위약을 받았다는 것을 알게 되었을 때의 부정적 결과를 말하는 내\n용의 ④는 글의 전체 흐름과 관계가 없다.",
+"struct": "■■Because belief is so crucial in the placebo effect, it\n would seem [that deception is necessary in order to\n trigger a patient’s trust in the actual drug {he might be\n\n\n\n\n Part\n taking}].\n it은 형식상의 주어이고, [ ]는 내용상 주어이며, 그 안의 { }\n\n\n\n\n I\n 는 the actual drug를 수식하는 관계절이다.\n■■The results may seem modest, but they make the point\n\n\n\n\n 유형편\n [that giving a placebo isn’t the same as doing\n nothing].\n [ ]는 the point와 동격 관계이다."
+}
+],
+"16": [
+{
+"ans": "④",
+"topic": "반복적인 과정에 기반한 시계",
+"ko": "우리는 보통 시계를 알람 시계나 손목시계와 같은 물리적\n인 것으로 생각한다. 그러나 시계는 실제로는 어떤 기계 속에 구\n현된 하나의 과정이며, 그 과정의 본질은 반복적이다. (C) 시계는\n무기한으로 계속 자신을 반복하는 거의 모든 과정일 수 있다. 물\n시계는 일정한 속도로 물방울이 떨어지고, 석영 결정은 규칙적으\n로 진동한다. (A) 실제로, 반복적인 사건의 주기에 의존하지 않\n는 시계를 생각하는 것은 거의 불가능하다. 손쉽게 떠오르는 유일\n한 사례는 시간 단위로 표시된 양초이다. 그러나 여기에서도 밀랍\n분자들의 반복적인 연소처럼 반복이 있어서, 비록 처음에는 가려\n져 있었지만, 이것 역시 반복적인 과정이다. (B) 방사성탄소 연대\n측정의 사용은 또 다른, 훨씬 더 장기적 규모의 시계로, 이것 또한\n이와 같은 것처럼 보인다. 그것은 매끄러운 시간 척도를 산출하는\n것처럼 보이지만, 사실은 그렇지 않은데, 비록 큰 규모에서는 탄\n소-14 원자의 붕괴가 연속적인 것처럼 보이지만, 그것은 반복적\n이다.",
+"sol": "",
+"struct": "■■Indeed, it is almost impossible [to think of a clock\n {that does not depend on a repetitive cycle of\n events}].\n it은 형식상의 주어이고, [ ]는 내용상의 주어이다. [ ] 안의\n { }는 a clock을 수식하는 관계절이다.\n■■[The only example {that comes to mind readily}] is a\n candle [marked in hours].\n 첫 번째 [ ]는 문장의 주어 역할을 하는 명사구이고, 그 안의\n { }는 The only example을 수식하는 관계절이다. 두 번째\n [ ]는 a candle을 수식하는 분사구이다."
+},
+{
+"ans": "④",
+"topic": "온라인으로 글을 쓸 때 독자의 관심을 끄는 방법",
+"ko": "학계에서 여러분은 여러분의 결과를 “저는 가설을 생각해\n냈고, 그런 다음 이 실험을 했으며, 그 후 또 다른 실험을 했고, 그\n런 다음 저는 제 아이디어를 좀 더 검증했으며, 이렇게 계속해서\n[극적인 팡파르] ‘짜잔!’ 저는 이를 증명했습니다.”와 같은 식으로\n작성하도록 배운다. (C) 만약 여러분이 온라인에서 이런 식으로\n글을 쓴다면, 여러분의 극적인 결론이 아무리 흥미진진하거나 혁\n신적이어도 그 결론까지 읽을 독자는 매우 적을 것이다. 온라인에\n서 우리는 여러분이 마지막에 중대한 내용을 공개하는 순간을 기\n다릴 만큼의 인내심이 없다. (A) 대신, 여러분은 처음부터 우리\n에게 “저는 이것을 증명했습니다! 그리고 제가 그것을 어떻게 알\n게 되었는지는 이렇습니다…”라고 말해야 한다. 그럼에도 불구하\n고 여러분의 독자 수는 여러분의 글을 읽는 도중에 줄어들고 점점\n감소할 수도 있지만, 적어도 대다수 독자가 바로 처음부터 여러분\n이 달성한 것이 진정 무엇인지 안다. (B) 그들 중 좀 더 많은 이들\n이 첫 문장, 즉 언론 용어로 ‘훅(관심을 끄는 첫 문장)’이 특히 흥\n미로우면, 계속 (읽기에) 참여할 수도 있다. 여러분이 초반에 그들\n의 관심을 끌면, 여러분은 더 많은 독자가 전체 이야기를 읽도록\n설득할 수 있을 가능성이 더 높다.",
+"sol": "학술적인 글에서 연구 결과를 기술할 때, 가설을 바탕으로 진행한\n실험을 통해 아이디어를 검증하고 결국 이를 증명했다는 식으로\n쓰는 것이 일반적이라는 내용의 주어진 글 다음에, 온라인에서 글\n을 쓸 때는 이런 식으로 중요한 내용을 마지막에 공개하면 독자의\n관심을 받기 어렵다는 내용의 (C)가 이어져야 한다. 그다음에는\n이러한 문제를 피하기 위해 온라인에서는 독자가 저자의 성과를\n빨리 알 수 있도록 처음부터 결론을 밝혀야 한다는 내용의 (A)가\n온 후, 흥미로운 첫 문장을 통해 독자의 관심을 끌면 더 많은 독자\n가 전체 이야기를 읽을 것이라는 내용의 (B)로 마무리되는 것이\n글의 순서로 가장 적절하다.",
+"struct": "■■[If you grab their attention early], you can more likely\n convince more readers [to stay for the whole story].\n 첫 번째 [ ]는 조건을 나타내는 부사절이고, 두 번째 [ ]는\n convince의 목적격 보어 역할을 하는 to부정사구이다.\n■■Online, we don’t have the patience [to wait for your\n big reveal at the end].\n [ ]는 the patience의 구체적인 내용을 설명하는 to부정사구\n 이다.\n\f\n02"
+},
+{
+"ans": "④",
+"topic": "뇌의 대리 기능",
+"ko": "인간의 지각 체계는 변화하는 빛, 상황, 맥락 속에서 사물\n을 인지하도록 설계되어 있다. 그것은 끊임없이 변화하는 세상에\n대단히 잘 적응되어 있다. 이러한 불확실성을 처리하기 위해 뇌는\n하나의 경로가 아닌 여러 경로를 사용한다. (C) 하나의 경로가 막\n히면 그것은 다른 경로를 사용한다. 이용 가능한 것이 무엇이든\n그에 따라 변화하는 단서에 의존할 수 있는 뇌의 이 엄청난 유연\n성은 ‘대리 기능’으로 알려져 있다. 그것은 대부분의 생물 체계에\n서 찾아볼 수 있다. (A) 예를 들어, 철새는 수천 마일을 날아가면\n서 길을 찾기 위해 별에 의존할 수 있다. 하지만 흐린 날에는 대신\n주요 지형지물이나 자신의 자성(磁性) 감각에 의존할 수도 있다.\n마찬가지로 뇌는 눈, 코, 입의 모양으로 얼굴을 인식할 수 있다.\n(B) 극단적인 경우에는 몇 개의 선만으로도 충분한데, 우리가 연\n필로 몇 획만 그린 캐리커처에서 유명인의 얼굴을 알아보는 경우\n가 그러하다. 얼굴의 일부가 가려져 눈과 같은 내부 특징이 거의\n보이지 않는 경우에도 얼굴 인식은 또한 작동한다. 이 경우 뇌는\n머리카락과 머리 모양과 같은 외부 특징에 의존한다.\n Culture Note\n■ \u0007magnetic sense(자성(磁性) 감각) 생명체가 지구 자기장을 감지\n 하여 방향을 파악하고 위치를 인식하는 능력이다. 이는 주로 동물의 길\n 찾기와 이동에 중요한 역할을 하는 감각 체계이다. 다양한 동물이 자성\n 감각을 이용하여 장거리 이동을 수행하는데, 특히 철새는 계절에 따라 수\n 천 킬로미터를 이동할 때 지구 자기장을 나침반처럼 활용하여 정확한 경\n 로를 유지하는 것으로 알려져 있다.",
+"sol": "인간의 지각 체계가 변화하는 환경 속에서도 사물을 인식할 수 있\n도록 설계되어 있으며, 이렇게 끊임없이 변화하는 세계에서 불확\n실성을 처리하기 위해 인간의 뇌는 여러 경로를 활용한다는 내용\n의 주어진 글 다음에는, 이러한 뇌의 유연성을 설명하는 개념인\n‘대리 기능(vicarious functioning)’을 소개하고, 이 기능이 생물\n체계 전반에 걸쳐 나타난다는 내용의 (C)가 이어져야 한다. 그다\n음에는 대리 기능의 예로 철새의 사례를 제시하고, 얼굴 인식에서\n도 이와 같은 방식이 기능한다는 내용의 (A)가 온 후, 마지막으로\n얼굴 인식과 관련된 구체적 사례를 제시하는 (B)로 마무리되는\n것이 글의 순서로 가장 적절하다.",
+"struct": "■■[To deal with this uncertainty], the brain uses not one,\n but multiple routes.\n [ ]는 목적을 나타내는 to부정사구이고, ‘~이 아니라 …’이라\n 는 의미의 「not ~ but ...」이 사용되었다.\n\f\n■■This immense flexibility of the brain [to rely on\n changing cues, according to {whatever is available}],\n is known as vicarious functioning.\n [ ]는 This immense flexibility of the brain을 구체적으\n\n\n\n\n Part\n 로 설명하는 to부정사구이고, 그 안의 { }는 according to의\n 목적어 역할을 하는 명사절이다.\n\n\n\n\n I\n 유형편\n03"
+},
+{
+"ans": "⑤",
+"topic": "누구도 원하지 않는 땅 Bir Tawil",
+"ko": "Bir Tawil은 이상한 장소이다. 1899년 1월, 대영제국의\n행정관들이 이집트와 수단 사이의 국경선을 확정 짓기로 결정했\n다. (C) 식민지 시대의 방식으로, 그들은 22도 위도선이라는 편\n리하게 곧은 선을 이용하기로 결정했다. 예상할 수 있듯이, 이 새\n로운 국제 국경선은 지역 부족들과 공동체들을 임의적으로 떼어\n놓게 되었고, 1902년, 영국은 부족들의 영토를 반영하기 위해 새\n로운 선을 그렸다. (B) 이 두 개의 교차하는 선들의 조합으로 두\n개의 새로운 지역이 생기게 되었는데, Hala’ib 삼각지대로 불리\n는 넓고 사람이 거주 가능한 해안 지역과 텅 비고 육지에 둘러싸\n인 사막 지역이었고, 그것이 Bir Tawil이다. 탐나는 Hala’ib 지\n역을 차지하기 위해, 이집트는 당연히 1899년의 처음의 직선 국\n경선을 주장했고, 반면 수단은 같은 목적을 염두에 두고 1902년\n의 새로운 선을 주장했다. (A) 이 오래 지속된 갈등의 기이한 결\n과로, 오늘날까지도 두 나라 모두 대략 런던 크기의 땅인 Bir\nTawil을 자기 영토라고 주장하기를 거부하고 있는데, 그것은 더\n큰 이득을 포기하는 것을 의미할 것이기 때문이다. 이로 인해 Bir\nTawil은 어느 나라도 원하지 않는 가장 크고, 어쩌면 유일한 땅\n이 되어 있다.",
+"sol": "1899년, 대영제국 행정관들이 이집트와 수단 사이의 국경선을\n정하기로 했다는 내용의 주어진 글 다음에, 그들이 식민지 시대\n방식대로 위도 22도선을 국경선으로 긋고, 그 후에 다시 새로운\n선을 그었다는 내용의 (C)가 이어져야 한다. 그다음에는 이 두 개\n의 교차하는 선으로 인해 두 개의 새로운 지역이 생겨나서 이집트\n와 수단이 자국의 이익을 위해 각각 다른 국경선을 주장하게 되었\n다는 내용의 (B)가 온 후, 그러한 결과로 Bir Tawil은 아무도 원\n하지 않는 땅이 되었다는 내용의 (A)로 마무리되는 것이 글의 순\n서로 가장 적절하다.",
+"struct": "■■The strange result of this long-standing conflict is\n [that, to this day, both countries refuse to claim {Bir\n Tawil}, {an area of land roughly the size of London},\nas it would mean giving up a greater prize].\n [ ]는 is의 주격 보어 역할을 하는 명사절이고, 그 안의 두 개\n 의 { }는 동격 관계이다.\n■■[To keep the desirable Hala’ib], Egypt understandably\n claimed the original, straight border of 1899, [whereas\n Sudan — with the same goal in mind — claimed the\n new 1902 line].\n 첫 번째 [ ]는 목적을 나타내는 to부정사구이고, 두 번째 [ ]\n 는 대조를 나타내는 부사절이다.\n\n\n\n04"
+},
+{
+"ans": "②",
+"topic": "준거 집단의 효과",
+"ko": "내집단은 준거 집단, 즉 자기 자신의 행동을 평가하기 위\n한 준거틀로 사용되는 집단이 될 수 있다. 예를 들어, 자원봉사 단\n체의 구성원은 그 집단의 기준에 따라 자신을 평가하고, 지역 사\n회 봉사 프로젝트에 대한 자신의 기여를 자랑스럽게 여길 수도 있\n다. (B) 이러한 긍정적인 자기 평가는, 그 구성원이 동일한 자기\n인식을 공유하는 준거 집단의 ‘규범 효과’를 반영한다. 만약 준거\n집단의 다른 구성원(예를 들어, 여러분의 부모)이 높은 자존감을\n가지고 있다면, 여러분 또한 그 규범을 공유하게 되어 높은 자존\n감을 가지게 될 가능성이 있다. (A) 규범 효과는 기본적으로 준거\n집단을 모방하는 것을 수반한다. 그러나 준거 집단은 자기 평가에\n있어 ‘비교 효과’와 ‘연합 효과’도 가질 수 있다. 만약 대부분의 학\n급 친구가 학업 성취 면에서 뛰어나다면, 여러분은 자신을 그들과\n비교할 가능성이 있다. (C) 그 결과, 여러분은 자신의 학업 성과\n가 표준에 미치지 못한다고 느끼며 부정적인 자기 평가를 하게 될\n수도 있다. 그러나 그 뛰어난 집단과 연합되어 있다는 것을 통해\n여러분은 자신을 자랑스럽게 느끼며 ‘반사된 영광을 누리게’ 된다.",
+"sol": "내집단이 준거 집단이 될 수 있다는 점을 자원봉사 단체의 구성원\n을 사례로 들어 설명하는 내용의 주어진 글 다음에는, 준거 집단\n의 규범이 자존감 형성과 같은 긍정적인 자기 평가에 영향을 미친\n다는 내용의 (B)가 이어져야 한다. 그다음에는 준거 집단이 이러\n한 규범 효과뿐만 아니라 비교 효과와 연합 효과도 가질 수 있음\n을 설명하며 구체적 사례를 도입하는 내용의 (A)가 온 후, 그 사\n례를 통해 비교 효과와 연합 효과를 확인하는 내용의 (C)로 마무\n리되는 것이 글의 순서로 가장 적절하다.",
+"struct": "■■Members of a volunteer organization, for example,\n may [evaluate themselves by the standards of the\n group] and [feel proud about their contribution to a\ncommunity service project].\n 두 개의 [ ]는 and로 연결되어 조동사 may에 이어지면서 문\n 장의 술어를 이룬다.\n■■[Being associated with the brilliant group], though,\n makes you [feel proud of yourself, “basking in\n reflected glory.”]\n 첫 번째 [ ]는 문장의 주어 역할을 하는 동명사구이고, 두 번\n 째 [ ]는 makes의 목적격 보어 역할을 하는 원형부정사구이\n 다.\n\n\n\n05"
+},
+{
+"ans": "⑤",
+"topic": "음악의 근접성 원리",
+"ko": "음악에서 ‘근접성’은 요소들이 음의 높이, 시간, 또는 공간\n에서 서로 가까이 있는 것을 의미할 수 있다. 예를 들어, 높이가\n비슷한 음들은 함께 묶일 수 있다. (C) 음들은 시간상 함께 연주\n되거나 같은 악기 또는 더 큰 음악 집단의 같은 섹션에서 나올 때\n도 함께 묶인다. 근접성이라는 개념을 이해하기 위해, 피아노를\n연주하는 사람을 상상해 보라. 일반적으로 오른손은 왼손보다 높\n이가 더 높은 음을 연주한다. (B) 또한, 대부분의 경우, 멜로디를\n연주하는 것은 오른손이며, 반면 왼손은 낮은 음역이나 반주를 연\n주한다. 모든 음이 가까운 공간적 근접성 안에서 거의 동시에 연\n주되지만, 오른손의 음들이 높이를 기준으로 함께 묶이기 때문에\n우리는 그것들이 멜로디로 나타나는 것으로 듣는다. (A) 마찬가\n지로, 바흐의 유명한 바이올린 독주곡들 중 일부에서는 바이올리\n니스트가 높은 음과 더 낮은 음 둘 다를 동시에 연주함으로써 본\n질적으로 두 개의 음악 흐름을 만들어 낸다. 지각적으로 우리는\n높은 음들끼리 함께 묶고, 낮은 음들끼리 함께 묶기 때문에, 우리\n는 그것을 다성 음악, 즉 두 개의 음악 선율로 듣는다.",
+"sol": "음악의 근접성 개념을 설명하는 내용의 주어진 글 다음에, 근접성\n의 구체적 유형인 시간적 근접성과 공간적 근접성을 제시하며 음\n이 어떻게 묶이는지 설명하는 (C)가 이어져야 한다. 그다음에는\n(C)에서 언급된 피아노 연주 사례와 연결하여, 음악이 동시에 연\n주되어도 멜로디를 인식할 수 있는 이유를 설명하는 (B)가 온 후,\n이와 유사한 사례로 근접성 원리에 의해 다성 음악으로 지각하게\n되는 바흐의 바이올린 독주곡을 제시한 (A)로 마무리되는 것이\n글의 순서로 가장 적절하다.",
+"struct": "■■[Even though all of the notes are played in close\n spatial proximity and at approximately the same\n time], we hear the notes from the right hand\n\f\n [emerging as melody] because they are grouped\n together with respect to pitch.\n 첫 번째 [ ]는 양보를 나타내는 부사절이고, 두 번째 [ ]는\n hear의 목적격 보어 역할을 하는 분사구이다.\n■■[To get a sense of the idea of proximity], imagine a\n person [playing a piano].\n 첫 번째 [ ]는 목적을 나타내는 to부정사구이고, 두 번째 [ ]\n 는 a person을 수식하는 분사구이다.\n\n\n\n06"
+},
+{
+"ans": "②",
+"topic": "공공재의 가치",
+"ko": "시장에서 공공재는 저평가되어 있는데, 시장은 사적 재화\n를 위해서는 존재하지만, 공공재를 위해서는 거의 존재하지 않는\n다. (B) 예를 들어, 습지와 같은 수생 서식지는 고유종의 번식이\n나 피난처, 휴양, 사냥 및 관광, 또는 물 공급원 정화를 포함하여\n흔히 공공재에 해당하는 다양한 편익을 제공한다. 이러한 편익은\n많은 사람이 동시에 누리고 있으며 습지의 자연적 기능에 의해\n‘공짜’로 그들에게 제공되고 있다. (A) 그 결과, 습지의 이러한 공\n공재적 이용에 대한 ‘시장’이 없고 따라서 ‘가격’도 없다. 그러나\n이러한 서비스의 실제 가치는 제로가 아니다. 많은 사람이 이러한\n서비스로부터 편익을 얻기 때문에 그 가치는 습지가 제공하는 이\n러한 서비스를 누리는 모든 개인의 부가 이익의 총합이다. (C) 이\n러한 습지 서비스에 대한 눈에 보이는 ‘시장 가격’이 없음에도 불\n구하고, 이 가치는 엄청날 수 있다. 습지 서비스에 대한 (제로) 가\n격과 모든 수혜자에게 제공되는 실제 가치 사이의 이 격차는 이러\n한 공공재가 시장에서 얼마나 저평가되어 있는지를 보여준다.",
+"sol": "시장에서 공공재는 저평가되어 있으며 시장은 공공재를 위해서는\n거의 존재하지 않는다는 내용의 주어진 글 다음에, 그 예로 습지\n가 공짜로 사람들에게 다양한 편익을 주고 있다는 내용의 (B)가\n이어져야 한다. 그다음에는 공짜로 제공되는 결과로 시장이나 가\n격이 없지만, 습지 서비스의 가치는 그 서비스를 누리는 모든 개\n인의 부가 이익의 총합이라는 내용의 (A)가 오고, 그러한 습지 서\n비스의 가치는 시장 가격이 없더라도 엄청날 수 있으며, 이 격차\n는 공공재가 저평가되어 있음을 보여준다는 점을 다시 한번 강조\n하는 (C)로 마무리되는 것이 글의 순서로 가장 적절하다.",
+"struct": "■■[Because many people benefit from these services],\n their value is the total additional benefits of all\n individuals [who enjoy provision of these services by\n wetlands].\n\f\n 첫 번째 [ ]는 이유를 나타내는 부사절이고, 두 번째 [ ]는 all\n individuals를 수식하는 관계절이다.\n■■This gap [between the (zero) price for wetland\n services and their actual value to all beneficiaries]\n\n\n\n\n Part\n indicates [how much these public goods are\n undervalued in markets].\n\n\n\n\n I\n 첫 번째 [ ]는 This gap을 수식하는 전치사구이고, 두 번째\n [ ]는 indicates의 목적어 역할을 하는 명사절이다.\n\n\n\n\n 유형편"
+}
+],
+"17": [
+{
+"ans": "⑤",
+"topic": "내러티브가 우리에게 끼치는 영향",
+"ko": "이야기가 기억할 만함과 설득력의 관점 둘 다에서 통계보\n다 분명 우세하지만, 사실과 일화, 심지어 사실과 또 다른 사실들\n사이의 싸움인 경우는 거의 없다. 진정한 충돌은 사실 ‘이야기들\n사이’, 즉 우세한 점유자와 새로운 도전자 사이의 충돌이다. 이야\n기하는 존재로서 우리는 우리를 둘러싼 세계를 이해하는 데 도움\n을 주기 위해 일상적으로 내러티브를 형성한다. 우리가 여러 가지\n사건을 경험하거나 다양한 사실을 마주할 때, 우리의 마음은 그것\n을 둘러싼 이야기를 형성함으로써 그것을 이해하려고 한다. 예를\n들어, 여러분이 특정 대학 졸업생들과 어떤 좋지 않은 경험을 했\n다면, 여러분은 그 학교에 다닌 사람들에 대한 부정적인 내러티브\n를 마음속에 만들어 낼 수도 있다. 갑자기, 여러분은 자신이 겪은\n고작 몇 번의 유감스러운 일로 그 대학 출신 모두를 판단한다. 때\n때로 우리가 형성하는 이러한 내적 내러티브는 우리의 신념과 의\n견을 형성할 뿐만 아니라 우리의 정체성에 깊이 뿌리내리기도 한\n다. 예를 들어, 총기 규제나 기후 변화를 둘러싸고 여러분이 형성\n한 내러티브는 여러분의 정치적 이념, 즉 개인으로서 여러분이 어\n떤 사람인지와 관련이 있을 가능성이 매우 높다.",
+"sol": "",
+"struct": "■■Sometimes these internal narratives [we form] not\n only [shape our beliefs and opinions] but also\n [become deeply rooted in our identity].\n 첫 번째 [ ]는 these internal narratives를 수식하는 관계절\n 이고, 두 번째와 세 번째 [ ]는 ‘~뿐만 아니라 …도’라는 의미\n 의 「not only ~ but also ...」에 이어져 문장의 술어 역할을 한\n 다.\n■■For example, [if you have had some bad experiences\n with graduates from a particular university], you may\n create a negative narrative in your mind about people\n [who went to that school].\n 첫 번째 [ ]는 조건을 나타내는 부사절이고, 두 번째 [ ]는\n people을 수식하는 관계절이다."
+},
+{
+"ans": "②",
+"topic": "심층 작업과 피상적 작업의 차이",
+"ko": "심층 작업이란 깊은 집중 상태에서 인지 역량을 밀어붙이\n는 활동을 수행하고, 그렇게 함으로써 새로운 가치를 창출하고 기\n술을 향상하는 때이다. 이러한 노력은 재현하기 어렵고, 심층 작\n업을 할 수 있으려면 우리는 집중을 방해하는 것이 없는 환경이\n필요하다. 그러나 많은 사람의 경우, 우리는 피상적인 작업이라\n불리는 일을 하며, 그 척도의 반대편 끝에서 너무 많은 시간을 보\n낸다. 이러한 작업 방식은 인지적으로 부담이 크지 않으며, 오히\n려 새로운 가치를 거의 창출하지 않는 논리적 유형의 과업을 실행\n하는 것이다(물론 그것이 여전히 중요할 수도 있지만 말이다). 우\n리는 흔히 산만한 상태에서 이러한 과업을 수행한다. 피상적 작업\n은 나름의 역할이 있는데, 이는 일상적 유형의 과업이 처리되어야\n하기 때문이기도 하며, 또한 우리가 전체 시간을 심층 작업에만\n쓸 수는 없기 때문이기도 하다. 지나치게 많은 피상적 작업의 문\n제는 우리가 바쁘다고 느끼고, 심지어 스트레스를 받을 수도 있지\n만, 우리가 경험한 노력을 반영하는 어떠한 결과물도 거의 보지\n못한다는 것이다.",
+"sol": "주어진 문장은 우리가 그 척도의 반대편 끝에서 피상적 작업을 하\n며 너무 많은 시간을 보낸다는 내용이므로, 이 문장 바로 앞에는\n척도의 다른 쪽 끝에 해당하는 심층 작업에 관한 내용의 문장이\n있어야 하고, 바로 뒤에는 피상적 작업을 구체적으로 설명하는 내\n용의 문장이 이어져야 한다. 따라서 주어진 문장이 들어가기에 가\n장 적절한 곳은 ②이다.",
+"struct": "■■Shallow work has its place, both [because routine-\n type tasks need to be done] and [because we cannot\n spend our entire time doing deep work].\n 두 개의 [ ]는 이유를 나타내는 부사절로 「both ~ and ...」으\n 로 연결되어 있다.\n■■The problem with too much shallow work is [that {we\n feel busy, maybe even stressed}, but {we rarely see\n any output reflecting our experienced effort}].\n [ ]는 is의 주격 보어 역할을 하는 명사절이고, 그 안의 두 개\n 의 { }는 but으로 연결되어 that에 이어진다.\n\f\n02"
+},
+{
+"ans": "③",
+"topic": "상징이 만들어 내는 주관적 현실",
+"ko": "상징은 사람들이 사회적 상황에서 의미를 끌어내도록 돕\n는 데 요긴하다. 사회적 만남에서, 주어진 상황에 대한 각 사람의\n해석이나 정의는 그 사람의 관점에서 ‘주관적 현실’이 된다. 우리\n는 흔히 우리가 ‘현실’이라고 여기는 것이 다른 사람과 공유된다고\n가정하지만, 이러한 가정은 흔히 틀린 것이다. 주관적 현실은 합\n의된 상징, 특히 언어를 통해 획득되고 공유된다. 예를 들어, 어떤\n사람이 혼잡한 영화관에서 “불이야!”라고 외친다면, 그 언어는 그\n것을 듣고 이해하는 모든 사람에게 동일한 반응(탈출하려는 시도)\n을 일으킨다. 그러나 한 집단 안의 사람들이 주어진 상징에 대해\n동일한 의미를 공유하지 않을 때는 혼란이 발생하는데, 예를 들\n어, ‘불’이라는 단어의 의미를 모르는 사람들은 그 소란이 무엇에\n관한 것인지를 알지 못할 것이다. 사람들이 자신이 받는 메시지와\n자신이 마주하는 상황을 어떻게 ‘해석하는지’는 그들의 주관적 현\n실이 되고, 그들의 행동에 강하게 영향을 미칠 수도 있다.",
+"sol": "사람들이 사회적 상황에서 의미를 이끌어 내는 데 상징이 요긴하\n게 쓰인다는 내용의 글이다. 주어진 문장은 개인의 주관적 현실이\n언어라는 합의된 상징을 통해 얻어지고 공유된다는 내용이므로,\n이 문장 바로 앞에는 우리가 ‘현실’이라고 여기는 것이 다른 사람과\n(그냥) 공유된다고 가정하지만 실제로는 그렇지 않다는 내용의 문\n장이 있어야 하고, 바로 뒤에는 언어라는 상징을 통해 합의된 방식\n으로 공유될 때는 개인들이 인식하는 주관적 현실이 일치하지만\n그렇지 않을 경우 혼란이 생긴다는 내용이 이어져야 자연스럽다.\n따라서 주어진 문장이 들어가기에 가장 적절한 곳은 ③이다.",
+"struct": "■■We often assume [that {what we consider to be\n “reality”} is shared by others]; however, this\n assumption is often incorrect.\n [ ]는 assume의 목적어 역할을 하는 명사절이고, 그 안의\n { }는 그 명사절의 주어 역할을 하는 명사절이다.\n■■[How people interpret {the messages they receive}\n and {the situations they encounter}] [becomes their\n subjective reality] and [may strongly influence their\n behavior].\n 첫 번째 [ ]는 문장의 주어 역할을 하는 명사절이고, 그 안의\n 두 개의 { }는 and로 연결되어 interpret의 목적어 역할을 하\n 는 명사구이다. 두 번째와 세 번째 [ ]는 and로 연결되어 문장\n 의 술어 역할을 한다.\n\f\n03"
+},
+{
+"ans": "⑤",
+"topic": "우울증의 다양한 원인, 증상, 치료법",
+"ko": "우울증은 끔찍하고 흔하다. 대략 7명 중 1명은 평생 적어\n\n\n\n\n Part\n도 한 번은 상당히 진행된 우울증 발현을 겪게 된다. 그것은 개인\n적, 사회적 차원에서 비극이긴 하지만, 우리는, 여기서 우리는 의\n\n\n\n\n I\n사들을 포함하여 우리 모두를 의미하는데, 우울증을 이해하기 위\n해 애쓰고 있다. 이것은 우울증이 하나의 단일 질환이 아니라 다\n\n\n\n\n 유형편\n양한 원인과 기제의 용광로에서 비롯됨에도 불구하고, 환자들 사\n이에서 비슷해 보이는 증상의 집합체이기 때문이다. 우울증에는\n단 하나의 원인이라는 것이 존재하지 않아서, 어떤 사람의 우울증\n발현은 분명히 최근의 삶의 사건에서 비롯된 것으로 보이며, 또\n다른 사람의 경우는 과거의 트라우마와 상실에서 비롯된 것으로\n보이지만, 또 어떤 경우는 아무런 분명한 심리적 또는 사회적 원\n인도 전혀 없이 갑작스럽게 비롯된 것으로 보인다. 또한 우울증의\n표출은 한 가지가 아니며, 실제로 주요 우울 장애의 진단 기준을\n충족하는 227가지의 가능한 증상 조합이 존재한다. 아마도 당연\n하게도, 이 질환에 대한 단 하나의 치료법 또한 존재하지 않는다.\n항우울제는 약 3분의 1의 환자에서는 개선을 보이고, 또 다른 3\n분의 1에서는 어느 정도의 개선을 제공하지만, 마지막 3분의 1에\n서는 전혀 효과가 없다.",
+"sol": "주어진 문장은 당연하게도 이 질환에 대한 단 하나의 치료법 또한\n존재하지 않는다는 내용이므로, 이 문장 앞에는 우울증의 증상이\n다양하고 그 조합이 복잡하다는 내용의 문장이 있어야 하고, 바로\n뒤에는 치료법의 효과가 환자마다 다르게 나타나는 사례가 소개\n되는 내용의 문장이 이어져야 한다. 따라서 주어진 문장이 들어가\n기에 가장 적절한 곳은 ⑤이다.",
+"struct": "■■This is because depression is not one disease; it is a\n collection of symptoms [that appears similar across\n sufferers, {despite resulting from a melting pot of\n diverse causes and mechanisms}].\n [ ]는 a collection of symptoms를 수식하는 관계절이고,\n 그 안의 { }는 양보를 나타내는 전치사구이다.\n■■There is also no one presentation of depression: in\n fact, there are 227 possible symptom combinations\n [that meet the diagnostic criteria for major depressive\n disorder].\n [ ]는 227 possible symptom combinations를 수식하는\n 관계절이다.\n04"
+},
+{
+"ans": "②",
+"topic": "철학에서 유추의 두 가지 기능",
+"ko": "유추는 철학에서 두 가지 다른 기능을 할 수 있다. 예를 들\n어, 플라톤의 경우에서 자주 그렇듯, 때때로 유추는 단순히 예시\n로 설명하는 역할을 한다. 소크라테스가 선(善)을 태양에 비유할\n때, 그는 단순히 선에 대한 자신의 논증을 생생하게 표현하는 데\n도움이 되도록 태양의 이미지를 사용하고 있을 수도 있다. 그러나\n다른 경우에는 유추가 논증의 필수적인 부분이 될 수 있다. 고대\n스토아학파부터 영국 신학자 William Paley에 이르기까지 많은\n사상가가 발전시켜 온 신의 존재에 대한 가장 대중적인 논증 중\n하나인 ‘설계 논증’을 생각해 보라. 이 논증은 시계와 같은 인공물\n이 장인의 존재를 내포하는 것처럼 우주도 신성한 창조자의 존재\n를 내포한다고 주장한다. 여기서 시계를 사용한 유추는 단순히 요\n점을 설명하기 위한 것이 아니다. 오히려 그 유추는 우리가 왜 우\n주에 창조자가 있다고 결론을 내려야 하는지를 보여주기 위한 것\n이다.\n Culture Note\n■ \u0007argument from design(설계 논증) 자연계에서 관찰되는 질서,\n 복잡성, 목적성이 지성을 가진 설계자, 즉 신의 존재를 입증하는 증거라\n 고 주장하는 논증이다. 이 논증은 사물이 우연히 생겨나기에는 너무 정교\n 하고 복잡하므로, 마치 인간이 시계를 만들듯 누군가 의도적으로 설계했\n 을 것이라고 추론한다. 자연의 규칙성과 질서가 무작위적인 과정으로는\n 설명될 수 없으며, 특정 목적을 위해 고안된 결과라고 본다. 설계 논증은\n 신의 존재를 증명하려는 시도 가운데 가장 대중적이고 직관적인 주장 중\n 하나로 여겨진다.",
+"sol": "주어진 문장은 다른 경우에 유추가 논증의 필수적인 부분이 될 수\n있다는 내용이므로, 이 문장 바로 앞에는 철학에서 유추가 이와\n다른 기능, 즉 단순한 설명 도구로 사용되는 내용의 문장이 있어\n야 하고, 바로 뒤에는 유추가 논증의 핵심 요소로 사용되는 구체\n적인 예를 제시하여 설명하는 문장이 이어져야 한다. 따라서 주어\n진 문장이 들어가기에 가장 적절한 곳은 ②이다.",
+"struct": "■■The argument holds [that just as an artefact such as a\n watch implies the existence of an artisan, so the\n universe implies the existence of a divine creator].\n [ ]는 holds의 목적어 역할을 하는 명사절이고, 그 안에 ‘~인\n 것처럼 …도 그러하다’라는 의미의 「(just) as ~, so ...」이 사용\n 되었다.\n■■Rather, the analogy is supposed to show [why we\n should conclude {that the universe has a creator}].\n[ ]는 show의 목적어 역할을 하는 명사절이고, 그 안의 { }\n 는 conclude의 목적어 역할을 하는 명사절이다.\n\n\n\n05"
+},
+{
+"ans": "④",
+"topic": "결과와 과정으로서의 회복",
+"ko": "회복은 ‘결과’뿐만 아니라 ‘과정’으로도 여겨질 수 있다. 결\n과로서의 회복은, 일정한 회복 기간 이후의 생리적, 심리적 상태\n를 의미하는데, 예를 들어 하루가 끝난 후, 특정 활동에 참여한\n후, 또는 잠에서 깬 후일 수 있다. 생리적 회복 결과는 근력, 심박\n수, (근육통, 무거운 팔과 다리 같은) 육체적 피로가 없는 상태와\n같은 생리적 자원의 회복을 포함한다. 심리적 회복 결과는 주의\n력, 동기 부여, 정신 에너지, 그리고 기분과 같은 정신적 자원의\n회복과 관련이 있다. 그것으로서, 개인의 생리적 및 심리적 상태\n는 앞으로의 활동을 위한 스트레스 완충제 역할을 하는 자원으로\n도 작용한다. 과정으로서의 회복은 생리적 및 심리적 상태의 변화\n를 초래하는 그러한 활동과 경험을 의미한다. 따라서 회복 과정은\n회복 결과에 선행하며, 결과적으로, 적절한 회복이 이뤄질지 결정\n한다. 회복 과정과 관련하여, 일반적으로 신체적 비활동은 생리적\n자원을 회복하는 가장 효과적인 방법으로 간주된다.",
+"sol": "글 전체의 내용이 결과 및 과정으로서의 회복을 다루며, 도입부에\n는 먼저 결과로서의 회복을 생리적 상태와 심리적 상태로 구분하\n여 설명하고 있다. 주어진 문장은 과정으로서 회복의 의미에 관한\n내용이므로, 이 문장 바로 앞에는 생리적 및 심리적 회복 결과가\n앞으로의 활동을 위한 스트레스 완충제 역할을 한다는 내용이 있\n어야 하고, 바로 뒤에는 회복 결과에 선행하는 회복 과정을 다룬\n내용의 문장이 이어져야 한다. 따라서 주어진 문장이 들어가기에\n가장 적절한 곳은 ④이다.",
+"struct": "■■Recovery as an outcome refers to one’s physiological\n and psychological state after a certain recovery\n period, [which can be, for instance, at the end of the\n day, after engaging in a certain activity, or after\n waking up].\n [ ]는 a certain recovery period를 부가적으로 설명하는 관\n 계절이다.\n■■Accordingly, recovery processes precede recovery\n outcomes and, consequently, determine [whether\n adequate recovery is obtained].\n [ ]는 determine의 목적어 역할을 하는 명사절이다.\n\f\n06"
+},
+{
+"ans": "⑤",
+"topic": "고통의 경험이 삶의 의미 인식에 미치는 영향",
+"ko": "우리가 견디는 고난의 시기는 우리가 더 의미 있는 삶을\n영위하도록 도움을 주는 데 핵심적인 역할을 한다. Jean-Paul\nSartre가 말했듯이 “인간의 삶은 절망의 저편에서 시작한다.” 즉,\n사람들이 삶이 의미 있다고 느끼는 방식 중 많은 것이 자신이 겪\n은 고통에 기반하고 있다. 한 연구 프로젝트는 자신의 삶이 행복\n하다고 느끼는 사람들과 자신의 삶이 의미 있다고 느끼는 사람들\n사이의 차이를 조사했다. 평균적으로 행복한 삶과 의미 있는 삶은\n많이 겹치지만, 연구자들은 행복과 구분되는 의미 있는 삶의 그\n측면들에 초점을 맞췄다. 그리고 놀랍게도, 그들은 더 의미 있는\n삶을 사는 사람들이 과거의 부정적인 일로 인한 고통스러운 경험\n이 더 많다고 보고하는 것을 발견했다. 그들은 또한 더 많이 걱정\n하고 자신에게 스트레스를 유발하는 더 많은 일들을 견딘다고 보\n고했다. 반면, 이러한 과거 고통의 경험은 사람들의 전반적인 행\n복 수준을 감소시키는 경향이 있었다. 그러므로 이러한 일들이 더\n낮은 행복감과 관련되어 있을지라도, 고통은 사람들에게 삶이 더\n의미 있다는 느낌을 제공하는 데 도움이 되는 것으로 보인다.",
+"sol": "주어진 문장은 과거의 고통스러운 경험은 사람들의 전반적인 행\n복 수준을 낮춘다는 내용이며 On the other hand로 시작하는\n것으로 보아, 이 문장 앞에는 고통스러운 경험과 삶의 유의미성에\n관한 사람들의 인식을 설명하는 내용의 문장이 있어야 하고, 바로\n뒤에는 비록 고통의 경험이 낮은 행복감과 관련되더라도 고통이\n삶의 유의미성에 도움을 준다는 내용이 이어져야 자연스럽다. 따\n라서 주어진 문장이 들어가기에 가장 적절한 곳은 ⑤이다.",
+"struct": "■■That is, many of the ways [people feel {their lives are\n meaningful}] are grounded in the sufferings [they\n have experienced].\n 첫 번째 [ ]는 the ways를 수식하는 관계절이고, 그 안의 { }\n 는 feel의 목적어 역할을 하는 명사절이다. 두 번째 [ ]는 the\n sufferings를 수식하는 관계절이다.\n■■Our sufferings, then, seem to help to provide people\n with the sense [that their lives are more meaningful],\n even if these events are associated with lower feelings\n of happiness.\n [ ]는 the sense의 구체적인 내용을 설명하는 동격절이다."
+}
+],
+"18": [
+{
+"ans": "③",
+"topic": "현대 사회에서의 공연 예술",
+"ko": "현대 사회에서, 공연 예술은 녹화되고 편집된 전문적으로\n연출된 공연 매체를 통한 대량 배포와는 대조적으로, 대중 오락의\n독특한 범주를 형성한다. 그에 반해 연극, 발레, 서커스, 콘서트,\n로데오, 스토리텔링 등은 실제 공간과 시간 속에서 그들의 신호를\n펼쳐 보이며, 현장에서 인지적, 감정적으로 반응하는 관객을 끌어\n들인다. 공연자와 관객은 공유된 즐거움과 관련된다. 하지만 가끔\n이러한 의식적인 행사의 경계 안에서 좌절이 발생한다. 산업화되\n고 컴퓨터화된 문화에서 공연 예술은 그것을 지속하게 하는 기관\n들이 공공 및 기업의 자금 지원에 점점 더 의존하게 되면서 경제\n적으로 불안정해진다. 하지만 공연 예술은 대규모는 아니더라도\n많은 관객에게 매혹적인 힘을 유지하며, 그 관객은 공연 예술이\n제공하는 체험적이며 위험 부담이 따르고 단 한 번뿐인 행사의 특\n성을 소중히 여긴다. 전통적이고 지역적인 문화에서, 공연은 여전\n히 생존하고 더 작은 규모, 즉 경제적으로 지속 가능한 제도적 상\n황 속에서 관객들에게 독특한 충족감을 제공한다.\n→ 외부의 자금 지원에 대한 의존 때문에 재정적 어려움을 겪는\n상황에서, 독특하고 생생한 경험을 제공하는 공연 예술은 그러한\n경험을 소중히 여기는 관객들을 확보한다.",
+"sol": "",
+"struct": "■■In modern societies, the performing arts form a distinct\n category of public entertainment in opposition to the\n mass distribution [through the media of expertly staged\n performances {which have been recorded and edited}].\n [ ]는 전치사구이고, 그 안의 { }는 expertly staged\n performances를 수식하는 관계절이다.\n■■However, they retain their power of fascination for\n large, [if not massive] audiences, [who prize the\n experiential, risk-loaded and one-time event quality\n {they afford}].\n 첫 번째 [ ]는 양보를 나타내는 부사절로, if와 not 사이에\n they are가 생략된 것으로 이해할 수 있다. 두 번째 [ ]는\n large, if not massive audiences를 부가적으로 설명하는 관\n 계절이고, 그 안의 { }는 the experiential, risk-loaded and\n one-time event quality를 수식하는 관계절이다."
+},
+{
+"ans": "①",
+"topic": "트랙터가 보존된 이유",
+"ko": "북아일랜드와 아일랜드 공화국을 합쳐 16만 개가 넘는 농\n장이 전역에 퍼져 있는 것으로 추정된다. 그 모든 농장에서 여러\n분은 헛간을 발견할 것이고, 그 헛간 중 일부에서 운이 좋으면\nMassey Ferguson 35와 같은 클래식 트랙터를 우연히 발견할\n수도 있다. 영국과 미국에서 Massey Ferguson 35의 생산은\n1964년에 중단되었다. 여러분이 아직도 이 트랙터를 소유하고\n있는 농부와 대화를 시작하게 된다면, 그녀는 아마 자신의\nMassey Ferguson 35의 차대를 애정 어린 손길로 두드리며 향\n수에 젖어 “이제 더 이상 그런 걸 만들지 않아요.”라고 말할 것이\n다. 이 트랙터가 최소한 58년 동안 살아남았다는 사실은 그것의\n우수한 만듦새의 품질을 증명하는 것처럼 보인다. 하지만 잠시 기\n다려보라, 1956년부터 1964년 사이에 생산된 다른 388,381대\n의 Massey Ferguson 35 트랙터는 얼마나 오래 버티다가 폐품\n이 되었을까? 만듦새의 품질보다는, 아일랜드 농부들이 Massey\nFerguson을 계속 보유하고 지금까지 해온 것처럼 잘 관리하도록\n이끈 것은 아마 그곳 사람들이 이 작은 빨간 트랙터(이 트랙터를\n개발한 Harry Ferguson은 아일랜드에서 태어났다)에 대해 가지\n고 있는 애정일 것이다.\n→ 아일랜드 농장에서 Massey Ferguson 35의 오랜 존재가 그\n것의 내구성을 반영하는 것처럼 보일 수도 있지만, 그보다도 그것\n은 농부들이 그 트랙터에 대해 가지고 있는 강한 애정 때문일 수도\n있다.",
+"sol": "아일랜드 전역의 많은 농장에 Massey Ferguson 35라는 오래\n된 트랙터가 여전히 남아 있음을 소개하며, 이것은 단순히 그것이\n오래 가도록 잘 만들어졌기 때문이라기보다는 아일랜드 농부들의\n트랙터에 대한 애정 때문일 수 있다는 내용이므로, 빈칸 (A), (B)\n에 들어갈 말로 가장 적절한 것은 ① ‘내구성 - 애정’이다.\n② 겉모습 - (올바른) 평가\n③ 신뢰성 - 아량\n④ 감당 가능한 가격 - 애정\n⑤ 기술 - 아량",
+"struct": "■■If you were to strike up a conversation with a farmer\n [who still owns one], she might well [give the chassis\n of her Massey Ferguson 35 an affectionate tap] and\n [nostalgically remark, ‘They don’t make ’em like that\n anymore.’]\n첫 번째 [ ]는 a farmer를 수식하는 관계절이다. 두 번째와\n 세 번째 [ ]는 and로 연결되어 might well에 이어져 주절의\n 술어를 이룬다.\n■■Rather than build quality, it might well be [the\n fondness {that people in Ireland have for the little red\n tractor (Harry Ferguson, who developed it, was born\n in Ireland)}] that has led farmers there [to hold on to\n their Massey Fergusons and take care of them as well\n as they have].\n 첫 번째 [ ]는 it might well be와 that 사이에 놓여 그 의미\n 가 강조되고 있고, 그 안의 { }는 the fondness를 수식하는\n 관계절이다. 두 번째 [ ]는 led의 목적격 보어 역할을 하는 to\n 부정사구이고, 그 안의 them은 their Massey Fergusons를\n 가리킨다.\n\n\n02"
+},
+{
+"ans": "④",
+"topic": "위기 상황에서 위기의 유형과 세대에 따른 미디어 선택",
+"ko": "즉각적인 위험을 야기하는 위기 상황(예를 들면 자연재해,\n폭력이나 테러 행위, 교통 대란)에서, 사람들은 당장의 불안감을\n완화하기 위해 신뢰할 수 있고 검증된 정보 출처를 찾으며, 그래\n서 텔레비전과 라디오와 같은 전통적인 정보 출처에 의존한다. 그\n러나 공중 보건 및 정치적 위기와 같은 다른 위기 유형의 경우, 사\n람들은 첫 번째 위기 유형과 달리 공중 보건 및 정치적 위기는 더\n주관적이고 덜 단순명료할 수 있고, 따라서 보충 정보와 증거에\n대한 심층 조사가 필요할 수 있으므로, 여러 사람의 목소리와 다\n양한 전문가 의견을 찾을 수 있는 소셜 미디어에 더 많이 의존하\n는 경향이 있다. 당면한 위기 유형 외에도, 의사소통 분야 학자인\nLiu와 동료들은 전통적인 매체와 소셜 미디어가 위기 상황에서\n지침과 권장 행동을 따르고자 하는 동기와 관련하여 서로 다른 시\n청자에 서로 다른 영향을 미친다고 주장했다. 예를 들어, 더 젊은\n시청자는 위기 상황에서 전통적인 매체보다 소셜 미디어를 선호\n하는 것으로 보이는 반면에, 나이가 더 많은 시청자는 전통적인\n매체를 더 선호하는 것으로 보인다. 따라서, 전통적인 매체와 소\n셜 미디어 둘 다 위기 상황에서 대중에게 중요한 과학적 정보를\n전달하는 데 있어서 중요한 역할을 한다.\n→ 사람들은 긴급한 위기 상황에서는 전통 매체를, 복잡하고 주관\n적인 문제에는 소셜 미디어를 선택하지만, 세대의 요인도 비상 상\n황 시 다양한 인구 집단이 이러한 매체 선택에 접근하는 방식에\n영향을 미친다.",
+"sol": "위기 유형에 따라 선호 매체가 달라져 긴급한 상황에서는 전통적\n인 매체에, 공중 보건과 정치와 같은 복잡하고 주관적인 상황에서\n\f\n는 소셜 미디어에 의존하며, 세대별로도 두 매체에 대한 선호가\n다르게 나타난다는 내용이다. 따라서, 빈칸 (A), (B)에 들어갈\n말로 가장 적절한 것은 ④ ‘긴급한 - 세대의’ 이다.\n① 예상치 못한 - 교육의\n② 예상치 못한 - 지역의\n③ 사소한 - 경제적인\n⑤ 긴급한 - 언어의",
+"struct": "■■[During crises that present immediate danger (e.g.,\n natural disasters, acts of violence or terrorism,\n transportation crises)], people seek trusted and\n verified sources to ease their immediate concerns,\n [thus turning to traditional sources such as television\n and radio].\n 첫 번째 [ ]는 시간을 나타내는 전치사구이고, 두 번째 [ ]는\n 주절의 상황에서 비롯된 결과를 나타내는 분사구문이다.\n■■For other crisis types, such as public health and\n political crises, however, people are more likely to\n turn to social media [where they can seek multiple\n voices and a variety of expert opinions], [as, {unlike\n the first set of crises}, public health and political crises\n may be more subjective and less straightforward, and\n thus necessitate a deeper dive into supplementary\n information and evidence].\n 첫 번째 [ ]는 social media를 수식하는 관계절이고, 두 번째\n [ ]는 이유를 나타내는 부사절이며, 그 안의 { }는 삽입구이\n 다.\n\n\n03"
+},
+{
+"ans": "②",
+"topic": "초점이 초래하는 효과",
+"ko": "초점은 큰 차이, 즉 하나의 균형에 도달하는 것과 또 다른\n균형에 도달하는 것 간의 차이를 만드는 작은 것들이다. 지역의\n한 축구팀이 매주 토요일 아침에 공원의 놀이터 근처에서 연습하\n러 오거나 한 전업 부모 그룹이 수요일 오후 3시에 정기적인 나들\n이를 계획한다면, 그것은 다른 사람들이 (그것을) 중심으로 조정\n하는 초점을 만들 수 있다. 팀이 연습하면, 공원이 강도로부터 안\n전하다고 느껴지고 볼거리가 생길 것이어서, 가족들이 공원을 이\n용하러 올 것이다. 첫 번째 가족들이 그곳에 있을 것이기 때문에\n다른 가족들도 올 것이고, 축구 시즌이 끝나고 팀이 더 이상 연습\n하러 오지 않게 된 후에도, 토요일 아침은 놀이터에 활기가 넘칠\n수 있을 것이라고 그저 모두가 기대하기 때문에 여전히 그럴 것이\n다. 활기 넘치는 공원 놀이터는 심지어 축구 연습이 더 이상 있지\n\f\n않는데도 만들어질 수 있는데, 이는 이러한 다중 균형이 얼마나\n종잡을 수 없게 예측 불가능할 수 있는지를 보여주는 것이다. 하\n지만 그 결과는 종잡을 수 없어도 그 원인은 합리적이다.\n→ 지역 축구팀의 정기적인 연습과 같은 초점은 심지어 그 결과를\n\n\n\n\n Part\n예상할 수 없는 듯 보일 수 있을 때에도 합리적인 조정을 통해 공\n공장소에서 자생적인 활동 패턴을 촉진할 수 있다.\n\n\n\n\n I\n Culture Note\n■ \u0007focal point(초점) 사람들이 여러 가능한 선택지 중에서 특별한 의\n\n\n\n\n 유형편\n 사소통 없이도 자연스럽게 같은 선택을 하게 되는 지점을 말한다. 미국\n 경제학자 Thomas Schelling이 제시한 개념으로, 사람들이 공유하는 문\n 화, 규범, 경험, 직관 등이 기준이 되어 특정 선택이 두드러지게 인식될\n 때 그 선택이 초점 역할을 한다.",
+"sol": "초점이 큰 변화를 만들어 내고, 이는 예측 불가능한 다중 균형으\n로 이어질 수 있다고 하며, 그 예로 지역 축구팀의 정기적인 연습\n이나 전업 부모들의 모임과 같은 ‘초점’이 조정을 유도하여 공원이\n활기를 띠게 되고, 심지어 축구 시즌이 끝난 후에도 그 활기가 지\n속될 수 있다는 내용의 글이다. 따라서 빈칸 (A), (B)에 들어갈\n말로 가장 적절한 것은 ② ‘자생적인 - 예상할 수 없는’이다.\n① 자급자족할 수 있는 - 예측할 수 있는\n③ 자기 제한적인 - 예기치 않은\n④ 이동하는 - 기대되는\n⑤ 쇠퇴하는 - 관계없는",
+"struct": "■■[If {a local soccer team comes to practice near the\n playground of the park every Saturday morning} or {a\n group of stay-at-home parents arranges a regular trip\n at 3 P.M. on a Wednesday afternoon}], that can create\n a focal point [around which others coordinate].\n 첫 번째 [ ]는 조건의 부사절이고, 그 안에서 두 개의 { }는\n or로 연결되어 If에 이어진다. 두 번째 [ ]는 a focal point를\n 수식하는 관계절이다.\n■■A lively park playground can be created by a soccer\n practice [that doesn’t even take place any longer]: ~.\n [ ]는 a soccer practice를 수식하는 관계절이다.\n\n\n\n04"
+},
+{
+"ans": "③",
+"topic": "영화 속에서 그려지는 과거와 그것에 대한 현대적 해석",
+"ko": "어느 특정 시점에서 당연시되는 문화적 규범과 범주의 집\n합으로서, 현재는 보통 그것에 참여하는 사람들에게 거의 보이지\n않는다. 그것은 물고기에게 물처럼, 혹은 비둘기에게 공기처럼 그\n들의 생각과 행동의 무의식적인 배경이다. 영화에서 이 배경은 때\n때로 역사적으로 뿐만 아니라 문화적으로도 시대가 지난 영화에\n서 지나간 현재로 가시화될 수 있다. 문화적으로 시대가 지난 영\n화에서, 시간이 지나면서 변했고 이제는 기이하거나 이상하거나\n‘부적절하’거나 문제가 되는 것으로 보이는 태도와 행동 방식이 영\n화 속 인물들에 의해 당연시되며, 영화의 서사에서 의심 없이 받\n아들여지거나 심지어 기꺼이 지지받는다. 현재는 또한 시대착오\n적으로 현대의 태도를 드라마가 묘사하는 과거 속으로 끌어오면\n서 ‘현재의 관점으로 과거를 해석하는’ 현시대의 역사 드라마에서\n도 가시화된다. 이는 과거를 ‘자체의’ 현재라는 견지에서 해석하는\n시대가 지난 역사 영화에서 한층 더 명확하게 드러나는데, 이러한\n영화에서는 시대착오적인 요소 자체가 지나간 현재를 반영하고\n있다.\n→ 역사적으로 그리고 문화적으로 시대가 지난 영화는 특정 시대\n의 태도와 행동을 묘사하고 과거와 현재 간의 차이를 드러내며 그\n결과 현재에 대한 우리의 인식이 가시화된다.",
+"sol": "역사적으로 그리고 문화적으로 시대가 지난 영화는 오늘날 기준\n에서 낯설게 느껴지는 과거의 태도와 행동을 보여주거나 현대적\n태도와 행동을 시대착오적으로 반영함으로써 과거와 현재의 차이\n를 드러내고 이를 통해 현재를 가시화한다는 내용의 글이다. 따라\n서 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은 ③ ‘특정 시대\n의 - 가시화된다’이다.\n① 특정 시대의 - 왜곡된다\n② 미래 지향적인 - 반영된다\n④ 미래 지향적인 - 교란된다\n⑤ 도덕적 지침에 따른 – 의문시된다",
+"struct": "■■As the set of cultural norms and categories [taken for\n granted at any particular time], the present is normally\n more or less invisible to those [who participate in it].\n 첫 번째 [ ]는 the set of cultural norms and categories를\n 수식하는 분사구이고, 두 번째 [ ]는 those를 수식하는 관계\n 절이다.\n■■In the culturally dated film, attitudes and ways of\n behaving [that have altered over time] and [which\n now appear as quaint, strange, ‘incorrect’ or\n problematic], are taken for granted by the characters\n in the film, and go unquestioned or are even happily\n endorsed in the film’s narrative.\n 첫 번째와 두 번째 [ ]는 and 로 연결되어 attitudes and\n ways of behaving을 수식하는 관계절이다."
+}
+],
+"19": [
+{
+"ans": "01 ② 02 ⑤",
+"topic": "복식사 이해를 위한 증거로서의 시각 자료",
+"ko": "복식사에는 복식의 모든 전시에서 분명한 문제가 있는데,\n그것은 비록 직물이 기록된 역사 초기의 시대와 문화로부터 남아\n있기는 하지만, 실제 의복은 동일한 오랜 기간의 연속된 증거의\n흐름을 제공하지 못한다는 점이다. 따라서 복식 연구에 건축, 회\n화, 판화, 소묘, 조각과 같은 다른 분야와 동등한 중요성을 부여하\n기 위해, 이들 다른 분야가 원자료의 많은 부분을 제공하게 되는\n것이 불가피했다. 남아 있는 복식의 역사는 실제로 겨우 17세기\n에 시작하며, 미술 혹은 장식 미술이라 기술되는 모든 인공물과\n마찬가지로, 매우 시각적인 주제이다. 그러나 그러한 분야를 구성\n하는 대부분의 수집 및 연구의 범주와는 달리, 그것은 정적이라기\n보다는 유동적이다. 의복은 전시용 동상 위에 고정된 것이 아니\n라, 인간의 신체 위의 움직임으로 보여져야 한다. 이것은 의상 수\n집품을 큐레이팅할 때의 많은 어려움 중 하나이며, 또한 일부 현\n대 작가들이 의상 수집품을 물리적으로나 지적으로 생명력 없는\n것으로 여기는 이유이기도 하다. 다행히도, 더 많은 옷이 남아 그\n주제의 역사에 대한 우리의 이해를 풍부하게 해주는 1660년 이\n후 시기에는, 움직임이 포착된, 옷을 입은 사람들에 대한 다수의\n회화, 판화, 사진, 영화의 많은 증거 자료가 또한 존재한다. 흔히\n서로 다른 유형의 다양한 실례가 되는 사례들이 의복이 만들어진\n시기에 그것이 어떻게 착용되었는지에 대한 증거를 제공한다. 소\n묘에서 조각까지, 모든 형태의 예술에 포함된 자료가 없으면, 역\n사적 복식 전시는 그것의 원래 제작자와 소유자의 의도를 어색하\n게 모방한 것일 가능성이 낮다(→ 가능성이 있다).",
+"sol": "",
+"struct": "■■Therefore, [to give the study of dress equal\n significance to other areas such as architecture,\n painting, prints, drawings and sculpture], it was\n inevitable [that these other areas would provide much\n of the source material].\n 첫 번째 [ ]는 목적을 나타내는 to부정사구이다. it은 형식상\n 의 주어이고, 두 번째 [ ]는 내용상의 주어이다.\n\f\n■■Often a variety of different types of illustrative\n examples will provide evidence about [how a garment\n was worn within the period {in which it was made}].\n [ ]는 about의 목적어 역할을 하는 명사절이고, 그 안의 { }\n 는 the period를 수식하는 관계절이다.\n\n\n\n\n 본문 114~117쪽"
+},
+{
+"ans": "01 ⑤ 02 ④",
+"topic": "18세기 여성 드레스의 개조",
+"ko": "18세기 여성의 드레스는 재활용의 훌륭한 기회를 제공했\n는데, 흔히 길고 자르지 않은 천으로 만들어졌기 때문이다. 직물\n은 그것을 개조하는 데 필요한 노동력보다 훨씬 더 비쌌고, 그 결\n과 대부분의 의복은 패션 변화에 맞춰 여러 번 개조되었다. 패션\n학자 Linda Welters는 “부유층조차도 천을 아끼고 옷을 개조하\n며 원치 않는 옷들은 중고 시장에서 팔았다.”라고 말한다. “지속\n가능성은 생활 방식이었다.” 실제로, 변화는 패션에 본질적인 요\n소이지만, 새로 사는 대신 기존 옷을 개조하는 것은 널리 퍼진 관\n행이었다. 사실, 어느 정도의 개조 흔적이 보이지 않는 18세기의\n드레스를 찾는 것은 드문 일이다. 드레스를 제작하거나 재제작하\n는 비용은 직물 자체 비용의 약 절반에 불과했고, 원단의 종류에\n따라 훨씬 더 저렴할 수 있었다. 최신 드레스 실루엣 외에도, 액세\n서리와 장식은 예전 옷 스타일을 새롭게 만드는 데 중요한 역할을\n했다. 예를 들어, 드레스 상단에 레이스 한 줄을 추가하는 것은 드\n레스 전체를 교체하는 것의 경제적인 대안이었다. 많은 18세기\n드레스, 특히 그 세기 전반부의 드레스는 상대적으로 조잡한 바느\n질로 제작되었는데, 이는 원래 드레스의 손쉬운 보존(→ 해체)이\n고려되었음을 보여준다. 원단은 그 원단이 유행하지 않을 때조차\n가치를 유지했기 때문에, 손으로 짠 실크는 그것의 품질과 아름다\n움으로 소중히 여겨져 때때로 대를 이어 전해졌다.",
+"sol": "01 18세기 여성들은 값비싼 직물을 절약하기 위해 드레스를 반복\n적으로 개조하며, 지속 가능한 방식으로 패션 변화를 따랐다는 내\n용의 글이다. 따라서 글의 제목으로 가장 적절한 것은 ⑤ ‘오래된\n드레스 다시 디자인하기: 18세기 여성들을 위한 실용적 선택’이다.\n① 시간이 지남에 따른 여성 패션 경향의 진화\n② 중고 의류 산업은 어떻게 번영해 왔을까?\n③ 개조된 드레스: 18세기 부자들의 상징\n④ 지속 가능한 패션: 18세기에는 이룰 수 없던 이상\n\f\n02 드레스 전체를 교체하는 것이 아닌 최신형 실루엣, 액세서리,\n장식을 활용하여 경제적으로 개조했다고 했으므로, 18세기 전반\n부의 많은 드레스가 상대적으로 조잡하게 바느질된 이유는 원래\n드레스를 쉽게 해체할 수 있도록 하기 위함이었음을 짐작할 수 있\n\n\n\n\n Part\n다. 따라서 (d)의 preservation을 deconstruction과 같은 낱말\n로 바꿔야 한다.\n\n\n\n\n I",
+"struct": "■■It is rare, in fact, [to find an eighteenth-century dress\n\n\n\n\n 유형편\n {that does not show some sign of alteration}].\n It은 형식상의 주어이고, [ ]는 내용상의 주어이며, 그 안의\n { }는 an eighteenth-century dress를 수식하는 관계절이\n 다.\n■■Many eighteenth-century dresses, particularly those\n from the first half of the century, were constructed\n with relatively crude stitches, [indicating {that the\n effortless deconstruction of the original gown was a\n consideration}].\n [ ]는 앞 절의 내용을 부가적으로 설명하는 분사구문이고, 그\n 안의 { }는 indicating의 목적어 역할을 하는 명사절이다.\n\n\n\n\n03~04"
+},
+{
+"ans": "03 ① 04 ④",
+"topic": "뉴미디어 시대 뉴스의 명암",
+"ko": "인터넷 기반 기술의 발달은 뉴스가 그 어느 때보다 더 빠\n르게 생산되고, 배포되며, 소비된다는 것을 의미한다. 하지만 이\n러한 뉴스의 신뢰성은 의심스럽다. 정보를 제공하는 모든 조직이\n나 개인이 세부 사항을 확인하거나 사실을 더 넓은 맥락에서 점검\n하는 데 시간을 들이는 것은 아니다.\n사람들은 하루 단위로뿐 아니라, 전 세계 시청자에게 전송되는 분\n단위 업데이트를 통해서도 압도적인 양의 정보에 직면하고 있다.\n그 어느 때보다도 더, 사람들은 자신이 수신하는 뉴스의 양과 유\n형을 정리하고 관리하는 데 관여하고 있다. 인터넷 덕분에 우리는\n전 세계 어디에 있든 하루 중 몇 시든 상관없이, 지구상 어디에 있\n는 방송사로부터든 뉴스를 접할 수 있다. 휴대폰, 컴퓨터, 그 밖의\n휴대용 기기와 같은 ‘뉴미디어’가 더 가격이 적당해지고, 소형화되\n고, 일상생활에 깊숙이 자리 잡으면서 텔레비전과 신문을 대체하\n게 되었다. 젊은이들에게 기술의 발전은 그들이 태어난 세상의 일\n부를 구성한다. 하지만 뉴미디어의 어려운(→ 쉬운) 사용과 적당한\n비용은 그것이 모든 연령대 사람들의 삶에 필수적인 요소라는 것\n을 의미한다.\n미국의 사회학자 Matthew Hindman은 기술 발전으로 인해 뉴\n스가 더욱 ‘민주적’이 되었다고 말하는데, 이는 이제 모든 연령대와\n모든 사회적 배경을 가진 사람들이 뉴스에 접근할 수 있다는 것을\n의미한다. 뉴미디어가 위협을 제기한다고 우려하는 사람들도 있\n다. 인터넷상의 정보는 보통 규제를 받지 않기 때문에 그 어느 때\n보다 더 접근하기 쉬워졌지만, 그 신뢰성을 분별하기는 어렵다.",
+"sol": "03 인터넷 기반 기술의 발달로 뉴스가 빠르게 전달되는 반면, 정\n보의 신뢰성 문제와 과도한 정보량으로 인한 부작용이 함께 나타\n난다고 설명하며, 뉴스의 접근성과 속도가 향상되었다는 긍정적\n측면과 그로 인한 신뢰도 저하와 정보 과부하에 대한 우려를 동시\n에 다루고 있는 내용이므로, 글의 제목으로 가장 적절한 것은 ①\n‘인터넷 기반 뉴스의 양날의 영향’이다.\n② 국경 없는 뉴스: 즉각적인 세계 뉴스 접근\n③ 인터넷 저널리즘에서 규제의 역할\n④ 온라인 저널리즘의 역사적 기원\n⑤ 전통 미디어는 왜 여전히 영향력을 가질까?\n04 인터넷상의 정보 접근성이 향상되고 뉴미디어가 더 가격이\n적당해지고 소형화되어 일상생활에 깊숙이 자리 잡았다는 것은,\n뉴미디어 사용이 쉽고 비용이 적당해 모든 사람들의 삶에 필수적\n인 요소가 되었음을 의미한다. 따라서 (d)의 difficulty를 ease\n와 같은 낱말로 바꿔야 한다.",
+"struct": "■■People are confronted with overwhelming amounts of\n information not just [on a daily basis], but [via\n minute-by-minute updates {transmitted to audiences\n around the globe}].\n 두 개의 [ ]는 ‘(단지) ~뿐 아니라 …도’라는 의미인 「not just\n ~ but ...」에 의해 연결되어 있다. 두 번째 [ ] 안의 { }는\n minute-by-minute updates를 수식하는 분사구이다.\n■■The internet means [that irrespective of {where we\n are in the world} or {what time of the day it is}, news\n can be accessed from broadcasters located anywhere\n on the planet].\n [ ]는 means의 목적어 역할을 하는 명사절이고, 그 안의 두\n 개의 { }는 or로 연결되어 irrespective of의 목적어 역할을\n 하는 명사절이다.\n\n\n\n\n05~06"
+},
+{
+"ans": "05 ② 06 ②",
+"topic": "근무 시간으로 본 근로 조건의 양극화",
+"ko": "1970년대 이후, 여러 가지 영향력의 결합으로 과도한 노\n동 문제가 더 널리 확산되었다. 서구 경제의 서비스 부문은 극적\n으로 성장한 반면 제조업의 고용은 감소했다. 노동조합과 직장 보\n호의 축소로 고용주는 더 긴 근무 시간을 요구할 수 있게 된 반면\n에, 글로벌 경쟁, 고용 안정성 감소, 그리고 임금 정체로 인해 근\n로자들은 자리를 지키기 위해 더 열심히 일할 수밖에 없었다. 이\n제 기업들은 구조 조정과 ‘업무 절차 재설계’ 과정에서 직원을 감\n축하고, 살아남은 직원들에게 더 많은 업무량을 떠맡기고 있다.\n2008년 경기 침체와 그 회복은 기업들이 새로운 인력을 채용하\n기보다는 기존 직원에 대한 업무량을 늘려 성장하려는 패턴을 약\n화시켰다(→ 굳혔다). 몇몇 산업은 빠르게 변화하는 승자독식의\n경쟁으로 변모했는데, 소수의 사람들은 자신들의 기술 회사가 상\n장되거나, 그들의 헤지 펀드 투자가 성과를 거두거나 그들의 노래\n가 인터넷에서 빠르게 확산되어 인기를 얻을 때 엄청난 돈을 벌게\n될 가능성이 있으며, 유행이 바뀌거나, 기술이 발전하거나, 거품\n이 꺼질 때까지 시간이 얼마나 남았는지 아무도 모르기 때문에,\n지금 당장 모든 것을 쏟아붓는 것이 이치에 맞는다.\n그 결과, 우리 중 많은 사람이 실제로 더 오랜 시간 일하고 있다.\n일반적으로 근로 시간은 생산성이 증가함에 따라 감소하지만,\n1970년대에는 여러 세대의 경제학자들의 기대에도 불구하고, 생\n산성 증가가 근로 시간 단축을 낳는 것을 멈췄다. 1980년대 미국\n에서는 근로 시간이 증가하기 시작했는데, 특히 급여 근로자와 의\n사, 변호사, 은행원, 학자 같은 전문직에게서 그러했고, 반대로 숙\n련도가 낮은 시간제 직업의 근로 시간(그리고 정규 일자리와 임\n금)은 감소하기 시작했다. 그 이후로, 이러한 격차는 전 세계 다른\n지역으로 확산되어, 오늘날 서유럽, 호주, 한국의 부유하고 교육\n수준이 높은 사람들도 과도하게 근무할 가능성이 더 높은 반면,\n더 많은 가난한 사람들은 안정적인 일자리를 찾는 데 어려움을 겪\n고 만성적인 불완전 고용에 직면해 있다.\n Culture Note\n■ \u0007the 2008 recession(2008년 경기 침체) 2000년대 후반 미국의\n 금융 시장에서 시작되어 전 세계로 파급된 대규모의 금융 위기 사태를\n 일컬으며, 일반적으로 ‘대침체(Great Recession)’ 또는 ‘2008년 금융 위\n 기(2008 financial crisis)’라 불린다. 1929년의 경제 대공황에 버금가는\n 세계적 수준의 경제적 혼란을 초래했다.",
+"sol": "05 1970년대 이후 노동 시장의 변화로 인해 근로 시간이 점점\n길어지고 2008년 경기 침체를 거치며 이러한 현상이 심화되었고,\n1980년대부터 전문직과 비전문직 사이의 노동 환경이 뚜렷하게\n분화되어 새로운 형태의 노동 격차로 이어지고 있다는 내용이다.\n따라서 글의 제목으로 가장 적절한 것은 ② ‘과도한 노동의 시대:\n경제 변화와 노동 시간의 격차’이다.\n① 과도한 노동의 종식: 현대의 직업이 더 용이해진 방식\n\f\n③ 과도한 노동에서 벗어나기: 시간 관리 전략 활용하기\n④ 더 열심히 말고 더 영리하게 일하라: 기술과 생산성의 균형 맞\n추기\n⑤ 투쟁에서 안정으로: 직장이 더 균형 잡히게 된 방식\n06 1970년대 이후 글로벌 경쟁, 고용 안정성 감소, 임금 정체와\n같은 여러 가지 요인이 노동자의 과로 문제를 더 심각하게 만들었\n으며, 2008년 경기 침체는 기업들이 새로운 인력을 채용하기보\n다는 기존 직원에게 더 많은 업무를 부과하는 방식으로 성장을 추\n구하는 패턴을 강화했다는 내용이다. 따라서 (b)의 weakened는\nsolidified와 같은 낱말로 바꿔야 한다.",
+"struct": "■■Corporations now shed staff in the course of\n restructuring and “process reengineering,” [forcing\n surviving workers to carry heavier workloads].\n [ ]는 주절의 상황에 이어지는 결과를 나타내는 분사구문이다.\n■■A few industries have turned into fast-moving,\n winner-take-all contests: small numbers of people\n stand to make immense fortunes [when their tech\n company goes public, their hedge fund investment\n pays off, or their song goes viral] — and [since no\n one knows how long they have until fashions change,\n technology evolves, or the bubble bursts], it makes\n sense to go all-in right now.\n 첫 번째 [ ]는 시간을 나타내는 부사절이고, 두 번째 [ ]는 이\n 유를 나타내는 부사절이다.\n\n\n\n\n07~08"
+},
+{
+"ans": "07 ② 08 ⑤",
+"topic": "국제 분쟁에 관한 두 가지 관점",
+"ko": "정치 심리학자인 Philip Tetlock은 국제 분쟁에 관여한\n정책 결정자들이 한 연설들을 조사했다. 그는 중요한 결정을 내릴\n때 국가 지도자들이 흔히 지나치게 단순화된 세계의 이미지에 의\n존한다는 점을 주목했다. 예를 들어, 미국과 소련 사이의 냉전 기\n간에는, 그 갈등에 대한 두 가지 매우 단순한 이미지가 지배적이\n었다. 이 중 하나는 억지(抑止) 관점으로, 어떤 약함의 징후도 상\n대방에 의해 이용당할 것이고 지도자는 기꺼이 군사력을 사용할\n의지를 보여주어야 한다는 것이었다. 억지 관점에서 보면, 어느 정\n도의 공격성을 보여주는 것은 상대방이 내 편에 공세를 취하는 것\n을 막기 위한 예방적 조치로 흔히 필요하다. 약한 모습을 보이면\n이용될 것이라는 억지 관점을 취하는 사람들은 핵 군축을 지지할\n\f\n가능성이 더 낮다. 다른 주요 관점은 갈등 나선 관점이었는데, 이\n는 국제적 위협이 고조될 때마다 상대방은 더 위협받는다고 느끼\n게 된다는 점과, 지도자는 상대방 자신의 방어적 적대 행위를 줄이\n기 위해 평화적 의도를 보여주어야 한다는 점을 전제했다.\n\n\n\n\n Part\nTetlock은 이러한 각각의 인지적 틀이 어떤 상황에서는 옳고, 또\n어떤 상황에서는 옳지 않다는 점에 주목했다. Hitler와 같은 상대\n\n\n\n\n I\n에 대해서는, 우호 상태로 이어지는 관점보다는 억지 관점이 더\n효과적이었을 수도 있다. 반면, 국제 정책 전문가들은 G. W.\n\n\n\n\n 유형편\nBush 대통령이 테러와의 전쟁의 핵심으로 주장한 미국의 이라크\n침공이 알카에다(2001년 9월 11일 테러 공격에 대해 책임이 있\n는 집단)의 조직원 수 증가를 억제한(→ 촉진한) 것처럼 보인다고\n추정한다.",
+"sol": "07 정책 결정자들이 국제 분쟁을 판단할 때 흔히 세계를 지나치\n게 단순화된 이미지로 인식하며, 대표적으로 억지 관점과 갈등 나\n선 관점이라는 두 가지 인지적 틀을 사용하는데, 이러한 틀이 상\n황에 따라 효과적일 수도 있고 그렇지 않을 수도 있다는 내용이\n다. 따라서 글의 제목으로 가장 적절한 것은 ② ‘국제 분쟁에 관한\n지나치게 단순화된 두 가지 인식’이다.\n① 증가하는 군사적 압박의 숨겨진 비용\n③ 설득의 기술: 지도자들이 대중의 지지를 얻는 방법\n④ 역사의 메아리: 고대 전쟁이 현대 정치에 영향을 미치는 방식\n⑤ 위기와 기회: 세계 분쟁에서 경제학의 역할\n08 억지 관점을 채택하지 않은 것이 잘못이었다고 보는 히틀러\n의 경우와 대조되는 사례로 미국의 이라크 침공을 제시하고 있으\n므로, 이라크 침공은 억지 관점의 채택이 부정적 결과를 가져와\n알카에다 조직원 수가 오히려 늘어난 것으로 보인다는 맥락이 되\n어야 한다. 따라서 (e)의 restrained를 spurred와 같은 낱말로\n바꿔야 한다.",
+"struct": "■■One of these was the deterrence view — [that any\n sign of weakness would be taken advantage of by the\n opponent] and [that leaders needed to show their\n willingness to use military force].\n 두 개의 [ ]는 and로 연결되어 the deterrence view와 동격\n 관계를 이룬다.\n■■The other prominent view was a conflict spiral view,\n [ w h i c h p r e s u m e d { t h a t eve r y e s c a l a t i o n o f\n international threat leads the opponent to feel more\n threatened} and {that leaders need to demonstrate\n peaceful intentions in order to reduce the opponent’s\n own defensive hostilities}].\n [ ]는 a conflict spiral view를 부가적으로 설명하는 관계절\n이고, 그 안의 두 개의 { }는 and로 연결되어 presumed의 목\n 적어 역할을 하는 명사절이다.\n■■On the other hand, international policy experts\n estimate [that the U.S. invasion of Iraq, {argued by\n President G. W. Bush to be the centerpiece of the war\n on terror}, seems to have spurred increases in the\n membership of Al-Qaeda (the group responsible for\n the terrorist attacks of September 11, 2001)].\n [ ]는 estimate의 목적어 역할을 하는 명사절이고, 그 안의\n { }는 the U.S. invasion of Iraq를 부가적으로 설명하는 분\n 사구이다."
+}
+],
+"20": [
+{
+"ans": "01 ⑤ 02 ③ 03 ⑤",
+"topic": "가족 독서 모임을 통한 단절된 가족 관계 회복",
+"ko": "(A) “Mia, 우리 강아지 산책시키러 가자!”라고 Julia는\n외쳤지만, 대답이 없었다. 그녀는 딸의 방을 확인했고, Mia가 이\n어폰을 꽂은 채 스마트폰에 몰두해 있는 것을 발견했다. Julia는\n딸이 걱정되었다. 그녀는 남편 Sam 쪽으로 몸을 돌렸다. “Mia는\n우리와 사는 것이 아니라 스마트폰 속에서 사는 것 같아요.” Sam\n은 고개를 끄덕이고는, “나도 알아요. 그녀가 우리와 점점 멀어지\n고 있는 기분이네요. 가족 독서 모임을 만들어 보는 게 어때요?”\n라고 말했다. Julia는 그 제안에 밝아졌고, Sam은 Mia에게 그\n것에 관해 이야기해 보겠다고 약속했다.\n(D) Sam이 가족 독서 모임을 시작하자고 제안했을 때, Mia는\n즉시 고개를 젓고는 “싫어요, 아빠. 책 읽을 시간이 없어요. 제가\n시험 때문에 학기 내내 얼마나 바쁜지 아시잖아요.”라고 말했다.\n그는 포기하지 않았다. “하지만 우리 모두 같은 이야기를 읽고 생\n각을 나누면 재미있지 않을까? 아마도 네 점심시간에 20분만 읽\n으면 될 거야.” 약간의 설득 끝에, Mia는 마지못해 동의했다. 마\n음속 깊은 곳에서 그녀는 자신이 스마트폰에 너무 많은 시간을 쓰\n고 있다는 걸 알고 있었다. 그래서 그녀는 “아빠, 첫 번째 책은 제\n가 골라도 돼요?”라고 물었다. Sam은 “그럼.”이라고 기쁘게 말했\n다.\n(C) 도서관에서, Mia는 거의 한 시간 동안 책장을 훑어보며 끝\n없는 책 제목들 속에서 길을 잃은 느낌이 들었다. 그때 사서가 다\n가와 “특별히 찾고 있는 책이 있나요?”라고 물었다. “가족 독서\n모임을 위한 책이 필요해요.”라고 Mia는 털어놓았다. “어떤 장르\n를 좋아하나요?”라고 사서가 다정하게 물었다. “음, 저는 미스터\n리를 좋아해요.”라고 Mia가 대답했다. 사서는 Café Paris라는\n제목의 책을 건네고는 “이 책이 마음에 들 거예요.”라고 미소 지\n으며 말했다. Mia는 그녀에게 감사 인사를 하고 그 책을 대출했\n다.\n(B) Mia의 가족은 토요일 오후에 첫 번째 독서 모임을 열었다.\n모두 Mia가 선정한 책을 즐겁게 읽었다. Julia가 먼저 말했다.\n“Duvall 박사는 영생의 약을 거의 발명했지만, 어느 날 사라져서\n\f\n결국 Café Paris를 운영하게 되었잖아. 그게 정말 미스터리야.”\nMia는 눈을 반짝이며 “엄마, 저는 그가 이해돼요. 그는 항상 바\n리스타가 되는 게 꿈이었는데, 결국 그 꿈을 이뤘잖아요.”라고 대\n답했다. Sam은 자신의 딸의 말을 지지했고, 그들의 대화는 점점\n활기를 띠었다. 이야기를 나누는 동안 Mia는 부모님과 다시 연결\n된 느낌을 받았고, 벌써 다음 독서 모임 만남을 고대했다.",
+"sol": "",
+"struct": "■■She [checked her daughter’s room] and [found {that\n Mia was absorbed in her smartphone, <wearing her\n earbuds>}].\n 두 개의 [ ]는 and로 연결되어 문장의 술어를 이룬다. 두 번째\n [ ] 안의 { }는 found의 목적어 역할을 하는 명사절이고, 그\n 안의 < >는 Mia was absorbed in her smartphone에 부\n 수하는 상황을 나타내는 분사구문이다.\n■■At the library, Mia scanned the shelves for nearly an\n hour, [feeling lost among the endless titles].\n [ ]는 주절의 상황에 부수하는 상황을 나타내는 분사구문이\n 다.\n\n\n\n\n 본문 120~127쪽"
+},
+{
+"ans": "01 ⑤ 02 ⑤ 03 ③",
+"topic": "동물 보호소에서의 감정 노동",
+"ko": "(A) Humane Society의 관리자는 2주 동안 출장 중이\n었고, Elaine이 책임자로 배치되었다. 그녀는 전에 이 책임을 맡\n은 적이 있었기 때문에, 자신이 맞닥뜨리게 될 수도 있는 힘든 과\n제에 익숙했는데, 그것은 길 잃은 동물을 수용하거나, 반려동물을\n주인과 다시 만나게 하거나, 반려동물을 찾지 못했음을 사람들에\n게 알리거나, 동물을 더 이상 돌볼 수 없는 사람들로부터 동물을\n받아들이거나, 보호소가 가득 찼을 때는 동물을 거절하거나 하는\n일이었다. 그 일이 힘들다고 여겼지만, 그녀는 이 상황을 자신감\n있고 침착하게 처리했다.\n(D) 관리자가 자리를 비운 첫날, 한 여자가 고양이와 함께 도착\n하여 그것을 보호소에 맡길 것을 요청할 때까지는 모든 것이 순조\n롭게 진행되고 있었다. Elaine의 첫 번째 질문은 그 고양이가 길\n잃은 고양이인지 아닌지였는데, 보호소는 길 잃은 동물은 수용할\n의무가 있지만, 소유된 반려동물은 거절할 수 있기 때문이었다.\n그 여자는 그것이 자신의 고양이라고 말하며, 이사 갈 것이라서\n그것을 자신과 함께 데리고 갈 수 없다고 설명했는데, 이는 흔한\n변명이었다. 비록 보호소가 때때로 그런 경우에 반려동물을 받아\n\f\n들이기는 했지만, 이미 수용 가능 마릿수 50마리의 거의 두 배인\n90마리가 넘는 고양이를 수용하고 있었기 때문에, Elaine은 정\n중히 거절해야만 했다.\n(C) Elaine은 침착하게 현재 이용할 수 있는 공간이 없음을 설명\n\n\n\n\n Part\n했지만, 그 여자는 눈에 띄게 화를 내더니 “당신이 이 고양이를 받\n아주지 않으면, 나는 그냥 그것을 어딘가에 풀어줘버릴 수밖에 없\n\n\n\n\n I\n어요.”라고 말했다. 그러한 말은 안타깝게도 드문 일이 아니었지\n만, 그것은 언제나 Elaine을 애먹였다. 그런데도, 그녀는 전문성\n\n\n\n\n 유형편\n을 유지하고, 다른 보호소의 연락처를 제공하며, 도움을 주려 애\n썼다. 그 여자는 대안 보호소들이 너무 멀다며 불평했고, 다른 선\n택지가 없다고 되풀이했다. Elaine은 그러면 보호소가 고양이를\n운반해 줄 자원봉사자를 찾을 수도 있다고 제안했다. 이에 대해,\n그 여자는 그녀에게 불만을 드러내며 고양이 이동 장을 그녀 앞에\n놓고, 목소리를 높인 뒤 보호소를 떠났다.\n(B) Elaine은 더 이상 그것을 참을 수 없었다. 그녀는 고양이를\n조심스럽게 이동 장에 넣고 뒤쪽 격리 구역으로 데려갔다. 그런\n다음 그녀는 뒤쪽 방으로 가서 부재 중인 관리자에게 전화를 걸었\n는데, 관리자는 그녀에게 전부 털어놓으라고 다독여 주었다.\nElaine은 무슨 일이 있었는지를 공유하며 자신의 감정을 쏟아냈\n고, 관리자는 그 이야기를 들었다. 그녀는 이후 훨씬 기분이 나아\n졌고, 판단 받을 걱정 없이 이야기할 수 있는 사람이 있다는 것에\n안도했다. 그때 이후로, 그 관리자는 직원들에게 직장에서 억눌린\n감정을 풀 필요가 있을 때 자신에게 오라고 격려해 왔고, 그녀는\n(그들의 이야기를) 들어주고 있다.",
+"sol": "01 Elaine이 책임자로 배치되어 다양한 상황을 침착하게 처리해\n온 경험을 설명하는 내용의 (A) 다음에는, 보호소 수용 한도를 초\n과한 상태에서 한 여성이 자신의 고양이를 맡기러 와 Elaine이\n이를 거절하게 되는 사건의 발단을 담은 내용의 (D)가 이어진다.\n그다음에는 Elaine의 침착한 대응에도 여성이 격하게 반응하며\n고양이를 Elaine 앞에 놓고 떠나는 갈등의 절정 장면을 담은 내\n용의 (C)가 이어지고, 갈등 이후 Elaine이 억눌렀던 감정을 관리\n자에게 털어놓고 안정을 되찾으며, 관리자는 이를 계기로 이러한\n정서적 지원을 전 직원에게 확대하여 그들의 고충을 들어주는 역\n할을 한다는 내용의 (B)로 마무리되는 것이 글의 가장 적절한 순\n서이다.\n02 밑줄 친 (a), (b), (c), (d)는 모두 Elaine을 가리키지만, (e)\n는 고양이를 보호소로 데리고 온 여자를 가리킨다.\n03 Elaine이 수용 공간이 없음을 설명하고 다른 보호소의 연락\n처를 제공했지만, 여자는 대안 보호소가 너무 멀다고 불평하며 다\n른 선택지가 없다고 되풀이했으므로, 글에 관한 내용으로 적절하\n지 않은 것은 ③이다.",
+"struct": "■■[Since she had taken on this responsibility before],\n she was familiar with the challenges she might\n encounter — [{impounding stray animals}, {reuniting\n pets with their owners}, {informing people their pet\n hadn’t been found}, {accepting animals from those\n who could no longer care for them}, or {turning\n animals away when the shelter was full}].\n 첫 번째 [ ]는 이유를 나타내는 부사절이고, 두 번째 [ ]는 다\n 섯 개의 { }가 or로 연결되어 the challenges she might\n encounter의 구체적인 내용을 열거하는 동명사구이다.\n■■She [felt much better afterward] and [was relieved to\n have someone {she could talk to without fear of\n judgment}].\n 두 개의 [ ]는 and로 연결되어 문장의 술어 역할을 한다. 두\n 번째 [ ] 안의 { }는 someone을 수식하는 관계절이다.\n■■Elaine’s first question was [whether the cat was a\n stray or not], [since the shelter {was obligated to take\n in strays} but {could refuse owned pets}].\n 첫 번째 [ ]는 was의 주격 보어 역할을 하는 명사절이다. 두\n 번째 [ ]는 이유를 나타내는 부사절이고, 그 안의 두 개의 { }\n 는 but으로 연결되어 부사절의 술어 역할을 한다.\n\n\n04~06"
+},
+{
+"ans": "04 ③ 05 ④ 06 ③",
+"topic": "노점상의 교묘함과 어린 William의 재치",
+"ko": "(A) 어느 저녁, 어린 William은 친구 집에서 집으로 돌\n아가는 길이었다. 그는 시장을 지나가고 있었다. 가는 길에, 그는\n바로 길 건너편에서 늙은 노점상이 파는 미트볼의 아주 좋은 냄새\n를 우연히 맡게 되었다. 냄새가 매우 좋아서 어린 William은 미\n트볼을 좀 사려고 노점에 들를 수 밖에 없었다. 그러나 미트볼의\n가격이 표시되어 있지 않아서, 그는 바로 집으로 향하기로 했다.\n어린 William이 돌아서서 떠나려던 바로 그 순간, 단호한 목소\n리가 그를 멈추게 했다.\n(C) 그것은 바로 늙은 노점상이었다. “기다려! 너는 그냥 가면 안\n돼. 가기 전에 돈을 내야 해,”라고 그는 말했다. 어린 William은\n늙은 노점상이 한 말에 놀랐다. 그는 노점상에게 물었다, “무슨 돈\n을 내야 하나요, 아저씨? 저는 미트볼을 전혀 사지 않았는데요.”\n노점상은 어린 William이 미트볼을 한 개도 사지 않았지만, 그\n가 자신의 미트볼의 좋은 냄새를 꽤 오랫동안 즐겼다고 주장했다.\n그는 냄새를 맡은 것은 먹는 것과 다름없기 때문에 어린 William\n이 그것의 값을 지불해야 한다고 진심으로 믿고 있었다.\n(D) 어린 William은 이것에 화가 났다. 그는 어째서 그저 미트\n볼 냄새를 맡은 것이 자신이 그것에 대한 값을 지불해야 한다는\n의미인지 알지 못했다. 잠깐 그 남자를 쳐다본 후, 어린 William\n은 주머니에 손을 넣고 몇 개의 동전을 딸랑거렸다. 늙은 노점상\n은 그 동전 소리를 듣고 신이 났다. 그는 “자 서둘러라, 얘야. 빨\n리 돈을 내라.”라고 말했다. 어린 William은 “저는 이미 돈을 냈\n어요, 아저씨. 이해하지 못하셨나요?”라고 대답했다.\n(B) 그 상인은 화를 내며 소리쳤다. “네가 언제 돈을 냈어? 너는\n주머니에 손을 넣었지만, 빈손으로 뺐잖아!” 어린 William은 자\n신이 방금 돈을 냈다고 분명히 밝히며, 상인에게 그가 자신의 주\n머니에서 동전의 딸랑거리는 소리를 들었음을 상기시켰다. 그는\n냄새 맡는 것이 먹는 것과 다름없다면, 동전 소리를 듣는 것 또한\n그것을 받는 것과 다름없어야 한다고 덧붙였다. 그는 그 남자를\n완전히 놀라게 만들어 놓고, 자랑스럽게 미소를 지으며 그곳으로\n부터 집으로 걸어갔다.",
+"sol": "04 어린 William이 시장에서 미트볼 냄새를 맡고 가게에 들렀\n지만, 가격표가 없어 그냥 돌아가려던 차에 단호한 목소리가 그를\n멈춰 세웠다는 내용의 (A) 다음에는, 그 목소리의 주인공이 늙은\n노점상이었으며 어린 William에게 미트볼 냄새를 맡은 것은 먹\n은 것과 같으니 그 값을 치르라고 요구하는 내용의 (C)가 이어진\n다. 그다음에는 이에 화가 난 어린 William이 주머니 속 동전을\n딸랑거리며 이미 지불했다고 말하는 내용의 (D)가 이어지고, 마\n지막으로 늙은 노점상의 논리를 되받아쳐, 동전 소리를 들은 것도\n돈을 받은 것과 같다고 말하는 내용의 (B)로 마무리되는 것이 글\n의 가장 적절한 순서이다.\n05 밑줄 친 (a), (b), (c), (e)는 모두 어린 William을 가리키지\n만, (d)는 늙은 노점상을 가리킨다.\n06 글 (B)에서 상인이 어린 William은 주머니에 손을 넣었지\n만 빈손으로 뺐다고 말했으므로, 글에 관한 내용으로 적절하지 않\n은 것은 ③이다.",
+"struct": "■■Little William made it clear [that he had just paid],\n [reminding the shopkeeper {that he had heard the\n jingle of the coins from his pocket}].\n it은 형식상의 목적어이고, 첫 번째 [ ]는 내용상의 목적어이\n 다. 두 번째 [ ]는 주절의 상황과 동시에 일어나는 상황을 나\n 타내는 분사구문이고, 그 안의 { }는 reminding의 직접목적\n 어 역할을 하는 명사절이다.\n■■He didn’t know [how merely smelling the meatballs\n meant {that he had to pay for them}].\n [ ]과 그 안의 { }는 각각 know와 meant의 목적어 역할을\n 하는 명사절이다.\n\f\n07~09"
+},
+{
+"ans": "07 ④ 08 ④ 09 ②",
+"topic": "Emma의 읽기를 지도한 교사 Sandy",
+"ko": "(A) Sandy Robinson은 초등학교 교사였다. Sandy는\n다른 다양한 업무 외에도 매일 오후에 읽기 능력이 학년 수준 아\n래인 3학년 학생들로 구성된 소그룹과 함께 공부했다. 목표는 함\n께 공부하는 학생들의 읽기 수준을 높여 학교가 주 교육 규정에\n따른 ‘학업 비상’ 상태에서 벗어나 올라갈 수 있도록 돕는 것이었\n다. Emma는 Sandy의 오후 읽기 그룹 중 한 그룹에 속해 있었\n는데 실력이 향상되고 있지 않았다. 그녀는 인내심이 부족하고 자\n주 집중력을 잃었으며, 그때쯤에는 수업에 지장을 주었는데, 주로\n자신이 재미있으려고 그러거나 그런 듯 보였다.\n(D) Emma가 집중력을 잃었을 때 Sandy는 Emma나 그 읽기\n그룹의 나머지 6명의 학생을 가르치는 것이 어려웠다. Sandy는\nEmma가 집중력을 유지하고 성공할 수 있도록 도울 수 있는 방\n법에 대해 많은 시간을 고민했다. 많은 생각 끝에 그녀는 읽기 그\n룹이 어떻게 진행되고 있는지에 대한 그녀의 느낌을 알아보기로\n결정했다. 그들이 그 주 후반에 만났을 때 Emma는 그녀를 정말\n놀라게 하는 말을 했다. Emma는 그룹에 읽고 있는 단어를 자신\n이 소리 내어 말할 때 Sandy가 자신에게 더 인내심을 가져야 한\n다고 느낀다고 말했다. Emma는 자신이 그것을 잘하지 못한다는\n것을 알고 있었고, 그 때문에 그녀는 긴장해서 그룹에서 벗어나고\n싶어 했다.\n(B) 그날 저녁 방과 후 Sandy는 Emma가 한 말을 곰곰이 생각\n해 보았다. Sandy는 Emma가 단어를 소리 내어 읽는 능력을 향\n상시키려면 그녀가 읽고 있는 단어 수를 늘려야 한다고 제시하는\n연구를 떠올렸다. 다음 날 Sandy는 그녀에게 소그룹 시간 외에\n일대일 읽기 지도를 위해 그녀를 만날 것이라고 말했다. 그 일대\n일 만남에서 Sandy는 Emma가 자신의 읽기 수준에 맞는 몇 권\n의 책 중에서 한 권을 선택하게 했다. 그런 다음 Sandy는 한 단\n락을 큰 소리로 읽고 Emma에게 한 단락을 읽게 하곤 했다.\n(C) 그들은 계속해서 교대로 반복하곤 했다. 느리지만 확실하게\n그들은 향상을 보았다. 시간이 지남에 따라 Emma의 단어 소리\n내어 읽기 능력이 향상되면서 그들은 책 읽기 수준을 높일 수 있\n었다. Sandy는 또한 Emma가 반 친구들과 함께 읽기 그룹에 와\n서 수업에 방해가 되거나 불안감을 느끼지 않고 전체 수업을 잘\n따라가기 시작했다는 것을 알아차렸다. 무엇보다도 새롭게 찾은\n자신감으로 그녀는 다른 책도 읽어보고 싶다고 생각하게 되었다!",
+"sol": "07 초등학교 교사 Sandy가 매일 오후 읽기 능력이 학년 수준 아\n래인 학생들을 지도하는데, 그룹에 속해 있는 Emma가 집중력을\n잃고 수업에 지장을 주었다는 내용의 (A) 다음에는, Emma를\n도울 방법을 고민한 Sandy가 수업에 대한 Emma의 생각을 듣\n\f\n고 놀라는 내용의 (D)가 이어진다. 그다음에는 Emma가 한 말\n에 대해 생각을 한 Sandy가 Emma에게 일대일 지도를 제안하\n고, 지도하는 내용의 (B)가 이어지고, 느리지만 확실하게 향상이\n이루어지고, Emma가 수업을 방해하지 않고 잘 따라가기 시작했\n\n\n\n\n Part\n다는 내용의 (C)로 마무리되는 것이 글의 가장 적절한 순서이다.\n08 밑줄 친 (a), (b), (c), (e)는 모두 Emma를 가리키지만, (d)\n\n\n\n\n I\n는 Sandy를 가리킨다.\n09 글 (B)에서 Sandy는 Emma가 자신의 읽기 수준에 맞는 책\n\n\n\n\n 유형편\n을 선택하도록 했다고 했으므로, 글에 관한 내용으로 적절하지 않\n은 것은 ②이다.",
+"struct": "■■The goal was [to raise the reading level of the students\n {with whom she worked} to help enable her school to\n ascend from its “academic emergency” status under\n the state’s education rules].\n [ ]는 was의 주격 보어 역할을 하는 to부정사구이고, 그 안의\n { }는 the students를 수식하는 관계절이다.\n■■In those one-on-one meetings, Sandy let Emma [select\n a book from a handful of books {that were at her\n reading level}].\n [ ]는 let의 목적격 보어 역할을 하는 원형부정사구이고, 그 안\n 의 { }는 a handful of books를 수식하는 관계절이다.\n\n\n\n10~12"
+},
+{
+"ans": "10 ⑤ 11 ⑤ 12 ⑤",
+"topic": "실직한 Sarah에게 용기를 준 Margaret",
+"ko": "(A) 비 내리는 월요일 아침, 최근 실직의 무게로 고심하던\n젊은 전문직 종사자인 Sarah는 어느새 자신이 좋아하는 모퉁이\n카페에 와 있었다. 그녀는 작은 테이블에 혼자 앉아 멍하니 창밖을\n바라보았고, 손도 대지 않은 커피는 식어가고 있었다. 지난 몇 주\n동안의 일을 되새기자 불안과 절망이 그녀를 압박했다. 방 맞은편\n에서 Margaret이라는 나이 든 여성이 Sarah의 슬픈 표정을 알\n아챘다. Margaret은 퇴직한 교사인데 누군가의 하루를 밝게 해\n줄 기회를 찾는 습관이 있었다. 그녀는 자신의 김이 나는 커피를\n들고 조심스럽게 Sarah의 테이블로 다가갔다.\n(D) “함께 해도 될까요?” Margaret이 부드럽게 물었다. 깜짝 놀\n랐지만, 거절하기에는 너무 예의 바른 성격이라, Sarah는 고개를\n끄덕였다. Margaret은 자리에 앉아 자신을 소개하며 하루를 어\n떻게 보내고 있는지 물었다. 처음에 Sarah는 자신의 고민을 털어\n놓기를 망설였지만 Margaret의 따뜻하고 인내심 있는 태도에 그\n녀는 마음이 편안해졌다. 천천히, 그녀는 자신의 실직, 쌓여가는\n청구서, 자신의 불확실한 미래에 대한 두려움까지 자신의 어려움\n에 대해 마음을 열었다. Margaret은 끼어들지 않고 열중해서 들\n었다.\n(C) Sarah가 말을 마치자, Margaret은 몇 마디 친절한 말을 건\n넸다. “당신이 이런 일을 겪고 있다니 유감이에요. 힘들다는 건 알\n지만, 당신이 지금 당장은 느끼지 못하더라도, 저는 당신에게 있\n는 힘을 볼 수 있어요. 때때로 인생은 다른 문을 열기 위해 한쪽\n문을 닫기도 하죠. 당신은 이것을 벗어날 것이고, 어쩌면 그것이\n더 나은 일로 이어지기도 할 거예요.” 그녀의 말은 단순했지만,\nSarah가 자신에게 필요하다고 깨닫지 못했던 힘을 담고 있었다.\n몇 주 만에 처음으로, 그녀는 누군가가 자신을 알아봐 주고, 이야\n기에 귀 기울이며, 이해해 준다고 느꼈다.\n(B) 떠나기 전에 Margaret은 메모지에 이메일 주소를 적어 그녀\n에게 건네주었다. “언제든 대화할 상대가 필요하거나 이력서 작성\n에 도움을 줄 사람이 필요하면 주저하지 말고 연락하세요.”라고\n그녀는 친절한 미소를 지으며 말했다. 이러한 예상치 못한 만남에\n용기를 얻어, Sarah는 집으로 돌아가 작은 발걸음을 앞으로 내딛\n기 시작했다. 그녀는 이력서를 새로 수정하고, 지원서를 발송하\n며, 자신의 어려움을 기회로 보기 시작했다. 몇 주 후, 그녀는 비\n영리 단체에 취직했는데, 자신의 열정과 잘 맞고 그녀에게 새로운\n목적 의식을 제공하는 일이었다.",
+"sol": "10 실직으로 힘들어하던 Sarah는 카페에서 창밖을 바라보며 절\n망에 잠겨 있었는데, 이를 본 퇴직 교사 Margaret이 Sarah를 돕\n기 위해 그녀에게 다가갔다는 내용의 글 (A) 다음에는, Sarah가\n자신이 겪고 있는 어려움을 털어놓았고, 그것을 Margaret이 열\n중해서 들었다는 내용의 (D) 가 이어져야 한다. 그다음에는\nSarah가 말을 마친 후 Margaret이 Sarah에게 힘이 되는 친절\n한 말을 건넸고 그 말 덕분에 Sarah는 누군가가 이해해 준다고\n느꼈다는 내용인 (C)가 온 다음, 예상치 못한 만남에 용기를 얻은\nSarah가 이력서를 새로 수정하고 지원서를 발송해, 결국 자신의\n열정에 잘 맞는 비영리 단체에 취직하게 되었다는 내용의 (B)로\n마무리되는 것이 글의 순서로 가장 적절하다.\n11 (a), (b), (c), (d)는 모두 Margaret을 가리키지만, (e)는\nSarah를 가리킨다.\n12 Margaret이 동석을 제안하자, Sarah는 깜짝 놀랐지만 거절\n하기에는 예의 바른 성격이라 고개를 끄덕였다고 했으므로, 글에\n관한 내용으로 적절하지 않은 것은 ⑤이다.",
+"struct": "■■It was a rainy Monday morning, and Sarah, [a young\n professional {struggling with the weight of a recent\n job loss}], found herself at her favorite corner café.\n [ ]는 Sarah 와 동격 관계이고, 그 안의 { }는 a young\nprofessional을 수식하는 분사구이다.\n■■A few weeks later, she landed a job at a nonprofit\n organization — [work {that fit well with her passions\n and gave her a renewed sense of purpose}].\n [ ]는 a job at a nonprofit organization과 동격 관계이고,\n 그 안의 { }는 work를 수식하는 관계절이다."
+}
+]
+}
+}
