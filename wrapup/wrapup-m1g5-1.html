@@ -1,0 +1,359 @@
+<title>중산중1 5과 문법 변형 1차</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+/* A4 시험지 (10/31): 스크립트가 문항을 A4 쪽(210×297mm)에 왼쪽 단 → 오른쪽 단 → 다음 쪽 순서로 직접 나눠 담고 쪽 번호를 붙인다.
+   화면·인쇄·PDF 어디서나 같은 쪽 구성. 좁은 화면에서는 쪽 전체를 축소해서 보여 준다. */
+.q, .exp p { break-inside: avoid }
+body { font-size: 9.6pt }
+.stem { font-size: 9.8pt } .stem .src { font-size: 8pt }
+.box, .given, .sum { font-size: 9.4pt; line-height: 1.46; padding: 2.2mm 2.8mm }
+.ol, .ol.en li { font-size: 9.3pt; line-height: 1.38 }
+table.ch { font-size: 9.2pt } table.ch th { font-size: 8.4pt }
+.q { margin-bottom: 3.6mm; gap: 1.6mm }
+.exp { font-size: 7.8pt; line-height: 1.36; margin-top: 3mm } .exp p { margin-bottom: 1mm }
+.top, .notice, .idrow, .title .when, .foot { font-size: 8.6pt }
+.title h1 { font-size: 18pt } .title h1 small { font-size: 8.6pt }
+.keygrid div { font-size: 9pt; padding: 1.2mm 0 } .keygrid b { font-size: 10.5pt }
+.page { width: 210mm; max-width: 100%; padding: 11mm }
+.sheets { display: grid; justify-content: center; gap: 16px }
+.sheet { width: 210mm; height: 297mm; padding: 11mm; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); overflow: hidden }
+/* 내용 영역 188×256mm: A4 여백 0~20mm, Letter 기본 여백에서도 한 장에 들어가는 크기 */
+.sheet > .inner { width: 188mm; height: 256mm; display: flex; flex-direction: column; overflow: hidden }
+.inner > .top.run { padding-bottom: 2mm; border-bottom: 1px solid var(--rule); margin-bottom: 1mm }
+.cols { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr);
+  column-gap: 6mm; margin-top: 4mm; position: relative }
+.cols::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid var(--rule) }
+.cols > .col { columns: auto !important; margin: 0 !important; min-height: 0; overflow: hidden }
+.inner > .foot { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center }
+.inner > .foot span:last-child { text-align: right }
+.inner > .foot .pno { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums }
+@page { size: A4; margin: 12mm 11mm }
+@media print {
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  body { padding: 0 !important; margin: 0 }
+  .sheets { display: block }
+  .sheet { zoom: 1 !important; width: auto; height: auto; padding: 0; margin: 0; box-shadow: none; overflow: visible; break-after: page; page-break-after: always }
+  .sheet:last-child { break-after: auto; page-break-after: auto }
+  .sheet > .inner { margin: 0 auto }
+  .page { max-width: none; margin: 0; box-shadow: none; break-after: page }
+}
+</style>
+<script>
+/* A4 쪽 나누기: 왼쪽 단 → 오른쪽 단 → 다음 쪽, 쪽 번호 n / 전체 */
+(function () {
+  function build() {
+    var main = document.querySelector('main'); if (!main || document.querySelector('.sheets')) return;
+    var secs = [].slice.call(main.querySelectorAll('section.page'));
+    var out = document.createElement('div'); out.className = 'sheets'; main.appendChild(out);
+    var pages = [];
+    secs.forEach(function (sec) {
+      var box = sec.querySelector('.qs, .exp'); if (!box) return;
+      var items = [].slice.call(box.children), foot = sec.querySelector('.foot'), top = sec.querySelector('.top');
+      var head = [].slice.call(sec.children).filter(function (e) { return e !== box && e !== foot && !(e.classList.contains('keygrid') && false); });
+      var cols, ci, first = true;
+      function newPage() {
+        var sh = document.createElement('div'); sh.className = 'sheet'; var pg = document.createElement('div'); pg.className = 'inner'; sh.appendChild(pg);
+        if (first) head.forEach(function (e) { pg.appendChild(e); });
+        else { var t = top.cloneNode(true); t.classList.add('run'); pg.appendChild(t); }
+        first = false;
+        cols = document.createElement('div'); cols.className = 'cols';
+        for (var i = 0; i < 2; i++) { var c = document.createElement('div'); c.className = 'col ' + box.className; cols.appendChild(c); }
+        pg.appendChild(cols);
+        var f = foot.cloneNode(true), sp = f.querySelectorAll('span'), mid = document.createElement('span'); mid.className = 'pno';
+        f.insertBefore(mid, sp[1] || null); pg.appendChild(f);
+        out.appendChild(sh); pages.push(pg); ci = 0;
+      }
+      function over(c) { return c.scrollHeight > c.clientHeight + 1; }
+      newPage();
+      items.forEach(function (it) {
+        var c = cols.children[ci]; c.appendChild(it);
+        if (over(c) && c.children.length > 1) {
+          c.removeChild(it); ci++;
+          if (ci > 1) newPage();
+          cols.children[ci].appendChild(it);
+        }
+      });
+      sec.parentNode.removeChild(sec);
+    });
+    pages.forEach(function (p, i) { p.querySelector('.pno').textContent = (i + 1) + ' / ' + pages.length; });
+    fit();
+  }
+  function fit() {
+    var w = document.documentElement.clientWidth - 24, s = Math.min(1, w / 794);
+    [].forEach.call(document.querySelectorAll('.sheet'), function (p) { p.style.zoom = s < 1 ? s : ''; });
+  }
+  function go() { (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(build, build); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  window.addEventListener('resize', function () { if (document.querySelector('.sheets')) fit(); });
+})();
+</script>
+
+
+<main>
+<section class="page">
+  <div class="top"><span>중1 영어 동아(윤정미) Lesson 5 Grammar · <b>1차</b></span><span>중산중학교 1학년 · 내신 대비</span></div>
+  <div class="title">
+    <div class="g">영어</div>
+    <h1>5과 문법 변형 1차<small>비교급 · 최상급 · There is/are</small></h1>
+    <div class="when">20문항 · 각 5점<br>제한 시간 30분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">범위: 5과 문법 — 비교급(-er / more ~ than), 최상급(the -est / the most ~), There is/are. 교재 문제와 똑같지 않고 어휘를 바꿔 만들었어요. 문장 전체를 끝까지 읽고 고르세요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[비교급]</span></div>
+    <div class="box"><p>This winter is much <span class="blank"></span> than last winter.</p></div>
+    <ol class="ol en"><li><span>①</span><span>colder</span></li><li><span>②</span><span>more cold</span></li><li><span>③</span><span>coldest</span></li><li><span>④</span><span>the coldest</span></li><li><span>⑤</span><span>cold</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>다음 중 원급과 비교급이 바르게 짝지어진 것은?<span class="src">[비교급]</span></div>
+    <ol class="ol en"><li><span>①</span><span>wise – wiseer</span></li><li><span>②</span><span>noisy – noisyer</span></li><li><span>③</span><span>famous – famouser</span></li><li><span>④</span><span>thin – thinner</span></li><li><span>⑤</span><span>bad – badder</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>다음 중 원급과 최상급의 연결이 바르지 <u>않은</u> 것은?<span class="src">[최상급]</span></div>
+    <ol class="ol en"><li><span>①</span><span>wet – wettest</span></li><li><span>②</span><span>useful – most useful</span></li><li><span>③</span><span>little – littlest</span></li><li><span>④</span><span>far – farthest</span></li><li><span>⑤</span><span>well – best</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>다음 빈칸에 공통으로 들어갈 말로 알맞은 것은?<span class="src">[최상급]</span></div>
+    <div class="box"><p>• Mina is the <span class="blank"></span> dancer in our club.<br>• Who sings <span class="blank"></span> in your family?</p></div>
+    <ol class="ol en"><li><span>①</span><span>better</span></li><li><span>②</span><span>well</span></li><li><span>③</span><span>most</span></li><li><span>④</span><span>good</span></li><li><span>⑤</span><span>best</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>다음 빈칸에 들어갈 수 <u>없는</u> 것은?<span class="src">[비교급]</span></div>
+    <div class="box"><p>Today's quiz was <span class="blank"></span> harder than yesterday's.</p></div>
+    <ol class="ol en"><li><span>①</span><span>much</span></li><li><span>②</span><span>even</span></li><li><span>③</span><span>far</span></li><li><span>④</span><span>a lot</span></li><li><span>⑤</span><span>very</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[There is/are]</span></div>
+    <div class="box"><p>There <span class="blank"></span> a lot of furniture in the old house.</p></div>
+    <ol class="ol en"><li><span>①</span><span>are</span></li><li><span>②</span><span>is</span></li><li><span>③</span><span>be</span></li><li><span>④</span><span>have</span></li><li><span>⑤</span><span>has</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>다음 질문에 대한 응답으로 알맞은 것은?<span class="src">[There is/are]</span></div>
+    <div class="box"><p>A: Were there any empty seats on the train?<br>B: <span class="blank"></span> It was full of people.</p></div>
+    <ol class="ol en"><li><span>①</span><span>No, there weren't.</span></li><li><span>②</span><span>No, they weren't.</span></li><li><span>③</span><span>Yes, there was.</span></li><li><span>④</span><span>No, it wasn't.</span></li><li><span>⑤</span><span>Yes, they were.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>다음 중 어법상 <u>어색한</u> 문장은?<span class="src">[비교급]</span></div>
+    <ol class="ol en"><li><span>①</span><span>A cheetah runs faster than a horse.</span></li><li><span>②</span><span>Silver is less valuable than gold.</span></li><li><span>③</span><span>My bag is much heavier than yours.</span></li><li><span>④</span><span>This puzzle is more simpler than that one.</span></li><li><span>⑤</span><span>He got up earlier than his parents.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>다음 중 어법상 올바른 문장은?<span class="src">[최상급]</span></div>
+    <ol class="ol en"><li><span>①</span><span>She is the most smartest girl in my class.</span></li><li><span>②</span><span>This is the most cheap shirt in the store.</span></li><li><span>③</span><span>The Nile is the longest river in the world.</span></li><li><span>④</span><span>Jupiter is the bigest planet of all.</span></li><li><span>⑤</span><span>He is the taller boy of the three.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>다음은 5과 본문의 용의자 정보이다. 이를 설명한 내용으로 바르지 <u>않은</u> 것은?<span class="src">[본문 응용]</span></div>
+    <div class="box"><p>Andres Lozano: 176 cm · Larry Johnson: 173 cm · Tim Baker: 182 cm · Luca Ferez: 166 cm</p></div>
+    <ol class="ol en"><li><span>①</span><span>Tim is the tallest of the four.</span></li><li><span>②</span><span>Luca is shorter than Larry.</span></li><li><span>③</span><span>Andres is taller than Luca.</span></li><li><span>④</span><span>Luca is the shortest of the four suspects.</span></li><li><span>⑤</span><span>Larry is taller than Andres.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[본문 응용]</span></div>
+    <div class="box"><p>I'm about 170 cm tall, and the man was a little <span class="blank"></span> than me.</p></div>
+    <ol class="ol en"><li><span>①</span><span>tall</span></li><li><span>②</span><span>tallest</span></li><li><span>③</span><span>taller</span></li><li><span>④</span><span>more tall</span></li><li><span>⑤</span><span>the tallest</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>다음 중 어법상 <u>어색한</u> 문장은?<span class="src">[There is/are]</span></div>
+    <ol class="ol en"><li><span>①</span><span>There were pieces of cake all over the painting.</span></li><li><span>②</span><span>There is a cake box next to the wheelchair.</span></li><li><span>③</span><span>Is there a bakery near the museum?</span></li><li><span>④</span><span>There are a wheelchair near the painting.</span></li><li><span>⑤</span><span>There weren't any guards in the room.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>다음 문장과 의미가 같은 것은?<span class="src">[최상급]</span></div>
+    <div class="box"><p>No other student in my class is taller than Jiho.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Jiho is the tallest student in my class.</span></li><li><span>②</span><span>Jiho is taller than only one student.</span></li><li><span>③</span><span>Jiho is not as tall as the other students.</span></li><li><span>④</span><span>Jiho is the shortest student in my class.</span></li><li><span>⑤</span><span>Some students are taller than Jiho.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>다음 우리말을 영어로 바르게 옮긴 것은?<span class="src">[비교급]</span></div>
+    <div class="box"><p>이 상자는 저 상자보다 덜 무겁다.</p></div>
+    <ol class="ol en"><li><span>①</span><span>This box is less heavier than that one.</span></li><li><span>②</span><span>This box is less heavy than that one.</span></li><li><span>③</span><span>This box is heavier than that one.</span></li><li><span>④</span><span>This box is not heavy than that one.</span></li><li><span>⑤</span><span>This box is the least heavy.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[최상급]</span></div>
+    <div class="box"><p>Kevin is the youngest <span class="blank"></span> the five members.</p></div>
+    <ol class="ol en"><li><span>①</span><span>in</span></li><li><span>②</span><span>than</span></li><li><span>③</span><span>at</span></li><li><span>④</span><span>to</span></li><li><span>⑤</span><span>of</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>다음 대화의 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[비교급]</span></div>
+    <div class="box"><p>A: Which is <span class="blank"></span>, the subway or the bus?<br>B: The subway is. It never gets stuck in traffic.</p></div>
+    <ol class="ol en"><li><span>①</span><span>fastest</span></li><li><span>②</span><span>more fast</span></li><li><span>③</span><span>the fast</span></li><li><span>④</span><span>faster</span></li><li><span>⑤</span><span>fast</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>다음 <보기>에서 어법상 <u>어색한</u> 문장의 개수는?<span class="src">[종합]</span></div>
+    <div class="box"><p>(a) There is many books on the shelf.<br>(b) Seoul is bigger than Busan.<br>(c) Health is the most important thing in life.<br>(d) My dog is more cuter than yours.<br>(e) There were two cats under the car.</p></div>
+    <ol class="ol en"><li><span>①</span><span>1개</span></li><li><span>②</span><span>2개</span></li><li><span>③</span><span>3개</span></li><li><span>④</span><span>4개</span></li><li><span>⑤</span><span>5개</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>다음은 Mina의 방에 있는 물건이다. 내용과 일치하지 <u>않는</u> 것은?<span class="src">[There is/are]</span></div>
+    <div class="box"><p>Mina's room: a bed · two lamps · some books · (TV 없음)</p></div>
+    <ol class="ol en"><li><span>①</span><span>There is a bed in Mina's room.</span></li><li><span>②</span><span>There is a TV in Mina's room.</span></li><li><span>③</span><span>There are two lamps in Mina's room.</span></li><li><span>④</span><span>There isn't a TV in Mina's room.</span></li><li><span>⑤</span><span>There are some books in Mina's room.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>다음 글을 읽고, 가장 어린 사람을 고르면?<span class="src">[비교급]</span></div>
+    <div class="box"><p>Amy is older than Ben. Ben is older than Chris. Dan is younger than Chris.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Amy</span></li><li><span>②</span><span>Ben</span></li><li><span>③</span><span>Dan</span></li><li><span>④</span><span>Chris</span></li><li><span>⑤</span><span>Amy and Dan</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[본문 응용]</span></div>
+    <div class="box"><p>We had a lot of different cakes, but he just wanted the <span class="blank"></span> one.</p></div>
+    <ol class="ol en"><li><span>①</span><span>smallest</span></li><li><span>②</span><span>smaller</span></li><li><span>③</span><span>small</span></li><li><span>④</span><span>most small</span></li><li><span>⑤</span><span>smalest</span></li></ol>
+  </div>
+  </div>
+  <div class="foot"><span>동아(윤정미) 5과 문법 1차 · 어휘 바꿔 변형</span><span>중산중 1학년 영어 · 문법 변형</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>5과 문법 변형 1차 · <b>정답과 해설</b></span><span>중산중학교 1학년</span></div>
+  <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">각 5점 · 100점</div></div>
+  <div class="keygrid">
+    <div>1<b>①</b></div><div>2<b>④</b></div><div>3<b>③</b></div><div>4<b>⑤</b></div><div>5<b>⑤</b></div><div>6<b>②</b></div><div>7<b>①</b></div><div>8<b>④</b></div><div>9<b>③</b></div><div>10<b>⑤</b></div>
+    <div>11<b>③</b></div><div>12<b>④</b></div><div>13<b>①</b></div><div>14<b>②</b></div><div>15<b>⑤</b></div><div>16<b>④</b></div><div>17<b>②</b></div><div>18<b>②</b></div><div>19<b>③</b></div><div>20<b>①</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">①</span> 이유 ▶ 뒤에 than(~보다) + 앞에 much(훨씬, 비교급 강조) → 비교급. cold는 1음절이라 -er → colder.<br>
+오답 ▶ ② 1음절에는 more를 붙이지 않는다 ③·④ 최상급은 than과 함께 못 쓴다 ⑤ 원급은 than 앞에 못 온다<br>
+포인트 ▶ much / even / far / a lot + 비교급 + than</p>
+    <p><b>2</b> <span class="k">④</span> 이유 ▶ thin은 「단모음 + 단자음」 → 자음을 한 번 더 쓰고 -er → thinner.<br>
+오답 ▶ ① -e로 끝나면 -r만 → wiser ② 「자음 + y」 → y를 i로 → noisier ③ -ous로 끝나는 2음절 이상 → more famous ⑤ 불규칙 → worse<br>
+포인트 ▶ 단모음+단자음(thin, big, hot, fat, wet)은 자음 하나 더!</p>
+    <p><b>3</b> <span class="k">③</span> 이유 ▶ little(적은)은 불규칙 → little – less – least.<br>
+오답 ▶ ① 단모음+단자음 → wettest ✔ ② -ful → most useful ✔ ④ far – farther – farthest ✔ ⑤ well – better – best ✔<br>
+포인트 ▶ 불규칙 4총사: good/well – better – best · bad – worse – worst · many/much – more – most · little – less – least</p>
+    <p><b>4</b> <span class="k">⑤</span> 이유 ▶ 첫 문장: the + ___ + 명사 + in our club → 최상급 형용사(good → best) / 둘째 문장: 동사 sings를 꾸미는 부사 + in your family(범위) → 최상급 부사(well → best). 둘 다 best!<br>
+오답 ▶ ① better는 than과 함께, the와 in ~(범위)에는 최상급 ②·④ 원급은 범위 표현과 어울리지 않음 ③ most는 3음절 이상 형용사 앞에 붙는 말<br>
+포인트 ▶ good(형)·well(부) 모두 최상급은 best.</p>
+    <p><b>5</b> <span class="k">⑤</span> 이유 ▶ very는 원급만 꾸민다(very hard ⭕, very harder ❌).<br>
+오답 ▶ ①·②·③·④ much / even / far / a lot은 비교급을 강조(훨씬)<br>
+포인트 ▶ 비교급 강조어 = much, even, far, a lot, still</p>
+    <p><b>6</b> <span class="k">②</span> 이유 ▶ There is/are 뒤의 명사가 진짜 주어. furniture(가구)는 셀 수 없는 명사라 a lot of가 붙어도 단수 취급 → is.<br>
+오답 ▶ ① a lot of만 보고 복수로 착각한 함정 ③ 동사원형은 불가 ④·⑤ '있다'는 There + be동사<br>
+포인트 ▶ a lot of + 셀 수 없는 명사(water, money, furniture, homework) → There is</p>
+    <p><b>7</b> <span class="k">①</span> 이유 ▶ Were there ~? 로 물으면 there로 답한다 → No, there weren't. 뒤의 '사람들로 꽉 찼다'와도 맞는다.<br>
+오답 ▶ ②·⑤ they로 답하지 않는다 ③ 복수(seats)인데 was, 게다가 뒤 내용과 반대 ④ it으로 답하지 않는다<br>
+포인트 ▶ Is/Are/Was/Were there ~? → Yes, there is[are…]. / No, there isn't[aren't…].</p>
+    <p><b>8</b> <span class="k">④</span> 이유 ▶ more와 -er을 겹쳐 쓸 수 없다 → simpler.<br>
+오답 ▶ ① fast – faster ✔ ② less + 원급(덜 ~한) ✔ ③ much(훨씬) + heavier ✔ ⑤ early – earlier ✔<br>
+포인트 ▶ more + 비교급 ❌ (more simpler, more bigger, more worse)</p>
+    <p><b>9</b> <span class="k">③</span> 이유 ▶ long – longest, 범위는 in the world ✔<br>
+오답 ▶ ① most와 -est 중복 → the smartest ② 1음절 → the cheapest ④ 단모음+단자음 → biggest ⑤ 셋 중에서 → 최상급 the tallest<br>
+포인트 ▶ 셋 이상에서 '가장' → 최상급</p>
+    <p><b>10</b> <span class="k">⑤</span> 이유 ▶ Larry(173 cm) < Andres(176 cm) → Larry가 더 '작다'.<br>
+오답 ▶ ① Tim 182 cm로 가장 큼 ✔ ② 166 < 173 ✔ ③ 176 > 166 ✔ ④ 166 cm로 가장 작음 ✔<br>
+포인트 ▶ 표 문제는 비교 대상 두 개를 숫자로 다시 확인!</p>
+    <p><b>11</b> <span class="k">③</span> 이유 ▶ than + a little(조금) → 비교급 taller. 본문: he was a little taller than me.<br>
+오답 ▶ ① 원급 불가 ②·⑤ 최상급 불가 ④ 1음절은 -er<br>
+포인트 ▶ a little + 비교급 = 조금 더 ~한</p>
+    <p><b>12</b> <span class="k">④</span> 이유 ▶ a wheelchair(단수) → There is[was].<br>
+오답 ▶ ① pieces(복수) → were ✔ ② a cake box(단수) → is ✔ ③ 의문문 Is there ~? ✔ ⑤ 부정문 + any ✔<br>
+포인트 ▶ be동사는 there가 아니라 뒤의 명사에 맞춘다.</p>
+    <p><b>13</b> <span class="k">①</span> 이유 ▶ 우리 반에서 지호보다 키 큰 학생은 없다 = 지호가 반에서 가장 키가 크다.<br>
+오답 ▶ ② 한 명보다만 큼 ✘ ③ 다른 학생만큼 크지 않다(반대) ④ 가장 작다(반대) ⑤ 지호보다 큰 학생이 있다(반대)<br>
+포인트 ▶ No other + 명사 + 비교급 + than A = A가 가장 ~하다</p>
+    <p><b>14</b> <span class="k">②</span> 이유 ▶ '덜 ~한' = less + 원급 + than.<br>
+오답 ▶ ① less 뒤에 비교급 ❌ ③ 더 무겁다(반대) ④ not + 원급 + than은 틀린 형태 ⑤ '가장 덜 무거운'(최상급) + 비교 대상 없음<br>
+포인트 ▶ less + 원급(heavy) ⭕ / less + 비교급(heavier) ❌</p>
+    <p><b>15</b> <span class="k">⑤</span> 이유 ▶ the five members는 '비교 대상(사람 여럿)' → of + 복수.<br>
+오답 ▶ ① in은 장소·집단 범위(in the team, in Korea) ② than은 비교급과 함께 ③·④ 쓰지 않음<br>
+포인트 ▶ 최상급 + of + 복수 비교 대상 / in + 장소·범위</p>
+    <p><b>16</b> <span class="k">④</span> 이유 ▶ 둘(the subway or the bus) 중 '어느 것이 더' → Which is 비교급, A or B?<br>
+오답 ▶ ① 둘 비교에는 최상급 ❌ ② 1음절은 -er ③·⑤ 원급 ❌<br>
+포인트 ▶ Which ~ 비교급, A or B? (둘 중에서)</p>
+    <p><b>17</b> <span class="k">②</span> 이유 ▶ 어색한 것 (a)·(d) 2개. (a) many books(복수) → There are (d) more와 -er 중복 → cuter<br>
+오답 ▶ (b) big – bigger ✔ (c) 3음절 이상 → the most important ✔ (e) two cats → were ✔<br>
+포인트 ▶ 개수 문제는 한 문장씩 ⭕ / ❌ 표시하며 세기!</p>
+    <p><b>18</b> <span class="k">②</span> 이유 ▶ TV는 없다 → There isn't a TV.<br>
+오답 ▶ ① 침대 하나 ✔ ③ 램프 두 개 → are ✔ ④ TV 없음 ✔ ⑤ 책 몇 권 → are ✔</p>
+    <p><b>19</b> <span class="k">③</span> 이유 ▶ Amy > Ben > Chris > Dan(나이 많은 순). Dan이 Chris보다도 어리다 → 가장 어림.<br>
+포인트 ▶ older(나이 많은) ↔ younger(어린) 방향을 화살표로 적어 보자.</p>
+    <p><b>20</b> <span class="k">①</span> 이유 ▶ 많은 케이크 중 '가장 작은' 것 → the + 최상급 smallest. 본문: he just wanted the smallest one.<br>
+오답 ▶ ② 비교급은 than과 / 둘 중 비교 ③ the + 원급 + one은 '가장'의 뜻이 아님 ④ 1음절은 -est ⑤ 철자 오류(smallest)<br>
+포인트 ▶ the + 최상급 + one(=cake)</p>
+  </div>
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>중산중 1학년 영어 · 문법 변형</span></div>
+</section>
+</main>

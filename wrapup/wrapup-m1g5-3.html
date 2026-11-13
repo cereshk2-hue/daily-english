@@ -1,0 +1,358 @@
+<title>중산중1 5과 문법 변형 3차</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+/* A4 시험지 (10/31): 스크립트가 문항을 A4 쪽(210×297mm)에 왼쪽 단 → 오른쪽 단 → 다음 쪽 순서로 직접 나눠 담고 쪽 번호를 붙인다.
+   화면·인쇄·PDF 어디서나 같은 쪽 구성. 좁은 화면에서는 쪽 전체를 축소해서 보여 준다. */
+.q, .exp p { break-inside: avoid }
+body { font-size: 9.6pt }
+.stem { font-size: 9.8pt } .stem .src { font-size: 8pt }
+.box, .given, .sum { font-size: 9.4pt; line-height: 1.46; padding: 2.2mm 2.8mm }
+.ol, .ol.en li { font-size: 9.3pt; line-height: 1.38 }
+table.ch { font-size: 9.2pt } table.ch th { font-size: 8.4pt }
+.q { margin-bottom: 3.6mm; gap: 1.6mm }
+.exp { font-size: 7.8pt; line-height: 1.36; margin-top: 3mm } .exp p { margin-bottom: 1mm }
+.top, .notice, .idrow, .title .when, .foot { font-size: 8.6pt }
+.title h1 { font-size: 18pt } .title h1 small { font-size: 8.6pt }
+.keygrid div { font-size: 9pt; padding: 1.2mm 0 } .keygrid b { font-size: 10.5pt }
+.page { width: 210mm; max-width: 100%; padding: 11mm }
+.sheets { display: grid; justify-content: center; gap: 16px }
+.sheet { width: 210mm; height: 297mm; padding: 11mm; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); overflow: hidden }
+/* 내용 영역 188×256mm: A4 여백 0~20mm, Letter 기본 여백에서도 한 장에 들어가는 크기 */
+.sheet > .inner { width: 188mm; height: 256mm; display: flex; flex-direction: column; overflow: hidden }
+.inner > .top.run { padding-bottom: 2mm; border-bottom: 1px solid var(--rule); margin-bottom: 1mm }
+.cols { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr);
+  column-gap: 6mm; margin-top: 4mm; position: relative }
+.cols::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid var(--rule) }
+.cols > .col { columns: auto !important; margin: 0 !important; min-height: 0; overflow: hidden }
+.inner > .foot { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center }
+.inner > .foot span:last-child { text-align: right }
+.inner > .foot .pno { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums }
+@page { size: A4; margin: 12mm 11mm }
+@media print {
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  body { padding: 0 !important; margin: 0 }
+  .sheets { display: block }
+  .sheet { zoom: 1 !important; width: auto; height: auto; padding: 0; margin: 0; box-shadow: none; overflow: visible; break-after: page; page-break-after: always }
+  .sheet:last-child { break-after: auto; page-break-after: auto }
+  .sheet > .inner { margin: 0 auto }
+  .page { max-width: none; margin: 0; box-shadow: none; break-after: page }
+}
+</style>
+<script>
+/* A4 쪽 나누기: 왼쪽 단 → 오른쪽 단 → 다음 쪽, 쪽 번호 n / 전체 */
+(function () {
+  function build() {
+    var main = document.querySelector('main'); if (!main || document.querySelector('.sheets')) return;
+    var secs = [].slice.call(main.querySelectorAll('section.page'));
+    var out = document.createElement('div'); out.className = 'sheets'; main.appendChild(out);
+    var pages = [];
+    secs.forEach(function (sec) {
+      var box = sec.querySelector('.qs, .exp'); if (!box) return;
+      var items = [].slice.call(box.children), foot = sec.querySelector('.foot'), top = sec.querySelector('.top');
+      var head = [].slice.call(sec.children).filter(function (e) { return e !== box && e !== foot && !(e.classList.contains('keygrid') && false); });
+      var cols, ci, first = true;
+      function newPage() {
+        var sh = document.createElement('div'); sh.className = 'sheet'; var pg = document.createElement('div'); pg.className = 'inner'; sh.appendChild(pg);
+        if (first) head.forEach(function (e) { pg.appendChild(e); });
+        else { var t = top.cloneNode(true); t.classList.add('run'); pg.appendChild(t); }
+        first = false;
+        cols = document.createElement('div'); cols.className = 'cols';
+        for (var i = 0; i < 2; i++) { var c = document.createElement('div'); c.className = 'col ' + box.className; cols.appendChild(c); }
+        pg.appendChild(cols);
+        var f = foot.cloneNode(true), sp = f.querySelectorAll('span'), mid = document.createElement('span'); mid.className = 'pno';
+        f.insertBefore(mid, sp[1] || null); pg.appendChild(f);
+        out.appendChild(sh); pages.push(pg); ci = 0;
+      }
+      function over(c) { return c.scrollHeight > c.clientHeight + 1; }
+      newPage();
+      items.forEach(function (it) {
+        var c = cols.children[ci]; c.appendChild(it);
+        if (over(c) && c.children.length > 1) {
+          c.removeChild(it); ci++;
+          if (ci > 1) newPage();
+          cols.children[ci].appendChild(it);
+        }
+      });
+      sec.parentNode.removeChild(sec);
+    });
+    pages.forEach(function (p, i) { p.querySelector('.pno').textContent = (i + 1) + ' / ' + pages.length; });
+    fit();
+  }
+  function fit() {
+    var w = document.documentElement.clientWidth - 24, s = Math.min(1, w / 794);
+    [].forEach.call(document.querySelectorAll('.sheet'), function (p) { p.style.zoom = s < 1 ? s : ''; });
+  }
+  function go() { (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(build, build); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  window.addEventListener('resize', function () { if (document.querySelector('.sheets')) fit(); });
+})();
+</script>
+
+
+<main>
+<section class="page">
+  <div class="top"><span>중1 영어 동아(윤정미) Lesson 5 Grammar · <b>3차</b></span><span>중산중학교 1학년 · 내신 대비</span></div>
+  <div class="title">
+    <div class="g">영어</div>
+    <h1>5과 문법 변형 3차<small>비교급 · 최상급 · There is/are</small></h1>
+    <div class="when">20문항 · 각 5점<br>제한 시간 30분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">범위: 5과 문법 — 비교급 · 최상급 · There is/are. 가장 어려운 단계예요. 개수·짝 고르기 문제는 문장 하나하나 ⭕ / ❌ 를 표시하며 풀어 보세요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>다음 <보기>에서 어법상 <u>어색한</u> 문장의 개수는?<span class="src">[종합]</span></div>
+    <div class="box"><p>(a) He is the most diligent student in his school.<br>(b) My brother eats less than I do.<br>(c) There is two bakeries on this street.<br>(d) This test was very easier than I expected.<br>(e) Which is the longest, a pen, a pencil, or a ruler?<br>(f) Her cookies taste more sweeter than mine.</p></div>
+    <ol class="ol en"><li><span>①</span><span>1개</span></li><li><span>②</span><span>2개</span></li><li><span>③</span><span>3개</span></li><li><span>④</span><span>4개</span></li><li><span>⑤</span><span>5개</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>다음 중 어법상 올바른 문장끼리 바르게 짝지은 것은?<span class="src">[종합]</span></div>
+    <div class="box"><p>ⓐ Is there a library near your house?<br>ⓑ Today is the hottest day of the year.<br>ⓒ There are much sugar in this tea.<br>ⓓ Jane is more creative than her sister.<br>ⓔ He is the most strongest man in town.</p></div>
+    <ol class="ol en"><li><span>①</span><span>ⓐ, ⓑ</span></li><li><span>②</span><span>ⓐ, ⓒ</span></li><li><span>③</span><span>ⓑ, ⓓ, ⓔ</span></li><li><span>④</span><span>ⓐ, ⓑ, ⓓ</span></li><li><span>⑤</span><span>ⓒ, ⓔ</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>다음 중 두 문장의 의미가 서로 <u>다른</u> 것은?<span class="src">[비교급·최상급]</span></div>
+    <ol class="ol en"><li><span>①</span><span>Sam is older than Kate. = Kate is not as young as Sam.</span></li><li><span>②</span><span>Tom is taller than Bill. = Bill is shorter than Tom.</span></li><li><span>③</span><span>No mountain in South Korea is higher than Hallasan. = Hallasan is the highest mountain in South Korea.</span></li><li><span>④</span><span>This bag is cheaper than that one. = That bag is more expensive than this one.</span></li><li><span>⑤</span><span>Mina is the best singer in her class. = Mina sings best in her class.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>다음 빈칸 (A)~(C)에 들어갈 말이 순서대로 바르게 연결된 것은?<span class="src">[종합]</span></div>
+    <div class="box"><p>• There <span class="blank"></span>(A) a lot of homework today.<br>• <span class="blank"></span>(B) there any eggs in the basket?<br>• My new phone is <span class="blank"></span>(C) than my old one.</p></div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th><th>(C)</th></tr></thead><tbody><tr><td>①</td><td>are</td><td>Are</td><td>much lighter</td></tr><tr><td>②</td><td>is</td><td>Are</td><td>much lighter</td></tr><tr><td>③</td><td>is</td><td>Is</td><td>much lighter</td></tr><tr><td>④</td><td>is</td><td>Are</td><td>very lighter</td></tr><tr><td>⑤</td><td>are</td><td>Is</td><td>more lighter</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>다음 중 어법상 올바른 문장은?<span class="src">[최상급]</span></div>
+    <ol class="ol en"><li><span>①</span><span>Bora is the youngest of my class.</span></li><li><span>②</span><span>There is lots of mistakes in your essay.</span></li><li><span>③</span><span>My score was more worse than I had expected.</span></li><li><span>④</span><span>Of the three sisters, Amy is the most talkative.</span></li><li><span>⑤</span><span>Which season do you like most best?</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>다음 밑줄 친 there의 쓰임이 나머지 넷과 <u>다른</u> 것은?<span class="src">[There is/are]</span></div>
+    <div class="box"><p>① <u>There</u> is a bank on the corner.<br>② <u>There</u> are many stars tonight.<br>③ I'll meet you <u>there</u> at six.<br>④ <u>There</u> was a big storm last night.<br>⑤ Is <u>there</u> any milk left?</p></div>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>다음 표의 내용과 일치하는 것은?<span class="src">[비교급·최상급]</span></div>
+    <div class="box"><p>건물 높이 — Building A: 320 m · Building B: 450 m · Building C: 280 m · Building D: 390 m</p></div>
+    <ol class="ol en"><li><span>①</span><span>Building D is taller than Building A but shorter than Building B.</span></li><li><span>②</span><span>Building C is the second tallest of the four.</span></li><li><span>③</span><span>Building A is taller than Building D.</span></li><li><span>④</span><span>Building B is not as tall as Building D.</span></li><li><span>⑤</span><span>Building A is the shortest of the four.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>다음 우리말을 영어로 바르게 옮긴 것은?<span class="src">[최상급]</span></div>
+    <div class="box"><p>이 모자가 이 가게에서 가장 저렴한 물건이다.</p></div>
+    <ol class="ol en"><li><span>①</span><span>This cap is cheapest item in this store.</span></li><li><span>②</span><span>This cap is the cheapest item in this store.</span></li><li><span>③</span><span>This cap is the most cheap item in this store.</span></li><li><span>④</span><span>This cap is cheaper item in this store.</span></li><li><span>⑤</span><span>This cap is the cheapest items in this store.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>다음 중 짝지어진 대화가 <u>어색한</u> 것은?<span class="src">[There is/are]</span></div>
+    <ol class="ol en"><li><span>①</span><span>A: Is there a bus stop near here? — B: No, there isn't.</span></li><li><span>②</span><span>A: Who is taller, you or your brother? — B: My brother is.</span></li><li><span>③</span><span>A: Which is the most popular sport in Korea? — B: I think it's baseball.</span></li><li><span>④</span><span>A: Was there a test yesterday? — B: Yes, there was.</span></li><li><span>⑤</span><span>A: Are there any cookies left? — B: Yes, there is.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>5과 본문의 단서로 찾은 범인(Larry Johnson)에 대한 설명으로 알맞지 <u>않은</u> 것은?<span class="src">[본문 응용]</span></div>
+    <div class="box"><p>Andres Lozano | 176 cm | long, black hair | Spanish, English | brown eyes<br>Larry Johnson | 173 cm | long, brown hair | English | blue eyes<br>Tim Baker | 182 cm | long, brown hair | English | green eyes<br>Luca Ferez | 166 cm | short, gray hair | Spanish | blue eyes<br>(Ann: I'm about 170 cm tall, and he was a little taller than me.)</p></div>
+    <ol class="ol en"><li><span>①</span><span>He is taller than Ann but shorter than Andres.</span></li><li><span>②</span><span>He speaks more languages than Andres.</span></li><li><span>③</span><span>He is the only suspect with long brown hair and blue eyes.</span></li><li><span>④</span><span>He is shorter than Tim.</span></li><li><span>⑤</span><span>He is taller than Luca.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>다음 글의 밑줄 친 부분 중, 어법상 <u>어색한</u> 것은?<span class="src">[종합]</span></div>
+    <div class="box"><p>Last weekend, my family went to the zoo. There ①<u>were</u> lots of animals. The giraffe was ②<u>taller</u> than the elephant, but the elephant was ③<u>heavier</u>. The monkeys were ④<u>the noisiest</u> of all the animals. My little brother said the lion was ⑤<u>more scarier</u> than the tiger.</p></div>
+    <ol class="ol en"><li><span>①</span><span>were</span></li><li><span>②</span><span>taller</span></li><li><span>③</span><span>heavier</span></li><li><span>④</span><span>the noisiest</span></li><li><span>⑤</span><span>more scarier</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>다음 중 어법상 <u>어색한</u> 문장은?<span class="src">[비교급]</span></div>
+    <ol class="ol en"><li><span>①</span><span>His car is faster than mine.</span></li><li><span>②</span><span>Her voice is softer than her mother's.</span></li><li><span>③</span><span>This room is brighter than that one.</span></li><li><span>④</span><span>Your idea is better than his.</span></li><li><span>⑤</span><span>My hair is longer than you.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>다음 문장과 의미가 같은 것은?<span class="src">[최상급]</span></div>
+    <div class="box"><p>Nothing is more important than health.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Health is less important than everything.</span></li><li><span>②</span><span>Some things are more important than health.</span></li><li><span>③</span><span>Health is not as important as other things.</span></li><li><span>④</span><span>Health is the most important thing.</span></li><li><span>⑤</span><span>Health is the least important thing.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>다음 문장을 부정문으로 바르게 바꾼 것은?<span class="src">[There is/are]</span></div>
+    <div class="box"><p>There were some cars on the street.</p></div>
+    <ol class="ol en"><li><span>①</span><span>There wasn't any cars on the street.</span></li><li><span>②</span><span>There weren't some cars on the street.</span></li><li><span>③</span><span>There weren't any cars on the street.</span></li><li><span>④</span><span>There didn't be any cars on the street.</span></li><li><span>⑤</span><span>There were not any car on the street.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[비교급]</span></div>
+    <div class="box"><p>Your phone is not as new <span class="blank"></span> mine.</p></div>
+    <ol class="ol en"><li><span>①</span><span>as</span></li><li><span>②</span><span>than</span></li><li><span>③</span><span>so</span></li><li><span>④</span><span>like</span></li><li><span>⑤</span><span>of</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[비교급]</span></div>
+    <div class="box"><p>I have <span class="blank"></span> free time than my brother because I go to an academy every day.</p></div>
+    <ol class="ol en"><li><span>①</span><span>fewer</span></li><li><span>②</span><span>less</span></li><li><span>③</span><span>little</span></li><li><span>④</span><span>least</span></li><li><span>⑤</span><span>much</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>다음 중 어법상 올바른 문장은?<span class="src">[종합]</span></div>
+    <ol class="ol en"><li><span>①</span><span>Today I feel much better than yesterday.</span></li><li><span>②</span><span>There is much more apples in this basket.</span></li><li><span>③</span><span>This is the most hottest summer ever.</span></li><li><span>④</span><span>Is there any good restaurants near here?</span></li><li><span>⑤</span><span>She can dance more well than me.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>다음은 한 카페의 메뉴판이다. 내용과 일치하지 <u>않는</u> 것은?<span class="src">[There is/are]</span></div>
+    <div class="box"><p>Cakes: chocolate · cheese · carrot　|　Cookies: SOLD OUT　|　Juice: apple · orange</p></div>
+    <ol class="ol en"><li><span>①</span><span>There are three kinds of cakes.</span></li><li><span>②</span><span>There aren't any cookies now.</span></li><li><span>③</span><span>There is apple juice on the menu.</span></li><li><span>④</span><span>There are some cookies in the café.</span></li><li><span>⑤</span><span>There are two kinds of juice.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>다음 글의 내용과 일치하는 것은?<span class="src">[비교급]</span></div>
+    <div class="box"><p>Jin is heavier than Ken but lighter than Leo. Max is lighter than Ken.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Max is heavier than Jin.</span></li><li><span>②</span><span>Jin is the heaviest of the four.</span></li><li><span>③</span><span>Ken is the second lightest of the four.</span></li><li><span>④</span><span>Leo is lighter than Ken.</span></li><li><span>⑤</span><span>Ken is heavier than Jin.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>5과 본문 내용을 바탕으로, (A)~(C)의 각 네모 안에서 알맞은 것을 바르게 짝지은 것은?<span class="src">[본문 응용]</span></div>
+    <div class="box"><p>Carlos ran after the man, but the man was <b>(A)</b> [ fast / faster ] than Carlos. There <b>(B)</b> [ was / were ] a cake box next to the wheelchair. Camila's Bakery had a lot of different cakes, but the man bought the <b>(C)</b> [ smaller / smallest ] one.</p></div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th><th>(C)</th></tr></thead><tbody><tr><td>①</td><td>fast</td><td>was</td><td>smallest</td></tr><tr><td>②</td><td>faster</td><td>were</td><td>smallest</td></tr><tr><td>③</td><td>faster</td><td>was</td><td>smaller</td></tr><tr><td>④</td><td>fast</td><td>were</td><td>smaller</td></tr><tr><td>⑤</td><td>faster</td><td>was</td><td>smallest</td></tr></tbody></table>
+  </div>
+  </div>
+  <div class="foot"><span>동아(윤정미) 5과 문법 3차 · 어휘 바꿔 변형</span><span>중산중 1학년 영어 · 문법 변형</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>5과 문법 변형 3차 · <b>정답과 해설</b></span><span>중산중학교 1학년</span></div>
+  <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">각 5점 · 100점</div></div>
+  <div class="keygrid">
+    <div>1<b>③</b></div><div>2<b>④</b></div><div>3<b>①</b></div><div>4<b>②</b></div><div>5<b>④</b></div><div>6<b>③</b></div><div>7<b>①</b></div><div>8<b>②</b></div><div>9<b>⑤</b></div><div>10<b>②</b></div>
+    <div>11<b>⑤</b></div><div>12<b>⑤</b></div><div>13<b>④</b></div><div>14<b>③</b></div><div>15<b>①</b></div><div>16<b>②</b></div><div>17<b>①</b></div><div>18<b>④</b></div><div>19<b>③</b></div><div>20<b>⑤</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">③</span> 이유 ▶ 어색한 것 (c)·(d)·(f) 3개. (c) two bakeries → There are (d) very는 비교급을 못 꾸밈 → much easier (f) more + -er 중복 → sweeter<br>
+오답 ▶ (a) diligent(3음절) → the most diligent ✔ (b) little – less(덜 먹는다) ✔ (e) 셋 중 → 최상급 ✔<br>
+포인트 ▶ 감각동사(taste) + 형용사 비교급도 more 중복 주의</p>
+    <p><b>2</b> <span class="k">④</span> 이유 ▶ 올바른 것 ⓐ·ⓑ·ⓓ.<br>
+오답 ▶ ⓒ sugar(셀 수 없음, much) → There is ⓔ most + -est 중복 → the strongest<br>
+포인트 ▶ ①은 ⓓ가 빠진 함정 — 올바른 것을 '모두' 담은 선택지를 골라야 해요.</p>
+    <p><b>3</b> <span class="k">①</span> 이유 ▶ Sam이 Kate보다 나이가 많다 = Kate는 Sam보다 어리다. 그런데 'Kate is not as young as Sam'은 'Kate는 Sam만큼 어리지 않다(= Kate가 더 나이 많다)'라서 반대!<br>
+오답 ▶ ② taller ↔ shorter ✔ ③ No ~ 비교급 than = 최상급 ✔ ④ cheaper ↔ more expensive ✔ ⑤ best singer = sings best ✔<br>
+포인트 ▶ not as ~ as는 '앞사람이 덜 ~하다'</p>
+    <p><b>4</b> <span class="k">②</span> 이유 ▶ (A) homework는 셀 수 없음 → is (B) eggs(복수) → Are there (C) much + 비교급<br>
+오답 ▶ a lot of만 보고 are ❌ / 복수 eggs인데 Is ❌ / very lighter·more lighter ❌<br>
+포인트 ▶ homework, information, advice, news → 셀 수 없음</p>
+    <p><b>5</b> <span class="k">④</span> 이유 ▶ Of the three sisters(세 자매 중에서) + talkative(3음절) → the most talkative ✔<br>
+오답 ▶ ① 범위(반) → in my class ② mistakes(복수) → There are ③ more 중복 → worse ⑤ most와 best 중복 → best<br>
+포인트 ▶ of + 복수 비교 대상 / in + 범위(class, family, team)</p>
+    <p><b>6</b> <span class="k">③</span> 이유 ▶ ③의 there는 '거기에서'라는 장소 부사. 나머지는 '~가 있다'의 There is/are 구문(there를 해석하지 않음).<br>
+포인트 ▶ There is/are의 there는 '거기'로 해석하지 않는다!</p>
+    <p><b>7</b> <span class="k">①</span> 이유 ▶ D(390) > A(320), D(390) < B(450) ✔<br>
+오답 ▶ ② C(280)는 가장 낮음 ③ A 320 < D 390 ④ B가 더 높음 ⑤ 가장 낮은 건 C<br>
+포인트 ▶ 순서: B 450 > D 390 > A 320 > C 280</p>
+    <p><b>8</b> <span class="k">②</span> 이유 ▶ the + cheapest(1음절 -est) + 단수 item + in this store(범위)<br>
+오답 ▶ ① the 빠짐 ③ most cheap ❌ ④ 비교급 ❌ ⑤ 주어 This cap(하나) → item<br>
+포인트 ▶ 명사 앞 최상급에는 반드시 the</p>
+    <p><b>9</b> <span class="k">⑤</span> 이유 ▶ Are there any cookies(복수)? → Yes, there are.<br>
+오답 ▶ ① Is there ~? → No, there isn't ✔ ② 둘 중 → 비교급, My brother is ✔ ③ 최상급 질문 ✔ ④ Was there ~? → Yes, there was ✔<br>
+포인트 ▶ 대답의 be동사는 질문과 같은 수·시제</p>
+    <p><b>10</b> <span class="k">②</span> 이유 ▶ Larry는 영어 한 개, Andres는 스페인어·영어 두 개 → Larry가 '더 적은' 언어를 한다.<br>
+오답 ▶ ① 약 170 < 173 < 176 ✔ ③ 긴 갈색 머리 + 파란 눈은 Larry뿐(Tim은 초록 눈, Luca는 짧은 회색 머리) ✔ ④ 173 < 182 ✔ ⑤ 173 > 166 ✔<br>
+포인트 ▶ more + 명사(languages) = 더 많은 ~</p>
+    <p><b>11</b> <span class="k">⑤</span> 이유 ▶ scary – scarier: more와 -er 중복 → scarier.<br>
+오답 ▶ ① lots of animals(복수) → were ✔ ② tall – taller ✔ ③ heavy – heavier ✔ ④ noisy – the noisiest + of all ✔<br>
+포인트 ▶ 자음 + y → -ier / -iest (heavy, noisy, scary)</p>
+    <p><b>12</b> <span class="k">⑤</span> 이유 ▶ 비교 대상은 같은 종류끼리: 내 머리 vs '너의 머리' → than yours (you ❌).<br>
+오답 ▶ ① mine = my car ✔ ② her mother's (voice) ✔ ③ that one = that room ✔ ④ his = his idea ✔<br>
+포인트 ▶ than 뒤에 소유대명사(mine, yours, his)를 써야 하는 문장을 찾기!</p>
+    <p><b>13</b> <span class="k">④</span> 이유 ▶ 건강보다 더 중요한 것은 없다 = 건강이 가장 중요하다.<br>
+오답 ▶ ①~⑤ 모두 건강이 덜 중요하다는 반대 뜻<br>
+포인트 ▶ Nothing + 비교급 + than A = A is the 최상급</p>
+    <p><b>14</b> <span class="k">③</span> 이유 ▶ be동사 뒤에 not + some → any. 복수(cars)·과거 → weren't any cars.<br>
+오답 ▶ ① 복수인데 wasn't ② 부정문에 some ❌ ④ be동사 부정에 didn't ❌ ⑤ any + 셀 수 있는 명사는 복수 cars<br>
+포인트 ▶ some(긍정) → any(부정·의문)</p>
+    <p><b>15</b> <span class="k">①</span> 이유 ▶ not as + 원급 + as = ~만큼 …하지 않은.<br>
+오답 ▶ ② than은 비교급(newer)과 함께 ③ not so ~ as는 가능하지만 뒤는 as ④·⑤ 쓰지 않음<br>
+포인트 ▶ as ~ as / not as[so] ~ as 짝 맞추기</p>
+    <p><b>16</b> <span class="k">②</span> 이유 ▶ 학원에 매일 가서 형보다 자유 시간이 '더 적다' + than → 비교급. time은 셀 수 없음 → little – less.<br>
+오답 ▶ ① fewer는 셀 수 있는 명사(fewer books) ③ 원급 ④ 최상급 ⑤ much는 '더 많은' 뜻도 아니고 원급<br>
+포인트 ▶ 셀 수 없는 명사의 '더 적은' = less</p>
+    <p><b>17</b> <span class="k">①</span> 이유 ▶ feel + 형용사(good → better), much로 비교급 강조 ✔<br>
+오답 ▶ ② apples(복수) → There are ③ most + -est 중복 → the hottest ④ restaurants(복수) → Are there ⑤ well – better → dance better<br>
+포인트 ▶ well의 비교급은 better (more well ❌)</p>
+    <p><b>18</b> <span class="k">④</span> 이유 ▶ 쿠키는 다 팔렸다(SOLD OUT) → There aren't any cookies.<br>
+오답 ▶ ① 케이크 3종류 ✔ ② 쿠키 없음 ✔ ③ 사과 주스 ✔ ⑤ 주스 2종류 ✔</p>
+    <p><b>19</b> <span class="k">③</span> 이유 ▶ 무거운 순: Leo > Jin > Ken > Max → Ken은 두 번째로 가벼움 ✔<br>
+오답 ▶ ① Max가 가장 가벼움 ② Leo가 가장 무거움 ④ Leo > Ken ⑤ Jin > Ken<br>
+포인트 ▶ but(~지만) 앞뒤로 두 사람과 각각 비교한 문장 → 가운데 자리</p>
+    <p><b>20</b> <span class="k">⑤</span> 이유 ▶ (A) than → 비교급 faster (B) a cake box(단수) → was (C) 많은 케이크 중 '가장' 작은 것 → the smallest<br>
+오답 ▶ 원급 fast + than ❌ / 단수인데 were ❌ / 여러 개 중에서는 최상급(smaller ❌)<br>
+포인트 ▶ 둘 중 → 비교급, 셋 이상 중 → 최상급</p>
+  </div>
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>중산중 1학년 영어 · 문법 변형</span></div>
+</section>
+</main>
