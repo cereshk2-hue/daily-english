@@ -430,5 +430,7 @@ OUT.append(mk('41~42', '장문 (제목·어휘)', T,
  ],
 ))
 
+exec(open(G + 'blk_js2609_3133.py', encoding='utf-8').read())
+OUT.sort(key=lambda x: int(str(x['num']).split('~')[0]))
 json.dump(OUT, open('/home/claude/work/js2d/new_3142.json', 'w', encoding='utf-8'), ensure_ascii=False)
 print([(d['num'], len(d['steps']), sum(len(s['items']) for s in d['steps'])) for d in OUT])
