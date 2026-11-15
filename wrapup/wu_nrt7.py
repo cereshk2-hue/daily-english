@@ -71,7 +71,7 @@ class Test:
 
 <main>
 <section class="page">
-  <div class="top"><span>@H1@ · <b>%s</b></span><span>중학교 3학년 · 지학사(민찬규) · 변형기출</span></div>
+  <div class="top"><span>@H1@ · <b>%s</b></span><span>중학교 3학년 · 지학사(민찬규) · 내신 대비</span></div>
   <div class="title">
     <div class="g">영어</div>
     <h1>@H0@ %s<small>%s</small></h1>
