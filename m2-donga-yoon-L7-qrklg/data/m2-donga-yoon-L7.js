@@ -3,6 +3,7 @@
 /* 10/30: 7과 대화문(scratchpad/gen_m2d7dlg.py) 7과 본문 앞에 2 DAY · 10분 분량 · pick. 8과 대화문은 파일 받으면 추가 */
 /* 11/2: 7·8과 문법 각 과 본문 뒤에 추가(가주어 it·call A B / 현재완료·-thing+형용사) (gen/gen_m2d78gram.py) */
 /* 11/15: 6과 대화문 k6a·k6b 맨 앞에 추가 (generators/gen_m2d6dlg.py). 8과는 대화문 없음 */
+/* 11/15: 6·7과 대화문 DAY에 문장삽입 추가 (generators/add_dlg_insert.py) */
 window.PKG = {
   id: 'm2-donga-yoon-L7',
   school: '중2 동아(윤정미)',
@@ -316,6 +317,12 @@ window.PKG = {
       { lines: ['What kinds of movies do you like?', 'I like action movies. Spider-Man is my favorite.', 'Oh, I didn\'t see it.', 'You didn\'t? It\'s really fun. I strongly recommend it.'], flow: ['B: 어떤 영화를 좋아해?', 'G: 액션 영화, 스파이더맨', 'B: 그거 안 봤어', 'G: 안 봤어? 강력 추천!'] },
       { lines: ['What kinds of magazines do you have?', 'We have all kinds of magazines.', 'I\'m really interested in science. Can you recommend a science magazine for me?', 'Sure. You\'ll love this one, Teen\'s Science.'], flow: ['B: 어떤 잡지가 있어?', 'G: 모든 종류가 있어', 'B: 과학 잡지 추천해 줘', 'G: Teen\'s Science가 마음에 들 거야'] }
     ] },
+    { type: 'insert', title: '문장삽입', guide: '주어진 문장(대화)이 들어가기에 가장 알맞은 곳을 고르세요. 앞뒤 말의 연결(질문 ↔ 대답, Then, Why? 등)을 확인해요.', items: [
+      { lines: ['What kinds of books do you usually read?', 'I usually read sci-fi novels.', 'Then, can you recommend a good sci-fi novel for me?', 'How about The Time Machine? I think it\'s the best.'], given: 2, ex: '정답 ▶ ②\n이유: \'나는 보통 공상 과학 소설을 읽어\' → Then(그럼) 좋은 공상 과학 소설 하나 추천해 줄래? → How about The Time Machine?(추천)\n포인트 ▶ Then은 앞사람의 대답을 받고, 추천 요청 뒤에는 추천하는 말이 와요.' },
+      { lines: ['What kinds of soft drinks do you usually have?', 'I usually drink apple soda, but today, I want to try something else. Can you recommend some new soft drinks?', 'Try a cherry soda. The cherry soda here is good.', 'OK. I\'ll give it a try, then.'], given: 2, ex: '정답 ▶ ②\n이유: 새 탄산음료를 추천해 줄래? → 체리 소다를 마셔 봐(Try ~) → 알았어, 한번 마셔 볼게(give it a try).\n포인트 ▶ it(=a cherry soda)이 가리키는 말이 앞에 있어야 해요.' },
+      { lines: ['What kinds of movies do you like?', 'I like action movies. Spider-Man is my favorite.', 'Oh, I didn\'t see it.', 'You didn\'t? It\'s really fun. I strongly recommend it.'], given: 2, ex: '정답 ▶ ②\n이유: 스파이더맨이 가장 좋아하는 영화야 → 오, 나는 그거 안 봤어 → 안 봤다고?(You didn\'t?) 강력히 추천해.\n포인트 ▶ You didn\'t?는 바로 앞의 I didn\'t see it.에 대한 반응' },
+      { lines: ['What kinds of magazines do you have?', 'We have all kinds of magazines.', 'I\'m really interested in science. Can you recommend a science magazine for me?', 'Sure. You\'ll love this one, Teen\'s Science.'], given: 1, ex: '정답 ▶ ①\n이유: 어떤 종류의 잡지가 있니? → 모든 종류의 잡지가 있어 → 나는 과학에 관심이 있어, 과학 잡지 추천해 줄래?\n포인트 ▶ What kinds of ~?(종류 묻기) 바로 뒤에 종류를 답하는 말' }
+    ] },
     { type: 'blank', title: '빈칸추론', guide: '빈칸에 들어갈 말로 가장 알맞은 것을 고르세요.', items: [
       { s: 'I like action movies. Spider-Man is my ____.', opts: ['favorite', 'problem', 'homework', 'secret'], ex: '정답 ▶ favorite (가장 좋아하는 것)\n이유: 액션 영화를 좋아한다 → 스파이더맨이 \'가장 좋아하는\' 영화. 그래서 강력히 추천해요.' },
       { s: 'Try a cherry soda. The cherry soda here is ____.', opts: ['good', 'expensive', 'terrible', 'old'], ex: '정답 ▶ good (맛있는)\n이유: 체리 소다를 추천하는 이유 → 여기 체리 소다가 \'맛있다\'\n오답 ▶ terrible(형편없는): 추천하는 이유가 될 수 없어요.' }
@@ -386,6 +393,12 @@ window.PKG = {
       { lines: ['Who do you want to write about?', 'I was thinking about Dr. Schweitzer, but can you recommend someone else for me?', 'What about Audrey Hepburn?', 'I know she was a famous actor, but what did she do to help others?', 'She did a lot of volunteer work, especially for children.'], flow: ['B: 누구에 대해 쓰고 싶어?', 'G: Schweitzer 박사… 다른 사람 추천해 줘', 'B: Audrey Hepburn 어때?', 'G: 남을 돕기 위해 뭘 했어?', 'B: 특히 아이들을 위해 자원봉사'] },
       { lines: ['Hello, everyone.', 'The movie I\'m going to introduce today is The Song of Love.', 'It\'s a movie about a pianist who loses his love for music.', 'He moves to a small town for a new start.', 'There, he begins teaching music to children and finds his love for music again.', 'This movie has great music and a touching story, so I strongly recommend it.'], flow: ['인사', '소개할 영화 제목', '음악에 대한 사랑을 잃은 피아니스트', '새 출발을 위해 작은 마을로', '아이들을 가르치며 사랑을 되찾음', '훌륭한 음악·감동적 이야기 → 강력 추천'] }
     ] },
+    { type: 'insert', title: '문장삽입', guide: '주어진 문장(대화)이 들어가기에 가장 알맞은 곳을 고르세요. 앞뒤 말의 연결(질문 ↔ 대답, Then, Why? 등)을 확인해요.', items: [
+      { lines: ['Liam, can you please help me? I need to find some books for my homework.', 'What kinds of books are you looking for, Somi?', 'I\'m looking for books on famous people who helped others. I need to write an essay.', 'Who do you want to write about?'], given: 1, ex: '정답 ▶ ①\n이유: 숙제용 책을 찾아야 해 → 어떤 종류의 책을 찾고 있니? → 다른 사람을 도운 유명인에 관한 책을 찾고 있어.\n포인트 ▶ 질문(What kinds of books ~?) → 대답(I\'m looking for books on ~)' },
+      { lines: ['I\'m looking for books on famous people who helped others. I need to write an essay.', 'Who do you want to write about?', 'I was thinking about Dr. Schweitzer, but can you recommend someone else for me?', 'What about Audrey Hepburn?'], given: 1, ex: '정답 ▶ ①\n이유: 에세이를 써야 해 → 누구에 대해 쓰고 싶니? → Schweitzer 박사를 생각하고 있었는데, 다른 사람을 추천해 줄래?\n포인트 ▶ Who ~?에 대한 대답으로 사람(Dr. Schweitzer)이 나와요.' },
+      { lines: ['I was thinking about Dr. Schweitzer, but can you recommend someone else for me?', 'What about Audrey Hepburn?', 'I know she was a famous actor, but what did she do to help others?', 'She did a lot of volunteer work, especially for children.'], given: 2, ex: '정답 ▶ ②\n이유: Audrey Hepburn은 어때? → 유명한 배우인 건 알지만, 다른 사람을 돕기 위해 무엇을 했어? → 아이들을 위해 자원봉사를 많이 했어.\n포인트 ▶ she가 가리키는 Audrey Hepburn이 앞에, \'무엇을 했는지\'에 대한 대답이 뒤에' },
+      { lines: ['The movie I\'m going to introduce today is The Song of Love.', 'It\'s a movie about a pianist who loses his love for music.', 'He moves to a small town for a new start.', 'There, he begins teaching music to children and finds his love for music again.', 'This movie has great music and a touching story, so I strongly recommend it.'], given: 3, ex: '정답 ▶ ③\n이유: 음악에 대한 사랑을 잃은 피아니스트 → 새 출발을 위해 작은 마을로 이사 → There(그곳에서) 아이들을 가르치며 사랑을 되찾음.\n포인트 ▶ There는 앞의 a small town을 가리켜요.' }
+    ] },
     { type: 'blank', title: '빈칸추론', guide: '빈칸에 들어갈 말로 가장 알맞은 것을 고르세요.', items: [
       { s: 'He moves to a small town for a new ____.', opts: ['start', 'job', 'piano', 'house'], ex: '정답 ▶ start (시작)\n이유: for a new start = 새 출발을 위해. 음악에 대한 사랑을 잃은 뒤 새로 시작하려고 이사해요.' },
       { s: 'Really? Then, I can write ____ her. Thank you!', opts: ['about', 'for', 'with', 'to'], ex: '정답 ▶ about\n이유: write about ~ = ~에 대해 쓰다. Who do you want to write about?와 짝이에요.' }
@@ -430,6 +443,12 @@ window.PKG = {
     { type: 'order', title: '문장순서', guide: '대화(문장)를 순서대로 눌러서 배열하세요.', items: [
       { lines: ['Let\'s get a souvenir.', 'Which do you like better, the T-shirt or the cap?', 'I like the T-shirt better.', 'Why?', 'There is a nice picture of the festival on it.'], flow: ['G: 기념품을 사자', 'B: 티셔츠와 모자 중 어느 게 더 좋아?', 'G: 티셔츠가 더 좋아', 'B: 왜?', 'G: 축제 그림이 있거든'] }
     ] },
+    { type: 'insert', title: '문장삽입', guide: '주어진 문장(대화)이 들어가기에 가장 알맞은 곳을 고르세요. 앞뒤 말의 연결(질문 ↔ 대답, Then, Why? 등)을 확인해요.', items: [
+      { lines: ['We can do face painting or play VR games. Which do you like more?', 'I like face painting more. What about you?', 'I want to play VR games. I don\'t want to wash my face again.', 'Playing VR games is OK, too. Let\'s go play VR games together.'], given: 1, ex: '정답 ▶ ①\n이유: 어느 것이 더 좋아? → 페이스 페인팅이 더 좋아. 너는 어때? → 나는 VR 게임을 하고 싶어.\n포인트 ▶ Which ~?(선호 묻기) 바로 뒤에 선호 답하기, What about you?에 대한 대답이 뒤에' },
+      { lines: ['They have tteokbokki and gimbap here. Which of the two do you like better?', 'I like tteokbokki much better. I like spicy food.', 'Then, let\'s order tteokbokki. It looks delicious.', 'OK. I\'m so hungry!'], given: 2, ex: '정답 ▶ ②\n이유: 떡볶이가 훨씬 좋아, 매운 음식을 좋아해 → Then(그럼) 떡볶이를 주문하자 → 좋아, 너무 배고파!\n포인트 ▶ Then은 앞사람의 선호를 받아 제안하는 말' },
+      { lines: ['Let\'s get a souvenir.', 'Which do you like better, the T-shirt or the cap?', 'I like the T-shirt better.', 'Why?', 'There is a nice picture of the festival on it.'], given: 3, ex: '정답 ▶ ③\n이유: 티셔츠가 더 좋아 → 왜?(Why?) → 축제 그림이 있거든.\n포인트 ▶ 이유를 말하는 문장 바로 앞에 이유를 묻는 말' },
+      { lines: ['Look! There are lots of pretty flowers here.', 'Which do you like more, the red flowers or the yellow flowers?', 'I like the yellow flowers more.', 'Why do you like them more?', 'Well, yellow is my favorite color.'], given: 3, ex: '정답 ▶ ③\n이유: 노란 꽃이 더 좋아 → 왜 그것들이 더 좋니? → 노란색이 가장 좋아하는 색이거든.\n포인트 ▶ them = the yellow flowers' }
+    ] },
     { type: 'blank', title: '빈칸추론', guide: '빈칸에 들어갈 말로 가장 알맞은 것을 고르세요.', items: [
       { s: 'They have tteokbokki and gimbap here. Which of the ____ do you like better?', opts: ['two', 'both', 'all', 'one'], ex: '정답 ▶ two\n이유: Which of the two ~? = 둘 중에서 어느 것이 ~? 떡볶이와 김밥 두 가지 중에서 고르는 거예요.' },
       { s: 'Well, yellow is my ____ color.', opts: ['favorite', 'worst', 'new', 'last'], ex: '정답 ▶ favorite\n이유: 노란 꽃이 더 좋은 이유 → 노란색이 \'가장 좋아하는\' 색이라서' }
@@ -472,6 +491,12 @@ window.PKG = {
     ] },
     { type: 'order', title: '문장순서', guide: '대화(문장)를 순서대로 눌러서 배열하세요.', items: [
       { lines: ['I\'m looking for a gift for my grandmother.', 'How about this bag?', 'It\'s too big. I think it\'ll be heavy, too.', 'Not at all. It\'s big but very light. It\'s perfect for older women.', 'Really? Then, I\'ll take it.'], flow: ['B: 할머니 선물을 찾아요', 'W: 이 가방은 어때요?', 'B: 너무 크고 무거울 것 같아요', 'W: 크지만 가벼워요', 'B: 그럼 그걸로 살게요'] }
+    ] },
+    { type: 'insert', title: '문장삽입', guide: '주어진 문장(대화)이 들어가기에 가장 알맞은 곳을 고르세요. 앞뒤 말의 연결(질문 ↔ 대답, Then, Why? 등)을 확인해요.', items: [
+      { lines: ['Hi, Jihan. What a surprise!', 'Hey, Emma. Are you here to see the fireworks, too?', 'Yes. I hear China, Italy, and the USA are participating this year.', 'Don\'t forget Korea.', 'Of course, Korea, too. So, the fireworks start at 7 p.m. Right?'], given: 3, ex: '정답 ▶ ③\n이유: 중국, 이탈리아, 미국이 참가한대 → 한국을 잊지 마(Don\'t forget Korea) → 물론, 한국도.\n포인트 ▶ Of course, Korea, too.는 앞의 \'한국을 잊지 마\'에 대한 대답' },
+      { lines: ['Yeah. Let\'s do something together until then.', 'I guess we can ride bikes or go for a boat ride. Which do you like more?', 'Going for a boat ride. I think it\'ll be more fun.', 'Then, let\'s go for a boat ride.'], given: 2, ex: '정답 ▶ ②\n이유: 자전거를 타거나 보트를 탈 수 있어, 어느 것이 더 좋아? → 보트 타기, 더 재미있을 것 같아 → 그럼 보트 타러 가자.\n포인트 ▶ Which ~? 질문 바로 뒤에 하나를 고르는 대답' },
+      { lines: ['This year, we invited Mr. Kumar, a world-famous Indian chef.', 'Do you like Indian food?', 'Then, don\'t miss his cooking class.', 'You can also get his recipe book for free.'], given: 1, ex: '정답 ▶ ①\n이유: 인도 요리사 Kumar 씨를 초대했어요 → 인도 음식 좋아하세요? → Then(그렇다면) 요리 수업을 놓치지 마세요.\n포인트 ▶ Then은 앞의 질문(Do you like ~?)에 \'예\'라고 할 때를 가정한 말' },
+      { lines: ['I\'m looking for a gift for my grandmother.', 'How about this bag?', 'It\'s too big. I think it\'ll be heavy, too.', 'Not at all. It\'s big but very light. It\'s perfect for older women.', 'Really? Then, I\'ll take it.'], given: 3, ex: '정답 ▶ ③\n이유: 너무 크고 무거울 것 같아요 → 전혀요(Not at all). 크지만 아주 가벼워요 → 정말요? 그럼 살게요.\n포인트 ▶ Not at all은 앞의 \'무거울 것 같다\'를 부정하는 말' }
     ] },
     { type: 'blank', title: '빈칸추론', guide: '빈칸에 들어갈 말로 가장 알맞은 것을 고르세요.', items: [
       { s: 'Hi, Jihan. What a ____!', opts: ['surprise', 'pity', 'shame', 'mess'], ex: '정답 ▶ surprise\n이유: 뜻밖에 친구를 만났을 때 놀람을 나타내는 표현 → What a surprise! (정말 뜻밖이야!)\n오답 ▶ What a pity!(정말 안됐다) / What a shame!(정말 아쉽다)은 유감을 나타내요.' },
