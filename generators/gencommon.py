@@ -28,6 +28,7 @@ def steps(vocab, pickv, tf, ilchi, pickg, verb, error, scr, order, insert, odd, 
 B = '빈칸에 알맞은 것은?<br><b>'
 
 def js(v, ind=''):
+    if v is None: return 'null'
     if isinstance(v, bool): return 'true' if v else 'false'
     if isinstance(v, (int, float)): return str(v)
     if isinstance(v, str): return "'" + v.replace('\\', '\\\\').replace("'", "\\'").replace('\n', '\\n') + "'"
