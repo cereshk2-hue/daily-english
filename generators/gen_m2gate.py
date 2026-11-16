@@ -38,15 +38,14 @@ for s, ko, ex in C1 + C2:
     for m in re.findall(r'\{([^}]*)\}', s): o = m.split('|'); assert len(o) == 2 and o[0] != o[1]; nb += 1
 assert nb == 26, nb
 mk = lambda C: [{'s': s, 'ko': ko, 'ex': ex} for s, ko, ex in C]
-day = {'id': 'gt7', 'name': '', 'range': '7과 본문 어법 한 판', 'story': '7과 본문 어법 선택 한 판 · 괄호를 모두 맞혀야 100점 (덩이 2개)',
+day = {'id': 'gt7', 'name': '', 'range': '7과 본문 · 어법 선택 한 판', 'story': '7과 본문 어법 선택 한 판 · 괄호를 모두 맞혀야 100점 (덩이 2개)',
        'passage': D['d1']['passage'] + D['d2']['passage'],
        'steps': [{'type': 'gate', 'title': '어법 선택 한 판', 'guide': "본문을 두 덩이로 나눴어요. 덩이마다 괄호를 모두 맞혀야 100점, 하나라도 틀리면 0점! 3번 안에 통과 못 하면 틀린 문장만 해설과 함께 연습하고 다시 도전해요.",
                   'items': [{'title': '본문 ❶❷ · 민찬 · Emil (괄호 14개)', 'parts': mk(C1)}, {'title': '본문 ❸ · Vivian (괄호 12개)', 'parts': mk(C2)}]}]}
 base = [d for d in PK['days'] if d['id'] != 'gt7']
-k = next(i for i, d in enumerate(base) if d['id'] == 'd2') + 1
-PK['days'] = base[:k] + [day] + base[k:]
+PK['days'] = base + [day]  # 11/16 저녁: 선생님 요청으로 DAY 맨 끝으로 옮김(이름은 '어법 선택 한 판' 유지)
 for i, d in enumerate(PK['days']): d['name'] = 'DAY %d' % (i + 1)
 src = open(path, encoding='utf-8').read(); head = src[:src.index('window.PKG')]
 if '한 판' not in head: head = head.rstrip('\n') + '\n/* 11/16: 7과 본문 어법 한 판 DAY gt7 (generators/gen_m2gate.py) */\n'
 write(PK, path, head)
-print('괄호', nb, '·', [d['name'] + ' ' + d['range'] for d in PK['days']][3:6])
+print('괄호', nb, '·', [d['name'] + ' ' + d['range'] for d in PK['days']][-3:])

@@ -15,7 +15,7 @@ try:
     b=p.chromium.launch(); pg=b.new_page(viewport={'width':390,'height':844},device_scale_factor=2)
     pg.on('pageerror',lambda e:errs.append(str(e)))
     pg.goto('http://localhost:8834/?test'); pg.fill('#nm','테스트'); pg.click('#nameform button')
-    di=4
+    di=18
     if not pg.locator('[data-go="%d"]'%di).count(): pg.locator('[data-sel="%d"]'%di).first.click()
     pg.locator('[data-go="%d"]'%di).first.click()
     rs=pg.evaluate('__dbg()')
