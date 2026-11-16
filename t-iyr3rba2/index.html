@@ -103,6 +103,7 @@ header.htop > * { position: relative }
 header.htop h1 { font: 800 clamp(26px, 5vw, 34px)/1.2 var(--f-display); letter-spacing: -.02em; margin: 12px 0 2px; color: #fff }
 header.htop p { margin: 0; color: #aab6d8; font-size: 13.5px }
 .dash { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; background: #fff; color: #101a3a; border-radius: 12px; padding: 10px 14px; font-weight: 800; font-size: 14.5px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,.2) }
+.dash { margin-right: 8px }
 .grades { background: transparent; padding: 0; margin-top: 18px; gap: 6px; flex-wrap: nowrap; overflow-x: auto; width: auto; scrollbar-width: none }
 .grades::-webkit-scrollbar { display: none }
 .grades button { flex: none }
@@ -1790,7 +1791,8 @@ window.UNITS = [
     var h = '<header class="htop"><div class="htop-bar"><span>선생님용 · 학생에게 이 주소는 주지 마세요</span>' +
       (deferred && !standalone ? '<button class="install" id="inst">앱으로 설치</button>' : '') + '</div>' +
       '<h1>데일리 영어 보드</h1><p>단원 ' + U.length + '개 · 학생 링크 · QR</p>' +
-      '<a class="dash" href="' + DASH + '" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>학생 현황판 열기 →</a>';
+      '<a class="dash" href="' + DASH + '" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>학생 현황판 열기 →</a>' +
+      '<a class="dash" href="papers-6mfjk0ggdw/"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/><path d="M9 13h8M9 17h6"/></svg>시험지 보관함 (PDF) →</a>';
     h += '<nav class="grades" role="tablist" aria-label="학년">' + grades.map(function (g) {
       var n = U.filter(function (u) { return u.grade === g; }).length;
       return '<button role="tab" aria-selected="' + (g === cur) + '" class="' + (g === cur ? 'on' : '') + '" data-g="' + E(g) + '">' + E(g) + '<small>' + n + '</small></button>';
