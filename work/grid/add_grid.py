@@ -20,15 +20,29 @@ grid = open('work/grid/grid.html', encoding='utf-8').read()
 src += '''
 /* ==== 진도표 (11/16) ==== */
 var BOARD_URL = 'https://cereshk2-hue.github.io/daily-english/t-iyr3rba2/'; // 단원별 전체 DAY 목록을 여기서 읽어요
-function gridData() { /* '현황' 탭 → [학생, 학년·교재, 단원, DAY, 범위, 진행, 점수, 마지막 활동ms, 완료ms] (그만둔 학생 제외) */
-  var ss = SpreadsheetApp.getActiveSpreadsheet(), tz = 'Asia/Seoul', quit = {}, rows = [];
+function gridData() { /* '기록' 탭(모든 기록) + '현황' 탭 → 학생·단원·DAY마다 [학생, 학년·교재, 단원, DAY+범위, 진행, 점수(첫 완료), 마지막ms, 완료ms] (그만둔 학생 제외) */
+  var ss = SpreadsheetApp.getActiveSpreadsheet(), tz = 'Asia/Seoul', quit = {}, M = {};
   var r = ss.getSheetByName(ROSTER);
   if (r && r.getLastRow() > 1) r.getRange(2, 1, r.getLastRow() - 1, 4).getValues().forEach(function (v) { if (String(v[0]).trim() && /그만|퇴원|차단|정지/.test(String(v[3]))) quit[String(v[0]).trim()] = 1; });
-  var sh = ss.getSheetByName('현황'), ms = function (v) { return v instanceof Date ? v.getTime() : (v ? new Date(v).getTime() || 0 : 0); };
-  if (sh && sh.getLastRow() > 1) sh.getRange(2, 1, sh.getLastRow() - 1, 12).getValues().forEach(function (v) {
-    var n = String(v[0]).trim(); if (!n || quit[n]) return;
-    rows.push([n, String(v[1]), String(v[2]), String(v[3]), String(v[4]), String(v[5]), String(v[6]), ms(v[10]), ms(v[11])]);
+  var ms = function (v) { return v instanceof Date ? v.getTime() : (v ? new Date(v).getTime() || 0 : 0); };
+  var FIN = /^(완료|오답 학습 남음)$/, OKP = /^(완료|오답 학습 남음|\\d+\\/\\d+단계)$/;
+  function add(n, book, unit, day, prog, score, t) {
+    n = String(n).trim(); prog = String(prog).trim(); if (!n || quit[n] || !OKP.test(prog) || !t) return;
+    var k = n + '|' + unit + '|' + day, m = M[k] || (M[k] = [n, String(book), String(unit), String(day), '', '', 0, 0, 0]);
+    if (FIN.test(prog)) { if (!m[7] || t < m[7]) { m[7] = t; m[5] = String(score); } if (t >= m[8]) { m[8] = t; m[4] = prog; } }
+    else if (!m[7] && t >= m[6]) m[4] = prog;
+    if (t > m[6]) m[6] = t;
+  }
+  var log = ss.getSheetByName('기록');
+  if (log && log.getLastRow() > 1) log.getRange(2, 1, log.getLastRow() - 1, 10).getValues().forEach(function (v) {
+    if (/오답 노트/.test(String(v[5]))) return;
+    add(v[1], v[2], v[3], v[4], v[8], v[9], ms(v[0]));
   });
+  var sh = ss.getSheetByName('현황');
+  if (sh && sh.getLastRow() > 1) sh.getRange(2, 1, sh.getLastRow() - 1, 12).getValues().forEach(function (v) {
+    add(v[0], v[1], v[2], String(v[3]) + ' ' + String(v[4]), v[5], v[6], ms(v[10]) || ms(v[11]));
+  });
+  var rows = Object.keys(M).map(function (k) { var m = M[k]; return [m[0], m[1], m[2], m[3], m[4], m[5], m[6], m[7]]; });
   return { today: Utilities.formatDate(new Date(), tz, 'yyyy-MM-dd'), made: Date.now(), rows: rows };
 }
 var GRID_HTML = ''' + json.dumps(grid, ensure_ascii=False) + ';\n'
