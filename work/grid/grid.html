@@ -34,13 +34,15 @@ td.c.grp,thead th.grp{border-left:2px solid var(--navy)}
 td.c.cur{outline:2px solid var(--blue);outline-offset:-2px}
 thead th.old{color:#94a3b8;font-weight:500}td.c.oldc{opacity:.75}
 .tip{position:sticky;left:0;padding:8px 14px;font-size:12.5px;color:var(--ink);background:var(--soft);min-height:34px}
+.gbar{display:flex;gap:6px;overflow-x:auto;margin:0 0 8px;scrollbar-width:none}.gbar button{flex:none;border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 14px;font:inherit;font-size:13px;font-weight:700;color:var(--muted)}.gbar button.on{background:var(--navy);color:#fff;border-color:var(--navy)}.gbar button small{font-weight:500;margin-left:3px;opacity:.75}
+.bar2{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}.bar2 button{border:1px solid var(--line);background:#fff;border-radius:12px;padding:7px 11px;font:inherit;font-size:13px;font-weight:700;color:var(--ink);text-align:left;line-height:1.25;max-width:100%}.bar2 button small{display:block;font-size:11px;font-weight:500;color:var(--muted)}.bar2 button.on{background:var(--blue);color:#fff;border-color:var(--blue)}.bar2 button.on small{color:#dbe4ff}.bar2 button mark{background:#fff3b0;color:inherit;border-radius:3px;padding:0 2px}.bar2 button.on mark{background:#fff;color:var(--blue)}
+#hint{font-size:12.5px;color:var(--muted);margin:-4px 0 10px}
 .empty{text-align:center;color:var(--muted);padding:40px 0}
 .err{margin:12px 0;background:var(--warns);color:var(--warn);padding:10px 12px;border-radius:10px;font-size:12.5px}
 </style></head><body>
 <header><h1>학생별 진도표</h1><a class="back" id="back">← 현황판</a><div class="sub" id="made"></div>
-<div class="bar" id="bar"></div>
-<div class="ctl"><input id="q" placeholder="학생 이름 찾기"><select id="sort"><option value="prog">진도 많은 순</option><option value="name">이름순</option><option value="last">최근 학습 순</option></select></div></header>
-<main><div id="out"></div></main>
+<div class="ctl"><input id="q" placeholder="학생 이름 · 학년 · 교재로 찾기 (예: 김민지, 중1, 지학사, 모의고사)"><select id="sort"><option value="prog">진도 많은 순</option><option value="name">이름순</option><option value="last">최근 학습 순</option></select></div></header>
+<main><div class="gbar" id="gbar"></div><div class="bar2" id="bar"></div><div id="hint"></div><div id="out"></div></main>
 <script>
 var D=<?!= data ?>,BACK=<?!= back ?>,BOARD=<?!= board ?>;
 document.getElementById("back").href=BACK;
@@ -81,18 +83,30 @@ function cols(u){var C=[];
   if(!u.meta)C.sort(function(a,b){return(parseInt(a.name.replace(/\D/g,""))||0)-(parseInt(b.name.replace(/\D/g,""))||0)});
   return C;
 }
+var GR="all";
+function gradeOf(u){var m=/^(중|고)\d/.exec(String(u.book||""));return m?m[0]:"기타"}
+function unitHit(u,q){return nz(u.book+" "+u.name+" "+gradeOf(u)).toLowerCase().indexOf(nz(q).toLowerCase())>=0}
+function nameHits(u,q){return Object.keys(u.students).filter(function(n){return n.indexOf(q)>=0})}
+function visible(){var q=Q;return Object.keys(U).map(function(k){return U[k]}).filter(function(u){
+  if(GR!=="all"&&gradeOf(u)!==GR)return false;if(!q)return true;return unitHit(u,q)||nameHits(u,q).length})
+  .sort(function(a,b){return(b.meta?1:0)-(a.meta?1:0)||b.last-a.last})}
 function bar(){
-  var L=Object.keys(U).map(function(k){return U[k]}).sort(function(a,b){return(b.meta?1:0)-(a.meta?1:0)||b.last-a.last});
-  if(!CUR||!U[CUR])CUR=L.length?L[0].key:null;
-  document.getElementById("bar").innerHTML=L.map(function(u){return'<button data-u="'+E(u.key)+'" class="'+(u.key===CUR?"on":"")+'">'+E(u.book)+(u.meta?"":" (예전 단원)")+'<small>'+E(u.name.length>34?u.name.slice(0,33)+"…":u.name)+' · '+Object.keys(u.students).length+'명</small></button>'}).join("");
+  var all=Object.keys(U).map(function(k){return U[k]}),gs={};all.forEach(function(u){gs[gradeOf(u)]=(gs[gradeOf(u)]||0)+1});
+  var order=["중1","중2","중3","고1","고2","고3","기타"].filter(function(g){return gs[g]});
+  document.getElementById("gbar").innerHTML='<button data-g="all" class="'+(GR==="all"?"on":"")+'">전체<small>'+all.length+'</small></button>'+order.map(function(g){return'<button data-g="'+g+'" class="'+(GR===g?"on":"")+'">'+g+'<small>'+gs[g]+'</small></button>'}).join("");
+  [].forEach.call(document.querySelectorAll("[data-g]"),function(b){b.onclick=function(){GR=b.dataset.g;CUR=null;COL=-1;bar();draw()}});
+  var L=visible();if(!CUR||!L.some(function(u){return u.key===CUR}))CUR=L.length?L[0].key:null;
+  document.getElementById("bar").innerHTML=L.map(function(u){var hs=Q&&!unitHit(u,Q)?nameHits(u,Q):[];
+    return'<button data-u="'+E(u.key)+'" class="'+(u.key===CUR?"on":"")+'">'+E(u.book)+(u.meta?"":" (예전 단원)")+'<small>'+E(u.name.length>30?u.name.slice(0,29)+"…":u.name)+' · '+Object.keys(u.students).length+'명'+(hs.length?' · <mark>'+E(hs.join(", "))+'</mark>':'')+'</small></button>'}).join("");
   [].forEach.call(document.querySelectorAll("[data-u]"),function(b){b.onclick=function(){CUR=b.dataset.u;COL=-1;bar();draw()}});
+  document.getElementById("hint").textContent=Q?(L.length?"‘"+Q+"’ 찾은 반 "+L.length+"개 · 반을 눌러 보세요":"‘"+Q+"’(으)로 찾은 반이나 학생이 없어요"):"";
 }
 function draw(){
   var u=U[CUR],o=document.getElementById("out");
   if(!READY){o.innerHTML='<div class="empty">불러오는 중…</div>';return}
-  if(!u){o.innerHTML='<div class="empty">아직 기록이 없어요.</div>';return}
+  if(!u){o.innerHTML='<div class="empty">'+(Q?'찾는 반이나 학생이 없어요.':'아직 기록이 없어요.')+'</div>';return}
   var C=cols(u),nd=C.filter(function(c){return!c.test&&!c.old}).length;
-  var names=Object.keys(u.students).filter(function(n){return!Q||n.indexOf(Q)>=0});
+  var byName=Q&&!unitHit(u,Q),names=Object.keys(u.students).filter(function(n){return!byName||n.indexOf(Q)>=0});
   var info={};names.forEach(function(n){var S=u.cells[n]||{},done=0,last=0,far=-1,tt=0;C.forEach(function(c,i){var r=S[c.key];if(!r)return;if(r[7]){if(c.test)tt++;else if(!c.old){done++;far=Math.max(far,i)}}if(r[6]>last)last=r[6]});info[n]={done:done,last:last,far:far,tt:tt}});
   names.sort(function(a,b){if(SORT==="name")return a.localeCompare(b,"ko");if(SORT==="last")return info[b].last-info[a].last;return info[b].done-info[a].done||info[b].far-info[a].far||a.localeCompare(b,"ko")});
   var h='<div class="unit"><div class="uh"><b>'+E(u.book)+'</b> <span class="m">'+E(u.name)+'</span>'+
@@ -112,7 +126,7 @@ function draw(){
   [].forEach.call(o.querySelectorAll("[data-c]"),function(t){t.onclick=function(){COL=+t.dataset.c===COL?-1:+t.dataset.c;draw()}});
 }
 document.getElementById("made").textContent=new Date(D.made).toLocaleString("ko-KR",{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"})+" 기준 · 새로고침하면 최신으로 바뀌어요";
-document.getElementById("q").oninput=function(){Q=this.value.trim();draw()};
+document.getElementById("q").oninput=function(){Q=this.value.trim();COL=-1;bar();draw()};
 document.getElementById("sort").onchange=function(){SORT=this.value;draw()};
 function go(){READY=true;build();bar();draw()}
 draw();
