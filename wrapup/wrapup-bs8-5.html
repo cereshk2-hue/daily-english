@@ -1,0 +1,343 @@
+<title>발산중 8과 문법 심화 5세트</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+/* A4 시험지 (10/31): 스크립트가 문항을 A4 쪽(210×297mm)에 왼쪽 단 → 오른쪽 단 → 다음 쪽 순서로 직접 나눠 담고 쪽 번호를 붙인다.
+   화면·인쇄·PDF 어디서나 같은 쪽 구성. 좁은 화면에서는 쪽 전체를 축소해서 보여 준다. */
+.q, .exp p { break-inside: avoid }
+body { font-size: 9.6pt }
+.stem { font-size: 9.8pt } .stem .src { font-size: 8pt }
+.box, .given, .sum { font-size: 9.4pt; line-height: 1.46; padding: 2.2mm 2.8mm }
+.ol, .ol.en li { font-size: 9.3pt; line-height: 1.38 }
+table.ch { font-size: 9.2pt } table.ch th { font-size: 8.4pt }
+.q { margin-bottom: 3.6mm; gap: 1.6mm }
+.exp { font-size: 7.8pt; line-height: 1.36; margin-top: 3mm } .exp p { margin-bottom: 1mm }
+.top, .notice, .idrow, .title .when, .foot { font-size: 8.6pt }
+.title h1 { font-size: 18pt } .title h1 small { font-size: 8.6pt }
+.keygrid div { font-size: 9pt; padding: 1.2mm 0 } .keygrid b { font-size: 10.5pt }
+.page { width: 210mm; max-width: 100%; padding: 11mm }
+.sheets { display: grid; justify-content: center; gap: 16px }
+.sheet { width: 210mm; height: 297mm; padding: 11mm; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); overflow: hidden }
+/* 내용 영역 188×256mm: A4 여백 0~20mm, Letter 기본 여백에서도 한 장에 들어가는 크기 */
+.sheet > .inner { width: 188mm; height: 256mm; display: flex; flex-direction: column; overflow: hidden }
+.inner > .top.run { padding-bottom: 2mm; border-bottom: 1px solid var(--rule); margin-bottom: 1mm }
+.cols { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr);
+  column-gap: 6mm; margin-top: 4mm; position: relative }
+.cols::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid var(--rule) }
+.cols > .col { columns: auto !important; margin: 0 !important; min-height: 0; overflow: hidden }
+.inner > .foot { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center }
+.inner > .foot span:last-child { text-align: right }
+.inner > .foot .pno { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums }
+@page { size: A4; margin: 12mm 11mm }
+@media print {
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  body { padding: 0 !important; margin: 0 }
+  .sheets { display: block }
+  .sheet { zoom: 1 !important; width: auto; height: auto; padding: 0; margin: 0; box-shadow: none; overflow: visible; break-after: page; page-break-after: always }
+  .sheet:last-child { break-after: auto; page-break-after: auto }
+  .sheet > .inner { margin: 0 auto }
+  .page { max-width: none; margin: 0; box-shadow: none; break-after: page }
+}
+</style>
+<script>
+/* A4 쪽 나누기: 왼쪽 단 → 오른쪽 단 → 다음 쪽, 쪽 번호 n / 전체 */
+(function () {
+  function build() {
+    var main = document.querySelector('main'); if (!main || document.querySelector('.sheets')) return;
+    var secs = [].slice.call(main.querySelectorAll('section.page'));
+    var out = document.createElement('div'); out.className = 'sheets'; main.appendChild(out);
+    var pages = [];
+    secs.forEach(function (sec) {
+      var box = sec.querySelector('.qs, .exp'); if (!box) return;
+      var items = [].slice.call(box.children), foot = sec.querySelector('.foot'), top = sec.querySelector('.top');
+      var head = [].slice.call(sec.children).filter(function (e) { return e !== box && e !== foot && !(e.classList.contains('keygrid') && false); });
+      var cols, ci, first = true;
+      function newPage() {
+        var sh = document.createElement('div'); sh.className = 'sheet'; var pg = document.createElement('div'); pg.className = 'inner'; sh.appendChild(pg);
+        if (first) head.forEach(function (e) { pg.appendChild(e); });
+        else { var t = top.cloneNode(true); t.classList.add('run'); pg.appendChild(t); }
+        first = false;
+        cols = document.createElement('div'); cols.className = 'cols';
+        for (var i = 0; i < 2; i++) { var c = document.createElement('div'); c.className = 'col ' + box.className; cols.appendChild(c); }
+        pg.appendChild(cols);
+        var f = foot.cloneNode(true), sp = f.querySelectorAll('span'), mid = document.createElement('span'); mid.className = 'pno';
+        f.insertBefore(mid, sp[1] || null); pg.appendChild(f);
+        out.appendChild(sh); pages.push(pg); ci = 0;
+      }
+      function over(c) { return c.scrollHeight > c.clientHeight + 1; }
+      newPage();
+      items.forEach(function (it) {
+        var c = cols.children[ci]; c.appendChild(it);
+        if (over(c) && c.children.length > 1) {
+          c.removeChild(it); ci++;
+          if (ci > 1) newPage();
+          cols.children[ci].appendChild(it);
+        }
+      });
+      sec.parentNode.removeChild(sec);
+    });
+    pages.forEach(function (p, i) { p.querySelector('.pno').textContent = (i + 1) + ' / ' + pages.length; });
+    fit();
+  }
+  function fit() {
+    var w = document.documentElement.clientWidth - 24, s = Math.min(1, w / 794);
+    [].forEach.call(document.querySelectorAll('.sheet'), function (p) { p.style.zoom = s < 1 ? s : ''; });
+  }
+  function go() { (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(build, build); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  window.addEventListener('resize', function () { if (document.querySelector('.sheets')) fit(); });
+})();
+</script>
+
+
+<main>
+<section class="page">
+  <div class="top"><span>비상(황종배) Lesson 8 Grammar · not only ~ but also / 간접의문문 · <b>5세트</b></span><span>발산중학교 · 비상(황종배) · 내신 대비</span></div>
+  <div class="title">
+    <div class="g">영어</div>
+    <h1>8과 문법 심화 5세트<small>not only ~ but also · 간접의문문 · 최상</small></h1>
+    <div class="when">20문항 · 각 5점<br>제한 시간 30분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">범위: 8과 문법 — not only A but also B(= B as well as A, 수 일치·병렬), 간접의문문(의문사+주어+동사, if/whether, think류 동사). 교재 문제를 바탕으로 문장을 바꾸고 더 어렵게 만들었어요. 문장을 끝까지 읽고 고르세요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>빈칸에 들어갈 말을 순서대로 바르게 짝지은 것은?<span class="src">[not only ~ but also]</span></div>
+    <div class="box"><p>• Either Ben <span class="blank"></span> you have the key.<br>• Both Sujin and Mina <span class="blank"></span> planning a trip.<br>• Jake as well as I <span class="blank"></span> with the plan.</p></div>
+    <ol class="ol en"><li><span>①</span><span>or − are − agrees</span></li><li><span>②</span><span>nor − is − agree</span></li><li><span>③</span><span>nor − are − agree</span></li><li><span>④</span><span>or − are − agree</span></li><li><span>⑤</span><span>or − is − agrees</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>다음 &lt;보기&gt;에서 어법상 옳은 문장의 개수는?<span class="src">[not only ~ but also]</span></div>
+    <div class="box"><p>(a) She enjoys not only singing but also to dance.<br>(b) Not only did she dance, but she also sings last night.<br>(c) His words as well as his behavior upset me yesterday.<br>(d) Not only Jane but also Eric likes math.<br>(e) Not only the students but also the teacher were glad.<br>(f) She as well as her friends have the same problem.</p></div>
+    <ol class="ol en"><li><span>①</span><span>1개</span></li><li><span>②</span><span>2개</span></li><li><span>③</span><span>3개</span></li><li><span>④</span><span>4개</span></li><li><span>⑤</span><span>5개</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>다음 중 어법상 옳은 문장은?<span class="src">[not only ~ but also]</span></div>
+    <ol class="ol en"><li><span>①</span><span>Not only he is a singer but also an actor.</span></li><li><span>②</span><span>Not only you but also she are pretty.</span></li><li><span>③</span><span>I'm interested not only in art but in history.</span></li><li><span>④</span><span>The place is not only wonderful but also a good one to visit.</span></li><li><span>⑤</span><span>Not only she can sing, but she also can dance.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>다음 문장과 의미가 같은 것은?<span class="src">[not only ~ but also]</span></div>
+    <div class="box"><p>Mina not only sings well but also plays the piano well.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Mina just plays the piano well.</span></li><li><span>②</span><span>Mina doesn't sing well but plays the piano well.</span></li><li><span>③</span><span>Mina plays the piano well as well as sings well.</span></li><li><span>④</span><span>Mina sings well because she plays the piano well.</span></li><li><span>⑤</span><span>Mina neither sings nor plays the piano well.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>두 문장을 한 문장으로 바르게 만든 것은?<span class="src">[not only ~ but also]</span></div>
+    <ol class="ol en"><li><span>①</span><span>Ann is a teacher. She is also a writer.<br>→ Ann is not a teacher but a writer.</span></li><li><span>②</span><span>Ted doesn't eat meat. He doesn't eat fish either.<br>→ Ted eats not only meat but also fish.</span></li><li><span>③</span><span>The cook enjoys baking. He also enjoys singing.<br>→ The cook not only enjoys baking but also singing.</span></li><li><span>④</span><span>My shoes are old. My bag is old, too.<br>→ Not only my shoes but also my bag are old.</span></li><li><span>⑤</span><span>Leo has been to Japan. Kyle has been to Japan, too.<br>→ Not only Leo but also Kyle has been to Japan.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>다음 중 어법상 옳은 문장은?<span class="src">[간접의문문]</span></div>
+    <ol class="ol en"><li><span>①</span><span>Do you suppose how far he can run?</span></li><li><span>②</span><span>Do you know which color Ross likes better?</span></li><li><span>③</span><span>He wondered what makes a noise like that last night.</span></li><li><span>④</span><span>The student knows how it is hard to be a scientist.</span></li><li><span>⑤</span><span>Do you think which one is smarter?</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>다음 중 어법상 <u>어색한</u> 문장은?<span class="src">[간접의문문]</span></div>
+    <ol class="ol en"><li><span>①</span><span>Why do you suppose she is upset?</span></li><li><span>②</span><span>I don't know where this bus goes.</span></li><li><span>③</span><span>Why do you think he wants to be alone?</span></li><li><span>④</span><span>Where do you think does he keep the file?</span></li><li><span>⑤</span><span>Do you know when the shop closes?</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>두 문장을 한 문장으로 연결한 것 중 <u>어색한</u> 것은?<span class="src">[간접의문문]</span></div>
+    <ol class="ol en"><li><span>①</span><span>I'd like to know. + Where did you go?<br>→ I'd like to know where you go.</span></li><li><span>②</span><span>I need to know. + Where did you go last night?<br>→ I need to know where you went last night.</span></li><li><span>③</span><span>Please tell me. + How long do I have to wait?<br>→ Please tell me how long I have to wait.</span></li><li><span>④</span><span>I wonder. + Who ate my cookies?<br>→ I wonder who ate my cookies.</span></li><li><span>⑤</span><span>Can I ask you? + How much is it?<br>→ Can I ask you how much it is?</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>밑줄 친 부분 중 어법상 옳은 것은?<span class="src">[간접의문문]</span></div>
+    <ol class="ol en"><li><span>①</span><span>I asked him <u>what is his job</u>.</span></li><li><span>②</span><span>I wonder <u>if he will comes</u>.</span></li><li><span>③</span><span>No one knows <u>who made this robot</u>.</span></li><li><span>④</span><span>I don't know <u>how tall is he</u>.</span></li><li><span>⑤</span><span>Do you know <u>what she has a dog</u>?</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>짝지어진 두 문장의 의미가 서로 <u>다른</u> 것은?<span class="src">[not only ~ but also]</span></div>
+    <ol class="ol en"><li><span>①</span><span>We may meet today. Or we may meet tomorrow. We don't know yet.<br>= We may meet not only today but also tomorrow.</span></li><li><span>②</span><span>Not only Brielle's heart rate but also her temperature came back to normal.<br>= Her temperature as well as her heart rate came back to normal.</span></li><li><span>③</span><span>He is strong, and he is fast, too.<br>= He is not only strong but also fast.</span></li><li><span>④</span><span>Mina reads comics, and her sister does, too.<br>= Not only Mina but also her sister reads comics.</span></li><li><span>⑤</span><span>Kids as well as adults love this game.<br>= Not only adults but also kids love this game.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>&lt;보기&gt;에서 어법상 옳은 문장을 모두 고른 것은?<span class="src">[간접의문문]</span></div>
+    <div class="box"><p>ⓐ I want to know where you live.<br>ⓑ Do you know what song she want to sing?<br>ⓒ What kind of book do you want to read?<br>ⓓ Do you think I should sleep more?<br>ⓔ Do you think what I can do for you?<br>ⓕ What do you think you will eat for lunch?<br>ⓖ The man wants to know how much is the bag.</p></div>
+    <ol class="ol en"><li><span>①</span><span>ⓐ, ⓓ, ⓕ</span></li><li><span>②</span><span>ⓐ, ⓒ, ⓓ, ⓕ</span></li><li><span>③</span><span>ⓑ, ⓔ, ⓖ</span></li><li><span>④</span><span>ⓑ, ⓒ, ⓓ, ⓕ</span></li><li><span>⑤</span><span>ⓐ, ⓒ, ⓔ, ⓕ</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>다음 &lt;보기&gt;에서 어법상 <u>틀린</u> 문장의 개수는?<span class="src">[간접의문문]</span></div>
+    <div class="box"><p>ⓐ Do you know where she went yesterday?<br>ⓑ Let me know how much is one ticket.<br>ⓒ Do you think who will win?<br>ⓓ Do you know how giraffes live long?<br>ⓔ Do you remember when did you see him?<br>ⓕ I wonder if she is free now.</p></div>
+    <ol class="ol en"><li><span>①</span><span>1개</span></li><li><span>②</span><span>2개</span></li><li><span>③</span><span>3개</span></li><li><span>④</span><span>4개</span></li><li><span>⑤</span><span>5개</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>다음 문장의 틀린 곳을 바르게 고친 것은?<span class="src">[간접의문문]</span></div>
+    <div class="box"><p>Do you believe where did you lose it?</p></div>
+    <ol class="ol en"><li><span>①</span><span>Do you believe where you lost it?</span></li><li><span>②</span><span>Where do you believe did you lose it?</span></li><li><span>③</span><span>Where do you believe you lose it?</span></li><li><span>④</span><span>Where do you believe you lost it?</span></li><li><span>⑤</span><span>Do you believe where lost you it?</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>다음 빈칸에 if가 들어가기에 <u>어색한</u> 것은?<span class="src">[간접의문문]</span></div>
+    <ol class="ol en"><li><span>①</span><span>She asked me <span class="blank"></span> I liked music.</span></li><li><span>②</span><span>Let him know <span class="blank"></span> he is invited or not.</span></li><li><span>③</span><span>Can you tell me <span class="blank"></span> you're coming?</span></li><li><span>④</span><span>I wonder <span class="blank"></span> you understand me.</span></li><li><span>⑤</span><span>The problem is <span class="blank"></span> you always stay up late.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>다음 중 어법상 옳은 문장은?<span class="src">[not only ~ but also]</span></div>
+    <ol class="ol en"><li><span>①</span><span>Not only my parents but also my brother don't like cats.</span></li><li><span>②</span><span>My brother as well as my parents don't like cats.</span></li><li><span>③</span><span>Not only my parents but also my brother doesn't like cats.</span></li><li><span>④</span><span>Neither my parents nor my brother like cats.</span></li><li><span>⑤</span><span>Either my parents or my brother don't like cats.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>(A), (B)에 들어갈 말로 바르게 짝지은 것은?<span class="src">[간접의문문]</span></div>
+    <div class="box"><p>• Tell me what <b>(A)</b> [ make / makes ] a good friend.<br>• Do you know who <b>(B)</b> [ eat / ate ] my sandwich?</p></div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>make</td><td>ate</td></tr><tr><td>②</td><td>makes</td><td>ate</td></tr><tr><td>③</td><td>makes</td><td>eat</td></tr><tr><td>④</td><td>make</td><td>eat</td></tr><tr><td>⑤</td><td>making</td><td>eaten</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>다음 글의 밑줄 친 ⓐ~ⓔ 중 어법상 <u>어색한</u> 것은?<span class="src">[종합]</span></div>
+    <div class="box"><p>Not only Jisu ⓐ <u>but also her friends</u> ⓑ <u>were</u> invited to the party. They wondered ⓒ <u>what they should wear</u>. Jisu asked her mom ⓓ <u>if she could buy</u> a new dress. Her mom asked ⓔ <u>how much did it cost</u>.</p></div>
+    <ol class="ol en"><li><span>①</span><span>ⓐ</span></li><li><span>②</span><span>ⓑ</span></li><li><span>③</span><span>ⓒ</span></li><li><span>④</span><span>ⓓ</span></li><li><span>⑤</span><span>ⓔ</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>다음 우리말을 바르게 영작한 것은?<span class="src">[간접의문문]</span></div>
+    <div class="box"><p>너는 그 남자가 어디 출신이라고 생각하니?</p></div>
+    <ol class="ol en"><li><span>①</span><span>Do you think where the man is from?</span></li><li><span>②</span><span>Where do you think is the man from?</span></li><li><span>③</span><span>Do you think where is the man from?</span></li><li><span>④</span><span>Where do you think the man from is?</span></li><li><span>⑤</span><span>Where do you think the man is from?</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>다음 우리말을 바르게 영작한 것은?<span class="src">[not only ~ but also]</span></div>
+    <div class="box"><p>그는 음악뿐만 아니라 미술에도 관심이 있다.</p></div>
+    <ol class="ol en"><li><span>①</span><span>He is interested not in music but in art.</span></li><li><span>②</span><span>He is interested in neither music nor art.</span></li><li><span>③</span><span>He is interested in music as well as art.</span></li><li><span>④</span><span>He is interested not only in music but also in art.</span></li><li><span>⑤</span><span>He is interested either in music or in art.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>다음 중 어법상 <u>어색한</u> 문장은?<span class="src">[종합]</span></div>
+    <ol class="ol en"><li><span>①</span><span>Do you know who are those people?</span></li><li><span>②</span><span>Not only Ben but also I am hungry.</span></li><li><span>③</span><span>I wonder whether she got my text.</span></li><li><span>④</span><span>Who do you think broke the vase?</span></li><li><span>⑤</span><span>She is not only kind but also brave.</span></li></ol>
+  </div>
+  </div>
+  <div class="foot"><span>비상(황종배) 8과 문법 5세트 · 심화 변형</span><span>발산중 영어 · 8과 문법 심화</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>8과 문법 심화 5세트 · <b>정답과 해설</b></span><span>발산중학교 · 비상(황종배)</span></div>
+  <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">각 5점 · 100점</div></div>
+  <div class="keygrid">
+    <div>1<b>①</b></div><div>2<b>②</b></div><div>3<b>③</b></div><div>4<b>③</b></div><div>5<b>⑤</b></div><div>6<b>②</b></div><div>7<b>④</b></div><div>8<b>①</b></div><div>9<b>③</b></div><div>10<b>①</b></div>
+    <div>11<b>②</b></div><div>12<b>④</b></div><div>13<b>④</b></div><div>14<b>⑤</b></div><div>15<b>③</b></div><div>16<b>②</b></div><div>17<b>⑤</b></div><div>18<b>⑤</b></div><div>19<b>④</b></div><div>20<b>①</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">①</span> 이유 ▶ either A or B / both → are / B as well as A → 앞(Jake) agrees<br>
+포인트 ▶ not only A but also B · either A or B · neither A nor B → 동사는 B에 / B as well as A → 동사는 B(앞)에 / both A and B → 복수</p>
+    <p><b>2</b> <span class="k">②</span> 이유 ▶ 옳은 것 (c)·(d) 2개<br>
+오답 ▶ (a) → dancing (b) last night → sang (e) B(the teacher) → was (f) 앞(She) → has<br>
+포인트 ▶ not only A but also B · either A or B · neither A nor B → 동사는 B에 / B as well as A → 동사는 B(앞)에 / both A and B → 복수</p>
+    <p><b>3</b> <span class="k">③</span> 이유 ▶ 전치사구끼리(in art / in history) ✔, also 생략 가능<br>
+오답 ▶ ① 도치 → Not only is he a singer, but he is also an actor. ② B(she) → is ④ 형용사끼리 → good to visit ⑤ 도치 → Not only can she sing</p>
+    <p><b>4</b> <span class="k">③</span> 이유 ▶ not only A but also B = B as well as A<br>
+오답 ▶ ① 피아노만 ② 노래를 못함 ④ 이유로 바뀜 ⑤ 둘 다 못함</p>
+    <p><b>5</b> <span class="k">⑤</span> 이유 ▶ B(Kyle) → has ✔<br>
+오답 ▶ ① 교사가 아니라 작가 ② 둘 다 안 먹음 → neither ③ 병렬 ❌ → enjoys not only baking but also singing ④ B(my bag) → is</p>
+    <p><b>6</b> <span class="k">②</span> 이유 ▶ which color + 주어 + 동사 ✔<br>
+오답 ▶ ① How far do you suppose he can run? ③ last night → made ④ how hard it is ⑤ Which one do you think is smarter?<br>
+포인트 ▶ think · believe · suppose · guess · imagine 이면 의문사를 맨 앞으로: 의문사 + do you think + 주어 + 동사</p>
+    <p><b>7</b> <span class="k">④</span> 이유 ▶ does를 빼고 he keeps → Where do you think he keeps the file?<br>
+오답 ▶ ①·③ 의문사 맨 앞 + 주어 + 동사 ✔ ②·⑤ 의문사 + 주어 + 동사 ✔<br>
+포인트 ▶ think · believe · suppose · guess · imagine 이면 의문사를 맨 앞으로: 의문사 + do you think + 주어 + 동사</p>
+    <p><b>8</b> <span class="k">①</span> 이유 ▶ did를 빼면 시제는 동사로: where you went (go ❌)<br>
+오답 ▶ ②·③·④·⑤ 바르게 연결</p>
+    <p><b>9</b> <span class="k">③</span> 이유 ▶ 의문사 who가 주어 → 바로 made ✔<br>
+오답 ▶ ① what his job was ② will 뒤 원형 come ④ how tall he is ⑤ if(whether) she has a dog</p>
+    <p><b>10</b> <span class="k">①</span> 이유 ▶ 오늘 또는 내일(둘 중 하나) → either today or tomorrow. not only ~ but also는 둘 다<br>
+오답 ▶ ②·③·④·⑤ 같은 뜻</p>
+    <p><b>11</b> <span class="k">②</span> 이유 ▶ ⓐ·ⓒ(직접의문문)·ⓓ(의문사 없는 Do you think ~?)·ⓕ 옳음<br>
+오답 ▶ ⓑ she → wants ⓔ What do you think I can do ~? ⓖ how much the bag is<br>
+포인트 ▶ think · believe · suppose · guess · imagine 이면 의문사를 맨 앞으로: 의문사 + do you think + 주어 + 동사</p>
+    <p><b>12</b> <span class="k">④</span> 이유 ▶ 틀린 것 ⓑ·ⓒ·ⓓ·ⓔ 4개: how much one ticket is / Who do you think will win? / how long giraffes live / when you saw him<br>
+포인트 ▶ 간접의문문 = 의문사 + 주어 + 동사 (do/does/did는 빼고 시제는 동사에)</p>
+    <p><b>13</b> <span class="k">④</span> 이유 ▶ believe → 의문사 맨 앞 + 주어 + 동사(과거 lost)<br>
+오답 ▶ ①·⑤ 의문사가 뒤 ② did 그대로 ③ 시제<br>
+포인트 ▶ think · believe · suppose · guess · imagine 이면 의문사를 맨 앞으로: 의문사 + do you think + 주어 + 동사</p>
+    <p><b>14</b> <span class="k">⑤</span> 이유 ▶ 문제는 ~라는 것이다(보어) → that<br>
+오답 ▶ ①·②·③·④ ~인지 아닌지 → if</p>
+    <p><b>15</b> <span class="k">③</span> 이유 ▶ B(my brother, 단수) → doesn't ✔<br>
+오답 ▶ ① → doesn't ② 앞(My brother) → doesn't ④ B(my brother) → likes ⑤ B(my brother) → doesn't<br>
+포인트 ▶ not only A but also B · either A or B · neither A nor B → 동사는 B에 / B as well as A → 동사는 B(앞)에 / both A and B → 복수</p>
+    <p><b>16</b> <span class="k">②</span> 이유 ▶ 의문사가 주어면 3인칭 단수: (A) what makes (B) 이미 먹었으니 과거 ate (who eat ❌)</p>
+    <p><b>17</b> <span class="k">⑤</span> 이유 ▶ ⓔ → how much it cost (did를 빼고 과거 cost)<br>
+오답 ▶ ⓑ B(her friends) → were ✔ ⓒ·ⓓ 어순 ✔</p>
+    <p><b>18</b> <span class="k">⑤</span> 이유 ▶ think → 의문사 맨 앞 + 주어 + 동사 + from<br>
+오답 ▶ ①·③ 의문사가 뒤 ②·④ 어순<br>
+포인트 ▶ think · believe · suppose · guess · imagine 이면 의문사를 맨 앞으로: 의문사 + do you think + 주어 + 동사</p>
+    <p><b>19</b> <span class="k">④</span> 이유 ▶ 음악뿐만 아니라(A) 미술에도(B) → not only in music but also in art<br>
+오답 ▶ ① 음악이 아니라 미술 ② 둘 다 아님 ③ B as well as A → '미술뿐만 아니라 음악에도'(A·B 바뀜) ⑤ 둘 중 하나</p>
+    <p><b>20</b> <span class="k">①</span> 이유 ▶ who those people are (who가 보어)<br>
+오답 ▶ ② B(I) am ✔ ③ whether + 주어 + 동사 ✔ ④ 의문사 주어 + think ✔ ⑤ 형용사끼리 ✔<br>
+포인트 ▶ 간접의문문 = 의문사 + 주어 + 동사 (do/does/did는 빼고 시제는 동사에)</p>
+  </div>
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>발산중 영어 · 8과 문법 심화</span></div>
+</section>
+</main>
