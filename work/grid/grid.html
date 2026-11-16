@@ -55,7 +55,7 @@ function pidOf(r){return MAP&&MAP.uk[nz(r[2])]||("raw:"+nz(r[2]))}
 /* 기록 한 줄의 DAY 문자열("DAY 6 32번", "Wrap-up 끝판왕 20·21번 중산고1") → 지금 단원의 칸 */
 function colOf(u,r){var ds=String(r[3]),z=nz(ds);
   if(u.meta){
-    if(/^Wrap-up/.test(ds)){for(var i=0;i<u.meta.tests.length;i++){var t=u.meta.tests[i];if(t[1]&&z.indexOf(nz("Wrap-up "+t[1]))===0)return"t:"+t[0]}}
+    if(/^Wrap-up/.test(ds)){var ttl=ds.indexOf("¦")>=0?nz(ds.split("¦")[1]):"";if(ttl)for(var j=0;j<u.meta.tests.length;j++){if(nz(u.meta.tests[j][2])===ttl)return"t:"+u.meta.tests[j][0]}for(var i=0;i<u.meta.tests.length;i++){var t=u.meta.tests[i];if(t[1]&&z.indexOf(nz("Wrap-up "+t[1]))===0)return"t:"+t[0]}}
     else{var rg=nz(ds.replace(/^DAY\s*\d+\s*/,"")),hit=null,nm=nz((/^DAY\s*\d+/.exec(ds)||[""])[0]);
       u.meta.days.forEach(function(d){if(nz(d[2])===rg&&(!hit||nz(d[1])===nm))hit=d});if(hit)return"d:"+hit[0]}
   }
@@ -69,16 +69,16 @@ function build(){
   U={};
   D.rows.forEach(function(r){var pid=pidOf(r),meta=MAP&&MAP.units[pid];
     var u=U[pid]||(U[pid]={key:pid,meta:meta,book:meta?meta.book:r[1],name:meta?meta.unit+" "+meta.title:r[2],cells:{},extra:{},last:0,students:{}});
-    var c=colOf(u,r);if(c.indexOf("x:")===0&&!u.extra[c])u.extra[c]={key:c,name:String(r[3]).replace(/\s+/g," "),old:1};
+    var c=colOf(u,r);if(c.indexOf("x:")===0&&!u.extra[c])u.extra[c]={key:c,name:String(r[3]).replace(/\s*¦.*$/,"").replace(/\s+/g," "),old:1};
     var S=u.cells[r[0]]||(u.cells[r[0]]={});S[c]=merge(S[c],r);
     if(r[6]>u.last)u.last=r[6];u.students[r[0]]=1});
 }
-function kindOf(c){var t=String(c.range||"")+" "+String(c.name||"");return/끝판왕/.test(t)?"끝판왕":/비밀노트/.test(t)?"비밀노트":/Wrap-?up/i.test(t)?"Wrap-up":/변형기출/.test(t)?"변형기출":/마무리/.test(t)?"기출마무리":/실전 변형/.test(t)?"실전변형":/문법/.test(t)?"문법":"실전"}
-function short(c){var r=String(c.test?c.name:c.range||"");
+function kindOf(c){if(c.kind)return c.kind;var t=String(c.range||"")+" "+String(c.name||"");return/끝판왕/.test(t)?"끝판왕":/비밀노트/.test(t)?"비밀노트":/Wrap-?up/i.test(t)?"Wrap-up":/변형기출/.test(t)?"변형기출":/마무리/.test(t)?"기출마무리":/실전 변형/.test(t)?"실전변형":/문법/.test(t)?"문법":"실전"}
+function short(c){if(c.lab!=null)return c.lab;var r=String(c.test?c.name:c.range||"");
   r=r.replace(/^실전 어휘 뚫기\s*\d+\s*·\s*/,"어휘 ").replace(/^내용 꿰뚫기\s*\d*\s*·\s*/,"꿰뚫기 ").replace(/^YBM\s*/,"YBM").replace(/\s*·\s*/g," ").replace(/번/g,"").replace(/Lesson\s*/g,"L").replace(/본문\s*/,"본문");
   r=r.replace(/^(끝판왕|비밀노트|Wrap-?up)\s*/i,"").replace(/^(너른터\s*)?(\d과)\s*(변형기출|실전 변형)\s*/,"$2 ").replace(/^(\d) (\d과)\s*기출\s*마무리\s*/,"$1·$2 ").replace(/\s+/g," ").trim();return r.length>12?r.slice(0,11)+"…":r}
 function cols(u){var C=[];
-  if(u.meta){u.meta.days.forEach(function(d){C.push({key:"d:"+d[0],name:d[1],range:d[2]})});u.meta.tests.forEach(function(t){C.push({key:"t:"+t[0],name:t[1],range:t[2],test:1})})}
+  if(u.meta){u.meta.days.forEach(function(d){C.push({key:"d:"+d[0],name:d[1],range:d[2],lab:d[3]})});u.meta.tests.forEach(function(t){C.push({key:"t:"+t[0],name:t[1],range:t[2],test:1,kind:t[3],lab:t[4]})})}
   Object.keys(u.extra).forEach(function(k){C.push(u.extra[k])});
   if(!u.meta)C.sort(function(a,b){return(parseInt(a.name.replace(/\D/g,""))||0)-(parseInt(b.name.replace(/\D/g,""))||0)});
   return C;
@@ -111,7 +111,7 @@ function draw(){
   names.sort(function(a,b){if(SORT==="name")return a.localeCompare(b,"ko");if(SORT==="last")return info[b].last-info[a].last;return info[b].done-info[a].done||info[b].far-info[a].far||a.localeCompare(b,"ko")});
   var h='<div class="unit"><div class="uh"><b>'+(u.meta&&u.meta.school?E(u.meta.school)+' · ':'')+E(u.book)+'</b> <span class="m">'+E(u.name)+'</span>'+
     '<div class="legend"><span><i class="sw" style="background:var(--oks)"></i>완료(첫 점수)</span><span><i class="sw" style="background:#fde3e6"></i>완료 · 70점 미만</span><span><i class="sw" style="background:var(--warns)"></i>오답 학습 남음</span><span><i class="sw" style="background:var(--prog)"></i>하는 중(단계)</span><span><i class="sw" style="background:#fff;border:1px solid var(--line)"></i>시작 전</span></div></div>';
-  h+='<div class="tip" id="tip">'+(COL>=0&&C[COL]?E(C[COL].old?"예전 DAY(지금은 없거나 이름이 바뀐 DAY) · "+C[COL].name:C[COL].test?"OMR 시험 · "+C[COL].range:C[COL].name+" · "+C[COL].range):"숫자(DAY)를 누르면 범위가 보여요. 굵은 세로줄 오른쪽은 OMR 시험(Wrap-up·끝판왕 등), 회색 칸은 예전 DAY 기록이에요.")+'</div>';
+  h+='<div class="tip" id="tip">'+(COL>=0&&C[COL]?E(C[COL].old?"예전 DAY(지금은 없거나 이름이 바뀐 DAY) · "+C[COL].name:C[COL].test?(C[COL].kind||"OMR 시험")+" · "+C[COL].range:C[COL].name+" · "+C[COL].range):"숫자(DAY)를 누르면 범위가 보여요. 굵은 세로줄 오른쪽은 OMR 시험(Wrap-up·끝판왕 등), 회색 칸은 예전 DAY 기록이에요.")+'</div>';
   h+='<div class="wrap"><table><thead><tr><th class="nm">학생 · 완료</th>'+C.map(function(c,i){var lab=c.old?"예전":c.test?(c.name.length>9?c.name.slice(0,8)+"…":c.name):c.name.replace(/^DAY\s*/,"");var first=(c.test&&(i===0||!C[i-1].test))||(c.old&&(i===0||!C[i-1].old));return'<th data-c="'+i+'" class="'+(i===COL?"on ":"")+(first?"grp ":"")+(c.old?"old":"")+'" title="'+E(c.name+" · "+(c.range||""))+'">'+(c.test?'<span class="tn">'+E(kindOf(c))+'</span>':E(lab))+'<span class="sl">'+E(c.old?c.name.replace(/^DAY\s*\d+\s*/,"").slice(0,12):short(c))+'</span></th>'}).join("")+'</tr></thead><tbody>';
   h+=names.map(function(n){var f=info[n],S=u.cells[n]||{},cls=dk(f.last)===D.today?"today":(Date.now()-f.last)/864e5>3?"old":"";
     return'<tr><td class="nm"><b>'+E(n)+'</b><small class="'+cls+'">DAY '+f.done+'/'+nd+(f.tt?' · 시험 '+f.tt:'')+' · '+(cls==="today"?"오늘":md(f.last))+'</small></td>'+C.map(function(c,i){var r=S[c.key],first=(c.test&&(i===0||!C[i-1].test))||(c.old&&(i===0||!C[i-1].old)),cc="c"+(first?" grp":"")+(i===COL?" cur":"")+(c.old?" oldc":"");

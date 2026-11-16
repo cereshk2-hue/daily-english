@@ -37,10 +37,12 @@ function gridData() { /* '기록' 탭(모든 기록) + '현황' 탭 → 학생·
   var log = ss.getSheetByName('기록');
   if (log && log.getLastRow() > 1) log.getRange(2, 1, log.getLastRow() - 1, 10).getValues().forEach(function (v) {
     if (/오답 노트/.test(String(v[5]))) return;
-    add(v[1], v[2], v[3], v[4], v[8], v[9], ms(v[0]));
+    var dd = String(v[4]); if (/^Wrap-up/.test(dd) && String(v[6]).trim()) dd += ' ¦ ' + String(v[6]).trim(); /* 시험은 이름(short)이 겹칠 수 있어 제목(단계 칸)을 붙임 */
+    add(v[1], v[2], v[3], dd, v[8], v[9], ms(v[0]));
   });
   var sh = ss.getSheetByName('현황');
   if (sh && sh.getLastRow() > 1) sh.getRange(2, 1, sh.getLastRow() - 1, 12).getValues().forEach(function (v) {
+    if (/^Wrap-up/.test(String(v[3]))) return; /* 시험은 '기록' 탭(제목 있음)만 씀 */
     add(v[0], v[1], v[2], String(v[3]) + ' ' + String(v[4]), v[5], v[6], ms(v[10]) || ms(v[11]));
   });
   var rows = Object.keys(M).map(function (k) { var m = M[k]; return [NAME_SHOW[m[0]] || m[0], m[1], m[2], m[3], m[4], m[5], m[6], m[7]]; });
