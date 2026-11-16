@@ -192,13 +192,13 @@ for i, (label, nums) in enumerate(GROUPS, 1):
     for n in sorted(set(x[0] for x in ext), key=lambda x: int(x.split('~')[0])):
         passage.append(['#', '%s번 · 실제 모의고사 문장 (예문)' % n, ''])
         passage += [['', en, ko] for nn, en, ko in ext if nn == n]
-    steps = [{'type': 'vocab', 'title': '변형 어휘 카드', 'guide': '뜻을 고르면 그 단어가 실제 9월 모의고사에서 쓰인 문장과 해석이 함께 나와요.', 'quizN': min(12, len(cards)), 'items': cards}]
+    steps = [{'type': 'vocab', 'title': '실전 어휘 카드', 'guide': '뜻을 고르면 그 단어가 실제 9월 모의고사에서 쓰인 문장과 해석이 함께 나와요.', 'quizN': min(12, len(cards)), 'items': cards}]
     steps.append({'type': 'mc', 'title': '바꿔 쓰기 (영 → 영)', 'guide': '단어와 같은 뜻의 영어를 고르세요. 변형 문제의 어휘 바꾸기가 바로 이 연결이에요. 반대말 함정에 주의!', 'items': syn_items})
     if multi: steps.append({'type': 'multi', 'title': '유의어 모두 찾기', 'guide': '표제어와 뜻이 같은(비슷한) 말을 모두 누른 뒤 확인을 누르세요. 하나라도 빠지거나 더 고르면 오답이에요.', 'items': multi})
     if ctx: steps.append({'type': 'mc', 'title': '문장 속 바꿔 쓰기', 'guide': '실제 본문 문장이에요. 밑줄 친 말 대신 써도 뜻이 그대로인 말을 고르세요.', 'items': ctx})
     if poly: steps.append({'type': 'mc', 'title': '쉬운 단어, 숨은 뜻', 'guide': '아는 단어 같아도 문장 속에서는 다른 뜻일 수 있어요. 해석을 떠올리며 이 문장에서의 뜻을 고르세요.', 'items': poly})
     if picks: steps.append({'type': 'pick', 'title': '반대말 함정 고르기', 'guide': '본문 문장에 맞는 말을 고르세요. 하나는 반대말 함정이에요.', 'items': picks})
-    days.append({'id': 'v%d' % i, 'name': '', 'range': '변형 어휘 %d · %s번' % (i, label.replace('번', '')), 'story': '9월 모고 %s · 변형 어휘 (카드 → 영영 → 유의어 모두 → 문장 속 → 숨은 뜻 → 반대말)' % label, 'passage': passage, 'steps': steps})
+    days.append({'id': 'v%d' % i, 'name': '', 'range': '실전 어휘 뚫기 %d · %s번' % (i, label.replace('번', '')), 'story': '9월 모고 %s · 실전 어휘 뚫기 (카드 → 영영 → 유의어 모두 → 문장 속 → 숨은 뜻 → 반대말)' % label, 'passage': passage, 'steps': steps})
 
 base_days = [d for d in PK['days'] if not re.match(r'v\d+$', d['id'])]
 PK['days'] = base_days + days
