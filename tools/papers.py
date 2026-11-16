@@ -161,7 +161,7 @@ td.b a.a{background:#fff;color:#1c1b19;border:1.5px solid #1c1b19}
 details{margin-top:10px;font-size:13px}summary{cursor:pointer;color:#555}ol{columns:2;margin:8px 0 0;padding-left:0;list-style:none}ol li{padding:2px 0}
 @media(max-width:600px){th:nth-child(3),td.d{display:none}td.b a{display:block;margin:3px 0;text-align:center}ol{columns:1}}
 </style></head><body><header><div class="bar">선생님 전용 · 정답이 들어 있어요. 학생에게 이 주소는 주지 마세요</div><h1>시험지 보관함</h1>
-<p>단원 @U@개 · 시험지 @T@개 · 앱 맨 아래 OMR로 답을 입력하는 시험들 · 마지막 정리 @D@</p><p><a href="../">← 데일리 영어 보드</a></p></header>
+<p>단원 @U@개 · 시험지 @T@개 · 앱 맨 아래 OMR로 답을 입력하는 시험들 · 마지막 정리 @D@</p><p><a href="../">← 데일리 영어 보드</a> &nbsp;·&nbsp; <a href="setup-grid.html">학생별 진도표 켜기 안내</a></p></header>
 <div class="wrap"><input id="s" placeholder="학교·단원·번호로 찾기 (예: 중산고1, 끝판왕, 너른터)">@C@</div>
 <script>document.getElementById('s').addEventListener('input',function(e){var v=e.target.value.trim().toLowerCase();document.querySelectorAll('.u').forEach(function(u){u.style.display=!v||u.dataset.q.indexOf(v)>=0?'':'none'})})</script>
 </body></html>'''.replace('@U@', str(len(units))).replace('@T@', str(total)).replace('@D@', datetime.date.today().isoformat()).replace('@C@', ''.join(cards))
