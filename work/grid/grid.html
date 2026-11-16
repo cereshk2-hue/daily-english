@@ -35,13 +35,13 @@ td.c.cur{outline:2px solid var(--blue);outline-offset:-2px}
 thead th.old{color:#94a3b8;font-weight:500}td.c.oldc{opacity:.75}
 .tip{position:sticky;left:0;padding:8px 14px;font-size:12.5px;color:var(--ink);background:var(--soft);min-height:34px}
 .gbar{display:flex;gap:6px;overflow-x:auto;margin:0 0 8px;scrollbar-width:none}.gbar button{flex:none;border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 14px;font:inherit;font-size:13px;font-weight:700;color:var(--muted)}.gbar button.on{background:var(--navy);color:#fff;border-color:var(--navy)}.gbar button small{font-weight:500;margin-left:3px;opacity:.75}
-.bar2{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}.bar2 button{border:1px solid var(--line);background:#fff;border-radius:12px;padding:7px 11px;font:inherit;font-size:13px;font-weight:700;color:var(--ink);text-align:left;line-height:1.25;max-width:100%}.bar2 button small{display:block;font-size:11px;font-weight:500;color:var(--muted)}.bar2 button.on{background:var(--blue);color:#fff;border-color:var(--blue)}.bar2 button.on small{color:#dbe4ff}.bar2 button mark{background:#fff3b0;color:inherit;border-radius:3px;padding:0 2px}.bar2 button.on mark{background:#fff;color:var(--blue)}
+.bar2{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}.bar2 button{border:1px solid var(--line);background:#fff;border-radius:12px;padding:7px 11px;font:inherit;font-size:13px;font-weight:700;color:var(--ink);text-align:left;line-height:1.25;max-width:100%}.bar2 button small{display:block;font-size:11px;font-weight:500;color:var(--muted)}.bar2 button.on{background:var(--blue);color:#fff;border-color:var(--blue)}.bar2 button.on small{color:#dbe4ff}.bar2 button mark{background:#fff3b0;color:inherit;border-radius:3px;padding:0 2px}.bar2 button .sc{display:inline-block;font-size:11px;font-weight:800;background:var(--soft);color:var(--blue);border-radius:6px;padding:1px 6px;margin-right:2px}.bar2 button.on .sc{background:#fff}.bar2 button.on mark{background:#fff;color:var(--blue)}
 #hint{font-size:12.5px;color:var(--muted);margin:-4px 0 10px}
 .empty{text-align:center;color:var(--muted);padding:40px 0}
 .err{margin:12px 0;background:var(--warns);color:var(--warn);padding:10px 12px;border-radius:10px;font-size:12.5px}
 </style></head><body>
 <header><h1>학생별 진도표</h1><a class="back" id="back">← 현황판</a><div class="sub" id="made"></div>
-<div class="ctl"><input id="q" placeholder="학생 이름 · 학년 · 교재로 찾기 (예: 김민지, 중1, 지학사, 모의고사)"><select id="sort"><option value="prog">진도 많은 순</option><option value="name">이름순</option><option value="last">최근 학습 순</option></select></div></header>
+<div class="ctl"><input id="q" placeholder="학생 이름 · 학교 · 학년 · 교재로 찾기 (예: 김민지, 중산중1, 중1, 지학사)"><select id="sort"><option value="prog">진도 많은 순</option><option value="name">이름순</option><option value="last">최근 학습 순</option></select></div></header>
 <main><div class="gbar" id="gbar"></div><div class="bar2" id="bar"></div><div id="hint"></div><div id="out"></div></main>
 <script>
 var D=<?!= data ?>,BACK=<?!= back ?>,BOARD=<?!= board ?>;
@@ -85,7 +85,7 @@ function cols(u){var C=[];
 }
 var GR="all";
 function gradeOf(u){var m=/^(중|고)\d/.exec(String(u.book||""));return m?m[0]:"기타"}
-function unitHit(u,q){return nz(u.book+" "+u.name+" "+gradeOf(u)).toLowerCase().indexOf(nz(q).toLowerCase())>=0}
+function unitHit(u,q){return nz(u.book+" "+u.name+" "+gradeOf(u)+" "+(u.meta&&u.meta.school||"")).toLowerCase().indexOf(nz(q).toLowerCase())>=0}
 function nameHits(u,q){return Object.keys(u.students).filter(function(n){return n.indexOf(q)>=0})}
 function visible(){var q=Q;return Object.keys(U).map(function(k){return U[k]}).filter(function(u){
   if(GR!=="all"&&gradeOf(u)!==GR)return false;if(!q)return true;return unitHit(u,q)||nameHits(u,q).length})
@@ -97,7 +97,7 @@ function bar(){
   [].forEach.call(document.querySelectorAll("[data-g]"),function(b){b.onclick=function(){GR=b.dataset.g;CUR=null;COL=-1;bar();draw()}});
   var L=visible();if(!CUR||!L.some(function(u){return u.key===CUR}))CUR=L.length?L[0].key:null;
   document.getElementById("bar").innerHTML=L.map(function(u){var hs=Q&&!unitHit(u,Q)?nameHits(u,Q):[];
-    return'<button data-u="'+E(u.key)+'" class="'+(u.key===CUR?"on":"")+'">'+E(u.book)+(u.meta?"":" (예전 단원)")+'<small>'+E(u.name.length>30?u.name.slice(0,29)+"…":u.name)+' · '+Object.keys(u.students).length+'명'+(hs.length?' · <mark>'+E(hs.join(", "))+'</mark>':'')+'</small></button>'}).join("");
+    return'<button data-u="'+E(u.key)+'" class="'+(u.key===CUR?"on":"")+'">'+(u.meta&&u.meta.school?'<span class="sc">'+E(u.meta.school)+'</span> ':'')+E(u.book)+(u.meta?"":" (예전 단원)")+'<small>'+E(u.name.length>30?u.name.slice(0,29)+"…":u.name)+' · '+Object.keys(u.students).length+'명'+(hs.length?' · <mark>'+E(hs.join(", "))+'</mark>':'')+'</small></button>'}).join("");
   [].forEach.call(document.querySelectorAll("[data-u]"),function(b){b.onclick=function(){CUR=b.dataset.u;COL=-1;bar();draw()}});
   document.getElementById("hint").textContent=Q?(L.length?"‘"+Q+"’ 찾은 반 "+L.length+"개 · 반을 눌러 보세요":"‘"+Q+"’(으)로 찾은 반이나 학생이 없어요"):"";
 }
@@ -109,7 +109,7 @@ function draw(){
   var byName=Q&&!unitHit(u,Q),names=Object.keys(u.students).filter(function(n){return!byName||n.indexOf(Q)>=0});
   var info={};names.forEach(function(n){var S=u.cells[n]||{},done=0,last=0,far=-1,tt=0;C.forEach(function(c,i){var r=S[c.key];if(!r)return;if(r[7]){if(c.test)tt++;else if(!c.old){done++;far=Math.max(far,i)}}if(r[6]>last)last=r[6]});info[n]={done:done,last:last,far:far,tt:tt}});
   names.sort(function(a,b){if(SORT==="name")return a.localeCompare(b,"ko");if(SORT==="last")return info[b].last-info[a].last;return info[b].done-info[a].done||info[b].far-info[a].far||a.localeCompare(b,"ko")});
-  var h='<div class="unit"><div class="uh"><b>'+E(u.book)+'</b> <span class="m">'+E(u.name)+'</span>'+
+  var h='<div class="unit"><div class="uh"><b>'+(u.meta&&u.meta.school?E(u.meta.school)+' · ':'')+E(u.book)+'</b> <span class="m">'+E(u.name)+'</span>'+
     '<div class="legend"><span><i class="sw" style="background:var(--oks)"></i>완료(첫 점수)</span><span><i class="sw" style="background:#fde3e6"></i>완료 · 70점 미만</span><span><i class="sw" style="background:var(--warns)"></i>오답 학습 남음</span><span><i class="sw" style="background:var(--prog)"></i>하는 중(단계)</span><span><i class="sw" style="background:#fff;border:1px solid var(--line)"></i>시작 전</span></div></div>';
   h+='<div class="tip" id="tip">'+(COL>=0&&C[COL]?E(C[COL].old?"예전 DAY(지금은 없거나 이름이 바뀐 DAY) · "+C[COL].name:C[COL].test?"OMR 시험 · "+C[COL].range:C[COL].name+" · "+C[COL].range):"숫자(DAY)를 누르면 범위가 보여요. 굵은 세로줄 오른쪽은 OMR 시험(Wrap-up·끝판왕 등), 회색 칸은 예전 DAY 기록이에요.")+'</div>';
   h+='<div class="wrap"><table><thead><tr><th class="nm">학생 · 완료</th>'+C.map(function(c,i){var lab=c.old?"예전":c.test?(c.name.length>9?c.name.slice(0,8)+"…":c.name):c.name.replace(/^DAY\s*/,"");var first=(c.test&&(i===0||!C[i-1].test))||(c.old&&(i===0||!C[i-1].old));return'<th data-c="'+i+'" class="'+(i===COL?"on ":"")+(first?"grp ":"")+(c.old?"old":"")+'" title="'+E(c.name+" · "+(c.range||""))+'">'+(c.test?'<span class="tn">'+E(kindOf(c))+'</span>':E(lab))+'<span class="sl">'+E(c.old?c.name.replace(/^DAY\s*\d+\s*/,"").slice(0,12):short(c))+'</span></th>'}).join("")+'</tr></thead><tbody>';
