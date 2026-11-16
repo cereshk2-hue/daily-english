@@ -1,0 +1,376 @@
+<title>중3 2025 기출 중산중</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+/* A4 시험지 (10/31): 스크립트가 문항을 A4 쪽(210×297mm)에 왼쪽 단 → 오른쪽 단 → 다음 쪽 순서로 직접 나눠 담고 쪽 번호를 붙인다.
+   화면·인쇄·PDF 어디서나 같은 쪽 구성. 좁은 화면에서는 쪽 전체를 축소해서 보여 준다. */
+.q, .exp p { break-inside: avoid }
+body { font-size: 9.6pt }
+.stem { font-size: 9.8pt } .stem .src { font-size: 8pt }
+.box, .given, .sum { font-size: 9.4pt; line-height: 1.46; padding: 2.2mm 2.8mm }
+.ol, .ol.en li { font-size: 9.3pt; line-height: 1.38 }
+table.ch { font-size: 9.2pt } table.ch th { font-size: 8.4pt }
+.q { margin-bottom: 3.6mm; gap: 1.6mm }
+.exp { font-size: 7.8pt; line-height: 1.36; margin-top: 3mm } .exp p { margin-bottom: 1mm }
+.top, .notice, .idrow, .title .when, .foot { font-size: 8.6pt }
+.title h1 { font-size: 18pt } .title h1 small { font-size: 8.6pt }
+.keygrid div { font-size: 9pt; padding: 1.2mm 0 } .keygrid b { font-size: 10.5pt }
+.page { width: 210mm; max-width: 100%; padding: 11mm }
+.sheets { display: grid; justify-content: center; gap: 16px }
+.sheet { width: 210mm; height: 297mm; padding: 11mm; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); overflow: hidden }
+/* 내용 영역 188×256mm: A4 여백 0~20mm, Letter 기본 여백에서도 한 장에 들어가는 크기 */
+.sheet > .inner { width: 188mm; height: 256mm; display: flex; flex-direction: column; overflow: hidden }
+.inner > .top.run { padding-bottom: 2mm; border-bottom: 1px solid var(--rule); margin-bottom: 1mm }
+.cols { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr);
+  column-gap: 6mm; margin-top: 4mm; position: relative }
+.cols::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid var(--rule) }
+.cols > .col { columns: auto !important; margin: 0 !important; min-height: 0; overflow: hidden }
+.inner > .foot { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center }
+.inner > .foot span:last-child { text-align: right }
+.inner > .foot .pno { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums }
+@page { size: A4; margin: 12mm 11mm }
+@media print {
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  body { padding: 0 !important; margin: 0 }
+  .sheets { display: block }
+  .sheet { zoom: 1 !important; width: auto; height: auto; padding: 0; margin: 0; box-shadow: none; overflow: visible; break-after: page; page-break-after: always }
+  .sheet:last-child { break-after: auto; page-break-after: auto }
+  .sheet > .inner { margin: 0 auto }
+  .page { max-width: none; margin: 0; box-shadow: none; break-after: page }
+}
+</style>
+<script>
+/* A4 쪽 나누기: 왼쪽 단 → 오른쪽 단 → 다음 쪽, 쪽 번호 n / 전체 */
+(function () {
+  function build() {
+    var main = document.querySelector('main'); if (!main || document.querySelector('.sheets')) return;
+    var secs = [].slice.call(main.querySelectorAll('section.page'));
+    var out = document.createElement('div'); out.className = 'sheets'; main.appendChild(out);
+    var pages = [];
+    secs.forEach(function (sec) {
+      var box = sec.querySelector('.qs, .exp'); if (!box) return;
+      var items = [].slice.call(box.children), foot = sec.querySelector('.foot'), top = sec.querySelector('.top');
+      var head = [].slice.call(sec.children).filter(function (e) { return e !== box && e !== foot && !(e.classList.contains('keygrid') && false); });
+      var cols, ci, first = true;
+      function newPage() {
+        var sh = document.createElement('div'); sh.className = 'sheet'; var pg = document.createElement('div'); pg.className = 'inner'; sh.appendChild(pg);
+        if (first) head.forEach(function (e) { pg.appendChild(e); });
+        else { var t = top.cloneNode(true); t.classList.add('run'); pg.appendChild(t); }
+        first = false;
+        cols = document.createElement('div'); cols.className = 'cols';
+        for (var i = 0; i < 2; i++) { var c = document.createElement('div'); c.className = 'col ' + box.className; cols.appendChild(c); }
+        pg.appendChild(cols);
+        var f = foot.cloneNode(true), sp = f.querySelectorAll('span'), mid = document.createElement('span'); mid.className = 'pno';
+        f.insertBefore(mid, sp[1] || null); pg.appendChild(f);
+        out.appendChild(sh); pages.push(pg); ci = 0;
+      }
+      function over(c) { return c.scrollHeight > c.clientHeight + 1; }
+      newPage();
+      items.forEach(function (it) {
+        var c = cols.children[ci]; c.appendChild(it);
+        if (over(c) && c.children.length > 1) {
+          c.removeChild(it); ci++;
+          if (ci > 1) newPage();
+          cols.children[ci].appendChild(it);
+        }
+      });
+      sec.parentNode.removeChild(sec);
+    });
+    pages.forEach(function (p, i) { p.querySelector('.pno').textContent = (i + 1) + ' / ' + pages.length; });
+    fit();
+  }
+  function fit() {
+    var w = document.documentElement.clientWidth - 24, s = Math.min(1, w / 794);
+    [].forEach.call(document.querySelectorAll('.sheet'), function (p) { p.style.zoom = s < 1 ? s : ''; });
+  }
+  function go() { (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(build, build); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  window.addEventListener('resize', function () { if (document.querySelector('.sheets')) fit(); });
+})();
+</script>
+
+
+<main>
+<section class="page">
+  <div class="top"><span>중산중 2025학년도 2학기 2차 지필평가 · <b>중산중</b></span><span>중학교 3학년 · 지학사(민찬규) · 학교 기출</span></div>
+  <div class="title">
+    <div class="g">영어</div>
+    <h1>2025 기출 중산중<small>2학기 2차 지필평가 (7·8과)</small></h1>
+    <div class="when">25문항 · 100점<br>제한 시간 45분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">작년(2025) 중산중 3학년 2학기 2차 지필평가 영어 원본이에요. 실제 시험처럼 45분 안에 풀고 OMR에 답을 입력하세요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>[1~2] 위 대화의 내용과 일치하는 것은? <span class="pt">[3점]</span><span class="src">[8과]</span></div>
+    <div class="box"><p>Alex: John, what is this graph about?<br>John: I did a survey on the kinds of pets my classmates have.<br>Alex: What were the results?<br>John: Eighty percent of the students have pets. Only five out of twenty-five students don't have pets.<br>Alex: ________ (A) ________<br>John: Well, ten students have dogs and three students have cats.<br>Alex: What about the rest?<br>John: Seven students have fish.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Five students have fish.</span></li><li><span>②</span><span>Ten students have dogs.</span></li><li><span>③</span><span>Seven students have cats.</span></li><li><span>④</span><span>John's classmates all have pets.</span></li><li><span>⑤</span><span>Half of the students don't have pets.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>위 글(1번)의 빈칸 (A)에 들어갈 말로 알맞은 것은? <span class="pt">[3점]</span><span class="src">[8과]</span></div>
+    <ol class="ol en"><li><span>①</span><span>Why do they have pets?</span></li><li><span>②</span><span>How much do the pets cost?</span></li><li><span>③</span><span>What kind of pets do they have?</span></li><li><span>④</span><span>Where do they mostly keep their pets?</span></li><li><span>⑤</span><span>How many students participated in the survey?</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>다음 대화에서 Henry가 쓰는 글의 주제로 알맞은 것은? <span class="pt">[3점]</span><span class="src">[8과]</span></div>
+    <div class="box"><p>Mina: Henry, what are you doing?<br>Henry: I'm writing an article about students' favorite snacks. I'm worried about their health.<br>Mina: Why?<br>Henry: Well, I surveyed 100 students and the results show that eighty percent of the students liked pizza and fried chicken for snacks. Do you see what I mean?<br>Mina: Oh, I get it. Students really like fast food. What else did they like?<br>Henry: Twelve percent of the students chose chocolate cake as their favorite.<br>Mina: Wow, students should really try to eat healthier snacks!</p></div>
+    <ol class="ol en"><li><span>①</span><span>Students' favorite fruits</span></li><li><span>②</span><span>Students' favorite sports</span></li><li><span>③</span><span>Students' favorite snacks</span></li><li><span>④</span><span>How to cook healthy food</span></li><li><span>⑤</span><span>Students' eating habits at school lunch</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>다음 글의 제목으로 알맞은 것은? <span class="pt">[3점]</span><span class="src">[7과 응용]</span></div>
+    <div class="box"><p>When you visit Korea, you might wonder where you can stay. Why don't you stay in a <i>hanok</i>? A <i>hanok</i> is a traditional Korean house. If you stayed in a <i>hanok</i>, you would sleep on the floor because there are no beds. <i>Hanok</i> houses are mostly built with natural materials such as wood, stone, straw, paper, and earth. These materials help you keep your skin clean. In the cold winter, the warm <i>ondol</i> floors heat your body. The doors in <i>hanok</i> are covered with thin paper. They help keep you cool in summer.</p></div>
+    <ol class="ol en"><li><span>①</span><span>The History of Korean Architecture</span></li><li><span>②</span><span>The Features and Functions of Hanok</span></li><li><span>③</span><span>Why Korean People Sleep on the Floor</span></li><li><span>④</span><span>How to Stay Cool in a Korean Summer</span></li><li><span>⑤</span><span>How to Make Your Skin Clean Naturally</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>[5~7] 위 글에서 Pascal이 숙제하기를 어려워하는 이유는? <span class="pt">[4점]</span><span class="src">[8과]</span></div>
+    <div class="box"><p>Pascal was doing his math homework in his room. He was struggling with graphs.<br>"It's too hard to read and draw graphs. Why do I need these anyway? No one needs graphs in real life." He put down his pen and picked up his favorite book, <i>Robin Hood</i>. He decided to read himself to sleep. When he was about to open the book, he heard a voice. He looked up from the book to see who was talking. He couldn't believe his eyes. It was his dog, Manny, who was talking!<br>"Close your eyes and repeat after me. <i>Cogito ergo sum</i>," said Manny.<br>"You can talk?"<br>"Just repeat! <i>Cogito ergo sum</i>."<br>Pascal closed his eyes and repeated the words. Suddenly, he heard men shouting. When he opened his eyes, he saw soldiers on horses. They were chasing a man with arrows in his hand. The man saw Pascal and shouted.<br>"It's too dangerous for you to stand there. Come on." The man pulled Pascal onto his horse and rode into the woods.<br>When they arrived at a house, the man stopped and got off his horse.<br>"Hello, my name is Robin Hood."<br>"Wow! Are you the Robin Hood from the book?"<br>"No, I'm the Robin Hood of Sherwood Forest. Who are you and why are you here?"</p></div>
+    <ol class="ol en"><li><span>①</span><span>He didn't like writing essays.</span></li><li><span>②</span><span>He forgot to bring his math book.</span></li><li><span>③</span><span>He wanted to walk his dog instead.</span></li><li><span>④</span><span>He didn't understand the book because he was not good at English grammar.</span></li><li><span>⑤</span><span>He found graphs hard to read and difficult to draw, and doubted their practical use.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>위 글(5번)에서 Pascal이 "<i>Cogito ergo sum</i>"을 따라 말한 후에 일어난 일은? <span class="pt">[3점]</span><span class="src">[8과]</span></div>
+    <ol class="ol en"><li><span>①</span><span>He met his math teacher.</span></li><li><span>②</span><span>He started drawing graphs.</span></li><li><span>③</span><span>He woke up from a dream.</span></li><li><span>④</span><span>He went back to doing his homework.</span></li><li><span>⑤</span><span>He saw soldiers on horses chasing a man with arrows in his hand.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>위 글(5번)의 내용과 일치하는 것은? <span class="pt">[4점]</span><span class="src">[8과]</span></div>
+    <ol class="ol en"><li><span>①</span><span>Robin saw Manny talking like a human.</span></li><li><span>②</span><span>Soldiers were helping Robin Hood escape.</span></li><li><span>③</span><span>Pascal refused to follow Manny's instruction.</span></li><li><span>④</span><span>Manny helped Pascal with his math homework.</span></li><li><span>⑤</span><span>Pascal met the Robin Hood of Sherwood Forest.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>[8~9] 위 글의 (A), (B), (C)의 각 네모 안에서 어법에 맞는 표현을 골라 짝지은 것으로 가장 적절한 것은? <span class="pt">[5점]</span><span class="src">[7과 응용]</span></div>
+    <div class="box"><p>If you walked down a street in the village of the Ndebele in South Africa, you (A) <b>[ saw / would see ]</b> houses with many ⓐ <u>unique</u> patterns and styles. Each house tells a ⓑ <u>different</u> story. Some stories might be about neighbors' babies. Others express ⓒ <u>personal</u> opinions like their feelings or ideas.<br>A long time ago, the Ndebele were in a terrible war with the Boers. When the Boers ⓓ <u>invaded</u> their land, the Ndebele painted their houses with many colorful symbols. These symbols were known only to the Ndebele people, and they used them to communicate ⓔ <u>publicly</u> with one another. Because of this, their enemies couldn't understand the meaning of their messages. The symbols expressed feelings such as sadness. Those symbols (B) <b>[ handed down / were handed down ]</b> from mothers to daughters. And they have kept their traditions (C) <b>[ alive / live ]</b>.</p></div>
+    <ol class="ol en"><li><span>①</span><span>saw − were handed down − alive</span></li><li><span>②</span><span>saw − handed down − live</span></li><li><span>③</span><span>would see − were handed down − alive</span></li><li><span>④</span><span>would see − handed down − alive</span></li><li><span>⑤</span><span>would see − were handed down − live</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>위 글(8번)의 밑줄 친 ⓐ~ⓔ 중 문맥상 낱말의 쓰임이 어색한 것은? <span class="pt">[4점]</span><span class="src">[7과 응용]</span></div>
+    <ol class="ol en"><li><span>①</span><span>ⓐ</span></li><li><span>②</span><span>ⓑ</span></li><li><span>③</span><span>ⓒ</span></li><li><span>④</span><span>ⓓ</span></li><li><span>⑤</span><span>ⓔ</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>[10~11] 위 글에서 Pascal이 그래프를 그린 목적은? <span class="pt">[3점]</span><span class="src">[8과]</span></div>
+    <div class="box"><p>"My name is Pascal. I don't know why I'm here, but there must be a reason. You saved me from the soldiers. Thank you so much. Is there anything I can do for you?"<br>"Well, can you help us get back the money that the king took from the people? He taxed them too much. He is too greedy to share with the people, so they don't have enough money to buy food. I want to help them get their money back. However, there are many soldiers in the tower, so no one can get inside."<br>"Hmm... I think I have a solution. But first, can you take me to the tower? I need to count the number of soldiers."<br>Robin and Pascal hid up in a tree and they counted the soldiers one by one. After that, Pascal gave Robin a summary of what they found.<br>"There are five soldiers from midnight to six in the morning. Next, there are three soldiers until noon, and then there are eight soldiers until six in the evening. Lastly, there are twelve soldiers until midnight. So, you should go inside between six in the morning and noon."<br>"What? I don't get it."<br>Pascal thought for a moment. 'Hmm... A graph might make this easier to understand.' Pascal drew a graph and showed it to Robin.</p></div>
+    <ol class="ol en"><li><span>①</span><span>to prove a math formula</span></li><li><span>②</span><span>to write down a history event</span></li><li><span>③</span><span>to design an experimental device</span></li><li><span>④</span><span>to look at data and compare it clearly</span></li><li><span>⑤</span><span>to explain an idea about life or thinking</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>위 글(10번)의 내용과 일치하지 <u>않는</u> 것은? <span class="pt">[4점]</span><span class="src">[8과]</span></div>
+    <ol class="ol en"><li><span>①</span><span>Pascal was saved from the soldiers.</span></li><li><span>②</span><span>Pascal counted the soldiers with Robin.</span></li><li><span>③</span><span>Robin explained the soldiers' schedule to Pascal.</span></li><li><span>④</span><span>Robin wanted to help people get their money back from the king.</span></li><li><span>⑤</span><span>Pascal suggested that the best time to go inside the tower is between six in the morning and noon.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은? <span class="pt">[4점]</span><span class="src">[8과 응용]</span></div>
+    <div class="box"><p>What kinds of numbers are thought to be lucky or unlucky? Do you think it is similar around the world? Usually, the number 7 is a lucky number in countries like England, the USA, and France. However, a lucky number in one country can be unlucky in another.<br>(A) However, in China, the sound of the word for the number 4 is similar to that of the Chinese word for death. So, the number 4 is regarded as unlucky.<br>(B) How about the number 4? In Germany, the number 4 is regarded as lucky because it matches the number of leaves on a four-leaf clover.<br>(C) For example, Chinese people think 7 is unlucky because July or "the seventh month" is often thought of as a month for ghosts.</p></div>
+    <ol class="ol en"><li><span>①</span><span>(A) − (C) − (B)</span></li><li><span>②</span><span>(B) − (A) − (C)</span></li><li><span>③</span><span>(B) − (C) − (A)</span></li><li><span>④</span><span>(C) − (A) − (B)</span></li><li><span>⑤</span><span>(C) − (B) − (A)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>두 사람의 대화가 자연스럽도록 (A)~(D)를 바르게 배열한 것은? <span class="pt">[3점]</span><span class="src">[8과]</span></div>
+    <div class="box"><p>Emily: Jimmy, what's the matter? You look upset.<br>Jimmy: My brother broke my computer. I'm so angry.<br>(A) Oh, I get it. I guess it's not good to stay angry for a long time.<br>(B) I'm sorry to hear that, but your facial muscles must be tired.<br>(C) It takes a lot of muscles to look angry, but only a few to smile. Do you see what I mean?<br>(D) What do you mean?<br>Emily: That's right. Remember, it's always better to smile.</p></div>
+    <ol class="ol en"><li><span>①</span><span>(A) − (B) − (C) − (D)</span></li><li><span>②</span><span>(B) − (D) − (A) − (C)</span></li><li><span>③</span><span>(B) − (D) − (C) − (A)</span></li><li><span>④</span><span>(C) − (A) − (B) − (D)</span></li><li><span>⑤</span><span>(D) − (B) − (A) − (C)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>두 사람의 대화가 자연스럽도록 (A)~(E)를 바르게 배열한 것은? <span class="pt">[4점]</span><span class="src">[7과]</span></div>
+    <div class="box"><p>Jinho: I think living in a jungle would be really exciting. Don't you think so?<br>(A) What would you do if you lived in the jungle?<br>(B) But there are some dangerous animals in the jungle, Jinho.<br>(C) Then where would you sleep? In a cave?<br>(D) I know. But the jungle is full of adventure. I wish I could live there.<br>(E) I would explore it. Maybe I could make some animal friends.<br>Jinho: No, I would stay in a tree house. Then I would be safe from dangerous animals.<br>Claire: That makes sense.</p></div>
+    <ol class="ol en"><li><span>①</span><span>(B) − (D) − (A) − (E) − (C)</span></li><li><span>②</span><span>(B) − (E) − (A) − (C) − (D)</span></li><li><span>③</span><span>(C) − (D) − (B) − (A) − (E)</span></li><li><span>④</span><span>(D) − (A) − (E) − (B) − (C)</span></li><li><span>⑤</span><span>(D) − (B) − (A) − (E) − (C)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>다음 문장을 가정법으로 바꾼 것 중 <u>틀린</u> 것은? <span class="pt">[5점]</span><span class="src">[7과]</span></div>
+    <ol class="ol en"><li><span>①</span><span>As I don't live in a jungle, I don't build a tree house and live there.<br>→ If I lived in a jungle, I would build a tree house and lived there.</span></li><li><span>②</span><span>As we don't have much snow this year, we don't go sledding.<br>→ If it snowed a lot this year, we would go sledding.</span></li><li><span>③</span><span>As I am not good at grammar, I can't answer the question.<br>→ If I were good at grammar, I could answer the question.</span></li><li><span>④</span><span>As you are shorter than Jane, you can't reach that branch.<br>→ If you weren't shorter than Jane, you could reach that branch.</span></li><li><span>⑤</span><span>As you don't do your homework, you won't get perfect grades in the test.<br>→ If you did your homework, you would get perfect grades in the test.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>다음 대화의 내용과 일치하지 <u>않는</u> 것은? <span class="pt">[4점]</span><span class="src">[7과]</span></div>
+    <div class="box"><p>Emma: Dohun, we need to start our project on our dream country to visit.<br>Dohun: That's right. Which country do you want to visit, Emma?<br>Emma: In my case, I want to visit Spain.<br>Dohun: What would you do if you visited Spain?<br>Emma: I'm interested in buildings. So I would go see La Sagrada Familia.<br>Dohun: That is the church Antoni Gaudí designed, isn't it?<br>Emma: Yes, it is. It would be interesting to see how his design was inspired by nature.<br>Dohun: Hmm... . How about <i>Gaudí and Spain</i> as the title for our project?<br>Emma: I love it!</p></div>
+    <ol class="ol en"><li><span>①</span><span>It is Spain where Emma wants to visit.</span></li><li><span>②</span><span>Dohun might already know who designed La Sagrada Familia.</span></li><li><span>③</span><span>Emma thought Gaudí's design showed a strong connection to nature.</span></li><li><span>④</span><span>Dohun decided to make the project about Gaudí's buildings in several countries.</span></li><li><span>⑤</span><span>Emma agreed with Dohun's idea for the project title.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>다음 중 어법상 옳지 <u>않은</u> 것은? <span class="pt">[5점]</span><span class="src">[8과 문법]</span></div>
+    <ol class="ol en"><li><span>①</span><span>Don't leave the door close.</span></li><li><span>②</span><span>Tests in school make students worried.</span></li><li><span>③</span><span>The new machine made our jobs easier.</span></li><li><span>④</span><span>Exercising every day makes me healthier.</span></li><li><span>⑤</span><span>Wearing sunscreen will keep you safe from sunburn.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>다음 중 어법상 옳은 것은? <span class="pt">[5점]</span><span class="src">[8과 문법]</span></div>
+    <ol class="ol en"><li><span>①</span><span>This problem is too difficult to solve.</span></li><li><span>②</span><span>Not everyone agree with her opinion.</span></li><li><span>③</span><span>No pets is allowed in this apartment.</span></li><li><span>④</span><span>You have many friends at school to play.</span></li><li><span>⑤</span><span>The laptop was so expensive that I couldn't buy.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>[19~20] 위 글의 밑줄 친 ⓐ~ⓔ 중 어법상 옳지 <u>않은</u> 것은? <span class="pt">[5점]</span><span class="src">[7과]</span></div>
+    <div class="box"><p>ⓐ <u>If you live in Venice, you can take a gondola to school every morning</u>. Venice has 118 small islands. On weekends, you can travel from island to island by a vaporetto, a water bus. At high tide, ⓑ <u>the water from the Adriatic Sea often rises and leave the streets full of water</u>. However, you can walk around the town through the raised walkways.<br>Venice is known as the "floating city." In Venice, there are many colorful houses on the water. ⓒ <u>You may wonder how and why they built the houses on the water</u>. ⓓ <u>The old Venetians decided to live there to keep themselves safe from invaders</u>. But ⓔ <u>it was not easy for them to build their homes on this swampy surface</u>. So they installed more than 10 million wooden poles in the ground. It is these wooden poles which ________ (A) ________.</p></div>
+    <ol class="ol en"><li><span>①</span><span>ⓐ</span></li><li><span>②</span><span>ⓑ</span></li><li><span>③</span><span>ⓒ</span></li><li><span>④</span><span>ⓓ</span></li><li><span>⑤</span><span>ⓔ</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>위 글(19번)의 빈칸 (A)에 들어갈 말로 알맞은 것은? <span class="pt">[5점]</span><span class="src">[7과]</span></div>
+    <ol class="ol en"><li><span>①</span><span>connect the many small islands together like bridges</span></li><li><span>②</span><span>make Venice one of the most beautiful cities in the world</span></li><li><span>③</span><span>protect the people of Venice from the Adriatic Sea waves</span></li><li><span>④</span><span>hold up the buildings of Venice and keep the city standing</span></li><li><span>⑤</span><span>allow boats and gondolas to move easily through the canals</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">21.</span>다음 중 의미가 <u>다른</u> 하나는? <span class="pt">[3점]</span><span class="src">[8과 문법]</span></div>
+    <ol class="ol en"><li><span>①</span><span>This area is smoke-free.</span></li><li><span>②</span><span>Nobody can smoke in this area.</span></li><li><span>③</span><span>No one can smoke in this area.</span></li><li><span>④</span><span>Not everyone can smoke in this area.</span></li><li><span>⑤</span><span>Smoking is not permitted in this area.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">22.</span>다음 글의 내용을 두 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은? <span class="pt">[5점]</span><span class="src">[7과]</span></div>
+    <div class="box"><p>Suppose you lived in a tulou, a huge round house in Fujian, China. You would always hang out with your friends at home. You might sometimes hear your neighbor calling you to come over for tea or dinner. A tulou usually has three to five floors. The first floor is used for cooking and eating, and people store food and tools on the second floor. Do you wonder where you would sleep? Your bedroom is on the third or fourth floor.<br>A tulou is like a small village. The people living in a tulou usually have the same family name. Some large tulou can house up to fifty families. They work together, share many things, and protect each other by living together in one big building.<br>↓<br>A tulou is a massive circular residence in Fujian, China, designed for multiple families to live together in order to ____(A)____. Through constant interaction and shared responsibilities, its residents can ____(B)____ that strengthen their sense of unity and belonging.</p></div>
+    <ol class="ol en"><li><span>①</span><span>expand trade − gain wealth</span></li><li><span>②</span><span>avoid noise − maintain privacy</span></li><li><span>③</span><span>save money − enjoy personal freedom</span></li><li><span>④</span><span>ensure safety − build strong social bonds</span></li><li><span>⑤</span><span>protect nature − reduce environmental damage</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">23.</span>다음 글의 밑줄 친 ⓐ~ⓔ 중 문맥상 낱말의 쓰임이 어색한 것은? <span class="pt">[4점]</span><span class="src">[7과]</span></div>
+    <div class="box"><p>Living in a pueblo, you can climb up a ladder to enter your house. There's a ⓐ <u>hidden</u> opening on top of the house. If ⓑ <u>unwelcome</u> visitors appeared, you would pull the ladder up to ⓒ <u>stop</u> them from entering. The thick walls are made of earth, straw, and water. They would keep me cool in summer and ⓓ <u>warm</u> in winter. The house has an extremely ⓔ <u>pointy</u> roof. Sometimes you would sleep comfortably up on the roof under the moon and stars.</p></div>
+    <ol class="ol en"><li><span>①</span><span>ⓐ</span></li><li><span>②</span><span>ⓑ</span></li><li><span>③</span><span>ⓒ</span></li><li><span>④</span><span>ⓓ</span></li><li><span>⑤</span><span>ⓔ</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">24.</span>다음 글의 밑줄 친 ⓐ~ⓔ 중 어법상 옳지 <u>않은</u> 것은? <span class="pt">[5점]</span><span class="src">[8과]</span></div>
+    <div class="box"><p>"Look, the most dangerous time is between six in the evening and midnight. Four times more soldiers work at that time ⓐ <u>than</u> from six in the morning until noon. Do you see ⓑ <u>what</u> I mean?"<br>"Aha! I get it now. Thank you so much, Pascal!"<br>"You're welcome. I realize the importance of graphs, and everyone can agree that we still need ⓒ <u>it</u> in real life."<br>Pascal walked out of the woods. When he looked back, he saw Robin Hood ⓓ <u>waving</u> at him. Pascal waved back and said to ⓔ <u>himself</u>, "It was a great adventure. How do I go back? Oh, I know. I should say the words <i>Cogito ergo sum</i>!"</p></div>
+    <ol class="ol en"><li><span>①</span><span>ⓐ</span></li><li><span>②</span><span>ⓑ</span></li><li><span>③</span><span>ⓒ</span></li><li><span>④</span><span>ⓓ</span></li><li><span>⑤</span><span>ⓔ</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">25.</span>다음 두 문장을 한 문장으로 바꾼 것 중 가장 적절한 것은? <span class="pt">[4점]</span><span class="src">[8과 문법]</span></div>
+    <div class="box"><p>• The wind is too strong.<br>• Jane can't wear a hat.</p></div>
+    <ol class="ol en"><li><span>①</span><span>The wind is too strong to wear a hat.</span></li><li><span>②</span><span>The wind is too strong for Jane to wear a hat.</span></li><li><span>③</span><span>The wind is very strong, so Jane wears a hat.</span></li><li><span>④</span><span>Jane can wear a hat because the wind is so strong.</span></li><li><span>⑤</span><span>The wind is so strong that no one can wear a hat.</span></li></ol>
+  </div>
+  </div>
+  <div class="foot"><span>중산중 2025 기출 중산중 · 원본 그대로</span><span>중3 영어 · 2025 기출</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>2025 기출 중산중 · <b>정답과 해설</b></span><span>중학교 3학년 · 지학사(민찬규)</span></div>
+  <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">배점은 문항 끝 [ ]</div></div>
+  <div class="keygrid">
+    <div>1<b>②</b></div><div>2<b>③</b></div><div>3<b>③</b></div><div>4<b>②</b></div><div>5<b>⑤</b></div><div>6<b>⑤</b></div><div>7<b>⑤</b></div><div>8<b>③</b></div><div>9<b>⑤</b></div><div>10<b>④</b></div>
+    <div>11<b>③</b></div><div>12<b>⑤</b></div><div>13<b>③</b></div><div>14<b>①</b></div><div>15<b>①</b></div><div>16<b>④</b></div><div>17<b>①</b></div><div>18<b>①</b></div><div>19<b>②</b></div><div>20<b>④</b></div>
+    <div>21<b>④</b></div><div>22<b>④</b></div><div>23<b>⑤</b></div><div>24<b>③</b></div><div>25<b>②</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">②</span> 이유 ▶ ten students have dogs ✔<br>
+오답 ▶ ① 물고기는 7명 ③ 고양이는 3명 ④ 80%만 있음 ⑤ 없는 학생은 5명(20%)</p>
+    <p><b>2</b> <span class="k">③</span> 이유 ▶ 대답이 '개 10명, 고양이 3명' → 어떤 종류의 애완동물을 기르는지 묻는 말<br>
+오답 ▶ ① 이유 ② 가격 ④ 장소 ⑤ 참가 인원(이미 나옴)</p>
+    <p><b>3</b> <span class="k">③</span> 이유 ▶ I'm writing an article about students' favorite snacks.<br>
+오답 ▶ ① 과일 ② 운동 ④ 요리법 ⑤ 급식은 나오지 않음</p>
+    <p><b>4</b> <span class="k">②</span> 이유 ▶ 한옥의 특징(바닥에서 잠, 자연 재료, 온돌, 종이 문)과 기능(피부, 겨울 난방, 여름 시원함)을 소개 → 한옥의 특징과 기능<br>
+오답 ▶ ① 역사 없음 ③④⑤ 글의 일부 내용만</p>
+    <p><b>5</b> <span class="k">⑤</span> 이유 ▶ It's too hard to read and draw graphs. Why do I need these anyway? No one needs graphs in real life.<br>
+오답 ▶ ①②③④ 나오지 않음</p>
+    <p><b>6</b> <span class="k">⑤</span> 이유 ▶ When he opened his eyes, he saw soldiers on horses. They were chasing a man with arrows in his hand.<br>
+오답 ▶ ①②③④ 나오지 않음</p>
+    <p><b>7</b> <span class="k">⑤</span> 이유 ▶ I'm the Robin Hood of Sherwood Forest ✔<br>
+오답 ▶ ① Manny가 말하는 걸 본 건 Pascal ② 군인들은 그를 쫓고 있었다 ③ 따라 했다(repeated) ④ 숙제를 돕지 않았다</p>
+    <p><b>8</b> <span class="k">③</span> 이유 ▶ (A) If + 과거(walked) → 주절 would see (가정법 과거) (B) 상징이 '전해진' 것 → 수동태 were handed down (C) keep + 목적어 + 형용사 보어 alive (live는 서술 보어로 못 씀)<br>
+오답 ▶ saw는 가정법 아님 / handed down은 능동 / live ❌</p>
+    <p><b>9</b> <span class="k">⑤</span> 이유 ▶ 상징은 은데벨레 사람들만 알았고 적들이 의미를 몰랐다 → '공개적으로(publicly)'가 아니라 '몰래(secretly)' 소통했다<br>
+오답 ▶ ⓐ 독특한 ⓑ 다른 ⓒ 개인적인 ⓓ 침략했다 → 모두 자연스러움</p>
+    <p><b>10</b> <span class="k">④</span> 이유 ▶ 'A graph might make this easier to understand.' → 시간대별 군인 수(자료)를 한눈에 비교해서 Robin이 이해하게 하려고<br>
+오답 ▶ ① 공식 ② 역사 ③ 실험 장치 ⑤ 삶·생각</p>
+    <p><b>11</b> <span class="k">③</span> 이유 ▶ 군인 일정을 정리해 설명한 사람은 Pascal(Pascal gave Robin a summary) → 주어와 대상이 뒤바뀜<br>
+오답 ▶ ①②④⑤ 본문과 일치</p>
+    <p><b>12</b> <span class="k">⑤</span> 이유 ▶ 한 나라의 행운의 숫자가 다른 나라에선 불운 → (C) 예: 중국의 7 → (B) 그럼 4는? 독일에선 행운 → (A) However, 중국에선 불운<br>
+포인트 ▶ For example은 바로 앞 내용의 예, However는 앞과 반대 내용</p>
+    <p><b>13</b> <span class="k">③</span> 이유 ▶ Emily (B) 안됐다, 얼굴 근육이 피곤하겠다 → Jimmy (D) 무슨 뜻이야? → Emily (C) 화난 표정엔 근육이 많이 필요해 → Jimmy (A) 알겠다 → Emily That's right.</p>
+    <p><b>14</b> <span class="k">①</span> 이유 ▶ Claire (B) 위험한 동물이 있어 → Jinho (D) 알아, 하지만 모험 → Claire (A) 정글에 살면 뭘 할 거야? → Jinho (E) 탐험 → Claire (C) 어디서 자? 동굴? → Jinho No, tree house</p>
+    <p><b>15</b> <span class="k">①</span> 이유 ▶ would build ~ and (would) live → 조동사 뒤라 동사원형 live. lived ❌<br>
+포인트 ▶ 가정법 과거: If + 주어 + 과거, 주어 + would/could + 동사원형</p>
+    <p><b>16</b> <span class="k">④</span> 이유 ▶ 제목은 'Gaudí and Spain' → 여러 나라가 아니라 스페인<br>
+오답 ▶ ① I want to visit Spain ② That is the church Antoni Gaudí designed, isn't it? ③ inspired by nature ⑤ I love it!</p>
+    <p><b>17</b> <span class="k">①</span> 이유 ▶ leave + 목적어 + 형용사 보어: 문이 '닫힌' 상태 → closed. close ❌<br>
+오답 ▶ ② make + 목적어 + worried ③ made + easier ④ makes + healthier ⑤ keep + safe → 모두 바름</p>
+    <p><b>18</b> <span class="k">①</span> 이유 ▶ too ~ to … 너무 ~해서 …할 수 없다 ✔ (주어 This problem이 solve의 목적어라 it을 쓰지 않음)<br>
+오답 ▶ ② everyone은 단수 → agrees ③ pets 복수 → are ④ 친구와 놀다 → to play with ⑤ so ~ that 절에는 목적어 필요 → buy it</p>
+    <p><b>19</b> <span class="k">②</span> 이유 ▶ the water ~ rises and leave → 주어 the water(단수)에 맞춰 leaves<br>
+오답 ▶ ⓐ 조건문 ⓒ 간접의문문 how and why + 주어 + 동사 ⓓ to부정사(목적) ⓔ 가주어 it ~ for them to → 모두 바름</p>
+    <p><b>20</b> <span class="k">④</span> 이유 ▶ 늪지에 집을 짓기 어려워 나무 기둥을 박았다 → 기둥이 건물을 받치고 도시를 서 있게 한다 (본문: support Venice to this day)<br>
+오답 ▶ ① 다리 ② 아름다움 ③ 파도 ⑤ 배의 이동</p>
+    <p><b>21</b> <span class="k">④</span> 이유 ▶ Not everyone = 모두가 ~인 것은 아니다(부분 부정) → 피울 수 있는 사람도 있음<br>
+오답 ▶ ①②③⑤ 아무도 피울 수 없다(전체 부정)<br>
+포인트 ▶ no one / nobody = 전체 부정, not everyone / not all = 부분 부정</p>
+    <p><b>22</b> <span class="k">④</span> 이유 ▶ protect each other by living together → (A) 안전을 지키다(ensure safety) / work together, share many things → (B) 끈끈한 사회적 유대를 쌓다(build strong social bonds)<br>
+오답 ▶ ① 무역·부 ② 소음·사생활 ③ 돈·자유 ⑤ 자연·환경</p>
+    <p><b>23</b> <span class="k">⑤</span> 이유 ▶ 지붕 위에서 편하게 잔다 → 지붕은 뾰족한(pointy)이 아니라 평평한(flat) 지붕<br>
+오답 ▶ ⓐ 숨겨진 ⓑ 반갑지 않은 ⓒ 막다 ⓓ 따뜻한 → 모두 자연스러움</p>
+    <p><b>24</b> <span class="k">③</span> 이유 ▶ 가리키는 말이 graphs(복수) → it이 아니라 them<br>
+오답 ▶ ⓐ more ~ than ⓑ 관계대명사 what(~하는 것) ⓓ 지각동사 saw + 목적어 + -ing ⓔ say to oneself 혼잣말하다 → 모두 바름</p>
+    <p><b>25</b> <span class="k">②</span> 이유 ▶ too ~ for 의미상 주어 to … : 너무 ~해서 (누가) …할 수 없다 → for Jane to wear ✔<br>
+오답 ▶ ① Jane(의미상 주어)이 빠짐 ③④ 뜻이 반대 ⑤ Jane이 아니라 아무도(no one)</p>
+  </div>
+  <div class="foot"><span>원본 정답 위치 그대로</span><span>중3 영어 · 2025 기출</span></div>
+</section>
+</main>
