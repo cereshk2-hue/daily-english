@@ -20,6 +20,7 @@ grid = open('work/grid/grid.html', encoding='utf-8').read()
 src += '''
 /* ==== 진도표 (11/16) ==== */
 var BOARD_URL = 'https://cereshk2-hue.github.io/daily-english/t-iyr3rba2/'; // 단원별 전체 DAY 목록을 여기서 읽어요
+var NAME_SHOW = { '김혜연': '김샘플' }; // 진도표에서 이름을 바꿔 보여 줄 사람 (선생님 시험용 기록 등)
 function gridData() { /* '기록' 탭(모든 기록) + '현황' 탭 → 학생·단원·DAY마다 [학생, 학년·교재, 단원, DAY+범위, 진행, 점수(첫 완료), 마지막ms, 완료ms] (그만둔 학생 제외) */
   var ss = SpreadsheetApp.getActiveSpreadsheet(), tz = 'Asia/Seoul', quit = {}, M = {};
   var r = ss.getSheetByName(ROSTER);
@@ -42,7 +43,7 @@ function gridData() { /* '기록' 탭(모든 기록) + '현황' 탭 → 학생·
   if (sh && sh.getLastRow() > 1) sh.getRange(2, 1, sh.getLastRow() - 1, 12).getValues().forEach(function (v) {
     add(v[0], v[1], v[2], String(v[3]) + ' ' + String(v[4]), v[5], v[6], ms(v[10]) || ms(v[11]));
   });
-  var rows = Object.keys(M).map(function (k) { var m = M[k]; return [m[0], m[1], m[2], m[3], m[4], m[5], m[6], m[7]]; });
+  var rows = Object.keys(M).map(function (k) { var m = M[k]; return [NAME_SHOW[m[0]] || m[0], m[1], m[2], m[3], m[4], m[5], m[6], m[7]]; });
   return { today: Utilities.formatDate(new Date(), tz, 'yyyy-MM-dd'), made: Date.now(), rows: rows };
 }
 var GRID_HTML = ''' + json.dumps(grid, ensure_ascii=False) + ';\n'
