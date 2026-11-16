@@ -1139,6 +1139,7 @@
       $('#gre').onclick = function () { q.phase = 'play'; q.round++; q.tries = 0; q.miss = []; saveRun(); redraw(); };
       return;
     }
+    if (q.passed && !RS.answered) delete q.passed; /* 11/16: 오답 학습·이어 하기에서 지난번 '통과' 표시가 남아 보기가 안 눌리던 문제 */
     var sel = {}, nb = gateCount(q), chk = $('#gchk'), msg = $('#gmsg');
     function pickCount() { var n = Object.keys(sel).length; chk.textContent = '채점하기 (' + n + '/' + nb + ')'; chk.disabled = n !== nb; }
     card.querySelectorAll('.gb').forEach(function (b) { b.querySelectorAll('.gopt').forEach(function (o) { o.onclick = function () {
@@ -1676,7 +1677,7 @@
     RS = { di: qs[0].dayIdx, si: 0, qs: qs, qi: 0, c: 0, wrong: [], phase: 'quiz', answered: false, practice: '오답 노트', back: 'today', noteKey: key };
     render();
   }
-  function reshuffle(q) { q = JSON.parse(JSON.stringify(q)); if (q.t === 'gate') { q.round = 1; q.tries = 0; q.miss = []; q.phase = 'play'; } if (q.t === 'order' || q.t === 'scramble') q.pool = shuffleDiff(q.pool); if (q.opts && !q.fixed) q.opts = shuffle(q.opts); return q; }
+  function reshuffle(q) { q = JSON.parse(JSON.stringify(q)); if (q.t === 'gate') { q.round = 1; q.tries = 0; q.miss = []; q.phase = 'play'; delete q.passed; } if (q.t === 'order' || q.t === 'scramble') q.pool = shuffleDiff(q.pool); if (q.opts && !q.fixed) q.opts = shuffle(q.opts); return q; }
   /* 오답 학습: 틀린 문제를 모두 맞힐 때까지 다시 낸다. 끝내야 결과를 보낼 수 있다. 문제마다 저장돼 이어서 할 수 있다. */
   function retryWrong(di) {
     var d = P.days[di], st = DS(d.id);
