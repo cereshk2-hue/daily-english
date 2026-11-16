@@ -7,7 +7,7 @@ BOARD = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 SCHOOL = {  # 단원 → 학교·학년 (진도표 검색용 · 모르는 단원은 비워 둠)
     'm1-donga-yoon-L6': '중산중1', 'm1-grammar-to1': '중산중1 · 심학중1', 'm1-chunjae-so-L6': '심학중1', 'm3-jihak-min-L7': '중산중3', 'm2-visang-hwang-L7': '발산중2',
     'h1-mock-2509': '중산고1', 'h2-mock-2609-jungsan': '중산고2', 'h2-mirae-kim-L4': '중산고2', 'h3-suneung-2510': '중산고2 · 고3',
-    'h1-ne-min-L3': '저동고1', 'h1-mock-2610-jeodong': '저동고1', 'h2-chunjae-cho-L5': '안곡고2', 'h2-mock-2609-angok': '안곡고2', 'h2-ne-oh-L3': '대진고2'}
+    'h1-ne-min-L3': '저동고1', 'h1-mock-2610-jeodong': '저동고1', 'h2-chunjae-cho-L5': '안곡고2', 'h2-mock-2609-angok': '안곡고2', 'h2-ne-oh-L3': '대진고2', 'h1-donga-lee-L3': '안곡고1'}
 RETIRED = {'h1-ybm-kim-L3': 'h1-mock-2509', 'm1-grammar-that': 'm1-grammar-to1'}  # 합쳐진 단원 → 지금 단원
 nz = lambda s: re.sub(r'\s+', '', str(s or '')).replace('변형어휘', '실전어휘뚫기')
 def g(*a): return subprocess.check_output(['git', '-C', REPO] + list(a)).decode()
