@@ -109,14 +109,15 @@ for C in (C1, C2, C3, C4):
         for m in re.findall(r'\{([^}]*)\}', s): o = m.split('|'); assert len(o) == 2 and o[0] != o[1], s; nb += 1
     nbs.append(nb)
 mk = lambda C: [{'s': s, 'ko': ko, 'ex': ex} for s, ko, ex in C]
-day = {'id': 'gt3', 'name': '', 'range': '3과 본문 · 어법 선택 한 판', 'story': '3과 본문 어법 선택 한 판 · 괄호를 모두 맞혀야 100점 (덩이 2개)',
+chunk = lambda t, C: {'title': '%s (괄호 %d개)' % (t, sum(len(re.findall(r'\{', x[0])) for x in C)), 'parts': mk(C)}
+day = {'id': 'gt3', 'name': '', 'range': '3과 본문 · 어법 선택 한 판', 'story': '3과 본문 어법 선택 한 판 · 괄호를 모두 맞혀야 100점 (덩이 4개)',
        'passage': D['d1']['passage'] + D['d2']['passage'] + D['d3']['passage'] + D['d4']['passage'],
-       'steps': [{'type': 'gate', 'title': '어법 선택 한 판', 'guide': "본문을 두 덩이로 나눴어요. 덩이마다 괄호를 모두 맞혀야 100점, 하나라도 틀리면 0점! 3번 안에 통과 못 하면 틀린 문장만 해설과 함께 연습하고 다시 도전해요.",
-                  'items': [{'title': '본문 ❶❷ · 도입 · PROS (괄호 %d개)' % nbs[0], 'parts': mk(C1)}, {'title': '본문 ❸❹ · CONS · COMMENTS (괄호 %d개)' % nbs[1], 'parts': mk(C2)}]}]}
-day4 = {'id': 'gt4', 'name': '', 'range': '4과 본문 · 어법 선택 한 판', 'story': '4과 본문 어법 선택 한 판 · 괄호를 모두 맞혀야 100점 (덩이 2개)',
+       'steps': [{'type': 'gate', 'title': '어법 선택 한 판', 'guide': "본문을 네 덩이로 나눴어요. 덩이마다 괄호를 모두 맞혀야 100점, 하나라도 틀리면 0점! 3번 안에 통과 못 하면 틀린 문장만 해설과 함께 연습하고 다시 도전해요.",
+                  'items': [chunk('본문 ❶ · 도입', C1[:9]), chunk('본문 ❷ · PROS', C1[9:]), chunk('본문 ❸ · CONS', C2[:13]), chunk('본문 ❹ · COMMENTS', C2[13:])]}]}
+day4 = {'id': 'gt4', 'name': '', 'range': '4과 본문 · 어법 선택 한 판', 'story': '4과 본문 어법 선택 한 판 · 괄호를 모두 맞혀야 100점 (덩이 4개)',
         'passage': D['e1']['passage'] + D['e2']['passage'] + D['e3']['passage'],
         'steps': [{'type': 'gate', 'title': '어법 선택 한 판', 'guide': day['steps'][0]['guide'],
-                   'items': [{'title': '본문 ❶❷ · 도입 · 다빈치 (괄호 %d개)' % nbs[2], 'parts': mk(C3)}, {'title': '본문 ❸❹❺ · 반 고흐 · 야경 (괄호 %d개)' % nbs[3], 'parts': mk(C4)}]}]}
+                   'items': [chunk('본문 ❶ · 도입', C3[:6]), chunk('본문 ❷ · 다빈치', C3[6:]), chunk('본문 ❸ · 반 고흐', C4[:10]), chunk('본문 ❹❺ · 야경', C4[10:])]}]}
 PK['days'] = [d for d in PK['days'] if d['id'] not in ('gt3', 'gt4')] + [day, day4]
 for i, d in enumerate(PK['days']): d['name'] = 'DAY %d' % (i + 1)
 src = open(path, encoding='utf-8').read(); head = src[:src.index('window.PKG')]

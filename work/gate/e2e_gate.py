@@ -1,6 +1,7 @@
 import subprocess, time, sys
 from playwright.sync_api import sync_playwright
-srv=subprocess.Popen([sys.executable,'-m','http.server','8834','-d','/home/claude/proj/dist/github/m2-visang-hwang-L7-x1iso'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL); time.sleep(1)
+FOLDER=sys.argv[2] if len(sys.argv)>2 else 'm2-visang-hwang-L7-x1iso'; PORT=sys.argv[3] if len(sys.argv)>3 else '8834'
+srv=subprocess.Popen([sys.executable,'-m','http.server',PORT,'-d','/home/claude/proj/dist/github/'+FOLDER],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL); time.sleep(1)
 SH='/tmp/pv/gate_'; errs=[]
 def choose(pg, q, wrong_first=False):
     k=0
@@ -14,8 +15,8 @@ try:
   with sync_playwright() as p:
     b=p.chromium.launch(); pg=b.new_page(viewport={'width':390,'height':844},device_scale_factor=2)
     pg.on('pageerror',lambda e:errs.append(str(e)))
-    pg.goto('http://localhost:8834/?test'); pg.fill('#nm','테스트'); pg.click('#nameform button')
-    di=18
+    pg.goto('http://localhost:%s/?test'%PORT); pg.fill('#nm','테스트'); pg.click('#nameform button')
+    di=int(sys.argv[1]) if len(sys.argv)>1 else 18
     if not pg.locator('[data-go="%d"]'%di).count(): pg.locator('[data-sel="%d"]'%di).first.click()
     pg.locator('[data-go="%d"]'%di).first.click()
     rs=pg.evaluate('__dbg()')
@@ -37,7 +38,10 @@ try:
     time.sleep(0.4); choose(pg,q); pg.click('#gchk'); time.sleep(0.5); pg.screenshot(path=SH+'5pass.png',full_page=True)
     print('fb:',pg.inner_text('#fb')[:120].replace('\n',' '))
     time.sleep(0.6); pg.click('#nx'); time.sleep(0.5)
-    q=pg.evaluate('__dbg()')['qs'][1]; time.sleep(0.4); choose(pg,q); pg.click('#gchk'); time.sleep(0.6); pg.click('#nx'); time.sleep(0.6)
+    nq=len(pg.evaluate('__dbg()')['qs'])
+    for qi in range(1,nq):
+        q=pg.evaluate('__dbg()')['qs'][qi]; time.sleep(0.4); choose(pg,q); pg.click('#gchk'); time.sleep(0.6); pg.click('#nx'); time.sleep(0.6)
+    print('chunks',nq)
     rs=pg.evaluate('__dbg()'); print('phase',rs and rs['phase'])
     pg.screenshot(path=SH+'6summary.png',full_page=True)
     print('score:',pg.locator('.rc-score').first.inner_text().replace('\n',' ') if pg.locator('.rc-score').count() else '-')

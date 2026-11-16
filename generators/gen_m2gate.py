@@ -79,10 +79,10 @@ for s_, ko, ex in C3 + C4:
     assert full in t8, full
     for m in re.findall(r'\{([^}]*)\}', s_): o = m.split('|'); assert len(o) == 2 and o[0] != o[1]; nb8 += 1
 n3 = sum(len(re.findall(r'\{', x[0])) for x in C3); n4 = nb8 - n3
-day8 = {'id': 'gt8', 'name': '', 'range': '8과 본문 · 어법 선택 한 판', 'story': '8과 본문 어법 선택 한 판 · 괄호를 모두 맞혀야 100점 (덩이 2개)',
+day8 = {'id': 'gt8', 'name': '', 'range': '8과 본문 · 어법 선택 한 판', 'story': '8과 본문 어법 선택 한 판 · 괄호를 모두 맞혀야 100점 (덩이 3개)',
         'passage': D['d3']['passage'] + D['d4']['passage'],
-        'steps': [{'type': 'gate', 'title': '어법 선택 한 판', 'guide': day['steps'][0]['guide'],
-                   'items': [{'title': '본문 ❶❷ · 경주 소개 (괄호 %d개)' % n3, 'parts': mk(C3)}, {'title': '본문 ❸❹ · 규칙 · 함께하세요 (괄호 %d개)' % n4, 'parts': mk(C4)}]}]}
+        'steps': [{'type': 'gate', 'title': '어법 선택 한 판', 'guide': day['steps'][0]['guide'].replace('두 덩이', '세 덩이'),
+                   'items': [{'title': '본문 ❶❷ · 경주 소개 (괄호 %d개)' % n3, 'parts': mk(C3)}, {'title': '본문 ❸ · 규칙 (괄호 %d개)' % sum(len(re.findall(r'\{', x[0])) for x in C4[:7]), 'parts': mk(C4[:7])}, {'title': '본문 ❹ · 함께하세요 (괄호 %d개)' % sum(len(re.findall(r'\{', x[0])) for x in C4[7:]), 'parts': mk(C4[7:])}]}]}
 base = [d for d in PK['days'] if d['id'] not in ('gt7', 'gt8')]
 PK['days'] = base + [day, day8]  # 11/16 저녁: 선생님 요청으로 DAY 맨 끝으로 옮김(이름은 '어법 선택 한 판' 유지)
 for i, d in enumerate(PK['days']): d['name'] = 'DAY %d' % (i + 1)
