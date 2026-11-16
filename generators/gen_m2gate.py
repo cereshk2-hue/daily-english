@@ -29,6 +29,36 @@ C2 = [
  ("Sometimes, we share the tables with strangers and end up {becoming|become} friends.", "때때로 우리는 낯선 사람들과 테이블을 함께 쓰다가 친구가 되기도 해요.", "end up + -ing : 결국 ~하게 되다 → becoming"),
  ("It is fun to {enjoy|enjoying} the food with good people. That's why I love this hawker culture.", "좋은 사람들과 함께 음식을 즐기는 건 재미있어요. 그게 제가 이 호커 문화를 사랑하는 이유예요.", "to + 동사원형 → to enjoy"),
 ]
+
+# 11/16 저녁: 8과 본문 어법 선택 한 판 (선생님 자료: 8과 워크북 6 어법 선택형 연습 hwp) 22문장 · 괄호 34개(13 + 21)
+# 덩이 1 = 본문 ❶❷, 덩이 2 = 본문 ❸❹
+C3 = [
+ ("Do you know {what the most challenging race in the world is|what is the most challenging race in the world}? It is \"The Last Wild Race\"!", "여러분은 세상에서 가장 도전적인 경주가 무엇인지 아시나요? 그것은 '마지막 야생 경주'입니다!", "간접의문문(문장 속 의문문) → 의문사 + 주어 + 동사: what the most challenging race ~ is"),
+ ("You should join us in Southern Patagonia, Chile. It is one of the last wild {areas|area} on Earth!", "여러분은 칠레의 남부 파타고니아에서 우리와 함께하셔야 합니다. 이곳은 지구상의 마지막 야생 지역 중 하나입니다!", "one of the + 복수 명사 → areas"),
+ ("Every {year|years}, many teams from all over the world {join|joins} the race.", "매년 전 세계에서 온 많은 팀들이 이 경주에 참여합니다.", "every + 단수 명사 → year / 주어 many teams(복수) → join"),
+ ("For this race, you {need|needing} not only strength but also teamwork.", "이 경주를 위해서, 여러분은 힘뿐만 아니라 팀워크도 필요합니다.", "주어 you 뒤에 동사가 필요 → need (needing은 동사 자리에 못 옴)"),
+ ("The race course is {more|most} than 500 kilometers long and it changes every year.", "경주 코스는 500km 이상 길이가 되고 그것은 매년 바뀝니다.", "more than ~ : ~보다 많이, ~ 이상"),
+ ("Do you know {when the teams find|when do the teams find} out the course for the year? Just a day before the race!", "팀들이 그해의 코스를 언제 알게 되는지 아시나요? 바로 경주 하루 전입니다!", "간접의문문 → 의문사 + 주어 + 동사: when the teams find (do를 쓰지 않음)"),
+ ("During the race, each team {goes|go} through the wild by {doing|do} different activities.", "경주 동안, 각 팀은 다양한 활동들을 함으로써 야생을 통과합니다.", "each + 단수 명사는 단수 취급 → goes / 전치사 by 뒤 → 동명사 doing"),
+ ("They walk on rough ground, ride bikes on tough roads, and {row|rowing} boats on rapid water.", "그들은 거친 땅을 걷고, 험한 길에서 자전거를 타며, 속도가 빠른 물 위에서 배를 젓습니다.", "walk, ride와 and로 나란히(병렬) → row"),
+ ("The race is not just about sports. The teams also need {to take|taking} care of nature.", "그 경주는 단지 스포츠에 관한 것만은 아닙니다. 팀들은 또한 자연을 돌볼 필요가 있습니다.", "need + to부정사 : ~할 필요가 있다 → to take"),
+ ("They must not make fires or {leave|leaving} trash behind during the race.", "그들은 경주 중에 불을 피우거나 쓰레기를 남기지 말아야 합니다.", "must not 뒤 make와 or로 나란히 → 동사원형 leave"),
+ ("Everyone should {protect|protected} the natural environment of Southern Patagonia.", "모두가 남부 파타고니아의 자연환경을 보호해야 합니다.", "조동사 should + 동사원형 → protect"),
+]
+C4 = [
+ ("What {Are|Is} the Rules of the Race?", "경주의 규칙은 무엇인가요?", "주어 the Rules(복수) → Are"),
+ ("{To join|Join} the event, all {teams|team} must follow a few rules.", "이 행사에 참가하기 위해 모든 팀들은 몇 가지 규칙을 따라야 합니다.", "'~하기 위해'(목적) → To join / all + 복수 명사 → teams"),
+ ("For example, a team of four must {have|had} at least one man and one woman.", "예를 들어, 4명으로 구성된 팀에는 적어도 한 명의 남자와 한 명의 여자가 있어야 합니다.", "조동사 must + 동사원형 → have"),
+ ("Every {member|members} must show {that|what} they are healthy.", "모든 팀원은 그들이 건강하다는 것을 보여줘야 합니다.", "every + 단수 명사 → member / 뒤가 완전한 문장 → 접속사 that (what은 뒤가 불완전할 때)"),
+ ("Also, each {team|teams} must pass some tests that {check|checks} their skills in using ropes, reading maps, and {giving|give} first aid.", "또한, 각 팀은 로프 사용하기, 지도 읽기, 응급 처치하기에서의 기술들을 확인하는 몇 가지 테스트를 통과해야 합니다.", "each + 단수 명사 → team / 선행사 tests(복수) → check / using, reading과 나란히 → giving"),
+ ("This is important {because|because of} the race is very tough, and everyone {needs|need} {to be|being} ready for the challenges.", "이것은 중요한데 왜냐하면 경주가 매우 힘들어서 모든 사람이 도전에 준비되어 있어야 하기 때문입니다.", "뒤에 주어+동사(절) → because (because of + 명사) / everyone은 단수 → needs / need + to부정사 → to be"),
+ ("{To finish|Finish} the race, each {team|teams} must reach every checkpoint. The first team {to finish|finish} the race wins.", "경주를 끝내기 위해, 각 팀은 모든 체크포인트에 도달해야 합니다. 가장 먼저 경주를 마치는 팀이 승리합니다.", "'~하기 위해' → To finish / each + 단수 명사 → team / 명사(the first team)를 꾸미는 to부정사 → to finish (동사는 wins)"),
+ ("Are you ready {to experience|experiencing} \"The Last Wild Race\"?", "'마지막 야생 경주'를 경험할 준비가 되셨나요?", "be ready + to부정사 : ~할 준비가 되다 → to experience"),
+ ("Don't miss out on this {amazing|amazed} adventure!", "이 놀라운 모험을 놓치지 마세요!", "모험이 (사람을) 놀라게 하는 것 → -ing 형용사 amazing (amazed는 사람이 놀란 감정)"),
+ ("This wild journey is not only {exciting|excited} but also {meaningful|meaningfully}.", "이 야생의 여정은 흥미진진할 뿐만 아니라 의미도 있을 것입니다.", "여정이 흥미를 주는 것 → exciting / be동사 뒤 보어 자리 → 형용사 meaningful (부사 ✘)"),
+ ("Sign up today and {enjoy|enjoying} moments {that|who} will last a lifetime.", "오늘 바로 등록하고 평생 지속될 순간들을 즐겨보세요.", "명령문 Sign up과 and로 나란히 → 동사원형 enjoy / 선행사 moments(사물) → 관계대명사 that (who는 사람)"),
+]
+
 D = {d['id']: d for d in PK['days']}
 txt = re.sub(r'\s+', ' ', ' '.join(l[1] for d in ('d1', 'd2') for l in D[d]['passage'] if not re.match(r'^[❶-❿]$', l[1])).replace('’', "'"))
 nb = 0
@@ -42,10 +72,21 @@ day = {'id': 'gt7', 'name': '', 'range': '7과 본문 · 어법 선택 한 판',
        'passage': D['d1']['passage'] + D['d2']['passage'],
        'steps': [{'type': 'gate', 'title': '어법 선택 한 판', 'guide': "본문을 두 덩이로 나눴어요. 덩이마다 괄호를 모두 맞혀야 100점, 하나라도 틀리면 0점! 3번 안에 통과 못 하면 틀린 문장만 해설과 함께 연습하고 다시 도전해요.",
                   'items': [{'title': '본문 ❶❷ · 민찬 · Emil (괄호 14개)', 'parts': mk(C1)}, {'title': '본문 ❸ · Vivian (괄호 12개)', 'parts': mk(C2)}]}]}
-base = [d for d in PK['days'] if d['id'] != 'gt7']
-PK['days'] = base + [day]  # 11/16 저녁: 선생님 요청으로 DAY 맨 끝으로 옮김(이름은 '어법 선택 한 판' 유지)
+t8 = re.sub(r'\s+', ' ', ' '.join(l[1] for d in ('d3', 'd4') for l in D[d]['passage'] if not re.match(r'^[❶-❿]$', l[1])).replace('’', "'"))
+nb8 = 0
+for s_, ko, ex in C3 + C4:
+    full = re.sub(r'\{([^|}]*)\|[^}]*\}', r'\1', s_)
+    assert full in t8, full
+    for m in re.findall(r'\{([^}]*)\}', s_): o = m.split('|'); assert len(o) == 2 and o[0] != o[1]; nb8 += 1
+n3 = sum(len(re.findall(r'\{', x[0])) for x in C3); n4 = nb8 - n3
+day8 = {'id': 'gt8', 'name': '', 'range': '8과 본문 · 어법 선택 한 판', 'story': '8과 본문 어법 선택 한 판 · 괄호를 모두 맞혀야 100점 (덩이 2개)',
+        'passage': D['d3']['passage'] + D['d4']['passage'],
+        'steps': [{'type': 'gate', 'title': '어법 선택 한 판', 'guide': day['steps'][0]['guide'],
+                   'items': [{'title': '본문 ❶❷ · 경주 소개 (괄호 %d개)' % n3, 'parts': mk(C3)}, {'title': '본문 ❸❹ · 규칙 · 함께하세요 (괄호 %d개)' % n4, 'parts': mk(C4)}]}]}
+base = [d for d in PK['days'] if d['id'] not in ('gt7', 'gt8')]
+PK['days'] = base + [day, day8]  # 11/16 저녁: 선생님 요청으로 DAY 맨 끝으로 옮김(이름은 '어법 선택 한 판' 유지)
 for i, d in enumerate(PK['days']): d['name'] = 'DAY %d' % (i + 1)
 src = open(path, encoding='utf-8').read(); head = src[:src.index('window.PKG')]
 if '한 판' not in head: head = head.rstrip('\n') + '\n/* 11/16: 7과 본문 어법 한 판 DAY gt7 (generators/gen_m2gate.py) */\n'
 write(PK, path, head)
-print('괄호', nb, '·', [d['name'] + ' ' + d['range'] for d in PK['days']][-3:])
+print('괄호 7과', nb, '· 8과', nb8, n3, n4, '·', [d['name'] + ' ' + d['range'] for d in PK['days']][-3:])
