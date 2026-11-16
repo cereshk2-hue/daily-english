@@ -74,7 +74,7 @@ function build(){
 function kindOf(c){var t=String(c.range||"")+" "+String(c.name||"");return/끝판왕/.test(t)?"끝판왕":/비밀노트/.test(t)?"비밀노트":/Wrap-?up/i.test(t)?"Wrap-up":/변형기출/.test(t)?"변형기출":/마무리/.test(t)?"기출마무리":/실전 변형/.test(t)?"실전변형":/문법/.test(t)?"문법":"실전"}
 function short(c){var r=String(c.test?c.name:c.range||"");
   r=r.replace(/^실전 어휘 뚫기\s*\d+\s*·\s*/,"어휘 ").replace(/^내용 꿰뚫기\s*\d*\s*·\s*/,"꿰뚫기 ").replace(/^YBM\s*/,"YBM").replace(/\s*·\s*/g," ").replace(/번/g,"").replace(/Lesson\s*/g,"L").replace(/본문\s*/,"본문");
-  r=r.replace(/^(끝판왕|비밀노트|Wrap-?up)\s*/i,"").replace(/^(너른터\s*)?(\d과)\s*(변형기출|실전 변형)\s*/,"$2 ").replace(/^(\d·\d과)\s*기출\s*마무리\s*/,"$1 ").replace(/\s+/g," ").trim();return r.length>12?r.slice(0,11)+"…":r}
+  r=r.replace(/^(끝판왕|비밀노트|Wrap-?up)\s*/i,"").replace(/^(너른터\s*)?(\d과)\s*(변형기출|실전 변형)\s*/,"$2 ").replace(/^(\d) (\d과)\s*기출\s*마무리\s*/,"$1·$2 ").replace(/\s+/g," ").trim();return r.length>12?r.slice(0,11)+"…":r}
 function cols(u){var C=[];
   if(u.meta){u.meta.days.forEach(function(d){C.push({key:"d:"+d[0],name:d[1],range:d[2]})});u.meta.tests.forEach(function(t){C.push({key:"t:"+t[0],name:t[1],range:t[2],test:1})})}
   Object.keys(u.extra).forEach(function(k){C.push(u.extra[k])});
