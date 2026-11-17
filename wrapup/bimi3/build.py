@@ -145,6 +145,8 @@ if __name__ == '__main__':
         try: C = importlib.import_module('cfg_' + fk.replace('-', '').replace('_', '')).C
         except ModuleNotFoundError: continue
         its, grs = parse(fk, C)
+        its = [i for i in its if i.get('kind') != 'write']   # 11/17 중산고2는 서술형 없음 → 객관식만, 번호 다시
+        for k, i in enumerate(its, 1): i['n'] = str(k)
         GR[tid] = {str(k): v for k, v in grs.items()}
         tests.append({'id': tid, 'kind': 'bimi', 'title': '비밀노트 변형문제 ' + sh, 'short': '비밀노트 ' + sh, 'school': '중산고 2학년', 'minutes': 50, 'items': its})
         mc = [i for i in its if i.get('kind') != 'write']
