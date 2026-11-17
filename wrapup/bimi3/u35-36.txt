@@ -1,0 +1,352 @@
+다음 밑줄 친 부분 중에서 어법상 틀린 것은? (35번)
+http://edu-lab.kr 교육연구소                                          
+
+비밀노트               26년 고2 9월 모의고사             [ 35-36번 ]	                            
+edu-lab.kr – 수능대비/내신대비       /                                    비밀노트
+ ④
+  Digital twins are digital replicas of assets or activities ❶using modeling and sensors to create digital representations. Digital twins are not new; engineering teams in various industries have ❷used 3D renderings of computer­aided design models, asset models, and process simulations for years. However, faster wireless networks and the resulting availability of real­time data ❸enable much more detailed and dynamic digital representations. When sensors collect data from a connected device, the sensor data can be used to continuously ❹updating the digital twin. The digital twin becomes a real­time accurate copy of a physical object’s properties and states. For instance, digital twins of physical assets such as power­generation turbines, jet engines, and train engines are becoming common when the assets are very valuable and when downtime would be very ❺costly.  
+* replica: 복제본 ** downtime: 비가동 시간
+     
+다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은? (35번)
+ ②
+ Digital twins are digital replicas of assets or activities using modeling and sensors to ❶create digital representations. Digital twins are not new; engineering teams in various industries have ❷ignored 3D renderings of computer-aided design models, asset models, and process simulations for years. However, ❸faster wireless networks and the resulting availability of real-time data enable much more detailed and dynamic digital representations. When sensors collect data from a connected device, the sensor data can be used to ❹continuously update the digital twin. The digital twin becomes a real-time accurate copy of a physical object’s properties and states. For instance, digital twins of physical assets such as power-generation turbines, jet engines, and train engines are becoming ❺common when the assets are very valuable and when downtime would be very costly.
+* replica: 복제본 ** downtime: 비가동 시간
+주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은? (35번)
+ ②
+ Digital twins are digital replicas of assets or activities using modeling and sensors to create digital representations. Digital twins are not new; engineering teams in various industries have used 3D renderings of computer­aided design models, asset models, and process simulations for years.
+(A)When sensors collect data from a connected device, the sensor data can be used to continuously update the digital twin. The digital twin becomes a real­time accurate copy of a physical object’s properties and states.
+(B)However, faster wireless networks and the resulting availability of real­time data enable much more detailed and dynamic digital representations.
+(C)For instance, digital twins of physical assets such as power­generation turbines, jet engines, and train engines are becoming common when the assets are very valuable and when downtime would be very costly.
+* replica: 복제본 ** downtime: 비가동 시간
+① (A) - (C) - (B)  ② (B) - (A) - (C)
+③ (B) - (C) - (A)  ④ (C) - (A) - (B)
+⑤ (C) - (B) - (A)
+글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은? (35번)
+ ④
+The digital twin becomes a real­time accurate copy of a physical object’s properties and states.
+Digital twins are digital replicas of assets or activities using modeling and sensors to create digital representations. ( ① ) Digital twins are not new; engineering teams in various industries have used 3D renderings of computer­aided design models, asset models, and process simulations for years. ( ② ) However, faster wireless networks and the resulting availability of real­time data enable much more detailed and dynamic digital representations. ( ③ ) When sensors collect data from a connected device, the sensor data can be used to continuously update the digital twin. ( ④ ) For instance, digital twins of physical assets such as power­generation turbines, jet engines, and train engines are becoming common when the assets are very valuable and when downtime would be very costly. ( ⑤ )
+* replica: 복제본 ** downtime: 비가동 시간
+( ① ) ( ② ) ( ③ ) ( ④ ) ( ⑤ )
+다음 밑줄 친 부분 ①~⑤중 어법상 어색한 것을 모두 골라 틀린 부분을 각각 바르게 고치시오. (35번)
+ ①Digital twins are digital replicas of assets or activities using modeling and sensors to create digital representations
+④the sensor data can be used to continuously update the digital twin
+⑤train engines are becoming common when the assets are very valuable and when downtime would be very costly
+  ①Digital twins are digital replicas of assets or activities used modeling and sensors to create digital representations. Digital twins are not new; ②engineering teams in various industries have used 3D renderings of computer­aided design models, asset models, and process simulations for years. However, ③faster wireless networks and the resulting availability of real­time data enable much more detailed and dynamic digital representations. When sensors collect data from a connected device, ④the sensor data can use to continuously update the digital twin. The digital twin becomes a real­time accurate copy of a physical object’s properties and states. For instance, digital twins of physical assets such as power­generation turbines, jet engines, and ⑤train engines are becoming common when the assets are very valuably and when downtime would be very costly. 
+* replica: 복제본 ** downtime: 비가동 시간
+다음 글에서 어법/문맥상 어색한 단어를 각각  찾아 수정하시오. (35번)
+ 
+
+수정 전
+수정 후
+어법상
+updating
+update
+문맥상
+rare
+common
+  Digital twins are digital replicas of assets or activities using modeling and sensors to create digital representations. Digital twins are not new; engineering teams in various industries have used 3D renderings of computer­aided design models, asset models, and process simulations for years. However, faster wireless networks and the resulting availability of real­time data enable much more detailed and dynamic digital representations. When sensors collect data from a connected device, the sensor data can be used to continuously updating the digital twin. The digital twin becomes a real­time accurate copy of a physical object’s properties and states. For instance, digital twins of physical assets such as power­generation turbines, jet engines, and train engines are becoming rare when the assets are very valuable and when downtime would be very costly. 
+* replica: 복제본 ** downtime: 비가동 시간
+
+수정 전
+수정 후
+어법상
+문맥상
+다음 빈칸에 들어갈 말로 가장 적절한 것은? (35번)
+ ②
+ Digital twins are digital replicas of assets or activities using modeling and sensors to create digital representations. Digital twins are not new; engineering teams in various industries have used 3D renderings of computer­aided design models, asset models, and process simulations for years. However, faster wireless networks and the resulting availability of real­time data enable much more detailed and dynamic digital representations. When sensors collect data from a connected device, the sensor data can be used to ________________________. The digital twin becomes a real­time accurate copy of a physical object’s properties and states. For instance, digital twins of physical assets such as power­generation turbines, jet engines, and train engines are becoming common when the assets are very valuable and when downtime would be very costly.
+① replace the physical system with fully automated operations
+② reflect the current conditions of the virtual model without delay
+③ reduce the overall cost of installing new high-speed wireless networks
+④ design artificial intelligence models without using actual physical sensors
+⑤ predict potential equipment failures before manufacturing the real machinery
+다음 빈칸에 들어갈 말로 가장 적절한 것은? (35번)
+ ③
+ Digital twins are digital replicas of assets or activities using modeling and sensors to create digital representations. Digital twins are not new; engineering teams in various industries have used 3D renderings of computer­aided design models, asset models, and process simulations for years. However, faster wireless networks and the resulting availability of real­time data enable much more detailed and dynamic digital representations. When sensors collect data from a connected device, the sensor data can be used to continuously update the digital twin. ________________________. For instance, digital twins of physical assets such as power­generation turbines, jet engines, and train engines are becoming common when the assets are very valuable and when downtime would be very costly.
+① Engineering teams are starting to replace digital models with physical assets
+② Fast wireless networks depend heavily on process simulations from the past
+③ The digital twin becomes a real­time accurate copy of a physical object’s properties and states
+④ High-cost machinery can operate safely without collecting real-time sensor data
+⑤ Digital representations are losing their accuracy due to complex network errors
+다음 글의 내용으로 일치하는 것을 모두 고르시오. (35번)
+ ①②⑤
+  Digital twins are digital replicas of assets or activities using modeling and sensors to create digital representations. Digital twins are not new; engineering teams in various industries have used 3D renderings of computer­aided design models, asset models, and process simulations for years. However, faster wireless networks and the resulting availability of real­time data enable much more detailed and dynamic digital representations. When sensors collect data from a connected device, the sensor data can be used to continuously update the digital twin. The digital twin becomes a real­time accurate copy of a physical object’s properties and states. For instance, digital twins of physical assets such as power­generation turbines, jet engines, and train engines are becoming common when the assets are very valuable and when downtime would be very costly.  
+①Digital twins function as virtual copies of physical items or processes created through sensors and modeling.
+②Engineering specialists across diverse fields have utilized computer-aided design renderings and simulations for a long time.
+③The implementation of high-speed wireless networks has significantly reduced the overall frequency of collecting data from sensors.
+④Digital twins are exclusively applied to inexpensive machinery because their setup and operation require minimal financial effort.
+⑤A digital twin turns into a precise, real-time reflection that shows the actual characteristics and conditions of a physical object.
+다음 글의 내용으로 일치하지 않는 것을 모두 고르시오. (35번)
+ ①③④
+  Digital twins are digital replicas of assets or activities using modeling and sensors to create digital representations. Digital twins are not new; engineering teams in various industries have used 3D renderings of computer­aided design models, asset models, and process simulations for years. However, faster wireless networks and the resulting availability of real­time data enable much more detailed and dynamic digital representations. When sensors collect data from a connected device, the sensor data can be used to continuously update the digital twin. The digital twin becomes a real­time accurate copy of a physical object’s properties and states. For instance, digital twins of physical assets such as power­generation turbines, jet engines, and train engines are becoming common when the assets are very valuable and when downtime would be very costly. 
+①Digital twins were only invented recently after the complete deployment of high-speed wireless networks.
+②The availability of real-time data through faster networks has made digital representations far more active and detailed.
+③Data gathered from connected devices is used exclusively for periodic manual checks once every few weeks.
+④Digital twins are mainly utilized for low-value equipment whose temporary shutdown causes completely zero financial loss.
+⑤High-value machinery like jet engines and train engines commonly uses digital twins to manage operation risks.
+다음 글의 내용을 한 문장으로 요약하고자 한다. 빈칸(A),(B)에 들어갈 말로 가장 적절한 것은?  (35번)
+ ⑤
+  Digital twins are digital replicas of assets or activities using modeling and sensors to create digital representations. Digital twins are not new; engineering teams in various industries have used 3D renderings of computer­aided design models, asset models, and process simulations for years. However, faster wireless networks and the resulting availability of real­time data enable much more detailed and dynamic digital representations. When sensors collect data from a connected device, the sensor data can be used to continuously update the digital twin. The digital twin becomes a real­time accurate copy of a physical object’s properties and states. For instance, digital twins of physical assets such as power­generation turbines, jet engines, and train engines are becoming common when the assets are very valuable and when downtime would be very costly. 
+Although digital models have long been utilized in engineering, the advent of high-speed networks has enabled digital twins to (A)_____________ real-time data, transforming them into highly precise copies that are especially valuable for (B)_____________ industrial assets.
+
+    (A)
+    (B)
+①
+ignore
+low-cost
+②
+incorporate
+dispensable
+③
+distort
+high-risk
+④
+ignore
+critical
+⑤
+incorporate
+critical
+다음 글의 내용을 한 문장으로 요약 할 때, 빈칸에 들어갈 말을 본문에서 찾아 쓰되, 필요시 변형하시오. (35번)
+ (1) collect, (2) update, (3) accurate, (4) properties, (5) valuable, (6) downtime
+  Digital twins are digital replicas of assets or activities using modeling and sensors to create digital representations. Digital twins are not new; engineering teams in various industries have used 3D renderings of computer­aided design models, asset models, and process simulations for years. However, faster wireless networks and the resulting availability of real­time data enable much more detailed and dynamic digital representations. When sensors collect data from a connected device, the sensor data can be used to continuously update the digital twin. The digital twin becomes a real­time accurate copy of a physical object’s properties and states. For instance, digital twins of physical assets such as power­generation turbines, jet engines, and train engines are becoming common when the assets are very valuable and when downtime would be very costly. 
+Although digital twins are not new, faster wireless networks now make real-time data available, allowing sensors to (1)______________ data and (2)______________ the digital twin. This turns the digital twin into an (3)_____________ copy that reflects the physical object's (4)________________. As a result, these digital twins are becoming common for (5)___________________ physical assets where (6)______________ is expensive.
+다음 글의 주제로 가장 적절한 것은? (35번)
+ ⑤
+  Digital twins are digital replicas of assets or activities using modeling and sensors to create digital representations. Digital twins are not new; engineering teams in various industries have used 3D renderings of computer­aided design models, asset models, and process simulations for years. However, faster wireless networks and the resulting availability of real­time data enable much more detailed and dynamic digital representations. When sensors collect data from a connected device, the sensor data can be used to continuously update the digital twin. The digital twin becomes a real­time accurate copy of a physical object’s properties and states. For instance, digital twins of physical assets such as power­generation turbines, jet engines, and train engines are becoming common when the assets are very valuable and when downtime would be very costly. 
+① historical development of 3D computer-aided design software
+② limitations of wireless networks in processing sensor-collected data
+③ high operational maintenance costs of power-generation turbines
+④ necessity of replacing physical machinery with artificial intelligence
+⑤ advancement of digital twins driven by real-time data collection
+다음 글의 제목으로 가장 적절한 것은? (35번)
+ ④
+  Digital twins are digital replicas of assets or activities using modeling and sensors to create digital representations. Digital twins are not new; engineering teams in various industries have used 3D renderings of computer­aided design models, asset models, and process simulations for years. However, faster wireless networks and the resulting availability of real­time data enable much more detailed and dynamic digital representations. When sensors collect data from a connected device, the sensor data can be used to continuously update the digital twin. The digital twin becomes a real­time accurate copy of a physical object’s properties and states. For instance, digital twins of physical assets such as power­generation turbines, jet engines, and train engines are becoming common when the assets are very valuable and when downtime would be very costly. 
+① Wireless Networks: The Primary Cause of System Downtime
+② Traditional 3D Rendering: Why It Outperforms Digital Twins
+③ How to Reduce the Manufacturing Cost of High-Value Jet Engines
+④ Digital Twins: Mirroring Physical Assets in Real Time
+⑤ Sensor Technology: A Solution to Replace Human Engineers
+다음 글의 요지로 가장 적절한 것은?
+ ⑤
+  Digital twins are digital replicas of assets or activities using modeling and sensors to create digital representations. Digital twins are not new; engineering teams in various industries have used 3D renderings of computer­aided design models, asset models, and process simulations for years. However, faster wireless networks and the resulting availability of real­time data enable much more detailed and dynamic digital representations. When sensors collect data from a connected device, the sensor data can be used to continuously update the digital twin. The digital twin becomes a real­time accurate copy of a physical object’s properties and states. For instance, digital twins of physical assets such as power­generation turbines, jet engines, and train engines are becoming common when the assets are very valuable and when downtime would be very costly.  
+① 무선 네트워크 기술의 발달은 전통적인 3D 설계 방식의 종말을 가져왔다.
+② 고가의 산업용 기계를 유지 관리하기 위해서는 정기적인 수동 점검이 필수적이다.
+③ 데이터 수집 장비의 높은 설치 비용으로 인해 디지털 트윈의 상용화가 지연되고 있다.
+④ 센서 단독으로는 물리적 대상의 실시간 상태 변화를 정확하게 측정하기 어렵다.
+⑤ 무선 네트워크와 센서 기술을 기반으로 한 실시간 디지털 트윈은 고가치 자산 관리에 널리 활용된다.
+다음 밑줄 친 부분 중 영영풀이가 잘못된 것은? (35번)
+ ⑤
+Digital twins are digital ①replicas of assets or activities using modeling and sensors to create digital representations. Digital twins are not new; engineering teams in various industries have used 3D renderings of computer­aided design models, asset models, and process simulations for years. However, faster wireless networks and the resulting ②availability of real­time data enable much more detailed and dynamic digital representations. When sensors collect data from a connected device, the sensor data can be used to continuously ③update the digital twin. The digital twin becomes a real­time accurate copy of a physical object’s ④properties and states. For instance, digital twins of physical assets such as power­generation turbines, jet engines, and train engines are becoming common when the assets are very valuable and when ⑤downtime would be very costly.
+① replicas: exact copies or reproductions of something, especially made on a smaller scale or using digital tools
+② availability: the state of being accessible, reachable, or ready for immediate use
+③ update: to make something more modern or accurate by adding the most recent information
+④ properties: qualities, attributes, or characteristics that belong to a specific object or system
+⑤ downtime: a period when a system, machine, or factory is fully operational and performing at its peak potential
+다음 글을 읽고 주어진 문제에 답하시오. (35번)
+Digital twins are digital replicas of assets or activities using modeling and sensors to create digital representations. Digital twins are not new; engineering teams in various industries have used 3D renderings of computer­aided design models, asset models, and process simulations for years.  faster wireless networks and the resulting availability of real­time data enable much more detailed and dynamic digital representations. When sensors collect data from a connected device, the sensor data can be used to continuously update the digital twin. (A)[디지털 트윈은 물리적 객체의 속성과 상태의 실시간으로 정확한 복제본이 된다.] For instance, digital twins of physical assets such as power­generation turbines, jet engines, and train engines are becoming common when the assets are very valuable and when downtime would be very costly.
+위 글의 주제를 영작하도록, 다음 주어진 단어를 바르게 배열하시오.
+ Digital twins are continuously updated by real-time data enabled by wireless networks.
+[보기]
+ttwins / data / enabled / by / by / wireless / digital / are / continuously / real-time / networks / updated
+지문의 밑줄 친 (A)의 우리말과 같은 뜻이 되도록 주어진 단어들을 배열하여 영작하시오.
+ The digital twin becomes a real-time accurate copy of a physical object’s properties and states.
+[보기]
+object’s / the / physical / twin / properties / copy / digital / accurate / a / real-time / of / and / becomes / states / a
+다음 글을 읽고 주어진 문제에 답하시오. (35번)
+ Digital twins are digital replicas of assets or activities using modeling and sensors to create digital representations. Digital twins are not new; engineering teams in various industries have used 3D renderings of computer­aided design models, asset models, and process simulations for years. However, (A)[더 빠른 무선 네트워크와 그에 따른 실시간 데이터의 가용성은 훨씬 더 상세하고 다이내믹한 디지털 표현을 가능하게 한다.] When sensors collect data from a connected device, the sensor data can be used to continuously update the digital twin. The digital twin becomes a real­time accurate copy of a physical object’s properties and states. For instance, digital twins of physical assets such as power­generation turbines, jet engines, and train engines are becoming common when the assets are very valuable and when (B)downtime would be very costly.
+위 지문의 밑줄 친 우리말 (A)의 뜻에 맞도록 <보기>의 단어들을 어법에 맞게 바르게 배열하여 영작하시오.
+ faster wireless networks and the resulting availability of real-time data enable much more detailed and dynamic digital representations.
+[보기]
+enable / data / real-time / of / faster / wireless / detailed / dynamic / much / more / networks / digital / and / availability / the / resulting / and / representations
+위 지문의 밑줄 친 (B)downtime이 일어났을 때 가장 손실이 큰 물리적 자산의 예시 3가지를 본문에서 찾아 영어로 쓰시오.
+ power-generation turbines, jet engines, and train engines
+[조건]
+본문에 등장하는 연속된 7단어의 영어 구절을 원문 그대로 쓸 것.
+다음 글을 읽고 물음에 답하시오. (35번)
+ Digital twins are digital replicas of assets or activities using modeling and sensors to create digital representations. Digital twins are not new; engineering teams in various industries have used 3D renderings of computer­aided design models, asset models, and process simulations for years. However, faster wireless networks and the resulting availability of real­time data enable much more detailed and dynamic digital representations. When sensors collect data from a connected device, the sensor data can be used to continuously update the digital twin. (A)The digital twin becomes a real­time accurate copy of a physical object’s properties and states. For instance, digital twins of physical assets such as power­generation turbines, jet engines, and train engines are becoming common when the assets are very valuable and when downtime would be very costly.
+밑줄 친 (A)The digital twin becomes a real­time accurate copy of a physical object’s properties and states가 의미하는 바로 가장 적절한 것은? 
+ ③
+① duplicating a mechanical layout for simple offline maintenance
+② replacing actual physical machines with software-based automated systems
+③ reflecting the continuous status of a real asset in a virtual environment without delay
+④ creating a historical archive of past simulation results for future reference
+⑤ reducing the operational cost of high-speed wireless networks
+ 위 글을 읽고 다음 질문 중 대답할 수 없는 하나는?
+ ②
+① What technologies are used to create digital twins?
+② How many seconds does it take for sensors to transfer data to the digital twin?
+③ Why are digital twins widely used for jet engines and train engines?
+④ What factor has made digital representations more dynamic and detailed recently?
+⑤ How long have engineering teams used 3D renderings and simulations?
+다음 밑줄 친 부분 중에서 어법상 틀린 것은? (36번)
+http://edu-lab.kr 교육연구소                                          
+
+비밀노트               26년 고2 9월 모의고사             [ 35-36번 ]	                             
+edu-lab.kr – 수능대비/내신대비       /                                    비밀노트
+ ①
+ The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates ❶are one of the most important determinants of biological success ― measured as survival to reproductive age and the production of offspring. Many studies ❷have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to anticipate ❸how a setting will serve their future needs. For example, the black­throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories preferentially among the red spruce trees early in the summer months, even though these trees offer less food than the neighboring white spruce trees. Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest ❹that offers the easier pickings. Somehow, the warbler has been guided to settle in locations that will suit its future parenting needs better than its present ❺ones. 
+* forage: 먹이를 찾아다니다 ** spruce: 가문비나무
+     
+다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은? (36번)
+ ④
+ The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates is one of the most important determinants of biological ❶success ― measured as survival to reproductive age and the production of offspring. Many studies have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to ❷anticipate how a setting will serve their future needs. For example, the black-throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories ❸preferentially among the red spruce trees early in the summer months, even though these trees offer less food than the neighboring white spruce trees. Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest that offers the ❹harder pickings. Somehow, the warbler has been guided to settle in locations that will suit its future parenting needs ❺better than its present ones..
+* forage: 먹이를 찾아다니다 ** spruce: 가문비나무
+글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은? (36번)
+ ③
+ For example, the black-throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories preferentially among the red spruce trees early in the summer months, even though these trees offer less food than the neighboring white spruce trees.
+( ① ) The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates is one of the most important determinants of biological success ― measured as survival to reproductive age and the production of offspring. ( ② ) Many studies have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to anticipate how a setting will serve their future needs. ( ③ ) Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest that offers the easier pickings. ( ④ ) Somehow, the warbler has been guided to settle in locations that will suit its future parenting needs better than its present ones. ( ⑤ )
+* forage: 먹이를 찾아다니다 ** spruce: 가문비나무
+다음 글에서 전체 흐름과 관계 없는 문장은? (36번)
+ ③
+ The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates is one of the most important determinants of biological success ― measured as survival to reproductive age and the production of offspring. ❶Many studies have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to anticipate how a setting will serve their future needs. ❷For example, the black­throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories preferentially among the red spruce trees early in the summer months, even though these trees offer less food than the neighboring white spruce trees. ❸Despite their small size, these warblers are known to exhibit aggressive territorial behavior to drive away competitive bird species. ❹Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest that offers the easier pickings. ❺Somehow, the warbler has been guided to settle in locations that will suit its future parenting needs better than its present ones.
+* forage: 먹이를 찾아다니다 ** spruce: 가문비나무
+다음 밑줄 친 부분 ①~⑤중 어법상 어색한 것을 모두 골라 틀린 부분을 각각 바르게 고치시오. (36번)
+ ①the availability of mates is one of the most important determinants of biological success
+②not only do animals have a remarkable ability to seek out the best available locations for the necessities of life
+③even though these trees offer less food than the neighboring white spruce trees
+ The ability to select a set of surroundings suitable for foraging, shelter from predators, and ①the availability of mates is one of the most important determinant of biological success ― measured as survival to reproductive age and the production of offspring. Many studies have shown that ②not only animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to anticipate how a setting will serve their future needs. For example, the black­throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories preferentially among the red spruce trees early in the summer months, ③in spite of these trees offer less food than the neighboring white spruce trees. Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest that offers the easier pickings. Somehow, the warbler has been guided to settle in locations that will suit its future parenting needs better than its present ones.
+* forage: 먹이를 찾아다니다 ** spruce: 가문비나무
+다음 글에서 어법/문맥상 어색한 단어를 각각  찾아 수정하시오. (36번)
+ 
+
+수정 전
+수정 후
+어법상
+measuring
+measured
+문맥상
+more
+less
+The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates is one of the most important determinants of biological success ― measuring as survival to reproductive age and the production of offspring. Many studies have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to anticipate how a setting will serve their future needs. For example, the black-throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories preferentially among the red spruce trees early in the summer months, even though these trees offer more food than the neighboring white spruce trees. Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest that offers the easier pickings. Somehow, the warbler has been guided to settle in locations that will suit its future parenting needs better than its present ones.
+* forage: 먹이를 찾아다니다 ** spruce: 가문비나무
+
+수정 전
+수정 후
+어법상
+문맥상
+다음 빈칸에 들어갈 말로 가장 적절한 것은? (36번)
+ ①
+ The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates is one of the most important determinants of biological success ― measured as survival to reproductive age and the production of offspring. Many studies have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to ____________________________________. For example, the black-throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories preferentially among the red spruce trees early in the summer months, even though these trees offer less food than the neighboring white spruce trees. Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest that offers the easier pickings. Somehow, the warbler has been guided to settle in locations that will suit its future parenting needs better than its present ones.  
+① predict the potential of an environment for later use
+② modify their physical traits to fit current surroundings
+③ compete violently with others for limited food
+④ forget their previous habitats to adapt quickly
+⑤ focus entirely on immediate survival rather than reproduction 
+다음 빈칸에 들어갈 말로 가장 적절한 것은? (36번)
+ ④
+ The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates is one of the most important determinants of biological success ― measured as survival to reproductive age and the production of offspring. Many studies have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to anticipate how a setting will serve their future needs. For example, the black-throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories preferentially among the red spruce trees early in the summer months, even though these trees offer less food than the neighboring white spruce trees. Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest that offers the easier pickings. Somehow, the warbler has been guided to settle in locations that will ______________________________________________.
+① provide maximum food for itself during the early summer
+② protect its current territory from other aggressive songbirds
+③ allow it to completely avoid building nests in spruce forests
+④ suit its future parenting needs better than its present ones
+⑤ prioritize immediate shelter over the survival of its offspring
+다음 글의 내용으로 일치하는 것을 모두 고르시오. (36번)
+ ①②
+ The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates is one of the most important determinants of biological success ― measured as survival to reproductive age and the production of offspring. Many studies have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to anticipate how a setting will serve their future needs. For example, the black­throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories preferentially among the red spruce trees early in the summer months, even though these trees offer less food than the neighboring white spruce trees. Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest that offers the easier pickings. Somehow, the warbler has been guided to settle in locations that will suit its future parenting needs better than its present ones. 
+①Biological success can be evaluated by an animal's survival to breeding age and its reproduction.
+②Animals possess the capacity to predict how a certain environment will fulfill their upcoming necessities.
+③The black-throated green warbler entirely avoids red spruce trees in early summer due to a complete lack of food.
+④When baby birds require feeding, the white spruce forest strictly offers much easier foraging opportunities than the red one.
+⑤The warbler always prioritizes its immediate current needs over its future parenting requirements when settling in a location.
+다음 글의 내용으로 일치하지 않는 것을 모두 고르시오. (36번)
+ ①③
+ The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates is one of the most important determinants of biological success ― measured as survival to reproductive age and the production of offspring. Many studies have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to anticipate how a setting will serve their future needs. For example, the black­throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories preferentially among the red spruce trees early in the summer months, even though these trees offer less food than the neighboring white spruce trees. Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest that offers the easier pickings. Somehow, the warbler has been guided to settle in locations that will suit its future parenting needs better than its present ones.
+①Finding a shelter from predators is the only factor that determines an animal's biological success.
+②Numerous studies indicate that animals can foresee whether a habitat will be beneficial for their future.
+③In early summer, red spruce trees provide far more food than white spruce trees, which attracts the warblers.
+④As time passes and baby birds require feeding, gathering food becomes easier in the red spruce forest.
+⑤The habitat choice of the warbler is directed more by its upcoming parenting duties than by its current conditions.
+다음 글의 내용을 한 문장으로 요약하고자 한다. 빈칸(A),(B)에 들어갈 말로 가장 적절한 것은?  (36번)
+ ②
+ The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates is one of the most important determinants of biological success ― measured as survival to reproductive age and the production of offspring. Many studies have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to anticipate how a setting will serve their future needs. For example, the black­throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories preferentially among the red spruce trees early in the summer months, even though these trees offer less food than the neighboring white spruce trees. Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest that offers the easier pickings. Somehow, the warbler has been guided to settle in locations that will suit its future parenting needs better than its present ones.
+Animals possess the remarkable ability to (A)_______________ their habitat's potential for upcoming necessities, often sacrificing (B)______________ benefits to guarantee their long-term parenting success.
+
+    (A)
+    (B)
+①
+evaluate 
+future
+②
+foresee 
+immediate 
+③
+foresee 
+permanent 
+④
+disregard 
+immediate 
+⑤
+disregard 
+permanent 
+다음 글의 내용을 한 문장으로 요약 할 때, 빈칸에 들어갈 말을 본문에서 찾아 쓰되, 필요시 변형하시오. (36번)
+ (1) select, (2) anticipating, (3) future, (4) nourishment, (5) present
+ The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates is one of the most important determinants of biological success ― measured as survival to reproductive age and the production of offspring. Many studies have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to anticipate how a setting will serve their future needs. For example, the black­throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories preferentially among the red spruce trees early in the summer months, even though these trees offer less food than the neighboring white spruce trees. Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest that offers the easier pickings. Somehow, the warbler has been guided to settle in locations that will suit its future parenting needs better than its present ones.
+Animals have a remarkable ability to (1)________________ their locations by (2)______________ their (3)_______________ needs, such as providing (4)_______________ for their offspring, rather than merely satisfying their (5)_______________ conditions.
+다음 글의 주제로 가장 적절한 것은? (36번)
+ ②
+ The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates is one of the most important determinants of biological success ― measured as survival to reproductive age and the production of offspring. Many studies have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to anticipate how a setting will serve their future needs. For example, the black­throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories preferentially among the red spruce trees early in the summer months, even though these trees offer less food than the neighboring white spruce trees. Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest that offers the easier pickings. Somehow, the warbler has been guided to settle in locations that will suit its future parenting needs better than its present ones.
+① the significance of immediate food availability in bird habitats
+② animals' inherent capability to select habitats for forthcoming reproductive demands
+③ aggressive competition among songbirds for better nesting territories
+④ various strategies of birds to avoid predators in spruce forests
+⑤ the biological changes in songbirds caused by seasonal food shortages
+다음 글의 제목으로 가장 적절한 것은? (36번)
+ ④
+ The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates is one of the most important determinants of biological success ― measured as survival to reproductive age and the production of offspring. Many studies have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to anticipate how a setting will serve their future needs. For example, the black­throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories preferentially among the red spruce trees early in the summer months, even though these trees offer less food than the neighboring white spruce trees. Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest that offers the easier pickings. Somehow, the warbler has been guided to settle in locations that will suit its future parenting needs better than its present ones.
+① Red Spruce vs. White Spruce: An Unending Battle
+② Why Immediate Survival Always Comes First in Nature
+③ The Hidden Risks of Raising Offspring in Harsh Environments
+④ Nature's Foresight: Selecting a Home for Tomorrow's Offspring
+⑤ Finding a Mate: The Ultimate Goal of Animal Migration
+다음 글의 요지로 가장 적절한 것은?
+ ①
+ The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates is one of the most important determinants of biological success ― measured as survival to reproductive age and the production of offspring. Many studies have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to anticipate how a setting will serve their future needs. For example, the black­throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories preferentially among the red spruce trees early in the summer months, even though these trees offer less food than the neighboring white spruce trees. Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest that offers the easier pickings. Somehow, the warbler has been guided to settle in locations that will suit its future parenting needs better than its present ones. 
+① 동물은 당장의 조건보다 장차 다가올 번식과 육아에 유리한 서식지를 선택하는 능력이 있다.
+② 조류는 먹이가 부족한 환경에 적응하기 위해 신체적 특징을 지속적으로 변화시킨다.
+③ 포식자로부터 새끼를 보호하기 위해서는 먹이의 풍부함보다 은신처의 안전성이 더 중요하다.
+④ 동물 생태계에서는 가장 강하고 우월한 개체만이 최적의 서식지를 독점할 수 있다.
+⑤ 동물들은 계절의 변화에 따라 먹이가 더 풍부한 곳을 찾아 끊임없이 이동하는 습성을 지닌다.
+다음 밑줄 친 부분 중 영영풀이가 잘못된 것은? (36번)
+ ③
+ The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates is one of the most important ①determinants of biological success ― measured as survival to reproductive age and the production of offspring. Many studies have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to ②anticipate how a setting will serve their future needs. For example, the black-throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories ③preferentially among the red spruce trees early in the summer months, even though these trees offer less food than the neighboring white spruce trees. Later, though, when nests are built and hungry baby birds need ④nourishment, it is the red spruce forest that offers the easier pickings. Somehow, the warbler has been guided to settle in locations that will ⑤suit its future parenting needs better than its present ones.
+① things that control or strongly influence what happens
+② to expect that something will happen and be ready for it
+③ in a way that treats all options equally without giving any advantage
+④ the food that animals or plants need to grow and stay healthy
+⑤ to meet the needs or requirements of a particular situation
+다음 글을 읽고 주어진 문제에 답하시오. (36번)
+The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates is one of the most important determinants of biological success ― measured as survival to reproductive age and the production of offspring. Many studies have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to anticipate how a setting will serve their future needs. For example, the black-throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories preferentially among the red spruce trees early in the summer months, even though these trees offer less food than the neighboring white spruce trees. Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest that offers the easier pickings. Somehow, (A) [그 솔새는 그것의 현재의 필요보다 미래의 육아 필요에 더 잘 맞을 장소에 정착하도록 이끌려왔다.]
+위 글의 주제를 영작하도록, 다음 주어진 단어를 바르게 배열하시오.
+ Animals prioritize future parenting needs over immediate food.
+[보기]
+animals / food / future / immediate / needs / over / parenting / prioritize
+지문의 밑줄 친 (A)의 우리말과 같은 뜻이 되도록 주어진 단어들을 배열하여 영작하시오.
+ the warbler has been guided to settle in locations that will suit its future parenting needs better than its present ones.
+[보기]
+present / guided / suit / its / future / the / locations / parenting / needs / ones / warbler / that / has / better / than / to / settle / in / been / will / its
+다음 글을 읽고 주어진 문제에 답하시오. (36번)
+ The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates is one of the most important determinants of (B)biological success ― measured as survival to reproductive age and the production of offspring. (A)Many studies have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to anticipate how a setting will serve their future needs. For example, the black-throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories preferentially among the red spruce trees early in the summer months, even though these trees offer less food than the neighboring white spruce trees. Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest that offers the easier pickings. Somehow, the warbler has been guided to settle in locations that will suit its future parenting needs better than its present ones.
+본문의 문장 (A)와 완전히 같은 의미가 되도록, 아래 주어진 시작 단어와 조건을 활용하여 문장을 다시 쓰시오. (Paraphrasing) 
+ not only have a remarkable ability to seek out the best available locations for the necessities of life
+[조건]
+부정어(not only)로 인해 도치된 구문을 원래의 주어-동사 어순(평서문)으로 복원할 것.
+Many studies have shown that animals ____________
+________________________________________________________
+본문의 흐름상, 밑줄 친 (B)biological success가 의미하는 바를 본문에서 찾아 적으시오. (5~10단어 내외의 영어로 작성할 것)
+ survival to reproductive age and the production of offspring
+다음 글을 읽고 물음에 답하시오. (36번)
+ The ability to select a set of surroundings suitable for foraging, shelter from predators, and the availability of mates is one of the most important determinants of biological success ― measured as survival to reproductive age and the production of offspring. Many studies have shown that not only do animals have a remarkable ability to seek out the best available locations for the necessities of life, but that they are able to anticipate how a setting will serve their future needs. For example, the black-throated green warbler, a small songbird that nests in spruce forests of eastern North America, establishes territories preferentially among the red spruce trees early in the summer months, even though these trees offer less food than the neighboring white spruce trees. Later, though, when nests are built and hungry baby birds need nourishment, it is the red spruce forest that (A) offers the easier pickings. Somehow, the warbler has been guided to settle in locations that will suit its future parenting needs better than its present ones.
+밑줄 친 (A)offers the easier pickings가 의미하는 바로 가장 적절한 것은? 
+ ④
+① allows the birds to literally pick up fallen branches with less effort
+② requires far less energy to build a nest than the white spruce trees do
+③ guarantees absolute protection from dangerous predators in the forest
+④ presents a much better environment for gathering food to feed the young
+⑤ provides more food early in the summer than any other surrounding trees
+ 위 글을 읽고 다음 질문 중 대답할 수 없는 하나는?
+ ④
+① What is considered an important measure of biological success for animals?
+② Why do black-throated green warblers choose red spruce trees early in the summer?
+③ Which tree provides more food to the warblers during the early summer months?
+④ What specific types of insects or seeds do red spruce trees provide for the baby birds?
+⑤ What remarkable ability do animals have when searching for locations to live?
+정답
