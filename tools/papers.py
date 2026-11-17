@@ -125,6 +125,12 @@ for k in list(old):
 json.dump(mf, open(mf_path, 'w'), ensure_ascii=False, indent=1)
 
 # ---- 3) 목록 페이지
+def _school():  # progress_map.py 의 SCHOOL 표만 읽음(실행하지 않음)
+    import ast
+    src = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'progress_map.py'), encoding='utf-8').read()
+    i = src.index('SCHOOL = {'); j = src.index('}', i)
+    return ast.literal_eval(src[i + 9:j + 1])
+SCH = _school()
 def grade_of(uid):
     m = re.match(r'(m|h)(\d)', uid); return ('중' if m.group(1) == 'm' else '고') + m.group(2) if m else ''
 cards = []
@@ -140,10 +146,13 @@ for uid, folder, P in sorted(units, key=lambda x: (x[0][0] != 'm', x[0])):
     dl = ''.join('<li><b>%s</b> %s</li>' % (E(d['name']), E(d.get('range', ''))) for d in days)
     g = grade_of(uid); sc = P.get('school', '')
     head = ' · '.join(x for x in [g if not sc.startswith(g) else '', sc, P.get('unit', '')] if x)
+    tags = [x.strip() for x in SCH.get(uid, '').split('·') if x.strip()]  # 11/17 '안곡고2'처럼 학교+학년 검색 (progress_map.SCHOOL)
+    if tags: head = ' · '.join(tags) + ' | ' + head
+    qx = ' '.join(tags + [t.replace('고', '고 ').replace('중', '중 ') for t in tags])
     cards.append('<section class="u" data-q="%s"><h2>%s</h2><p class="t">%s</p>'
                  '<table><thead><tr><th>시험지 (앱 맨 아래 OMR)</th><th>문항</th><th>만든 날</th><th></th></tr></thead><tbody>%s</tbody></table>'
                  '<details><summary>데일리 DAY %d개 · 어디까지 만들었는지 보기</summary><ol>%s</ol></details></section>' % (
-                     E((head + ' ' + P.get('title', '') + ' ' + ' '.join(t['title'] for t in P['tests'])).lower()), E(head), E(P.get('title', '')), ''.join(rows), len(days), dl))
+                     E((qx + ' ' + head + ' ' + P.get('title', '') + ' ' + ' '.join(t['title'] for t in P['tests'])).lower()), E(head), E(P.get('title', '')), ''.join(rows), len(days), dl))
 total = sum(len(P['tests']) for _, _, P in units)
 page = '''<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
 <title>시험지 보관함</title><style>
