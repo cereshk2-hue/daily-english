@@ -58,7 +58,7 @@
   try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(function () {}); } catch (e) {}
   var app = document.getElementById('app');
   var CIRC = '①②③④⑤⑥⑦⑧⑨⑩';
-  var SHORT = { multi: '모두고르기', hunt: '틀린곳', vocab: '어휘', tf: 'TF', verb: '동사변형', error: '오류찾기', order: '문장순서', scramble: '주요문장', mc: '문법', insert: '삽입', odd: '어색한문장', blank: '빈칸' };
+  var SHORT = { gate: '한 판', multi: '모두고르기', hunt: '틀린곳', vocab: '어휘', tf: 'TF', verb: '동사변형', error: '오류찾기', order: '문장순서', scramble: '주요문장', mc: '문법', insert: '삽입', odd: '어색한문장', blank: '빈칸' };
 
   /* ---------- 저장 ---------- */
   /* 학생별 저장: 같은 기기(학원 아이패드)를 여러 학생이 써도 기록이 섞이지 않게 이름마다 따로 저장한다.
@@ -224,7 +224,7 @@
     return weakList(d).map(function (w) { return stepShort(w.s) + ' ' + w.sc[0] + '/' + w.sc[1] + ' → ' + (w.n ? '보충 ' + w.best.c + '/' + w.best.t + (w.ok ? ' ✓' : '') + (w.n > 1 ? ' (' + w.n + '번)' : '') + ' ' + fmtTime(w.last.at) : '보충 안 함'); }).join(' / ');
   }
   function stepShort(st) { return st.type === 'pick' ? st.title : st.type === 'mc' && /실전/.test(st.title) ? '실전' : st.type === 'mc' && /일치/.test(st.title) ? '일치' : st.type === 'mc' && /요약/.test(st.title) ? '요약문' : st.type === 'mc' && /대의/.test(st.title) ? '대의' : st.type === 'mc' && /어휘/.test(st.title) ? '어휘' : st.type === 'mc' && /순서/.test(st.title) ? '순서' : SHORT[st.type]; }
-  var CARD = { multi: '모두', hunt: '틀린곳', vocab: '단어', tf: 'T/F', verb: '동사', error: '오류', order: '순서', scramble: '스크램블', mc: '문법', insert: '삽입', odd: '어색', blank: '빈칸' };
+  var CARD = { gate: '한 판', multi: '모두', hunt: '틀린곳', vocab: '단어', tf: 'T/F', verb: '동사', error: '오류', order: '순서', scramble: '스크램블', mc: '문법', insert: '삽입', odd: '어색', blank: '빈칸' };
   function cardLabel(st) { return st.type === 'pick' ? (/어법/.test(st.title) ? '어법' : '어휘') : st.type === 'mc' && /실전/.test(st.title) ? '실전' : st.type === 'mc' && /일치/.test(st.title) ? '일치' : st.type === 'mc' && /요약/.test(st.title) ? '요약' : CARD[st.type]; }
   function fmtTime(t) { var d = new Date(t); return (d.getMonth() + 1) + '/' + d.getDate() + ' ' + String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); }
   function top() { window.scrollTo(0, 0); }
@@ -383,7 +383,7 @@
     };
     if (step.type === 'vocab') return gen0(step).map(function (q) { var w = step.items.filter(function (x) { return x[0] === q.key; })[0]; q = lab(q, w); var v = vocabEv(d, w); if (v.length) { q.ev = v; q.evLabel = '본문에서는 이렇게 쓰였어요'; } return q; });
     var idx = step.items.map(function (_, i) { return i; });
-    if (step.type !== 'order') idx = shuffle(idx);
+    if (step.type !== 'order' && step.type !== 'gate') idx = shuffle(idx);
     return idx.map(function (i) {
       var q = gen0({ type: step.type, items: [step.items[i]] })[0];
       if (step.type === 'order') q.key = '세트 ' + (i + 1);
@@ -404,6 +404,12 @@
     if (t === 'pick') return shuffle(it).map(function (q) {
       var m = /\{([^}]*)\}/.exec(q.s), opts = m[1].split('|');
       return { t: 'pick', pre: q.s.slice(0, m.index), post: q.s.slice(m.index + m[0].length), opts: shuffle(opts), ans: opts[0], ex: q.ex, key: opts[0] };
+    });
+    if (t === 'gate') return it.map(function (ch, ci) { /* 11/16 한 판(어법 선택 덩어리): 괄호를 모두 맞혀야 100점, 아니면 0점 · 3번 도전 → 못 하면 틀린 문장만 해설과 연습 → 다시 3번 */
+      return { t: 'gate', title: ch.title || ('덩이 ' + (ci + 1)), key: (step.title || '한 판') + ' · ' + (ch.title || ci + 1), round: 1, tries: 0, miss: [], phase: 'play',
+        parts: ch.parts.map(function (p) { var segs = [], re = /\{([^}]*)\}/g, last = 0, m;
+          while ((m = re.exec(p.s))) { segs.push({ x: p.s.slice(last, m.index) }); var o = m[1].split('|'); segs.push({ ans: o[0], opts: shuffle(o.slice()) }); last = m.index + m[0].length; }
+          segs.push({ x: p.s.slice(last) }); return { segs: segs, ko: p.ko || '', ex: p.ex || '' }; }) };
     });
     if (t === 'tf') return shuffle(it).map(function (q) { return { t: 'tf', s: q[0], ans: q[1], ex: q[2], key: q[0].split(' ').slice(0, 4).join(' ') + '…' }; });
     if (t === 'verb') return shuffle(it).map(function (q) { return { t: 'verb', s: q.s, v: q.v, a: q.a, ex: q.ex, ph: step.ph, key: q.v + '→' + q.a[0] }; });
@@ -1086,6 +1092,86 @@
     } catch (e) {}
     home(RS && RS.practice === '유형별 연습' ? 'types' : 'today'); }; }
 
+  /* ── 한 판(gate) ── */
+  function gateCSS() {
+    if (document.getElementById('gatecss')) return;
+    var c = document.createElement('style'); c.id = 'gatecss';
+    c.textContent = '.gatebar{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent);border-radius:12px;padding:9px 12px;margin:0 0 8px;font-size:14px}.gatebar.bad{background:var(--bad-soft);color:var(--bad)}.gatebar.ok{background:var(--ok-soft);color:var(--ok)}' +
+      '.gpara{line-height:2.15;font-size:15.5px}.gpara .gs{margin:0 0 10px}.gb{display:inline-flex;align-items:center;gap:2px;border:1.5px dashed var(--line);border-radius:10px;padding:1px 3px;margin:0 2px;white-space:nowrap}.gb i{font-style:normal;color:var(--muted);font-size:12px}' +
+      '.gopt{font:inherit;font-size:14.5px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:1px 8px;line-height:1.6;cursor:pointer}.gopt.picked{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}' +
+      '.gopt.right{border-color:var(--ok);background:var(--ok-soft);color:var(--ok);font-weight:700}.gopt.wrong{border-color:var(--bad);background:var(--bad-soft);color:var(--bad);text-decoration:line-through}.gb.done{border-style:solid;border-color:var(--ok)}' +
+      '.gko{display:none;font-family:inherit;font-size:13px;color:var(--muted);line-height:1.5;margin-top:2px}.gpara.showko .gko,.gpara.rev .gko{display:block}.gex{font-size:13px;line-height:1.55;background:var(--ok-soft);color:var(--ink);border-radius:8px;padding:6px 9px;margin-top:4px;font-family:inherit}' +
+      '.gko-t{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);margin:0 0 6px}.gmsg{border-radius:12px;padding:10px 12px;margin:8px 0;font-size:14px;line-height:1.5}.gmsg.bad{background:var(--bad-soft);color:var(--bad)}';
+    document.head.appendChild(c);
+  }
+  function gateCount(q) { var n = 0; q.parts.forEach(function (p) { p.segs.forEach(function (s) { if (s.opts) n++; }); }); return n; }
+  function gateSent(p, pi, rev) {
+    return '<p class="gs">' + p.segs.map(function (s, si) { return s.opts ? '<span class="gb" data-g="' + pi + ':' + si + '">' + s.opts.map(function (o, oi) { return '<button class="gopt" data-o="' + oi + '">' + E(o) + '</button>'; }).join('<i>/</i>') + '</span>' : E(s.x); }).join('') +
+      '<span class="gko">' + E(p.ko) + '</span>' + (rev ? '<span class="gex" hidden>' + E(p.ex ? '해설 ▶ ' + p.ex : '') + '</span>' : '') + '</p>';
+  }
+  function gateHTML(q) {
+    gateCSS();
+    var nb = gateCount(q);
+    if (q.phase === 'review') return '<div class="gatebar bad"><b>3번 안에 통과하지 못했어요</b><span>' + q.round + '라운드</span></div>' +
+      '<div class="guide" style="margin:0 0 8px">틀린 곳이 있던 문장 <b>' + q.miss.length + '개</b>만 모았어요. 이번엔 고르면 바로 맞는지 알려 주고, 문장을 다 맞히면 해설이 나와요. 모두 맞히면 다시 한 판(3번) 도전!</div>' +
+      '<div class="gpara en rev">' + q.miss.slice().sort(function (a, b) { return a - b; }).map(function (pi) { return gateSent(q.parts[pi], pi, true); }).join('') + '</div>' +
+      '<div class="nextbar"><button class="btn" id="gre" disabled>다시 한 판 도전 (3번)</button></div>';
+    return '<div class="gatebar"><b>한 판 · ' + E(q.title) + '</b><span>도전 <b id="gtry">' + (q.tries + 1) + '</b> / 3' + (q.round > 1 ? ' · ' + q.round + '라운드' : '') + '</span></div>' +
+      '<div class="guide" style="margin:0 0 6px">괄호 <b>' + nb + '개</b>를 모두 맞혀야 <b>100점</b>, 하나라도 틀리면 <b>0점</b>이에요. 어디가 틀렸는지는 알려 주지 않아요. 3번 안에 통과해 보세요!</div>' +
+      '<label class="gko-t"><input type="checkbox" id="gkot"> 해석 같이 보기</label>' +
+      '<div class="gpara en" id="gpara">' + q.parts.map(function (p, pi) { return gateSent(p, pi, false); }).join('') + '</div>' +
+      '<div id="gmsg"></div><div class="nextbar"><button class="btn" id="gchk" disabled>채점하기 (0/' + nb + ')</button></div>';
+  }
+  function gateBind(q, card) {
+    function redraw() { card.innerHTML = gateHTML(q) + '<div id="fb"></div>'; gateBind(q, card); card.scrollIntoView({ block: 'start', behavior: 'smooth' }); }
+    if (q.phase === 'review') {
+      var left = card.querySelectorAll('.gb').length;
+      card.querySelectorAll('.gb').forEach(function (b) {
+        var k = b.dataset.g.split(':'), sg = q.parts[+k[0]].segs[+k[1]];
+        b.querySelectorAll('.gopt').forEach(function (o) { o.onclick = function () {
+          if (b.classList.contains('done') || o.disabled) return;
+          if (sg.opts[+o.dataset.o] !== sg.ans) { o.classList.add('wrong'); o.disabled = true; return; }
+          o.classList.add('right'); b.classList.add('done'); b.querySelectorAll('.gopt').forEach(function (x) { x.disabled = true; }); left--;
+          var ps = b.closest('.gs'); if (!ps.querySelector('.gb:not(.done)')) { var ge = ps.querySelector('.gex'); if (ge && ge.textContent) ge.hidden = false; }
+          if (!left) { var gr = $('#gre'); gr.disabled = false; gr.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+        }; });
+      });
+      $('#gre').onclick = function () { q.phase = 'play'; q.round++; q.tries = 0; q.miss = []; saveRun(); redraw(); };
+      return;
+    }
+    if (q.passed && !RS.answered) delete q.passed; /* 11/16: 오답 학습·이어 하기에서 지난번 '통과' 표시가 남아 보기가 안 눌리던 문제 */
+    var sel = {}, nb = gateCount(q), chk = $('#gchk'), msg = $('#gmsg');
+    function pickCount() { var n = Object.keys(sel).length; chk.textContent = '채점하기 (' + n + '/' + nb + ')'; chk.disabled = n !== nb; }
+    card.querySelectorAll('.gb').forEach(function (b) { b.querySelectorAll('.gopt').forEach(function (o) { o.onclick = function () {
+      if (RS.answered || q.passed) return;
+      b.querySelectorAll('.gopt').forEach(function (x) { x.classList.toggle('picked', x === o); });
+      sel[b.dataset.g] = +o.dataset.o; msg.innerHTML = ''; pickCount();
+    }; }); });
+    $('#gkot').onchange = function () { $('#gpara').classList.toggle('showko', this.checked); };
+    chk.onclick = function () {
+      if (RS.answered || chk.disabled || q.passed) return;
+      var miss = [];
+      q.parts.forEach(function (p, pi) { if (p.segs.some(function (sg, si) { return sg.opts && sg.opts[sel[pi + ':' + si]] !== sg.ans; })) miss.push(pi); });
+      q.tries++; miss.forEach(function (pi) { if (q.miss.indexOf(pi) < 0) q.miss.push(pi); });
+      if (!miss.length) {
+        q.passed = true; chk.hidden = true;
+        card.querySelectorAll('.gopt').forEach(function (x) { x.disabled = true; if (x.classList.contains('picked')) { x.classList.remove('picked'); x.classList.add('right'); } });
+        $('#gpara').classList.add('showko');
+        var first = q.round === 1, lines = q.parts.map(function (p, pi) { return (pi + 1) + ') ' + p.segs.filter(function (sg) { return sg.opts; }).map(function (sg) { return sg.ans; }).join(' / ') + (p.ex ? '  · ' + p.ex : ''); });
+        answer(first, lines.join('\n'), '<b>100점! 통과</b> · ' + (first ? q.tries + '번째 도전에 통과했어요.' : q.round + '라운드 만에 통과했어요. (처음 3번 안에 못 해서 오답으로 남아요)'));
+        return;
+      }
+      if (q.tries < 3) {
+        saveRun();
+        msg.className = 'gmsg bad'; msg.innerHTML = '<b>0점</b> · 틀린 곳이 있어요. 어디인지는 비밀! 처음부터 다시 골라 보세요. (남은 도전 ' + (3 - q.tries) + '번)';
+        sel = {}; card.querySelectorAll('.gopt.picked').forEach(function (x) { x.classList.remove('picked'); }); pickCount();
+        var gt = $('#gtry'); if (gt) gt.textContent = q.tries + 1;
+        card.scrollIntoView({ block: 'start', behavior: 'smooth' });
+        return;
+      }
+      q.phase = 'review'; saveRun(); redraw();
+    };
+  }
   function qHTML(q) {
     if (q.t === 'choice') return (q.sub ? '<div class="guide" style="margin:0 0 6px">' + q.sub + '</div>' : '') +
       '<div class="prompt' + (q.big ? ' big' : '') + (q.en ? ' en' : '') + '">' + q.prompt + '</div>' +
@@ -1095,6 +1181,7 @@
       '<div class="nextbar"><button class="btn" id="mok" disabled>골랐어요 · 확인</button></div>';
     if (q.t === 'pick') return '<div class="prompt en">' + E(q.pre) + '<span class="blank" id="blank">?</span>' + E(q.post) + '</div>' +
       '<div class="opts two">' + q.opts.map(function (o, i) { return '<button class="opt en" data-i="' + i + '">' + E(o) + '</button>'; }).join('') + '</div>';
+    if (q.t === 'gate') return gateHTML(q);
     if (q.t === 'tf') return '<div class="prompt en">' + E(q.s) + '</div><div class="opts two"><button class="opt tfbtn" data-v="1">T</button><button class="opt tfbtn" data-v="0">F</button></div>';
     if (q.t === 'verb') return '<div class="prompt en">' + E(q.s).replace('___', '<span class="blank" id="blank">&nbsp;</span>') + ' <span class="verbhint">(' + E(q.v) + ')</span></div>' +
       '<form class="typein" id="vf"><input id="vin" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="' + E(q.ph || '알맞은 형태로 쓰기') + '" aria-label="답 입력"><button class="btn" type="submit">확인</button></form>';
@@ -1192,6 +1279,7 @@
       var wrongTxt = q.parts.filter(function (p) { return p.mk === q.w; })[0].x;
       answer(ok, q.ex, (ok ? '' : '틀린 곳은 <b>' + CIRC[q.w] + '</b> · ') + '<span class="en">' + E(wrongTxt) + ' → <span class="fix">' + E(q.fix) + '</span></span>');
     }); });
+    if (q.t === 'gate') gateBind(q, card);
     if (q.t === 'hunt') {
       var sel = [], hchk = $('#hchk'), hcnt = $('#hcnt'), phase = 1;
       card.querySelectorAll('.hw').forEach(function (b) { b.onclick = function () {
@@ -1589,7 +1677,7 @@
     RS = { di: qs[0].dayIdx, si: 0, qs: qs, qi: 0, c: 0, wrong: [], phase: 'quiz', answered: false, practice: '오답 노트', back: 'today', noteKey: key };
     render();
   }
-  function reshuffle(q) { q = JSON.parse(JSON.stringify(q)); if (q.t === 'order' || q.t === 'scramble') q.pool = shuffleDiff(q.pool); if (q.opts && !q.fixed) q.opts = shuffle(q.opts); return q; }
+  function reshuffle(q) { q = JSON.parse(JSON.stringify(q)); if (q.t === 'gate') { q.round = 1; q.tries = 0; q.miss = []; q.phase = 'play'; delete q.passed; } if (q.t === 'order' || q.t === 'scramble') q.pool = shuffleDiff(q.pool); if (q.opts && !q.fixed) q.opts = shuffle(q.opts); return q; }
   /* 오답 학습: 틀린 문제를 모두 맞힐 때까지 다시 낸다. 끝내야 결과를 보낼 수 있다. 문제마다 저장돼 이어서 할 수 있다. */
   function retryWrong(di) {
     var d = P.days[di], st = DS(d.id);
