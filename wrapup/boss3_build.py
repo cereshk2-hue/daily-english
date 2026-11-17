@@ -8,7 +8,13 @@ esc = lambda s: html.escape(s, quote=False)
 DATA = '/home/claude/proj/data/h2-mock-2609-angok.js'
 OUT = '/home/claude/work/wrapup/boss3/'
 
-def word_mean(w): return M(w) or EXTRA.get(w, '')
+LOCAL = {}
+def set_local(S):  # 세트별 뜻(세트 4~8은 boss3b_data.MEAN_B 우선)
+    global LOCAL; LOCAL = S.get('mean', {})
+def word_mean(w): return LOCAL.get(w) or M(w) or EXTRA.get(w, '')
+def PRE(S): return S.get('pre', '')
+def NUMS(S): return '%s%s·%s번' % (PRE(S), S['nums'][0], S['nums'][1])
+def EXAM(S): return S.get('exam', '2026학년도 9월 고2 전국연합학력평가')
 
 def autofix(it, sid, k):
     if (sid, k + 1) in TR: return TR[(sid, k + 1)]
@@ -26,7 +32,7 @@ def finalize():
     for S in SETS:
         for k, it in enumerate(S['items']):
             it['no'] = k + 1
-            it['src'] = S['nums'][k // 10] + '번'
+            it['src'] = PRE(S) + S['nums'][k // 10] + '번'
             it['pts'] = {'하': 3, '중': 5, '상': 6, '서술': 6}[it['lv']]
             if it['lv'] == '서술': continue
             o = list(it['o']); c = o.pop(0); o.insert(it['at'], c)
@@ -63,20 +69,20 @@ for d in PK['days']:
     cur = None
     for l in d['passage']:
         if l[0] == '#':
-            m = re.match(r'(\d+(?:~\d+)?)번', l[1]); cur = m.group(1) if m else None
+            m = re.match(r'(.*?\d+(?:~\d+)?)번', l[1]); cur = m.group(1) if m else None
             if cur and cur not in KO: KO[cur] = []
             elif cur: cur = None
         elif cur and l[2]: KO[cur].append([l[1], l[2]])
 for S in SETS:
-    for n in S['nums']: assert KO.get(n), n
+    for n in S['nums']: assert KO.get(PRE(S) + n), PRE(S) + n
 
 # ═════════ ① 앱 시험 ═════════
 def app_tests():
     tests = []
     for S in SETS:
-        items = []
+        set_local(S); items = []
         for it in S['items']:
-            P = S['P'][(it['no'] - 1) // 10]; num = S['nums'][(it['no'] - 1) // 10]
+            P = S['P'][(it['no'] - 1) // 10]; num = PRE(S) + S['nums'][(it['no'] - 1) // 10]
             ctx = '<div class="wbox"><p>%s</p></div>' % esc(P)
             if it['lv'] == '서술':
                 s = it['s']
@@ -95,8 +101,8 @@ def app_tests():
                           'opts': ['%s / %s' % p for p in it['opts']], 'en': True, 'ans': it['ans'], 'ex': ex, 'ctx': ctx, 'pts': it['pts'],
                           'okos': ['%s / %s' % (word_mean(p[0]), word_mean(p[1])) for p in it['opts']],
                           'words': [[w, m] for w, m in vocab(it)], 'kos': KO[num]})
-        tests.append({'id': S['id'], 'kind': 'boss', 'title': '요약문 끝판왕 %d · %s·%s번' % (S['no'], S['nums'][0], S['nums'][1]),
-                      'short': '끝판왕 %s·%s번' % S['nums'], 'school': '안곡고 2학년 · 최상위 요약문', 'minutes': 35, 'items': items})
+        tests.append({'id': S['id'], 'kind': 'boss', 'title': '요약문 끝판왕 %d · %s' % (S['no'], NUMS(S)),
+                      'short': '끝판왕 %s' % NUMS(S), 'school': '안곡고 2학년 · 최상위 요약문', 'minutes': 35, 'items': items})
     return tests
 
 def emit(tests):
@@ -164,11 +170,11 @@ def student(S):
                 h += '<div class="sbox">%s</div><table class="ch"><thead><tr><td></td><td>(A)</td><td></td><td>(B)</td></tr></thead><tbody>%s</tbody></table>' % (
                     blank(it['s']), ''.join('<tr><td>%s</td><td>%s</td><td class="d">……</td><td>%s</td></tr>' % (C[i], esc(a), esc(b)) for i, (a, b) in enumerate(it['opts'])))
             q.append(h + '</div>')
-    title = '요약문 끝판왕 %d · %s·%s번' % (S['no'], S['nums'][0], S['nums'][1])
+    title = '요약문 끝판왕 %d · %s' % (S['no'], NUMS(S))
     return ('<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><title>%s</title>%s%s</head><body>' % (title, FONTS, CSS) +
-        '<div class="hd"><span><b>고2 영어 영역</b></span><span>요약문 끝판왕 챌린지 · %s·%s번 변형</span></div>' % S['nums'] +
-        '<p class="sub">2026학년도 9월 고2 전국연합학력평가 %s·%s번 변형</p>' % S['nums'] +
-        '<div class="tt"><span class="l">주말 도전 %d</span><h1><span class="boss">최상위</span>요약문 끝판왕</h1><span class="r">%s·%s번</span></div>' % ((S['no'],) + S['nums']) +
+        '<div class="hd"><span><b>고2 영어 영역</b></span><span>요약문 끝판왕 챌린지 · %s 변형</span></div>' % NUMS(S) +
+        '<p class="sub">%s %s·%s번 변형</p>' % ((EXAM(S),) + S['nums']) +
+        '<div class="tt"><span class="l">주말 도전 %d</span><h1><span class="boss">최상위</span>요약문 끝판왕</h1><span class="r">%s</span></div>' % (S['no'], NUMS(S)) +
         '<div class="idrow"><div>학년·반</div><div>2학년 &nbsp; 반</div><div>번호</div><div>번</div><div>이름</div><div></div><div>점수</div><div>/ 100</div></div>' +
         '<div class="notice"><p><b>※ 유의사항</b></p><p>1. 문항 수 20문항(선택형 18 · 서술형 2) · 시험 시간 35분 · 총점 100점. 문항 끝의 [ ]는 배점입니다.</p><p>2. 각 지문을 먼저 읽은 뒤, 요약문의 빈칸 (A), (B)에 들어갈 말의 조합으로 가장 적절한 것 하나를 고르시오.</p><p>3. 서술형은 &lt;조건&gt;을 지키지 않으면 감점하며, 철자 오류는 오답 처리합니다. 답은 데일리 영어 앱 ‘끝판왕’ 탭에 입력해요.</p></div>' +
         '<div class="cols">' + ''.join(q) + '</div></body></html>')
@@ -203,13 +209,14 @@ def teacher(S):
     title = '요약문 끝판왕 %d 정답과 해설' % S['no']
     return ('<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><title>%s</title>%s%s</head><body>' % (title, FONTS, CSS) +
         '<div class="hd"><span><b>고2 영어 영역 · 정답 및 해설</b></span><span>요약문 끝판왕 챌린지 · 교사용</span></div>' +
-        '<p class="sub">2026학년도 9월 고2 전국연합학력평가 %s·%s번 변형</p>' % S['nums'] +
+        '<p class="sub">%s %s·%s번 변형</p>' % ((EXAM(S),) + S['nums']) +
         '<div class="tt"><span class="l">주말 도전 %d</span><h1>정답 및 해설</h1><span class="r">교사용</span></div>' % S['no'] +
         key + rule + '<div class="cols">' + ''.join(body) + '</div></body></html>')
 
 if __name__ == '__main__':
     import os; os.makedirs(OUT, exist_ok=True)
     for S in SETS:
+        set_local(S)
         print('세트', S['no'], S['nums'], '정답', ''.join(C[it['ans']] if it['lv'] != '서술' else '서' for it in S['items']), '분포', S['dist'])
         open(OUT + 'boss%d-student.html' % S['no'], 'w', encoding='utf-8').write(student(S))
         open(OUT + 'boss%d-teacher.html' % S['no'], 'w', encoding='utf-8').write(teacher(S))

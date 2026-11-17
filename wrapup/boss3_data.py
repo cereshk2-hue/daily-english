@@ -367,3 +367,8 @@ S41 = [
 ]
 SETS.append({'id': 'bossag3', 'no': 3, 'nums': ('38', '41~42'), 'P': (P38, P41), 'items': S38 + S41,
              'titles': ('38번 · 밀도와 혼잡', '41~42번 · 선택 설계와 알고리즘')})
+
+# ═════════════ 세트 4~8 (11/17): 영어Ⅱ 수능유형 연습 지문 → boss3b_data.py ═════════════
+import boss3b_data as _B
+EXTRA.update(_B.EXTRA_B)
+SETS.extend(_B.SETS_B)

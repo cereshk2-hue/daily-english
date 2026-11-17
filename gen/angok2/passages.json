@@ -1,0 +1,264 @@
+{
+"1": {
+"n": 23,
+"label": "10월 23번 · 주제",
+"en": [
+"Research on cephalopod neurobiology suggests that an octopus possesses roughly five hundred million neurons.",
+"What makes this system unusual is where many of those neurons are located.",
+"More than half are distributed throughout the arms rather than concentrated entirely in the central brain.",
+"Each arm contains networks of nerve cells capable of controlling complex movements and responding to sensory input locally.",
+"This means that many actions do not require detailed instructions from the brain itself.",
+"Instead, the arms function as highly capable extensions of the nervous system that interact with the environment directly.",
+"The suckers lining each arm play an important role in this process.",
+"These structures provide strong grip but also detect chemical signals on surfaces they contact.",
+"Marine biologists studying octopus behavior have shown that this allows the animal to gather chemical information through touch.",
+"In practical terms, an octopus can effectively taste what it touches."
+],
+"ko": [
+"두족류 신경생물학 연구는 문어가 약 5억 개의 뉴런을 가지고 있다는 것을 보여 준다.",
+"이 체계를 특이하게 만드는 것은 그 뉴런 중 상당수가 위치한 곳이다.",
+"절반 이상이 중추 뇌에 전부 집중되어 있는 것이 아니라 팔 전체에 분포되어 있다.",
+"각 팔에는 복잡한 움직임을 제어하고 감각 입력에 그 자리에서 반응할 수 있는 신경 세포망이 들어 있다.",
+"이는 많은 동작이 뇌 자체로부터의 세세한 지시를 필요로 하지 않는다는 것을 의미한다.",
+"대신, 팔은 환경과 직접 상호 작용하는, 신경계의 매우 유능한 연장선으로 기능한다.",
+"각 팔에 줄지어 붙어 있는 빨판은 이 과정에서 중요한 역할을 한다.",
+"이 구조들은 강한 접지력을 제공할 뿐 아니라 닿는 표면의 화학 신호도 감지한다.",
+"문어의 행동을 연구하는 해양 생물학자들은 이것이 문어가 촉각을 통해 화학 정보를 모을 수 있게 한다는 것을 보여 주었다.",
+"실질적으로 말하면, 문어는 사실상 자기가 만지는 것을 맛볼 수 있다."
+],
+"foot": "* cephalopod: (오징어, 문어 등의) 두족류 동물 ** sucker: 빨판"
+},
+"2": {
+"n": 24,
+"label": "10월 24번 · 제목",
+"en": [
+"Consistent though he may be, some of Aristotle's ideas meet us today as strange.",
+"He had no difficulty justifying slavery, for example, and in his era, philosophers enjoyed positions of high privilege and influence.",
+"Because of their practice of contemplation for the highest human good, philosophers were considered worthy to have all the best things in life.",
+"Somehow that assertion seems oddly self-serving.",
+"It serves us to remember that every great thinker is of her own time and speaks to a particular audience, and certainly Aristotle is no exception.",
+"Human flourishing as he understood it probably would not be nearly as inclusive as we would want it to be today.",
+"How he understood right and good is best taken to be an indicator of how the privileged elite of ancient Greek society tended to understand right and good.",
+"As a result, for all it does well, it is also deeply flawed."
+],
+"ko": [
+"그가 일관성은 있을지 몰라도, 아리스토텔레스의 생각 중 일부는 오늘날 우리에게 이상하게 다가온다.",
+"예를 들어 그는 노예 제도를 정당화하는 데 아무런 어려움이 없었고, 그의 시대에 철학자들은 높은 특권과 영향력을 지닌 지위를 누렸다.",
+"인간의 최고선을 위해 사유를 실천한다는 이유로, 철학자들은 삶의 모든 좋은 것을 누릴 자격이 있다고 여겨졌다.",
+"어쩐지 그 주장은 묘하게 자기 잇속만 차리는 것처럼 보인다.",
+"모든 위대한 사상가는 자기 시대에 속해 있고 특정한 청중에게 말한다는 것을 기억하는 것이 우리에게 도움이 되며, 분명 아리스토텔레스도 예외가 아니다.",
+"그가 이해한 인간의 번영은 아마 오늘날 우리가 원하는 만큼 포용적인 것과는 거리가 멀 것이다.",
+"그가 옳음과 선을 어떻게 이해했는지는 고대 그리스 사회의 특권층 엘리트가 옳음과 선을 어떻게 이해하는 경향이 있었는지 보여 주는 지표로 받아들이는 것이 가장 좋다.",
+"그 결과, 그것이 잘하는 모든 점에도 불구하고, 그것은 또한 깊은 결함을 지니고 있다."
+],
+"foot": "* contemplation: 사유"
+},
+"3": {
+"n": 31,
+"label": "10월 31번 · 빈칸",
+"en": [
+"A person who lives eighty years lives some twenty-nine thousand days, and the overwhelming majority of the behaviour packed into them runs on settings laid down, most of them, decades earlier and rarely inspected since.",
+"This need not be a hopeless thought.",
+"In one light it is a triumph of engineering.",
+"If you had to consciously decide every footstep and every fork-grip and every word, you would never make it out of bed; the deliberate mind is far too slow and too costly to run a whole life in real time, and any creature that tried would be outcompeted by a creature that didn't.",
+"The automation is precisely what frees the captain to come up on deck for the few problems that actually require him.",
+"The default is not a flaw in the human design.",
+"It is arguably the central feature, the thing that makes a complex life affordable at all."
+],
+"ko": [
+"80년을 사는 사람은 약 2만 9천 일을 살며, 그 날들에 채워진 행동의 압도적 다수는 대부분 수십 년 전에 정해지고 그 이후로 거의 점검되지 않은 설정에 따라 작동한다.",
+"이것이 절망적인 생각일 필요는 없다.",
+"어떤 관점에서 보면 그것은 공학의 승리이다.",
+"걸음 하나, 포크 쥐기 하나, 말 한마디까지 모두 의식적으로 결정해야 한다면 침대에서 나오지도 못할 것이다. 숙고하는 정신은 삶 전체를 실시간으로 운영하기에는 너무 느리고 비용이 너무 많이 들며, 그렇게 하려는 생물은 그러지 않는 생물에게 경쟁에서 밀릴 것이다.",
+"자동화야말로 선장이 실제로 그를 필요로 하는 몇 안 되는 문제를 위해 갑판으로 올라올 수 있게 해 주는 바로 그것이다.",
+"기본 설정은 인간 설계의 결함이 아니다.",
+"그것은 아마도 핵심적인 특징, 즉 복잡한 삶을 감당할 수 있게 해 주는 바로 그것이다."
+],
+"foot": "* default: 기본 설정"
+},
+"4": {
+"n": 33,
+"label": "10월 33번 · 빈칸",
+"en": [
+"Human development is now increasingly understood as an ongoing, flexible, and evolving process rather than a fixed sequence of stages.",
+"At the core of this perspective lies the concept of plasticity.",
+"Plasticity refers to the human capacity to change, adapt, and reorganize cognitive, emotional, and behavioural patterns in response to life experiences, environmental demands, and biological changes.",
+"It highlights that individuals are not merely passive recipients of development but active agents capable of growth throughout their lives.",
+"In earlier views, development was believed to occur mainly during childhood, with adulthood seen as a period of stability and old age as a phase of decline.",
+"The concept of plasticity challenges this rigid outlook by emphasizing that development continues across the entire lifespan.",
+"Although the extent of change may vary at different stages, every phase of life allows room for adaptation and transformation."
+],
+"ko": [
+"인간 발달은 이제 고정된 단계의 연속이 아니라 지속적이고 유연하며 진화하는 과정으로 점점 더 이해되고 있다.",
+"이 관점의 핵심에는 가소성이라는 개념이 있다.",
+"가소성은 삶의 경험, 환경적 요구, 생물학적 변화에 반응하여 인지적·정서적·행동적 패턴을 바꾸고, 적응시키고, 재구성하는 인간의 능력을 가리킨다.",
+"그것은 개인이 단지 발달을 수동적으로 받아들이는 존재가 아니라 평생에 걸쳐 성장할 수 있는 능동적인 주체라는 점을 강조한다.",
+"이전의 관점에서는 발달이 주로 아동기에 일어난다고 믿었고, 성인기는 안정의 시기로, 노년기는 쇠퇴의 단계로 여겨졌다.",
+"가소성 개념은 발달이 전 생애에 걸쳐 계속된다는 점을 강조함으로써 이 경직된 관점에 이의를 제기한다.",
+"변화의 정도는 단계마다 다를 수 있지만, 삶의 모든 단계는 적응과 변화의 여지를 허용한다."
+],
+"foot": ""
+},
+"5": {
+"n": 37,
+"label": "10월 37번 · 글의 순서",
+"en": [
+"Reappraisal—changing the way one thinks about emotional situations—might present a particularly effective avenue to regulating emotions because it transforms emotions at their root.",
+"Take, for example, someone who is going through a divorce.",
+"This is often an adverse event, and yet, it can be construed in different ways.",
+"One might view it as an overpowering loss that will mark one's family for life.",
+"Alternatively, one might see it as something that is painful but that might lead to positive outcomes in the long run, such as improved relationships.",
+"As a result of these different construals, one might feel different emotions.",
+"The first construal may bring intense sadness and anger.",
+"The second construal might also bring sadness and anger but perhaps at lower levels.",
+"Crucially, it might also bring some positive emotions, such as hope, strength, or gratitude.",
+"This example illustrates how reappraisal might powerfully transform short-term emotional responses.",
+"When repeated over time, these short-term emotional consequences of reappraisal might accumulate to shape people's psychological health.",
+"Thereby, reappraisal might be a key to resilience."
+],
+"ko": [
+"재평가, 즉 감정적 상황에 대해 생각하는 방식을 바꾸는 것은 감정을 근본에서 변화시키기 때문에 감정을 조절하는 특히 효과적인 방법이 될 수 있다.",
+"예를 들어, 이혼을 겪고 있는 사람을 생각해 보자.",
+"이것은 흔히 불행한 사건이지만, 그런데도 여러 방식으로 해석될 수 있다.",
+"어떤 사람은 그것을 가족에게 평생 흔적을 남길 압도적인 상실로 볼 수 있다.",
+"또는, 그것을 고통스럽지만 장기적으로는 개선된 관계 같은 긍정적인 결과로 이어질 수 있는 것으로 볼 수도 있다.",
+"이러한 서로 다른 해석의 결과로, 사람은 서로 다른 감정을 느낄 수 있다.",
+"첫 번째 해석은 강렬한 슬픔과 분노를 가져올 수 있다.",
+"두 번째 해석도 슬픔과 분노를 가져올 수 있지만 아마 더 낮은 수준일 것이다.",
+"결정적으로, 그것은 희망, 힘, 감사 같은 긍정적인 감정도 가져올 수 있다.",
+"이 예는 재평가가 단기적인 감정 반응을 얼마나 강력하게 변화시킬 수 있는지 보여 준다.",
+"시간이 지나며 반복되면, 재평가가 낳은 이러한 단기적인 감정 결과는 쌓여서 사람들의 심리적 건강을 형성할 수 있다.",
+"그렇게 함으로써, 재평가는 회복 탄력성의 열쇠가 될 수 있다."
+],
+"foot": "* resilience: 회복 탄력성 ** construe: 해석하다"
+},
+"6": {
+"n": 41,
+"label": "10월 41~42번 · 장문 (제목 · 어휘)",
+"en": [
+"It is crucial to recognize that boredom can give rise to harmful emotions such as depression, despair, and irritation if not adequately addressed.",
+"When we believe that the only way to be happy is by searching for fun activities, then we become dependent on those activities, and negative thoughts and emotions arise.",
+"It is suggested that 'Idle time is the devil's workshop' implies that those with too much time on their hands may fill that time with troubling thoughts and behavior.",
+"The balance is to not see it as idle time, wasted time, or boredom but rather as a perfect time for self-improvement, self-identification, and positive reflection time.",
+"Reflecting, just how lucky are we to be bored?",
+"Boredom doesn't exist in the presence of danger, as it is only an indulgence pastime in a safe zone.",
+"Boredom can be perceived as a luxury that typically manifests in safe and inactive situations, providing an occasion to appreciate and comprehend the environment.",
+"In hazardous circumstances, the luxury of boredom is unavailable.",
+"Thus, it is paramount to utilize idle moments for profound self-reflection.",
+"It represents an occasion to listen, observe, and appreciate before expressing.",
+"Rather than viewing boredom as unproductive, it should be regarded as an opportunity for personal development and constructive contemplation."
+],
+"ko": [
+"지루함이 적절히 다루어지지 않으면 우울, 절망, 짜증 같은 해로운 감정을 일으킬 수 있다는 것을 인식하는 것이 매우 중요하다.",
+"행복해지는 유일한 방법이 재미있는 활동을 찾는 것이라고 믿으면, 우리는 그런 활동에 의존하게 되고 부정적인 생각과 감정이 생겨난다.",
+"'한가한 시간은 악마의 작업장'이라는 말은 시간이 너무 많은 사람들이 그 시간을 골치 아픈 생각과 행동으로 채울 수 있다는 것을 암시한다고 한다.",
+"균형은 그것을 한가한 시간, 낭비된 시간, 지루함으로 보지 않고, 오히려 자기 계발, 자기 정체성 확인, 긍정적인 성찰을 위한 완벽한 시간으로 보는 것이다.",
+"생각해 보면, 지루할 수 있다니 우리는 얼마나 운이 좋은가?",
+"지루함은 안전한 영역에서만 누리는 탐닉의 소일거리이기 때문에 위험이 있는 곳에서는 존재하지 않는다.",
+"지루함은 대개 안전하고 활동이 없는 상황에서 나타나는 사치로 여겨질 수 있으며, 환경을 감상하고 이해할 기회를 제공한다.",
+"위험한 상황에서는 지루함이라는 사치를 누릴 수 없다.",
+"따라서 한가한 순간을 깊은 자기 성찰에 활용하는 것이 가장 중요하다.",
+"그것은 표현하기 전에 듣고, 관찰하고, 감상할 기회를 나타낸다.",
+"지루함을 비생산적인 것으로 보기보다는 개인적 발달과 건설적인 사색의 기회로 여겨야 한다."
+],
+"foot": "* indulgence: 탐닉 ** paramount: 가장 중요한"
+},
+"7": {
+"n": 24,
+"label": "고3 6월 24번 · 제목",
+"en": [
+"Food, as we all know, is essential for human life.",
+"It also is the basis for several major industries found in many countries around the world such as in agriculture, food processing, food retailing and food service.",
+"For millennia, the focus of those involved with food as a human and economic phenomenon was on its production, preservation, distribution, pricing and other practical concerns.",
+"But in the late 18th century this began to change.",
+"Food became more than just a life necessity.",
+"Restaurants began to be developed, initially in France but eventually in other nations, as a distinct institution offering people dining choices and table service, the opportunity for socialization and, over time, a finer and finer atmosphere.",
+"The rise of restaurants eventually led to a class of diners who prided themselves on being critics of taste, food and cooking.",
+"Brillat-Savarin is probably the best known of the 'culinary philosophers' or, in today's parlance, a 'foodie'.",
+"One of Brillat-Savarin's better known sayings was, '[t]ell me what you eat, and I'll tell you who you are.'"
+],
+"ko": [
+"우리 모두 알듯이, 음식은 인간의 삶에 필수적이다.",
+"음식은 또한 농업, 식품 가공, 식품 소매, 외식업처럼 전 세계 많은 나라에서 볼 수 있는 몇몇 주요 산업의 기반이기도 하다.",
+"수천 년 동안, 인간적·경제적 현상으로서의 음식에 관여한 사람들의 초점은 음식의 생산, 보존, 유통, 가격 책정 및 기타 실용적인 관심사에 있었다.",
+"그러나 18세기 후반에 이것이 바뀌기 시작했다.",
+"음식은 단순한 생활 필수품 이상이 되었다.",
+"식당은 처음에는 프랑스에서, 결국에는 다른 나라들에서도, 사람들에게 식사 선택권과 테이블 서비스, 사교의 기회, 그리고 시간이 지나면서 점점 더 고급스러운 분위기를 제공하는 독특한 기관으로 발전하기 시작했다.",
+"식당의 등장은 결국 맛, 음식, 요리의 비평가인 것을 자랑으로 여기는 식객 계층을 낳았다.",
+"브리야사바랭은 아마도 '요리 철학자', 오늘날의 말로 하면 '미식가' 중 가장 잘 알려진 인물일 것이다.",
+"브리야사바랭의 잘 알려진 말 중 하나는 '당신이 무엇을 먹는지 말해 주면, 당신이 어떤 사람인지 말해 주겠다'였다."
+],
+"foot": "* culinary: 요리의 ** parlance: 용어"
+},
+"8": {
+"n": 35,
+"label": "고3 6월 35번 · 무관한 문장",
+"en": [
+"A genuine glacier must be permanent.",
+"Generally, this implies that sufficient fresh snow must accumulate during the cold months to offset melting during the summer, although on a year-to-year basis, glaciers may expand or contract, depending on local and global climatic conditions.",
+"Today, most glaciers around the world are melting because of the warming climate, and it appears that the rate of melting is accelerating.",
+"This has been documented spectacularly in places such as the Alps, where historical records have been kept and dated sketches and photographs are available to compare with the present extent of ice.",
+"Even over periods as short as a few decades, satellite images show that dramatic reduction of mountain glaciers has occurred in the Andes, the Himalayas, and elsewhere.",
+"It is estimated that many small mountain glaciers will disappear completely within ten to twenty years unless there is a sudden and unexpected change in the present warming trend."
+],
+"ko": [
+"진정한 빙하는 영구적이어야 한다.",
+"일반적으로 이것은 여름 동안 녹는 것을 상쇄할 만큼 충분한 새 눈이 추운 달에 쌓여야 한다는 뜻이지만, 해마다 빙하는 지역적·지구적 기후 조건에 따라 커지거나 줄어들 수 있다.",
+"오늘날 전 세계 대부분의 빙하가 따뜻해지는 기후 때문에 녹고 있으며, 녹는 속도가 빨라지고 있는 것으로 보인다.",
+"이것은 알프스 같은 곳에서 극적으로 기록되어 왔는데, 그곳에는 역사적 기록이 보존되어 있고 날짜가 적힌 스케치와 사진을 현재의 얼음 범위와 비교할 수 있다.",
+"불과 수십 년의 짧은 기간 동안에도 안데스, 히말라야 및 다른 곳에서 산악 빙하가 극적으로 줄어들었다는 것을 위성 사진이 보여 준다.",
+"현재의 온난화 추세에 갑작스럽고 예상치 못한 변화가 없다면, 많은 작은 산악 빙하가 10년에서 20년 안에 완전히 사라질 것으로 추정된다."
+],
+"foot": "* offset: 상쇄하다"
+},
+"9": {
+"n": 40,
+"label": "고3 6월 40번 · 요약문",
+"en": [
+"A serious deterioration in people's working lives would be deeply disturbing to the social order.",
+"Indeed, few consequences of technological change would be as dangerous.",
+"Today, the world of work is the main way that we share out the fruits of growth: for most people, their job is their main, if not their only, source of income.",
+"Technological unemployment would weaken that longstanding arrangement, encouraging an even more extreme version of inequality in which some people receive more income than others and many receive nothing at all.",
+"Nor would the disturbance be only economic.",
+"For many people, their work is both a source of income and of meaning.",
+"And with that in mind, the threat is even broader: not only that the labor market might be hollowed out, leaving some unable to find a good job and a reliable income, but that this sense of fulfilment that some people are fortunate to feel in their jobs might be hollowed out as well, leaving them unable to find purpose and live a satisfying life."
+],
+"ko": [
+"사람들의 직장 생활이 심각하게 악화된다면 사회 질서를 크게 어지럽힐 것이다.",
+"실제로, 기술 변화가 가져올 결과 중 이만큼 위험한 것은 거의 없을 것이다.",
+"오늘날 일의 세계는 우리가 성장의 결실을 나누는 주된 방식이다. 대부분의 사람들에게 직업은 유일하지는 않더라도 주된 소득원이다.",
+"기술적 실업은 그 오래된 체계를 약화시키고, 어떤 사람들은 남보다 더 많은 소득을 얻고 많은 사람은 전혀 얻지 못하는 훨씬 더 극단적인 불평등을 부추길 것이다.",
+"또한 그 혼란은 경제적인 것에만 그치지도 않을 것이다.",
+"많은 사람들에게 일은 소득의 원천이자 의미의 원천이다.",
+"그리고 그 점을 염두에 두면 위협은 훨씬 더 넓다. 노동 시장이 텅 비어 일부 사람들이 좋은 일자리와 안정적인 소득을 찾지 못하게 될 수 있을 뿐 아니라, 일부 사람들이 운 좋게 일에서 느끼는 성취감마저 텅 비어 그들이 목적을 찾고 만족스러운 삶을 살 수 없게 될 수도 있다는 것이다."
+],
+"foot": "* deterioration: 악화 ** hollow: 속이 비게 하다"
+},
+"10": {
+"n": 41,
+"label": "고3 6월 41~42번 · 장문 (제목 · 어휘)",
+"en": [
+"In technological design, an aspiration towards seamlessness aims to make the technological experience for humans blend seamlessly into our everyday lives.",
+"Essentially, this aspiration aims towards experiences where people are no longer aware of the technology, the interface or the differences between human-technology and human-human interaction.",
+"Considering the metaphor of seams in clothing, we can say that we aspire to seamless aesthetics by stitching the seams closely, pressing them flat and making sure they are hidden on the inside so that we wear clothing rather than pieces of fabric.",
+"When designers and engineers talk about technological seamlessness, they are often referring to ease of use and convenience.",
+"For example, in interface design, an aspiration towards seamlessness ensures the experience for the user flows and is not stressful or irritating.",
+"Most of us would have had experiences of poor interface designs or apps in workplaces that make things more complicated and irritating, and have longed for more seamless interfaces.",
+"Technological seamlessness can also include less visible screens in new technologies, or virtual reality technologies with a seamless technological design.",
+"The aim is to immerse the user experience such that the visual interaction might be described as inside the screen rather than a body interacting with a digital console or object as separate entities.",
+"Similarly, seamlessness in humanoid robotic design aims to make humanoids indistinguishable from a human body."
+],
+"ko": [
+"기술 디자인에서 이음매 없음에 대한 열망은 인간의 기술 경험이 일상생활에 매끄럽게 녹아들게 하는 것을 목표로 한다.",
+"본질적으로 이 열망은 사람들이 더 이상 기술이나 인터페이스, 또는 인간-기술 상호 작용과 인간-인간 상호 작용의 차이를 의식하지 않는 경험을 지향한다.",
+"옷의 솔기라는 비유를 생각해 보면, 우리는 솔기를 촘촘히 꿰매고 납작하게 다리고 안쪽에 숨겨지도록 해서 이음매 없는 미학을 추구하며, 그래서 천 조각이 아니라 옷을 입는다고 말할 수 있다.",
+"디자이너와 엔지니어가 기술적 이음매 없음에 대해 말할 때, 그들은 흔히 사용하기 쉬움과 편리함을 가리킨다.",
+"예를 들어 인터페이스 디자인에서 이음매 없음에 대한 열망은 사용자의 경험이 매끄럽게 흐르고 스트레스를 주거나 짜증 나지 않도록 보장한다.",
+"우리 대부분은 직장에서 일을 더 복잡하고 짜증 나게 만드는 형편없는 인터페이스 디자인이나 앱을 겪고, 더 매끄러운 인터페이스를 간절히 바란 적이 있을 것이다.",
+"기술적 이음매 없음은 또한 새로운 기술의 덜 눈에 띄는 화면이나, 이음매 없는 기술 디자인을 갖춘 가상 현실 기술을 포함할 수 있다.",
+"그 목표는 사용자 경험을 몰입시켜서, 시각적 상호 작용이 몸이 디지털 콘솔이나 물체와 별개의 존재로 상호 작용하는 것이 아니라 화면 '안'에 있는 것으로 묘사될 수 있게 하는 것이다.",
+"마찬가지로, 휴머노이드 로봇 디자인에서 이음매 없음은 휴머노이드를 인간의 몸과 구별할 수 없게 만드는 것을 목표로 한다."
+],
+"foot": "* seamlessness: 이음매 없음 ** aesthetics: 미학 *** immerse: 담그다"
+}
+}
