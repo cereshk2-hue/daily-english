@@ -1,0 +1,503 @@
+다음 글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?  (37)
+http://edu-lab.kr 교육연구소                                          
+                               
+비밀노트       26년 10월 고1 모의고사 변형문제            [37-38] 
+               	                          
+  edu-lab.kr – 수능대비/내신대비       /                                 비밀노트                     
+ ② 
+대면 협업에서의 원활한 소통 설명 뒤에 역접으로 원격 협업 시 두 공간이 분리된다는 문장이 오고, 화상 회의의 구체적 예시(② 뒤)로 이어진다. 
+However, when people are working remotely, the task space is often separated from the communication space.
+When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a subset of the communication space. ( ① ) Ishii, a professor at the MIT Media Lab, describes this as seamless communication because there is no functional separation between the task and communication space. ( ② ) For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. ( ③ ) In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. ( ④ ) So, there is an artificial seam between the communication space and task space. ( ⑤ ) This is the type of impact of remote communication technology that needs to be predicted through communication models.
+다음 글을 읽고 물음에 답하시오. (37)
+When people are collaborating face to face they can easily see each other and the range of different communication cues are used, so the task space is a subset of the communication space. Ishii, a professor at the MIT Media Lab, describes this as seamless communication because of there being no functional separation between the task and communication space. However, when people are working remotely, the task space often separates from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looked at a shared document on another. In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So, there is an artificial seam between the communication space and task space. (A) 이것은 의사소통 모델들을 통해 예측될 필요가 있는 원격 의사소통 기술의 영향의 한 형태이다. This is the type of impact of remote communication technology that needs to predict through communication models, because distant interactions are profoundly affected by digital screens.
+윗글의 밑줄 친 부분 중, 어법상 바르게 쓰인 개수는? 
+ ⑤ 
+When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a subset of the communication space. Ishii, a professor at the MIT Media Lab, describes this as seamless communication because of there being no functional separation between the task and communication space. However, when people are working remotely, the task space is often separates from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So, there is an artificial seam between the communication space and task space. (A) 이것은 의사소통 모델들을 통해 예측될 필요가 있는 원격 의사소통 기술의 영향의 한 형태이다. This is the type of impact of remote communication technology that needs to be predicted through communication models, because distant interactions are profoundly affected by digital screens.
+① 없음 ② 1개 ③ 2개 ④ 3개 ⑤ 4개
+윗글의 (A)에 들어갈 문장을 <보기>의 단어를 활용하여 <조건>에 맞게 영어로 쓰시오. 
+ This is the type of impact of remote communication technology that needs to be predicted through communication models.
+<보기>
+[ communication / remote / impact / through / to / This / of / needs / that / models / technology / communication / the / of / type / is / predict ] .
+<조건>
+- 총 18단어로 작성할 것
+- <보기>의 단어를 모두 1번씩만 사용하되, 필요하다면 형태를 바꿀 것
+다음 글을 읽고 물음에 답하시오. (37)
+When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a subset of the communication space. Ishii, a professor at the MIT Media Lab, describes this as seamless communication because there is no functional separation between the task and communication space. However, when people are working remotely, the task space is often separated from the communication space. 예를 들어, (A) 화상 회의를 할 때, 사람들은 다른 화면에서 공유된 문서를 보면서, 한 화면에 그들의 협업자의 얼굴을 띄울 수 있다. In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So, there is an artificial seam between the communication space and task space. This is the type of impact of remote communication technology that needs to be predicted through communication models.
+윗글의 내용과 가장 일치하는 것은? 
+ ⑤ 
+원격으로 작업할 때 과업 공간과 의사소통 공간이 기능적으로 분리되어 소통에 인위적인 틈이 생긴다고 본문에 명시되어 있다. 
+① Remote collaboration provides better visual access to communicative cues than face-to-face meetings.
+② In face-to-face collaboration, the task space and communication space function in complete isolation.③ Seamless communication occurs when there is an artificial division between workspace and messaging.
+④ Video conferencing allows participants to view shared documents and all social cues simultaneously with ease.
+⑤ Working remotely creates a functional separation between the communication space and the task space.
+윗글의 (A)에 들어갈 문장을 <보기>의 단어를 활용하여 <조건>에 맞게 영어로 쓰시오. 
+ when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another.
+<보기>
+[ have / the / when / document / on / of /  / conferencing, / may / share / face / another. / one / video / a / while / their / on / collaborate / look / at / people / screen, ] 
+<조건>
+- 22단어로 작성할 것
+- 콤마(,) 2개를 반드시 포함할 것 (단어 수에는 들어가지 않음)
+- 접속사 뒤에 분사구문을 활용할 것
+- <보기>의 단어를 모두 1번씩 사용할 것 (단어 형태 변형 없음)
+다음 글을 읽고 물음에 답하시오. (37)
+When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a [a] subset of the communication space. Ishii, a professor at the MIT Media Lab, describes this as [b] seamless communication because there is no functional separation between the task and communication space. However, when people are working remotely, the task space is often separated from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. In this case, it is [c] impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So, there is an [d] artificial seam between the communication space and task space. This is the type of impact of remote communication technology (A)__________________________________________________, which shows that spatial integration is completely [e] unnecessary.
+윗글의 밑줄 친 [a]~[e] 중에서 문맥상 낱말의 쓰임이 적절하지 않은 것은? 
+ ⑤ 
+원격 소통은 인위적인 틈을 만들어 단서 포착을 방해하므로 두 공간의 통합이나 예측 모델 구축이 필요(necessary)하다. 따라서 unnecessary는 어색하다. 
+① [a]    ② [b]    ③ [c]    ④ [d]    ⑤ [e]
+윗글의 빈칸 (A)에 들어갈 말을 <보기>의 단어를 사용하여 <조건>에 맞게 쓰시오. 
+ that needs to be predicted through communication models 
+<보기>
+communication models / needs / predict / that / through / to
+<조건>
+- 관계대명사로 시작하여 총 8단어로 완성할 것
+- <보기> 단어만을 모두 1번씩 사용할 것 (형태 변형 있음)
+다음 글을 읽고 물음에 답하시오. (37)
+  When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a subset of the communication space. Ishii, a professor at the MIT Media Lab, describes this as seamless communication because there is no functional separation between the task and communication space. However, when people are working remotely, the task space is often separated from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So,                                                                      . This is the type of impact of remote communication technology that needs to be predicted through communication models.
+윗글의 내용에 맞도록 <보기>의 빈칸에 가장 적절한 단어를 넣을 때, 어디에도 들어갈 수 없는 것은?
+ ⑤ 
+(A) seamless, (B) separation, (C) artificial, (D) cues가 문맥상 들어가야 하므로 integration(통합)은 제외. 
+<보기>
+While face-to-face interaction provides (A)__________ communication without spatial division, remote working causes functional (B)__________ between task and communicative zones, producing an (C)__________ barrier that hinders partners from perceiving subtle (D)__________.
+① seamless	② separation	③ artificial
+④ cues		⑤ integration
+윗글의 빈칸에 들어갈 말로 가장 적절한 것은?
+ ⑤ 
+화면 분할로 인해 과업을 보면서 상대방의 단서를 동시에 볼 수 없으므로 두 공간 사이에 인위적인 틈이 생긴다는 결론이 알맞다. 
+① communication models become entirely obsolete for remote teamwork
+② face-to-face collaboration completely disappears in modern business environments
+③ workers can easily combine digital devices into a single visual focus
+④ the task space naturally expands to replace interpersonal conversation
+⑤ there is an artificial seam between the communication space and task space
+다음 글을 읽고 물음에 답하시오. (37)
+ [a] When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a subset of the communication space. Ishii, a professor at the MIT Media Lab, describes this as seamless communication [b] because there is no functional separation between the task and communication space. However, [c] when people are working remotely, the task space is often separated from the communication space. For example, [d] when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So, there is an artificial seam between the communication space and task space. [e] This is the type of impact of remote communication technology that needs to be predicted through communication models.
+윗글의 내용과 일치하지 않는 것은? 
+ ④ 
+ 화상 회의 시 한 화면에는 얼굴, 다른 화면에는 공유 문서를 띄워 두 대상을 동시에 온전히 보지 못한다고 설명되어 있다. 
+① 대면 협업 시 과업 공간은 의사소통 공간의 부분집합(subset)을 이룬다.
+② MIT 미디어랩의 Ishii 교수는 대면 소통을 매끄러운 의사소통이라고 설명한다.
+③ 원격 근무 시 과업 공간과 의사소통 공간은 기능적으로 명확히 분리되는 경향이 있다.
+④ 화상 회의를 할 때 참가자들은 공유 문서와 상대방의 표정을 한 화면에서 완벽히 일치시켜 본다.
+⑤ 원격 소통 기술이 초래하는 공간 분리 영향은 의사소통 모델을 통해 사전 예측될 필요가 있다.
+윗글의 밑줄 친 부분 중, 어법상 어색한 것은?
+  ⑤ 
+관계사절의 선행사는 단수 명사인 the type of impact이므로 관계사절의 술어동사는 needs로 단수 취급해야 옳다.
+① [a]    ② [b]    ③ [c]    ④ [d]    ⑤ [e] 
+다음 글을 읽고 물음에 답하시오. (37)
+ When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a subset of the communication space. Ishii, a professor at the MIT Media Lab, describes this as seamless communication because there is no functional separation between the task and communication space. However, when people are working remotely, the task space is often separated from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So, (A) there is an artificial seam between the communication space and task space. This is the type of impact of remote communication technology that needs to be predicted through communication models.
+윗글의 내용과 일치하는 것을 있는 대로 모두 고른 것은? 
+ ② 
+ⓐ(대면 소통 단서 관찰), ⓒ(시각 초점 분리), ⓔ(모델 예측 필요)만 옳다. ⓑ(기능적 분리 없음)와 ⓓ(동시 관찰 불가능)는 반대이다.
+ⓐ Face-to-face collaborators can observe both partners and diverse communication cues effortlessly.
+ⓑ Seamless communication involves an apparent functional boundary between task and dialogue spaces.
+ⓒ Remote collaborators often split their visual focus across different digital windows or monitors.ⓓ Simultaneous tracking of communicative expressions and work tasks is entirely effortless during video calls.
+ⓔ The disconnection between communication and work areas created by remote tools must be forecasted by models.
+① ⓐ, ⓑ, ⓓ 	② ⓐ, ⓒ, ⓔ 	③ ⓑ, ⓒ, ⓓ 
+④ ⓑ, ⓓ, ⓔ 	⑤ ⓒ, ⓓ, ⓔ
+윗글의 밑줄 친 (A)가 의미하는 바로 가장 적절한 것은? 
+ ④  
+과업 화면과 상대방 얼굴 화면이 물리적으로 나뉘어 업무를 보면서 소통 단서를 함께 온전히 확인하기 어려운 분절 상태를 뜻한다. 
+① Remote work tools strengthen trust and interpersonal connections among users.
+② Remote communication effectively eliminates workspace unnecessarily wasted during face-to-face interactions.
+③ Technological advances enable the immediate sharing of all information regardless of spatial limitations.
+④ Screen division creates a nonverbal disconnect between work content and conversational partners.
+⑤ Artificial intelligence interpretation technology completely overcomes language barriers among participants in remote meetings.
+다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?  (37)
+  ③ (> separated from)
+원격 협업 시에는 과업 공간과 의사소통 공간이 서로 '분리(separated)'된다고 서술해야 하므로 connected to(연결된)는 부적절하다. 
+When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a ❶ subset of the communication space. Ishii, a professor at the MIT Media Lab, describes this as ❷ seamless communication because there is no functional separation between the task and communication space. However, when people are working remotely, the task space is often ❸ connected to the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. In this case, it is ❹ impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So, there is an ❺ artificial seam between the communication space and task space.
+다음 글에서 어법상 어색한 두 곳을 찾아 올바르게 고쳐 쓰시오.  (37)
+ 
+(1) using   → being used
+ (2) looked → looking 
+ When people are collaborating face to face they can easily see each other and the range of different communication cues using, so the task space is a subset of the communication space. Ishii, a professor at the MIT Media Lab, describes this as seamless communication because there is no functional separation between the task and communication space. However, when people are working remotely, the task space is often separated from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looked at a shared document on another. In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So, there is an artificial seam between the communication space and task space. This is the type of impact of remote communication technology that needs to be predicted through communication models.
+어색한 곳 (1): ____________________ 
+→ 바르게 고친 것: ____________________
+어색한 곳 (2): ____________________ 
+→ 바르게 고친 것: ____________________
+다음 글의 밑줄 친 (A) this와 (B) an artificial seam이 의미하는 바로 가장 알맞은 것은?  (37)
+ ② 
+(A)는 과업과 소통 공간이 일치하는 '대면 협업'을, (B)는 원격 작업 도구에 의해 발생하는 '두 공간 간의 인위적 분리'를 뜻한다. 
+When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a subset of the communication space. Ishii, a professor at the MIT Media Lab, describes (A) this as seamless communication because there is no functional separation between the task and communication space. However, when people are working remotely, the task space is often separated from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So, there is (B) an artificial seam between the communication space and task space.
+
+
+(A)
+(B)
+①
+remote video conference
+technical error in computer monitors
+②
+face-to-face collaboration
+functional division between screen spaces
+③
+shared digital document
+linguistic barrier among global workers
+④
+communication cue analysis
+physical distance between office buildings
+⑤
+media lab research project
+emotional conflict during negotiations
+다음 글의 밑줄 친 ⓐ~ⓔ 중, 어법상 옳은 것만을 있는 대로 고른 것은?  (37)
+  ① 
+ⓐ(수동분사), ⓒ(분사구문 looking), ⓔ(선행사 type의 단수동사)는 옳다. ⓑ는 동사 수식 부사 remotely, ⓓ는 단수 주어 seam이므로 is이다.
+When people are collaborating face to face they can easily see each other and the range of different communication cues ⓐbeing used, so the task space is a subset of the communication space. Ishii, a professor at the MIT Media Lab, describes this as seamless communication because there is no functional separation between the task and communication space. However, when people are working ⓑremote, the task space is often separated from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while ⓒlooking at a shared document on another. In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So, there ⓓare an artificial seam between the communication space and task space. This is the type of impact of remote communication technology that ⓔneeds to be predicted through communication models.
+① ⓐ, ⓒ, ⓔ 	② ⓐ, ⓑ, ⓓ 	③ ⓑ, ⓒ, ⓔ 
+④ ⓐ, ⓓ, ⓔ 	⑤ ⓒ, ⓓ, ⓔ
+다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?  ( 변형 ) (37)
+ ④
+원격 기술로 인해 발생하는 소통 공간과 작업 공간 사이의 단절은 기기나 기술에 의해 생겨난 '인위적인(artificial)' 틈이므로 natural(자연적인)은 문맥상 어색함.
+When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a ① component of the communication space. Ishii, a professor at the MIT Media Lab, describes this as continuous communication because there is no functional ② division between the task and communication space. However, when people are working remotely, the task space is often ③ isolated from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. In this case, it is unattainable to detect many of the remote collaborator’s communication cues concurrently while looking at the task space. So, there is a ④ natural gap between the communication space and task space. This is the type of impact of remote communication technology that needs to be ⑤ forecasted through communication models.
+다음 빈칸에 들어갈 말로 가장 적절한 것은? (37)
+ ② 
+화면이 나누어져 과업 공간을 보는 동시에 원격 협업자의 다양한 소통 단서를 함께 볼 수 없다는 내용이 빈칸에 가장 알맞다. 
+When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a subset of the communication space. Ishii, a professor at the MIT Media Lab, describes this as seamless communication because there is no functional separation between the task and communication space. However, when people are working remotely, the task space is often separated from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. In this case, __________________________________________________. So, there is an artificial seam between the communication space and task space. This is the type of impact of remote communication technology that needs to be predicted through communication models.
+① participants can instantly memorize both textual documents and emotional expressions
+② it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space
+③ technology naturally integrates physical task environments with online conversational spaces
+④ facial recognition systems automatically resolve all spatial barriers between collaborators
+⑤ people prefer audio-only conversations over video conferences to enhance work productivity
+다음 빈칸에 들어갈 말로 가장 적절한 것은? (37)
+ ⑤ 
+대면 협업 시에는 서로를 보며 다양한 단서를 확인하므로 과업 공간이 의사소통 공간의 부분집합을 이룬다는 진술이 적절하다.
+When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so __________________________________________________. Ishii, a professor at the MIT Media Lab, describes this as seamless communication because there is no functional separation between the task and communication space. However, when people are working remotely, the task space is often separated from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So, there is an artificial seam between the communication space and task space. This is the type of impact of remote communication technology that needs to be predicted through communication models.
+① remote communication tools provide far superior collaboration results
+② work efficiency is drastically undermined by excessive visual distractions
+③ individuals struggle to detect nonverbal emotional cues
+④ technology creates an inevitable physical barrier between participants
+⑤ the task space is a subset of the communication space
+다음 글의 제목으로 가장 적절한 것은?  (37)
+ ③ 
+대면 협업의 이음매 없는 결합과 대비하여 원격 근무가 작업 공간과 의사소통 공간을 어떻게 분리(단절)시키는지 명확히 보여주는 제목임.
+When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a subset of the communication space. Ishii, a professor at the MIT Media Lab, describes this as seamless communication because there is no functional separation between the task and communication space. However, when people are working remotely, the task space is often separated from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So, there is an artificial seam between the communication space and task space. This is the type of impact of remote communication technology that needs to be predicted through communication models.
+① Cognitive Overload Caused by Excessive Facial Expressions in Collaborative Tasks
+② Eradicating Face-to-Face Meetings: The Inevitable Evolution of Office Environments
+③ The Visible Divide: How Remote Work Disconnects Task and Communication Spaces
+④ Dual Monitors: The Ultimate Panacea for Miscommunications in Global Teams
+⑤ Why Communication Models Fail to Address Technological Advances in Workplaces
+주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?  (37)
+ ③ 
+When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a subset of the communication space.
+(A) So, there is an artificial seam between the communication space and task space. This is the type of impact of remote communication technology that needs to be predicted through communication models.
+(B) Ishii, a professor at the MIT Media Lab, describes this as seamless communication because there is no functional separation between the task and communication space. However, when people are working remotely, the task space is often separated from the communication space.
+(C) For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space.
+① (A) - (C) - (B) 	② (B) - (A) - (C) 
+③ (B) - (C) - (A) 	④ (C) - (A) - (B) 
+⑤ (C) - (B) - (A)
+다음 글의 내용을 한 문장으로 요약하고자 할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  (37)
+ ④ 
+대면 협업이 매끄러운(smooth, seamless) 공간 통합을 보이는 것과 달리, 원격 협업은 과업과 대화 공간 사이에 기능적 분리/단절(split, division)을 유발한다. (84자)
+When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a subset of the communication space. Ishii, a professor at the MIT Media Lab, describes this as seamless communication because there is no functional separation between the task and communication space. However, when people are working remotely, the task space is often separated from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So, there is an artificial seam between the communication space and task space. This is the type of impact of remote communication technology that needs to be predicted through communication models.
+➠Unlike face-to-face interaction that ensures (A)__________ integration, remote collaboration creates a functional (B)__________ between work and dialogue areas, demanding predictive analysis through models.
+
+
+(A)
+(B)
+①
+delayed
+harmony
+②
+artificial
+continuity
+③
+temporary
+connection
+④
+smooth
+split
+⑤
+virtual
+gap
+다음 글의 an artificial seam이 의미하는 바를 본문에서 찾아 영어로 쓰시오.  (37)
+ The task space is separated from communication space. (또는 Task space and communication space are functionally separated.) 
+When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a subset of the communication space. Ishii, a professor at the MIT Media Lab, describes this as seamless communication because there is no functional separation between the task and communication space. However, when people are working remotely, the task space is often separated from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So, there is an artificial seam between the communication space and task space. This is the type of impact of remote communication technology that needs to be predicted through communication models.
+<조건>
+- 문장으로 작성할 것
+- 10단어 이내로 작성할 것
+밑줄 친 there is an artificial seam between the communication space and task space가 다음 글에서 의미하는 바로 가장 적절한 것은?  (37)
+ ②
+대면 작업과 달리 원격 환경에서는 화면 분할 등으로 인해 작업 공간과 상대방의 의사소통 단서가 인위적으로 단절·분리된다는 의미임.
+When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a subset of the communication space. Ishii, a professor at the MIT Media Lab, describes this as seamless communication because there is no functional separation between the task and communication space. However, when people are working remotely, the task space is often separated from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So, there is an artificial seam between the communication space and task space. This is the type of impact of remote communication technology that needs to be predicted through communication models.
+① digital tools foster unprecedented harmony between verbal statements and physical tasks
+② interaction cues and work operations are functionally fragmented due to technological mediation
+③ remote team members can synchronously monitor task outputs alongside all physical signals
+④ mechanical defects in video monitors create insurmountable visual delays in conferences
+⑤ non-verbal expressions permanently supersede written documentation in remote collaboration
+Which does the underlined sentence "the task space is a subset of the communication space" imply?  (37)
+ ④ 
+[해설] 대면 작업 시 작업 공간이 소통 공간의 부분집합이라는 것은 작업 영역이 상호 소통의 장 안에 자연스럽게 통합되어 있음을 뜻함. 
+When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a subset of the communication space. Ishii, a professor at the MIT Media Lab, describes this as seamless communication because there is no functional separation between the task and communication space. However, when people are working remotely, the task space is often separated from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So, there is an artificial seam between the communication space and task space. This is the type of impact of remote communication technology that needs to be predicted through communication models.
+① Interpersonal communication cues exist entirely outside the physical parameters of the environment where collaborative task work takes place.
+② Communication space can only be maintained after workers successfully finalize all professional assignments within a strictly defined physical task environment.
+③ Performing collaborative duties requires complete detachment from the emotional and communicative behaviors of fellow workers within modern office settings.
+④ The physical workspace where tasks are performed is naturally and smoothly integrated within the immediate field of mutual interpersonal interaction.
+⑤ Digital communication technology has completely subordinated all physical workspaces to virtual platforms across diverse global corporate business sectors.
+다음 글의 밑줄 친 (A), (B)에 들어갈 표현을 <조건>에 맞게 영어로 쓰시오.  (37)
+ (A) describes this as seamless communication because there is no functional separation between the task and communication space. / (B) Iit is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. 
+When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a subset of the communication space. MIT 미디어랩의 교수인 Ishii는 (A) 과업 공간과 의사소통 공간 사이에 기능적 분리가 없기 때문에 이것을 매끄러운 소통으로 묘사한다. However, when people are working remotely, the task space is often separated from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. 이 경우에, (B) 과업 공간을 바라보는 것과 동시에 원격 협업자의 많은 의사소통 단서들을 보는 것은 불가능하다. So, there is an artificial seam between the communication space and task space. This is the type of impact of remote communication technology that needs to be predicted through communication models.
+< (A) 보기 >
+[ communication / task / there / and / describes / functional / the / because / seam / communication / no / separate / this / as / between / is / space ] 
+< (A) 조건 >
+- 총 17단어로 작성할 것 
+- <보기>의 단어를 모두 1번씩만 사용할 것 (형태 변형 있음)
+--------------
+< (B) 보기 >
+impossible see many of the remote collaborator’s communication cues at the same time as look at the task space.
+< (B) 조건 >
+- 가주어-진주어 구문 쓸 것
+- 총 22단어로 작성할 것
+<보기>의 단어만을 모두 1번씩 사용할 것 (단어 추가 및 변형 있음)
+다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말을 <보기>의 단어를 활용해 <조건>에 맞게 쓰시오.  (37)
+ (A) creates a seam between the two spaces (B) hinders perceiving communication cues / 
+When people are collaborating face to face they can easily see each other and the range of different communication cues being used, so the task space is a subset of the communication space. Ishii, a professor at the MIT Media Lab, describes this as seamless communication because there is no functional separation between the task and communication space. However, when people are working remotely, the task space is often separated from the communication space. For example, when video conferencing, people may have the face of their collaborator on one screen, while looking at a shared document on another. In this case, it is impossible to see many of the remote collaborator’s communication cues at the same time as looking at the task space. So, there is an artificial seam between the communication space and task space. This is the type of impact of remote communication technology that needs to be predicted through communication models.
+➠ While in-person interaction unites work and dialogue, remote collaboration (A)         (5단어), which ultimately (B)          (4단어).
+<보기>
+creates / cues / the two spaces / perceive / between / a seam / hinder/ communication
+<조건 >
+- (   )안의 단어수에 맞게 쓸 것
+- <보기>의 단어를 모두 1번씩 사용할 것(변혀 있음)
+다음 글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은? (38) 
+ ④ 
+진실성 평가를 비교했다는 연구 과정(④ 앞) 뒤에 발견 결과가 놀라웠다는 문장이 오고, 진위와 무관하게 믿음이 커졌다는 구체적 결과(④ 뒤)가 이어져야 한다.
+What they found was astonishing.
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certain they were that sixty general-knowledge trivia-like statements were either true or false. ( ① ) The students were asked to evaluate the sixty statements three times, at two-week intervals. ( ② ) Crucially, only twenty of the statements were repeated each time; the other forty were new. ( ③ ) The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. ( ④ ) Regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition. ( ⑤ ) In other words, the more often you hear a statement, the more ‘true’ it sounds. This became known as the illusory truth effect.
+다음 글을 읽고 물음에 답하시오.  (38)
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certainly they were that sixty general-knowledge trivia-like statements were either true or false. The students asked to evaluate the sixty statements three times, at two-week intervals. Crucially, only twenty of the statements were repeated each time; the other forty were new. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. That they found was astonised. Regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition.  In other words, (A)당신이 어떤 진술을 더 자주 들을수록, 그것은 더 ‘진실’처럼 들린다. This became known as the illusory truth effect.
+윗글의 밑줄 친 부분 중, 어법상 바르게 쓰인 개수는?  
+ ③ 
+ⓑ(수동태 were repeated), ⓒ(명사절 접속사 whether), ⓓ(수동 분사 known) 3개가 옳다. ⓐ는 were의 주격 보어이므로 형용사 certain이어야 한다. 
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certain they were that sixty general-knowledge trivia-like statements were either true or false. The students were asked to evaluate the sixty statements three times, at two-week intervals. Crucially, only twenty of the statements were repeated each time; the other forty were new. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. What they found was astonising. Regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition. (A)다시 말해서, 당신이 어떤 진술을 더 자주 들을수록, 그것은 더 ‘진실’처럼 들린다. This became known as the illusory truth effect.
+① 1개 ② 2개 ③ 3개 ④ 4개 ⑤ 5개
+윗글의 (A)에 들어갈 문장을 <보기>의 단어를 활용하여 <조건>에 맞게 영어로 쓰시오. 
+ In other words, the more often you hear a statement, the more ‘true’ it sounds. 
+<보기>
+often you hear a statement, ‘true’ it sounds
+<조건>
+- <보기>의 단어를 포함하여 총 20단어로 작성할 것
+- 콤마(,) 1개를 반드시 포함할 것 (콤마는 단어 수에 미포함)
+- the + 비교급 ~, the + 비교급 ... 구문을 활용할 것
+❖ 다음 글을 읽고 물음에 답하시오.  (38)
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certain they were that sixty general-knowledge trivia-like statements were either true or false. The students were asked to evaluate the sixty statements three times, at two-week intervals. Crucially, only twenty of the statements were repeated each time; the other forty were new. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. What they found was astonishing. (A) 진술이 사실이든 거짓이든 상관없이, 주장의 진실성에 대한 믿음은 반복의 함수로서 증가했다. In other words, the more often you hear a statement, the more ‘true’ it sounds. This became known as the illusory truth effect.
+윗글의 내용과 가장 일치하는 것은? 
+ ③ 
+실제 사실 여부(참/거짓)와 상관없이 반복된 진술에 대한 진실성 평가 점수와 믿음이 상승했다.
+① College students evaluated all sixty statements repeatedly every two weeks without any new additions.
+② Lynn Hasher and David Goldstein only tested statements that were factually proven to be true.
+③ Repeated statements were judged to be more truthful regardless of their actual factual accuracy.
+④ The truth-ratings of statements dropped significantly as students heard them more frequently.
+⑤ The illusory truth effect occurs only when participants consciously verify the objective facts.
+윗글의 (A)에 들어갈 문장을 <보기>의 단어를 활용하여 <조건>에 맞게 영어로 쓰시오. 
+ Regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition. 
+<보기>
+[ a function / in / of / belief / whether / was / went / true / up / of / the / Regardless / of / the  truth / repetition / claim / false, / the statement / as / or ] . 
+<조건>
+- 총 23단어로 작성할 것
+- 콤마(,) 1개를 반드시 포함할 것 (콤마는 단어 수에 미포함)
+- 전치사구로 시작할 것
+- <보기>의 단어를 모두 1번씩 사용할 것 (형태 변형 없음)
+다음 글을 읽고 물음에 답하시오. (38)
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how [a] certain they were that sixty general-knowledge trivia-like statements were either true or false. The students were asked to evaluate the sixty statements three times, at two-week intervals. Crucially, only twenty of the statements were [b] repeated each time; the other forty were new. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. What they found was astonishing. Regardless of whether the statement was true or false, belief in the truth of the claim went [c] up as a function of repetition. In other words, the more often you hear a statement, the more ‘true’ it sounds. This became (A)__________________________________________________, which proves that frequency of exposure has [d] substantial cognitive impacts, while skepticism remains [e] unshakable.
+윗글의 밑줄 친 [a]~[e] 중에서 문맥상 낱말의 쓰임이 적절하지 않은 것은?  ( 변형 )
+ ⑤ 
+진술이 반복될수록 사람들은 의심을 유지하지 못하고 그것을 진실로 믿게 되므로, 회의론이 '흔들리지 않는다(unshakable)'는 문맥상 어색. 
+① [a] ② [b] ③ [c] ④ [d] ⑤ [e]
+윗글의 빈칸 (A)에 들어갈 말을 <보기>의 단어를 사용하여 <조건>에 맞게 쓰시오. 
+ known as the illusory truth effect
+<보기>
+as / effect / illusion / know / the / truth
+<조건>
+- 총 6단어로 작성할 것
+- <보기> 단어만을 모두 1번씩 사용할 것 (형태 변형 있음)
+❖ 다음 글을 읽고 물음에 답하시오.  (38)
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certain they were that sixty general-knowledge trivia-like statements were either true or false. The students were asked to evaluate the sixty statements three times, at two-week intervals. Crucially, only twenty of the statements were repeated each time; the other forty were new. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. What they found was astonishing. Regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition. In other words, the more often you hear a statement, the more ‘true’ it sounds. This became known as the illusory truth effect.
+윗글의 내용에 맞도록 <보기>의 빈칸에 가장 적절한 단어를 넣을 때, 어디에도 들어갈 수 없는 것은? 
+ ②  
+(A) exposure, (B) authentic, (C) true, (D) familiarity가 알맞게 들어가므로 refutation(반박)은 들어갈 수 없다. 
+<보기>
+The experiment demonstrates that repeated (A)__________ to statements makes them seem more (B), leading people to accept claims as (C) simply because of cognitive (D)__________, regardless of factual truth.
+① exposure	② refutation	③ true
+④ familiarity	⑤ authentic 
+윗글의 빈칸에 들어갈 말로 가장 적절한 것은?
+ ② 
+자주 들을수록 더 사실처럼 들린다는 다음 문장과 일맥상통하도록 진술의 참/거짓 여부와 무관하게 '반복에 따라 믿음이 커졌다'가 적절. 
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certain they were that sixty general-knowledge trivia-like statements were either true or false. The students were asked to evaluate the sixty statements three times, at two-week intervals. Crucially, only twenty of the statements were repeated each time; the other forty were new. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. What they found was astonishing. Regardless of whether the statement was true or false, __________________________________________________. In other words, the more often you hear a statement, the more ‘true’ it sounds. This became known as the illusory truth effect.
+① students easily detected deliberate falsehoods through logical reasoning
+② belief in the truth of the claim went up as a function of repetition
+③ factual accuracy proved to be the sole factor in determining credibility
+④ repeated statements suffered an immediate drop in truth evaluations
+⑤ exposure frequency produced no measurable change in students' perceptions
+다음 글을 읽고 물음에 답하시오. (38)
+ In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students [a] how certain they were that sixty general-knowledge trivia-like statements were either true or false. The students were asked to evaluate the sixty statements. [b] They did so three times at two-week intervals. Crucially, only twenty of the statements were repeated each time; the other forty were new. [c] The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. [d] What they found was astonishing. Regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition. In other words, [e] the more frequently you hear a statement, the more ‘truly’ it sounds. This became known as the illusory truth effect.
+윗글의 내용과 일치하지 않는 것은? 
+ ③  매회 60개 중 20개의 진술만 반복 제시되었고 나머지 40개는 새로운 진술이었으므로 ③은 일치하지 않는다. 
+① 1977년 심리학자들은 대학생들에게 60개의 일반 상식 진술의 참·거짓 확신도를 물었다.
+② 참가자들은 2주 간격으로 총 3회에 걸쳐 진술들을 평가하도록 요청받았다.
+③ 매회 평가할 때마다 60개 진술 전체를 새로운 진술로 완전히 교체하여 제시했다.
+④ 연구자들은 반복 제시된 진술과 그렇지 않은 진술 간의 '진실성 평가 점수'를 비교했다.
+⑤ 어떤 진술을 자주 접할수록 사람들은 그것을 더 사실로 느끼며, 이를 '진실성 착각 효과'라 부른다.
+윗글의 밑줄 친 부분 [a]~[e] 중, 어법상 어색한 것은? 
+ ⑤ ( truly > true)
+sounds의 보어는 형용사(true)이다.
+윗글의 내용을 한 문장으로 요약하고자 한다. 다음 빈칸 (A), (B)에 들어갈 가장 적절한 말을 본문에 쓰인 단어를 변형하여 순서대로 쓰시오. 
+ (A) frequency / (B) truthfulness (또는 truth)] 
+➠In a groundbreaking 1977 study, researchers discovered that subjects rated repeated statements as significantly more credible than novel ones, demonstrating that cognitive (A) ____________ induced by repetition artificially inflates perceived (B) ____________ regardless of factual reality.
+다음 글을 읽고 물음에 답하시오. (38)
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certain they were that sixty general-knowledge trivia-like statements were either true or false. The students were asked to evaluate the sixty statements three times, at two-week intervals. Crucially, only twenty of the statements were repeated each time; the other forty were new. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. What they found was astonishing. (A) Regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition. (B)The more often you hear a statement, the more ‘true’ does it sound, which making repetition extremely persuasive.
+윗글의 내용과 일치하는 것을 있는 대로 모두 고른 것은? 
+ ② 
+ⓑ(2주 간격 3회 평가), ⓓ(반복된 진술의 평가 점수 상승), ⓕ(진실성 착각 효과 정의)는 일치한다. ⓐ, ⓒ, ⓔ는 본문과 다르다. 
+ⓐ The experiment asked college students to distinguish completely fabricated lies from everyday scientific truths.
+ⓑ Statements were evaluated across three different sessions separated by two-week gaps.
+ⓒ All sixty statements were renewed in every evaluation cycle to eliminate memorization.
+ⓓ Claims that were repeated gained higher truth ratings compared to unrepeated claims.
+ⓔ Participants raised their truth assessments of claims only when the statements were objectively true.
+ⓕ The illusory truth effect describes how familiarity through repetition elevates perceived truthfulness.
+① ⓐ, ⓑ, ⓓ 	② ⓑ, ⓓ, ⓕ 	③ ⓑ, ⓒ, ⓓ 
+④ ⓒ, ⓓ, ⓔ 	⑤ ⓓ, ⓔ, ⓕ
+윗글의 밑줄 친 (A)가 의미하는 바로 가장 적절한 것은? 
+ ①  
+실제 진위와 무관하게 어떤 주장이 자주 반복되어 노출되기만 해도 뇌가 그것을 진실로 받아들이는 현상을 설명한다. 
+① Repeated exposure to statements can create an illusion of truth, leading people to believe them regardless of their actual accuracy.
+② Claims lacking objective evidence cannot gain public trust, regardless of how frequently they are repeated or presented to people.
+③ University students possess a greater ability to distinguish accurate information from false claims in general knowledge than experts do.
+④ A two-week interval completely distorts human memory, making it impossible to distinguish between true and false information.
+⑤ People adopt a more rigorous and critical approach to evaluating familiar statements than they do when encountering unfamiliar ones.
+윗글의 (B)에서 어법상 어색한 두 곳을 찾아 올바르게 고쳐 쓰시오. 
+ (1) does it sound → it sounds (2) making → makes / (1) the+비교급 평서문 어순, (2) 계속적 관계대명사 which의 술어동사 자리임.
+어색한 곳 (1): ____________________ → 바르게 고친 것: ____________________
+어색한 곳 (2): ____________________ → 바르게 고친 것: ____________________
+다음 글의 밑줄 친 ⓐ~ⓔ 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?  
+ ④
+진술이 반복될수록 사실처럼 들려 주장에 대한 믿음이 상승하므로 ⓓ의 down(하락)은 up(상승)으로 고쳐야 맞다. 
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how ⓐcertain they were that sixty general-knowledge trivia-like statements were either true or false. The students were asked to evaluate the sixty statements three times, at two-week intervals. Crucially, only twenty of the statements were ⓑrepeated each time; the other forty were new. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. What they found was ⓒastonishing. Regardless of whether the statement was true or false, belief in the truth of the claim went ⓓdown as a function of repetition. In other words, the more often you hear a statement, the more ⓔ‘true’ it sounds.
+① ⓐ    ② ⓑ    ③ ⓒ    ④ ⓓ    ⑤ ⓔ
+다음 글의 밑줄 친 (A) these sixty statements와 (B) the illusory truth effect가 의미하는 바로 가장 알맞은 것은?  (38) 
+ ① 
+A)는 피실험자들이 평가한 '실험용 진술 문항들'이며, (B)는 반복 노출된 말을 사실로 믿게 되는 '진실성 착각 효과'이다. 
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certain they were that (A)sixty general-knowledge trivia-like statements were either true or false. The students were asked to evaluate the statements three times. Crucially, only twenty of the statements were repeated each time; the other forty were new. Regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition. In other words, the more often you hear a statement, the more ‘true’ it sounds. This became known as (B)the illusory truth effect.
+
+
+(A)
+(B)
+①
+experimental evaluation items
+tendency to believe repeated statements as true
+②
+certified scientific discoveries
+error in judging statistical probabilities
+③
+completely false news headlines
+bias toward preferring new information
+④
+psychological quiz questions
+difficulty in recalling past memories
+⑤
+historical survey records
+skepticism toward familiar claims
+다음 글의 밑줄 친 ⓐ~ⓔ 중, 어법상 옳은 것만을 있는 대로 고른 것은? (38) 
+ ① 
+ⓐ(보어 형용사), ⓓ(2형식 감감동사 단수 sounds), ⓔ(과거분사 known)는 옳다. ⓑ는 수동태 were asked, ⓒ는 목적격 관계대명사 What이다.
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how ⓐcertain they were that sixty general-knowledge trivia-like statements were either true or false. The students ⓑasked to evaluate the sixty statements three times, at two-week intervals. Crucially, only twenty of the statements were repeated each time; the other forty were new. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. ⓒThat they found was astonishing. Regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition. In other words, the more often you hear a statement, the more ‘true’ it ⓓsounds. This became ⓔknown as the illusory truth effect.
+① ⓐ, ⓓ, ⓔ 	② ⓐ, ⓑ, ⓓ 	③ ⓑ, ⓒ, ⓔ 
+④ ⓐ, ⓓ, ⓔ 	⑤ ⓒ, ⓓ, ⓔ
+다음 글의 밑줄 친 ⓐ~ⓔ 중 문맥상 낱말의 쓰임이 가장 어색한 것은?  (38) 
+ ⑤ 
+진술을 자주 접할수록 더 참되고 그럴듯하게 들린다는 흐름이므로 ⓔ의 dubious(의심스러운)는 'true'(사실인)로 고쳐야. 
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certain they were that sixty general-knowledge trivia-like statements were either true or false. The students were asked to evaluate the sixty statements three times, at two-week intervals. Crucially, only twenty of the statements were ⓐrepeated each time; the other forty were ⓑnovel. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. What they found was ⓒastonishing. Regardless of whether the statement was true or false, belief in the truth of the claim ⓓescalated as a function of repetition. In other words, the more often you hear a statement, the more ⓔdubious it sounds.
+① ⓐ ② ⓑ ③ ⓒ ④ ⓓ ⑤ ⓔ
+다음 빈칸에 들어갈 말로 가장 적절한 것은?  (38) 
+ ⑤  
+반복에 따라 진실에 대한 믿음이 높아졌다는 앞 문장을 '더 자주 들을수록 더 진실처럼 들린다'로 재진술한 ⑤ 이 알맞다. 
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certain they were that sixty general-knowledge trivia-like statements were either true or false. The students were asked to evaluate the sixty statements three times, at two-week intervals. Crucially, only twenty of the statements were repeated each time; the other forty were new. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. What they found was astonishing. Regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition. In other words, ___________________________________________. This became known as the illusory truth effect.
+① repetition significantly weakens the emotional impact of any statement
+② people rely entirely on objective proof rather than repeated claims
+③ familiar information is critically analyzed before being accepted
+④ false statements are immediately recognized upon second exposure
+⑤ the more often you hear a statement, the more ‘true’ it sounds
+다음 빈칸에 들어갈 말로 가장 적절한 것은? (38) 
+ ② 
+해당 진술의 실제 참·거짓 여부와 무관하게 반복 노출만으로 믿음이 올라갔다는 점이 놀라운 발견이므로 ②가 알맞다.
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certain they were that sixty general-knowledge trivia-like statements were either true or false. The students were asked to evaluate the sixty statements three times, at two-week intervals. Crucially, only twenty of the statements were repeated each time; the other forty were new. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. What they found was astonishing. __________________________________________________, belief in the truth of the claim went up as a function of repetition. In other words, the more often you hear a statement, the more ‘true’ it sounds. This became known as the illusory truth effect.
+① Only when statements were mathematically and logically proven
+② Regardless of whether the statement was true or false
+③ Because students deliberately researched each statement's factual basis
+④ If participants possessed prior professional expertise in trivia topics
+⑤ Although the researchers strictly warned students against deception
+다음 글의 제목으로 가장 적절한 것은?  (38)
+ ④ 
+본문은 친숙한 반복 노출이 진실 여부보다 우선하여 믿음을 형성한다는 '진실 착시 효과'의 메커니즘을 설명하고 있으므로 ④ 이 제목으로 가장 적절함.
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certain they were that sixty general-knowledge trivia-like statements were either true or false. The students were asked to evaluate the sixty statements three times, at two-week intervals. Crucially, only twenty of the statements were repeated each time; the other forty were new. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. What they found was astonishing. Regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition. In other words, the more often you hear a statement, the more ‘true’ it sounds. This became known as the illusory truth effect.
+① How College Students Discern Logical Fallacies in Ambiguous Declarations
+② The Ultimate Method to Retain Academic Information Across Multiple Intervals
+③ Why Genuine Facts Naturally Withstand Continuous Exposure and Reevaluation
+④ Familiarity Trumps Truth: The Mechanism Behind the Illusory Truth Effect
+⑤ Cognitive Fatigue: The Primary Cause of Evaluation Failures in Psychology
+주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?  (38) 
+ ⑤ 
+평가 절차 제시(C) → 20개 반복 조건과 비교 분석 과정(B) → 반복에 따른 진실 믿음 상승 결과 및 명명(A) 순서가 옳다.
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certain they were that sixty general-knowledge trivia-like statements were either true or false.
+(A) Regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition. In other words, the more often you hear a statement, the more ‘true’ it sounds. This became known as the illusory truth effect.
+(B) Crucially, only twenty of the statements were repeated each time; the other forty were new. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. What they found was astonishing.
+(C) The students were asked to evaluate the sixty statements three times, at two-week intervals.
+① (A) - (C) - (B) 	② (B) - (A) - (C) 
+③ (B) - (C) - (A) 	④ (C) - (A) - (B) 
+⑤ (C) - (B) - (A)
+다음 글에서 전체 흐름과 관계 없는 문장은? (38) 
+ ⑤
+진위와 무관하게 반복 노출될수록 사실로 믿는 '진실 착각 효과'에 관한 글이다. 교육 기관에서 영구 암기를 위해 간격 반복 소프트웨어를 도입한다는 ⑤는 반복 노출이 유발하는 판단 왜곡이라는 핵심 주제에서 벗어난다.
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certain they were that sixty general-knowledge trivia-like statements were either true or false. ① The students were asked to evaluate the sixty statements three times, at two-week intervals. ② Crucially, only twenty of the statements were repeated each time; the other forty were new. ③ The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. ④ What they found was astonishing: regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition. ⑤ Consequently, educational institutions have started utilizing spaced repetition software to help students memorize factual knowledge more permanently. In other words, the more often you hear a statement, the more ‘true’ it sounds, which became known as the illusory truth effect.
+다음 글의 내용을 한 문장으로 요약하고자 할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은? (38) 
+ ① 
+실제 사실 여부와 무관하게 진술에 대한 단순한 반복 노출(exposure)이 진실에 대한 사람들의 믿음을 강화(enhances)한다. 
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certain they were that sixty general-knowledge trivia-like statements were either true or false. The students were asked to evaluate the sixty statements three times, at two-week intervals. Crucially, only twenty of the statements were repeated each time; the other forty were new. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. What they found was astonishing. Regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition. In other words, the more often you hear a statement, the more ‘true’ it sounds. This became known as the illusory truth effect. 
+➠The illusory truth effect shows that mere (A)__________ to statements, irrespective of their factual validity, (B)__________ people's belief in their truthfulness.
+
+
+(A)
+(B)
+①
+exposure
+enhances
+②
+explanation
+diminishes
+③
+analysis
+alters
+④
+skepticism
+verifies
+⑤
+indifference
+weakens
+다음 글의 the illusory truth effect가 의미하는 바를 본문에서 찾아 영어로 적으시오.  (38) 
+ The more often heard, the truer it sounds. (또는 Repeated statements sound more true.) 
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certain they were that sixty general-knowledge trivia-like statements were either true or false. The students were asked to evaluate the sixty statements three times, at two-week intervals. Crucially, only twenty of the statements were repeated each time; the other forty were new. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. What they found was astonishing. Regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition. In other words, the more often you hear a statement, the more ‘true’ it sounds. This became known as the illusory truth effect.
+<조건>
+- 문장으로 작성할 것
+- 본문에 나오는 핵심 문장을 인용하여 작성할 것
+- 10단어 이내로 작성할 것
+다음 글의 밑줄 친 (A), (B)에 들어갈 표현을 <조건>에 맞게 영어로 쓰시오.  (38) 
+  (A) asked a group of college students how certain they were that sixty general-knowledge trivia-like statements were either true or false. / (B) This became known as the illusory truth effect. 
+In 1977, psychologists Lynn Hasher and David Goldstein (A) 한 집단의 대학생들에게 60개의 일반 상식 잡학 같은 진술들이 참인지 혹은 거짓인지 그들이 얼마나 확신하는지를 물었다. The students were asked to evaluate the sixty statements three times, at two-week intervals. Crucially, only twenty of the statements were repeated each time; the other forty were new. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. What they found was astonishing. Regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition. In other words, the more often you hear a statement, the more ‘true’ it sounds. (B)이것은 진실성 착각 효과로 알려지게 되었다.
+< (A) 보기 >
+[ sixty / true / were / asked / or / college / that / how / statements / trivia-like / group / either / false / of / were / certain / students / they / general-knowledge / a ] 
+< (A) 조건 >
+- 간접의문문 및 상관접속사를 활용할 것
+- 총 22단어로 작성할 것 (콤마 1개 포함, 콤마는 단어 수에 미포함)
+- <보기>의 단어를 모두 1번씩만 사용할 것 (형태 변형 없음)
+--------------------------------------------------
+< (B) 보기 >
+effect /  truth/ know 
+< (B) 조건 >
+<보기>의 단어를 포함하여 총 8단어로 작성할 것(변형가능)
+다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말을 <보기>의 단어를 활용해 <조건>에 맞게 쓰시오. (38) 
+ (A) are repeated to listeners (B) repetition creates an illusion of truth / 진술이 청자에게 반복될수록 인지된 타당성이 높아져 반복이 진실의 착각을 만들어낸다.
+In 1977, psychologists Lynn Hasher and David Goldstein asked a group of college students how certain they were that sixty general-knowledge trivia-like statements were either true or false. The students were asked to evaluate the sixty statements three times, at two-week intervals. Crucially, only twenty of the statements were repeated each time; the other forty were new. The researchers then compared the ‘truth-ratings’ of the repeated versus non-repeated statements. What they found was astonishing. Regardless of whether the statement was true or false, belief in the truth of the claim went up as a function of repetition. In other words, the more often you hear a statement, the more ‘true’ it sounds. This became known as the illusory truth effect. 
+➠The frequency with which statements (A)____________________(4단어) strongly increases perceived validity, meaning that (B)____________________(6단어).
+< 보기 >
+listeners/ creates / truth / an illusion / repeat / to 
+< 조건 >
+- (    )안의 단어수에 맞게 작성 할 것
+- <보기>의 단어를 변형 및 반복사용 가능
+정답

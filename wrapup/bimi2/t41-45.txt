@@ -1,0 +1,355 @@
+다음 글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은? (41-42) 
+http://edu-lab.kr 교육연구소                                          
+                               
+비밀노트      26년 10월 고1 모의고사  변형문제            [41-45] 
+               	                          
+  edu-lab.kr – 수능대비/내신대비       /                                 비밀노트                     
+ ⑤
+주어진 문장은 스트리밍 플랫폼의 비디오 루프 기본 설정이 데이터와 배터리 소모를 늘린다는 내용이므로, 해당 플랫폼의 결정을 처음 소개한 문장 바로 뒤인 ⑤에 들어가는 것이 가장 적절.
+This change significantly increases data usage and battery consumption, while the option to disable it is buried deep in the settings.
+Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all interfere with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage overconsumption of data and attention. ( ① ) Infinite scroll keeps loading new content whether the user wants it or not, increasing data usage and device processing. ( ② ) Autoplay forces media to load and play even for people who may never watch it. ( ③ ) These choices consume more energy on both the user’s device and the servers delivering the content. ( ④ ) Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. ( ⑤ ) As a result, most users consume more resources unless they actively search for a way to opt out. It is important to acknowledge that web design always nudges behavior in some way. Showing consequences and highlighting options are all forms of influence. The ethical line is not whether nudging exists, but whether it is transparent, reversible, and aligned with the user’s interests. In many cases, the most responsible approach is to make the lower‐impact option the default, while keeping alternatives clearly available. Defaults are powerful, and when chosen carefully, they can reduce environmental impact without removing user agency.
+* default: 기본값 ** nudge: 유도하다 *** transparent: 투명한
+[2-3] 다음 글을 읽고 물음에 답하시오.  (41-42)
+Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all interfere with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage overconsumption of data and attention. Infinite scroll keeps ① loading new content whether the user wants it or not, increasing data usage and device processing. Autoplay forces media ② to load and play even for people who may never watch it. These choices consume more energy on both the user’s device and the servers ③ delivering the content. Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. This change significantly increases data usage and battery consumption, while the option to disable it ④ is buried deep in the settings. As a result, (A)사용자들이 적극적으로 옵트아웃(탈퇴나 해제) 방법을 찾지 않는다면 대부분의 사용자들은 더 많은 자원을 소비한다. It is important to acknowledge that web design always nudges behavior in some way. Showing consequences and highlighting options are all forms of influence. The ethical line is not whether nudging exists, but ⑤ which it is transparent, reversible, and aligned with the user’s interests. In many cases, the most responsible approach is to make the lower‐impact option the default, while keeping alternatives clearly available. Defaults are powerful, and when chosen carefully, they can reduce environmental impact without removing user agency.
+* default: 기본값 ** nudge: 유도하다 *** transparent: 투명한
+윗글의 밑줄 친 ⓐ~ⓔ 중, 어법상 바르게 쓰인 개수는? 
+ ④ 
+⑤가 속한 문장은 'not whether A, but whether B' 병렬 구조이며 뒤에 완전한 절이 이어지므로 관계대명사/의문대명사 which가 아닌 접속사 whether가 와야 어법상 옳음.
+① 1개 ② 2개 ③ 3개 ④ 4개 ⑤ 5개
+윗글의 밑줄 친 (A)의 우리말에 맞도록 <보기>의 단어를 활용하여 <조건>에 맞게 영어로 쓰시오.
+ most users consume more resources unless they actively search for a way to opt out.
+<보기> 
+[ they / search / a way / more / unless / most / users / to / consume / for / actively / resources / out / opt ] 
+<조건>
+- 총 15단어로 작성할 것
+- 주어진 보기의 단어만을 모두 1번씩 활용할 것
+[4-5] 다음 글을 읽고 물음에 답하시오. (41-42)
+ Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all interfere with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage overconsumption of data and attention. Infinite scroll keeps loading new content whether the user wants it or not, increasing data usage and device processing. Autoplay forces media to load and play even for people who may never watch it. These choices consume more energy on both the user’s device and the servers delivering the content. Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. This change significantly increases data usage and battery consumption, while the option to disable it is buried deep in the settings. As a result, most users consume more resources unless they actively search for a way to opt out. It is important to acknowledge that web design always nudges behavior in some way. Showing consequences and highlighting options are all forms of influence. (A)윤리적 기준은 넛지가 존재하는지가 아니라, 그것이 투명하고, 되돌릴 수 있으며, 사용자의 이익과 일치하는가이다. In many cases, the most responsible approach is to make the lower‐impact option the default, while keeping alternatives clearly available. Defaults are powerful, and when chosen carefully, they can reduce environmental impact without removing user agency.
+* default: 기본값 ** nudge: 유도하다 *** transparent: 투명한
+윗글의 내용과 가장 일치하는 것은? 
+ ④
+무한 스크롤, 자동 재생 등 특정 인터페이스 패턴은 사용자의 통제권을 방해하여 데이터와 주의 집중의 과소비를 유발한다고 본문에 제시되어 있으므로 ④가 일치.
+① Autoplay only consumes server data when the user finishes watching the video.
+② The option to disable video loops in the streaming app is prominently placed on the home screen.
+③ Sustainable web design completely eliminates every form of nudging from digital platforms.
+④ Certain interface patterns lead to excessive consumption of resources by overriding user intentions.
+⑤ Defaults are ineffective because users always take the time to modify system settings.
+윗글의 밑줄 친 (A)의 우리말에 맞도록 <보기>의 단어를 활용하여 <조건>에 맞게 영어로 쓰시오.
+ The ethical line is not whether nudging exists, but whether it is transparent, reversible, and aligned with the user’s interests.
+<보기>
+[ is / reverse, / is / whether / the user’s / align / The line / exists, / and / it / ethical / transparent, / nudging / interests / with ] .
+<조건>
+- 총 20단어로 작성할 것
+- 'A가 아니라 B'라는 상관접속사 구문을 쓸 것.
+- 상관접속사 뒤에 각각 동일하게 명사절 접속사를 이끌어 명사절의 엄격한 병렬 구조를 형성할 것.
+- 두 번째 명사절에서는 2형식 동사뒤에 두 개의 형용사와 수동의 의미를 지닌 과거분사구를 등위접속사 를 축으로 순서대로 콤마와 함께 병렬 연결하여 완결할 것.
+- <보기>에 추가 및 변형 있음
+[6-7] 다음 글을 읽고 물음에 답하시오. (41-42)
+Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all interfere with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage [a] overconsumption of data and attention. Infinite scroll keeps loading new content whether the user wants it or not, [b] increasing data usage and device processing. Autoplay forces media to load and play even for people who may never watch it. These choices consume more energy on both the user’s device and the servers delivering the content. Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. This change [c] significantly increases data usage and battery consumption, while the option to disable it is buried deep in the settings. As a result, most users consume more resources unless they actively search for a way to opt out. It is important to acknowledge that web design always nudges behavior in some way. Showing consequences and highlighting options are all forms of influence. The ethical line is not whether nudging exists, but whether it is transparent, reversible, and aligned with the user’s interests. In many cases, (A)__________________________________________________. Defaults are powerful, and when chosen carefully, they can [d] reduce environmental impact without [e] preserving user agency.
+윗글의 밑줄 친 [a]~[e] 중에서 문맥상 낱말의 쓰임이 적절하지 않은 것은? 
+ ⑤ 
+기본값을 신중히 설정하면 사용자의 주도성을 '없애지 않고도' 환경 영향을 줄일 수 있다는 맥락이므로 preserving(보존하는 것)이 아닌 removing(제거하는 것)이 올바름.
+① [a] ② [b] ③ [c] ④ [d] ⑤ [e]
+윗글의 빈칸 (A)에 들어갈 말을 <보기>의 단어를 사용하여 <조건>에 맞게 쓰시오. 
+ the most responsible approach is to make the lower‐impact option the default, while keeping alternatives clearly available.
+<보기> 
+[ clearly / available / the default, / option / approach / keep / is / the most / while / the lower-impact / make / alternatives / responsible ] .
+<조건>
+- 총 18단어로 작성할 것(추가 및 변형 있음)
+- 주격보어 자리에 make를 변형하여 쓸 것.
+- 5형식동사의 목적어와 목적격 보어를 바르게 결합할 것.
+- 접속사 while의 의미를 살린 분사구문 형태를 결합하되, 5형식 동사의 목적격 보어를 수식어와 함께 배치하여 완결할 것.
+[8-9] 다음 글을 읽고 물음에 답하시오. (41-42)
+Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all interfere with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage overconsumption of data and attention. Infinite scroll keeps loading new content whether the user wants it or not, increasing data usage and device processing. Autoplay forces media to load and play even for people who may never watch it. These choices consume more energy on both the user’s device and the servers delivering the content. Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. This change significantly increases data usage and battery consumption, while the option to disable it is buried deep in the settings. As a result, most users consume more resources unless they actively search for a way to opt out. It is important to acknowledge that web design always nudges behavior in some way. Showing consequences and highlighting options are all forms of influence. The ethical line is not whether nudging exists, but whether it is transparent, reversible, and aligned with the user’s interests. In many cases, the most responsible approach is to make the lower‐impact option the default, while keeping alternatives clearly available. Defaults are powerful, and when chosen carefully, they can __________________________________________________.
+윗글의 내용에 맞도록 <요약문>의 빈칸에 들어갈 단어로 가장 적절하지 않은 것은? 
+ ④ 
+디지털 디자인은 지속 가능하고 환경 영향이 적은(lower-impact) 선택지를 투명하게(transparent) 제공해야 하므로, 숨겨진다는 의미의 'concealed'는 요약문에 들어갈 수 없다.
+<요약문>
+Interface designs often cause the (A)________ of resources by limiting user autonomy. Because web design inevitably nudges users, designers should set (B)________ choices as the standard, while ensuring that the process remains (C)________, reversible, and easy to change.
+① overconsumption	② lower-impact
+③ transparent		④ concealed
+⑤ sustainable
+윗글의 빈칸에 들어갈 말로 가장 적절한 것은?
+ ② 
+본문 마지막 문장에서 기본값을 신중하게 선택했을 때 얻을 수 있는 이점으로 '사용자의 주도성을 해치지 않으면서 환경 영향을 줄일 수 있다'고가 기장 적절함
+① eliminate all choices available to digital users
+② reduce environmental impact without removing user agency
+③ force users to constantly reconfigure basic settings
+④ hide low-power options deep inside technical menus
+⑤ maximize digital consumption for company profits
+[10-2] 다음 글을 읽고 물음에 답하시오. (41-42)
+ Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all interfere with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage overconsumption of data and attention. Infinite scroll keeps loading new content whether the user wants it or not, increasing data usage and device processing. Autoplay forces media to load and play even for people who may never watch it. These choices consume more energy on both the user’s device and the servers delivering the content. Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. This change significantly increases data usage and battery consumption, while the option to disable it is buried deep in the settings. As a result, most users consume more resources unless they actively search for a way to opt out. It is important to acknowledge that web design always nudges behavior in some way. Showing consequences and highlighting options are all forms of influence. The ethical line is not whether nudging exists, but whether it is transparent, reversible, and aligned with the user’s interests. In many cases, the most responsible approach is to make the lower‐impact option the default, while keeping alternatives clearly available. Defaults are powerful, and when chosen carefully, they can reduce environmental impact without removing user agency. 
+* default: 기본값 ** nudge: 유도하다 *** transparent: 투명한
+윗글의 내용과 일치하지 않는 것은? 
+ ④ 
+본문에서 '웹 디자인은 언제나 어떤 방식으로든 행동을 유도한다(web design always nudges behavior in some way)'고 명시했으므로 ④는 일치하지 않다.
+① 무한 스크롤과 자동 재생은 사용자의 통제권을 방해하는 웹 패턴이다.
+② 자동 재생 기능은 미디어를 보지 않는 사용자에게도 로딩과 재생을 강제한다.
+③ 음악 스트리밍 플랫폼은 기본 설정을 정적 앨범 사진에서 짧은 반복 영상으로 바꿨다.
+④ 웹 디자인은 기술적 중립성을 띠므로 사용자 행동에 넛지를 가하지 않는다.
+⑤ 신중하게 설정된 기본값은 사용자의 주도성을 해치지 않으면서 환경 영향을 줄일 수 있다.
+윗글에서 웹 디자인에서 넛지(nudge)가 윤리적이기 위해 충족해야 하는 3가지 조건을 본문에서 찾아 영어로 쓰시오. 
+ transparent, reversible, aligned with the user’s interests
+윗글의 This change가 가리키는 구체적인 내용을 본문에서 찾아 우리말로 서술하시오. 
+ 대중적인 음악 스트리밍 플랫폼이 정적 앨범 아트를 짧은 비디오 루프로 기본 대체하기로 한 결정
+윗글 내용을 요약하고자 한다. 요약한 글의 내용 중 밑줄 친 부분이 문맥상 어색한 것은? 
+ ⑤ 
+지속 가능한 설계는 사용자의 자유로운 선택 능력(주체성)을 없애는 것이 아니라 '보존하면서(preserving)' 환경 발자국을 줄이는 것이므로 ⑤ eliminating은 어색함.
+[요약문]
+Many current interface patterns foster excessive data usage and server energy drain by ① restricting user control. Because design elements inherently guide human behavior, the primary ethical requirement is to ② guarantee that such nudges are  ③ obvious and reversible. Therefore, setting low-impact alternatives as baseline options serves as a sustainable strategy that can ④  curtail carbon footprint while ⑤ eliminating the user’s capability to choose freely.
+[13-16] 다음 글을 읽고 물음에 답하시오. (41-42)
+Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all interfere with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage overconsumption of data and attention. Infinite scroll keeps loading new content whether the user wants it or not, increasing data usage and device processing. Autoplay forces media to load and play even for people who may never watch it. These choices consume more energy on both the user’s device and the servers delivering the content. Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. This change significantly increases data usage and battery consumption, while the option to disable it is buried deep in the settings. As a result, most users consume more resources unless they actively search for a way to opt out. It is important to acknowledge that web design always nudges behavior in some way. (A)Showing consequences and highlighting options are all forms of influence. The ethical line is not whether nudging exists, but whether it is transparent, reversible, and aligned with the user’s interests. In many cases, the most responsible approach is to make the lower‐impact option the default, while keeping alternatives clearly available. (B) Defaults are powerful, and when choosing carefully, they can reduce environmental impact without removal user agency.
+윗글의 내용과 일치하는 것을 <보기>에서 있는 대로 모두 고른 것은? 
+ ①
+a(무한 스크롤 무단 로딩), c(웹 디자인의 유도성), e(신중한 기본값의 효과)는 본문과 일치합니다. b(옵션이 깊이 숨겨짐)와 d(대안 선택권 유지 가능)는 일치하지 않다.
+<보기>
+a. Infinite scrolling continuously loads new content regardless of whether users intentionally choose to view additional material.
+b. The option to disable video looping is prominently displayed on the initial screen so that all users can easily find it.
+c. Web design inevitably influences users' behavior in particular directions, regardless of how its features are arranged or presented.
+d. Setting environmentally friendly options as defaults completely deprives users of the freedom to select alternative settings according to their preferences.
+e. Carefully selecting default settings can reduce unnecessary resource consumption without undermining users' autonomy or restricting their freedom of choice.
+① a, c, e	② a, b, d
+③ b, c, d	④ c, d, e
+⑤ a, b, c, e
+윗글의 밑줄 친 (A) Showing consequences and highlighting options are all forms of influence가 의미하는 바로 가장 적절한 것은? 
+ ④ 
+결과를 보여주고 옵션을 부각하는 행위 자체도 사용자 행동을 특정 방향으로 이끄는 영향력(nudge)의 형태라는 의미를 나타낸다.
+① Collecting users' personal information without obtaining their consent is legally permitted under existing regulations governing digital platforms.
+② All digital options inevitably confuse users and should therefore be reduced to the absolute minimum in web interface design.
+③ Maximizing visual effects in web design improves the speed at which servers process and deliver digital information to users.
+④ Even clearly presenting users with available options and their consequences constitutes a form of intentional influence on their decisions.
+⑤ Web interfaces that emphasize users' freedom of choice tend to distract their attention and interfere with their ability to concentrate.
+윗글의 밑줄 친 (B)문장에서 어법상 어색한 두 곳을 찾아 올바르게 고쳐 쓰시오. 
+ (1) choosing → chosen / (2) remove → removing/ (1) 기본 값이 '선택되는' 수동 관계이므로 과거분사 chosen이 옳다. (2) 전치사 without 뒤이므로 동명사 removing이 와야 함.( or the removal of)
+(1) 어색한 곳: _________ → 바르게 고친 것: _________
+(2) 어색한 곳: _________ → 바르게 고친 것: _________
+다음 글의 밑줄 친 (A) the lower-impact option과 (B) alternatives가 의미하는 본문의 구체적 사례나 연결로 가장 알맞은 것은? (41-42) 
+ ② 
+'환경 영향이 적은 선택지'의 사례는 정적 앨범 사진(static album artwork)이며, '대안'은 짧은 반복 비디오(short video loops)에 해당
+Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all interfere with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage overconsumption of data and attention. Infinite scroll keeps loading new content whether the user wants it or not, increasing data usage and device processing. Autoplay forces media to load and play even for people who may never watch it. These choices consume more energy on both the user’s device and the servers delivering the content. Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. This change significantly increases data usage and battery consumption, while the option to disable it is buried deep in the settings. As a result, most users consume more resources unless they actively search for a way to opt out. It is important to acknowledge that web design always nudges behavior in some way. Showing consequences and highlighting options are all forms of influence. The ethical line is not whether nudging exists, but whether it is transparent, reversible, and aligned with the user’s interests. In many cases, the most responsible approach is to make (A)the lower‐impact option the default, while keeping (B)alternatives clearly available. Defaults are powerful, and when chosen carefully, they can reduce environmental impact without removing user agency.
+
+(A)
+(B)
+①
+infinite scroll
+static album artwork
+②
+static album artwork
+short video loops
+③
+short video loops
+infinite scroll
+④
+autoplaying videos
+disabling video loops
+⑤
+requiring an account
+autoplaying media
+다음 글의 밑줄 친 ⓐ~ⓔ 중, 어법상 옳은 것을 있는 대로 모두 고른 것은? (41-42) 
+ ⓐ 주어의 핵이 Patterns이므로 interfere로 일치시켜야 하며, ⓑ 앞 문장에 이어지는 능동 분사구문이므로 increasing이 옳다. 
+ⓒ, ⓓ, ⓔ는 모두 적절한 어법
+Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all ⓐinterferes with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage overconsumption of data and attention. Infinite scroll keeps loading new content whether the user wants it or not, ⓑincreased data usage and device processing. Autoplay forces media to load and play even for people who may never watch it. These choices consume more energy on both the user’s device and the servers ⓒdelivering the content. Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. This change significantly increases data usage and battery consumption, while the option to disable it ⓓis buried deep in the settings. As a result, most users consume more resources ⓔunless they actively search for a way to opt out. It is important to acknowledge that web design always nudges behavior in some way. Showing consequences and highlighting options are all forms of influence. The ethical line is not whether nudging exists, but whether it is transparent, reversible, and aligned with the user’s interests. In many cases, the most responsible approach is to make the lower‐impact option the default, while keeping alternatives clearly available. Defaults are powerful, and when chosen carefully, they can reduce environmental impact without removing user agency.
+① ⓐ, ⓑ	② ⓑ, ⓒ, ⓓ
+③ ⓒ, ⓓ, ⓔ	④ ⓐ, ⓒ, ⓔ
+⑤ ⓐ, ⓓ, ⓔ
+다음 글의 밑줄 친 ⓐ~ⓔ 중 문맥상 낱말의 쓰임이 가장 어색한 것은? (41-42) 
+ ④ 
+넛지의 윤리적 기준은 불투명함(obscure, opaque, cloudy)이 아니라 투명하고(transparent), 되돌릴 수 있으며, 사용자의 이익과 일치해야 한다는 맥락이므로 obscure는 어색.
+Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all ⓐinterfere with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage overconsumption of data and attention. Infinite scroll keeps loading new content whether the user wants it or not, increasing data usage and device processing. Autoplay forces media to load and play even for people who may never watch it. These choices consume more energy on both the user’s device and the servers delivering the content. Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. This change significantly increases data usage and battery consumption, while the option to ⓑdisable it is buried deep in the settings. As a result, most users consume more resources unless they actively search for a way to opt out. It is important to acknowledge that web design always ⓒnudges behavior in some way. Showing consequences and highlighting options are all forms of influence. The ethical line is not whether nudging exists, but whether it is ⓓobscure, reversible, and aligned with the user’s interests. In many cases, the most responsible approach is to make the lower‐impact option the default, while keeping alternatives ⓔavailable. Defaults are powerful, and when chosen carefully, they can reduce environmental impact without removing user agency.
+① ⓐ ② ⓑ ③ ⓒ ④ ⓓ ⑤ ⓔ
+다음 빈칸에 들어갈 말로 가장 적절한 것은? (41-42) 
+ ② 
+기본값을 신중히 설계하면 '사용자의 주도권을 박탈하지 않고도(without removing user agency)' 환경적 영향을 줄일 수 있다는 결론이 가장 자연스럽다.
+Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all interfere with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage overconsumption of data and attention. Infinite scroll keeps loading new content whether the user wants it or not, increasing data usage and device processing. Autoplay forces media to load and play even for people who may never watch it. These choices consume more energy on both the user’s device and the servers delivering the content. Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. This change significantly increases data usage and battery consumption, while the option to disable it is buried deep in the settings. As a result, most users consume more resources unless they actively search for a way to opt out. It is important to acknowledge that web design always nudges behavior in some way. Showing consequences and highlighting options are all forms of influence. The ethical line is not whether nudging exists, but whether it is transparent, reversible, and aligned with the user’s interests. In many cases, the most responsible approach is to make the lower‐impact option the default, while keeping alternatives clearly available. Defaults are powerful, and when chosen carefully, they can reduce environmental impact without ________________________________.
+① limiting company profits
+② removing user agency
+③ updating operating systems
+④ forcing software purchases
+⑤ eliminating basic internet access
+다음 빈칸에 들어갈 말로 가장 적절한 것은? (41-42) 
+ ② 
+글의 문맥상 윤리적 기준은 '그것이 투명하고, 되돌릴 수 있으며, 사용자의 이익과 부합하는지 여부'라는 내용이 가장 적절함
+Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all interfere with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage overconsumption of data and attention. Infinite scroll keeps loading new content whether the user wants it or not, increasing data usage and device processing. Autoplay forces media to load and play even for people who may never watch it. These choices consume more energy on both the user’s device and the servers delivering the content. Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. This change significantly increases data usage and battery consumption, while the option to disable it is buried deep in the settings. As a result, most users consume more resources unless they actively search for a way to opt out. It is important to acknowledge that web design always nudges behavior in some way. Showing consequences and highlighting options are all forms of influence. The ethical boundary in digital architecture is defined by ensuring that nudges are ________________________________. In many cases, the most responsible approach is to make the lower‐impact option the default, while keeping alternatives clearly available. Defaults are powerful, and when chosen carefully, they can reduce environmental impact without removing user agency.
+① hidden completely from users to prevent confusion
+② transparent, reversible, and aligned with user interests
+③ designed to maximize total data transmission on servers
+④ automated so that users cannot change default settings
+⑤ structured exclusively to boost corporate ad revenues
+다음 빈칸에 들어갈 말로 가장 적절한 것은? (41-42) 
+ ⑤ 
+웹 인터페이스의 환경적 책임과 관련하여 '가장 책임감 있는 접근법은 환경 영향이 적은 옵션을 기본값으로 설정하는 것'이라는 핵심 주장이 들어가는 것이 적절.
+Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all interfere with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage overconsumption of data and attention. Infinite scroll keeps loading new content whether the user wants it or not, increasing data usage and device processing. Autoplay forces media to load and play even for people who may never watch it. These choices consume more energy on both the user’s device and the servers delivering the content. Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. This change significantly increases data usage and battery consumption, while the option to disable it is buried deep in the settings. As a result, most users consume more resources unless they actively search for a way to opt out. It is important to acknowledge that web design always nudges behavior in some way. Showing consequences and highlighting options are all forms of influence. The ethical line is not whether nudging exists, but whether it is transparent, reversible, and aligned with the user’s interests. Therefore, web designers should recognize that ________________________________. Defaults are powerful, and when chosen carefully, they can reduce environmental impact without removing user agency.
+① making high-energy settings default increases user convenience
+② web interfaces must never exert any influence on user choices
+③ users always prefer dynamic loops over static images
+④ sustainability has no direct relationship with server energy
+⑤ the most responsible approach is to make lower-impact options default
+주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은? (41-42) 
+ ④ 
+무한 스크롤과 자동 재생의 문제점 구체화 (C) → 스트리밍 플랫폼의 비디오 루프 사례 (A) → 웹 디자인의 윤리적 넛지와 기본값의 올바른 활용 방안 (B) 순서가 자연스럽다.
+Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all interfere with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage overconsumption of data and attention.
+(A) Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. This change significantly increases data usage and battery consumption, while the option to disable it is buried deep in the settings. As a result, most users consume more resources unless they actively search for a way to opt out.
+(B) It is important to acknowledge that web design always nudges behavior in some way. Showing consequences and highlighting options are all forms of influence. The ethical line is not whether nudging exists, but whether it is transparent, reversible, and aligned with the user’s interests. In many cases, the most responsible approach is to make the lower‐impact option the default, while keeping alternatives clearly available. Defaults are powerful, and when chosen carefully, they can reduce environmental impact without removing user agency.
+(C) Infinite scroll keeps loading new content whether the user wants it or not, increasing data usage and device processing. Autoplay forces media to load and play even for people who may never watch it. These choices consume more energy on both the user’s device and the servers delivering the content.
+① (A) - (C) - (B)
+② (B) - (A) - (C)
+③ (B) - (C) - (A)
+④ (C) - (A) - (B)
+⑤ (C) - (B) - (A)
+다음 글의 내용을 한 문장으로 요약하고자 할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은? (41-42) 
+ ⑤ 
+환경 영향이 적은(milder) 선택지를 기본값으로 삼아, 사용자의 주도성(autonomy)을 훼손하지 않으면서 지속가능성을 도모한다는 요약문이 적절다.
+Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all interfere with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage overconsumption of data and attention. Infinite scroll keeps loading new content whether the user wants it or not, increasing data usage and device processing. Autoplay forces media to load and play even for people who may never watch it. These choices consume more energy on both the user’s device and the servers delivering the content. Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. This change significantly increases data usage and battery consumption, while the option to disable it is buried deep in the settings. As a result, most users consume more resources unless they actively search for a way to opt out. It is important to acknowledge that web design always nudges behavior in some way. Showing consequences and highlighting options are all forms of influence. The ethical line is not whether nudging exists, but whether it is transparent, reversible, and aligned with the user’s interests. In many cases, the most responsible approach is to make the lower‐impact option the default, while keeping alternatives clearly available. Defaults are powerful, and when chosen carefully, they can reduce environmental impact without removing user agency.
+[요약문]
+➠ While certain digital design patterns lead to excessive resource consumption by undermining user autonomy, ethical web design should set (A)________ choices as defaults to promote sustainability without diminishing user (B)________.
+
+(A)
+(B)
+①
+profitable
+privacy
+②
+high-demand
+convenience
+③
+less harmful
+restriction
+④
+data-heavy
+authority
+⑤
+milder 
+autonomy
+다음 글에서 필자가 제시하는 지속 가능한 웹 디자인의 핵심 원칙을 본문의 단어를 활용하여 영어로 쓰시오. (41-42) 
+ make the lower-impact option the default
+Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all interfere with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage overconsumption of data and attention. Infinite scroll keeps loading new content whether the user wants it or not, increasing data usage and device processing. Autoplay forces media to load and play even for people who may never watch it. These choices consume more energy on both the user’s device and the servers delivering the content. Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. This change significantly increases data usage and battery consumption, while the option to disable it is buried deep in the settings. As a result, most users consume more resources unless they actively search for a way to opt out. It is important to acknowledge that web design always nudges behavior in some way. Showing consequences and highlighting options are all forms of influence. The ethical line is not whether nudging exists, but whether it is transparent, reversible, and aligned with the user’s interests. In many cases, the most responsible approach is to make the lower‐impact option the default, while keeping alternatives clearly available. Defaults are powerful, and when chosen carefully, they can reduce environmental impact without removing user agency.
+<조건>
+- 본문에 등장하는 표현을 그대로 인용할 것
+- ‘7’단어 이내로 쓸 것
+다음 글의 밑줄 친 (A), (B)에 들어갈 표현을 <조건>에 맞게 영어로 쓰시오. (41-42) 
+ (A) It is important to acknowledge that web design always nudges behavior in some way. / (B)Defaults are powerful, and when chosen carefully, they can reduce environmental impact without removing user agency. 
+Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all interfere with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage overconsumption of data and attention. Infinite scroll keeps loading new content whether the user wants it or not, increasing data usage and device processing. Autoplay forces media to load and play even for people who may never watch it. These choices consume more energy on both the user’s device and the servers delivering the content. Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. This change significantly increases data usage and battery consumption, while the option to disable it is buried deep in the settings. As a result, most users consume more resources unless they actively search for a way to opt out. (A)웹 디자인이 항상 어떤 방식으로든 행동을 유도한다는 것을 인정하는 것이 중요하다. Showing consequences and highlighting options are all forms of influence. The ethical line is not whether nudging exists, but whether it is transparent, reversible, and aligned with the user’s interests. In many cases, the most responsible approach is to make the lower‐impact option the default, while keeping alternatives clearly available. (B) 기본값들은 영향력이 크고, 신중하게 선택될 경우 그것들은 사용자 주체성을 없애지 않으면서 환경적 영향을 줄일 수 있다.
+<(A) 보기>
+[ always / design / nudges / some / behavior / in / way / acknowledge / important / web ] .
+<(A) 조건>
+- 총 14개 단어로 작성할 것
+- 명사절 접속사를  포함 할 것
+- <보기>의 단어를 모두 1번씩 사용하고 필요시 추가 할 것
+----
+<(B) 보기>
+[ remove / impact / agency. / reduce / user / can / they / and / when / choose / are / Defaults / without / carefully, / environmental / powerful, ] 
+<(B) 조건>
+- 총 16개 단어로 작성할 것(필요시 변형)
+- <보기>의 단어를 모두 1번씩 사용할 것
+다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말을 <보기>의 단어를 활용해 <조건>에 맞게 쓰시오. (41-42) 
+ (A) the lower-impact option / (B) preventing excessive resource consumption
+Patterns such as infinite scroll, autoplaying videos, or requiring an account just to make a purchase all interfere with the user’s control over their own experience. From a sustainability perspective, many of these patterns encourage overconsumption of data and attention. Infinite scroll keeps loading new content whether the user wants it or not, increasing data usage and device processing. Autoplay forces media to load and play even for people who may never watch it. These choices consume more energy on both the user’s device and the servers delivering the content. Take the decision by a popular music streaming platform to replace static album artwork with short video loops by default. This change significantly increases data usage and battery consumption, while the option to disable it is buried deep in the settings. As a result, most users consume more resources unless they actively search for a way to opt out. It is important to acknowledge that web design always nudges behavior in some way. Showing consequences and highlighting options are all forms of influence. The ethical line is not whether nudging exists, but whether it is transparent, reversible, and aligned with the user’s interests. In many cases, the most responsible approach is to make the lower‐impact option the default, while keeping alternatives clearly available. Defaults are powerful, and when chosen carefully, they can reduce environmental impact without removing user agency. 
+[요약문]
+Digital interfaces should adopt (A)__________________________(3단어) in default settings, ensuring that user autonomy is preserved while (B)___________________________(4단어).
+<보기>
+the lower-impact / consume / exceed / make / option / prevent / resource
+<조건>
+<보기>의 단어를 활용하여 단어수에 맞게 작성할 것 (동사 형태 변형 가능)
+다음 글을 읽고 물음에 답하시오. (43-45)
+ One day, Emily saw the “Annual Art Contest” poster in her school’s hallway. She wanted to enter, but lacked confidence. Later that day, Emily shared her worries with her grandmother. Her grandmother smiled and said, “(A) 예술은 최고가 되는 것이 아니라 자신을 표현하고 마음을 나누는 것이라고. ” Hearing this, she decided to enter the contest. The next day, Emily set up a canvas and started painting sunflowers on it. When it was nearly complete, Fluffy, the family cat, suddenly jumped onto the shelf above. A tipped vase rained down water, [a] turning her masterpiece into a wet mess. “Oh, no,” she cried out. She sank to her knees, looking at her ruined canvas with a [b] completely defeated heart. Just then, Grandma gently rested a hand on Emily’s shoulder. She knelt down beside Emily and said, “Sweetheart, giving up won’t turn [c] itself into a masterpiece.” Her voice trembled, “But it’s ruined.” Her grandmother tilted her head. “Perhaps it’s the beginning of something new. Let’s find the rainbow together.” She pulled up two chairs, ready to help her rebuild confidence. The hours melted away as they sat side by side. With Grandma’s encouragement, the ruined painting gradually turned into a masterpiece. “Grandma! It has become a whole new work of art,” Emily exclaimed. [d] Gazing at the transformed canvas, she knew (A) she had already won. Not the contest ― it didn’t matter now ― for she had found something [e] greater: the courage to face her fears and the wisdom to find beauty in the mess.
+윗글의 밑줄 친 부분 중, 어법상 틀린 것은? 
+ ③ 
+③의 주어는 'giving up(포기하는 것)'이며, 목적어는 앞서 젖어버린 캔버스(it)를 가리키므로 주어와 일치하지 않아 재귀대명사 itself가 아닌 it을 써야 옳음.
+① [a]    ② [b]    ③ [c]    ④ [d]    ⑤ [e] 
+윗글의 제목으로 가장 적절한 것은? 
+ ④ 
+망가진 그림을 새로운 작품으로 탈바꿈시키며 경쟁 승리 이상의 용기와 지혜를 얻은 내용을 포괄하는 제목임.
+① Step-by-Step Restoration Protocols for Water-Damaged Paper Canvases
+② How Domestic Felines Disrupt Modern Fine Art Exhibition Standards
+③ The Superiority of Sunflower Motifs in Competitive Youth Paintings
+④ Beyond Winning: Finding True Beauty and Courage Within the Mess
+⑤ School Art Competitions: High Stress Environments for Young Students
+윗글의 (A)에 들어갈 문장을 <보기>의 단어를 활용하여 <조건>에 맞게 영어로 쓰시오. 
+ Art is about expressing yourself and sharing your heart, not being the best.
+<보기>
+[ Art / your heart, / and share / yourself / about / the / best / is / not / express ] .
+<조건>
+-총 13단어로 작성할 것
+- 콤마(,)를 2개 추가할 것 (단어 수에는 포함되지 않음)
+- 동일 단어 반복 사용 가능하되, 필요하다면 형태를 바꿀 것
+밑줄 친 (B) she had already won이 다음 글에서 의미하는 바로 가장 적절한 것은? 
+ ② 
+대회 수상 여부와 상관없이 예기치 못한 실패를 극복하며 두려움에 맞서는 용기와 내적 성장을 얻었음을 의미함.
+① She officially captured the prestigious grand prize at her school's exhibition.
+② She developed resilience against unexpected setbacks through meaningful self-growth.
+③ She resolved to abandon her painting aspirations to pursue different crafts.
+④ She fully restored the waterlogged painting precisely to its original state.
+⑤ She proved superior technical artistic execution over other competing classmates.
+윗글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?
+ ③
+할머니의 격려를 통해 망가진 캔버스를 재창조(recreate)하게 되었고, 외적인 경쟁에서의 승리(triumph)보다 내적 성장이 더 소중함을 깨달았다.
+[요약문]
+When an unfortunate accident ruined Emily’s artwork, her grandmother’s comforting guidance motivated her to (A)__________ the disaster, leading her to realize that emotional growth outweighs external (B)__________.
+     (A)              (B)
+① overlook   ……  humility
+② abandon    ……  creativity
+③ recreate   ……  triumph
+④ postpone   ……  sympathy
+⑤ replicate  ……  discipline
+다음 글을 읽고 물음에 답하시오. (43-45)
+One day, Emily saw the “Annual Art Contest” poster in her school’s hallway. She wanted to enter, but lacked confidence. Later that day, Emily shared her worries with her grandmother. Her grandmother smiled and said, “Art is about expressing yourself and sharing your heart, not being the best.” Hearing this, she decided to enter the contest. ( ① ) The next day, Emily set up a canvas and started painting sunflowers on it. ( ② ) When it was nearly complete, Fluffy, the family cat, suddenly jumped onto the shelf above. ( ③ ) “Oh, no,” she cried out. She sank to her knees, looking at her ruined canvas with a completely defeated heart. ( ④ ) Just then, Grandma gently rested a hand on Emily’s shoulder. She knelt down beside Emily and said, “Sweetheart, giving up won’t turn it into a masterpiece.” Her voice trembled, “But it’s ruined.” Her grandmother tilted her head. “                                                 ” ( ⑤ ) She pulled up two chairs, ready to help her rebuild confidence. The hours melted away as they sat side by side. With Grandma’s encouragement, the ruined painting gradually turned into a masterpiece. “Grandma! It has become a whole new work of art,” Emily exclaimed. Gazing at the transformed canvas, she knew she had already won. Not the contest ― it didn’t matter now ― for she had found something greater: the courage to face her fears and the wisdom to find beauty in the mess.
+윗글의 흐름으로 보아, (①) ~(⑤) 주어진 문장이 들어가기에 가장 적절한 곳은?
+A tipped vase rained down water, turning her masterpiece into a wet mess.
+윗글의 내용에 맞도록 <보기>의 빈칸에 가장 적절한 단어를 넣을 때, 어디에도 들어갈 수 없는 것은? 
+ ② 
+빈칸에는 차례대로 낙담한(discouraged), 격려(encouragement), 절망(despair), 용기(bravery)가 들어가야 자연스러우므로 '무관심(indifference)'은 어디에도 들어갈 수 없다.
+<보기>
+When Emily's painting was accidentally spoiled by water from a vase, she felt completely ________ at first. However, with her grandmother's wise ________ and guidance, Emily learned not to surrender to ________, eventually discovering the ________ to overcome fear and perceive beauty in unexpected failures
+① discouraged		② indifference
+③ encouragement	④ despair
+⑤ bravery
+윗글의 빈칸에 들어갈 말로 가장 적절한 것은?
+ ② 
+① You should throw this canvas away and start on an entirely blank one
+② Perhaps it’s the beginning of something new. Let’s find the rainbow together
+③ Cats should not be allowed anywhere near your art studio
+④ Winning the contest is the only way to prove your artistic talent
+⑤ Accidental water drops will permanently ruin any work of art
+윗글의 내용으로 보아 추론할 수 없는 것을 <보기>에서 모두 고르시오. 
+ ②
+[B] 대회에서 해바라기를 의무적으로 지정했는지 알 수 없고, [D] 학교 측에서 실격 처리를 했다는 내용도 없으므로 추론할 수 없는 것은 [B], [D]임.
+<보기>
+[A]. Grandma prioritizes self-expression over competitive triumph in the practice of visual arts.
+[B]. Emily originally painted sunflowers because sunflowers were strictly required by the contest.
+[C]. Unforeseen physical catastrophes in creative workflows can serve as sparks for innovative pieces.
+[D]. The school committee ultimately disqualified Emily's painting due to excessive moisture damage.
+[E]. Emily's emotional distress dissipated as she collaborated with her grandmother on the canvas.
+① [A], [C]
+② [B], [D]
+③ [A], [E]
+④ [B], [C], [D]
+⑤ [D], [E]
+다음 글을 읽고 물음에 답하시오. (43-45)
+ One day, Emily saw the “Annual Art Contest” poster in her school’s hallway. She wanted to enter, but lacked (B)c         . Later that day, Emily shared her worries with her grandmother. Her grandmother smiled and said, “Art is about expressing yourself and sharing your heart, not being the best.” Hearing this, she decided to enter the contest. The next day, Emily set up a canvas and started painting sunflowers on it. When it was nearly complete, Fluffy, the family cat, suddenly jumped onto the shelf above. A tipped vase rained down water, turning her masterpiece into a wet mess. “Oh, no,” she cried out. She sank to her knees, looking at her [a] ruined canvas with a completely defeated heart. Just then, Grandma gently rested a hand on Emily’s shoulder. She knelt down beside Emily and said, “Sweetheart, (A) giving up won’t turn it into a masterpiece.” Her voice trembled, “But it’s ruined.” Her grandmother tilted her head. “Perhaps it’s the beginning of something new. Let’s find the rainbow together.” She pulled up two chairs, ready to help her [b] revive (B)                   . The hours melted away as they sat side by side. With Grandma’s [c] inspiration, the damaged painting gradually turned into a masterpiece. “Grandma! It has become a whole new work of art,” Emily exclaimed. Gazing at the [d] altered canvas, she knew she had already won. Not the contest ― it didn’t matter now ― for she had found something [e] trivial: the courage to face her fears and the wisdom to find beauty in the mess.
+윗글의 밑줄 친 [a]~[e] 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은? 
+ ⑤ 
+원문의 rebuild→revive, encouragement→inspiration, transformed→altered는 자연스러운 유의어이나, greater 자리에 쓰인 trivial(사소한)은 글의 주제와 정반대임.
+① [a]    ② [b]    ③ [c]    ④ [d]    ⑤ [e] 
+윗글의 제목으로 가장 적절한 것은? 
+ ③ 
+뜻밖의 사고 속에서도 포기하지 않고 이를 새로운 걸작으로 탈바꿈시킨 인내와 용기를 나타내는 제목으로 ③이 가장 적절함.
+① Essential Guidelines for Maintaining Domestic Feline Safety
+② Professional Techniques in Oil Painting Restoration
+③ Finding Masterpieces in Mishaps: The Power of Perseverance
+④ Why Formal Art Competitions Harm Student Creativity
+⑤ Choosing the Right Water-Resistant Canvas for Watercolor
+에밀리가 마지막에 자신이 찾았다고 한 '더 위대한 것'의 구체적 내용 2가지를 본문에서 찾아 우리말로 쓰시오. 
+ 두려움에 맞서는 용기와 혼란 속에서 아름다움을 찾는 지혜
+Which of the following corresponds with the underlined "giving up won’t turn it into a masterpiece"? 
+ ② 
+포기하면 아무것도 바뀌지 않지만, 포기하지 않고 끝까지 노력해야 비로소 변화를 이끌어낼 수 있다는 뜻임.
+① Withdrawing from challenges automatically protects one’s self-esteem from further potential public ridicule.
+② Ceasing effort guarantees failure, whereas persistent dedication offers the possibility of meaningful transformation.
+③ Masterpieces are generated solely by relying on good fortune rather than continuous human labor.
+④ Flawed creations should be discarded promptly to save valuable time and artistic resources.
+⑤ One must recognize personal limitations early to avoid wasting emotional and creative energy.
+(A)의 밑줄 친 'it'이 가리키는 대상을 본문에서 찾아 영어 두 단어로 쓰시오. 
+ ruined canvas (또는 wet mess)
+윗글의 (B)에 공통으로 들어갈 단어를 주어진 철자로 시작하여 쓰시오. 
+ confidence
+정답

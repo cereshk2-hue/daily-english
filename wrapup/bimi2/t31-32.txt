@@ -1,0 +1,477 @@
+다음 글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은? (31번)
+http://edu-lab.kr 교육연구소                                          
+                               
+비밀노트        26년 10월 고1모의고사 변형문제          [31-32번] 
+               	                          
+  edu-lab.kr – 수능대비/내신대비       /                                 비밀노트                     
+ ③ 희소성을 전제로 자원을 배분한다는 고전 경제학 설명(② 뒤)과 희소성이 거의 없는 스타트렉 사회의 구체적 기술 발전 내용(③ 뒤) 사이에 역접의 주어진 문장이 들어가야 한다. 
+In Star Trek, however, there isn’t much scarcity.
+Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. ( ① ) All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. ( ② ) Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit. ( ③ ) Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. ( ④ ) All of humanity in that world has been fully educated so that they can participate in this prosperity. ( ⑤ ) Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant.
+다음 글을 읽고 물음에 답하시오.  (31번)
+Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. All of classical economics ⓐis based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. Because of that, we use markets and pricing to allocate those goods, services, and resources to ⓑwhich they might result in the highest benefit. In Star Trek, however, there isn’t much scarcity. Technology has allowed that society to reproduce any food they want, transport ⓒthem thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. (A) 그 세계의 모든 인류는 이러한 풍요로움에 참여할 수 있도록 충분히 교육을 받아 왔다. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society ⓓto be similarly ⓔhighly abundant.
+윗글의 밑줄 친 ⓐ~ⓔ 중, 어법상 바르게 쓰인 개수는? 
+ ③ 
+ⓐ(수동태 is based), ⓓ(allow의 목적격 보어 to-v), ⓔ(부사 highly) 3개가 옳다. 
+ⓑ는 완전한 절을 이끄는 관계부사 where, 
+ⓒ는 주어와 일치하는 재귀대명사 themselves여야 한다.
+① 1개 ② 2개 ③ 3개 ④ 4개 ⑤ 5개
+윗글의 (A)에 들어갈 문장을 <보기>의 단어를 활용하여 <조건>에 맞게 영어로 쓰시오. 
+ 
+ All of humanity in that world has been fully educated so that they can participate in this prosperity.
+<보기>
+[ educate / fully / of / participate / that / in / that world / prosper. / they / in / so / humanity / All / can / this ] 
+<조건>
+1. 총 18단어로 작성할 것
+2. 목적(~하기 위하여, ~할 수 있도록)을 나타내는 부사절 접속사를 결합할 것.
+3. 주어는 명사구로 쓸 것.
+4. 필요시 단어를 변형 할 것.
+다음 글을 읽고 물음에 답하시오.  (31번)
+Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. Because of that, (A) 우리는 그러한 상품, 서비스, 그리고 자원들이 가장 높은 이익을 낳을 수 있는 곳으로 그것들을 배분하기 위해 시장과 가격 책정을 사용합니다. In Star Trek, however, there isn’t much scarcity. Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. All of humanity in that world has been fully educated so that they can participate in this prosperity. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant.
+윗글의 내용과 가장 일치하는 것은? 
+ ⑤ 
+마지막 문장에서 생성형 AI가 우리 사회의 여러 영역을 스타트렉처럼 고도로 풍요롭게 만들 잠재력을 지니고 있다고 명시되어 있다. 
+① Most people already analyze the Star Trek universe from an economic perspective.
+② Classical economics assumes that resources and goods are fundamentally limitless for everyone.
+③ The Star Trek society heavily relies on market pricing to distribute scarce food and energy.
+④ In the Star Trek world, advanced education is provided exclusively to a selected elite class.
+⑤ Generative AI possesses the potential to bring about extreme abundance to various aspects of our society.
+윗글의 (A)에 들어갈 문장을 <보기>의 단어를 활용하여 <조건>에 맞게 영어로 쓰시오. 
+ We use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit.
+<보기>
+ goods, / where / the / might / benefit / markets / and resources / and / use / services, / allocate / those / we / they / highest / pricing 
+<조건>
+1. 총 21단어로 작성할 것(동일 단어 반복 사용 가능)
+2. 주절은 목적의 to부정사구를 포함할 것.
+3. '배분하다'라는 동사와 호응하는 방향의 전치사를 포함할 것
+4. 전치사의 목적어로 선행사를 포함한 장소의 관계부사절(또는 의문부사 명사절)을 결합하되, 결과를 초래하는 구동사을 활용하여 문장을 완결할 것.
+다음 글을 읽고 물음에 답하시오.  (31번)
+Few people may view the Star Trek universe through an [a] economic lens, but doing so provides a window into a world that might soon be upon us. All of classical economics is based on the notion that (A)                          . Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the [b] highest benefit. In Star Trek, however, there isn’t much [c] scarcity. Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. All of humanity in that world has been fully educated so that they can participate in this [d] poverty. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society to be similarly highly [e] abundant.
+윗글의 밑줄 친 [a]~[e] 중에서 문맥상 낱말의 쓰임이 적절하지 않은 것은? 
+ ④ 
+풍요로운 기술과 무한한 자원 덕분에 사람들이 누리는 혜택을 나타내므로 [d]의 poverty(빈곤)는 prosperity(번영) 또는 abundance로 고쳐야 한다.
+① [a] ② [b] ③ [c] ④ [d] ⑤ [e]
+윗글의 빈칸 (A)에 들어갈 말을 <보기>의 단어를 사용하여 <조건>에 맞게 쓰시오. 
+ there isn’t usually enough of anything to give everyone everything they want or need
+<보기> 
+enough / everyone / everything / give / isn’t / or need / of anything / there / they / to / usually / want
+<조건>
+<보기>의 단어만을 모두 1번씩 사용하여 작성할 것 (형태 변형 없음)
+다음 글을 읽고 물음에 답하시오.  (31번)
+Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit. In Star Trek, however,                         . Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. All of humanity in that world has been fully educated so that they can participate in this prosperity. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant.
+윗글의 내용에 맞도록 <보기>의 빈칸에 가장 적절한 단어를 넣을 때, 어디에도 들어갈 수 없는 것은? 
+ ⑤
+ (A) scarcity, (B) prosperity, (C) experience, (D) generate가 적절하므로 limitation(한계, 제약)은 어디에도 들어갈 수 없다. 
+<보기>
+Unlike classical economics centered on resource (A), the Star Trek world achieves immense (B) through technology, a post-scarcity state that our society might soon (C)__________ with the rise of generative AI, which has the power to (D)__________ abundance.
+① scarcity	② prosperity	③ experience
+④ generate	⑤ limitation
+윗글의 빈칸에 들어갈 말로 가장 적절한 것은? 
+ ① 
+고전 경제학의 희소성 전제와 대조를 이루며, 뒤이어 원하는 음식을 복제하고 자유롭게 여행하는 기술적 풍요가 서술되므로 ①이 가장 알맞다. 
+① there isn’t much scarcity
+② economic competition becomes fiercer
+③ pricing mechanisms dominate human life
+④ educational inequality divides social classes
+⑤ technology fails to solve basic survival needs
+다음 글을 읽고 물음에 답하시오.  (31번)
+ [a] Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. [b] All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. [c] Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit. In Star Trek, however, there isn’t much scarcity. [d] Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. [e] All of humanity in that world has been fully educated so that they can participate in this prosperity. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant.
+윗글의 내용과 일치하지 않는 것은? 
+ ⑤ 
+스타트렉 사회에서는 희소성이 거의 없어 모두가 충분한 교육을 받고 탐험가, 연구원, 예술가 등으로 자아실현을 하며 살아간다고 서술되어 있다. 
+① Analyzing Star Trek economically can offer a glimpse into our potential future.
+② Classical economics assumes that goods and resources are fundamentally limited in quantity.
+③ In our current economic systems, prices and markets help distribute limited resources.
+④ Advanced technology in Star Trek enables people to reproduce food and travel across space.
+⑤ In the Star Trek society, scarcity still forces people to work routine manual jobs to survive.
+ 윗글의 밑줄 친 ①~⑤ 중, 어법상 어색한 문장은? 
+ ④ 
+ ④의 transport의 목적어는 주어(society/구성원들) 자신을 직접 이동시키는 것이므로 대명사 them이 아닌 재귀대명사 themselves를 써야 한다.
+① [a]    ② [b]    ③ [c]    ④ [d]    ⑤ [e] 
+글의 밑줄 친 두 문장을 합쳐서 <조건>에 맞게  영어로 쓰시오.  (31번)
+ We use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit.
+Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. (A) We use markets and pricing to allocate those goods, services, and resources to specific economic sectors. (B)They might result in the highest benefit in those sectors. In Star Trek, however, there isn’t much scarcity. Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. All of humanity in that world has been fully educated so that they can participate in this prosperity. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant.
+<조건>
+1. 관계부사를 활용하여 장소 부사구를 대체할 것
+2. 21단어로 작성할 것.
+3. 한 개의 문장으로  작성할 것.
+다음 글을 읽고 물음에 답하시오. (31번)
+Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the ⓐ highest benefit. In Star Trek, however, there isn’t much ⓑ scarcity. Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. All of humanity in that world has been fully educated so that they can participate in this ⓒ prosperity. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to ⓓ prevent many dimensions of our own society from being similarly highly ⓔ abundant.
+윗글의 내용과 일치하는 것을 있는 대로 모두 고른 것은? 
+ ② 
+ⓑ(희소성 전제), ⓒ(시장과 가격의 기능), ⓔ(완전한 교육을 통한 번영 참여)는 일치한다. ⓐ(소수만 경제적 관점으로 봄), ⓓ, ⓕ는 내용과 반대이다. (
+ⓐ Many people traditionally analyze the fictional Star Trek universe using economic theories.
+ⓑ Classical economics begins with the core premise of ubiquitous resource scarcity.
+ⓒ Markets and prices function as distribution mechanisms for scarce goods and services.
+ⓓ The society depicted in Star Trek experiences severe conflicts due to an extreme shortage of food.
+ⓔ Universal education in Star Trek enables the entire population to take part in societal prosperity.ⓕ The author expects generative AI to drastically worsen scarcity and inequality in modern society.
+① ⓐ, ⓑ, ⓓ	② ⓑ, ⓒ, ⓔ	③ ⓑ, ⓓ, ⓔ
+④ ⓒ, ⓓ, ⓕ	⑤ ⓐ, ⓔ, ⓕ
+윗글의 밑줄 친 provides a window into a world that might soon be upon us가 의미하는 바로 가장 적절한 것은? 
+ ④ 
+ 스타트렉의 희소성 없는 풍요로운 모습이 생성형 AI 기술 등으로 인해 머지않아 도래할 우리 사회의 미래상을 보여준다는 의미이다. 
+① It demonstrates the need to concentrate national budgets on developing military technologies in preparation for the coming age of space exploration.
+② It proves that the principles of price determination in classical economics will apply perfectly to future virtual economies as well.
+③ It suggests that science fiction distorts the feasibility of technological advances, creating unrealistic expectations among the general public about future developments.
+④ It offers a glimpse into a highly prosperous future society where advanced technologies overcome resource scarcity and make abundance possible.
+⑤ It warns that rapid advances in artificial intelligence will completely replace human workers, leading to widespread unemployment across various industries.
+윗글의 밑줄 친 ⓐ~ⓔ 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은? 
+ ④ 
+생성형 AI가 우리 사회의 여러 영역을 고도로 풍요롭게 만들어 줄 잠재력을 가지고 있다는 맥락이므로 ⓓ의 prevent는 allow로 바꾸어야 한다. 
+① ⓐ    ② ⓑ 	③ ⓒ 	④ ⓓ 	⑤ ⓔ
+다음 문장(A)에서 어법상 어색한 두 곳을 찾아 올바르게 고쳐 쓰시오.  (31번)
+ 
+(1) fully educated → been fully educated 
+(2) similar → similarly
+Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit. In Star Trek, however, there isn’t much scarcity. Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. (A) All of humanity in that world has fully educated so that they can participate in this prosperity, and everyone is an explorer, researcher, engineer, artist, doctor, or counselor, allowing our society to be similar highly abundantly.
+어색한 곳 (1): ____________________ 
+→ 바르게 고친 것: ____________________
+어색한 곳 (2): ____________________ 
+→ 바르게 고친 것: ____________________
+글의 밑줄 친 (A) this prosperity와 (B) a world that might soon be upon us가 의미하는 바로 가장 알맞은 것은?  (31번)
+ ② 
+(A)는 첨단 기술로 희소성이 사라진 번영을 의미하며, (B)는 생성형 AI의 발전 등으로 우리에게 곧 닥쳐올 고도로 풍요로운 미래 사회를 의미한다. 
+Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. All of humanity in that world has been fully educated so that they can participate in (A)this prosperity. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant, realizing (B)a world that might soon be upon us.
+
+(A)
+(B)
+①
+competitive market-based economy
+world suffering from severe energy depletion
+②
+tech-driven post-scarcity wealth
+highly abundant society aided by AI
+③
+free education system for elites
+universe governed by interstellar commerce
+④
+equal distribution of scarce resources
+society completely free of all technology
+⑤
+artistic freedom without science
+economic crisis caused by automated labor
+다음 글의 밑줄 친 ⓐ~ⓔ 중, 어법상 옳은 것만을 있는 대로 고른 것은? (31번)
+ ①  
+ⓐ(동명사 주어 단수동사), ⓓ(everyone 단수동사), ⓔ(allow 목적격 보어 to-v)는 옳다. 
+ⓑ는 동격 접속사 that, ⓒ는 to부정사에 걸리는 원형 travel이어야 한다. (99자)
+Few people may view the Star Trek universe through an economic lens, but doing so ⓐ provides a window into a world that might soon be upon us. All of classical economics is based on the notion ⓑ which there isn’t usually enough of anything to give everyone everything they want or need. Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit. In Star Trek, however, there isn’t much scarcity. Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and ⓒ travels among the stars. All of humanity in that world has been fully educated so that they can participate in this prosperity. Everyone ⓓ is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society ⓔ to be similarly highly abundant.
+① ⓐ, ⓓ, ⓔ	② ⓐ, ⓑ, ⓓ	③ ⓑ, ⓒ, ⓔ
+④ ⓑ, ⓓ, ⓔ	⑤ ⓒ, ⓓ, ⓔ
+다음 글의 밑줄 친 ⓐ~ⓔ 중 문맥상 낱말의 쓰임이 가장 어색한 것은?  (31번)
+  ③ 
+스타트렉 사회는 기술로 인해 음식을 복제하고 여행하므로 자원의 '부족/희소성(scarcity)'이 거의 없어야 한다. 따라서 ⓒ의 abundance는 문맥상 어색하다. 
+ Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. All of classical economics is based on the notion that there isn’t usually ⓐsufficient of anything to give everyone everything they want or need. Because of that, we use markets and pricing to ⓑdistribute those goods, services, and resources to where they might result in the highest benefit. In Star Trek, however, there isn’t much ⓒabundance. Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. All of humanity in that world has been fully educated so that they can participate in this ⓓwealth. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society to be similarly highly ⓔplentiful.
+① ⓐ     ② ⓑ     ③ ⓒ     ④ ⓓ     ⑤ ⓔ
+다음 빈칸에 들어갈 말로 가장 적절한 것은? (31번)
+ ②  
+스타트렉의 희소성 없는 풍요로움처럼, 생성형 AI 또한 우리 사회의 많은 영역을 이와 비슷하게 고도로 풍요롭게 만들어 줄 잠재력이 있다는 결론이 알맞다. 
+ Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit. In Star Trek, however, there isn’t much scarcity. Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. All of humanity in that world has been fully educated so that they can participate in this prosperity. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to __________________________________________________.
+① reinstate the classical economic doctrine of severe resource scarcity
+② allow many dimensions of our own society to be similarly highly abundant
+③ deepen educational divides by reserving automation only for the wealthy
+④ force humanity into strictly competitive pricing and resource conflicts
+⑤ eliminate all creative professions such as artists, researchers, and counselors
+다음 빈칸에 들어갈 말로 가장 적절한 것은?(31번)
+ ③ 앞 문장의 자원 희소성 전제로 인해, 우리가 시장과 가격을 활용하여 재화, 서비스, 자원을 배분하게 된다는 원인-결과 흐름이 빈칸에 들어가는 것이 가장 자연스럽다. 
+ Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. Because of that, __________________________________________________. In Star Trek, however, there isn’t much scarcity. Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. All of humanity in that world has been fully educated so that they can participate in this prosperity. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant.
+① governments completely ban the private ownership of advanced technology
+② technology immediately eliminates the necessity of human education
+③ we use markets and pricing to allocate those goods, services, and resources
+④ people abandon all scientific research and explore outer space instead
+⑤ scarcity is treated as an imaginary illusion rather than a reality
+다음 글의 제목으로 가장 적절한 것은? (31번)
+ ①
+전통 경제학의 전제인 자원 부족을 깨뜨리고 스타트렉 같은 초풍요 사회를 구현할 수 있는 생성형 AI의 가능성을 포괄하는 제목임.
+ Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit. In Star Trek, however, there isn’t much scarcity. Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. All of humanity in that world has been fully educated so that they can participate in this prosperity. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant.
+① Beyond Classical Scarcity: How Generative AI Could Realize the Star Trek Reality
+② Pricing Mechanisms Under Threat: The Unforeseen Collapse of Traditional Markets
+③ The Technological Illusion: Why Complete Material Abundance Is Inherently Impossible
+④ Educating Future Generations: The Ultimate Prerequisite for Galactic Space Exploration
+⑤ The Evolution of Economics: From Primitive Barter Trade to Globalized Financial Systems
+주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?  (31번)
+ ④ 
+고전 경제학의 희소성과 스타트렉의 탈희소성 소개(C) → 스타트렉의 첨단 기술과 전인 교육 번영(A) → 다양한 직업군 영위 및 생성형 AI의 풍요 잠재력(B) 순이다. 
+ Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us.
+(A) Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. All of humanity in that world has been fully educated so that they can participate in this prosperity.
+(B) Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant.
+(C) All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit. In Star Trek, however, there isn’t much scarcity.
+① (A) - (C) - (B)		② (B) - (A) - (C)
+③ (B) - (C) - (A)		④ (C) - (A) - (B)
+⑤ (C) - (B) - (A)
+다음 글의 내용을 한 문장으로 요약하고자 할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  (31번)
+ 고전 경제학이 물질적 부족함(insufficiency)을 다루는 반면, 스타트렉의 기술 모델은 생성형 AI가 유례없는 사회적 풍요(richness)를 열어줄 것임을 보여줌.
+ Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit. In Star Trek, however, there isn’t much scarcity. Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. All of humanity in that world has been fully educated so that they can participate in this prosperity. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant. 
+➠ Unlike classical economics centered on the management of material (A)       , the technological post-scarcity model seen in Star Trek demonstrates how emerging generative AI might inaugurate an era of unprecedented societal (B)                     .
+     (A)             (B)
+① insufficiency …… richness
+② limitation …… disparity
+③ efficiency …… stagnation
+④ distribution …… competition
+⑤ surplus …… prosperity
+** scarcity도 알아 둘 것
+다음 글의 this prosperity가 가리키는 구체적인 내용을 본문에서 찾아 10단어 이내의 영어로 쓰시오.  (31번)
+  a world where there isn't much scarcity (또는 society with reproduced food and space travel) / 희소성이 거의 없고 첨단 기술로 원하는 모든 것을 누리는 스타트렉 사회의 번영 상태를 가리킨다. 
+ Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit. In Star Trek, however, there isn’t much scarcity. Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. All of humanity in that world has been fully educated so that they can participate in this prosperity. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant. 
+<조건>
+1. 본문에 등장하는 단어를 포함할 것
+2. 10단어 이내의 명사구 또는 절로 작성할 것
+다음 글의 밑줄 친 (A), (B)에 들어갈 표현을 <조건>에 맞게 영어로 쓰시오.  (31번)
+ 
+A) All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. / 
+(B) Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant. 
+ Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. (A)모든 고전 경제학은 모든 사람에게 그들이 원하거나 필요로 하는 모든 것을 주기에 대개 어떤 것도 충분하지 않다는 개념에 기반을 둔다. Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit. In Star Trek, however, there isn’t much scarcity. Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. All of humanity in that world has been fully educated so that they can participate in this prosperity. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. (B)생성형 AI는 우리 사회의 많은 영역이 이와 유사하게 고도로 풍요로워지는 것을 가능하게 할 잠재력을 지니고 있다.
+< (A) 보기 >
+[ usually / or / economics / to / need. / of / everything / base / give / of / want / there / classical / enough / the / isn’t / they / everyone / on / notion / anything / All ]  
+< (A) 조건 >
+1. 총 24단어로 작성할 것
+2. 동격의 접속사 및 부정대명사 수식 구조를 활용할 것
+3. <보기>의 단어를 모두 1번씩만 사용하되, 필요하다면 형태를 바꿀 것
+-------------
+< (B) 보기 >
+[ to / allow / has / society / the / highly / Generative AI/ abundant / own / our / many / potential / of / dimensions / be / similarly / to ] . 
+< (B) 조건 >
+1. 총 18단어로 작성할 것
+2. allow + 목적어 + 목적보어 구문을 활용할 것
+3. <보기>의 단어를 1번씩만 모두 사용할 것 (단어 추가 없음)
+다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말을 <보기>의 단어를 활용해 <조건>에 맞게 서술하시오.  (31번)
+  
+(A) to create widespread abundance in our society  (B) humanity into a post-scarcity era
+ Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit. In Star Trek, however, there isn’t much scarcity. Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. All of humanity in that world has been fully educated so that they can participate in this prosperity. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant. 
+➠While traditional economics focuses on managing resource scarcity, the technological advancement of generative AI has the potential (A)      , ultimately leading (B)            .
+< (A) 보기 >
+abundance / create / our society / to / widespread / in
+< (A) 조건 >
+<보기>의 단어를 모두 1번씩 사용할 것   
+< (B) 보기 >
+humanity / a / into / post-scarcity / era / to
+< (B) 조건 >
+<보기>의 단어를 모두 1번씩 사용할 것   
+다음 글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은? (32번) 
+ ④ 
+세 번째 조건(경청했음을 겉으로 보여주어야 함)을 언급한 문장 직후에 '이 마지막 부분이 핵심이다'가 들어가고, 반응 없는 사람의 예시가 이어져야 한다. 
+This last part is key.
+People, whether customers or otherwise, want to feel heard. When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to address them. But for someone to feel heard, three things have to happen. ( ① ) First, they have to feel like the other person paid attention to what they said. ( ② ) Second, they have to feel like the other person understood what they said. ( ③ ) And third, the other person has to demonstrate that they listened. ( ④ ) Imagine talking to someone who provided no response. ( ⑤ ) They might have attended to everything we said. They might even have understood it completely. But without some sort of outward signal that indicates they listened, it’s impossible to know whether or not they actually did.
+다음 글을 읽고 물음에 답하시오.  (32번) 
+People, whether customers or otherwise, want to feel ⓐheard. When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to address them. But for someone to feel heard, three things have to happen. First, they have to feel like the other person paid attention to ⓑthat they said. Second, they have to feel like the other person understood what they said. And third, the other person has to demonstrate that they listened. This last part is key. (A)어떠한 응답도 해주지 않는 누군가에게 이야기하는 것을 상상해 보라. They might have attended to everything we said. They might even have understood it completely. But without some sort of outward signal that ⓒindicate they listened, it’s ⓓimpossibly to know ⓔwhether or not they actually did.
+윗글의 밑줄 친 ⓐ~ⓔ 중, 어법상 바르게 쓰인 개수는? 
+ ② 
+ⓐ(수동 의미 보어 heard), 
+ⓔ(명사절 접속사 whether) 2개만 옳다. 
+---
+ⓑ는 관계대명사 what, 
+ⓒ는 선행사 단수 signal에 수일치한 indicates, 
+ⓓ는 형용사 보어 impossible이다.
+① 1개 ② 2개 ③ 3개 ④ 4개 ⑤ 5개
+윗글의 (A)에 들어갈 문장을 <보기>의 단어를 활용하여 <조건>에 맞게 영어로 쓰시오. 
+ Imagine talking to someone who provided no response. 
+<보기>
+imagine / no / provide / response / someone / talk / to / who
+<조건>
+<보기>의 단어를 1번씩 모두 사용하되, 필요하다면 형태를 바꿀 것
+다음 글을 읽고 물음에 답하시오.  (32번) 
+.People, whether customers or otherwise, want to feel heard. (A)누군가가 고객 센터에 전화를 걸거나, 관리자와 대화하기를 요청하거나, 마음에 무언가를 품고 당신의 사무실로 들어올 때, 그들은 누군가가 자신의 우려 사항을 듣고 해결해 줄 것이라고 느끼고 싶어 한다. But for someone to feel heard, three things have to happen. First, they have to feel like the other person paid attention to what they said. Second, they have to feel like the other person understood what they said. And third, the other person has to demonstrate that they listened. This last part is key. Imagine talking to someone who provided no response. They might have attended to everything we said. They might even have understood it completely. But without some sort of outward signal that indicates they listened, it’s impossible to know whether or not they actually did.
+윗글의 내용과 가장 일치하는 것은? 
+  ④ 
+상대방이 자신이 경청했음을 겉으로 명확히 보여주는 것(demonstrate)이 상대가 경청받았다고 느끼게 하는 데 필수적인 핵심이라고 본문에 명시되어 있다.
+① Only commercial customers want to have their words heard and acknowledged.
+② Simply paying silent attention is completely enough to make others feel heard.
+③ Understanding someone's words completely guarantees that the speaker feels heard.
+④ Demonstrating outwardly that you listened is a crucial requirement for effective communication.
+⑤ Even without any outward signal, speakers can easily sense if the listener fully understands.
+윗글의 내용을 바탕으로 다음 우리말을 <보기>의 단어를 활용하여 <조건>에 맞게 영어로 쓰시오. 
+ When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to address them. 
+<보기>
+[ is / your / to / feel / on / customer / asks / to / speak / with / them / office / like / someone / mind, / going / their / into / and / address / someone / want / or / comes / service, / something / concerns / to / a / When / to / their / listening / to / they / manager, / calls ] . 
+<조건>
+- 총 37단어로 작성할 것
+- 콤마(,) 2개를 반드시 포함할 것 (콤마는 단어 수에 포함되지 않음)
+- 접속사 When으로 시작하고 병렬 구조를 적용할 것
+- <보기>의 단어 중 필요한 것만을 1번씩 활용하여 작성할 것 ( 형태 변형없음)
+다음 글을 읽고 물음에 답하시오.  (32번) 
+People, whether customers or otherwise, want to feel heard. When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to [a] address them. But for someone to feel heard, three things have to happen. First, they have to feel like the other person paid [b] attention to what they said. Second, they have to feel like the other person [c] understood what they said. And third, the other person has to [d] conceal that they listened. This last part is key. Imagine talking to someone who provided no response. They might have attended to everything we said. They might even have understood it completely. But                                             , it’s [e] impossible to know whether or not they actually did.
+윗글의 밑줄 친 [a]~[e] 중에서 문맥상 낱말의 쓰임이 적절하지 않은 것은? 
+ ④ 
+상대방이 자신의 말을 경청했음을 겉으로 입증하고 보여주어야 하므로 [d]의 conceal(숨기다)은 demonstrate(입증하다/보여주다)로 고쳐야 한다. 
+① [a] ② [b] ③ [c] ④ [d] ⑤ [e]
+윗글의 빈칸 (A)에 들어갈 말을 <보기>의 단어를 사용하여 <조건>에 맞게 쓰시오. 
+ without some sort of outward signal that indicates they listened 
+<보기>
+indicates / listened / of / outward / signal / some / sort / that / they 
+<조건>
+- 전치사를 포함하여 작성할 것
+- <보기>의 단어만을 모두 1번씩 사용하여 총 10단어로 완성할 것 (단어 형태 변형 없음)
+다음 글을 읽고 물음에 답하시오.  (32번) 
+People, whether customers or otherwise, want to feel heard. When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to address them. But for someone to feel heard, three things have to happen. First, they have to feel like the other person paid attention to what they said. Second, they have to feel like the other person understood what they said. And third,                                     . This last part is key. Imagine talking to someone who provided no response. They might have attended to everything we said. They might even have understood it completely. But without some sort of outward signal that indicates they listened, it’s impossible to know whether or not they actually did.
+윗글의 내용에 맞도록 <보기>의 빈칸에 가장 적절한 단어를 넣을 때, 어디에도 들어갈 수 없는 것은? 
+ ③ (A)에는 attend, (B)에는 comprehend, (C)에는 outward, (D)에는 demonstrate가 들어가야 하므로 internal(내면의)은 어디에도 들어갈 수 없다.
+<보기>
+To make people feel heard, a listener must not only (A)__________ to their words and (B)__________ their concerns, but also provide an (C)__________ signal to (D)__________ genuine listening.
+① attend	② comprehend	③ internal
+④ outward	⑤ demonstrate
+윗글의 빈칸에 들어갈 말로 가장 적절한 것은?
+ ① 
+상대방이 귀 기울였다고 느끼기 위해 필요한 세 번째 필수 조건이자 외적 신호의 중요성으로 이어지는 핵심은 '경청했음을 보여주는 것'이다.
+① the other person has to demonstrate that they listened
+② the speaker should unconditionally accept the listener's criticism
+③ both parties must agree never to show their emotional responses
+④ customer service agents must resolve issues without verbal conversation
+⑤ listeners should avoid giving any immediate outward feedback
+다음 글을 읽고 물음에 답하시오.  (32번) 
+ People, whether customers or otherwise, want to feel heard. [a] When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to address them. But [b] for someone to feel heard, three things have to happen. First, [c] they have to feel like the other person paid attention to what they said. Second, they have to feel like the other person understood what they said. And third, [d] the other person has to demonstrate that they listened. This last part is key. Imagine talking to someone who provided no response. They might have attended to everything we said. They might even have understood it completely. But without some sort of outward signal that indicates they listened, [e] it’s impossible to know whether or not they actually were.
+윗글의 내용과 일치하지 않는 것은? 
+ ⑤ 
+청자가 속으로 완벽히 이해했더라도 외적 반응이나 신호가 없다면 화자는 상대가 실제로 경청했는지 알 수 없으므로 ⑤는 일치하지 않는다. 
+① People desire to know that their problems and thoughts are acknowledged by others.
+② In customer service, clients expect listeners to both hear and resolve their issues.
+③ Feeling heard requires perceiving that the listener paid attention and understood.
+④ Even if a listener genuinely understands everything, lacking outward response prevents the speaker from knowing it.
+⑤ Internal comprehension automatically guarantees that the speaker recognizes the listener's attention.
+윗글의 밑줄 친 [a]~[e] 중, 어법상 어색한 것은? 
+ ⑤  ( were > did=heard)
+윗글의 내용을 요약하고자 한다. 요약한 글의 내용 중 밑줄 친 부분이 문맥상 어색한 것은? 
+ ❹ 
+외적인 반응이 전혀 없다면 화자가 경청 여부를 입증하는 것은 실현 불가능하므로 feasible(실현 가능한)을 impossible이나 unfeasible 등으로 고쳐야 한다.
+➠ People who want to have a conversation fundamentally want to know that their concerns are being taken ❶ seriously. To satisfy this mental need, a listener must pay enough attention, understand the message, and most importantly, clearly ❷ show that understanding. Even if the listener completely understands the message in their mind, the total  ❸ absence of noticeable reactions makes it completely ❹ feasible for the speaker to confirm whether true listening has taken place, which makes ❺ visible signals necessary.
+다음 글을 읽고 물음에 답하시오. (32번) 
+People, whether customers or otherwise, want to feel heard. When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to [a]  resolve them. But for someone to feel acknowledged, three things have to happen. First, they have to feel like the other person [b]  focused on what they said. Second, they have to feel like the other person comprehended what they said. And third, the other person has to [c]  conceal that they listened. This last part is pivotal. Imagine talking to someone who provided no response. They might have attended to everything we said. They might even have grasped it completely. But without some sort of [d]  external signal that indicates they listened, it’s [e]   unfeasible to know whether or not they actually did.
+윗글의 내용과 일치하는 것을 있는 대로 모두 고른 것은? 
+ ②  
+세 가지 조건 필요(ⓑ), 외적 입증 필요(ⓓ), 무반응인 사람도 온전히 이해했을 가능성 있음(ⓔ)은 본문과 일치한다. ⓐ, ⓒ, ⓕ는 사실과 다르다.
+ⓐ Customers calling customer service only care about financial compensation, not being heard.
+ⓑ Feeling heard requires the fulfillment of three sequential conditions.
+ⓒ A listener paying silent attention is always fully recognized by the speaker.
+ⓓ Listeners must provide external signals demonstrating that they listened.
+ⓔ Someone who provides zero response may still have understood the speaker's message completely.
+ⓕ Without visible or audible feedback, speakers can effortlessly verify the listener's internal thoughts.
+① ⓐ, ⓑ	② ⓑ, ⓓ, ⓔ	③ ⓑ, ⓒ, ⓓ
+④ ⓒ, ⓓ, ⓕ	⑤ ⓓ, ⓔ, ⓕ
+윗글의 밑줄 친 This last part is key가 의미하는 바로 가장 적절한 것은? 
+ ② 
+'마지막 부분'은 세 번째 조건인 '경청했음을 겉으로 보여주는 것'을 가리키므로, 외적 표현과 반응의 결정적 중요성을 뜻하는 ②가 적절하다. 
+① 화자의 발화 속도에 맞추어 침묵을 지키는 태도가 중요하다.
+② 내면으로만 공감하기보다 경청하고 있음을 겉으로 명확히 표현하는 것이 핵심이다.
+③ 고객의 무리한 요구에 대해 규정에 따라 단호하게 거절하는 기술이 필요하다.
+④ 상대방의 말을 끊지 않고 끝까지 듣는 인내심이 의사소통의 전부이다.
+⑤ 전문 지식을 바탕으로 고객의 문제를 즉각적으로 해결해 주는 것이 중요하다.
+윗글의 밑줄 친 [ⓐ]~[ⓔ] 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은? 
+ ③
+들었다는 사실을 겉으로 명백히 보여주어야 하므로, '숨기다/감추다'를 뜻하는 conceal 대신 유의어인 demonstrate, manifest, show 등이 적절하다.
+① [a]    ② [b]    ③ [c]    ④ [d]    ⑤ [e] 
+다음 (A)문장에서 어법상 어색한 세 곳을 찾아 올바르게 순서대로 고쳐 쓰시오.  (32번) 
+ 
+(A)But without some sort of outward signal that indicates(1) they listened, it’s impossible to know whether(2) or not they actually did(3).
+People, whether customers or otherwise, want to feel heard. When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to address them. But for someone to feel heard, three things have to happen. First, they have to feel like the other person paid attention to what they said. Second, they have to feel like the other person understood what they said. And third, the other person has to demonstrate that they listened. This last part is key. Imagine talking to someone who provided no response. They might have attended to everything we said. They might even have understood it completely. (A)But without some sort of outward signal that indicate they listened, it’s impossible to know that or not they actually were.
+어색한 곳 (1): ____________________ 
+→ 바르게 고친 것: ____________________
+어색한 곳 (2): ____________________ 
+→ 바르게 고친 것: ____________________
+어색한 곳 (3): ____________________ 
+→ 바르게 고친 것: ____________________
+다음 글의 밑줄 친 (A )three things와 (B) outward signal이 의미하는 바로 가장 알맞은 것은?  (32번) 
+ ③ 
+ (A)는 상대방이 경청받고 있다고 느끼기 위해 충족되어야 할 세 가지 조건이며, (B)는 경청했음을 겉으로 입증해 주는 시각적·청각적 피드백 신호이다. 
+People, whether customers or otherwise, want to feel heard. When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to address them. But for someone to feel heard, (A) three things have to happen. First, they have to feel like the other person paid attention to what they said. Second, they have to feel like the other person understood what they said. And third, the other person has to demonstrate that they listened. This last part is key. Imagine talking to someone who provided no response. They might have attended to everything we said. They might even have understood it completely. But without some sort of (B) outward signal that indicates they listened, it’s impossible to know whether or not they actually did.
+
+(A)
+(B)
+①
+customer service guidelines
+internal contemplation
+②
+steps for managing company employees
+legal compensation methods
+③
+conditions required to make one feel heard
+visible or audible feedback showing listening
+④
+rules for filing customer complaints
+nonverbal avoidance signs
+⑤
+elements of logical speech making
+written complaints from consumers
+다음 글에서 전체 흐름과 관계 없는 문장은? (32번) 
+ ③
+상대방이 경청받고 있다고 느끼게 하려면 주의 집중과 이해뿐 아니라 들었다는 외적 신호를 보여주는 것이 핵심이라는 글이다. ③번은 상담원의 상세한 응답이 통화 시간을 늘려 효율성을 떨어뜨린다는 내용으로, 글의 핵심 흐름에서 벗어난다.
+People, whether customers or otherwise, want to feel heard. ① When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to address them. ② But for someone to feel heard, three things have to happen: they must feel the other person paid attention, understood, and demonstrated that they listened. ③ However, overly detailed responses from customer service representatives often prolong call times and reduce operational efficiency. ④ Imagine talking to someone who provided no response, even if they attended to and understood everything. ⑤ Without some sort of outward signal that indicates they listened, it’s impossible to know whether or not they actually did.
+다음 글의 밑줄 친 ⓐ~ⓔ 중 문맥상 낱말의 쓰임이 가장 어색한 것은?  (32번) 
+ ④ 
+뒤이어 '겉으로 드러나는 신호가 없으면 경청했는지 알 수 없다'고 부연하므로 응답을 전혀 해주지 않는(no response) 상황이어야 맞다. 
+People, whether customers or otherwise, want to feel heard. When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to address them. But for someone to feel heard, three things have to happen. First, they have to feel like the other person paid ⓐattention to what they said. Second, they have to feel like the other person ⓑgrasped what they said. And third, the other person has to ⓒprove that they listened. This last part is key. Imagine talking to someone who provided ⓓprompt response. They might have attended to everything we said. They might even have understood it completely. But without some sort of ⓔoutward signal that indicates they listened, it’s impossible to know whether or not they actually did.
+① ⓐ   ② ⓑ   ③ ⓒ   ④ ⓓ   ⑤ ⓔ
+다음 글의 빈칸에 들어갈 말로 적절한 것을 <보기>에서 모두 고른 것은?  (32번) 
+ ①
+빈칸에는 상대방이 경청했음을 알려주는 외적 신호나 표출에 해당하는 내용이 들어가야 하므로 [A], [C], [E]가 적절하다.
+People, whether customers or otherwise, want to feel heard. When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to address them. But for someone to feel heard, three things have to happen. First, they have to feel like the other person paid attention to what they said. Second, they have to feel like the other person understood what they said. And third, the other person has to demonstrate that they listened. This last part is key. Imagine talking to someone who provided no response. They might have attended to everything we said. They might even have understood it completely. But without ________________________, it’s impossible to know whether or not they actually did.
+<보기>
+[A]. some visible manifestation of cognitive engagement and communicative receptivity
+[B]. stringent financial penalties imposed upon negligent corporate service representatives
+[C]. an observable communicative indicator signifying that attention was actually rendered
+[D]. comprehensive regulatory frameworks forbidding impassive posture during professional meetings
+[E]. external communicative feedback verifying genuine absorption of the spoken message
+[F]. immediate escalation of complaints toward higher executive authorities for resolution
+① [A], [C], [E	② [B], [D], [F]
+③ [A], [D]	④ [C], [F]
+⑤ [B], [E]
+다음 빈칸에 들어갈 말로 가장 적절한 것은?(32번) 
+ ②
+고객이든 아니든 사람들이 진정으로 바라는 바는 '자신의 말이 경청되고 있다고 느끼는 것(want to feel heard)'이라는 글의 대주제이다.
+ People, whether customers or otherwise, __________________________________________________. When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to address them. But for someone to feel heard, three things have to happen. First, they have to feel like the other person paid attention to what they said. Second, they have to feel like the other person understood what they said. And third, the other person has to demonstrate that they listened. This last part is key. Imagine talking to someone who provided no response. They might have attended to everything we said. They might even have understood it completely. But without some sort of outward signal that indicates they listened, it’s impossible to know whether or not they actually did.
+① prefer solving everyday complaints entirely on their own
+② want to feel heard
+③ avoid expressing their genuine dissatisfaction outwardly
+④ expect immediate monetary rewards for simple inquiries
+⑤ dislike communicating with managers or customer representatives
+다음 글의 제목으로 가장 적절한 것은? (32번) 
+ ②
+경청은 단순히 귀를 기울이거나 이해하는 것을 넘어 겉으로 드러내어 보여주어야 완성된다는 핵심을 직관적으로 잘 담아낸 제목이다.
+People, whether customers or otherwise, want to feel heard. When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to address them. But for someone to feel heard, three things have to happen. First, they have to feel like the other person paid attention to what they said. Second, they have to feel like the other person understood what they said. And third, the other person has to demonstrate that they listened. This last part is key. Imagine talking to someone who provided no response. They might have attended to everything we said. They might even have understood it completely. But without some sort of outward signal that indicates they listened, it’s impossible to know whether or not they actually did.
+① Why Internal Attention Alone Never Guarantees Mutual Understanding
+② Hearing Isn't Enough: Show and Prove That You Are Listening
+③ How Customer Inquiries Transform Contemporary Organizational Culture
+④ The Silent Power: Why Restraint Dominates Modern Executive Communication
+⑤ Eliminating Cognitive Biases to Enhance Personal Communicative Efficiency
+다음 글의 내용을 한 문장으로 요약하고자 할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  (32번) 
+ ④ 
+화자가 경청받았다고 느끼려면 듣는 사람이 내적으로 이해할 뿐 아니라 주의를 기울이고 있음을 확인해 주는(confirms) 눈에 보이는(visible) 외적 증거를 제공해야 한다.
+People, whether customers or otherwise, want to feel heard. When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to address them. But for someone to feel heard, three things have to happen. First, they have to feel like the other person paid attention to what they said. Second, they have to feel like the other person understood what they said. And third, the other person has to demonstrate that they listened. This last part is key. Imagine talking to someone who provided no response. They might have attended to everything we said. They might even have understood it completely. But without some sort of outward signal that indicates they listened, it’s impossible to know whether or not they actually did. 
+➠For speakers to perceive that their concerns are genuinely acknowledged, listeners must not only internalize the message through attention and comprehension, but also provide (A)________ evidence that (B)________ their attentive state.
+    (A)              (B)
+① theoretical  …… reinforces
+② ambiguous    …… conceals
+③ delayed      …… challenges
+④ visible      …… confirms
+⑤ verbal       …… diminishes
+다음 글의 This last part가 가리키는 구체적인 내용을 본문에서 찾아 7단어로 쓰시오. (32번) 
+ the other person demonstrating that they listened (또는 the other person has to demonstrate that they listened) 
+People, whether customers or otherwise, want to feel heard. When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to address them. But for someone to feel heard, three things have to happen. First, they have to feel like the other person paid attention to what they said. Second, they have to feel like the other person understood what they said. And third, the other person has to demonstrate that they listened. This last part is key. Imagine talking to someone who provided no response. They might have attended to everything we said. They might even have understood it completely. But without some sort of outward signal that indicates they listened, it’s impossible to know whether or not they actually did.
+<조건>
+- 본문에 등장하는 단어만을 사용할 것
+- 정확히 7단어로 작성할 것
+다음 글의 밑줄 친 (A), (B)에 들어갈 표현을 <조건>에 맞게 영어로 쓰시오. (32번) 
+ (A) But for someone to feel heard, three things have to happen. / (B) But without some sort of outward signal that indicates they listened, it’s impossible to know whether or not they actually did. 
+People, whether customers or otherwise, want to feel heard. When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to address them. (A)그러나 누군가가 자신의 말이 경청되었다고 느끼기 위해서는, 세 가지 일이 일어나야 한다. First, they have to feel like the other person paid attention to what they said. Second, they have to feel like the other person understood what they said. And third, the other person has to demonstrate that they listened. This last part is key. Imagine talking to someone who provided no response. They might have attended to everything we said. They might even have understood it completely. (B)그러나 그들이 경청했음을 나타내는 일종의 외적인 신호가 없다면, 그들이 실제로 그랬는지 아닌지를 아는 것은 불가능하다.
+< (A) 보기 >
+But / feel / / happen / have / hear / someone / three things / to / to
+< (A) 조건 >
+- 의미상 주어를 활용할 것
+- 총 11단어로 작성할 것
+- <보기>의 단어를 모두 1번씩만 사용할 것 ( 단어 추가 및 변형있음)
+-------
+< (B) 보기 >
+[ they / sort / not / listened, / that / it’s / did / without / signal / whether / they / or / know / to / But / of / actually / outward / indicates / impossible / some ].
+< (B) 조건 >
+- 총 21단어로 작성할 것
+- 가주어-진주어 구문 및 명사절 접속사를 적용할 것
+- <보기>의 단어만을 모두 1번씩 사용할 것 (단어 추가 없음)
+다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말을 <보기>의 단어를 활용해 <조건>에 맞게 쓰시오.  (32번) 
+  (A) confirms their attentive listening (B) visible outward feedback 
+People, whether customers or otherwise, want to feel heard. When someone calls customer service, asks to speak to a manager, or comes into your office with something on their mind, they want to feel like someone is listening to their concerns and going to address them. But for someone to feel heard, three things have to happen. First, they have to feel like the other person paid attention to what they said. Second, they have to feel like the other person understood what they said. And third, the other person has to demonstrate that they listened. This last part is key. Imagine talking to someone who provided no response. They might have attended to everything we said. They might even have understood it completely. But without some sort of outward signal that indicates they listened, it’s impossible to know whether or not they actually did. 
+➠ Even if a listener internally pays attention and comprehends, speakers cannot feel heard unless the listener (A)_______________ through (B)________________.
+< (A) 보기 >
+attentive / confirms / listening / their
+< (A) 조건 >
+ <보기>의 단어만을 모두 1번씩 사용할 것
+< (B) 보기 >
+feedback / outward / visible
+< (B) 조건 >
+<보기>의 단어를 모두 1번씩 사용할 것
+정답

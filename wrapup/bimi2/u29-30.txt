@@ -1,0 +1,533 @@
+다음 글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은? (29)  [★★]
+http://edu-lab.kr 교육연구소                                          
+                               
+비밀노트        2026년 10월 고1모의고사 변형문제       [29-30번] 
+               	                          
+  edu-lab.kr – 수능대비/내신대비       /                                 비밀노트                     
+ ①   
+생물학적 원인으로 죽을 수 없다는 뜻도 아니라는 설명 뒤에, 나이가 들며 사망 확률이 증가하지 않는다는 대조 문장이 오고, 학자들의 주목 이유(①  뒤)로 이어진다. 
+But, unlike most every animal, their likelihood of dying does not increase with age.
+Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal.  This doesn’t mean they don’t die.  Nor does it even mean that they cannot die of biological causes. ( ① ) Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the aging process. ( ② ) But their property of being able to regenerate entire body parts, or even a whole organism, makes them more similar to trees than to us. ( ③  ) Although we may learn some fascinating things about their lack of apparent aging, it is not at all clear how relevant those findings will be to human aging. Sometimes biology is universal, especially if it relates to fundamental mechanisms. ( ④ ) But in other cases, even discoveries in rats or mice, which are mammals and biologically much closer to us, are difficult to translate into humans. ( ⑤ ) It may be a very long time before any findings gained from hydra or jellyfish are useful to us.
+다음 글을 읽고 물음에 답하시오. [★★★★★] (29)
+Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal. This doesn’t mean they don’t die. Nor ⓐdoes it even mean that they cannot die of biological causes. But, unlike most every animal, their likelihood of dying does not increase with age. Species such as hydra and the immortal jellyfish excite gerontologists ⓑbecause of they may provide clues about how to defeat the aging process. But (A) 신체 부위 전체를, 혹은 심지어 하나의 유기체 전체를 재생할 수 있는 그들의 특성은 그들을 우리보다는 나무와 더 비슷하게 만듭니다. Although we may learn some fascinating things about their lack of apparent aging, it is not at all clear ⓒhow relevant those findings will be to human aging. Sometimes biology is universal, especially if it relates to fundamental mechanisms. But in other cases, even discoveries in rats or mice ,which are mammals and biologically much closer to us, are difficult ⓓto translate them into humans. It may be a very long time before any findings ⓔgained from hydra or jellyfish are useful to us.
+글의 밑줄 친 ⓐ~ⓔ 중, 어법상 바르게 쓰인 개수는? (29번) 
+ ③
+ⓐ Nor가 문두에 위치하여 주어와 조동사의 위치가 바뀌는 부정어 도치 구문(부정어 도치), 
+ⓒ진주어 역할을 수행하는 간접의문문 명사절 자리임.
+의문사(how + 형용사) + 주어(those findings) + 동사(will be)의 평서문 어순을 취해야
+ⓔ주어의 핵인 any findings(어떤 발견들)는 스스로 무언가를 얻는 주체가 아니라 히드라와 해파리로부터 '얻어지는' 수동의 대상이므로 과거분사구 gained from hydra or jellyfish가 뒤에서 적절
+ⓑ는 뒤에 절이 오므로 because로 수정해야
+ⓓ는 to-부정사의 목적어가 문장의 주어와 동일한 대상일 때는 중복되는 대명사 목적어(them)를 반드시 삭제----which가 대신함.
+① 1개 ② 2개 ③ 3개 ④ 4개 ⑤ 5개
+윗글의 (A)에 들어갈 문장을 <보기>의 단어를 활용하여 <조건>에 맞게 영어로 쓰시오.  
+ their property of being able to regenerate entire body parts, or even a whole organism, makes them more similar to trees than to us. 
+<보기> 
+  regenerate , property,  similar,   organism
+<조건>
+1. 총 ‘24단어’로 완성하시오.
+2. 주어 뒤에 동격의 전치사를 두고, '능력'을 나타내는 숙어를 형태에 맞게 변형 할 것.
+3. 재생의 대상 목적어로 두 명사구를 등위접속사 or 로 연결할 것.
+4. 목적격 보어로 형용사 비교급를 배치하고, 비교 대상의 전치사구를 비교 접속사를  축으로 대칭 병렬 결합하여 완결할 것
+윗글의 내용과 가장 일치하는 것은?   [★★★] (29)
+ ⑤ 
+인간과 훨씬 가까운 포유류인 쥐를 통한 발견조차 인간에게 적용하기 어렵다고 언급되어 있으므로 ⑤가 일치한다. 
+Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal. This doesn’t mean they don’t die. Nor does it even mean that they cannot die of biological causes. But, unlike most every animal, their likelihood of dying does not increase with age. Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the aging process. But their property of being able to regenerate entire body parts, or even a whole organism, makes them more similar to trees than to us. (A) 비록 우리가 겉으로 드러나는 노화의 결핍에 대해 몇 가지 대단히 흥미로운 점들을 배울 수 있을지는 모르지만, 그러한 발견들이 인간의 노화에 얼마나 관련이 있을지는 전혀 명확하지 않다.. Sometimes biology is universal, especially if it relates to fundamental mechanisms. But in other cases, even discoveries in rats or mice, which are mammals and biologically much closer to us, are difficult to translate into humans. It may be a very long time before any findings gained from hydra or jellyfish are useful to us.
+① Biologically immortal animals never perish from disease, predators, or any biological reasons.
+② The mortality rate of hydra and the immortal jellyfish rises continuously as their biological age advances.
+③ Gerontologists ignore hydra because their regenerative abilities have no biological connection to plants.
+④ Findings gained from hydra and immortal jellyfish can be immediately and easily applied to human medicine.
+⑤ Even though rats and mice are biologically closer to humans than hydra, applying rodent research to humans remains challenging.
+윗글의 (A)에 들어갈 문장을 <보기>의 단어를 활용하여 <조건>에 맞게 영어로 쓰시오. 
+ Although we may learn some  fascinating things about their lack of apparent aging, it is not at all  clear how relevant those findings will be to human aging. 
+<보기> 
+some / human / be / relevant / findings / will / apparent / aging, / all / their / to / how / at / may / Although / clear / about / of / fascinate / those / learn / things / lack / we
+<조건>
+1. 총 ‘24단어’로 완성하시오.
+2. 문두의 주절에 가주어를 쓰고, '전혀 ~가 아니다'라는 표현의 위치를 파악하여 보어와 결합할 것.
+3. 진주어 역할을 하는 명사절을 형태에 맞게 쓸 것.
+4. 필요시 주어진 어형을 변형하고, 동일단어 반복사용 가능
+다음 글을 읽고 물음에 답하시오. [★★★] (29)
+Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal. This doesn’t mean they don’t die. Nor does it even mean that they cannot die of biological causes. But,                                               (A)                      . Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to [a] defeat the aging process. But their property of being able to regenerate entire body parts, or even a whole organism, makes them more [b] similar to trees than to us. Although we may learn some [c] fascinating things about their lack of apparent aging, it is not at all [d] clear how relevant those findings will be to human aging. Sometimes biology is universal, especially if it relates to fundamental mechanisms. But in other cases,even discoveries in rats or mice, which are mammals and biologically much closer to us, are [e] effortless to translate into humans. It may be a very long time before any findings gained from hydra or jellyfish are useful to us.
+윗글의 밑줄 친 [a]~[e] 중에서 문맥상 낱말의 쓰임이 적절하지 않은 것은?  
+ ⑤ 
+인간과 더 가까운 포유류인 쥐의 발견조차 인간에게 적용하기 '어렵다(difficult)'는 맥락이므로 effortless(쉬운)는 부적절하다. 
+① [a] ② [b] ③ [c] ④ [d] ⑤ [e]
+ 윗글의 빈칸 (A)에 들어갈 말을 <보기>의 단어를사용하여 <조건>에 맞게 쓰시오. 
+ unlike most every animal, their likelihood of dying does not increase with age.
+<보기> 
+ animal, / increase / every / not / most / of / their / does / likelihood / age. / unlike / with / dying
+<조건>
+<보기> 단어만을 사용하여 문장을 완성할 것
+다음 글을 읽고 물음에 답하시오.  [★★★★★] (29)
+Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal. This doesn’t mean they don’t die. Nor does it even mean that they cannot die of biological causes. But, unlike most every animal, their likelihood of dying does not increase with age. Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the aging process. But their property of being able to regenerate entire body parts, or even a whole organism, makes them moresimilar to trees than to us. Although we may learn some fascinating things about their lack of apparent aging,                                              . Sometimes biology is universal, especially if it relates to fundamental mechanisms. But in other cases, even discoveries in rats or mice, which are mammals and biologically much closer to us, are difficult to translate into humans. It may be a very long time before any findings gained from hydra or jellyfish are useful to us.
+윗글의 내용에 맞도록 <보기>의 빈칸에 가장 적절한 단어를 넣을 때, 어디에도 들어갈 수 없는 것은? 
+ ④ 
+(A) abilities, (B) difficult, (C) apply, (D) questionable이 문맥상 적절하므로 guarantee(보장하다)는 들어갈 수 없다.
+<보기>
+Although hydra and immortal jellyfish are biologically immortal and possess remarkable regenerative (A)          , their profound differences from humans make it (B)      to directly (C)__________ these discoveries to human aging, meaning their practical medical value remains (D)__________ for the time being.
+① abilities
+② questionable
+③ apply
+④ guarantee
+⑤ challenging
+윗글의 빈칸에 들어갈 말로 가장 적절한 것은? ( 변형 )  (29)
+ ① 
+이들의 특성은 나무와 더 유사하여 연구 결과가 인간 노화 연구에 얼마나 유의미할지 불확실하다는 내용이 이어져야 자연스럽다. (원문) it is not at all clear how relevant those findings will be to human aging
+Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal. This doesn’t mean they don’t die. Nor does it even mean that they cannot die of biological causes. But, unlike most every animal, their likelihood of dying does not increase with age. Species such as hydraand the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the aging process. But their property of being able to regenerate entire body parts, or even a whole organism,makes them more similar to trees than to us. Although we may learn some fascinating things about their lack of apparent aging, __________________________________________________. Sometimes biology is universal, especially if it relates to fundamental mechanisms. But in other cases, even discoveries in rats or mice, which are mammals and biologically much closer to us, are difficult to translate into humans. It may be a very long time before any findings gained from hydra or jellyfish are useful to us.
+① whether those research findings have any real meaning for human aging is far from clear
+② they completely solve the mystery of universal cellular degradation
+③ human lifespan will soon be extended indefinitely using their genetic codes
+④ scientists have abandoned research on mammalian biological systems entirely
+⑤ their regenerative mechanisms prove to be identical to those of human cells
+다음 글을 읽고 물음에 답하시오.   (29)
+Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, [a] they are often called biologically immortal. This doesn’t mean they don’t die. [b] Nor does it even mean that they cannot die of biological causes. But, unlike most every animal, their likelihood of dying does not increase with age. Species suchas hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the aging process. [c] But their property of being able to regenerate entire body parts, or even a whole organism, makes them more similarly to trees than to us. Although we may learn some fascinating things about their lack of apparent aging, [d] it is not at all clear how relevant those findings will be tohuman aging. Sometimes biology is universal, especially if it relates to fundamental mechanisms. But in other cases,  even discoveries in rats or mice are difficult to translate into humans. They are mammals and biologically much closer to us. [e] It may be a very long time before any findings gained from hydra or jellyfish are useful to us.
+윗글의 내용과 일치하지 않는 것은? 
+ ② 
+생물학적 불멸이 결코 죽지 않는다거나 생물학적 원인으로 사망할 수 없다는 것을 의미하지는 않는다고 언급되어 있으므로 ②는 일치하지 않음.
+① Hydra and immortal jellyfish show no conspicuous physical markers of getting older.
+② Biological immortality implies that an organism is completely invulnerable to death.
+③ Unlike most animals, the probability of death for hydra does not rise with chronological age.
+④ The ability to regenerate entire body parts makes hydra biologically closer to flora than to humans.
+⑤ It might take an extensive period of time before insights from jellyfish become applicable to humans.
+윗글의 밑줄 친 ①~⑤중, 어법상 어색한 문장은?
+ ④ 
+[c] 의 makes는 5형식 불완전타목적동사이므로 목적격 보어 자리에 부사 similarly가 아닌 형용사 similar를 써야.
+① [a]    ② [b]    ③ [c]    ④ [d]    ⑤ [e] 
+윗글의 밑줄 친 두 문장을 합쳐서 <조건>에 맞게 영어로 쓰시오. 
+ even discoveries in rats or mice, which are mammals and biologically much closer to us, are difficult to translate into humans.  
+선행사 rats or mice 뒤에 계속적 용법의 관계대명사절을 바르게 삽입
+<조건>
+-한 개의 문장으로 작성할 것
+-주격 관계대명사의 계속적 용법(콤마 활용)을 적용할 것
+-문장 2를 문장 1의 주어 바로 뒤에 삽입할 것
+ 다음 글을 읽고 물음에 답하시오.  (29)
+Since hydra and the immortal jellyfish don’t exhibit [a] obvious signs of aging, they are often called biologically immortal. This doesn’t mean they don’t die. Nor does it even mean that they cannot die of biological causes. But, unlike most every animal, their likelihood of dying does not increase with age. Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the aging process. But their property of being able to regenerate entire body parts, or even a whole organism, (A)makes them more similar to trees than to us. Although we may learn some fascinating things about their [b] lack of apparent aging, it is not at all [c] clear how relevant those findings will be to human aging. Sometimes biology is [d] universal, especially if it relates to fundamental mechanisms. (B) But in other cases, even discoveries in rats or mice, they are mammals and biologically much closer to us, being  convenient to translate into humans. It may be a very [e] short time before any findings gained from hydra or jellyfish are useful to us.
+윗글의 내용과 일치하는 것을 있는 대로 모두 고른 것은? 
+ ② 
+나이가 들어도 사망 확률이 늘지 않는다는 점(ⓑ)과 근본 메커니즘에서 생물학이 보편적일 수 있다는 점(ⓔ)만 본문과 일치한다.
+ⓐ Hydra and immortal jellyfish never die under any natural or predatory circumstances.
+ⓑ The chance of dying for hydra does not escalate simply because time passes.
+ⓒ Regenerating full body parts makes hydra biologically more akin to humans than to plants.
+ⓓ Research findings on mice are consistently and easily translated into human medical treatments.
+ⓔ Biology can sometimes be universally applied across species, particularly regarding fundamental mechanisms.
+ⓕ Insights gained from immortal jellyfish are expected to yield immediate cures for human aging today.
+① ⓐ, ⓑ		② ⓑ, ⓔ
+③ ⓑ, ⓓ, ⓔ		④ ⓐ, ⓒ, ⓕ
+⑤ ⓓ, ⓔ, ⓕ
+윗글의 밑줄 친 (A) makes them more similar to trees than to us가 의미하는 바로 가장 적절한 것은? 
+ ②  
+인간과 신체 조직 구성이 너무 달라 연구 결과를 인간 노화 치료에 직결하기 어렵다.
+① It means that it possesses the remarkable ability to independently produce its own metabolic energy through photosynthesis like plants.
+② It implies that its tissue structure differs so greatly from humans that applying the findings directly to anti-aging therapies is difficult.
+③ It emphasizes that it represents the longest-surviving species on Earth, possessing an extraordinary natural lifespan that spans several thousand years.
+④ It shows that its unusually slow rate of cellular division makes its physical constitution entirely immune to fatal illnesses such as cancer.
+⑤ It explains that its physical organism is predominantly composed of dietary plant fibers rather than conventional structural animal proteins.
+윗글의 밑줄 친 ⓐ~ⓔ 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은? 
+ ⑤  (short-> long)
+① [a]    ② [b]    ③ [c]    ④ [d]    ⑤ [e] 
+ 윗글의 (B) “But in other cases, even discoveries in rats or mice, which are mammals and biologically much closer to us, are  convenient to translate into humans“에서 어법상 어색한 두 곳을 찾아 올바르게 고쳐 쓰시오. 
+ 
+어색한 곳 (1):______they______________ 
+→ 바르게 고친 것:____which________________
+어색한 곳 (2):___being_________________ 
+→ 바르게 고친 것:______are______________
+어색한 곳 (1):____________________ 
+→ 바르게 고친 것:____________________
+어색한 곳 (2):____________________ 
+→ 바르게 고친 것:____________________
+ 다음 글의 밑줄 친 (A)they와 (B)those findings가 가리키는 대상으로 가장 알맞은 것은?   (29)
+ ③ 
+(A)는 노화 극복의 단서를 줄 수 있는 '히드라와 불멸 해파리'를, (B)는 이들의 '외견상 노화 결핍으로부터 배운 연구 발견들'을 가리킨다.
+Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal. This doesn’t mean they don’t die. Nor does it even mean that they cannot die of biological causes. But, unlike mostevery animal, their likelihood of dying doesnot increase with age. Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the aging process. But their property of being able to regenerate entire body parts, or even a whole organism, makes them more similar to trees than to us. Although we may learn some fascinating things about their lack of apparent aging, it is not at all clear how relevant those findings will be to human aging. Sometimes biology is universal, especially if it relates to fundamental mechanisms. But in other cases, even discoveries in rats or mice, which are mammals and biologically much closer to us, are difficult to translate into humans. It may be a very long time before any findings gained from hydra or jellyfish are useful to us.
+
+(A)
+(B)
+①
+signs of aging
+fundamental biological mechanisms
+②
+gerontologists
+discoveries from mammalian research
+③
+hydra and the immortal jellyfish
+knowledge gained from their lack of aging
+④
+entire body parts
+ways to regenerate whole organisms
+⑤
+biological causes of death
+universal rules across ecosystems
+다음 글의 밑줄 친 [ⓐ]~[ⓔ] 중, 어법상 옳은 것만을 있는 대로 고른 것은?  (29)
+ 
+ [a] Nor does it even mean that they cannot die of biological causes.  
+[c] Although we may learn some fascinating things about their lack of apparent aging, it is not at all clear how relevant those findings will be to human aging. Sometimes biology is universal, especially if it relates to fundamental mechanisms. [[e] It may be a very long time before any findings gained from hydra or jellyfish are  useful to us. 
+ Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal. This doesn’t mean they don’t die. [a] Nor it even means that they cannot die of biological causes. But, unlike most every animal, their likelihood of dying does not increase with age. Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the aging process. [b] But their property of being able to regenerate entire body parts, or even a whole organism, makes them more similar to trees than to us. [c] Although we may learn some fascinating things about their lack of apparent aging, it is not at all clear how relevantly those findings will be to human aging. Sometimes biology is universal, especially if it relates to fundamental mechanisms. [d] But in other cases, even discoveries in rats or mice, which are mammals and biologically much closer to us, are difficult to translate into humans. [e] It may be a very long time before any findings gained from hydra or jellyfish is useful to us. 
+① [a] / [d] / [e]   ② [b]  / [c] / [d]  
+③ [a] / [c] / [d]    ④ [b] / [d]    
+⑤ [b / [e]
+다음 글의 밑줄 친 [ⓐ[~[ⓔ] 중 문맥상 낱말의 쓰임이 가장 어색한 것은?  (29)
+ ④  ( uncertain > certain)
+Since hydra and the immortal jellyfish don’t [a] exhibit obvious signs of aging, they are often called biologically immortal. This doesn’t mean they don’t die. Nor does it even mean that they cannot die of biological causes. But, [b] unlike most every animal, their likelihood of dying does not increase with age. Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to [c] defeat the aging process. But their property of being able to regenerate entire body parts, or even a whole organism, makes them more similar to trees than to us. Although we may learn some fascinating things about their lack of apparent aging, it is not at all [d] uncertain how relevant those findings will be to human aging. Sometimes biology is universal, especially if it relates to fundamental mechanisms. But in other cases, even discoveries in rats or mice, which are mammals and biologically much  [e]  closer to us, are simple to translate into humans. It may be a very long time before any findings gained from hydra or jellyfish are useful to us.
+① [a]    ② [b]    ③ [c]    ④ [d]    ⑤ [e] 
+다음 빈칸에 들어갈 말로 가장 적절한 것은? ( 변형 )  (29)
+ ② 
+원문) any findings gained from hydra or jellyfish are useful to us
+ Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal. This doesn’t mean they don’t die. Nor does it even mean that they cannot die of biological causes. But, unlike most every animal, their likelihood of dying does not increase with age. Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the aging process. But their property of being able to regenerate entire body parts, or even a whole organism, makes them more similar to trees than to us. Although we may learn some fascinating things about their lack of apparent aging, it is not at all clear how relevant those findings will be to human aging. Sometimes biology is universal, especially if it relates to fundamental mechanisms. But in other cases, even discoveries in rats or mice, which are mammals and biologically much closer to us, are difficult to translate into humans. It may be a very long time before                         . .
+① hydra and immortal jellyfish become completely extinct in the wild
+② what we learn from studying hydra or jellyfish can provide valuable insights for our own lives
+③ scientists prove that aging is an inevitable law across all species
+④ genetic discoveries in mammals cease to be applied to medicine
+⑤ trees and plants are recognized as biologically identical to humans
+다음 빈칸에 들어갈 말로 가장 적절한 것은? ( 변형 )  (29)
+ ① 
+원문) how relevant those findings will be to human aging
+신체 전체 재생 능력으로 인해 인간보다 나무에 더 가깝기 때문에 해당 발견이 인간 노화에얼마나 관련이 있을지는 전혀 분명하지 않다는 흐름이다. 
+Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal. This doesn’t mean they don’t die. Nor does it even mean that theycannot die of biological causes.But, unlike most every animal, their likelihood of dying does not increase with age. Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the agingprocess. But their property of being able to regenerate entire body parts, or even a whole organism, makes them more similar to trees than to us. Although we may learn some fascinating things about their lack of apparent aging, it is not at all clear __________________________________________________. Sometimes biology is universal, especially if itrelates to fundamental mechanisms. But in other cases, even discoveries in rats or mice, which are mammals and biologically much closer to us, are difficult to translate into humans. It may be a very long time before any findings gained from hydra or jellyfish are useful to us.
+① how closely those research results are connected to the human aging process
+② why larger mammals show a much stronger capacity to regenerate lost tissues
+③ whether old trees age through the exact same biological processes as hydra
+④ if death rates among elderly populations can decline naturally over time
+⑤ how researchers uncovered the fundamental cellular structures of jellyfish
+다음 글의 제목으로 가장 적절한 것은?  (29)
+  ① 
+생물학적 불멸 생물의 특성과 이것이 실제 인간 노화 해결로 연결될 수 있는지에 대한 의문과 한계를 다루고 있으므로 ①이 제목으로 가장 적합
+Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal. This doesn’t mean they don’t die. Nor does it even mean that they cannot die of biologicalcauses. But, unlike most every animal, their likelihood of dying does not increase with age. Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the aging process. But their property of being able to regenerate entire body parts, or even a whole organism, makes them more similar to trees than to us. Althoughwe may learn some fascinating things about their lack of apparent aging, it is not at all clear how relevant those findingswill be to human aging. Sometimes biology is universal, especially if it relates to fundamental mechanisms. But in other cases, even discoveries in rats or mice, which are mammals and biologically much closer to us, are difficult to translate into humans. It may be a very long time before any findings gained from hydra or jellyfish are useful to us.
+① Biological Immortality: Can Lower Organisms Truly Solve Human Aging?
+② The Evolutionary Reason Why Rodents Have Shorter Lifespans Than Humans
+③ Universal Mechanisms: The Complete Uniformity Across All Living Creatures
+④ How to Overcome Aging: Medical Lessons Directly Learned from Jellyfish
+⑤ The Complete Extinction of Natural Aging Signs in Mammalian Species
+다음 글에서 전체 흐름과 관계 없는 문장은? (29)
+ ③ 
+이 글은 히드라와 해파리의 생물학적 불멸성 연구가 인간 노화 연구에 적용되기 어렵다는 한계를 다루고 있으므로, 해양 생태계 오염을 다룬 ③번은 흐름에서 벗어남.
+ Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal. This doesn’t mean they don’t die. Nor does it even mean that they cannot die of biological causes. But, unlike most every animal, their likelihood of dying does not increase with age. Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the aging process. ① But their property of being able to regenerate entire body parts, or even a whole organism, makes them more similar to trees than to us. ② Although we may learn some fascinating things about their lack of apparent aging, it is not at all clear how relevant those findings will be to human aging. ③ Marine ecosystems are currently facing severe degradation due to microplastic pollution and rising global water temperatures. ④ Sometimes biology is universal, especially if it relates to fundamental mechanisms. ⑤ But in other cases, even discoveries in rats or mice, which are mammals and biologically much closer to us, are difficult to translate into humans. It may be a very long time before any findings gained from hydra or jellyfish are useful to us.
+주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?  (29)
+ ② 
+불멸의 정의와 노인학자들의 관심을 소개하는 (B)가 먼저 오고, 인간 노화에 대한 관련성의 불확실성과 보편성을 다룬 (A)가 이어지며, 설치류의 인간 적용 난제 및 장기적 전망을 맺는 (C)가 오는 것이 자연스러움.
+Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal.
+(A) Although we may learn some fascinating things about their lack of apparent aging, it is not at all clear how relevant those findings will be to human aging. Sometimes biology is universal, especially if it relates to fundamental mechanisms.
+(B) This doesn’t mean they don’t die. Nor does it even mean that they cannot die of biological causes. But, unlike most every animal, their likelihood of dying does not increase with age. Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the aging process.
+(C) But their property of being able to regenerate entire body parts, or even a whole organism, makes them more similar to trees than to us. But in other cases, even discoveries in rats or mice, which are mammals and biologically much closer to us, are difficult to translate into humans. It may be a very long time before any findings gained from hydra or jellyfish are useful to us.   
+① (A) - (C) - (B)		② (B) - (A) - (C)
+③ (B) - (C) - (A)		④ (C) - (A) - (B)
+⑤ (C) - (B) - (A)
+다음 글의 내용을 한 문장으로 요약하고자 할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  (29)
+ ① 
+이들이 흥미로운(intriguing) 단서를 제공하지만 신체적 차이로 인해 인간 노화에 조속히 활용될 가능성은 낮다(unlikely)는 요약이 적절하다.
+Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal. This doesn’t mean they don’t die. Nor does it even mean thatthey cannot die of biological causes. But, unlike most every animal, their likelihood of dying does not increase with age. Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the aging process. But their propertyof being able to regenerate entire body parts, or even a whole organism, makes them more similar to trees than to us. Although we may learn some fascinating things about their lack of apparent aging, it is not at all clear how relevant those findings will be to human aging. Sometimes biology is universal, especially if it relates to fundamental mechanisms. But in other cases, even discoveries in rats or mice, which are mammals and biologically much closer to us, are difficult to translate into humans. It may be a very long time before any findings gained from hydra or jellyfish are useful to us. 
+➠ Although hydra and the immortal jellyfish offer (A)__________ clues regarding aging, the profound biological differences between these regenerative organisms and humans make it (B)__________ that their findings can be quickly utilized to solve human aging.
+
+(A)
+(B)
+①
+intriguing
+unlikely
+②
+useless
+definite
+③
+deceptive
+probable
+④
+valuable
+guaranteed
+⑤
+obvious
+undeniable
+다음 글의 the aging process가 의미하는 구체적 생물학적 현상을 본문에서 찾아 10단어 이내의 영어로 쓰시오.  (29)
+ the likelihood of dying increasing with age (또는 increasing likelihood of dying with age) / 노화 과정은 나이가 듦에따라 사망할 확률이 증가하는 생물학적 현상을 가리킨다. 
+Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal. This doesn’t mean they don’t die. Nor does it even mean thatthey cannot die of biological causes. But, unlike most every animal, their likelihood of dying does not increase with age. Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the aging process. But their propertyof being able to regenerate entire body parts, or even a whole organism, makes them more similar to trees than to us. Although we may learn some fascinating things about their lack of apparent aging, it is not at all clear how relevant those findings will be to human aging. Sometimes biology is universal, especially if it relates to fundamental mechanisms. But in other cases, even discoveries in rats or mice, which are mammals and biologically much closer to us, are difficult to translate into humans. It may be a very long time before any findings gained from hydra or jellyfish are useful to us. 
+다음 글의 밑줄 친 (A), (B)에 들어갈 표현을 <조건>에 맞게 영어로 쓰시오.  (29)
+ 
+(A) Nor does it even mean that they cannot die of biological causes.
+(B) It may be a very long time before any findings gained from hydra or jellyfish are useful to us. 
+ Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal. This doesn’t mean they don’t die. (A) And it does not even mean that they cannot die of biological causes.. But, unlike most every animal, their likelihood of dying does not increase with age. Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the aging process. But their property of being able to regenerate entire body parts, or even a whole organism, makes them more similar to trees than to us. Although we may learn some fascinating things about their lack of apparent aging, it is not at all clear how relevant those findings will be to human aging. Sometimes biology is universal, especially if it relates to fundamental mechanisms. But in other cases, even discoveries in rats or mice, which are mammals and biologically much closer to us, are difficult to translate into humans.  (B)히드라나 해파리로부터 얻은 어떤 연구 결과라도 우리에게 유용해지기까지는 매우 오랜 시간이 걸릴지도 모른다.
+< (A) 조건 >
+1. 총 12단어로 작성할 것
+2. Nor를 문두에 써서 표현 할 것.
+< (B) 조건 >
+1. 총 19단어로 작성할 것
+2. It may be ~ before ...구문을 활용할 것
+3. <보기>의 단어 중 필요한 것만을 1회씩 조합하여 필요시 변형하여 쓸 것 (단어 추가: a, long)
+<(B)보기>
+[ any findings / be / before / gain / hydra or jellyfish / it / may / much / time / useful / very / from / to us ]
+ 다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말을 <보기>의 단어를 활용해 <조건>에 맞게 서술하시오.  (29)
+ A) findings cannot be directly translated to humans (B) practical applications will take a long time / 재생적 특성이 인간과 달라 발견이 인간에게 직접 적용될 수 없으며 실용적 응용에는 오랜 시간이 걸릴 것이라는 내용을 요약한다.
+ Since hydra and the immortal jellyfish don’t exhibit obvious signs of aging, they are often called biologically immortal. This doesn’t mean they don’t die. Nor does it even mean that they cannot die of biological causes. But, unlike most every animal, their likelihood of dying does not increase with age. Species such as hydra and the immortal jellyfish excite gerontologists because they may provide clues about how to defeat the aging process. But their property of being able to regenerate entire body parts, or even a whole organism, makes them more similar to trees than to us. Although we may learn some fascinating things about their lack of apparent aging, it is not at all clear how relevant those findings will be to human aging. Sometimes biology is universal, especially if it relates to fundamental mechanisms. But in other cases, even discoveries in rats or mice, which are mammals and biologically much closer to us, are difficult to translate into humans. It may be a very long time before any findings gained from hydra or jellyfish are useful to us. 
+➠ Research on hydra offers intriguing hints on aging, but because their regenerative nature diverges greatly from human biology, (A)                                    , meaning that (B)                                      .
+< (A) 보기 >
+[ directly / findings / to / translate / human / cannot ]
+< (A) 조건 >
+1. 조동사 수동태를 활용하여 총 7단어로 작성할 것
+2. <보기>의 단어를 모두 1번씩 사용하되, 필요하다면 형태를 바꿀 것
+< (B) 보기 >
+[ take / practical / will / applications / long / time / a ]
+< (B) 조건 >
+1. <보기>의 단어를 모두 1번씩 사용할 것
+다음 글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?  (30번)
+ ③ 
+발전소가 보조금을 선호한다는 진술 뒤에 이유가 명백하다는 문장이 들어가고, 정부 재정 수령을 선호한다는 구체적 설명이 이어져야 한다. 
+The reason is obvious.
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. ( ① ) In all cases, profits can be higher from making the transition, even taking the related costs into account. ( ② ) The power plants prefer subsidies over regulations or taxes. ( ③ ) They prefer to receive money from the government rather than pay the costs themselves. ( ④ ) But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. ( ⑤ ) The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+윗글의 밑줄 친 ⓐ~ⓔ 중, 어법상 바르게 쓰인 개수는?  (30번)
+ ② 
+ⓐ(능동 분사구문), ⓓ(주격 관계대명사) 2개만 옳다. ⓑ는 prefer 병렬로 pay, ⓒ는 수동태 be matched, ⓔ는 목적어가 없는 절을 이끄는 what이어야 한다.
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even ⓐ taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than ⓑ paying the costs themselves. But the “expansion” of their opportunity set through subsidies has to ⓒ match by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, ⓓ who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of ⓔ that it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+① 1개 ② 2개 ③ 3개 ④ 4개 ⑤ 5개
+ 윗글의 내용을 바탕으로 다음 우리말을 <보기>의 단어를 활용하여 <조건>에 맞게 영어로 쓰시오.  (30번)
+ They prefer to receive money from the government rather than pay the costs themselves.
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. (A)그들은 그 비용을 자신들이 직접 지불하기보다는 정부로부터 돈을 받는 것을 선호한다. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+<보기>
+costs / from / government / money / pay / prefer / rather / receive / the / the / themselves / than / to 
+<조건>
+1. 총 14단어로 작성할 것
+2. 주어진 <보기>의 단어를 1번씩 모두 사용할 것 (단어 형태 변형 없음)
+다음 글에서 일치하지 않는 것을 <보기>에서 모두 고르시오.  (30번)
+ ② 
+[B]는 시민이 보상받는 것이 아니라 세금 부담의 희생을 겪으므로 불일치, [C]는 전체 비용을 직면하지 않으므로 불일치, [E]는 전기 가격이 낮아져 소비가 늘어나므로 불일치한다.
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+<보기>
+[A]. Power plants favor state financial support over penalizing taxation to cover their environmental transition expenses.
+[B]. Ordinary individual citizens receive direct financial compensation from utility corporations for enduring raised taxes.
+[C]. Energy subsidies fully obligate power providers to internalize the entire environmental cost of their operations.
+[D]. The opportunity set of general taxpayers shrinks as energy companies experience enhanced institutional operational freedom.
+[E]. Artificially reduced electricity tariffs reliably decrease aggregate national power consumption across residential markets.
+[F]. A reduction in emissions per unit of power can coexist with aggravated global warming trends.
+① [A], [C]		② [B], [C], [E]
+③ [A], [C], [D], [F]	④ [C], [F]
+⑤ [B], [D], [E]
+글의 내용을 바탕으로 다음 우리말을 <보기>의 단어를 활용하여 <조건>에 맞게 영어로 쓰시오.  (30번)
+ 
+The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. 
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. (A)전력 회사들의 "자유"는 일반 개인을 희생시켜 증가하는데, 이들은 보조금을 지급하기 위해 늘어난 세금으로 인해 고통을 겪어야 한다. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+<보기>
+from / is / taxation / the expense / increased / who / individual, / must / pay / the subsidy / of / at / for /The electricity / suffer / the ordinary / companies’ / increased / to / “freedom”
+<조건>
+1. 총 24단어로 작성할 것
+2. 콤마(,)를 반드시 포함할 것 (단어 수에는 포함되지 않음)
+3. 주어진 <보기>의 단어를 1번씩 사용하되, 필요하다면 형태를 바꿀 것 (단어 추가 없음)
+다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?  (30번)
+ ④
+전력 회사가 자신이 초래하는 전체 비용을 온전히 부담하지 않기 때문에 보조금은 경제를 균형 있게 하는(balances) 것이 아니라 ‘왜곡한다(distorts)’가 맞다.
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants ① prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the ② contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the ③ expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy ④ balances the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will ⑤ worsen global warming, even though the emissions per unit of electricity have been reduced.
+글의 빈칸 (A)에 들어갈 말을 <보기>의 단어를 사용하여 <조건>에 맞게 쓰시오.  (30번)
+ 
+ the electricity company is not facing the full costs of what it does 
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because (A)__________________________________________________, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+<보기>
+costs / does / facing / full / is / it / not / of / the / the electricity company / what
+<조건>
+1. <보기>의 단어만을 모두 1번씩 사용하여 문장을 완성할 것 
+2. (총 13단어, 어형 변화 없음)
+글의 내용에 맞도록 <보기>의 빈칸에 가장 적절한 단어를 넣을 때, 어디에도 들어갈 수 없는 것은?  (30번)
+ ④ 
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+<보기>
+Subsidies prompt power plants to reduce coal emissions, but they (A)__________ ordinary citizens with heavy taxes, (B)__________ market efficiency by masking actual production costs, and unintentionally (C)__________ global warming by making electricity artificially (D)__________.
+① burden② distort③ cheap④ alleviate⑤ worsen
+다음 글의 빈칸에 들어갈 말로 적절한 것을 <보기>에서 모두 고르시오.  (30번)
+ ②
+빈칸에는 소비 증가로 인해 지구 온난화가 악화된다는 내용이 들어가야 하므로 온난화가 완화되거나 회복된다는 긍정적 표현인 [C], [D], [E]는 적절하지 않다.
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased ________________________________________. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+<보기>
+[A]. at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy
+[B]. by shifting financial fiscal damages onto ordinary citizens enduring increased tax burdens
+[C]. through voluntary capital contributions donated by corporate renewable power associations
+[D]. while sacrificing the economic welfare of everyday people forced to bear heavier tax loads
+[E]. without imposing any monetary obligations on regional residential rate payers
+[F]. through substantial price discounts directly granted to underrepresented public consumers
+① [A], [C]	② [B], [D], [E]
+③ [A], [B], [D]	④ [C], [F]
+⑤ [B], [D], [F]
+글의 내용과 일치하지 않는 것은?  (30번)
+ ④ 보조금을 받으면 전력 회사가 자신이 유발하는 '전체 비용을 직면하지 않게(not facing the full costs)' 되므로 ④는 일치하지 않는다.
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+① Power plants have the potential to raise profits by turning away from coal under subsidies, taxes, or regulations.
+② Power companies prefer government subsidies to paying the costs of transition out of their own pockets.
+③ The funding for electricity subsidies is raised by placing increased tax burdens on ordinary individuals.
+④ Subsidies help power plants face the entire economic and ecological costs generated by their electricity generation.
+⑤ Electricity prices can end up lower than they ought to be, leading to increased electricity consumption.
+다음 글의 밑줄 친 부분 중, 어법상 틀린 것은? (30번)
+ ③
+주어인 기회 집합의 확대(the "expansion" of their opportunity set)는 타인의 기회 축소에 의해 ‘맞추어져야’ 하므로 수동태인 has to be matched로 고쳐야 한다.
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even ① taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than ② pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to ③ match by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it ④ does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, ⑤ which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+다음 글에서 전체 흐름과 관계 없는 문장은?  (30번)
+ ③
+이 글은 청정 전환 보조금이 일반 시민의 부담을 가중하고 시장과 환경에 미치는 부작용을 다루고 있으므로, 개발도상국의 석탄 매장량 및 발전 확대를 언급한 ③은 무관하다.
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. ① But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. ② The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. ③ Coal-fired power generation continues to expand in several developing economies primarily due to abundant local mineral deposits. ④ Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. ⑤ Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+윗글의 내용과 일치하는 것을 있는 대로 모두 고른 것은?  (30번)
+ ② 
+ⓑ, ⓒ, ⓔ는 본문과 일치한다. ⓐ(보조금 선호), ⓓ(세금 부담 증가로 피해), ⓕ(요금이 낮아져 전력 소비 증가)는 내용과 다르다.
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+ⓐ Power companies prefer regulations or taxes to subsidies because they want financial autonomy.
+ⓑ Transitioning away from coal can generate higher profits even when factoring in related costs.
+ⓒ Subsidies expand power companies' opportunities while contracting the opportunity set of citizens.
+ⓓ Ordinary individuals benefit financially from subsidies because their taxes are lowered.
+ⓔ Subsidies distort the economy because power plants avoid paying the full costs of their actions.
+ⓕ Lower electricity prices under subsidies encourage energy conservation among consumers.
+① ⓐ, ⓑ, ⓔ	② ⓑ, ⓒ, ⓔ	③ ⓑ, ⓓ, ⓕ
+④ ⓒ, ⓓ, ⓔ	⑤ ⓐ, ⓔ, ⓕ
+윗글의 밑줄 친 the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others가 의미하는 바로 가장 적절한 것은?  (30번)
+ ② 
+발전 기업의 기회 확장은 시민들이 세금을 더 많이 납부하고 기회를 제한받음으로써 메워진다는 뜻이므로 ②가 가장 적절하다.
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+① Government subsidies promote fair market competition among renewable energy companies by providing financial support for their business operations.
+② The economic benefits that electricity companies gain from government subsidies come at the expense of higher taxes and fewer opportunities for ordinary citizens.
+③ Subsidy policies slow down companies' transition away from coal, thereby increasing the amount of environmental pollutants released into the atmosphere.
+④ Imposing taxes on power plants causes electricity prices to rise dramatically, placing an excessive financial burden on ordinary households.
+⑤ To achieve economic efficiency, companies and consumers should share the financial burden of environmental charges equally.
+[
+윗글의 밑줄 친 ⓐ~ⓔ 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?  (30번)
+ ④ 
+전력 회사가 생산 원가를 온전히 부담하지 않으므로 전력 가격은 원래 형성되어야 할 가격보다 '더 낮아져(lower)'야 문맥상 맞다. 
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from ⓐincreased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy ⓑdistorts the economy because the electricity company is not facing the ⓒfull costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up ⓓhigher than they should be and electricity consumption higher, which will ⓔworsen global warming, even though the emissions per unit of electricity have been reduced.
+① ⓐ ② ⓑ ③ ⓒ ④ ⓓ ⑤ ⓔ
+다음 (A)문장에서 어법상 어색한 두 곳을 찾아 올바르게 고쳐 쓰시오.  (30번)
+ 
+(1) that → which (2) has → have / 
+(1) 계속적 용법의 주격 관계대명사이므로 which, 
+(2) 양보절의 주어 the emissions가 복수이므로 have로 고친다. 
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. (A)Indeed, electricity prices may end up lower than they should be and electricity consumption higher, that will worsen global warming, even though the emissions per unit of electricity has been reduced.
+어색한 곳 (1): ____________________ 
+→ 바르게 고친 것: ____________________
+어색한 곳 (2): ____________________ 
+→ 바르게 고친 것: ____________________
+[해설] 정답: (86자)
+글의 밑줄 친 (A) “freedom”과 (B) the ordinary individual이 의미하는 바로 가장 알맞은 것은? (30번)
+ ② 
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ (A)“freedom” is increased at the expense of (B)the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+
+
+(A)
+(B)
+①
+autonomy to bypass safety rules
+power plant workers
+②
+economic gain funded by government money
+citizens burdened by higher taxes
+③
+right to monopolize energy markets
+owners of private coal mines
+④
+opportunity to lower power consumption
+environmental researchers
+⑤
+privilege of determining electric rates
+low-income welfare recipients
+ 다음 글의 밑줄 친 ⓐ~ⓔ 중, 어법상 옳은 것만을 있는 대로 고른 것은?  (30번)
+ ② 
+ⓐ(능동 분사구문), ⓒ(수동태 술어동사), ⓓ(주어 subsidy의 단수동사)는 옳다. ⓑ는 prefer 병렬로 pay, ⓔ는 양보절의 본동사 자리이므로 have been reduced이다. 
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even ⓐ taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than ⓑ paying the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” ⓒ is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy ⓓ distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity ⓔ having been reduced.
+① ⓐ, ⓑ, ⓓ	② ⓐ, ⓒ, ⓓ	③ ⓑ, ⓒ, ⓔ
+④ ⓐ, ⓓ, ⓔ	⑤ ⓒ, ⓓ, ⓔ
+다음 글의 밑줄 친 ⓐ~ⓔ 중 문맥상 낱말의 쓰임이 가장 어색한 것은?  (30번)
+  ③ 
+전력 회사가 오염 행위에 대한 전체 비용을 감당하지 않아 보조금이 경제 시장을 '왜곡(distorts)'하므로 promotes(바로잡다)는 어색하다. 
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the ⓐ shrinkage of the opportunity set of others. The electricity companies’ “freedom” is increased at the ⓑ expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy ⓒ promotes the economy because the electricity company is not facing the ⓓ entire costs of what it does, even if it is successful in ⓔ curbing emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+① ⓐ    ② ⓑ    ③ ⓒ    ④ ⓓ    ⑤ ⓔ
+[
+다음 빈칸에 들어갈 말로 가장 적절한 것은? ( 변형 )  (30번)
+ ⑤ 
+보조금으로 인한 전력 회사의 기회 집합 확대는 납세자의 세금 부담 증가로 인한 타인의 기회 집합 축소와 맞물려야 하므로 ⑤ 이 적절하다.
+원문> has to be matched by the contraction of the opportunity set of others
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies __________________________________________________. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+① prevents any increase in total domestic electricity consumption
+② guarantees that the government reduces the overall public taxation
+③ encourages power companies to bear the full expense of pollution
+④ creates a perfectly fair and competitive free market for energy
+⑤ inevitably leads to narrowing down the range of possibilities left for others
+다음 빈칸에 들어갈 말로 가장 적절한 것은?  (30번)
+ ② 
+순수 효율성의 관점에서 보조금이 경제를 왜곡하는 이유는 전력 회사가 자신이 유발하는 행위의 전체 비용을 스스로 감당하지 않기 때문이다. 
+원문> the electricity company is not facing the full costs of what it does
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because __________________________________________________, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+① coal energy becomes more expensive to produce than clean energy
+② the electricity company does not bear the complete financial burden of its actions
+③ consumers voluntarily minimize their everyday electricity usage
+④ power plants are heavily penalized by carbon emission regulations
+⑤ citizens receive direct financial compensation from the government
+다음 글의 제목으로 가장 적절한 것은?  (30번)
+ ① 
+전력 회사에 대한 보조금이 대중의 세금 부담, 시장 왜곡, 소비 증가로 인한 온난화 악화라는 숨은 비용을 초래함을 설명하는 글이므로 ①이 알맞다. 
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+① The Hidden Cost and Market Distortion of Energy Subsidies
+② How Power Plants Successfully Eliminate the Public Tax Burden
+③ Why Coal Remains the Most Efficient and Clean Energy Source
+④ The Positive Correlation Between High Electricity Prices and Warming
+⑤ Regulations vs. Taxes: Which Policy Creates Greater Economic Profit?
+주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?  (30번)
+ ④ 
+발전소가 보조금을 선호하는 이유(C) → 보조금으로 인한 대중의 희생과 기회 축소(A) → 순수 효율성 관점의 시장 왜곡 및 지구 온난화 악화(B) 순이다. 
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account.
+(A) But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy.
+(B) Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+(C) The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves.
+① (A) - (C) - (B)		② (B) - (A) - (C)
+③ (B) - (C) - (A)		④ (C) - (A) - (B)
+⑤ (C) - (B) - (A)
+글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?  (30번)
+ ④
+주어진 문장은 보조금을 통한 기업의 자유 확대가 시민들의 세금 부담 희생으로 이어진다는 구체적 상술이므로, 기회의 확대와 타인의 축소가 맞물린다는 문장 바로 뒤인 ④에 들어간다.
+The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy.
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. ( ① ) The power plants prefer subsidies over regulations or taxes. The reason is obvious. ( ② ) They prefer to receive money from the government rather than pay the costs themselves. ( ③ ) But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. ( ④ ) Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. ( ⑤ ) Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+다음 글의 내용을 한 문장으로 요약하고자 할 때, 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?   (30번)
+ ②
+보조금은 시민들에게 세금이라는 재정적 의무/부담(obligations)을 안겨주며, 전력 가격을 낮춰 소비를 늘림으로써 기후 악화를 가중(aggravating)시킨다는 요약문이다.
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+➠Although subsidies incentivize energy companies to adopt cleaner operations, they inevitably impose financial (A)            on citizens and risk        (B)                climate degradation by artificially inflating power usage.
+  
+    (A)            (b)
+① windfalls …… reversing
+② obligations …… aggravating
+③ subsidies …… stabilizing
+④ compensations …… eliminating
+⑤ reductions …… dampening
+
+
+다음 글의 the contraction of the opportunity set of others가 의미하는 구체적 내용을 본문에서 찾아 10단어 이내의 영어로 쓰시오.  (30번)
+ increased taxation to pay for the subsidy (또는 suffering from increased taxation to pay for the subsidy) / 타인의 기회 축소는 보조금 지급을 위해 겪는 증세 부담을 의미한다. 
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+<조건>
+1. 본문에 등장하는 단어만을 사용할 것
+2. 10단어 이내로 작성할 것
+다음 글의 밑줄 친 (A), (B)에 들어갈 표현을 <조건>에 맞게 영어로 쓰시오.  (30번)
+ 
+ (A) In all cases, profits can be higher from making the transition, even taking the related costs into account. 
+(B) which will worsen global warming, even though the emissions per unit of electricity have been reduced. 
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. (A) 모든 경우에, 관련된 비용까지 고려하더라도, 그러한 전환을 하는 것으로부터 얻는 이익은 더 높을 수 있다. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, (B) 비록 전기 단위당 배출량은 감소했을지라도, 이는 지구 온난화를 더욱 악화시킬 것이다.
+< (A) 보기 >
+account / all / be / can / cases / costs / even / from / higher / in / into / make / profits / related / take / the / the transition
+< (A) 조건 >
+1. 총 18단어로 작성할 것
+2. <보기>의 단어를 모두 1번씩만 사용할 것 (형태 변형 있음)
+-----------------------------------------------------------
+< (B) 보기 >
+be / electricity / the emissions / even / global warming / have / of / per unit / reduce / though / which / will worsen
+< (B) 조건 >
+1. 총 16단어로 작성할 것
+2. 관계대명사의 계속적 용법과 양보 접속사를 활용할 것
+3. <보기>의 단어를 모두 1번씩 사용하되, 필요하다면 형태를 바꿀 것.
+다음 글의 내용을 한 문장으로 요약할 때, 빈칸 (A), (B)에 들어갈 말을 <보기>의 단어를 활용해 <조건>에 맞게 서술하시오.  (30번)
+ 
+(A) companies do not pay their full costs
+(B) aggravates global warming through excessive consumption / 기업이 전체 비용을 내지 않아 과도한 소비를 통해 온난화를 악화시킨다는 내용으로 조건을 완성한다. 
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+➠Subsidies prompt power plants to reduce coal use, but they shift the burden to taxpayers and distort efficiency because (A)                    , which ultimately (B)                   .
+< (A) 보기 >
+costs / companies / full / not / pay / do / their
+< (A) 조건 >
+<보기>의 단어를 변형없이 모두 1번씩 사용할 것
+---------------------------------------------------
+< (B) 보기 >
+consumption / excessive / aggravate / global warming / through
+< (B) 조건 >
+1. 주격 관계대명사 which에 이어지는 술어동사의 수일치 형태를 바르게 적용할 것
+2. <보기>의 단어를 모두 1번씩 사용할 것 (필요 시 형태 변형)
+다음 글의 내용을 요약하고자 한다. 요약한 글의 내용 중 밑줄 친 부분이 문맥상 어색한 것은?  (30번)
+ ④
+인위적으로 낮아진 전기 요금은 소비를 억제하는(curbs) 것이 아니라 오히려 소비를 늘리므로(boosts/increases), ④의 curbs는 문맥상 어색하다.
+Subsidies, taxes, and regulations can all lead to power plants that pollute less by switching away from coal. In all cases, profits can be higher from making the transition, even taking the related costs into account. The power plants prefer subsidies over regulations or taxes. The reason is obvious. They prefer to receive money from the government rather than pay the costs themselves. But the “expansion” of their opportunity set through subsidies has to be matched by the contraction of the opportunity set of others. The electricity companies’ “freedom” is increased at the expense of the ordinary individual, who must suffer from increased taxation to pay for the subsidy. Moreover, from the perspective of pure efficiency, the subsidy distorts the economy because the electricity company is not facing the full costs of what it does, even if it is successful in limiting emissions. Indeed, electricity prices may end up lower than they should be and electricity consumption higher, which will worsen global warming, even though the emissions per unit of electricity have been reduced.
+[요약문]
+While governmental subsidies stimulate utility corporations to switch away from coal without forfeiting profits, this arrangement expands corporate benefits while ① diminishing the opportunity boundaries of ordinary taxpayers who finance the programs. Furthermore, shielding energy providers from shouldering their complete environmental costs ② disrupts economic efficiency. Consequently, artificial market pricing yields ③ cheaper retail electricity rates, which unintentionally ④ curbs total power consumption and undermines worldwide environmental initiatives through unexpected ⑤ escalations in ecological deterioration.
+정답
