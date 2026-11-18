@@ -21,6 +21,18 @@ src += '''
 /* ==== 진도표 (11/16) ==== */
 var BOARD_URL = 'https://cereshk2-hue.github.io/daily-english/t-iyr3rba2/'; // 단원별 전체 DAY 목록을 여기서 읽어요
 var NAME_SHOW = { '김혜연': '김샘플' }; // 진도표에서 이름을 바꿔 보여 줄 사람 (선생님 시험용 기록 등)
+function gnz(s) { return String(s || '').replace(/\\s+/g, '').replace(/변형어휘/g, '실전어휘뚫기'); }
+function gridResets() { /* 11/18 시험 리셋: 보드 progress-map.json 의 시험 [id, short, 제목, 종류, 칸 이름, 리셋ms] → { 단원 이름|제목: 리셋ms } (5분 캐시, 못 읽으면 리셋 없음) */
+  var out = {};
+  try {
+    var c = CacheService.getScriptCache(), hit = c.get('gridResets'); if (hit) return JSON.parse(hit);
+    var m = JSON.parse(UrlFetchApp.fetch(BOARD_URL + 'progress-map.json?t=' + Date.now(), { muteHttpExceptions: true }).getContentText());
+    Object.keys(m.uk || {}).forEach(function (k) { var u = (m.units || {})[m.uk[k]]; if (!u) return;
+      (u.tests || []).forEach(function (t) { if (t[5]) out[k + '|' + gnz(t[2])] = +t[5]; }); });
+    c.put('gridResets', JSON.stringify(out), 300);
+  } catch (e) {}
+  return out;
+}
 function gridData() { /* '기록' 탭(모든 기록) + '현황' 탭 → 학생·단원·DAY마다 [학생, 학년·교재, 단원, DAY+범위, 진행, 점수(첫 완료), 마지막ms, 완료ms] (그만둔 학생 제외) */
   var ss = SpreadsheetApp.getActiveSpreadsheet(), tz = 'Asia/Seoul', quit = {}, M = {};
   var r = ss.getSheetByName(ROSTER);
@@ -34,10 +46,12 @@ function gridData() { /* '기록' 탭(모든 기록) + '현황' 탭 → 학생·
     else if (!m[7] && t >= m[6]) m[4] = prog;
     if (t > m[6]) m[6] = t;
   }
+  var RS = gridResets();
   var log = ss.getSheetByName('기록');
   if (log && log.getLastRow() > 1) log.getRange(2, 1, log.getLastRow() - 1, 10).getValues().forEach(function (v) {
     if (/오답 노트/.test(String(v[5]))) return;
     var dd = String(v[4]); if (/^Wrap-up/.test(dd) && String(v[6]).trim()) dd += ' ¦ ' + String(v[6]).trim(); /* 시험은 이름(short)이 겹칠 수 있어 제목(단계 칸)을 붙임 */
+    if (/^Wrap-up/.test(dd) && RS[gnz(v[3]) + '|' + gnz(v[6])] > ms(v[0])) return; /* 11/18 리셋한 시험: 리셋 전에 낸 기록은 빼기 */
     add(v[1], v[2], v[3], dd, v[8], v[9], ms(v[0]));
   });
   var sh = ss.getSheetByName('현황');
