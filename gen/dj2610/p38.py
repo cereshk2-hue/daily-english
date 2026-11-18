@@ -17,7 +17,7 @@ PICK1 = [PK(p, 'When we say', 'looks like', 'tastes like', "정답 ▶ looks lik
  PK(p, 'These guidelines', 'exactly', 'roughly', "정답 ▶ exactly (정확히)\n오답 ▶ roughly (대략)\n이유: 지침은 물질이 '정확히' 얼마나 있어도 되는지 알려 줌"),
  PK(p, 'These rules ensure', 'safe', 'dangerous', "정답 ▶ safe (안전한)\n오답 ▶ dangerous (위험한)\n이유: 규칙은 어떤 용도든 물이 '안전하다'고 보장"),
  PK(p, 'We can’t utilize', 'diverse', 'similar', "정답 ▶ diverse (다양한)\n오답 ▶ similar (비슷한)\n이유: 물을 '다양한' 일에 쓰므로 일률적 규칙을 쓸 수 없음"),
- PK(p, 'For instance', 'as clean as', 'cleaner than', "정답 ▶ as clean as\n오답 ▶ cleaner than\n이유: 냉각수는 마시는 물'만큼' 깨끗할 필요가 없음 — 덜 깨끗해도 됨")]
+ PK(p, 'For instance', 'doesn’t need', 'needs', "정답 ▶ doesn’t need (~할 필요가 없다)\n오답 ▶ needs (~할 필요가 있다)\n이유: 용도가 달라 기준도 다름 → 발전기 냉각수는 마시는 물만큼 깨끗할 '필요가 없음'")]
 TF = [TF(p, "Clean water simply means water that looks clear.", False, "we don’t just mean that it looks like a glass of water", "정답 ▶ F\n이유: 단지 물 한 잔처럼 보인다는 뜻이 아니에요."),
  TF(p, "Water quality is about meeting a certain set of standards.", True, "following a certain set of criteria", "정답 ▶ T\n이유: 특정 기준들의 집합을 따르는 것이에요.\n어휘 ▶ standards = criteria · benchmarks"),
  TF(p, "Guidelines tell us how much chemical stuff can be in the water.", True, "how much physical, chemical, or biological stuff can be in the water", "정답 ▶ T\n이유: 물리적·화학적·생물학적 물질이 얼마나 있어도 되는지 알려 줘요."),

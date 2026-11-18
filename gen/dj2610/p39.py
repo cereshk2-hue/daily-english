@@ -17,7 +17,7 @@ PICK1 = [PK(p, 'Like all historians', 'variety', 'lack', "정답 ▶ variety (�
  PK(p, 'Yet, in most places', 'lacked', 'enjoyed', "정답 ▶ lacked (부족했다)\n오답 ▶ enjoyed (누렸다)\n이유: 교육 기회가 '부족'해서 → 기록을 많이 만들지 못함(thus)"),
  PK(p, 'Even when they did', 'rarely', 'usually', "정답 ▶ rarely (거의 ~않게)\n오답 ▶ usually (대개)\n이유: 기록을 만들어도 보관소에 '거의' 남지 못함 → 기록의 편향"),
  PK(p, 'Because of such biases', 'biases', 'balances', "정답 ▶ biases (편향)\n오답 ▶ balances (균형)\n이유: 엘리트 기록은 많고 평범한 사람 기록은 적음 → 역사 기록의 '편향'"),
- PK(p, 'So, for example', 'silences', 'speeches', "정답 ▶ silences (공백, 침묵)\n오답 ▶ speeches (연설)\n이유: 결을 거슬러 읽기 → 쓰여 있지 '않은' 것(공백·단절·소문)을 살핌")]
+ PK(p, 'Because of such biases', 'creative', 'careless', "정답 ▶ creative (창의적인)\n오답 ▶ careless (부주의한)\n이유: 평범한 사람의 기록이 부족한 편향 → 엘리트 자료를 결을 거슬러 읽는 등 '창의적'이어야 함")]
 TF = [TF(p, "Social historians use a variety of primary sources.", True, "draw from a variety of primary sources", "정답 ▶ T\n이유: 다양한 원자료를 가져다 써요."),
  TF(p, "Social history mainly focuses on elites.", False, "emphasizes ordinary people rather than elites", "정답 ▶ F\n이유: 엘리트보다 평범한 사람들을 강조해요."),
  TF(p, "Non-elites often had little access to education.", True, "non-elites lacked access to education", "정답 ▶ T\n이유: 교육 접근 기회가 부족했어요."),

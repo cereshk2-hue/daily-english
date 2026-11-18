@@ -14,7 +14,7 @@ EXAM = [EXQ(29, '29. 다음 글의 밑줄 친 부분 중, 어법상 틀린 것�
  "정답 ▶ ① wasteful (낭비하는)\n이유: 무화과 씨앗 중 단 하나만 나무가 됨, 개코원숭이 4분의 1이 한 살 전에 죽음 → 자연은 생명을 '낭비'함\n오답 ▶ ② 보호하는 ③ 신중한 ④ 관대한 ⑤ 존중하는 — 모두 반대\n포인트 ▶ be wasteful of ~ = ~을 낭비하다")]
 PICK1 = [PK(p, 'The early hurdles', 'high', 'low', "정답 ▶ high (높은)\n오답 ▶ low (낮은)\n이유: 많은 사람이 처음 몇 개를 넘기 전에 넘어짐 → 초기 허들이 '높았음'"),
  PK(p, 'Demographically', 'close to', 'far from', "정답 ▶ close to (~에 가깝게)\n오답 ▶ far from (~와 거리가 먼)\n이유: 인류가 자연 상태에 '가깝게' 살았음 → 자연처럼 생명이 낭비됨"),
- PK(p, 'From only a very', 'small', 'large', "정답 ▶ small (적은)\n오답 ▶ large (많은)\n이유: '극소수'의 무화과에서만 씨앗 하나가 나무가 됨 → 자연의 낭비"),
+ PK(p, 'Demographically', 'extremely', 'hardly', "정답 ▶ extremely (극도로)\n오답 ▶ hardly (거의 ~않게)\n이유: 씨앗 하나만 나무가 되고, 새끼 4분의 1이 일찍 죽음 → 자연은 생명을 '극도로' 낭비함"),
  PK(p, 'Almost a quarter', 'typical', 'rare', "정답 ▶ typical (전형적인)\n오답 ▶ rare (드문)\n이유: 4분의 1이 한 살 전에 죽는 것은 영장류에게 '전형적'"),
  PK(p, 'Infant mortality rates', 'higher', 'lower', "정답 ▶ higher (더 높은)\n오답 ▶ lower (더 낮은)\n이유: 인간의 유아 사망률이 유인원과 비슷했고 때로는 '더 높았음' — 사정이 나쁜 흐름"),
  PK(p, 'Had it been', 'earlier', 'later', "정답 ▶ earlier (더 일찍)\n오답 ▶ later (더 늦게)\n이유: 사망률이 그렇게 높지 않았다면 → 인구 증가가 '더 일찍' 일어났을 것")]

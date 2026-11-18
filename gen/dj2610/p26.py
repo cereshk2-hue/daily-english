@@ -15,7 +15,7 @@ EXAM = [EXQ(26, '26. Jacques Piccard에 관한 다음 글의 내용과 일치하
  "정답 ▶ ① 환경을 보호하는 것\n이유: 심해 잠수 중 해양 '오염'을 목격한 후 → 환경 보호에 집중 → 바다·호수 연구 단체 설립\n오답 ▶ ② 더 빠른 잠수함 ③ 다시 경제학 ④ 하늘 탐험 ⑤ 판매 — 오염 목격과 연결 안 됨\n포인트 ▶ after seeing the ocean pollution이 원인")]
 PICK1 = [PK(p, 'Jacques Piccard was born', 'famous', 'unknown', "정답 ▶ famous (유명한)\n오답 ▶ unknown (알려지지 않은)\n이유: 해양과 하늘 탐험으로 '유명한' 과학자 집안"),
  PK(p, 'After graduating', 'develop', 'destroy', "정답 ▶ develop (개발하다)\n오답 ▶ destroy (파괴하다)\n이유: 아버지가 심해 탐사 기계를 '개발하는' 것을 도움"),
- PK(p, 'When their machines', 'successfully', 'barely', "정답 ▶ successfully (성공적으로)\n오답 ▶ barely (간신히, 거의 ~않다)\n이유: 6,000미터 도달 '성공' → 교직을 떠날 마음이 생김"),
+ PK(p, 'When their machines', 'successfully reached', 'failed to reach', "정답 ▶ successfully reached (성공적으로 도달했다)\n오답 ▶ failed to reach (도달하지 못했다)\n이유: 6,000미터 도달에 '성공' → 그래서 교직을 떠나 배시스케이프 개선에 집중할 마음이 생김"),
  PK(p, 'In 1960', 'descending', 'climbing', "정답 ▶ descending (하강하며)\n오답 ▶ climbing (올라가며)\n이유: 잠수 기록 → 10,916미터를 '내려감'"),
  PK(p, 'In the 1970s', 'pollution', 'beauty', "정답 ▶ pollution (오염)\n오답 ▶ beauty (아름다움)\n이유: 환경 보호에 집중하게 된 계기 → 해양 '오염'"),
  PK(p, 'He died on', 'legacy', 'debt', "정답 ▶ legacy (유산)\n오답 ▶ debt (빚)\n이유: 사망했지만 그의 '유산'이 동료들에게 영감으로 남아 있음")]

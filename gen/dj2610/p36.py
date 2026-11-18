@@ -17,7 +17,7 @@ PICK1 = [PK(p, 'A simple truth', 'embrace', 'reject', "정답 ▶ embrace (기�
  PK(p, 'The best user interfaces', 'observations', 'imaginations', "정답 ▶ observations (관찰)\n오답 ▶ imaginations (상상)\n이유: 실제 사용자에 대한 '관찰'로 만들어진 인터페이스가 최고"),
  PK(p, 'The goal of this method', 'uncover', 'hide', "정답 ▶ uncover (밝혀내다)\n오답 ▶ hide (숨기다)\n이유: 테스트의 목표 → 디자인상의 문제를 '밝혀냄'"),
  PK(p, 'The goal of this method', 'realistic', 'imaginary', "정답 ▶ realistic (현실적인)\n오답 ▶ imaginary (가상의)\n이유: 참가자에게 '실제적인' 활동을 시켜 실제 사용을 관찰"),
- PK(p, 'Designers can use', 'representative', 'random', "정답 ▶ representative (대표적인)\n오답 ▶ random (무작위의)\n이유: 실제 사용자를 '대표하는' 사용자들로부터의 발견")]
+ PK(p, 'Designers can use', 'representative', 'imaginary', "정답 ▶ representative (대표적인)\n오답 ▶ imaginary (가상의)\n이유: 실제 사용자를 '대표하는' 사용자들로부터의 발견 — 가상의 사용자로는 실제 성능을 알 수 없음")]
 TF = [TF(p, "Designers should assume they think the same way as users.", False, "we are not the user", "정답 ▶ F\n이유: 우리는 사용자가 '아니다'는 사실을 받아들여야 해요."),
  TF(p, "Designers are too close to their work to see it objectively.", True, "We’re much too close to what we build to objectively see it", "정답 ▶ T\n이유: 너무 가까워서 객관적으로 볼 수 없어요.\n포인트 ▶ much too ~ to V = 너무 ~해서 V할 수 없는"),
  TF(p, "The best interfaces are shaped by watching real users.", True, "shaped by observations of real users", "정답 ▶ T\n이유: 실제 사용자 관찰로 만들어진 인터페이스가 최고예요."),
