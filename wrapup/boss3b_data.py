@@ -245,7 +245,7 @@ S24b = [
     '① challenges(이의를 제기하다)·① ignores·① rejects는 특권층의 관점을 “반영한다”와 반대. ① inconsistency·① flaws·① weakness는 Despite(~에도 불구하고)와 맞지 않아요 — 앞에는 장점이 와야 해요.',
     gm='Despite + 명사 = ~에도 불구하고 (양보) → (A)는 장점'),
 ]
-SETS_B.append({'id': 'bossag4', 'no': 4, 'nums': ('23', '24'), 'pre': '10월 ', 'exam': '영어Ⅱ 수능유형 연습 · 10월 모의고사',
+SETS_B.append({'id': 'bossag4', 'no': 4, 'nums': ('23', '24'), 'pre': '10월 ', 'exam': '2026학년도 10월 고2 전국연합학력평가',
                'P': (P23, P24b), 'items': S23 + S24b, 'titles': ('10월 23번 · 문어의 분산된 신경계', '10월 24번 · 아리스토텔레스 윤리학의 한계'), 'dist': (4, 4, 4, 3, 3)})
 
 # ═════════════ 세트 5: 10월 31·33 ═════════════
@@ -365,7 +365,7 @@ S33 = [
     '① early: never too early는 “어린 나이에도 가능”이라 노년까지 이어진다는 핵심과 어긋나요. ① decline은 grow와 함께 쓰일 수 없어요. ① soon → rest, ① hard → stop은 근거가 없어요.',
     gm='It is never too late to V = ~하기에 너무 늦은 때란 없다', extra=['plasticity']),
 ]
-SETS_B.append({'id': 'bossag5', 'no': 5, 'nums': ('31', '33'), 'pre': '10월 ', 'exam': '영어Ⅱ 수능유형 연습 · 10월 모의고사',
+SETS_B.append({'id': 'bossag5', 'no': 5, 'nums': ('31', '33'), 'pre': '10월 ', 'exam': '2026학년도 10월 고2 전국연합학력평가',
                'P': (P31, P33), 'items': S31 + S33, 'titles': ('10월 31번 · 자동화된 기본 설정', '10월 33번 · 평생 이어지는 발달과 가소성'), 'dist': (3, 4, 4, 4, 3)})
 
 # ═════════════ 세트 6: 10월 37·41~42 ═════════════
@@ -487,7 +487,7 @@ S41b = [
     '① beneficial / harmful은 뒤바꾼 함정. ① unavoidable(피할 수 없는)은 성찰에 쓰면 좋아진다는 흐름과 맞지 않아요. ① pleasant → boring, ① rare → common은 근거가 없어요.',
     gm='though (it is) potentially A = 잠재적으로 A이지만 (양보)'),
 ]
-SETS_B.append({'id': 'bossag6', 'no': 6, 'nums': ('37', '41~42'), 'pre': '10월 ', 'exam': '영어Ⅱ 수능유형 연습 · 10월 모의고사',
+SETS_B.append({'id': 'bossag6', 'no': 6, 'nums': ('37', '41~42'), 'pre': '10월 ', 'exam': '2026학년도 10월 고2 전국연합학력평가',
                'P': (P37, P41b), 'items': S37 + S41b, 'titles': ('10월 37번 · 감정 재평가와 회복 탄력성', '10월 41~42번 · 지루함이라는 기회'), 'dist': (4, 3, 4, 3, 4)})
 
 # ═════════════ 세트 7: 고3 6월 24·35 ═════════════
