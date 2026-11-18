@@ -124,7 +124,7 @@ for k in range(1, 10):
             items.append({'kind': 'write', 'n': '서술형 %d' % n, 'src': src_, 'pts': 5, 'stem': fmt(r['발문']), 'body': body, 'blanks': blanks(r),
                           'model': plain(r['서술형 정답']), 'ex': ex.replace('이유 ▶ ', '해설 ▶ ', 1) + '\n주의 ▶ ' + c})
     assert wi == len(CAUT[K]), (K, wi, len(CAUT[K]))
-    tests.append({'id': 'm2d7-%02d' % k, 'title': '동아 7과 실전 문제 %d회' % k, 'short': '실전 %d회' % k, 'school': '중2 동아(윤정미)', 'minutes': 30, 'items': items})
+    tests.append({'id': 'm2d7-%02d' % k, 'title': '너른터 실전 7과 %d회' % k, 'short': '실전 %d회' % k, 'school': '중2 동아(윤정미)', 'minutes': 30, 'items': items})
 print('선택지 해석 붙인 문항', nok)
 F = D + 'm2-donga-yoon-L7.js'
 emit(F, tests)
