@@ -402,7 +402,7 @@ day(41, 'q41', '제목', '장문 제목 · 첫 부분과 결론을 함께 담기
  '장문 제목은 첫 부분(인간만 동기화할 수 있다)과 마지막 결론(음악적 털 고르기 가설)을 함께 담은 것을 고르세요.',
  K41, V41, ['synchronize', 'flexibly', 'external', 'cognitive', 'decisive', 'evolutionary', 'bonding', 'hypothesis', 'cohesion', 'tactile', 'foster', 'emergence'],
  paras=[Q41], notes='* unison: 제창 ** elicitor: 유발 요인 *** tactile: 촉각의')
-day(42, 'q42', '어휘', '장문 어휘', '밑줄 친 (a)~(e) 중에서 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은? [3점]', T41,
+day(42, 'q42', '어휘', '장문 어휘', '밑줄 친 (a)~(e) 중에서 문맥상 낱말의 쓰임이 적절하지 <u>않은</u> 것은?', T41,
  ['(a) separates', '(b) replaced', '(c) increases', '(d) reject', '(e) more obvious'], 3,
  '관계의 수가 너무 많아 촉각(털 고르기)만으로 유지할 수 없게 되면, 자연 선택은 여러 명에게 동시에 말하기 같은 대안적 기제를 “거부하는(reject)” 게 아니라 “선호할(favor)” 거예요. 그래야 언어(음성 털 고르기)가 등장한 이유가 설명돼요.',
  ['(a) separates: 이 능력이 인간을 동물과 “구별한다” ✔', '(b) replaced: 음악이 손 털 고르기를 “대체했을” 수 있다 ✔', '(c) increases: 집단이 커지면 관계의 수가 “늘어난다” ✔', '(e) more obvious: 훨씬 더 많은 사람이 함께할 수 있으니 “더 확실한” 후보 ✔'],
