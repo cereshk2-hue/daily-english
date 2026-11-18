@@ -69,7 +69,8 @@ function build(){
   U={};
   D.rows.forEach(function(r){var pid=pidOf(r),meta=MAP&&MAP.units[pid];
     var u=U[pid]||(U[pid]={key:pid,meta:meta,book:meta?meta.book:r[1],name:meta?meta.unit+" "+meta.title:r[2],cells:{},extra:{},last:0,students:{}});
-    var c=colOf(u,r);if(c.indexOf("x:")===0&&!u.extra[c])u.extra[c]={key:c,name:String(r[3]).replace(/\s*¦.*$/,"").replace(/\s+/g," "),old:1};
+    var c=colOf(u,r);if(c.indexOf("t:")===0&&meta){var tm=meta.tests.filter(function(x){return"t:"+x[0]===c})[0];if(tm&&tm[5]&&r[6]<tm[5])return}/* 11/18 리셋한 시험: 리셋 전 제출은 빼기 */
+    if(c.indexOf("x:")===0&&!u.extra[c])u.extra[c]={key:c,name:String(r[3]).replace(/\s*¦.*$/,"").replace(/\s+/g," "),old:1};
     var S=u.cells[r[0]]||(u.cells[r[0]]={});S[c]=merge(S[c],r);
     if(r[6]>u.last)u.last=r[6];u.students[r[0]]=1});
 }

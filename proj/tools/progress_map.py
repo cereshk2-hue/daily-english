@@ -11,12 +11,12 @@ SCHOOL = {  # 단원 → 학교·학년 (진도표 검색용 · 모르는 단원
 def test_label(t):
     # 진도표 시험 칸 머리: (종류, 작은 글씨) — 여기만 고치면 진도표 이름이 바뀜(Code.gs 다시 붙일 필요 없음)
     ti = re.sub(r'\s+', ' ', t.get('title', '') or t.get('short', ''))
-    kinds = [('끝판왕', '끝판왕'), ('비밀노트', '비밀노트'), ('Wrap-up', 'Wrap-up'), ('변형기출', '변형기출'), ('기출 마무리', '기출마무리'), ('실전 변형', '실전변형'), ('실전 문제', '실전문제'), ('문법', '문법')]
+    kinds = [('끝판왕', '끝판왕'), ('비밀노트', '비밀노트'), ('Wrap-up', 'Wrap-up'), ('변형기출', '변형기출'), ('기출 마무리', '기출마무리'), ('기출 선별', '기출선별'), ('실전 변형', '실전변형'), ('실전 문제', '실전문제'), ('문법', '문법')]
     kind = next((k for w, k in kinds if w.lower() in ti.lower()), '')
     m = re.search(r'(\d{4})\s*기출', ti)
     if not kind and m: kind = '%s 기출' % m.group(1)
     sub = ti
-    for w in ['너른터 ', '끝판왕 ', '비밀노트 ', '변형기출 ', '기출 마무리 ', '실전 변형 ', '실전 문제 ', '요약문 ', '문법 ', '%s 기출 ' % (m.group(1) if m else '@@')]: sub = sub.replace(w, '')
+    for w in ['너른터 ', '끝판왕 ', '비밀노트 ', '변형기출 ', '기출 마무리 ', '기출 선별 ', '실전 변형 ', '실전 문제 ', '요약문 ', '문법 ', '%s 기출 ' % (m.group(1) if m else '@@')]: sub = sub.replace(w, '')
     sub = re.sub(r'(?i)\s*wrap-?up\s*', ' ', sub); sub = re.sub(r'\d+월\s*학평\s*', '', sub); sub = re.sub(r'^(천재|동아|비상|능률|미래엔|지학사)\s*', '', sub)
     sub = re.sub(r'\(([^)]*)\)', r'\1', sub).replace('번', '').replace(' · ', ' ').strip()
     return kind or '시험', sub[:14]
