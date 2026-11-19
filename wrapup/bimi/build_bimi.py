@@ -173,13 +173,14 @@ META = [('1', 'bimi-1819', '18·19번'), ('2', 'bimi-2021', '20·21번'), ('3', 
 tests = []; GR = {}
 GFORCE, GSOFT = set(), set()
 # 11/19 선생님: 중산고1 시험에 서술형이 안 나옴 → 서술형 빼기. 22·23은 종이 시험지를 이미 나눠 줌(서술형 35~46이 맨 뒤라 앞 번호 그대로) → OMR만,
-#   24번은 시험지·OMR 모두 서술형 빼고 번호 다시 매김. 18·19·20·21은 이미 끝난 시험이라 그대로
-NOWRITE = {'3': 'keep', '4': 'renum'}
+#   24번은 시험지·OMR 모두 서술형 빼고 번호 다시 매김.
+#   (20:10) 18·19·20·21도 시험지는 이미 나눠 줌(아직 안 품) → OMR에서만 서술형 빼고 번호는 시험지 그대로(중간에 빈 번호 생김)
+NOWRITE = {'1': 'keep', '2': 'keep', '3': 'keep', '4': 'renum'}
 for fk, tid, sh in META:
     its, grs = parse(fk)
     if fk in NOWRITE:
         kept = [i for i in its if i.get('kind') != 'write']
-        if NOWRITE[fk] == 'keep': assert [i['n'] for i in kept] == [str(k) for k in range(1, len(kept) + 1)], 'write not trailing'
+        if NOWRITE[fk] == 'keep': assert all(i['n'] == o['n'] for i, o in zip(kept, [x for x in its if x.get('kind') != 'write'])), 'n changed'  # 번호 = 시험지 번호 그대로
         else:
             for k, i in enumerate(kept, 1): i['n'] = str(k)
         its = kept
