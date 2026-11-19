@@ -31,7 +31,8 @@ def origin(datafile):
 
 import difflib
 def kodict(datafile):
-    pk = json.loads(subprocess.check_output(['node', '-e', "global.window={};require('%s');console.log(JSON.stringify(window.PKG.days.map(d=>d.passage)))" % datafile]))
+    # 11/19 문장 순서 조각 DAY(2문장씩 합친 줄, 단계에 tries)는 빼고 원래 본문 줄만
+    pk = json.loads(subprocess.check_output(['node', '-e', "global.window={};require('%s');console.log(JSON.stringify(window.PKG.days.filter(d=>!d.steps.every(s=>s.type==='order'&&s.tries)).map(d=>d.passage)))" % datafile]))
     out = []
     for ps in pk:
         for l in ps:

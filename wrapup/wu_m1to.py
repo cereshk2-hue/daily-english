@@ -29,7 +29,7 @@ class Test:
         for it in s.items:
             if it['k'] == 'fixed': cnt[it['ans']] += 1
         assert max(cnt) <= 4, ('고정 정답이 한 번호에 너무 많음', cnt)
-        rot = 0
+        rot = getattr(s, 'rot0', 0)  # 11/19 세트마다 정답 배치가 같지 않게(기본 0 = 예전과 같음)
         for it in s.items:
             if it['k'] == 'fixed': continue
             m = min(cnt); cand = [i for i in range(5) if cnt[i] == m]

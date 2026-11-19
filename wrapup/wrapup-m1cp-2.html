@@ -1,0 +1,362 @@
+<title>중산중1 실전 문법 2차</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+/* A4 시험지 (10/31): 스크립트가 문항을 A4 쪽(210×297mm)에 왼쪽 단 → 오른쪽 단 → 다음 쪽 순서로 직접 나눠 담고 쪽 번호를 붙인다.
+   화면·인쇄·PDF 어디서나 같은 쪽 구성. 좁은 화면에서는 쪽 전체를 축소해서 보여 준다. */
+.q, .exp p { break-inside: avoid }
+body { font-size: 9.6pt }
+.stem { font-size: 9.8pt } .stem .src { font-size: 8pt }
+.box, .given, .sum { font-size: 9.4pt; line-height: 1.46; padding: 2.2mm 2.8mm }
+.ol, .ol.en li { font-size: 9.3pt; line-height: 1.38 }
+table.ch { font-size: 9.2pt } table.ch th { font-size: 8.4pt }
+.q { margin-bottom: 3.6mm; gap: 1.6mm }
+.exp { font-size: 7.8pt; line-height: 1.36; margin-top: 3mm } .exp p { margin-bottom: 1mm }
+.top, .notice, .idrow, .title .when, .foot { font-size: 8.6pt }
+.title h1 { font-size: 18pt } .title h1 small { font-size: 8.6pt }
+.keygrid div { font-size: 9pt; padding: 1.2mm 0 } .keygrid b { font-size: 10.5pt }
+.page { width: 210mm; max-width: 100%; padding: 11mm }
+.sheets { display: grid; justify-content: center; gap: 16px }
+.sheet { width: 210mm; height: 297mm; padding: 11mm; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); overflow: hidden }
+/* 내용 영역 188×256mm: A4 여백 0~20mm, Letter 기본 여백에서도 한 장에 들어가는 크기 */
+.sheet > .inner { width: 188mm; height: 256mm; display: flex; flex-direction: column; overflow: hidden }
+.inner > .top.run { padding-bottom: 2mm; border-bottom: 1px solid var(--rule); margin-bottom: 1mm }
+.cols { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr);
+  column-gap: 6mm; margin-top: 4mm; position: relative }
+.cols::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid var(--rule) }
+.cols > .col { columns: auto !important; margin: 0 !important; min-height: 0; overflow: hidden }
+.inner > .foot { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center }
+.inner > .foot span:last-child { text-align: right }
+.inner > .foot .pno { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums }
+@page { size: A4; margin: 12mm 11mm }
+@media print {
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  body { padding: 0 !important; margin: 0 }
+  .sheets { display: block }
+  .sheet { zoom: 1 !important; width: auto; height: auto; padding: 0; margin: 0; box-shadow: none; overflow: visible; break-after: page; page-break-after: always }
+  .sheet:last-child { break-after: auto; page-break-after: auto }
+  .sheet > .inner { margin: 0 auto }
+  .page { max-width: none; margin: 0; box-shadow: none; break-after: page }
+}
+</style>
+<script>
+/* A4 쪽 나누기: 왼쪽 단 → 오른쪽 단 → 다음 쪽, 쪽 번호 n / 전체 */
+(function () {
+  function build() {
+    var main = document.querySelector('main'); if (!main || document.querySelector('.sheets')) return;
+    var secs = [].slice.call(main.querySelectorAll('section.page'));
+    var out = document.createElement('div'); out.className = 'sheets'; main.appendChild(out);
+    var pages = [];
+    secs.forEach(function (sec) {
+      var box = sec.querySelector('.qs, .exp'); if (!box) return;
+      var items = [].slice.call(box.children), foot = sec.querySelector('.foot'), top = sec.querySelector('.top');
+      var head = [].slice.call(sec.children).filter(function (e) { return e !== box && e !== foot && !(e.classList.contains('keygrid') && false); });
+      var cols, ci, first = true;
+      function newPage() {
+        var sh = document.createElement('div'); sh.className = 'sheet'; var pg = document.createElement('div'); pg.className = 'inner'; sh.appendChild(pg);
+        if (first) head.forEach(function (e) { pg.appendChild(e); });
+        else { var t = top.cloneNode(true); t.classList.add('run'); pg.appendChild(t); }
+        first = false;
+        cols = document.createElement('div'); cols.className = 'cols';
+        for (var i = 0; i < 2; i++) { var c = document.createElement('div'); c.className = 'col ' + box.className; cols.appendChild(c); }
+        pg.appendChild(cols);
+        var f = foot.cloneNode(true), sp = f.querySelectorAll('span'), mid = document.createElement('span'); mid.className = 'pno';
+        f.insertBefore(mid, sp[1] || null); pg.appendChild(f);
+        out.appendChild(sh); pages.push(pg); ci = 0;
+      }
+      function over(c) { return c.scrollHeight > c.clientHeight + 1; }
+      newPage();
+      items.forEach(function (it) {
+        var c = cols.children[ci]; c.appendChild(it);
+        if (over(c) && c.children.length > 1) {
+          c.removeChild(it); ci++;
+          if (ci > 1) newPage();
+          cols.children[ci].appendChild(it);
+        }
+      });
+      sec.parentNode.removeChild(sec);
+    });
+    pages.forEach(function (p, i) { p.querySelector('.pno').textContent = (i + 1) + ' / ' + pages.length; });
+    fit();
+  }
+  function fit() {
+    var w = document.documentElement.clientWidth - 24, s = Math.min(1, w / 794);
+    [].forEach.call(document.querySelectorAll('.sheet'), function (p) { p.style.zoom = s < 1 ? s : ''; });
+  }
+  function go() { (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(build, build); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  window.addEventListener('resize', function () { if (document.querySelector('.sheets')) fit(); });
+})();
+</script>
+
+
+<main>
+<section class="page">
+  <div class="top"><span>중1 영어 동아(윤정미) 비교급 · 최상급 · <b>2차</b></span><span>중산중학교 1학년 · 내신 대비</span></div>
+  <div class="title">
+    <div class="g">영어</div>
+    <h1>실전 문법 2차<small>비교급 · 최상급</small></h1>
+    <div class="when">20문항 · 각 5점<br>제한 시간 30분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">범위: 비교급(-er / more ~ than, 불규칙, much · even · far 강조)과 최상급(the -est / the most, in · of). 문장 전체를 끝까지 읽고 고르세요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[비교급]</span></div>
+    <div class="box"><p>This bag is <span class="blank"></span> more expensive than that one.</p></div>
+    <ol class="ol en"><li><span>①</span><span>very</span></li><li><span>②</span><span>many</span></li><li><span>③</span><span>most</span></li><li><span>④</span><span>much</span></li><li><span>⑤</span><span>so</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>다음 문장을 어법에 맞게 고친 것은?<span class="src">[비교급]</span></div>
+    <div class="box"><p>Soccer is popular than baseball.</p></div>
+    <ol class="ol en"><li><span>①</span><span>Soccer is more popular than baseball.</span></li><li><span>②</span><span>Soccer is popularer than baseball.</span></li><li><span>③</span><span>Soccer is most popular than baseball.</span></li><li><span>④</span><span>Soccer is the popular than baseball.</span></li><li><span>⑤</span><span>Soccer is very popular than baseball.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>다음 문장을 어법에 맞게 고친 것은?<span class="src">[비교급]</span></div>
+    <div class="box"><p>My room is bigger than you.</p></div>
+    <ol class="ol en"><li><span>①</span><span>My room is bigger than your.</span></li><li><span>②</span><span>My room is big than yours.</span></li><li><span>③</span><span>My room is biggest than you.</span></li><li><span>④</span><span>My room is more big than yours.</span></li><li><span>⑤</span><span>My room is bigger than yours.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>대화의 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[비교급]</span></div>
+    <div class="box"><p>A: Which do you like <span class="blank"></span>, tea or coffee?<br>B: I like tea better.</p></div>
+    <ol class="ol en"><li><span>①</span><span>best</span></li><li><span>②</span><span>better</span></li><li><span>③</span><span>well</span></li><li><span>④</span><span>more good</span></li><li><span>⑤</span><span>gooder</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>[5~6] 다음 식품 영양 분석표를 보고 물음에 답하시오. 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[비교급]</span></div>
+    <div class="box"><p><table style="border-collapse:collapse;margin:4px 0;font-size:11.5px"><tr><th style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center"></th><th style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">Protein</th><th style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">Carbohydrate</th><th style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">Fat</th><th style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">Calories</th></tr><tr><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">Bread</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">7.3</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">40</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">2.4</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">200</td></tr><tr><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">Pizza</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">15.0</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">37</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">10.0</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">280</td></tr><tr><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">Rice</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">6.0</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">52</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">0.4</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">225</td></tr><tr><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">Ice Cream</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">4.0</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">21</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">10.0</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">190</td></tr></table><br>Pizza has <span class="blank"></span> than bread.</p></div>
+    <ol class="ol en"><li><span>①</span><span>more carbohydrate</span></li><li><span>②</span><span>less fat</span></li><li><span>③</span><span>more protein</span></li><li><span>④</span><span>less calories</span></li><li><span>⑤</span><span>more salt</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>위 표(5번)를 보고 빈칸에 들어갈 말로 알맞은 것을 고르시오.<span class="src">[비교급]</span></div>
+    <div class="box"><p>Rice has <span class="blank"></span> than ice cream.</p></div>
+    <ol class="ol en"><li><span>①</span><span>less protein</span></li><li><span>②</span><span>less carbohydrate</span></li><li><span>③</span><span>less calories</span></li><li><span>④</span><span>less fat</span></li><li><span>⑤</span><span>more fat</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>다음 중 어법상 <u>옳은</u> 것은?<span class="src">[최상급]</span></div>
+    <ol class="ol en"><li><span>①</span><span>I am the thinest among us.</span></li><li><span>②</span><span>English is the easiest subject for me.</span></li><li><span>③</span><span>He is the tallest in three students.</span></li><li><span>④</span><span>This is the baddest movie in my life.</span></li><li><span>⑤</span><span>He is the our youngest in my family.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>다음 중 어법상 <u>틀린</u> 것은?<span class="src">[최상급]</span></div>
+    <ol class="ol en"><li><span>①</span><span>Which city is the biggest in the world?</span></li><li><span>②</span><span>Writing is the hardest thing for me.</span></li><li><span>③</span><span>Singing is the most easiest thing.</span></li><li><span>④</span><span>Jane has the longest hair in the class.</span></li><li><span>⑤</span><span>Fishing is the most pleasant activity.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>다음 빈칸에 들어갈 말로 알맞지 <u>않은</u> 것은?<span class="src">[최상급]</span></div>
+    <div class="box"><p>What is the most <span class="blank"></span> part of the movie?</p></div>
+    <ol class="ol en"><li><span>①</span><span>boring</span></li><li><span>②</span><span>exciting</span></li><li><span>③</span><span>difficult</span></li><li><span>④</span><span>wonderful</span></li><li><span>⑤</span><span>sad</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[최상급]</span></div>
+    <div class="box"><p>She is <span class="blank"></span> student in her class.</p></div>
+    <ol class="ol en"><li><span>①</span><span>the most interesting</span></li><li><span>②</span><span>interest</span></li><li><span>③</span><span>more interest</span></li><li><span>④</span><span>most interest</span></li><li><span>⑤</span><span>the most interest</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[최상급]</span></div>
+    <div class="box"><p>I have <span class="blank"></span> dog in the world!</p></div>
+    <ol class="ol en"><li><span>①</span><span>best</span></li><li><span>②</span><span>the better</span></li><li><span>③</span><span>a better</span></li><li><span>④</span><span>the best</span></li><li><span>⑤</span><span>best of</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>다음 MP3 플레이어 표의 내용과 일치하는 것은?<span class="src">[최상급]</span></div>
+    <div class="box"><p><table style="border-collapse:collapse;margin:4px 0;font-size:11.5px"><tr><th style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">Model</th><th style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">A</th><th style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">B</th><th style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">C</th><th style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">D</th></tr><tr><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">Weight</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">370 g</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">320 g</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">290 g</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">280 g</td></tr><tr><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">Price</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">$125</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">$275</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">$500</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">$310</td></tr></table></p></div>
+    <ol class="ol en"><li><span>①</span><span>MP3 player A is the lightest.</span></li><li><span>②</span><span>MP3 player C is the heaviest.</span></li><li><span>③</span><span>MP3 player A is the cheapest.</span></li><li><span>④</span><span>MP3 player B is the most heaviest.</span></li><li><span>⑤</span><span>MP3 player C is the most cheap.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>표의 내용과 일치하도록 (A), (B)에 들어갈 말을 바르게 짝지은 것은?<span class="src">[최상급]</span></div>
+    <div class="box"><p><table style="border-collapse:collapse;margin:4px 0;font-size:11.5px"><tr><th style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center"></th><th style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">Hari</th><th style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">Duri</th><th style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">Seri</th></tr><tr><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">height(cm)</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">57</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">50</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">55</td></tr><tr><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">weight(kg)</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">14</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">14</td><td style="border:1px solid #9aa3b5;padding:2px 4px;text-align:center">10</td></tr></table><br>These are my puppies. Hari is the <b>(A)</b> ________. Duri is the <b>(B)</b> ________ of the three, but he weighs 14 kg.</p></div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>tallest</td><td>shortest</td></tr><tr><td>②</td><td>shortest</td><td>tallest</td></tr><tr><td>③</td><td>tallest</td><td>lightest</td></tr><tr><td>④</td><td>lightest</td><td>shortest</td></tr><tr><td>⑤</td><td>taller</td><td>shorter</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[최상급]</span></div>
+    <div class="box"><p>This is the longest bridge <span class="blank"></span> this country.</p></div>
+    <ol class="ol en"><li><span>①</span><span>with</span></li><li><span>②</span><span>in</span></li><li><span>③</span><span>for</span></li><li><span>④</span><span>by</span></li><li><span>⑤</span><span>to</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>다음 중 원급 – 비교급 – 최상급이 바르게 연결된 것은?<span class="src">[비교급 · 최상급]</span></div>
+    <ol class="ol en"><li><span>①</span><span>funny - funnyer - funnyest</span></li><li><span>②</span><span>thin - thiner - thinest</span></li><li><span>③</span><span>little - more little - most little</span></li><li><span>④</span><span>quick - more quick - most quick</span></li><li><span>⑤</span><span>well - better - best</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>다음 우리말과 같도록 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[최상급]</span></div>
+    <div class="box"><p>Andy는 우리 반에서 가장 힘이 세다.<br>Andy is <span class="blank"></span> my class.</p></div>
+    <ol class="ol en"><li><span>①</span><span>the strongest of</span></li><li><span>②</span><span>stronger in</span></li><li><span>③</span><span>strongest of</span></li><li><span>④</span><span>the strongest in</span></li><li><span>⑤</span><span>the most strong in</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>다음 우리말과 같도록 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[최상급]</span></div>
+    <div class="box"><p>이것이 내 가방들 중 가장 비싼 것이다.<br>This is <span class="blank"></span> of my bags.</p></div>
+    <ol class="ol en"><li><span>①</span><span>the expensivest one</span></li><li><span>②</span><span>more expensive one</span></li><li><span>③</span><span>most expensive one</span></li><li><span>④</span><span>the more expensive one</span></li><li><span>⑤</span><span>the most expensive one</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>다음 우리말과 같도록 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[최상급]</span></div>
+    <div class="box"><p>그것은 내 인생에서 최악의 선택이었다.<br>It was <span class="blank"></span> choice in my life.</p></div>
+    <ol class="ol en"><li><span>①</span><span>the baddest</span></li><li><span>②</span><span>the worse</span></li><li><span>③</span><span>the worst</span></li><li><span>④</span><span>worst</span></li><li><span>⑤</span><span>the most bad</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>다음 질문과 대답 중 어법상 <u>틀린</u> 것은?<span class="src">[최상급]</span></div>
+    <ol class="ol en"><li><span>①</span><span>My brother has the largest hands.</span></li><li><span>②</span><span>Who has largest hands in your family?</span></li><li><span>③</span><span>My cell phone is the most expensive thing in my bag.</span></li><li><span>④</span><span>Miran is the best dancer in our class.</span></li><li><span>⑤</span><span>My friend John is the funniest person in our club.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[최상급]</span></div>
+    <div class="box"><p>The morning is the <span class="blank"></span> part of the day.</p></div>
+    <ol class="ol en"><li><span>①</span><span>best</span></li><li><span>②</span><span>goodest</span></li><li><span>③</span><span>better</span></li><li><span>④</span><span>most good</span></li><li><span>⑤</span><span>well</span></li></ol>
+  </div>
+  </div>
+  <div class="foot"><span>동아(윤정미) 비교급 · 최상급 CS 2차 · 실전 문법</span><span>중산중 1학년 영어 · 실전 문법</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>실전 문법 2차 · <b>정답과 해설</b></span><span>중산중학교 1학년</span></div>
+  <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">각 5점 · 100점</div></div>
+  <div class="keygrid">
+    <div>1<b>④</b></div><div>2<b>①</b></div><div>3<b>⑤</b></div><div>4<b>②</b></div><div>5<b>③</b></div><div>6<b>④</b></div><div>7<b>②</b></div><div>8<b>③</b></div><div>9<b>⑤</b></div><div>10<b>①</b></div>
+    <div>11<b>④</b></div><div>12<b>③</b></div><div>13<b>①</b></div><div>14<b>②</b></div><div>15<b>⑤</b></div><div>16<b>④</b></div><div>17<b>⑤</b></div><div>18<b>③</b></div><div>19<b>②</b></div><div>20<b>①</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">④</span> 이유 ▶ 비교급(more expensive)을 '훨씬' 강조 → much.<br>
+오답 ▶ ① very는 비교급 강조 ❌ ② many는 셀 수 있는 명사 앞 ③ 최상급 ⑤ so는 비교급 강조 ❌<br>
+포인트 ▶ much more expensive = 훨씬 더 비싼</p>
+    <p><b>2</b> <span class="k">①</span> 이유 ▶ than이 있으니 비교급 → popular(3음절) → more popular.<br>
+오답 ▶ ② 긴 단어에 -er ❌ ③ 최상급 + than ❌ ④ the + 원급 ❌ ⑤ very는 비교급이 아님<br>
+포인트 ▶ popular · famous · important → more ~ than</p>
+    <p><b>3</b> <span class="k">⑤</span> 이유 ▶ 내 방 ↔ 너의 방 → yours(너의 것).<br>
+오답 ▶ ① your 뒤에 명사가 없음 ② than 앞은 비교급 ③ 최상급 + than ❌ ④ 1음절은 -er (big → bigger)<br>
+포인트 ▶ 비교 대상 맞추기: my room ↔ yours</p>
+    <p><b>4</b> <span class="k">②</span> 이유 ▶ 둘 중(tea or coffee) 어느 것을 더 좋아하니? → Which ~ better, A or B?<br>
+오답 ▶ ① 최상급(셋 이상) ③ 원급 ④·⑤ 불규칙 변화 ❌<br>
+포인트 ▶ Which do you like better, A or B? → I like A better.</p>
+    <p><b>5</b> <span class="k">③</span> 이유 ▶ 단백질: Pizza 15.0 > Bread 7.3 → more protein.<br>
+오답 ▶ ① 탄수화물은 Bread가 더 많음(40 > 37) ② 지방은 Pizza가 더 많음 ④ 칼로리도 Pizza가 더 많음 ⑤ 표에 소금은 없음<br>
+포인트 ▶ many / much - more, little - less (양 비교)</p>
+    <p><b>6</b> <span class="k">④</span> 이유 ▶ 지방: Rice 0.4 < Ice Cream 10.0 → less fat(지방이 더 적다).<br>
+오답 ▶ ① 단백질은 Rice가 더 많음(6.0 > 4.0) ② 탄수화물 Rice가 더 많음 ③ 칼로리 Rice가 더 많음(225 > 190) ⑤ 지방은 더 적음<br>
+포인트 ▶ little - less - least (양이 더 적은)</p>
+    <p><b>7</b> <span class="k">②</span> 이유 ▶ easy → easiest (y → i + est) ✔<br>
+오답 ▶ ① thin → thinnest ③ three students(복수) 앞은 of ④ bad → worst ⑤ the와 our를 같이 쓸 수 없음<br>
+포인트 ▶ the와 소유격은 둘 중 하나만</p>
+    <p><b>8</b> <span class="k">③</span> 이유 ▶ most와 -est를 같이 쓰지 않는다 → the easiest.<br>
+오답 ▶ ① biggest ✔ ② hardest ✔ ④ longest ✔ ⑤ the most pleasant ✔<br>
+포인트 ▶ 최상급은 -est 또는 most 중 하나만</p>
+    <p><b>9</b> <span class="k">⑤</span> 이유 ▶ sad는 1음절 → the saddest. most를 쓰지 않는다.<br>
+오답 ▶ ①·②·③·④ 긴 형용사 → the most ~ ✔<br>
+포인트 ▶ 짧은 말 -est / 긴 말 most</p>
+    <p><b>10</b> <span class="k">①</span> 이유 ▶ 반에서 가장 흥미로운 학생 → the most interesting + 명사.<br>
+오답 ▶ ②·③·④·⑤ interest(관심)는 명사·동사 → 형용사 interesting이어야 함<br>
+포인트 ▶ the most + 형용사 + 명사</p>
+    <p><b>11</b> <span class="k">④</span> 이유 ▶ 세상에서 가장 좋은 개 → the best dog.<br>
+오답 ▶ ① the가 빠짐 ②·③ 비교급(than이 없음) ⑤ of가 들어갈 자리가 아님<br>
+포인트 ▶ good - better - best</p>
+    <p><b>12</b> <span class="k">③</span> 이유 ▶ 가격이 가장 싼 것은 A($125) ✔<br>
+오답 ▶ ① 가장 가벼운 것은 D ② 가장 무거운 것은 A ④ most + -est ❌, 가장 무거운 것도 아님 ⑤ cheap → cheapest, C는 가장 비쌈<br>
+포인트 ▶ 표에서 가장 작은 숫자·가장 큰 숫자 찾기</p>
+    <p><b>13</b> <span class="k">①</span> 이유 ▶ (A) Hari 57 cm 최고 → tallest (B) Duri 50 cm 최저 → shortest (but 14 kg으로 무겁다)<br>
+오답 ▶ 가장 가벼운 것은 Seri / of the three는 최상급과 함께<br>
+포인트 ▶ the 최상급 + of the three</p>
+    <p><b>14</b> <span class="k">②</span> 이유 ▶ 이 나라에서(장소) 가장 긴 → in this country.<br>
+오답 ▶ ①·③·④·⑤ 최상급의 범위를 나타내지 않음<br>
+포인트 ▶ the 최상급 + in + 장소</p>
+    <p><b>15</b> <span class="k">⑤</span> 이유 ▶ well은 불규칙 → better - best ✔<br>
+오답 ▶ ① funnier - funniest ② thinner - thinnest ③ little - less - least ④ quicker - quickest<br>
+포인트 ▶ 불규칙: good/well, bad, many/much, little</p>
+    <p><b>16</b> <span class="k">④</span> 이유 ▶ 가장 힘센 → the strongest, 우리 반(집단) → in.<br>
+오답 ▶ ①·③ my class(단수 집단) 앞은 in ② 비교급 ⑤ 1음절은 -est<br>
+포인트 ▶ in + my class / of + all the students</p>
+    <p><b>17</b> <span class="k">⑤</span> 이유 ▶ 가장 비싼 것 → the most expensive one, 내 가방들(복수) → of my bags.<br>
+오답 ▶ ① 긴 단어에 -est ❌ ②·④ 비교급 ③ the가 빠짐<br>
+포인트 ▶ the most + 형용사 + one(것)</p>
+    <p><b>18</b> <span class="k">③</span> 이유 ▶ 최악의(가장 나쁜) → bad의 최상급 the worst.<br>
+오답 ▶ ①·⑤ bad는 불규칙 ② 비교급 ④ the가 빠짐<br>
+포인트 ▶ bad - worse - worst</p>
+    <p><b>19</b> <span class="k">②</span> 이유 ▶ 최상급 앞에 the가 빠짐 → the largest hands.<br>
+오답 ▶ ① the largest ✔ ③ the most expensive ✔ ④ the best + in ✔ ⑤ funny → funniest ✔<br>
+포인트 ▶ 형용사의 최상급 앞에는 the</p>
+    <p><b>20</b> <span class="k">①</span> 이유 ▶ 하루 중 가장 좋은 때 → good의 최상급 best.<br>
+오답 ▶ ②·④ good은 불규칙 ③ 비교급 ⑤ 부사 원급<br>
+포인트 ▶ the best part of the day</p>
+  </div>
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>중산중 1학년 영어 · 실전 문법</span></div>
+</section>
+</main>
