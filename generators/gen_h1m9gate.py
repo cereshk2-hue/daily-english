@@ -75,25 +75,25 @@ def chunk(q):
         parts.append({'s': sq(s), 'ko': ko, 'ex': sq(ex)})
     nb = sum(len(re.findall(r'\{', p['s'])) for p in parts)
     return {'title': '%s번 · %s (괄호 %d개)' % (q, TOPIC[q], nb), 'parts': parts}, nb
-GROUPS = [['18', '19', '20', '21'], ['22', '23', '24'], ['26', '29', '30'], ['31', '32', '33', '34'], ['35', '36', '37'], ['38', '39', '40', '41~42']]
+GROUPS = [[q] for q in SCOPE]  # 11/19 19:20 선생님: 한 회차에 덩이가 너무 많음 → 번호 하나 = DAY 하나 (예전 gt1~gt6 묶음은 지움)
 assert sum(GROUPS, []) == SCOPE
 new, info = [], []
 for gi, G in enumerate(GROUPS):
     items, tot = [], 0
     for q in G: it, nb = chunk(q); items.append(it); tot += nb
-    lab = ['18~21번', '22~24번', '26·29·30번', '31~34번', '35~37번', '38~42번'][gi]
+    lab = G[0] + '번'
     rng = '%s · 어법·어휘 한 판' % lab
-    new.append({'id': 'gt%d' % (gi + 1), 'name': '', 'range': rng, 'story': rng + ' · 괄호 %d개, 지문마다 괄호를 모두 맞혀야 100점 (덩이 %d개)' % (tot, len(G)),
+    new.append({'id': 'g' + G[0].split('~')[0], 'name': '', 'range': rng, 'story': rng + ' · 괄호 %d개를 모두 맞혀야 100점' % tot,
                 'passage': sum((PASS[q] for q in G), []),
-                'steps': [{'type': 'gate', 'title': '어법 선택 한 판', 'guide': "한 지문이 한 덩이예요(%d덩이). 덩이마다 괄호(어법·어휘)를 모두 맞혀야 100점, 하나라도 틀리면 0점! 3번 안에 통과 못 하면 틀린 문장만 해설과 함께 연습하고 다시 도전해요." % len(G),
+                'steps': [{'type': 'gate', 'title': '어법 선택 한 판', 'guide': "괄호(어법·어휘)를 모두 맞혀야 100점, 하나라도 틀리면 0점! 3번 안에 통과 못 하면 틀린 문장만 해설과 함께 연습하고 다시 도전해요.",
                            'items': items}]})
     info.append((rng, tot))
 assert sum(t for _, t in info) == NB
-PK['days'] = [d for d in PK['days'] if not re.match(r'^gt\d+$', d['id'])] + new
+PK['days'] = [d for d in PK['days'] if not re.match(r'^(gt|g)\d+$', d['id'])] + new
 for i, d in enumerate(PK['days']): d['name'] = 'DAY %d' % (i + 1)
 src = open(path, encoding='utf-8').read(); head = src[:src.index('window.PKG')]
 tail = src[src.index('/* WRAPUP-TESTS'):] if '/* WRAPUP-TESTS' in src else ''
-if '한 판' not in head: head = head.rstrip('\n') + '\n/* 11/19: 시험범위 지문 어법·어휘 한 판 DAY gt1~gt6 맨 끝 (generators/gen_h1m9gate.py) */\n'
+if '한 판' not in head: head = head.rstrip('\n') + '\n/* 11/19: 시험범위 지문 어법·어휘 한 판 DAY g18~g41(번호 하나씩) 맨 끝 (generators/gen_h1m9gate.py) */\n'
 if tail: PK.pop('tests', None)
 write(PK, path, head)
 if tail: open(path, 'a', encoding='utf-8').write(tail)
