@@ -1,6 +1,7 @@
 # 11/19 중산중1 동아(윤정미) 5·6·7과 본문 '문장 순서' 따로 연습 DAY 3개 (맨 끝, 5 → 6 → 7)
 # 선생님: 한 줄씩은 너무 잘다 → 2문장씩 한 조각, 본문을 3덩이로. 본문 DAY(5과 L5a·L5b, 6과 d1·d2, 7과 d3·d4)의 문장을 그대로 씀
 # 제목 줄(Challenge 01 …, 'Ann Jones, a visitor' 같은 이름표)과 5과 용의자 표는 빼고 문장만. 5과는 증인별로 나눠 3덩이(❶+Ann / Carlos+Diego / Camila+❹) 단락(말하는 사람)마다 앞에서부터 2문장씩, 홀수면 그 단락 마지막 조각 1문장
+# 11/19 'tries': 3 → 앱이 한 판처럼 3번 도전 → 오답 학습 → 처음부터 다시 3번
 # 본문 탭도 조각 단위(영어 2문장 · 해석 2문장)로 넣어서 앱의 '① 우리말로 내용 흐름 먼저 → ② 영어 순서'가 그대로 동작
 import sys, json, re, subprocess
 sys.path.insert(0, '/home/claude/srcrepo/generators')
@@ -44,8 +45,8 @@ def build(gid, rng, keys, groups):
         passage += [['', ' '.join(e for e, k in p), ' '.join(k for e, k in p)] for p in ps]
     return {'id': gid, 'name': '', 'range': rng, 'story': rng + ' · 2문장씩 조각, 본문 3덩이 (문장 %d개)' % n,
             'passage': passage,
-            'steps': [{'type': 'order', 'title': '문장 순서',
-                       'guide': '본문을 3덩이로 나눴어요. 덩이마다 먼저 우리말 조각을 내용 흐름대로 놓고, 다음에 영어 조각을 본문 순서대로 눌러 배열하세요. (한 조각 = 2문장)',
+            'steps': [{'type': 'order', 'title': '문장 순서', 'tries': 3,
+                       'guide': '본문을 3덩이로 나눴어요. 덩이마다 먼저 우리말 조각을 내용 흐름대로 놓고, 다음에 영어 조각을 본문 순서대로 눌러 배열하세요. (한 조각 = 2문장) 3번 안에 맞혀야 통과, 3번 다 틀리면 오답 학습 후 처음부터 다시 3번!',
                        'items': items}]}, n
 
 o5, n5 = build('od5', '5과 본문 · 문장 순서', ('L5a', 'L5b'), [['❶', '❷'], ['❷b', '❸'], ['❸b', '❹']])
