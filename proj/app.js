@@ -1125,9 +1125,11 @@
   function ordBar(q) { /* 11/19 문장 순서 3번 도전: 틀려도 어디가 틀렸는지 안 알려 줌 → 3번 다 틀리면 오답 학습(맞는 조각만 들어감) → 처음부터 다시 3번 */
     if (!q.tries3) return '';
     gateCSS();
-    if (q.phase === 'review') return '<div class="gatebar bad"><b>3번 안에 못 맞혔어요 · 오답 학습</b><span>' + q.round + '라운드</span></div>' +
-      '<div class="guide" style="margin:0 0 6px">이번엔 바른 순서대로 눌러 보세요. 맞는 조각을 누르면 바로 들어가고, 틀린 조각은 빨갛게 표시돼요. 다 놓으면 처음부터 다시 3번 도전!</div>';
-    return '<div class="gatebar"><b>문장 순서 · 3번 도전</b><span>도전 <b>' + (q.att + 1) + '</b> / 3' + (q.round > 1 ? ' · ' + q.round + '라운드' : '') + '</span></div>';
+    var nm = '덩이 ' + ((String(q.key || '').match(/\d+/) || [''])[0]) + (q.ko ? ' · 우리말' : ' · 영어');
+    if (q.phase === 'review') return '<div class="gatebar bad"><b>3번 안에 통과하지 못했어요</b><span>' + q.round + '라운드</span></div>' +
+      '<div class="guide" style="margin:0 0 8px">오답 학습: 이번엔 바른 순서대로 눌러 보세요. 맞는 조각을 누르면 바로 들어가고, 틀린 조각은 빨갛게 표시돼요. 모두 놓으면 다시 한 판(3번) 도전!</div>';
+    return '<div class="gatebar"><b>한 판 · ' + E(nm) + '</b><span>도전 <b>' + (q.att + 1) + '</b> / 3' + (q.round > 1 ? ' · ' + q.round + '라운드' : '') + '</span></div>' +
+      '<div class="guide" style="margin:0 0 6px">조각 <b>' + q.lines.length + '개</b>를 모두 바른 순서로 놓아야 <b>100점</b>, 하나라도 틀리면 <b>0점</b>이에요. 어디가 틀렸는지는 알려 주지 않아요. 3번 안에 통과해 보세요!</div>';
   }
   function gateHTML(q) {
     gateCSS();
@@ -1220,7 +1222,7 @@
       (q.tries3 && q.phase === 'review' ? '' : '<div class="guide" style="margin:0">누른 순서대로 아래에 쌓여요. 잘못 놓았으면 다시 눌러 빼세요.</div>') +
       '<div class="tray lines" id="tray"></div><div class="pool lines" id="pool">' + q.pool.map(function (j) { return '<button class="chip' + (q.ko ? ' kochip' : ' en') + '" data-j="' + j + '">' + E(q.lines[j]) + '</button>'; }).join('') + '</div>' +
       (q.tries3 ? '<div id="omsg"></div>' : '') +
-      (q.tries3 && q.phase === 'review' ? '<div class="nextbar"><button class="btn" id="ore" disabled>다시 처음부터 도전 (3번)</button></div><button id="chk" hidden></button>' : '<div class="nextbar"><button class="btn" id="chk" disabled>확인</button></div>');
+      (q.tries3 && q.phase === 'review' ? '<div class="nextbar"><button class="btn" id="ore" disabled>다시 한 판 도전 (3번)</button></div><button id="chk" hidden></button>' : '<div class="nextbar"><button class="btn" id="chk" disabled>확인</button></div>');
     if (q.t === 'scramble' && q.gap) return '<div class="prompt"><span class="ko">우리말</span>' + E(q.ko) + '</div>' +
       '<div class="gapline en">' + E(q.pre) + ' <span class="tray inline" id="tray"></span> ' + E(q.post) + '</div><div class="pool" id="pool">' + q.pool.map(function (j) { return '<button class="chip en" data-j="' + j + '">' + E(q.toks[j]) + '</button>'; }).join('') + '</div>' +
       '<div class="nextbar"><button class="btn" id="chk" disabled>확인</button></div>';
@@ -1372,12 +1374,12 @@
           ok = picked.every(function (j, k) { return j === k; });
           if (!ok) {
             q.att++;
-            if (q.att < 3) { q.pool = shuffleDiff(q.pool); saveRun(); redrawQ(); var om = $('#omsg'); om.className = 'gmsg bad'; om.innerHTML = '<b>틀렸어요</b> · 어디가 틀렸는지는 비밀! 처음부터 다시 놓아 보세요. (남은 도전 ' + (3 - q.att) + '번)'; return; }
+            if (q.att < 3) { q.pool = shuffleDiff(q.pool); saveRun(); redrawQ(); var om = $('#omsg'); om.className = 'gmsg bad'; om.innerHTML = '<b>0점</b> · 틀린 곳이 있어요. 어디인지는 비밀! 처음부터 다시 놓아 보세요. (남은 도전 ' + (3 - q.att) + '번)'; return; }
             q.phase = 'review'; saveRun(); redrawQ(); return;
           }
           tray.classList.add('right'); chk.hidden = true; tray.querySelectorAll('.chip').forEach(function (c) { c.disabled = true; });
           var first = q.round === 1;
-          answer(first, q.ex || '', '<b>통과!</b> · ' + (first ? (q.att + 1) + '번째 도전에 맞혔어요.' : q.round + '라운드 만에 맞혔어요. (처음 3번 안에 못 해서 오답으로 남아요)'));
+          answer(first, q.ex || '', '<b>100점! 통과</b> · ' + (first ? (q.att + 1) + '번째 도전에 통과했어요.' : q.round + '라운드 만에 통과했어요. (처음 3번 안에 못 해서 오답으로 남아요)'));
           return;
         }
         if (lines) { ok = picked.every(function (j, k) { return j === k; }); extra = ok ? '' : '<b>바른 순서</b><ol style="margin:4px 0 0;padding-left:1.3em">' + q.lines.map(function (l, i) { return '<li' + (q.ko ? '' : ' class="en"') + '>' + E(l) + (q.ko && q.en ? '<br><small class="en" style="color:var(--muted)">' + E(q.en[i]) + '</small>' : '') + '</li>'; }).join('') + '</ol>'; }
