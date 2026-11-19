@@ -325,7 +325,7 @@
     qs.forEach(function (q) {
       var kos = (q.lines || []).map(function (en) { return M[koNorm(en)]; });
       var good = kos.length > 1 && kos.every(Boolean) && kos.filter(function (k, i) { return kos.indexOf(k) === i; }).length === kos.length;
-      if (good) out.push({ t: 'order', ko: true, lines: kos, pool: shuffleDiff(kos.map(function (_, j) { return j; })), key: q.key + ' 우리말', src: q.src, en: q.lines });
+      if (good) out.push(Object.assign({ t: 'order', ko: true, lines: kos, pool: shuffleDiff(kos.map(function (_, j) { return j; })), key: q.key + ' 우리말', src: q.src, en: q.lines }, q.tries3 ? { tries3: 1, att: 0, round: 1, phase: 'play' } : {}));
       if (good) q.afterKo = true;
       out.push(q);
     });
@@ -386,7 +386,7 @@
     if (step.type !== 'order' && step.type !== 'gate') idx = shuffle(idx);
     return idx.map(function (i) {
       var q = gen0({ type: step.type, items: [step.items[i]] })[0];
-      if (step.type === 'order') q.key = '세트 ' + (i + 1);
+      if (step.type === 'order') { q.key = '세트 ' + (i + 1); if (step.tries) { q.tries3 = 1; q.att = 0; q.round = 1; q.phase = 'play'; } } /* 11/19 3번 도전 → 오답 학습 → 처음부터 */
       return lab(q, step.items[i]);
     });
   }
@@ -1109,7 +1109,7 @@
   function gateCSS() {
     if (document.getElementById('gatecss')) return;
     var c = document.createElement('style'); c.id = 'gatecss';
-    c.textContent = '.gatebar{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent);border-radius:12px;padding:9px 12px;margin:0 0 8px;font-size:14px}.gatebar.bad{background:var(--bad-soft);color:var(--bad)}.gatebar.ok{background:var(--ok-soft);color:var(--ok)}' +
+    c.textContent = '.pool .chip.wrong{border-color:var(--bad);background:var(--bad-soft);color:var(--bad)}.gatebar{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent);border-radius:12px;padding:9px 12px;margin:0 0 8px;font-size:14px}.gatebar.bad{background:var(--bad-soft);color:var(--bad)}.gatebar.ok{background:var(--ok-soft);color:var(--ok)}' +
       '.gpara{line-height:2.15;font-size:15.5px}.gpara .gs{margin:0 0 10px}.gb{display:inline-flex;align-items:center;gap:2px;border:1.5px dashed var(--line);border-radius:10px;padding:1px 3px;margin:0 2px;white-space:nowrap}.gb i{font-style:normal;color:var(--muted);font-size:12px}' +
       '.gopt{font:inherit;font-size:14.5px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:1px 8px;line-height:1.6;cursor:pointer}.gopt.picked{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}' +
       '.gopt.right{border-color:var(--ok);background:var(--ok-soft);color:var(--ok);font-weight:700}.gopt.wrong{border-color:var(--bad);background:var(--bad-soft);color:var(--bad);text-decoration:line-through}.gb.done{border-style:solid;border-color:var(--ok)}' +
@@ -1121,6 +1121,15 @@
   function gateSent(p, pi, rev) {
     return '<p class="gs">' + p.segs.map(function (s, si) { return s.opts ? '<span class="gb" data-g="' + pi + ':' + si + '">' + s.opts.map(function (o, oi) { return '<button class="gopt" data-o="' + oi + '">' + E(o) + '</button>'; }).join('<i>/</i>') + '</span>' : E(s.x); }).join('') +
       '<span class="gko">' + E(p.ko) + '</span>' + (rev ? '<span class="gex" hidden>' + E(p.ex ? '해설 ▶ ' + p.ex : '') + '</span>' : '') + '</p>';
+  }
+  function ordBar(q) { /* 11/19 문장 순서 3번 도전: 틀려도 어디가 틀렸는지 안 알려 줌 → 3번 다 틀리면 오답 학습(맞는 조각만 들어감) → 처음부터 다시 3번 */
+    if (!q.tries3) return '';
+    gateCSS();
+    var nm = '덩이 ' + ((String(q.key || '').match(/\d+/) || [''])[0]) + (q.ko ? ' · 우리말' : ' · 영어');
+    if (q.phase === 'review') return '<div class="gatebar bad"><b>3번 안에 통과하지 못했어요</b><span>' + q.round + '라운드</span></div>' +
+      '<div class="guide" style="margin:0 0 8px">오답 학습: 이번엔 바른 순서대로 눌러 보세요. 맞는 조각을 누르면 바로 들어가고, 틀린 조각은 빨갛게 표시돼요. 모두 놓으면 다시 한 판(3번) 도전!</div>';
+    return '<div class="gatebar"><b>한 판 · ' + E(nm) + '</b><span>도전 <b>' + (q.att + 1) + '</b> / 3' + (q.round > 1 ? ' · ' + q.round + '라운드' : '') + '</span></div>' +
+      '<div class="guide" style="margin:0 0 6px">조각 <b>' + q.lines.length + '개</b>를 모두 바른 순서로 놓아야 <b>100점</b>, 하나라도 틀리면 <b>0점</b>이에요. 어디가 틀렸는지는 알려 주지 않아요. 3번 안에 통과해 보세요!</div>';
   }
   function gateHTML(q) {
     gateCSS();
@@ -1208,11 +1217,12 @@
       '<div class="prompt en para">' + q.rest.map(function (l, j) { return E(l) + ' <button class="mark gap" data-m="' + j + '">' + CIRC[j] + '</button> '; }).join('') + '</div>';
     if (q.t === 'odd') return '<div class="prompt en para">' + q.lines.map(function (l, j) {
       return '<button class="sent" data-m="' + j + '"><sup>' + CIRC[j] + '</sup>' + E(l) + '</button>'; }).join(' ') + '</div>';
-    if (q.t === 'order') return (q.ko ? '<div class="flowtag ko1"><b>① 우리말로 내용 흐름 먼저</b> 해석을 꼼꼼히 읽고, 글의 내용이 이어지는 순서대로 눌러요.</div>'
+    if (q.t === 'order') return ordBar(q) + (q.ko ? '<div class="flowtag ko1"><b>① 우리말로 내용 흐름 먼저</b> 해석을 꼼꼼히 읽고, 글의 내용이 이어지는 순서대로 눌러요.</div>'
         : q.afterKo ? '<div class="flowtag en2"><b>② 이제 영어 문장 순서</b> 방금 잡은 흐름대로 영어 문장을 배열해요.</div>' : '') +
-      '<div class="guide" style="margin:0">누른 순서대로 아래에 쌓여요. 잘못 놓았으면 다시 눌러 빼세요.</div>' +
+      (q.tries3 && q.phase === 'review' ? '' : '<div class="guide" style="margin:0">누른 순서대로 아래에 쌓여요. 잘못 놓았으면 다시 눌러 빼세요.</div>') +
       '<div class="tray lines" id="tray"></div><div class="pool lines" id="pool">' + q.pool.map(function (j) { return '<button class="chip' + (q.ko ? ' kochip' : ' en') + '" data-j="' + j + '">' + E(q.lines[j]) + '</button>'; }).join('') + '</div>' +
-      '<div class="nextbar"><button class="btn" id="chk" disabled>확인</button></div>';
+      (q.tries3 ? '<div id="omsg"></div>' : '') +
+      (q.tries3 && q.phase === 'review' ? '<div class="nextbar"><button class="btn" id="ore" disabled>다시 한 판 도전 (3번)</button></div><button id="chk" hidden></button>' : '<div class="nextbar"><button class="btn" id="chk" disabled>확인</button></div>');
     if (q.t === 'scramble' && q.gap) return '<div class="prompt"><span class="ko">우리말</span>' + E(q.ko) + '</div>' +
       '<div class="gapline en">' + E(q.pre) + ' <span class="tray inline" id="tray"></span> ' + E(q.post) + '</div><div class="pool" id="pool">' + q.pool.map(function (j) { return '<button class="chip en" data-j="' + j + '">' + E(q.toks[j]) + '</button>'; }).join('') + '</div>' +
       '<div class="nextbar"><button class="btn" id="chk" disabled>확인</button></div>';
@@ -1343,11 +1353,35 @@
         chk.disabled = picked.length !== (q.need || q.pool.length);
         tray.querySelectorAll('.chip').forEach(function (c) { c.onclick = function () { if (RS.answered) return; picked.splice(+c.dataset.k, 1); draw(); }; });
       };
+      var redrawQ = function () { card.innerHTML = qHTML(q) + '<div id="fb"></div>'; bindQ(q); card.scrollIntoView({ block: 'start', behavior: 'smooth' }); };
+      if (lines && q.tries3 && q.phase === 'review') {
+        pool.querySelectorAll('.chip').forEach(function (c) { c.onclick = function () {
+          if (RS.answered || c.disabled) return;
+          if (+c.dataset.j !== picked.length) { c.classList.add('wrong'); setTimeout(function () { c.classList.remove('wrong'); }, 700); return; }
+          picked.push(+c.dataset.j); draw(); tray.querySelectorAll('.chip').forEach(function (x) { x.onclick = null; });
+          if (picked.length === q.pool.length) { var re = $('#ore'); re.disabled = false; re.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+        }; });
+        $('#ore').onclick = function () { q.phase = 'play'; q.round++; q.att = 0; q.pool = shuffleDiff(q.pool); saveRun(); redrawQ(); };
+        draw(); tray.querySelectorAll('.chip').forEach(function (x) { x.onclick = null; });
+        return;
+      }
       pool.querySelectorAll('.chip').forEach(function (c) { c.onclick = function () { if (RS.answered) return; picked.push(+c.dataset.j); draw(); }; });
       draw();
       chk.onclick = function () {
         if (RS.answered) return;
         var ok, extra;
+        if (lines && q.tries3) {
+          ok = picked.every(function (j, k) { return j === k; });
+          if (!ok) {
+            q.att++;
+            if (q.att < 3) { q.pool = shuffleDiff(q.pool); saveRun(); redrawQ(); var om = $('#omsg'); om.className = 'gmsg bad'; om.innerHTML = '<b>0점</b> · 틀린 곳이 있어요. 어디인지는 비밀! 처음부터 다시 놓아 보세요. (남은 도전 ' + (3 - q.att) + '번)'; return; }
+            q.phase = 'review'; saveRun(); redrawQ(); return;
+          }
+          tray.classList.add('right'); chk.hidden = true; tray.querySelectorAll('.chip').forEach(function (c) { c.disabled = true; });
+          var first = q.round === 1;
+          answer(first, q.ex || '', '<b>100점! 통과</b> · ' + (first ? (q.att + 1) + '번째 도전에 통과했어요.' : q.round + '라운드 만에 통과했어요. (처음 3번 안에 못 해서 오답으로 남아요)'));
+          return;
+        }
         if (lines) { ok = picked.every(function (j, k) { return j === k; }); extra = ok ? '' : '<b>바른 순서</b><ol style="margin:4px 0 0;padding-left:1.3em">' + q.lines.map(function (l, i) { return '<li' + (q.ko ? '' : ' class="en"') + '>' + E(l) + (q.ko && q.en ? '<br><small class="en" style="color:var(--muted)">' + E(q.en[i]) + '</small>' : '') + '</li>'; }).join('') + '</ol>'; }
         else { var built = picked.map(function (j) { return q.toks[j]; }).join(' ') + q.punct; ok = norm(built) === norm(q.ans); extra = ok ? '' : q.gap ? '정답: <span class="en">' + E(q.pre) + ' <b>' + E(q.ans) + '</b> ' + E(q.post) + '</span>' : '정답: <b class="en">' + E(q.ans) + '</b>'; }
         tray.classList.add(ok ? 'right' : 'wrong'); chk.hidden = true;
@@ -1690,7 +1724,7 @@
     RS = { di: qs[0].dayIdx, si: 0, qs: qs, qi: 0, c: 0, wrong: [], phase: 'quiz', answered: false, practice: '오답 노트', back: 'today', noteKey: key };
     render();
   }
-  function reshuffle(q) { q = JSON.parse(JSON.stringify(q)); if (q.t === 'gate') { q.round = 1; q.tries = 0; q.miss = []; q.phase = 'play'; delete q.passed; } if (q.t === 'order' || q.t === 'scramble') q.pool = shuffleDiff(q.pool); if (q.opts && !q.fixed) q.opts = shuffle(q.opts); return q; }
+  function reshuffle(q) { q = JSON.parse(JSON.stringify(q)); if (q.t === 'gate') { q.round = 1; q.tries = 0; q.miss = []; q.phase = 'play'; delete q.passed; } if (q.t === 'order' || q.t === 'scramble') q.pool = shuffleDiff(q.pool); if (q.tries3) { q.att = 0; q.round = 1; q.phase = 'play'; } if (q.opts && !q.fixed) q.opts = shuffle(q.opts); return q; }
   /* 오답 학습: 틀린 문제를 모두 맞힐 때까지 다시 낸다. 끝내야 결과를 보낼 수 있다. 문제마다 저장돼 이어서 할 수 있다. */
   function retryWrong(di) {
     var d = P.days[di], st = DS(d.id);
