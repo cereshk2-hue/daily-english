@@ -4,6 +4,7 @@
 /* 11/1: 7과 본문 뒤 7과 문법(가정법 과거·5형식), 8과 본문 뒤 8과 문법(too~to·전체 부정) (gen/gen_j78gram.py) */
 /* 11/15: 내용 꿰뚫기 DAY c1~c6 (generators/gen_m3cont.py) */
 /* 11/18: 7·8과 본문 어법 선택 한 판 DAY gt7·gt8 맨 끝 (generators/gen_m3jgate.py) */
+/* 11/19: 학교 프린트 외부지문 Reading File 7과(일본 전통 가옥) DAY rf7 맨 끝 (generators/gen_m3rf7.py) */
 window.PKG = {
   id: 'm3-jihak-min-L7',
   school: '중3 지학사(민찬규)',
@@ -1032,6 +1033,103 @@ window.PKG = {
         { s: 'Pascal walked out of the woods. When he looked back, he saw Robin Hood {waving|to wave} at him.', ko: '파스칼은 숲에서 걸어 나왔다. 그가 뒤돌아봤을 때, 그는 로빈 후드가 그에게 손을 흔드는 것을 보았다.', ex: '지각동사 see + 목적어 + -ing(또는 동사원형) → waving' },
         { s: 'Pascal waved back and said {to himself|himself}, "It was a great adventure. How do I go back? Oh, I know. I should say the words Cogito ergo sum!"', ko: '파스칼은 손을 흔들어 답하고 혼잣말을 했다. "정말 멋진 모험이었어. 나는 어떻게 돌아가지? 아, 알겠어. 나는 코기토 에르고 숨이라는 말을 해야 해!"', ex: 'say to oneself(혼잣말하다) → to himself' }
       ] }
+    ] }
+  ] },
+  { id: 'rf7', name: 'DAY 27', range: '7과 외부지문 · Reading File (일본 전통 가옥)', story: '학교 프린트 맨 뒷장 외부지문 · 한 줄씩 꼼꼼하게', passage: [['#', '7과 Reading File · 외부지문 (학교 프린트)', ''], ['', 'A Traditional Japanese House', '일본의 전통 가옥'], ['', 'What would it be like to live in a traditional Japanese house?', '전통 일본 가옥에 산다면 어떨까?'], ['', 'If you lived there, you would have to take off your shoes in the genkan, an entrance hall, before entering the house.', '만약 당신이 그곳에 산다면, 집에 들어가기 전에 현관인 겐칸에서 신발을 벗어야 할 것이다.'], ['', 'In the house, many Japanese do not use chairs.', '집 안에서 많은 일본 사람들은 의자를 사용하지 않는다.'], ['', 'Instead, they sit directly on tatami mats that are made from woven grass.', '대신에, 그들은 엮은 풀로 만들어진 다다미 매트 위에 바로 앉는다.'], ['', 'Rooms are divided by shoji, portable sliding doors that are made from wood and thin paper.', '방은 나무와 얇은 종이로 만들어진 이동식 미닫이문인 쇼지로 나뉜다.'], ['', 'For large gatherings, these doors can be removed to create one large room.', '큰 모임을 위해, 이 문들은 하나의 큰 방을 만들기 위해 떼어 낼 수 있다.'], ['', 'When the weather gets cold, people prefer to sit at a kotatsu, a heated table, and put their legs in it.', '날씨가 추워지면, 사람들은 열이 나는 탁자인 고타쓰에 앉아 그 안에 다리를 넣는 것을 좋아한다.'], ['', 'Keeping their body warm, Japanese have meals, drink tea, or read books at the table.', '몸을 따뜻하게 유지하면서, 일본 사람들은 그 탁자에서 식사를 하거나, 차를 마시거나, 책을 읽는다.'], ['', 'In summer, heavy rain can cause flooding.', '여름에는 폭우가 홍수를 일으킬 수 있다.'], ['', 'The floor of the house is raised a little off the ground to keep the living area dry and safe from flooding.', '집의 바닥은 생활 공간을 홍수로부터 건조하고 안전하게 유지하기 위해 땅에서 약간 높여져 있다.'], ['', 'The house also has sloped roofs because they keep rainwater flowing off easily.', '그 집은 또한 경사진 지붕을 가지고 있는데, 그것이 빗물을 쉽게 흘러내리게 하기 때문이다.'], ['', 'The roofs are covered with kawara tiles.', '지붕은 가와라 기와로 덮여 있다.'], ['', 'The strong kawara tiles are not only water-resistant but also fireproof.', '튼튼한 가와라 기와는 방수가 될 뿐만 아니라 불에도 강하다.']], steps: [
+    { type: 'vocab', title: '핵심어휘·숙어', quizN: 15, items: [['traditional', '전통적인'], ['take off', '(신발 등을) 벗다'], ['entrance hall', '현관'], ['enter', '들어가다'], ['instead', '대신에'], ['directly', '바로, 직접'], ['woven', '짠, 엮어진 (weave-wove-woven)'], ['grass', '풀'], ['divide', '나누다'], ['portable', '휴대용의, 이동 가능한'], ['sliding door', '미닫이문'], ['thin', '얇은'], ['gathering', '모임'], ['remove', '제거하다, 떼어 내다'], ['create', '만들다'], ['prefer to', '~하는 것을 더 좋아하다'], ['heated', '열이 나는, 데워진'], ['keep ~ warm', '~을 따뜻하게 유지하다'], ['heavy rain', '폭우'], ['flooding', '홍수'], ['raise', '올리다, 높이다'], ['off the ground', '땅에서 떨어져'], ['living area', '생활 공간'], ['safe from', '~로부터 안전한'], ['sloped', '경사진'], ['flow off', '흘러내리다'], ['be covered with', '~로 덮여 있다'], ['tile', '기와, 타일'], ['water-resistant', '방수의'], ['fireproof', '내화성의, 불에 강한'], ['not only A but also B', 'A뿐만 아니라 B도']] },
+    { type: 'pick', title: '어휘선택', guide: '문맥에 맞는 낱말을 고르세요.', items: [
+      { s: 'What would it be like to live in a {traditional|modern} Japanese house?', ex: 'traditional: 전통적인 — 겐칸·다다미·쇼지 같은 옛 방식' },
+      { s: 'If you lived there, you would have to {take off|put on} your shoes in the genkan, an entrance hall, before entering the house.', ex: '집에 들어가기 전에 신발을 벗는다(take off)' },
+      { s: 'In the house, many Japanese do not use {chairs|floors}.', ex: '의자를 쓰지 않고 대신 다다미 위에 바로 앉는다' },
+      { s: 'Instead, they sit {directly|rarely} on tatami mats that are made from woven grass.', ex: 'directly: 바로, 직접 (rarely: 거의 ~않다)' },
+      { s: 'Rooms are divided by shoji, {portable|heavy} sliding doors that are made from wood and thin paper.', ex: 'portable: 이동 가능한 — 떼어 낼 수 있는 가벼운 문' },
+      { s: 'For large gatherings, these doors can be {removed|locked} to create one large room.', ex: '문을 떼어 내야(removed) 큰 방 하나가 된다' },
+      { s: 'When the weather gets {cold|hot}, people prefer to sit at a kotatsu, a heated table, and put their legs in it.', ex: '열이 나는 탁자에 다리를 넣는다 → 추울 때' },
+      { s: 'In summer, heavy rain can cause {flooding|drought}.', ex: '폭우 → 홍수(flooding), drought는 가뭄' },
+      { s: 'The house also has {sloped|flat} roofs because they keep rainwater flowing off easily.', ex: '빗물이 흘러내리려면 경사진(sloped) 지붕' },
+      { s: 'The strong kawara tiles are not only water-resistant but also {fireproof|flammable}.', ex: 'fireproof: 불에 강한 (flammable: 불에 잘 타는)' }
+    ] },
+    { type: 'tf', title: 'T/F 내용 확인', guide: '본문 내용과 일치하면 T, 다르면 F를 고르세요.', items: [['People take off their shoes before entering a traditional Japanese house.', true, 'take off your shoes in the genkan ... before entering the house'], ['In a traditional house, many Japanese sit on chairs.', false, 'many Japanese do not use chairs → 다다미 위에 바로 앉는다'], ['Tatami mats are made from woven grass.', true, 'tatami mats that are made from woven grass'], ['Shoji doors are made from stone and glass.', false, 'made from wood and thin paper'], ['Shoji doors can be taken away to make one large room.', true, 'these doors can be removed to create one large room'], ['People use a kotatsu to stay cool in summer.', false, 'When the weather gets cold ... a heated table'], ['The floor is raised to keep the living area safe from flooding.', true, 'raised a little off the ground to keep the living area dry and safe from flooding'], ['Kawara tiles catch fire easily.', false, 'not only water-resistant but also fireproof']] },
+    { type: 'mc', title: '일치·불일치', guide: '선택지는 본문 표현을 쉬운 말로 조금 바꿔 썼어요. 해설의 "바꿔 쓴 표현"을 꼭 확인하세요.', items: [
+      { n: 'Reading File', box: ['Reading File'], q: '글의 내용과 일치하지 <u>않는</u> 것은?', opts: ['Shoji doors are made from wood and thick glass.', 'People take off their shoes in the genkan.', 'Tatami mats are made of woven grass.', 'A kotatsu is a table that keeps people warm.', 'The roofs are covered with kawara tiles.'], ex: '정답 근거: shoji, portable sliding doors that are made from wood and thin paper\n· 바꿔 쓴 표현: made from = made of · a heated table = a table that keeps people warm\n· thick : 두꺼운 ↔ thin : 얇은', per: [['쇼지 문은 나무와 두꺼운 유리로 만들어진다.', 'made from wood and thin paper', '불일치 → 나무와 얇은 종이'], ['사람들은 겐칸에서 신발을 벗는다.', 'take off your shoes in the genkan', '일치'], ['다다미 매트는 엮은 풀로 만들어진다.', 'made from woven grass', '일치 (made from = made of)'], ['고타쓰는 사람들을 따뜻하게 해 주는 탁자다.', 'a heated table', '일치'], ['지붕은 가와라 기와로 덮여 있다.', 'The roofs are covered with kawara tiles', '일치']] },
+      { n: 'Reading File', box: ['Reading File'], q: '빈칸에 들어갈 말로 글의 내용과 일치하는 것은? (학교 프린트 1번)<br><b>In Japan, people ________________.</b>', opts: ['can remove the sliding doors to create one large room for a gathering', 'enter their house without taking off their shoes', 'often use chairs in the rooms', 'prefer to sit on tatami mats that are made from woven plastic', 'like to sit at a kotatsu in the hot summer to cool their body'], ex: '정답 근거: For large gatherings, these doors can be removed to create one large room.\n· 오답: 신발을 벗고 들어감 / 의자를 안 씀 / 다다미는 풀(grass)로 만듦 / 고타쓰는 추울 때 몸을 데움', per: [['모임을 위해 미닫이문을 떼어 내 큰 방 하나를 만들 수 있다.', 'these doors can be removed to create one large room', '일치'], ['신발을 벗지 않고 집에 들어간다.', 'take off your shoes in the genkan ... before entering the house', '불일치 → 신발을 벗는다'], ['방에서 의자를 자주 사용한다.', 'many Japanese do not use chairs', '불일치 → 의자를 안 씀'], ['엮은 플라스틱으로 만든 다다미에 앉는 것을 좋아한다.', 'made from woven grass', '불일치 → 풀로 만듦'], ['더운 여름에 몸을 식히려고 고타쓰에 앉는다.', 'When the weather gets cold ... a heated table', '불일치 → 추울 때 몸을 데움']] }
+    ] },
+    { type: 'pick', title: '어법선택', guide: '어법상 알맞은 것을 고르세요.', items: [
+      { s: 'What would it be like to live in a {traditional|tradition} Japanese house?', ex: '명사 house를 꾸미는 형용사 → traditional' },
+      { s: 'If you {lived|live} there, you would have to take off your shoes in the genkan, an entrance hall, before entering the house.', ex: '가정법 과거: If + 주어 + 과거동사 → lived' },
+      { s: 'If you lived there, you {would|will} have to take off your shoes in the genkan, an entrance hall, before entering the house.', ex: '가정법 과거 주절: would + 동사원형' },
+      { s: 'If you lived there, you would have to take off your shoes in the genkan, an entrance hall, before {entering|enter} the house.', ex: '전치사 before + 동명사 → entering' },
+      { s: 'Instead, they sit directly on tatami mats {that|what} are made from woven grass.', ex: '선행사 tatami mats가 있음 → 관계대명사 that (what은 선행사 없이)' },
+      { s: 'Instead, they sit directly on tatami mats that are made from {woven|weaving} grass.', ex: '풀이 \'엮어진\' → 과거분사 woven' },
+      { s: 'Rooms {are divided|divide} by shoji, portable sliding doors that are made from wood and thin paper.', ex: '방이 쇼지에 의해 \'나뉘는\' 수동 → are divided' },
+      { s: 'For large gatherings, these doors can {be removed|remove} to create one large room.', ex: '문이 \'떼어지는\' 수동 → can be removed' },
+      { s: 'When the weather gets {cold|coldly}, people prefer to sit at a kotatsu, a heated table, and put their legs in it.', ex: 'get + 형용사 보어(~해지다) → cold' },
+      { s: 'When the weather gets cold, people prefer to sit at a kotatsu, a heated table, and {put|putting} their legs in it.', ex: 'prefer to sit and (to) put — sit과 나란히 → put' },
+      { s: '{Keeping|Kept} their body warm, Japanese have meals, drink tea, or read books at the table.', ex: '일본 사람들이 몸을 따뜻하게 \'유지하는\' 능동 분사구문 → Keeping' },
+      { s: 'Keeping their body {warm|warmly}, Japanese have meals, drink tea, or read books at the table.', ex: 'keep + 목적어 + 형용사 보어 → warm' },
+      { s: 'The floor of the house {is raised|raises} a little off the ground to keep the living area dry and safe from flooding.', ex: '바닥이 \'높여진\' 수동 → is raised' },
+      { s: 'The floor of the house is raised a little off the ground to keep the living area {dry|dryly} and safe from flooding.', ex: 'keep + 목적어 + 형용사 보어 → dry (safe와 나란히)' },
+      { s: 'The house also has sloped roofs because they keep rainwater {flowing|to flow} off easily.', ex: 'keep + 목적어 + -ing(계속 ~하게 하다) → flowing' },
+      { s: 'The roofs are covered {with|by} kawara tiles.', ex: 'be covered with: ~로 덮여 있다' },
+      { s: 'The strong kawara tiles are not only water-resistant {but|and} also fireproof.', ex: 'not only A but also B → but' }
+    ] },
+    { type: 'verb', title: '동사변형', guide: '( ) 안의 동사를 알맞은 형태로 바꿔 쓰세요.', items: [
+      { s: 'If you ___ there, you would have to take off your shoes in the genkan, an entrance hall, before entering the house.', v: 'live', a: ['lived'], ex: '가정법 과거 → lived' },
+      { s: 'If you lived there, you would have to take off your shoes in the genkan, an entrance hall, before ___ the house.', v: 'enter', a: ['entering'], ex: '전치사 before + 동명사' },
+      { s: 'Instead, they sit directly on tatami mats that are made from ___ grass.', v: 'weave', a: ['woven'], ex: '\'엮어진\' 풀 → 과거분사 woven (weave-wove-woven)' },
+      { s: 'Rooms are ___ by shoji, portable sliding doors that are made from wood and thin paper.', v: 'divide', a: ['divided'], ex: '수동태 be + 과거분사' },
+      { s: 'For large gatherings, these doors can be ___ to create one large room.', v: 'remove', a: ['removed'], ex: 'can be + 과거분사(수동)' },
+      { s: '___ their body warm, Japanese have meals, drink tea, or read books at the table.', v: 'keep', a: ['Keeping', 'keeping'], ex: '능동 분사구문 → Keeping' },
+      { s: 'The house also has sloped roofs because they keep rainwater ___ off easily.', v: 'flow', a: ['flowing'], ex: 'keep + 목적어 + -ing' },
+      { s: 'The roofs are ___ with kawara tiles.', v: 'cover', a: ['covered'], ex: 'be covered with: ~로 덮여 있다' }
+    ] },
+    { type: 'error', title: '오류찾기', guide: '어법상 틀린 곳을 고르세요.', items: [
+      { s: 'If you [[lived]] there, you [[will]] have to take off your shoes in the genkan, an entrance hall, before [[entering]] the [[house]].', w: 1, fix: 'would', ex: '가정법 과거 주절 → would + 동사원형' },
+      { s: 'Instead, they sit [[directly]] on tatami mats [[what]] [[are]] made from [[woven]] grass.', w: 1, fix: 'that', ex: '선행사 tatami mats → 관계대명사 that' },
+      { s: 'For large gatherings, these doors [[can]] [[remove]] [[to create]] one large [[room]].', w: 1, fix: 'be removed', ex: '문이 \'떼어지는\' 수동 → can be removed' },
+      { s: 'Keeping their body [[warmly]], Japanese [[have]] meals, [[drink]] tea, or [[read]] books at the table.', w: 0, fix: 'warm', ex: 'keep + 목적어 + 형용사 보어 → warm' },
+      { s: 'The floor of the house [[is raised]] a little off the ground [[to keep]] the living area [[dryly]] and [[safe]] from flooding.', w: 2, fix: 'dry', ex: 'keep + 목적어 + 형용사 보어 → dry' },
+      { s: 'The house also has [[sloped]] roofs [[because of]] they keep rainwater [[flowing]] off [[easily]].', w: 1, fix: 'because', ex: '뒤에 주어 + 동사(절) → 접속사 because' },
+      { s: 'The strong kawara tiles [[are]] not only [[water-resistant]] [[and]] also [[fireproof]].', w: 2, fix: 'but', ex: 'not only A but also B' }
+    ] },
+    { type: 'scramble', title: '본문 스크램블 (13문장 전부)', guide: '우리말에 맞게 단어를 눌러 문장을 완성하세요. 본문 한 줄씩 전부 나와요.', items: [
+      { ko: '전통 일본 가옥에 산다면 어떨까?', en: 'What would it be like to live in a traditional Japanese house?' },
+      { ko: '만약 당신이 그곳에 산다면, 집에 들어가기 전에 현관인 겐칸에서 신발을 벗어야 할 것이다.', en: 'If you lived there, you would have to take off your shoes in the genkan, an entrance hall, before entering the house.' },
+      { ko: '집 안에서 많은 일본 사람들은 의자를 사용하지 않는다.', en: 'In the house, many Japanese do not use chairs.' },
+      { ko: '대신에, 그들은 엮은 풀로 만들어진 다다미 매트 위에 바로 앉는다.', en: 'Instead, they sit directly on tatami mats that are made from woven grass.' },
+      { ko: '방은 나무와 얇은 종이로 만들어진 이동식 미닫이문인 쇼지로 나뉜다.', en: 'Rooms are divided by shoji, portable sliding doors that are made from wood and thin paper.' },
+      { ko: '큰 모임을 위해, 이 문들은 하나의 큰 방을 만들기 위해 떼어 낼 수 있다.', en: 'For large gatherings, these doors can be removed to create one large room.' },
+      { ko: '날씨가 추워지면, 사람들은 열이 나는 탁자인 고타쓰에 앉아 그 안에 다리를 넣는 것을 좋아한다.', en: 'When the weather gets cold, people prefer to sit at a kotatsu, a heated table, and put their legs in it.' },
+      { ko: '몸을 따뜻하게 유지하면서, 일본 사람들은 그 탁자에서 식사를 하거나, 차를 마시거나, 책을 읽는다.', en: 'Keeping their body warm, Japanese have meals, drink tea, or read books at the table.' },
+      { ko: '여름에는 폭우가 홍수를 일으킬 수 있다.', en: 'In summer, heavy rain can cause flooding.' },
+      { ko: '집의 바닥은 생활 공간을 홍수로부터 건조하고 안전하게 유지하기 위해 땅에서 약간 높여져 있다.', en: 'The floor of the house is raised a little off the ground to keep the living area dry and safe from flooding.' },
+      { ko: '그 집은 또한 경사진 지붕을 가지고 있는데, 그것이 빗물을 쉽게 흘러내리게 하기 때문이다.', en: 'The house also has sloped roofs because they keep rainwater flowing off easily.' },
+      { ko: '지붕은 가와라 기와로 덮여 있다.', en: 'The roofs are covered with kawara tiles.' },
+      { ko: '튼튼한 가와라 기와는 방수가 될 뿐만 아니라 불에도 강하다.', en: 'The strong kawara tiles are not only water-resistant but also fireproof.' }
+    ] },
+    { type: 'order', title: '문장순서', guide: '문장을 본문 순서대로 눌러서 배열하세요.', items: [
+      { lines: ['What would it be like to live in a traditional Japanese house?', 'If you lived there, you would have to take off your shoes in the genkan, an entrance hall, before entering the house.', 'In the house, many Japanese do not use chairs.', 'Instead, they sit directly on tatami mats that are made from woven grass.'] },
+      { lines: ['Rooms are divided by shoji, portable sliding doors that are made from wood and thin paper.', 'For large gatherings, these doors can be removed to create one large room.', 'When the weather gets cold, people prefer to sit at a kotatsu, a heated table, and put their legs in it.', 'Keeping their body warm, Japanese have meals, drink tea, or read books at the table.'] },
+      { lines: ['The floor of the house is raised a little off the ground to keep the living area dry and safe from flooding.', 'The house also has sloped roofs because they keep rainwater flowing off easily.', 'The roofs are covered with kawara tiles.', 'The strong kawara tiles are not only water-resistant but also fireproof.'] }
+    ] },
+    { type: 'insert', title: '문장삽입', guide: '주어진 문장이 들어가기에 가장 알맞은 곳을 고르세요.', items: [
+      { lines: ['In the house, many Japanese do not use chairs.', 'Instead, they sit directly on tatami mats that are made from woven grass.', 'Rooms are divided by shoji, portable sliding doors that are made from wood and thin paper.', 'For large gatherings, these doors can be removed to create one large room.'], given: 1, ex: '\'의자를 쓰지 않는다\' 뒤에 Instead(대신에) 다다미에 바로 앉는다가 온다.' },
+      { lines: ['When the weather gets cold, people prefer to sit at a kotatsu, a heated table, and put their legs in it.', 'Keeping their body warm, Japanese have meals, drink tea, or read books at the table.', 'In summer, heavy rain can cause flooding.', 'The floor of the house is raised a little off the ground to keep the living area dry and safe from flooding.'], given: 1, ex: 'Keeping their body warm ... at the table — the table은 앞 문장의 kotatsu(열이 나는 탁자).' },
+      { lines: ['The floor of the house is raised a little off the ground to keep the living area dry and safe from flooding.', 'The house also has sloped roofs because they keep rainwater flowing off easily.', 'The roofs are covered with kawara tiles.', 'The strong kawara tiles are not only water-resistant but also fireproof.'], given: 2, ex: 'sloped roofs → The roofs are covered with kawara tiles → The strong kawara tiles 순서로 이어진다.' }
+    ] },
+    { type: 'odd', title: '어색한 문장', guide: '글의 흐름과 관계없는 문장을 고르세요.', items: [
+      { lines: ['If you lived there, you would have to take off your shoes in the genkan, an entrance hall, before entering the house.', 'In the house, many Japanese do not use chairs.', 'Most Japanese houses have big sofas in the living room.', 'Instead, they sit directly on tatami mats that are made from woven grass.'], odd: 2, ex: '의자를 쓰지 않고 바닥에 앉는다는 내용과 반대된다.' },
+      { lines: ['In summer, heavy rain can cause flooding.', 'The floor of the house is raised a little off the ground to keep the living area dry and safe from flooding.', 'In winter, people often swim in the river near the house.', 'The house also has sloped roofs because they keep rainwater flowing off easily.'], odd: 2, ex: '여름 폭우·홍수 대비 이야기와 관계없다.' }
+    ] },
+    { type: 'blank', title: '빈칸추론', guide: '빈칸에 들어갈 말로 가장 알맞은 것을 고르세요.', items: [
+      { s: 'The floor of the house is raised a little off the ground to ____ from flooding.', opts: ['keep the living area dry and safe', 'keep the living area wet', 'make the floor cold', 'let the rain come inside'], ex: '홍수로부터 생활 공간을 건조하고 안전하게 유지하려고 바닥을 높인다. (학교 프린트 2번: keep the living area dry and safe)' },
+      { s: 'When the weather gets cold, people prefer to sit at a kotatsu, ____, and put their legs in it.', opts: ['a heated table', 'a cold drink', 'a sliding door', 'a sloped roof'], ex: '고타쓰 = 열이 나는 탁자(a heated table), 추울 때 다리를 넣는다.' },
+      { s: 'The house also has sloped roofs because they keep rainwater ____ easily.', opts: ['flowing off', 'staying on the roof', 'coming inside', 'freezing'], ex: '경사진 지붕 → 빗물이 쉽게 흘러내린다(flowing off).' }
+    ] },
+    { type: 'mc', title: '핵심문법', guide: '알맞은 답을 고르세요.', items: [
+      { q: '빈칸에 알맞은 것은?<br><b>If you ______ there, you would have to take off your shoes.</b>', opts: ['lived', 'live', 'will live', 'living'], ex: '가정법 과거: If + 주어 + 과거동사, 주어 + would + 동사원형' },
+      { q: '빈칸에 알맞은 것은?<br><b>The floor is raised to keep the living area ______ and safe.</b>', opts: ['dry', 'dryly', 'to dry', 'dries'], ex: 'keep + 목적어 + 형용사 보어 (7과 문법 ③)' },
+      { q: '"튼튼한 가와라 기와는 방수가 될 뿐만 아니라 불에도 강하다."를 바르게 영작한 것은?', opts: ['The strong kawara tiles are not only water-resistant but also fireproof.', 'The strong kawara tiles are not only water-resistant and also fireproof.', 'The strong kawara tiles are only not water-resistant but also fireproof.', 'The strong kawara tiles are both water-resistant or fireproof.'], ex: 'not only A but also B: A뿐만 아니라 B도' }
     ] }
   ] }
   ]
