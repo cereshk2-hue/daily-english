@@ -172,8 +172,19 @@ def parse(fk):
 META = [('1', 'bimi-1819', '18·19번'), ('2', 'bimi-2021', '20·21번'), ('3', 'bimi-2223', '22·23번'), ('4', 'bimi-24', '24번')]
 tests = []; GR = {}
 GFORCE, GSOFT = set(), set()
+# 11/19 선생님: 중산고1 시험에 서술형이 안 나옴 → 서술형 빼기. 22·23은 종이 시험지를 이미 나눠 줌(서술형 35~46이 맨 뒤라 앞 번호 그대로) → OMR만,
+#   24번은 시험지·OMR 모두 서술형 빼고 번호 다시 매김. 18·19·20·21은 이미 끝난 시험이라 그대로
+NOWRITE = {'3': 'keep', '4': 'renum'}
 for fk, tid, sh in META:
     its, grs = parse(fk)
+    if fk in NOWRITE:
+        kept = [i for i in its if i.get('kind') != 'write']
+        if NOWRITE[fk] == 'keep': assert [i['n'] for i in kept] == [str(k) for k in range(1, len(kept) + 1)], 'write not trailing'
+        else:
+            for k, i in enumerate(kept, 1): i['n'] = str(k)
+        its = kept
+        for i in its:   # 첫 문항 위에 붙어 있던 출처 줄(http://edu-lab.kr 교육연구소, '/') 빼기
+            if i.get('body'): i['body'] = re.sub(r'^(?:(?:[-]*/[-]*|http://edu-lab\.kr 교육연구소)?<br>)+', '', i['body'])
     GR[tid] = {str(k): v for k, v in grs.items()}
     tests.append({'id': tid, 'kind': 'bimi', 'title': '비밀노트 변형문제 ' + sh, 'short': '비밀노트 ' + sh, 'school': '중산고 1학년', 'minutes': 50, 'items': its})
     mc = [i for i in its if i.get('kind') != 'write']

@@ -70,7 +70,8 @@ def paper(t, G, nums):
     head = ('<div class="hd"><span><b>고1 영어</b> · 중산고 1학년</span><span>2025학년도 9월 고1 전국연합학력평가 %s 변형</span></div>' % nums +
         '<div class="tt"><span class="l">비밀노트 변형문제</span><h1>%s</h1><span class="r">%d문항</span></div>' % (nums, len(its)) +
         '<div class="idrow"><div>학년·반</div><div>1학년 &nbsp; 반</div><div>번호</div><div>번</div><div>이름</div><div></div><div>점수</div><div></div></div>' +
-        '<div class="notice"><p><b>※ 유의사항</b> 선택형 %d문항 · 서술형 %d문항. ‘모두 고르시오’ 문항은 정답을 모두 고릅니다.</p><p>답은 데일리 영어 앱 ‘비밀노트 변형문제’ 탭에 같은 번호로 입력해요. 서술형은 시험지에 쓴 답을 그대로 옮겨 적어요.</p></div>' % (len(its) - nw, nw))
+        ('<div class="notice"><p><b>※ 유의사항</b> 선택형 %d문항 · 서술형 %d문항. ‘모두 고르시오’ 문항은 정답을 모두 고릅니다.</p><p>답은 데일리 영어 앱 ‘비밀노트 변형문제’ 탭에 같은 번호로 입력해요. 서술형은 시험지에 쓴 답을 그대로 옮겨 적어요.</p></div>' % (len(its) - nw, nw) if nw else
+         '<div class="notice"><p><b>※ 유의사항</b> 선택형 %d문항. ‘모두 고르시오’ 문항은 정답을 모두 고릅니다.</p><p>답은 데일리 영어 앱 ‘비밀노트 변형문제’ 탭에 같은 번호로 입력해요.</p></div>' % len(its)))
     return head + '<div class="cols">' + ''.join(q) + '</div>'
 def teacher(t, nums):
     its = t['items']
