@@ -1,0 +1,360 @@
+<title>중산중1 실전 문법 2차</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+/* A4 시험지 (10/31): 스크립트가 문항을 A4 쪽(210×297mm)에 왼쪽 단 → 오른쪽 단 → 다음 쪽 순서로 직접 나눠 담고 쪽 번호를 붙인다.
+   화면·인쇄·PDF 어디서나 같은 쪽 구성. 좁은 화면에서는 쪽 전체를 축소해서 보여 준다. */
+.q, .exp p { break-inside: avoid }
+body { font-size: 9.6pt }
+.stem { font-size: 9.8pt } .stem .src { font-size: 8pt }
+.box, .given, .sum { font-size: 9.4pt; line-height: 1.46; padding: 2.2mm 2.8mm }
+.ol, .ol.en li { font-size: 9.3pt; line-height: 1.38 }
+table.ch { font-size: 9.2pt } table.ch th { font-size: 8.4pt }
+.q { margin-bottom: 3.6mm; gap: 1.6mm }
+.exp { font-size: 7.8pt; line-height: 1.36; margin-top: 3mm } .exp p { margin-bottom: 1mm }
+.top, .notice, .idrow, .title .when, .foot { font-size: 8.6pt }
+.title h1 { font-size: 18pt } .title h1 small { font-size: 8.6pt }
+.keygrid div { font-size: 9pt; padding: 1.2mm 0 } .keygrid b { font-size: 10.5pt }
+.page { width: 210mm; max-width: 100%; padding: 11mm }
+.sheets { display: grid; justify-content: center; gap: 16px }
+.sheet { width: 210mm; height: 297mm; padding: 11mm; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); overflow: hidden }
+/* 내용 영역 188×256mm: A4 여백 0~20mm, Letter 기본 여백에서도 한 장에 들어가는 크기 */
+.sheet > .inner { width: 188mm; height: 256mm; display: flex; flex-direction: column; overflow: hidden }
+.inner > .top.run { padding-bottom: 2mm; border-bottom: 1px solid var(--rule); margin-bottom: 1mm }
+.cols { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr);
+  column-gap: 6mm; margin-top: 4mm; position: relative }
+.cols::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid var(--rule) }
+.cols > .col { columns: auto !important; margin: 0 !important; min-height: 0; overflow: hidden }
+.inner > .foot { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center }
+.inner > .foot span:last-child { text-align: right }
+.inner > .foot .pno { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums }
+@page { size: A4; margin: 12mm 11mm }
+@media print {
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  body { padding: 0 !important; margin: 0 }
+  .sheets { display: block }
+  .sheet { zoom: 1 !important; width: auto; height: auto; padding: 0; margin: 0; box-shadow: none; overflow: visible; break-after: page; page-break-after: always }
+  .sheet:last-child { break-after: auto; page-break-after: auto }
+  .sheet > .inner { margin: 0 auto }
+  .page { max-width: none; margin: 0; box-shadow: none; break-after: page }
+}
+</style>
+<script>
+/* A4 쪽 나누기: 왼쪽 단 → 오른쪽 단 → 다음 쪽, 쪽 번호 n / 전체 */
+(function () {
+  function build() {
+    var main = document.querySelector('main'); if (!main || document.querySelector('.sheets')) return;
+    var secs = [].slice.call(main.querySelectorAll('section.page'));
+    var out = document.createElement('div'); out.className = 'sheets'; main.appendChild(out);
+    var pages = [];
+    secs.forEach(function (sec) {
+      var box = sec.querySelector('.qs, .exp'); if (!box) return;
+      var items = [].slice.call(box.children), foot = sec.querySelector('.foot'), top = sec.querySelector('.top');
+      var head = [].slice.call(sec.children).filter(function (e) { return e !== box && e !== foot && !(e.classList.contains('keygrid') && false); });
+      var cols, ci, first = true;
+      function newPage() {
+        var sh = document.createElement('div'); sh.className = 'sheet'; var pg = document.createElement('div'); pg.className = 'inner'; sh.appendChild(pg);
+        if (first) head.forEach(function (e) { pg.appendChild(e); });
+        else { var t = top.cloneNode(true); t.classList.add('run'); pg.appendChild(t); }
+        first = false;
+        cols = document.createElement('div'); cols.className = 'cols';
+        for (var i = 0; i < 2; i++) { var c = document.createElement('div'); c.className = 'col ' + box.className; cols.appendChild(c); }
+        pg.appendChild(cols);
+        var f = foot.cloneNode(true), sp = f.querySelectorAll('span'), mid = document.createElement('span'); mid.className = 'pno';
+        f.insertBefore(mid, sp[1] || null); pg.appendChild(f);
+        out.appendChild(sh); pages.push(pg); ci = 0;
+      }
+      function over(c) { return c.scrollHeight > c.clientHeight + 1; }
+      newPage();
+      items.forEach(function (it) {
+        var c = cols.children[ci]; c.appendChild(it);
+        if (over(c) && c.children.length > 1) {
+          c.removeChild(it); ci++;
+          if (ci > 1) newPage();
+          cols.children[ci].appendChild(it);
+        }
+      });
+      sec.parentNode.removeChild(sec);
+    });
+    pages.forEach(function (p, i) { p.querySelector('.pno').textContent = (i + 1) + ' / ' + pages.length; });
+    fit();
+  }
+  function fit() {
+    var w = document.documentElement.clientWidth - 24, s = Math.min(1, w / 794);
+    [].forEach.call(document.querySelectorAll('.sheet'), function (p) { p.style.zoom = s < 1 ? s : ''; });
+  }
+  function go() { (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(build, build); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  window.addEventListener('resize', function () { if (document.querySelector('.sheets')) fit(); });
+})();
+</script>
+
+
+<main>
+<section class="page">
+  <div class="top"><span>중1 영어 동아(윤정미) 접속사 when · before · after · <b>2차</b></span><span>중산중학교 1학년 · 내신 대비</span></div>
+  <div class="title">
+    <div class="g">영어</div>
+    <h1>실전 문법 2차<small>접속사 when · before · after</small></h1>
+    <div class="when">20문항 · 각 5점<br>제한 시간 30분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">범위: 시간 접속사 when(~할 때) · before(~하기 전에) · after(~한 후에), 의문사 when(언제)과 구별, 시간 부사절의 현재 시제. 문장 전체를 끝까지 읽고 고르세요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>다음 문장과 뜻이 같은 것은?<span class="src">[before · after]</span></div>
+    <div class="box"><p>The movie ended after they fell asleep.</p></div>
+    <ol class="ol en"><li><span>①</span><span>They fell asleep after the movie ended.</span></li><li><span>②</span><span>The movie ended before they fell asleep.</span></li><li><span>③</span><span>After the movie ended, they fell asleep.</span></li><li><span>④</span><span>They fell asleep when the movie will end.</span></li><li><span>⑤</span><span>They fell asleep before the movie ended.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[before · after]</span></div>
+    <div class="box"><p>My work begins <span class="blank"></span> the shooting is over.</p></div>
+    <ol class="ol en"><li><span>①</span><span>before</span></li><li><span>②</span><span>after</span></li><li><span>③</span><span>but</span></li><li><span>④</span><span>or</span></li><li><span>⑤</span><span>so</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>다음 중 어법상 <u>틀린</u> 것은?<span class="src">[시제]</span></div>
+    <ol class="ol en"><li><span>①</span><span>When school is over, I go home.</span></li><li><span>②</span><span>I will be 16 when I graduate from middle school.</span></li><li><span>③</span><span>Before you go out, close the windows.</span></li><li><span>④</span><span>When he will grow up, he wants to be a rock star.</span></li><li><span>⑤</span><span>After she had lunch, she took a walk.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[시제]</span></div>
+    <div class="box"><p>I will call you after I <span class="blank"></span> my homework.</p></div>
+    <ol class="ol en"><li><span>①</span><span>finish</span></li><li><span>②</span><span>will finish</span></li><li><span>③</span><span>finished</span></li><li><span>④</span><span>finishing</span></li><li><span>⑤</span><span>to finish</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>다음 밑줄 친 when의 쓰임이 나머지 넷과 <u>다른</u> 것은?<span class="src">[쓰임 구별]</span></div>
+    <ol class="ol en"><li><span>①</span><span>I feel so happy <u>when</u> it snows.</span></li><li><span>②</span><span>You must visit us <u>when</u> you come to Seoul.</span></li><li><span>③</span><span><u>When</u> I looked at the sky, I saw a bird.</span></li><li><span>④</span><span>I drink a glass of water <u>when</u> I get up.</span></li><li><span>⑤</span><span>Do you know <u>when</u> the next meeting is?</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>두 문장을 when을 써서 한 문장으로 바르게 바꾼 것은?<span class="src">[접속사 when]</span></div>
+    <div class="box"><p>Ryan was absent. The class had a test.</p></div>
+    <ol class="ol en"><li><span>①</span><span>When was Ryan absent, the class had a test.</span></li><li><span>②</span><span>Ryan was absent when, the class had a test.</span></li><li><span>③</span><span>When Ryan was absent the class, had a test.</span></li><li><span>④</span><span>When Ryan was absent, the class had a test.</span></li><li><span>⑤</span><span>Ryan when was absent, the class had a test.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>다음 우리말을 영어로 바르게 옮긴 것은?<span class="src">[접속사 when]</span></div>
+    <div class="box"><p>한수가 컴퓨터 게임을 시작했을 때 그의 엄마가 들어오셨다.</p></div>
+    <ol class="ol en"><li><span>①</span><span>When did Hansu start to play computer games, his mom came in.</span></li><li><span>②</span><span>When Hansu started to play computer games, his mom came in.</span></li><li><span>③</span><span>Hansu started to play computer games when, his mom came in.</span></li><li><span>④</span><span>When his mom came in, Hansu will start to play computer games.</span></li><li><span>⑤</span><span>Before Hansu started to play computer games, his mom came in.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>(A), (B)에 들어갈 말이 바르게 짝지어진 것은?<span class="src">[before · after]</span></div>
+    <div class="box"><p>• Look both ways <b>(A)</b> ______ you cross the street.<br>• I felt much better <b>(B)</b> ______ I took the medicine.</p></div>
+    <table class="ch"><thead><tr><th></th><th>(A)</th><th>(B)</th></tr></thead><tbody><tr><td>①</td><td>before</td><td>after</td></tr><tr><td>②</td><td>after</td><td>before</td></tr><tr><td>③</td><td>after</td><td>after</td></tr><tr><td>④</td><td>before</td><td>before</td></tr><tr><td>⑤</td><td>when</td><td>before</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>다음 <보기>에서 when이 접속사(~할 때)로 쓰인 문장의 개수는?<span class="src">[쓰임 구별]</span></div>
+    <div class="box"><p>(a) When did your class finish?<br>(b) I wonder when he will move into his new house.<br>(c) I'll call you when I get back.<br>(d) What do you usually do when you have free time?<br>(e) I was taking a shower when she knocked on my door.</p></div>
+    <ol class="ol en"><li><span>①</span><span>1개</span></li><li><span>②</span><span>2개</span></li><li><span>③</span><span>3개</span></li><li><span>④</span><span>4개</span></li><li><span>⑤</span><span>5개</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>다음 빈칸에 들어갈 말이 바르게 짝지어진 것은?<span class="src">[시제]</span></div>
+    <div class="box"><p>When you <span class="blank"></span> Jeju-do next year, you <span class="blank"></span> the beautiful beaches.</p></div>
+    <table class="ch"><thead><tr><th></th><th>첫째 빈칸</th><th>둘째 빈칸</th></tr></thead><tbody><tr><td>①</td><td>will visit</td><td>will see</td></tr><tr><td>②</td><td>visit</td><td>will see</td></tr><tr><td>③</td><td>visited</td><td>will see</td></tr><tr><td>④</td><td>will visit</td><td>saw</td></tr><tr><td>⑤</td><td>visiting</td><td>see</td></tr></tbody></table>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>다음 중 문맥상 <u>어색한</u> 것은?<span class="src">[before · after]</span></div>
+    <ol class="ol en"><li><span>①</span><span>I got wet before it started to rain.</span></li><li><span>②</span><span>She ate breakfast after she woke up.</span></li><li><span>③</span><span>Take off your shoes before you enter the room.</span></li><li><span>④</span><span>He was tired after he ran 10 km.</span></li><li><span>⑤</span><span>Think carefully before you answer.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>다음 중 콤마(,)가 바르게 쓰인 것은?<span class="src">[접속사 when]</span></div>
+    <ol class="ol en"><li><span>①</span><span>When I was young I, lived in Busan.</span></li><li><span>②</span><span>I lived in Busan, when I was, young.</span></li><li><span>③</span><span>When, I was young I lived in Busan.</span></li><li><span>④</span><span>When I was young, I lived in Busan.</span></li><li><span>⑤</span><span>I lived, in Busan when I was young.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>다음 빈칸에 들어갈 말이 나머지 넷과 <u>다른</u> 것은?<span class="src">[접속사 when]</span></div>
+    <ol class="ol en"><li><span>①</span><span>Jisu smiled <span class="blank"></span> she saw the puppy.</span></li><li><span>②</span><span>I couldn't swim at all <span class="blank"></span> I was young.</span></li><li><span>③</span><span>I missed the bus <span class="blank"></span> I got up late.</span></li><li><span>④</span><span><span class="blank"></span> we arrived at the station, it was dark.</span></li><li><span>⑤</span><span>My father rides his bike <span class="blank"></span> he goes to work.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>두 문장을 after를 써서 한 문장으로 바르게 바꾼 것은?<span class="src">[before · after]</span></div>
+    <div class="box"><p>I ate dinner. Then I took a shower.</p></div>
+    <ol class="ol en"><li><span>①</span><span>After I took a shower, I ate dinner.</span></li><li><span>②</span><span>I ate dinner after I took a shower.</span></li><li><span>③</span><span>Before I ate dinner, I took a shower.</span></li><li><span>④</span><span>After I ate dinner I, took a shower.</span></li><li><span>⑤</span><span>After I ate dinner, I took a shower.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[접속사 when]</span></div>
+    <div class="box"><p>I create sound effects in my studio <span class="blank"></span> recording on location is not easy.</p></div>
+    <ol class="ol en"><li><span>①</span><span>before</span></li><li><span>②</span><span>when</span></li><li><span>③</span><span>after</span></li><li><span>④</span><span>but</span></li><li><span>⑤</span><span>so</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>다음 <보기>에서 어법상 <u>옳은</u> 문장의 개수는?<span class="src">[시제]</span></div>
+    <div class="box"><p>(a) When it will rain tomorrow, I will stay home.<br>(b) Before you leave, turn off the TV.<br>(c) After he came home, he took a nap.<br>(d) I'll tell her when she comes back.<br>(e) When I will grow up, I'll be a doctor.</p></div>
+    <ol class="ol en"><li><span>①</span><span>1개</span></li><li><span>②</span><span>2개</span></li><li><span>③</span><span>3개</span></li><li><span>④</span><span>4개</span></li><li><span>⑤</span><span>5개</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>대화의 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[접속사 when]</span></div>
+    <div class="box"><p>A: What do you want to be <span class="blank"></span> you grow up?<br>B: I want to be a pilot.</p></div>
+    <ol class="ol en"><li><span>①</span><span>before</span></li><li><span>②</span><span>after</span></li><li><span>③</span><span>when</span></li><li><span>④</span><span>but</span></li><li><span>⑤</span><span>so</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>다음 우리말을 영어로 바르게 옮긴 것은?<span class="src">[before · after]</span></div>
+    <div class="box"><p>나는 밖에 나가기 전에 엄마에게 전화했다.</p></div>
+    <ol class="ol en"><li><span>①</span><span>I called my mom before I went out.</span></li><li><span>②</span><span>I called my mom after I went out.</span></li><li><span>③</span><span>I went out before I called my mom.</span></li><li><span>④</span><span>Before I called my mom, I went out.</span></li><li><span>⑤</span><span>I called my mom when I will go out.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>다음 밑줄 친 when의 의미가 나머지 넷과 <u>다른</u> 것은?<span class="src">[쓰임 구별]</span></div>
+    <ol class="ol en"><li><span>①</span><span>What do you do <u>when</u> you are free?</span></li><li><span>②</span><span>I was sleeping <u>when</u> you called.</span></li><li><span>③</span><span><u>When</u> I hold the baby, she smiles.</span></li><li><span>④</span><span>Call me <u>when</u> you arrive.</span></li><li><span>⑤</span><span><u>When</u> does the game begin?</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[접속사 when]</span></div>
+    <div class="box"><p>Don't forget to lock the door <span class="blank"></span> you go out.</p></div>
+    <ol class="ol en"><li><span>①</span><span>because</span></li><li><span>②</span><span>but</span></li><li><span>③</span><span>or</span></li><li><span>④</span><span>when</span></li><li><span>⑤</span><span>so</span></li></ol>
+  </div>
+  </div>
+  <div class="foot"><span>동아(윤정미) when · before · after CS 2차 · 실전 문법</span><span>중산중 1학년 영어 · 실전 문법</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>실전 문법 2차 · <b>정답과 해설</b></span><span>중산중학교 1학년</span></div>
+  <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">각 5점 · 100점</div></div>
+  <div class="keygrid">
+    <div>1<b>⑤</b></div><div>2<b>②</b></div><div>3<b>④</b></div><div>4<b>①</b></div><div>5<b>⑤</b></div><div>6<b>④</b></div><div>7<b>②</b></div><div>8<b>①</b></div><div>9<b>③</b></div><div>10<b>②</b></div>
+    <div>11<b>①</b></div><div>12<b>④</b></div><div>13<b>③</b></div><div>14<b>⑤</b></div><div>15<b>②</b></div><div>16<b>③</b></div><div>17<b>③</b></div><div>18<b>①</b></div><div>19<b>⑤</b></div><div>20<b>④</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">⑤</span> 이유 ▶ 잠든 후에 영화가 끝났다 = 영화가 끝나기 전에 잠들었다.<br>
+오답 ▶ ①·②·③ 순서가 반대 ④ 과거 일에 will ❌<br>
+포인트 ▶ A after B = B before A</p>
+    <p><b>2</b> <span class="k">②</span> 이유 ▶ 편집자의 일은 촬영이 끝난 후에 시작된다 → after. (7과 본문)<br>
+오답 ▶ ① 촬영이 끝나기 전에 → 편집할 수 없음 ③·④·⑤ 시간의 뜻이 아님<br>
+포인트 ▶ after + 주어 + 동사 = ~한 후에</p>
+    <p><b>3</b> <span class="k">④</span> 이유 ▶ when절은 현재 시제, 늘 그렇게 바라는 일 → When he grows up.<br>
+오답 ▶ ① 현재 ✔ ② 주절 will + when절 현재 ✔ ③ before + 현재, 명령문 ✔ ⑤ 과거 일 ✔<br>
+포인트 ▶ when · before · after 절 안에 will ❌</p>
+    <p><b>4</b> <span class="k">①</span> 이유 ▶ after 시간 부사절 → 미래라도 현재 시제 finish.<br>
+오답 ▶ ② will ❌ ③ 과거 ❌ ④·⑤ 동사 자리<br>
+포인트 ▶ 주절 will + after/when절 현재</p>
+    <p><b>5</b> <span class="k">⑤</span> 이유 ▶ 다음 회의가 언제인지 → 의문사(언제).<br>
+오답 ▶ ①~④ 모두 '~할 때'(접속사)<br>
+포인트 ▶ know · wonder · remember + when ~ = 언제 ~인지</p>
+    <p><b>6</b> <span class="k">④</span> 이유 ▶ When + 주어 + 동사, 주절 → When Ryan was absent, the class had a test.<br>
+오답 ▶ ① 의문문 어순 ❌ ②·③·⑤ when · 콤마 자리 ❌<br>
+포인트 ▶ 부사절이 앞에 오면 부사절 끝에 콤마</p>
+    <p><b>7</b> <span class="k">②</span> 이유 ▶ ~했을 때 → When + 주어 + 동사(과거), 주절(과거).<br>
+오답 ▶ ① 의문문 어순 ❌ ③ when 자리 ❌ ④ 과거 일에 will ❌ ⑤ 시작하기 전에 ❌<br>
+포인트 ▶ 과거 일은 when절 · 주절 모두 과거</p>
+    <p><b>8</b> <span class="k">①</span> 이유 ▶ (A) 길을 건너기 전에 양쪽을 봐라 → before (B) 약을 먹은 후에 나아졌다 → after<br>
+오답 ▶ 건넌 후에 양쪽을 보는 건 어색 / 약을 먹기 전에 나아진 건 어색<br>
+포인트 ▶ 일의 순서를 따져 before / after 고르기</p>
+    <p><b>9</b> <span class="k">③</span> 이유 ▶ 접속사: (c)·(d)·(e) 3개.<br>
+오답 ▶ (a) 언제 끝났니(의문사) (b) 언제 이사할지(의문사)<br>
+포인트 ▶ '~할 때'로 해석되면 접속사</p>
+    <p><b>10</b> <span class="k">②</span> 이유 ▶ when절은 미래라도 현재 visit, 주절은 미래 will see (next year).<br>
+오답 ▶ when절에 will ❌ / 미래 일에 과거 ❌ / visiting은 동사가 아님<br>
+포인트 ▶ When + 현재, 주어 + will + 동사원형</p>
+    <p><b>11</b> <span class="k">①</span> 이유 ▶ 비가 오기 시작하기 전에 젖었다 → 어색. after it started to rain이 자연스러움.<br>
+오답 ▶ ②·③·④·⑤ 일의 순서가 자연스러움<br>
+포인트 ▶ 먼저 일어난 일 → after 뒤 / 나중 일 → before 뒤</p>
+    <p><b>12</b> <span class="k">④</span> 이유 ▶ 부사절(When I was young)이 앞에 오면 그 끝에 콤마.<br>
+오답 ▶ ①·②·③·⑤ 콤마 자리 ❌<br>
+포인트 ▶ When + 주어 + 동사, 주어 + 동사</p>
+    <p><b>13</b> <span class="k">③</span> 이유 ▶ 늦게 일어나서 버스를 놓쳤다 → 이유 because. 나머지는 when.<br>
+오답 ▶ ①·②·④·⑤ '~할 때' → when<br>
+포인트 ▶ when(때) vs because(이유)</p>
+    <p><b>14</b> <span class="k">⑤</span> 이유 ▶ 먼저 한 일(저녁 식사) 앞에 after → After I ate dinner, I took a shower.<br>
+오답 ▶ ①·②·③ 순서가 반대 ④ 콤마 자리 ❌<br>
+포인트 ▶ After + 먼저 한 일, 나중 일</p>
+    <p><b>15</b> <span class="k">②</span> 이유 ▶ 야외 촬영장에서 녹음하는 것이 쉽지 않을 때 작업실에서 만든다 → when. (7과 본문)<br>
+오답 ▶ ①·③ 뜻이 어색 ④·⑤ '~할 때'의 뜻이 없음<br>
+포인트 ▶ when + 주어 + 동사 = ~할 때</p>
+    <p><b>16</b> <span class="k">③</span> 이유 ▶ 옳은 것 (b)·(c)·(d) 3개.<br>
+오답 ▶ (a) When it rains tomorrow (e) When I grow up<br>
+포인트 ▶ when · before · after 절 안에 will ❌</p>
+    <p><b>17</b> <span class="k">③</span> 이유 ▶ 커서(자랐을 때) 뭐가 되고 싶니? → when you grow up.<br>
+오답 ▶ ① 자라기 전에 ② 자란 후에 → 어색 ④·⑤ 뜻이 없음<br>
+포인트 ▶ What do you want to be when you grow up?</p>
+    <p><b>18</b> <span class="k">①</span> 이유 ▶ 나가기 전에 → before I went out.<br>
+오답 ▶ ② 나간 후에 ③·④ 순서 반대 ⑤ 과거 일에 will ❌<br>
+포인트 ▶ before 뒤에는 나중에 한 일</p>
+    <p><b>19</b> <span class="k">⑤</span> 이유 ▶ 경기가 언제 시작하니? → 의문사(언제).<br>
+오답 ▶ ①~④ '~할 때'(접속사)<br>
+포인트 ▶ 의문문 맨 앞 When = 언제</p>
+    <p><b>20</b> <span class="k">④</span> 이유 ▶ 나갈 때 문 잠그는 것을 잊지 마 → when.<br>
+오답 ▶ ① 이유 ②·③·⑤ 시간의 뜻이 아님<br>
+포인트 ▶ when + 주어 + 현재 시제</p>
+  </div>
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>중산중 1학년 영어 · 실전 문법</span></div>
+</section>
+</main>
