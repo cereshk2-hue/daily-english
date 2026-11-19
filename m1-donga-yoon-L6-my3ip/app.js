@@ -554,7 +554,20 @@
      틀린 문제는 오답 노트('Wrap-up …' 묶음)에 쌓인다. 다시 풀기는 연습이라 처음 점수는 바뀌지 않는다.
      서술형(kind: 'write'): 칸마다 자동 채점, 정해 둔 답과 다르면 '확인 필요'(review) → 선생님이 시트에서 답을 보고 확인. */
   var TV = null;
-  function TST(t) { S.tests = S.tests || {}; return S.tests[t.id] || (S.tests[t.id] = { draft: null, first: null, tries: [] }); }
+  /* 11/18 시험 리셋: P.testReset = [[시험 id, 리셋 시각(ms)], …] → 그 시각 전에 제출·입력한 답(이 기기)과 다른 기기 제출 표시를 지우고 처음부터 다시 '첫 제출'
+     (중3 지학사: 다른 시험지 답을 잘못 입력한 7과 실전 변형 2회 · 너른터 8과 2세트). 리셋 뒤에 낸 답은 그대로 둔다 */
+  function resetAt(t) { var r = (P.testReset || []).filter(function (x) { return x[0] === t.id; })[0]; return r ? +r[1] : 0; }
+  function TST(t) {
+    S.tests = S.tests || {};
+    var st = S.tests[t.id], r = resetAt(t);
+    if (st && r && (st.resetAt || 0) < r) {
+      if (st.first && st.first.at < r) { st.first = null; st.tries = []; }
+      if (st.draft && (st.draft.started || 0) < r) st.draft = null;
+      if (st.remote && (st.remote.at || 0) < r) delete st.remote;
+      st.resetAt = r; save();
+    }
+    return st || (S.tests[t.id] = { draft: null, first: null, tries: [], resetAt: r || undefined });
+  }
   function testDay(t) { return TD.filter(function (x) { return x.test === t; })[0]; }
   function isW(it) { return it.kind === 'write'; }
   /* 11/11 '모두 고르기' 문항(정답이 여러 개): it.ans 가 배열 → 답안지에서 여러 개 눌러 고르고, 고른 것이 정답과 똑같아야 맞음 */
@@ -1602,7 +1615,7 @@
       if (!m || !end || !/^(완료|오답 학습 남음)$/.test(prog)) return;
       var pct = +m[1], c = m[2] != null ? +m[2] : null, tt = m[3] != null ? +m[3] : null;
       var t = TESTS.filter(function (x) { return 'Wrap-up ' + x.short === name; })[0];
-      if (t) { var ts = TST(t); if (ts.first || (ts.remote && ts.remote.at >= end)) return;
+      if (t) { var ts = TST(t); if (ts.first || (ts.remote && ts.remote.at >= end) || end < resetAt(t)) return;
         ts.remote = { pct: pct, c: c, tt: tt, at: end }; changed = true; return; }
       var d = P.days.filter(function (x) { return x.name === name; })[0]; if (!d) return;
       var st = DS(d.id), hs = st.history || (st.history = []);
