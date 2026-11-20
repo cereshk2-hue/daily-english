@@ -85,7 +85,11 @@ for (q, st), (_, en) in zip(order, order[1:]):
                   'en': bool(re.search(r'[A-Za-z]{3}', ''.join(eo))) and q not in POS, 'ans': EK[q - 1] - 1, 'ex': ex,
                   'ctx': '', 'pts': pts, 'words': words, 'kos': []})
 assert total == 100 and len(items) == 45
-T = {'id': 's27even', 'title': '2027학년도 수능 영어 (짝수형)', 'short': '수능 짝수형', 'school': '고3 수능실전반', 'minutes': 70, 'items': items}
+# 11/20 18:40 선생님: 듣기(1~17번)는 다 맞았다고 보고 가산점으로 → OMR은 18~45번만, 듣기 배점은 bonus
+LIS = [it for it in items if it['n'] <= 17]; items = [it for it in items if it['n'] >= 18]
+BONUS = sum(it['pts'] for it in LIS); assert BONUS == 37 and BONUS + sum(it['pts'] for it in items) == 100 and len(items) == 28
+T = {'id': 's27e18', 'title': '2027학년도 수능 영어 (짝수형) · 18~45번', 'short': '수능 짝수형', 'school': '고3 수능실전반', 'minutes': 45, 'items': items,
+     'bonus': BONUS, 'bonusNote': '듣기 1~17번 %d점은 모두 맞은 것으로 보고 가산점으로 넣었어요' % BONUS}
 js = open(DATA, encoding='utf-8').read()
 blk = '/* WRAPUP-TESTS: gen/gen_h3s27omr.py 로 만듦 (손으로 고치지 말 것) */\nwindow.PKG.tests = ' + json.dumps([T], ensure_ascii=False) + ';\n/* /WRAPUP-TESTS */\n'
 if '/* WRAPUP-TESTS' in js: js = re.sub(r'/\* WRAPUP-TESTS.*?/\* /WRAPUP-TESTS \*/\n', lambda m: blk, js, flags=re.S)
