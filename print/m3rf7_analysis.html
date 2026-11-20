@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>중산중3 L7 외부지문 구문 분석지</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* layout: 한 문장 = 한 카드, 네이비 헤더 + 흰 본문, A4 인쇄 폭 */
+  --ink:#1d2430; --navy:#26364a; --gold:#e8b23a; --red:#c8372d; --teal:#13808a; --green:#2a7d3a;
+  --paper:#ffffff; --bg:#f3f4f6; --soft:#f6f3ea; --line:#d9dce1; --muted:#5e6672;
+  --s:#2f6fd0; --v:#2f6fd0;
+  --serif:"Source Serif 4", Georgia, "Noto Serif KR", serif;
+  --sans:"Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:12.5px;line-height:1.5}
+.wrap{max-width:900px;margin:0 auto;padding:20px 14px 40px;background:var(--paper)}
+h1{font-size:20px;font-weight:900;margin:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;text-wrap:balance}
+h1 small{font-size:13px;color:var(--red);font-weight:700}
+.top{border-bottom:3px solid var(--navy);padding-bottom:10px;margin-bottom:12px}
+.meta{color:var(--muted);font-size:11.5px;margin-top:3px}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:11.5px;align-items:center;margin:6px 0}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.chip{display:inline-block;padding:1px 10px;border-radius:999px;font-weight:700;font-size:12px}
+.c-s{background:#e6effc;color:#1f5bb8}.c-v{background:#e6effc;color:#1f5bb8}.c-o{background:#f0e8fb;color:#7a3fb8}
+.c-c{background:#fdf0dc;color:#b06b00}.c-oc{background:#fde6e2;color:#b0362b}.c-m{background:#eceef1;color:#555}
+.c-dash{border:1.5px dashed #8a5cc7;color:#7a3fb8;background:#faf6ff}
+section.block{margin:16px 0}
+h2{font-size:15px;font-weight:900;margin:0 0 6px;padding-left:10px;border-left:5px solid var(--gold)}
+.passage{font-family:var(--serif);font-size:13.5px;line-height:1.65;background:var(--soft);padding:10px 14px;border-radius:6px}
+.passage sup{color:var(--navy);font-family:var(--sans);font-weight:700;font-size:11px;margin-right:2px}
+table{width:100%;border-collapse:collapse;font-size:11.5px}
+th,td{border-bottom:1px solid var(--line);padding:3px 6px;text-align:left;vertical-align:top}
+th{background:var(--navy);color:#fff;font-weight:700}
+tr:nth-child(even) td{background:#fafbfc}
+.tbl{overflow-x:auto}
+
+/* card */
+.card{border:1px solid var(--line);margin:10px 0;break-inside:avoid;page-break-inside:avoid}
+.ch{background:var(--navy);color:#fff;display:flex;align-items:center;gap:10px;padding:5px 12px;flex-wrap:wrap;font-size:12px}
+.num{background:#fff;color:var(--navy);font-weight:900;padding:2px 12px;border-radius:3px;font-variant-numeric:tabular-nums}
+.pt{color:var(--gold);font-weight:900;letter-spacing:.05em}
+.ch ul{margin:0;padding:0;list-style:none;flex:1;min-width:220px;line-height:1.4}
+.ch li::before{content:"· ";color:var(--gold)}
+.flow{font-size:11px;border:1px solid #6d7f96;border-radius:999px;padding:1px 10px;color:#dbe3ee}
+.body{padding:7px 14px 8px}
+.keyw{font-size:12px;margin-bottom:2px}
+.keyw .tag{border:1px solid #aaa;border-radius:999px;padding:0 9px;font-size:12px;color:var(--muted);margin-right:8px}
+.keyw b{color:#b05a00;font-size:13.5px;margin-right:4px}
+.sen{font-family:var(--serif);font-size:16px;line-height:2.05;margin:4px 0 6px}
+.u{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px}
+.u sub{font-family:var(--sans);font-size:10.5px;font-weight:700;margin-left:1px;vertical-align:-0.45em;text-decoration:none;display:inline-block}
+.u.main{text-decoration-color:var(--ink)} .u.main sub{color:var(--ink)}
+.u.sub{text-decoration-color:var(--red)} .u.sub sub{color:var(--red)}
+.u.nest{text-decoration-color:var(--teal)} .u.nest sub{color:var(--teal)}
+.br{color:var(--red);font-weight:700}
+.key{font-weight:700;text-decoration:underline wavy var(--red);text-decoration-thickness:1px;text-underline-offset:7px}
+.key .u{text-decoration-line:none}
+.rel{border-bottom:2px dashed #8a5cc7;padding-bottom:2px}
+.app{background:#fff5d6;border-radius:3px;padding:0 2px}
+.voc{color:var(--green);font-weight:600}
+.voc sup{font-family:var(--sans);font-size:10px;font-weight:700}
+.jd{background:var(--soft);border-left:4px solid var(--gold);padding:5px 12px;margin:4px 0 6px}
+.jd h4{margin:0 0 2px;color:#9a6a00;font-size:12px}
+.cr{display:grid;grid-template-columns:1.1fr 1fr;gap:12px;border-bottom:1px solid #e6e0cf;padding:1px 0}
+.cr:last-child{border-bottom:0}
+.cr .en{font-family:var(--serif);font-size:13px}
+.cr .en i{color:var(--gold);font-style:normal;margin-right:8px}
+.cr .ko{color:#444;font-size:12px}
+.tr{margin:4px 0}
+.tr b,.gram>b,.words>b{margin-right:8px}
+.gist{margin:3px 0}
+.gist span{background:#e5f2e4;color:var(--green);font-weight:700;font-size:11px;padding:2px 9px;border-radius:3px;margin-right:8px}
+.chk{background:#fff7e4;border:1px solid #f0d9a0;border-radius:6px;padding:3px 10px;margin:5px 0}
+.chk b{color:#b05a00;margin-right:8px} .chk span{color:var(--muted);font-size:11.5px}
+.gram ul{margin:2px 0 3px;padding-left:18px} .gram li{margin:0}
+.words{font-size:11.5px;border-top:1px dashed var(--line);padding-top:4px;margin-top:3px}
+.w{margin-right:14px;display:inline-block}
+.w sup{color:var(--green);font-weight:700} .w b{color:var(--green)}
+.q{margin:6px 0}
+.q p{margin:4px 0}
+.q ol{margin:4px 0;padding-left:22px}
+.ans{background:#eef3f9;border-radius:6px;padding:7px 12px}
+@media (max-width:600px){.sen{font-size:15px}.cr{grid-template-columns:1fr;gap:0}}
+@page{size:A4;margin:10mm 10mm}
+@media print{body{background:#fff}.wrap{padding:0;max-width:none}.ch,th,.jd,.passage,.app,.gist span,.chk{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1>중산중3 Lesson 7 외부지문 <small>문장단위 구문 분석지 · 정답</small></h1>
+    <div class="meta">Reading File Challenge · 일본 전통 가옥 · 13문장 · 출처 web-japan.org, japanworld.info</div>
+  </div>
+  <div class="legend">
+    <span><i class="dot" style="background:var(--ink)"></i>주절 성분 (S·V·O·C)</span>
+    <span><i class="dot" style="background:var(--red)"></i>종속절 성분 (S'·V'·O')</span>
+    <span><i class="dot" style="background:var(--teal)"></i>구 안의 성분 (v·o·oc)</span>
+    <span><b style="color:var(--red)">〈 〉</b> 부사절·부사구</span>
+    <span><b style="text-decoration:underline wavy var(--red)">굵은 물결</b> = 핵심 구문</span>
+    <span><b style="color:var(--green)">초록</b> = 단어장 어휘</span>
+  </div>
+  <div class="legend">
+    <span class="chip c-s">S 주어</span><span class="chip c-v">V 동사</span><span class="chip c-o">O 목적어</span><span class="chip c-c">C 보어</span><span class="chip c-oc">OC 목적격보어</span>
+    <span class="chip c-dash">점선 = 관계대명사절</span><span class="chip" style="background:#fff5d6;color:#8a6500">노란 배경 = 동격</span>
+  </div>
+
+  <section class="block">
+    <h2>지문 흐름 (Flow)</h2>
+    <p><b>주제</b> 일본 전통 가옥의 특징 — 추위·비·불에 대비한 구조와 생활 방식</p>
+    <div class="tbl"><table>
+      <tr><th>흐름</th><th>문장</th><th>핵심 내용</th><th>연결어·키워드</th></tr>
+      <tr><td>① 도입</td><td>S1</td><td>일본 전통 가옥에서 산다면? (질문)</td><td>traditional</td></tr>
+      <tr><td>② 현관</td><td>S2</td><td>겐칸에서 신발을 벗는다</td><td>If ~, would</td></tr>
+      <tr><td>③ 바닥</td><td>S3–4</td><td>의자 대신 다다미 위에 앉는다</td><td><b>Instead</b> (대조)</td></tr>
+      <tr><td>④ 방·문</td><td>S5–6</td><td>쇼지로 방을 나누고, 모임 땐 떼어 큰 방으로</td><td>portable, removed</td></tr>
+      <tr><td>⑤ 겨울</td><td>S7–8</td><td>코타츠에서 몸을 따뜻하게</td><td><b>When</b> cold</td></tr>
+      <tr><td>⑥ 여름(비)</td><td>S9–10</td><td>홍수 대비 바닥을 띄움</td><td>to keep ~ dry</td></tr>
+      <tr><td>⑦ 지붕</td><td>S11–13</td><td>경사 지붕 + 방수·내화 카와라 기와</td><td><b>also</b>, not only ~ but also</td></tr>
+    </table></div>
+    <p class="meta">구조: 질문 → 공간 순서(현관 → 방 안) → 계절 순서(겨울 → 여름) → 집 바깥(지붕)</p>
+  </section>
+
+  <section class="block">
+    <h2>원문</h2>
+    <div class="passage"><sup>1</sup>What would it be like to live in a traditional Japanese house? <sup>2</sup>If you lived there, you would have to take off your shoes in the <i>genkan</i>, an entrance hall, before entering the house. <sup>3</sup>In the house, many Japanese do not use chairs. <sup>4</sup>Instead, they sit directly on <i>tatami</i> mats that are made from woven grass. <sup>5</sup>Rooms are divided by <i>shoji</i>, portable sliding doors that are made from wood and thin paper. <sup>6</sup>For large gatherings, these doors can be removed to create one large room. <sup>7</sup>When the weather gets cold, people prefer to sit at a <i>kotatsu</i>, a heated table, and put their legs in it. <sup>8</sup>Keeping their body warm, Japanese have meals, drink tea, or read books at the table. <sup>9</sup>In summer, heavy rain can cause flooding. <sup>10</sup>The floor of the house is raised a little off the ground to keep the living area dry and safe from flooding. <sup>11</sup>The house also has sloped roofs because they keep rainwater flowing off easily. <sup>12</sup>The roofs are covered with <i>kawara</i> tiles. <sup>13</sup>The strong <i>kawara</i> tiles are not only water-resistant but also fireproof.</div>
+  </section>
+
+  <section class="block">
+    <h2>문장단위 분석</h2>
+
+<article class="card" id="s1">
+  <header class="ch"><span class="num">S01</span><span class="pt">POINT</span><ul><li>가주어 it – 진주어 to부정사</li><li>What is it like ~? (~은 어떠한가?)</li></ul><span class="flow">① 도입</span></header>
+  <div class="body">
+    <div class="keyw"><span class="tag">핵심어</span><b>traditional</b> 전통적인</div>
+    <p class="sen">What <span class='u main'>would<sub>V</sub></span> <span class='u main'>it<sub>가S</sub></span> <span class='u main'>be<sub>V</sub></span> like <span class='u main'>to live in a <span class='voc'>traditional<sup>1</sup></span> Japanese house<sub>진S</sub></span>?</p>
+    <div class="jd"><h4>직독직해</h4><div class='cr'><span class='en'><i>/</i>What would it be like</span><span class='ko'>어떨까</span></div><div class='cr'><span class='en'><i>/</i>to live</span><span class='ko'>사는 것은</span></div><div class='cr'><span class='en'><i>/</i>in a traditional Japanese house?</span><span class='ko'>일본 전통 가옥에서</span></div></div>
+    <p class="tr"><b>해석</b> 일본 전통 가옥에서 사는 것은 어떨까?</p>
+    <p class="gist"><span>결국 이 얘기</span> ‘일본 전통 집에서 살면 어떨까?’ 하고 질문으로 글을 시작해요.</p>
+    
+    <div class="gram"><b>문법</b><ul><li>it = to live in a traditional Japanese house (가주어 – 진주어)</li><li>like는 전치사 ‘~와 같은’ → What is it like? = 어떠한가? (동사 like 아님)</li><li>would = 상상·가정. S2의 가정법 과거로 이어짐</li></ul></div>
+    <div class='words'><b>단어</b> <span class='w'><sup>1</sup><b>traditional</b> 전통적인 (tradition 전통)</span></div>
+  </div>
+</article>
+
+<article class="card" id="s2">
+  <header class="ch"><span class="num">S02</span><span class="pt">POINT</span><ul><li>가정법 과거 If + 과거, would + 동사원형</li><li>동격 콤마 / before + 동명사</li></ul><span class="flow">② 현관</span></header>
+  <div class="body">
+    <div class="keyw"><span class="tag">핵심어</span><b>take off</b> 벗다</div>
+    <p class="sen"><span class='br'>〈</span>If <span class='u sub'>you<sub>S'</sub></span> <span class='u sub'>lived<sub>V'</sub></span> there<span class='br'>〉</span>, <span class='u main'>you<sub>S</sub></span> <b class='key'><span class='u main'>would have to take off<sub>V</sub></span></b> <span class='u main'>your shoes<sub>O</sub></span> in the genkan, <span class='app'>an <span class='voc'>entrance hall<sup>1</sup></span></span>, <span class='br'>〈</span>before <span class='voc'>entering<sup>2</sup></span> the house<span class='br'>〉</span>.</p>
+    <div class="jd"><h4>직독직해</h4><div class='cr'><span class='en'><i>/</i>If you lived there,</span><span class='ko'>만약 네가 그곳에 산다면</span></div><div class='cr'><span class='en'><i>/</i>you would have to take off your shoes</span><span class='ko'>너는 신발을 벗어야 할 것이다</span></div><div class='cr'><span class='en'><i>/</i>in the genkan, an entrance hall,</span><span class='ko'>현관인 겐칸에서</span></div><div class='cr'><span class='en'><i>/</i>before entering the house.</span><span class='ko'>집에 들어가기 전에</span></div></div>
+    <p class="tr"><b>해석</b> 만약 네가 그곳에 산다면, 너는 집에 들어가기 전에 현관인 겐칸에서 신발을 벗어야 할 것이다.</p>
+    <p class="gist"><span>결국 이 얘기</span> 일본 집에 들어갈 때는 현관(겐칸)에서 신발부터 벗어요.</p>
+    <div class='chk'><b>서술형 포인트</b> would have to take off <span>← 가정법 과거 주절: would + 동사원형</span></div>
+    <div class="gram"><b>문법</b><ul><li>가정법 과거: If + 주어 + 과거동사(lived), 주어 + would + 동사원형 → 현재 사실의 반대</li><li>직설법 전환: As you don&#x27;t live there, you don&#x27;t have to ~</li><li>would have to (O) / would must (X)</li><li>the genkan = an entrance hall (동격)</li><li>before + 동명사 entering / enter는 타동사 → enter into (X)</li></ul></div>
+    <div class='words'><b>단어</b> <span class='w'><sup>1</sup><b>entrance hall</b> 현관</span><span class='w'><sup>2</sup><b>enter</b> 들어가다</span></div>
+  </div>
+</article>
+
+<article class="card" id="s3">
+  <header class="ch"><span class="num">S03</span><span class="pt">POINT</span><ul><li>Japanese = 일본인들 (단·복수 동형)</li></ul><span class="flow">③ 바닥</span></header>
+  <div class="body">
+    <div class="keyw"><span class="tag">핵심어</span><b>chair</b> 의자</div>
+    <p class="sen">In the house, <span class='u main'>many Japanese<sub>S</sub></span> <span class='u main'>do not use<sub>V</sub></span> <span class='u main'>chairs<sub>O</sub></span>.</p>
+    <div class="jd"><h4>직독직해</h4><div class='cr'><span class='en'><i>/</i>In the house,</span><span class='ko'>집 안에서</span></div><div class='cr'><span class='en'><i>/</i>many Japanese do not use chairs.</span><span class='ko'>많은 일본인들은 의자를 사용하지 않는다</span></div></div>
+    <p class="tr"><b>해석</b> 집 안에서 많은 일본인들은 의자를 사용하지 않는다.</p>
+    <p class="gist"><span>결국 이 얘기</span> 일본 사람들은 집 안에서 의자를 잘 쓰지 않아요.</p>
+    
+    <div class="gram"><b>문법</b><ul><li>Japanese는 명사 ‘일본인’으로 단수·복수 형태가 같음 (Japaneses X)</li></ul></div>
+    
+  </div>
+</article>
+
+<article class="card" id="s4">
+  <header class="ch"><span class="num">S04</span><span class="pt">POINT</span><ul><li>주격 관계대명사 that (선행사 복수 → are)</li><li>be made from (원료)</li></ul><span class="flow">③ 바닥</span></header>
+  <div class="body">
+    <div class="keyw"><span class="tag">핵심어</span><b>woven</b> 짠, 엮어진</div>
+    <p class="sen"><span class='voc'>Instead<sup>1</sup></span>, <span class='u main'>they<sub>S</sub></span> <span class='u main'>sit<sub>V</sub></span> <span class='voc'>directly<sup>2</sup></span> on tatami mats <span class='rel'><span class='u sub'>that<sub>S'</sub></span> <b class='key'><span class='u sub'>are made from<sub>V'</sub></span></b> <span class='voc'>woven<sup>3</sup></span> <span class='voc'>grass<sup>4</sup></span></span>.</p>
+    <div class="jd"><h4>직독직해</h4><div class='cr'><span class='en'><i>/</i>Instead,</span><span class='ko'>대신에</span></div><div class='cr'><span class='en'><i>/</i>they sit directly</span><span class='ko'>그들은 바로 앉는다</span></div><div class='cr'><span class='en'><i>/</i>on tatami mats</span><span class='ko'>다다미 매트 위에</span></div><div class='cr'><span class='en'><i>/</i>that are made from woven grass.</span><span class='ko'>엮은 풀로 만들어진</span></div></div>
+    <p class="tr"><b>해석</b> 대신에 그들은 엮은 풀로 만들어진 다다미 매트 위에 바로 앉는다.</p>
+    <p class="gist"><span>결국 이 얘기</span> 의자 대신, 풀로 짠 다다미 위에 그냥 앉아요.</p>
+    <div class='chk'><b>서술형 포인트</b> that are made from <span>← 선행사 복수 → are / 원료 → from</span></div>
+    <div class="gram"><b>문법</b><ul><li>that = 주격 관계대명사, 선행사 tatami mats(복수) → are (is X), which로 바꿔 쓸 수 있음</li><li>주격 관계대명사 + be동사는 생략 가능: mats (that are) made from ~</li><li>be made from(원료, 형태 변화) / be made of(재료, 형태 유지)</li><li>woven = weave의 과거분사(수동 ‘엮어진’) → grass 수식 / weave – wove – woven</li><li>Instead: 앞 문장(의자 X)과 대조</li></ul></div>
+    <div class='words'><b>단어</b> <span class='w'><sup>1</sup><b>instead</b> 대신에</span><span class='w'><sup>2</sup><b>directly</b> 직접, 바로</span><span class='w'><sup>3</sup><b>woven</b> 짠, 엮어진</span><span class='w'><sup>4</sup><b>grass</b> 풀</span></div>
+  </div>
+</article>
+
+<article class="card" id="s5">
+  <header class="ch"><span class="num">S05</span><span class="pt">POINT</span><ul><li>수동태 be + p.p. + by</li><li>동격 + 주격 관계대명사 that</li></ul><span class="flow">④ 방·문</span></header>
+  <div class="body">
+    <div class="keyw"><span class="tag">핵심어</span><b>portable</b> 휴대용의, 이동 가능한</div>
+    <p class="sen"><span class='u main'>Rooms<sub>S</sub></span> <b class='key'><span class='u main'>are divided<sub>V</sub></span></b> by shoji, <span class='app'><span class='voc'>portable<sup>1</sup></span> <span class='voc'>sliding doors<sup>2</sup></span></span> <span class='rel'><span class='u sub'>that<sub>S'</sub></span> <span class='u sub'>are made<sub>V'</sub></span> from wood and <span class='voc'>thin<sup>3</sup></span> paper</span>.</p>
+    <div class="jd"><h4>직독직해</h4><div class='cr'><span class='en'><i>/</i>Rooms are divided</span><span class='ko'>방들은 나뉜다</span></div><div class='cr'><span class='en'><i>/</i>by shoji,</span><span class='ko'>쇼지에 의해</span></div><div class='cr'><span class='en'><i>/</i>portable sliding doors</span><span class='ko'>이동 가능한 미닫이문인</span></div><div class='cr'><span class='en'><i>/</i>that are made from wood and thin paper.</span><span class='ko'>나무와 얇은 종이로 만들어진</span></div></div>
+    <p class="tr"><b>해석</b> 방들은 나무와 얇은 종이로 만들어진 이동 가능한 미닫이문인 쇼지로 나뉜다.</p>
+    <p class="gist"><span>결국 이 얘기</span> 방은 나무와 종이로 된, 옮길 수 있는 미닫이문(쇼지)으로 나눠요.</p>
+    
+    <div class="gram"><b>문법</b><ul><li>수동태 are divided by ~ → 능동태: Shoji divide rooms.</li><li>shoji = portable sliding doors (동격)</li><li>that → 선행사 doors(복수) → are</li><li>sliding = 현재분사(능동 ‘미끄러지는’) → doors 수식</li></ul></div>
+    <div class='words'><b>단어</b> <span class='w'><sup>1</sup><b>portable</b> 휴대용의, 이동 가능한</span><span class='w'><sup>2</sup><b>sliding door</b> 미닫이문</span><span class='w'><sup>3</sup><b>thin</b> 얇은 ↔ thick</span></div>
+  </div>
+</article>
+
+<article class="card" id="s6">
+  <header class="ch"><span class="num">S06</span><span class="pt">POINT</span><ul><li>조동사의 수동태 can be p.p.</li><li>to부정사 부사적 용법(목적)</li></ul><span class="flow">④ 방·문</span></header>
+  <div class="body">
+    <div class="keyw"><span class="tag">핵심어</span><b>gathering</b> 모임</div>
+    <p class="sen">For large <span class='voc'>gatherings<sup>1</sup></span>, <span class='u main'>these doors<sub>S</sub></span> <b class='key'><span class='u main'>can be removed<sub>V</sub></span></b> <span class='br'>〈</span>to <span class='voc'>create<sup>2</sup></span> one large room<span class='br'>〉</span>.</p>
+    <div class="jd"><h4>직독직해</h4><div class='cr'><span class='en'><i>/</i>For large gatherings,</span><span class='ko'>큰 모임을 위해</span></div><div class='cr'><span class='en'><i>/</i>these doors can be removed</span><span class='ko'>이 문들은 제거될 수 있다</span></div><div class='cr'><span class='en'><i>/</i>to create one large room.</span><span class='ko'>하나의 큰 방을 만들기 위해</span></div></div>
+    <p class="tr"><b>해석</b> 큰 모임을 위해 이 문들은 하나의 큰 방을 만들기 위해 제거될 수 있다.</p>
+    <p class="gist"><span>결국 이 얘기</span> 손님이 많이 오면 문을 떼어 내서 방 하나를 크게 만들어요.</p>
+    <div class='chk'><b>서술형 포인트</b> can be removed <span>← 주어 these doors가 제거되는 대상 → 수동태</span></div>
+    <div class="gram"><b>문법</b><ul><li>can + be + p.p. = ~될 수 있다 (can remove X: 문은 ‘제거되는’ 대상)</li><li>to create = ~하기 위해 (= in order to create)</li><li>these doors = 앞 문장의 shoji</li></ul></div>
+    <div class='words'><b>단어</b> <span class='w'><sup>1</sup><b>gathering</b> 모임 (gather 모이다)</span><span class='w'><sup>2</sup><b>create</b> 만들다, 창조하다</span></div>
+  </div>
+</article>
+
+<article class="card" id="s7">
+  <header class="ch"><span class="num">S07</span><span class="pt">POINT</span><ul><li>get + 형용사 (~해지다)</li><li>병렬구조 prefer to sit ~ and (to) put ~</li></ul><span class="flow">⑤ 겨울</span></header>
+  <div class="body">
+    <div class="keyw"><span class="tag">핵심어</span><b>prefer</b> 선호하다</div>
+    <p class="sen"><span class='br'>〈</span>When <span class='u sub'>the weather<sub>S'</sub></span> <span class='u sub'>gets<sub>V'</sub></span> <span class='u sub'>cold<sub>C'</sub></span><span class='br'>〉</span>, <span class='u main'>people<sub>S</sub></span> <span class='u main'><span class='voc'>prefer<sup>1</sup></span><sub>V</sub></span> <span class='u main'>to sit at a kotatsu, <span class='app'>a <span class='voc'>heated<sup>2</sup></span> table</span>, <b class='key'>and put</b> their legs in it<sub>O</sub></span>.</p>
+    <div class="jd"><h4>직독직해</h4><div class='cr'><span class='en'><i>/</i>When the weather gets cold,</span><span class='ko'>날씨가 추워지면</span></div><div class='cr'><span class='en'><i>/</i>people prefer to sit</span><span class='ko'>사람들은 앉는 것을 선호한다</span></div><div class='cr'><span class='en'><i>/</i>at a kotatsu, a heated table,</span><span class='ko'>난방되는 탁자인 코타츠에</span></div><div class='cr'><span class='en'><i>/</i>and put their legs in it.</span><span class='ko'>그리고 그 안에 다리를 넣는 것을</span></div></div>
+    <p class="tr"><b>해석</b> 날씨가 추워지면 사람들은 난방되는 탁자인 코타츠에 앉아 그 안에 다리를 넣는 것을 선호한다.</p>
+    <p class="gist"><span>결국 이 얘기</span> 추운 날엔 따뜻한 탁자(코타츠)에 다리를 넣고 앉아요.</p>
+    
+    <div class="gram"><b>문법</b><ul><li>get + 형용사 = ~해지다 (gets cold)</li><li>병렬: prefer to sit ~ and (to) put ~ → put은 동사원형 (puts X)</li><li>prefer + to부정사 / 동명사 모두 목적어 가능</li><li>a kotatsu = a heated table (동격) / heated: 과거분사 ‘데워진’</li><li>it = a kotatsu</li></ul></div>
+    <div class='words'><b>단어</b> <span class='w'><sup>1</sup><b>prefer</b> 선호하다</span><span class='w'><sup>2</sup><b>heated</b> 데워진, 난방된</span></div>
+  </div>
+</article>
+
+<article class="card" id="s8">
+  <header class="ch"><span class="num">S08</span><span class="pt">POINT</span><ul><li>분사구문 (동시동작 ‘~하면서’)</li><li>keep + 목적어 + 형용사</li></ul><span class="flow">⑤ 겨울</span></header>
+  <div class="body">
+    <div class="keyw"><span class="tag">핵심어</span><b>keep A warm</b> A를 따뜻하게 유지하다</div>
+    <p class="sen"><b class='key'><span class='br'>〈</span>Keeping their body warm<span class='br'>〉</span></b>, <span class='u main'>Japanese<sub>S</sub></span> <span class='u main'>have<sub>V</sub></span> <span class='u main'>meals<sub>O</sub></span>, <span class='u main'>drink<sub>V</sub></span> <span class='u main'>tea<sub>O</sub></span>, or <span class='u main'>read<sub>V</sub></span> <span class='u main'>books<sub>O</sub></span> at the table.</p>
+    <div class="jd"><h4>직독직해</h4><div class='cr'><span class='en'><i>/</i>Keeping their body warm,</span><span class='ko'>몸을 따뜻하게 유지하면서</span></div><div class='cr'><span class='en'><i>/</i>Japanese have meals,</span><span class='ko'>일본인들은 식사를 하거나</span></div><div class='cr'><span class='en'><i>/</i>drink tea, or read books</span><span class='ko'>차를 마시거나 책을 읽는다</span></div><div class='cr'><span class='en'><i>/</i>at the table.</span><span class='ko'>그 탁자에서</span></div></div>
+    <p class="tr"><b>해석</b> 몸을 따뜻하게 유지하면서 일본인들은 그 탁자에서 식사를 하거나, 차를 마시거나, 책을 읽는다.</p>
+    <p class="gist"><span>결국 이 얘기</span> 코타츠에서 몸을 녹이며 밥도 먹고 차도 마시고 책도 읽어요.</p>
+    <div class='chk'><b>서술형 포인트</b> Keeping their body warm <span>← 부사절 While they keep ~ 의 분사구문</span></div>
+    <div class="gram"><b>문법</b><ul><li>분사구문: While they keep their body warm → Keeping their body warm (접속사·주어 생략, 동사 → -ing)</li><li>Kept / To keep (X)</li><li>keep + 목적어 + 형용사: keep their body warm (warmly X)</li><li>병렬: have ~, drink ~, or read ~</li></ul></div>
+    
+  </div>
+</article>
+
+<article class="card" id="s9">
+  <header class="ch"><span class="num">S09</span><span class="pt">POINT</span><ul><li>무생물 주어 + cause</li></ul><span class="flow">⑥ 여름(비)</span></header>
+  <div class="body">
+    <div class="keyw"><span class="tag">핵심어</span><b>flooding</b> 홍수</div>
+    <p class="sen">In summer, <span class='u main'><span class='voc'>heavy rain<sup>1</sup></span><sub>S</sub></span> <span class='u main'>can <span class='voc'>cause<sup>2</sup></span><sub>V</sub></span> <span class='u main'><span class='voc'>flooding<sup>3</sup></span><sub>O</sub></span>.</p>
+    <div class="jd"><h4>직독직해</h4><div class='cr'><span class='en'><i>/</i>In summer,</span><span class='ko'>여름에는</span></div><div class='cr'><span class='en'><i>/</i>heavy rain can cause flooding.</span><span class='ko'>폭우가 홍수를 일으킬 수 있다</span></div></div>
+    <p class="tr"><b>해석</b> 여름에는 폭우가 홍수를 일으킬 수 있다.</p>
+    <p class="gist"><span>결국 이 얘기</span> 여름엔 비가 많이 와서 홍수가 날 수 있어요.</p>
+    
+    <div class="gram"><b>문법</b><ul><li>can = 가능성 ‘~할 수 있다’</li><li>heavy rain 폭우 (strong rain X)</li></ul></div>
+    <div class='words'><b>단어</b> <span class='w'><sup>1</sup><b>heavy rain</b> 폭우</span><span class='w'><sup>2</sup><b>cause</b> 일으키다, 야기하다</span><span class='w'><sup>3</sup><b>flooding</b> 홍수, 침수</span></div>
+  </div>
+</article>
+
+<article class="card" id="s10">
+  <header class="ch"><span class="num">S10</span><span class="pt">POINT</span><ul><li>수동태 is raised (raise vs rise)</li><li>to부정사(목적) + keep + O + 형용사 ★빈칸</li></ul><span class="flow">⑥ 여름(비)</span></header>
+  <div class="body">
+    <div class="keyw"><span class="tag">핵심어</span><b>raise</b> 올리다</div>
+    <p class="sen"><span class='u main'>The floor of the house<sub>S</sub></span> <span class='u main'>is <span class='voc'>raised<sup>1</sup></span><sub>V</sub></span> a little <span class='voc'>off the ground<sup>2</sup></span> <span class='br'>〈</span>to <b class='key'><span class='u nest'>keep<sub>v</sub></span> <span class='u nest'>the <span class='voc'>living area<sup>3</sup></span><sub>o</sub></span> <span class='u nest'>dry and safe<sub>oc</sub></span></b> from flooding<span class='br'>〉</span>.</p>
+    <div class="jd"><h4>직독직해</h4><div class='cr'><span class='en'><i>/</i>The floor of the house</span><span class='ko'>집의 바닥은</span></div><div class='cr'><span class='en'><i>/</i>is raised a little</span><span class='ko'>조금 올려져 있다</span></div><div class='cr'><span class='en'><i>/</i>off the ground</span><span class='ko'>지면에서 떨어져</span></div><div class='cr'><span class='en'><i>/</i>to keep the living area dry and safe</span><span class='ko'>생활 공간을 건조하고 안전하게 유지하기 위해</span></div><div class='cr'><span class='en'><i>/</i>from flooding.</span><span class='ko'>홍수로부터</span></div></div>
+    <p class="tr"><b>해석</b> 집의 바닥은 생활 공간을 홍수로부터 건조하고 안전하게 유지하기 위해 지면에서 조금 띄워져 있다.</p>
+    <p class="gist"><span>결국 이 얘기</span> 홍수 때 물이 안 들어오게 바닥을 땅에서 살짝 띄워 지어요.</p>
+    <div class='chk'><b>서술형 포인트</b> keep the living area dry and safe <span>← 교과서 2번 배열 정답: keep / the living area / dry and safe</span></div>
+    <div class="gram"><b>문법</b><ul><li>주어 The floor(단수) → is / of the house는 수식어</li><li>raise(타동사, 올리다) → is raised / rise(자동사, 오르다) → is risen (X)</li><li>to keep = ~하기 위해 (목적)</li><li>keep + 목적어 + 형용사: dry and safe (dryly, safely X)</li></ul></div>
+    <div class='words'><b>단어</b> <span class='w'><sup>1</sup><b>raise</b> 올리다</span><span class='w'><sup>2</sup><b>off the ground</b> 지면에서 떨어져</span><span class='w'><sup>3</sup><b>living area</b> 생활 공간</span></div>
+  </div>
+</article>
+
+<article class="card" id="s11">
+  <header class="ch"><span class="num">S11</span><span class="pt">POINT</span><ul><li>keep + 목적어 + 현재분사</li><li>because + 절</li></ul><span class="flow">⑦ 지붕</span></header>
+  <div class="body">
+    <div class="keyw"><span class="tag">핵심어</span><b>sloped</b> 경사진</div>
+    <p class="sen"><span class='u main'>The house<sub>S</sub></span> also <span class='u main'>has<sub>V</sub></span> <span class='u main'><span class='voc'>sloped<sup>1</sup></span> roofs<sub>O</sub></span> <span class='br'>〈</span>because <span class='u sub'>they<sub>S'</sub></span> <span class='u sub'>keep<sub>V'</sub></span> <span class='u sub'>rainwater<sub>O'</sub></span> <b class='key'><span class='u sub'>flowing off<sub>OC'</sub></span></b> easily<span class='br'>〉</span>.</p>
+    <div class="jd"><h4>직독직해</h4><div class='cr'><span class='en'><i>/</i>The house also has sloped roofs</span><span class='ko'>그 집은 또한 경사진 지붕을 가지고 있다</span></div><div class='cr'><span class='en'><i>/</i>because they keep rainwater</span><span class='ko'>왜냐하면 그것들이 빗물이 ~하게 해 주기 때문이다</span></div><div class='cr'><span class='en'><i>/</i>flowing off easily.</span><span class='ko'>쉽게 흘러내리도록</span></div></div>
+    <p class="tr"><b>해석</b> 그 집은 또한 경사진 지붕을 가지고 있는데, 그것들이 빗물이 쉽게 흘러내리도록 해 주기 때문이다.</p>
+    <p class="gist"><span>결국 이 얘기</span> 지붕을 비스듬하게 만들어 빗물이 잘 흘러내리게 해요.</p>
+    <div class='chk'><b>서술형 포인트</b> keep rainwater flowing off <span>← keep + O + 현재분사</span></div>
+    <div class="gram"><b>문법</b><ul><li>keep + 목적어 + -ing: 목적어가 계속 ~하게 하다 (to flow, flow X)</li><li>because + 주어 + 동사 / because of + 명사</li><li>they = sloped roofs</li><li>also: 바닥(S10)에 이어 또 다른 비 대비책 추가</li></ul></div>
+    <div class='words'><b>단어</b> <span class='w'><sup>1</sup><b>sloped</b> 경사진 (slope 경사)</span></div>
+  </div>
+</article>
+
+<article class="card" id="s12">
+  <header class="ch"><span class="num">S12</span><span class="pt">POINT</span><ul><li>by 이외의 전치사를 쓰는 수동태</li></ul><span class="flow">⑦ 지붕</span></header>
+  <div class="body">
+    <div class="keyw"><span class="tag">핵심어</span><b>be covered with</b> ~로 덮여 있다</div>
+    <p class="sen"><span class='u main'>The roofs<sub>S</sub></span> <b class='key'><span class='u main'>are covered with<sub>V</sub></span></b> kawara <span class='voc'>tiles<sup>1</sup></span>.</p>
+    <div class="jd"><h4>직독직해</h4><div class='cr'><span class='en'><i>/</i>The roofs are covered</span><span class='ko'>지붕들은 덮여 있다</span></div><div class='cr'><span class='en'><i>/</i>with kawara tiles.</span><span class='ko'>카와라 기와로</span></div></div>
+    <p class="tr"><b>해석</b> 지붕들은 카와라 기와로 덮여 있다.</p>
+    <p class="gist"><span>결국 이 얘기</span> 지붕 위에는 카와라라는 기와를 덮어요.</p>
+    
+    <div class="gram"><b>문법</b><ul><li>be covered with ~로 덮여 있다 (비교: be filled with, be interested in, be made from)</li></ul></div>
+    <div class='words'><b>단어</b> <span class='w'><sup>1</sup><b>tile</b> 기와, 타일</span></div>
+  </div>
+</article>
+
+<article class="card" id="s13">
+  <header class="ch"><span class="num">S13</span><span class="pt">POINT</span><ul><li>상관접속사 not only A but also B</li><li>= B as well as A</li></ul><span class="flow">⑦ 지붕</span></header>
+  <div class="body">
+    <div class="keyw"><span class="tag">핵심어</span><b>fireproof</b> 내화성의</div>
+    <p class="sen"><span class='u main'>The strong kawara tiles<sub>S</sub></span> <span class='u main'>are<sub>V</sub></span> <span class='u main'><b class='key'>not only <span class='voc'>water-resistant<sup>1</sup></span> but also <span class='voc'>fireproof<sup>2</sup></span></b><sub>C</sub></span>.</p>
+    <div class="jd"><h4>직독직해</h4><div class='cr'><span class='en'><i>/</i>The strong kawara tiles are</span><span class='ko'>튼튼한 카와라 기와는</span></div><div class='cr'><span class='en'><i>/</i>not only water-resistant</span><span class='ko'>방수가 될 뿐만 아니라</span></div><div class='cr'><span class='en'><i>/</i>but also fireproof.</span><span class='ko'>불에도 강하다</span></div></div>
+    <p class="tr"><b>해석</b> 튼튼한 카와라 기와는 방수가 될 뿐만 아니라 불에도 강하다.</p>
+    <p class="gist"><span>결국 이 얘기</span> 카와라 기와는 물에도 강하고 불에도 강해요.</p>
+    <div class='chk'><b>서술형 포인트</b> fireproof as well as water-resistant <span>← not only A but also B = B as well as A</span></div>
+    <div class="gram"><b>문법</b><ul><li>not only A but also B = A뿐만 아니라 B도</li><li>A와 B는 같은 품사(형용사 + 형용사) → 병렬</li><li>전환: The tiles are fireproof as well as water-resistant. (A·B 자리 바뀜)</li><li>비교: both A and B / either A or B / neither A nor B</li></ul></div>
+    <div class='words'><b>단어</b> <span class='w'><sup>1</sup><b>water-resistant</b> 방수의</span><span class='w'><sup>2</sup><b>fireproof</b> 내화성의 (-proof ~을 막는)</span></div>
+  </div>
+</article>
+  </section>
+
+  <section class="block">
+    <h2>핵심 문법 한눈에</h2>
+    <div class="tbl"><table>
+      <tr><th>문법</th><th>지문 예문</th><th>시험 함정</th></tr>
+      <tr><td><b>가정법 과거</b> (S2)</td><td>If you <b>lived</b> there, you <b>would have to</b> ~</td><td>lives / will (X) · As you don't live there, you don't have to ~</td></tr>
+      <tr><td><b>분사구문</b> (S8)</td><td><b>Keeping</b> their body warm, ~</td><td>Kept / To keep (X) · While they keep ~</td></tr>
+      <tr><td><b>keep + O + 형용사</b> (S8, S10)</td><td>keep their body <b>warm</b> / keep the living area <b>dry and safe</b></td><td>warmly, safely (X)</td></tr>
+      <tr><td><b>keep + O + -ing</b> (S11)</td><td>keep rainwater <b>flowing</b> off</td><td>to flow (X)</td></tr>
+      <tr><td><b>not only A but also B</b> (S13)</td><td>not only water-resistant but also fireproof</td><td>= B as well as A, A·B 품사 일치</td></tr>
+      <tr><td><b>주격 관계대명사</b> (S4, S5)</td><td>mats <b>that are</b> made ~</td><td>선행사 복수 → are · that are 생략 가능</td></tr>
+      <tr><td><b>수동태</b> (S5, 6, 10, 12)</td><td>are divided by · can be removed · is raised · are covered with</td><td>can remove (X) · rise/raise · covered <b>with</b></td></tr>
+      <tr><td><b>to부정사 목적</b> (S6, S10)</td><td>to create ~ / to keep ~</td><td>= in order to</td></tr>
+      <tr><td><b>가주어 it</b> (S1)</td><td>What would <b>it</b> be like <b>to live</b> ~?</td><td>it = to live ~</td></tr>
+      <tr><td><b>동격</b> (S2, 5, 7)</td><td>genkan = an entrance hall / shoji = portable sliding doors / kotatsu = a heated table</td><td>영영풀이 단어 찾기</td></tr>
+      <tr><td><b>병렬</b> (S7, S8)</td><td>prefer to sit ~ and <b>put</b> ~</td><td>puts (X)</td></tr>
+    </table></div>
+  </section>
+
+  <section class="block">
+    <h2>숙어·표현</h2>
+    <div class="tbl"><table>
+      <tr><th>표현</th><th>뜻</th><th>문장</th></tr>
+      <tr><td>What is it like to ~?</td><td>~하는 것은 어떤가?</td><td>S1</td></tr>
+      <tr><td>take off ↔ put on</td><td>벗다 ↔ 입다</td><td>S2</td></tr>
+      <tr><td>before + V-ing</td><td>~하기 전에</td><td>S2</td></tr>
+      <tr><td>be made from / of</td><td>~로 만들어지다 (원료 / 재료)</td><td>S4, S5</td></tr>
+      <tr><td>be divided by</td><td>~에 의해 나뉘다</td><td>S5</td></tr>
+      <tr><td>get + 형용사</td><td>~해지다</td><td>S7</td></tr>
+      <tr><td>prefer to + 동사원형</td><td>~하는 것을 선호하다</td><td>S7</td></tr>
+      <tr><td>have meals</td><td>식사하다</td><td>S8</td></tr>
+      <tr><td>off the ground</td><td>지면에서 떨어져</td><td>S10</td></tr>
+      <tr><td>safe from</td><td>~로부터 안전한</td><td>S10</td></tr>
+      <tr><td>flow off</td><td>흘러내리다</td><td>S11</td></tr>
+      <tr><td>be covered with</td><td>~로 덮여 있다</td><td>S12</td></tr>
+    </table></div>
+  </section>
+
+  <section class="block">
+    <h2>확인 문제</h2>
+    <div class="q"><p><b>Q1.</b> 어법상 올바른 것을 고르시오.</p><ol>
+      <li>If you (live / lived) there, you would have to take off your shoes.</li>
+      <li>(Keeping / Kept) their body warm, Japanese have meals at the table.</li>
+      <li>The floor is raised to keep the living area (dry / dryly) and safe.</li>
+      <li>For large gatherings, these doors can (remove / be removed).</li>
+      <li>Sloped roofs keep rainwater (to flow / flowing) off easily.</li>
+      <li>People prefer to sit at a kotatsu and (put / puts) their legs in it.</li></ol></div>
+    <div class="q"><p><b>Q2.</b> 직설법으로 바꾸시오.</p><p>If you lived there, you would have to take off your shoes in the genkan.<br>→ As you ________ there, you ________ take off your shoes in the genkan.</p></div>
+    <div class="q"><p><b>Q3.</b> 같은 뜻이 되도록 빈칸을 채우시오.</p><p>The tiles are not only water-resistant but also fireproof.<br>= The tiles are ________ ________ ________ ________ water-resistant.</p></div>
+    <div class="q"><p><b>Q4.</b> [ ] 안을 부사절로 바꾸시오.</p><p>[Keeping their body warm], Japanese have meals at the table.<br>→ ________ they ________ their body warm, Japanese have meals at the table.</p></div>
+    <div class="q"><p><b>Q5.</b> 본문의 내용과 일치하는 것은?</p><ol>
+      <li>Tatami mats are made from wood and thin paper.</li>
+      <li>Shoji cannot be moved because they are fixed to the wall.</li>
+      <li>The floor of the house is raised to protect it from flooding.</li>
+      <li>People use a kotatsu to keep cool in summer.</li>
+      <li>Kawara tiles are strong but they easily catch fire.</li></ol></div>
+    <div class="ans"><b>정답</b><br>
+      Q1 lived / Keeping / dry / be removed / flowing / put<br>
+      Q2 don't live / don't have to<br>
+      Q3 fireproof as well as<br>
+      Q4 While / keep<br>
+      Q5 ③ (① 나무·종이는 shoji ② portable → 이동 가능 ④ 겨울에 따뜻하게 ⑤ fireproof)
+    </div>
+  </section>
+</div>
+</body>
+</html>
