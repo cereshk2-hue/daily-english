@@ -1,6 +1,6 @@
 # 11/20 중산중3 외부지문 2: Cathy Song 「Picture Bride」(1983, 저작권 있음 → 시 원문은 싣지 않음, 학교 프린트 3쪽 표 11칸 번호로 가리킴)
 # 분석지(내용·숨은 뜻·이야기 흐름 중심, 선생님: 중3 외부지문은 내용문제 비중 큼) + 백지노트(좌 원문 옮겨 쓰기 · 우 해석 쓰기)
-import html
+import html, sys
 esc = html.escape
 PARTS = [('Part 1. Leaving Korea · 한국을 떠나다', [1, 2, 3, 4]), ('Part 2. A Man with Her Photograph · 사진을 든 남자', [5, 6, 7]), ('Part 3. Meeting Her Husband · 남편을 만나다', [8, 9, 10, 11])]
 # 칸: (장면, 숨은 뜻, 내용 포인트, 문법·구조)
@@ -164,7 +164,43 @@ def pdf(h, out):
         b = p.chromium.launch(); pg = b.new_page(); pg.goto('file:///tmp/_pb.html'); pg.wait_for_timeout(1500)
         pg.pdf(path=out, format='A4', print_background=True, prefer_css_page_size=True); b.close()
 
-if __name__ == '__main__':
+if __name__ == '__main__' and 'answer' not in sys.argv:
     O = '/home/claude/work/m3pb/'
     a = analysis(); open(O + 'analysis.html', 'w', encoding='utf-8').write(a); pdf(a, O + '중산중3_외부지문_PictureBride_분석지.pdf')
     n = baekji(); open(O + 'baekji.html', 'w', encoding='utf-8').write(n); pdf(n, O + '중산중3_외부지문_PictureBride_백지노트.pdf')
+
+# 11/20 10:47 선생님: 백지노트 답지 — 원문 칸은 '프린트 3쪽 n번 칸', 해석 칸은 장면 요약(내 말), ✎ 숨은 뜻 답, 3쪽 정리 칸 모범답
+def answer():
+    h = baekji()
+    A = {n: C[n] for n in C}
+    for title, ns in PARTS:
+        for n in ns:
+            sc, hid, pt, gr = A[n]
+            old = '<tr class="s"><td class="no">%d</td><td class="en"><div class="ln"></div><div class="ln"></div></td><td class="ko"><div class="ln"></div><div class="ln"></div></td></tr>' % n
+            new = '<tr class="s"><td class="no">%d</td><td class="en" style="font-family:inherit;font-size:9.5pt;color:#555">프린트 3쪽 표 %d번째 칸 원문<br><span style="color:#1f5bb8">포인트: %s</span></td><td class="ko"><span class="anw">%s</span></td></tr>' % (n, n, esc(pt), esc(sc))
+            assert h.count(old) == 1; h = h.replace(old, new)
+            i = h.index('<td colspan="2"><div class="cue">', h.index(new))
+            j = h.index('<div class="ln"></div></td></tr>', i)
+            h = h[:j] + '<div class="anw" style="padding:2px 0 4px">→ %s</div></td></tr>' % esc(hid) + h[j + len('<div class="ln"></div></td></tr>'):]
+    fill = [('<div class="flow4"><div>① </div><div>② </div><div>③ </div><div>④ </div></div>',
+             '<div class="flow4"><div class="anw">① 한국(부산)을 떠난다 — 아버지 집 → 양복점 거리 → 부두 (Part 1)</div><div class="anw">② 배를 타고 이름도 낯선 섬(하와이)으로 향한다 (Part 1)</div><div class="anw">③ 섬에서 한 남자가 그녀의 사진을 빛에 비춰 보며 기다린다 (Part 2)</div><div class="anw">④ 도착해 열세 살 많은 낯선 남편을 만난다 (Part 3)</div></div>'),
+            ('<tr><td>할머니</td><td></td><td></td><td></td></tr>', '<tr><td>할머니</td><td class="anw">23세 · 부산에서 출발 → 하와이 섬</td><td class="anw">사진신부, 저고리(한복) 차림, 무엇을 가져갔는지는 모름</td><td class="anw">슬픔·긴장 → 낯섦·불안 → 조심스러움</td></tr>'),
+            ('<tr><td>남편</td><td></td><td></td><td></td></tr>', '<tr><td>남편</td><td class="anw">할머니보다 13살 많음 · 와이알루아 설탕 공장 옆 숙소</td><td class="anw">사탕수수 농장 노동자, 할머니의 사진을 가지고 있음</td><td class="anw">기대·설렘 (사진을 빛에 비춰 봄)</td></tr>'),
+            ('<tr><td>화자</td><td></td><td></td><td></td></tr>', '<tr><td>화자</td><td class="anw">할머니보다 한 살 많음 → 24세</td><td class="anw">할머니의 손녀, 할머니의 과거를 상상하며 질문함</td><td class="anw">궁금함·공감</td></tr>')]
+    sym = {'그저 문을 닫고 떠났을까?': '그렇게 쉬웠을 리 없다 → 가족·고향과의 이별의 무게', '부두까지의 먼 길': '실제 거리 + 마음의 거리(망설임·두려움)', '이름을 최근에야 안 섬': '모든 것이 낯선 목적지 → 불안',
+           '사진을 빛에 비춰 보는 남자': '기대·설렘 / 남자도 그녀를 사진으로만 앎', '나방 날개로 빛나는 방': '기다리는 남자 마음속의 희망', '남편인 낯선 사람': '아이러니 — 남편이지만 처음 보는 사람',
+           '예의 바르게 고름을 풂': '조심스러움·순종 / 한복 = 한국인의 정체성', '건조한 바람 · 불타는 사탕수수': '앞으로 살아갈 거친 노동 현실 (바람에 부푼 치마 = 새 세계로 밀려 들어가는 운명)'}
+    for a, b in fill: assert h.count(a) == 1, a; h = h.replace(a, b)
+    for k, v in sym.items():
+        a = '<tr><td>%s</td><td></td></tr>' % esc(k); assert h.count(a) == 1, k
+        h = h.replace(a, '<tr><td>%s</td><td class="anw">%s</td></tr>' % (esc(k), esc(v)))
+    boxes = h.split('<div class="box" style="height:120px"></div>'); assert len(boxes) == 3
+    h = (boxes[0] + '<div class="box anw" style="height:auto;min-height:120px">화자는 할머니의 과거를 직접 볼 수 없었고 물어볼 수도 없다 → 답을 모르는 채 상상하며 묻는다. 질문이 이어질수록 할머니에 대한 궁금증과 공감이 커진다. (시에는 답이 나오지 않음)</div>' +
+         boxes[1] + '<div class="box anw" style="height:auto;min-height:120px">· 마음: sad, nervous (scared, lonely) — 가족·고향을 떠나 처음 보는 사람과 결혼하러 낯선 나라로 가기 때문<br>· I think she felt sad and nervous.<br>· 제목: 사진만 보고 결혼을 약속한 뒤, 얼굴도 모르는 남편을 만나러 먼 나라로 간 신부<br>· 화자 나이 24세 — 할머니가 한 살 어렸고 떠날 때 23세</div>' + boxes[2])
+    h = h.replace('<small>백지노트</small>', '<small>백지노트 · 답지</small>').replace('</style>', '.anw{color:#c8372d;font-size:9.5pt;line-height:1.5}\n</style>', 1)
+    h = h.replace('왼쪽에 원문을 옮겨 쓰고, 오른쪽에 해석을 쓰세요. 아래 ✎ 칸에는 숨은 뜻을 정리하세요.', '원문은 학교 프린트 3쪽 표로 확인 · 오른쪽 해석 칸에는 장면 요약을 실음 · 빨간 글씨 = 모범 답')
+    return h
+
+if __name__ == '__main__' and 'answer' in sys.argv:
+    O = '/home/claude/work/m3pb/'
+    a = answer(); open(O + 'baekji_answer.html', 'w', encoding='utf-8').write(a); pdf(a, O + '중산중3_외부지문_PictureBride_백지노트_답지.pdf')
