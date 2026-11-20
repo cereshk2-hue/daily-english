@@ -1,0 +1,252 @@
+ 
+다음 글에서 필자가 주장하는 것을 바르게 이해하지 못한 사람을 모두 고르면? (33) 
+ ②, ③
+One of the things that makes uncertainty difficult for members of the public to appreciate is that the significance of uncertainty is relative. Take, for example, the distance between Earth and the sun: 1.49597 × 10⁸ km, as measured at one point during the year. This seems relatively precise; after all, using six significant digits means I know the distance to an accuracy of one part in a million or so. However, if the next digit is uncertain, that means the uncertainty in knowing the precise Earth­sun distance is larger than the distance between New York and Chicago! Whether or not the quoted number is “precise” therefore depends on what I’m intending to do with it. If I care only about what minute the sun will rise tomorrow, then the number quoted here is fine. If I want to send a satellite to orbit just above the sun, however, then I would need to know distances more accurately. [3점] 
+* significant digit: 유효 숫자
+① 성윤: Since the importance of uncertainty varies from person to person, it is difficult to understand it.
+② 지연: The distance between the sun and the earth is almost always constant, so it can be said to be certain.
+③ 호재: The distance between the Sun and the Earth is more accurate than the distance between New York and Chicago.
+④ 민지: The accuracy of the numbers quoted depends on what you do with them.
+⑤ 종원: The public has difficulty understanding uncertainty because the importance of uncertainty is relative.
+다음 밑쥴 친 (A)를 조건에 맞게 영작하시오. (33)
+ Whether or not the quoted number is “precise” therefore depends on what I’m intending to do with it.
+One of the things that makes uncertainty difficult for members of the public to appreciate is that the significance of uncertainty is relative. Take, for example, the distance between Earth and the sun: 1.49597 × 10⁸ km, as measured at one point during the year. This seems relatively precise; after all, using six significant digits means I know the distance to an accuracy of one part in a million or so. However, if the next digit is uncertain, that means the uncertainty in knowing the precise Earth­sun distance is larger than the distance between New York and Chicago! 인용된 숫자가 ‘정확한지’ 아닌지는 내가 그것으로 무엇을 하려고 하느냐에 따라 다르다. If I care only about what minute the sun will rise tomorrow, then the number quoted here is fine. If I want to send a satellite to orbit just above the sun, however, then I would need to know distances more accurately. [3점] 
+
+edu-lab.kr – 수능대비/내신대비       /
+* significant digit: 유효 숫자
+  
+http://edu-lab.kr 교육연구소                                          
+비밀노트      2025년 9월 고1 모고 33-34번       	
+조건
+1. Whether 절 사용할 것
+2. what 절 사용할 것
+3. quote, precise, depend, intend 활용할 것
+ 다음 글의 빈칸에 가장 적절한 것은? 것은? (33) 
+ ④ 
+One of the things that makes uncertainty difficult for members of the public to appreciate is that the significance of uncertainty is relative. Take, for example, the distance between Earth and the sun: 1.49597 × 10⁸ km, as measured at one point during the year. This seems relatively precise; after all, using six significant digits means I know the distance to an accuracy of one part in a million or so. However, if the next digit is uncertain, that means the uncertainty in knowing the precise Earth­sun distance is larger than the distance between New York and Chicago! Whether or not the quoted number is “precise” therefore depends on what I’m intending to do with it. If I care only about what minute the sun will rise tomorrow, then the number quoted here is fine. If I want to send a satellite to orbit just above the sun, however, then I would need to know distances more accurately. [3점] 
+* significant digit: 유효 숫자
+① when to collect the data
+② how I calculate that number
+③ how many digits I can use
+④ what I’m intending to do with it
+⑤ where to measure the distance between two places
+다음 글의 내용과 일치하도록 할 때 빈칸 (A)~(C)에 주어진 철자로 시작하는 단어들을 쓰시오. (33)
+ (A) uncertainty   (B) appreciate   (C) relative
+One of the things that makes (A)uncertainty difficult for members of the public to (B)appreciate   is that the significance of uncertainty is (C)relative  . Take, for example, the distance between Earth and the sun: 1.49597 × 10⁸ km, as measured at one point during the year. This seems relatively precise; after all, using six significant digits means I know the distance to an accuracy of one part in a million or so. However, if the next digit is uncertain, that means the uncertainty in knowing the precise Earth­sun distance is larger than the distance between New York and Chicago! Whether or not the quoted number is “precise” therefore depends on what I’m intending to do with it. If I care only about what minute the sun will rise tomorrow, then the number quoted here is fine. If I want to send a satellite to orbit just above the sun, however, then I would need to know distances more accurately. [3점] 
+* significant digit: 유효 숫자
+ 
+ 
+ 
+다음 주어진 문장에 이어질 글의 순서를 알맞게 배열하시오. (33)
+ ⑤
+One of the things that makes uncertainty difficult for members of the public to appreciate is that the significance of uncertainty is relative. 
+ 
+(A) If I care only about what minute the sun will rise tomorrow, then the number quoted here is fine. If I want to send a satellite to orbit just above the sun, however, then I would need to know distances more accurately.  
+(B) However, if the next digit is uncertain, that means the uncertainty in knowing the precise Earth­sun distance is larger than the distance between New York and Chicago! Whether or not the quoted number is “precise” therefore depends on what I’m intending to do with it. 
+(C) Take, for example, the distance between Earth and the sun: 1.49597 × 10⁸ km, as measured at one point during the year. This seems relatively precise; after all, using six significant digits means I know the distance to an accuracy of one part in a million or so.  [3점] 
+* significant digit: 유효 숫자
+① (A) - (C) - (B)		
+② (B) - (A) - (C)
+③ (B) - (C) - (A)		
+④ (C) - (A) - (B)
+⑤ (C) - (B) - (A)
+ 
+다음 밑줄 친 단어들과 바꿔 쓸 수 없는 것은? (33)
+ ②
+One of the things that makes uncertainty difficult for members of the public to ⓐappreciate is that the significance of uncertainty is ⓑrelative. Take, for example, the distance between Earth and the sun: 1.49597 × 10⁸ km, as measured at one point during the year. This seems relatively ⓒprecise; after all, using six significant digits means I know the distance to an accuracy of one part in a million or so. However, if the next digit is uncertain, that means the uncertainty in knowing the precise Earth­sun distance is larger than the distance between New York and Chicago! Whether or not the ⓓquoted number is “precise” therefore depends on what I’m ⓔintending to do with it. If I care only about what minute the sun will rise tomorrow, then the number quoted here is fine. If I want to send a satellite to orbit just above the sun, however, then I would need to know distances more accurately. [3점] 
+* significant digit: 유효 숫자
+① ⓐ recognize
+② ⓑ definite
+③ ⓒ accurate
+④ ⓓ cited
+⑤ ⓔ planning
+ 
+다음 문장이 들어갈 곳으로 가장 알맞은 것은? (33)
+ ④ 
+Whether or not the quoted number is “precise” therefore depends on what I’m intending to do with it.
+ 
+One of the things that makes uncertainty difficult for members of the public to appreciate is that the significance of uncertainty is relative. ( ① ) Take, for example, the distance between Earth and the sun: 1.49597 × 10⁸ km, as measured at one point during the year. ( ② ) This seems relatively precise; after all, using six significant digits means I know the distance to an accuracy of one part in a million or so. ( ③ ) However, if the next digit is uncertain, that means the uncertainty in knowing the precise Earth­sun distance is larger than the distance between New York and Chicago! ( ④ ) If I care only about what minute the sun will rise tomorrow, then the number quoted here is fine. ( ⑤ ) If I want to send a satellite to orbit just above the sun, however, then I would need to know distances more accurately. [3점] 
+* significant digit: 유효 숫자
+다음 밑줄 친 부분 중에서 어법상 틀린 것은? (33)
+ ③
+One of the things that makes uncertainty difficult for members of the public to appreciate ①is that the significance of uncertainty is relative. Take, for example, the distance between Earth and the sun: 1.49597 × 10⁸ km, as ②measured at one point during the year. This seems relatively precise; after all, using six significant digits ③mean I know the distance to an accuracy of one part in a million or so. However, if the next digit is uncertain, that means the uncertainty in knowing the precise Earth­sun distance is larger than the distance between New York and Chicago! Whether or not the quoted number ④is “precise” therefore ⑤depends on what I’m intending to do with it. If I care only about what minute the sun will rise tomorrow, then the number quoted here is fine. If I want to send a satellite to orbit just above the sun, however, then I would need to know distances more accurately. [3점] 
+* significant digit: 유효 숫자
+   
+다음 (A)~(D)의 각 [    ] 안에서 문맥에 알맞은 것을 골라 쓰시오. (33)
+  (A) appreciate  (B) relatively  
+   (C) intending  (D) rise  
+One of the things that makes uncertainty difficult for members of the public to (A)[appreciate/depreciate] is that the significance of uncertainty is relative. Take, for example, the distance between Earth and the sun: 1.49597 × 10⁸ km, as measured at one point during the year. This seems (B) [absolutely/relatively] precise; after all, using six significant digits means I know the distance to an accuracy of one part in a million or so. However, if the next digit is uncertain, that means the uncertainty in knowing the precise Earth­sun distance is larger than the distance between New York and Chicago! Whether or not the quoted number is “precise” therefore depends on what I’m (C)[tending/intending] to do with it. If I care only about what minute the sun will (D)[arise/rise] tomorrow, then the number quoted here is fine. If I want to send a satellite to orbit just above the sun, however, then I would need to know distances more accurately. [3점] 
+* significant digit: 유효 숫자
+ 
+
+(A)
+(B)
+(C)
+(D) 
+ 
+다음 글의 흐름으로 보아 단어의 쓰임이 어색한 것은? (33)
+ ③  
+One of the things that makes uncertainty ①difficult for members of the public to appreciate is that the significance of uncertainty is relative. Take, for example, the distance between Earth and the sun: 1.49597 × 10⁸ km, as measured at one point during the year. This seems relatively ②precise; after all, using six significant digits means I know the distance to an accuracy of one part in a million or so. However, if the next digit is uncertain, that means the uncertainty in knowing the precise Earth­sun distance is ③smaller than the distance between New York and Chicago! Whether or not the quoted number is “precise” therefore depends on what I’m intending to do with it. If I care only about what minute the sun will rise tomorrow, then the number quoted here is ④fine. If I want to send a satellite to orbit just above the sun, however, then I would need to know distances ⑤more accurately. [3점] 
+* significant digit: 유효 숫자
+   
+ 다음 빈칸 (A)~(D)에 certain을 활용하여 써서 뜻이 통하도록 하시오. (33)
+ (A) uncertainty   (B) uncertainty  
+   (C) uncertain  (D) uncertainty
+One of the things that makes (A)uncertainty difficult for members of the public to appreciate is that the significance of (B)uncertainty is relative. Take, for example, the distance between Earth and the sun: 1.49597 × 10⁸ km, as measured at one point during the year. This seems relatively precise; after all, using six significant digits means I know the distance to an accuracy of one part in a million or so. However, if the next digit is (C)uncertain, that means the (D)uncertainty in knowing the precise Earth­sun distance is larger than the distance between New York and Chicago! Whether or not the quoted number is “precise” therefore depends on what I’m intending to do with it. If I care only about what minute the sun will rise tomorrow, then the number quoted here is fine. If I want to send a satellite to orbit just above the sun, however, then I would need to know distances more accurately. [3점] 
+* significant digit: 유효 숫자
+ 
+ 다음 빈칸 (A)~(B)에 accurate을 활용하여 써서 뜻이 통하도록 하시오. (33)
+ (A) accuracy    (B) accurately
+One of the things that makes uncertainty difficult for members of the public to appreciate is that the significance of uncertainty is relative. Take, for example, the distance between Earth and the sun: 1.49597 × 10⁸ km, as measured at one point during the year. This seems relatively precise; after all, using six significant digits means I know the distance to an (A)accuracy of one part in a million or so. However, if the next digit is uncertain, that means the uncertainty in knowing the precise Earth­sun distance is larger than the distance between New York and Chicago! Whether or not the quoted number is “precise” therefore depends on what I’m intending to do with it. If I care only about what minute the sun will rise tomorrow, then the number quoted here is fine. If I want to send a satellite to orbit just above the sun, however, then I would need to know distances more (B)accurately. [3점] 
+* significant digit: 유효 숫자
+ 
+다음 밑쥴 친 (A)를 정확하게 해석하시오. (33)
+ 이것은 상대적으로 정확해 보이지만, 결국, 여섯 자리의 유효 숫자를 사용하는 것은 백만 분의 일 정도의 정확도로 그 거리를 알고 있다는 것을 의미한다. 
+One of the things that makes uncertainty difficult for members of the public to appreciate is that the significance of uncertainty is relative. Take, for example, the distance between Earth and the sun: 1.49597 × 10⁸ km, as measured at one point during the year. (A)This seems relatively precise; after all, using six significant digits means I know the distance to an accuracy of one part in a million or so. However, if the next digit is uncertain, that means the uncertainty in knowing the precise Earth­sun distance is larger than the distance between New York and Chicago! Whether or not the quoted number is “precise” therefore depends on what I’m intending to do with it. If I care only about what minute the sun will rise tomorrow, then the number quoted here is fine. If I want to send a satellite to orbit just above the sun, however, then I would need to know distances more accurately. [3점] 
+* significant digit: 유효 숫자
+  다음 글의 주제로 가장 적절한 것은? (33)
+http://edu-lab.kr 교육연구소                                          
+비밀노트      2025년 9월 고1 모고 33-34번       	
+ ②
+One of the things that makes uncertainty difficult for members of the public to appreciate is that the significance of uncertainty is relative. Take, for example, the distance between Earth and the sun: 1.49597 × 10⁸ km, as measured at one point during the year. This seems relatively precise; after all, using six significant digits means I know the distance to an accuracy of one part in a million or so. However, if the next digit is uncertain, that means the uncertainty in knowing the precise Earth­sun distance is larger than the distance between New York and Chicago! Whether or not the quoted number is “precise” therefore depends on what I’m intending to do with it. If I care only about what minute the sun will rise tomorrow, then the number quoted here is fine. If I want to send a satellite to orbit just above the sun, however, then I would need to know distances more accurately. [3점] 
+* significant digit: 유효 숫자
+ 
+① attraction of numbers
+② relativity of uncertainty  
+③ importance of accuracy in numerical calculations
+④ difficulty of astronomical observations
+⑤ the discovery of relativity and its contribution
+ 
+다음 글의 주제로 알맞은 것은? (34)
+ ⑤ 
+Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. Thus, the harder we push towards a renewable energy system, the faster we have to use fossil energy for the construction process. This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements. [3점] 
+* excavate: 발굴하다 
+ 
+① underestimation of fossil fuels 
+② comparison of solar and wind energies
+③ types of energy favorable to the environment
+④ environmental protection capability of renewable energy
+⑤ the dilemma in the transition to renewable energy
+  
+다음 빈칸에 들어갈 말로 알맞은 것은? (34)
+ ② 
+Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. Thus, the harder we push towards a renewable energy system, the faster we have to use fossil energy for the construction process. This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements. [3점] 
+* excavate: 발굴하다 
+ 
+① will reduce the pace of climate warming
+② cannot happen without fossil fuels
+③ will drastically reduce the use of fossil fuels
+④ can have a huge impact on the whole industry.
+⑤ will greatly contribute to the sustainable survival of mankind.
+ 
+다음 글에서 글쓴이가 재생 에너지로의 전환에 대해 갖고 있는 태도는? (34)
+ ② 
+Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. Thus, the harder we push towards a renewable energy system, the faster we have to use fossil energy for the construction process. This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements. [3점] 
+* excavate: 발굴하다
+① neutral 
+② critical
+③ favorable
+④ positive
+⑤ hopeful
+다음 글의 요약문이 되도록 할 때, 빈칸 (A)~(D)에 알맞은 말을 본문에서 찾아 쓰시오.(형태 변화 필요할 수도 있음). (34)
+ (A) build   (B) requires   
+    (C) undermines  (D) reduce 
+Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. Thus, the harder we push towards a renewable energy system, the faster we have to use fossil energy for the construction process. This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements. [3점] 
+* excavate: 발굴하다
+  
+➠We (A)build   renewable energy infrastructure to stop global warming, which (B)requires extensive use of fossil fuels, which in turn (C)undermines efforts to (D)reduce   emissions.
+ 
+ 
+다음 글의 흐름으로 보아, 단어의 쓰임이 알맞지 않은 것은? (34)
+ ②
+Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to ①stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen ②with fossil fuels. For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. Production of solar panels requires ③scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. Thus, the harder we ④push towards a renewable energy system, the faster we have to use fossil energy for the construction process. This is not only expensive, but also an ⑤undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements. [3점] 
+* excavate: 발굴하다
+다음 보기의 영영풀이에 맞은 단어를 본문에서 찾아 쓰시오. (34)
+ ⓐ renewable  ⓑ alternative  ⓒ scarce  
+    ⓓ transition
+Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. Thus, the harder we push towards a renewable energy system, the faster we have to use fossil energy for the construction process. This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements. [3점] 
+* excavate: 발굴하다
+
+ⓐ
+restored or replaced by natural processes 
+ⓑ
+offering or expressing a choice 
+ⓒ
+very small in amount or number, not plentiful
+ⓓ  
+a change from one state or condition to another
+다음 밑줄 친 부분에 해당하는 구체적인 내용을 본문에서 찾아 쓰시오. (34)
+ In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes
+Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. Thus, the harder we push towards a renewable energy system, the faster we have to use fossil energy for the construction process. This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements. [3점] 
+* excavate: 발굴하다
+ 
+ 
+다음 밑줄 친 부분 중 어법상 알맞지 않은 것은? (34)
+ ③
+Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in ①one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, production of concrete structures and steel elements require amounts of energy that ②is only possible to produce with fossil energy. Production of solar panels ③require scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. Thus, the harder we push towards a renewable energy system, ④the faster we have to use fossil energy for the construction process. This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, ⑤which tend to focus just on energy supply requirements. [3점] 
+* excavate: 발굴하다
+ 
+  
+ 
+다음 빈칸 (A)~(C)에 require를 알맞게 써넣으시오. (A)의 경우, 학교 선생님의 강의가 기준입니다)(34)
+ (A) require/requires   (B) requires  (C) requiring
+Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, production of concrete structures and steel elements (A)requires   amounts of energy that is only possible to produce with fossil energy. Production of solar panels (B)requires scarce and expensive minerals which must be excavated, again (C)requiring the use of fossil fuels. Thus, the harder we push towards a renewable energy system, the faster we have to use fossil energy for the construction process. This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements. [3점] 
+* excavate: 발굴하다
+ 
+  
+  
+다음 빈칸 (A), (B)에 알맞은 말끼리 짝지어진 것은? (34)
+ ③
+Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. (A)For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. (B)Thus      , the harder we push towards a renewable energy system, the faster we have to use fossil energy for the construction process. This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements. [3점] 
+* excavate: 발굴하다
+   
+
+ (A)
+ (B)
+①
+However
+Instead
+②
+However
+Yet 
+③
+For instance
+Thus
+④
+Similarly
+That is to say
+⑤
+For example
+However
+다음 밑줄 친 부분을 정확하게 해석하시오. (34)
+  이는 단지 비용이 많이 들 뿐만 아니라, 전세계적 배기가스를 줄이려는 우리의 노력을 훼손하는 요인이 된다. 
+Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. Thus, the harder we push towards a renewable energy system, the faster we have to use fossil energy for the construction process. This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements. [3점] 
+* excavate: 발굴하다
+ 
+  
+ 
+다음 문장이 들어갈 곳으로 가장 알맞은 것은? (34)
+ ② 
+This transformation cannot happen without fossil fuels.
+ 
+Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. ( ① ) In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. ( ② ) For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. ( ③ ) Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. ( ④ ) Thus, the harder we push towards a renewable energy system, the faster we have to use fossil energy for the construction process. ( ⑤ ) This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements. [3점] 
+* excavate: 발굴하다
+ 다음 밑줄 친 부분이 주어진 우리말과 같은 뜻이 되도록 할 때 빈칸 (A)와 (B)를 완성하시오. (34)
+ (A) the harder  (B) the faster
+Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. Thus, (A)the harder we push towards a renewable energy system, (B)the faster we have to use fossil energy for the construction process (우리가 재생 가능 에너지 시스템을 향하여 더 세게 밀고 나아갈수록, 더 빠르게 우리는 건설 과정에서 화석 에너지를 사용해야 한다).This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements. [3점] 
+* excavate: 발굴하다
+ 
+ 
+ 
+ 
+다음 밑줄 친 부분이 의미하는 것을 바르게 설명한 것을 있는 대로 고르면? (34)
+ ①, ②, ③, ⑤
+Richard Heinberg, an American journalist, argues that in building the renewable energy infrastructure to stop global warming, we are actually involved in one of the greatest change projects in human history. In addition to solar panels and wind turbines, we have to build an alternative transport infrastructure, farming procedures and industrial processes. This transformation cannot happen without fossil fuels. For instance, production of concrete structures and steel elements require amounts of energy that is only possible to produce with fossil energy. Production of solar panels requires scarce and expensive minerals which must be excavated, again requiring the use of fossil fuels. Thus, the harder we push towards a renewable energy system, the faster we have to use fossil energy for the construction process. This is not only expensive, but also an undermining factor for our efforts to cut global emissions. Heinberg remarks that the cost of building this new energy infrastructure is seldom counted in transition proposals, which tend to focus just on energy supply requirements. [3점] 
+* excavate: 발굴하다
+ 
+① There is a huge need for fossil energy in the process of building renewable energy systems.
+② People do not calculate the costs of building renewable energy facilities.
+③ The shift to renewable energy contains fossil fuel use that people fail to consider.
+④ Renewable energy is almost the only solution that can slow or stop global warming.
+⑤ Building renewable energy infrastructure creates a paradoxical situation that requires fossil fuel use.
+정답 	  

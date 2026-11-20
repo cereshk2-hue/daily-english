@@ -1,0 +1,37 @@
+# 35·36번 (35 인공 지능의 역사 / 36 사막 거북의 생존 전략)
+from build import B, V, arrow
+C = dict(
+ STEMS=[0, 8, 12, 16, 25, 29, 33, 50, 58, 66, 74, 82, 104, 108, 116, 124, 141, 149, 159, 166, 169, 177, 181, 186, 195, 199, 204, 217, 225, 233, 241, 249, 271, 275, 283, 291, 308, 316, 320, 326, 333],
+ END=336, AUTOW=True,
+ W={6: [B('', 'x')], 26: [B('', 'x')]},   # 6번(관계 없는 문장)은 뺌: 원본 ③은 "think autonomously → under human supervision"만 바뀐 문장이라 글 안에서 틀렸다고 확정하기 어려움
+ EXP={
+  1: '② that → who: 콤마 뒤 계속적 용법에는 that을 못 씀(선행사 Pandora) // ① have(There + have been + 복수 myths) ③ developed(asked와 병렬) ④ replacing(분사구문) ⑤ are(선행사 machines 복수) 맞음 // ',
+  2: '틀린 것 were → have been(since ancient Greece → 현재완료) · autonomous → autonomously(동사 think 수식) · endowing → endowed(창조자에게 "부여받은", 수동) → 3개 // whether(~인지) · used(이전에 "쓰인") 맞음 // ',
+  3: '❺ deprived → endowed: 창조자에게 추론과 학습 능력을 "부여받은" 기계(인간처럼 생각하도록) // ❶ myths ❷ literature ❸ developed ❹ replacing 맞음 // deprive A of B = A에게서 B를 빼앗다',
+  4: '주어진 글(지능 기계를 꿈꿔 옴, 그리스 신화) → (C) 마찬가지로 문학도, 1950년 영국 수학자 → (A) 앨런 튜링이 기계가 생각할 수 있는지 묻고 튜링 테스트, 매카시가 "인공 지능" → (B) 그 이후 인공 지능은 ~ 학문이 됨 // // (C)가 "British mathematician"으로 끝나고 (A)가 "Alan Turing"으로 시작',
+  5: '"그는 이어서 튜링 테스트를 개발했다" → 튜링이 기계가 생각할 수 있는지 물었다는 문장 바로 뒤 ④ // // He = Alan Turing',
+  8: '기계가 "자율적으로 생각할(think autonomously)" 수 있는지 = 독립적으로 생각하고 행동할 수 있는지 → ① // ② 기초 자료만 분석 ③ 인간 지시에 의존 ④ 논리적 추론 회피 ⑤ 제한된 기계 작업 → 반대 // ',
+  9: '인공 지능 = "지능적인 기계를 만드는 것(making intelligent machines)"의 연구와 실천 // ① 기계 도구 ② 인지 한계 발견 ④ 연산 제한 ⑤ 인간 우월성 유지 → 글과 다름 // ',
+  10: '② 과거 작가들도 인간 같은 기계를 상상(셸리의 프랑켄슈타인) ④ "인공 지능"은 이전 표현("automata studies")을 대신함 // ① 그리스 이야기가 무시 ❌ ③ 튜링이 가능성을 부정 ❌ ⑤ 단순 기계 작업만 ❌ // ',
+  11: '② 튜링은 기계가 결코 스스로 결정 못 한다고 믿음 ❌(생각할 수 있는지 물음) ③ 매카시가 인공 지능 대신 automata studies를 씀 ❌(반대) ⑤ 원래 인간 행동 통제가 목적 ❌ // ① 오래된 전설 ④ 인간처럼 배우고 생각하는 시스템 → 일치 // ',
+  12: '(A) 인간 같은 "지적인(intellectual)" 능력을 가진 기계를 상상 (B) 인간처럼 "추론하는(reasoning)" 시스템 개발 // ① emotional · copying ② controlling ③ mechanical ⑤ memorizing → 글과 다름 // ',
+  14: '인공 지능의 발전(신화·문학 → 튜링 → 매카시)과 목표(인간처럼 생각하는 기계) → ③ // ① 고대 로봇 신화(일부) ② 자율 시스템 통제 ④ 일자리 윤리 ⑤ 육체노동 → 다름 // ',
+  15: '인간 같은 기계에 대한 꿈 → 튜링 · 매카시 → 인공 지능 학문의 등장 = The Rise of Artificial Intelligence → ② // ① 꿈만(일부) ③ 신화 ④ 자율 행동 ⑤ 기계 발명의 역사 → 글 전체와 다름 // ',
+  17: '⑤ while replaced: while 뒤에는 주어 + 동사나 -ing가 와야 하고, replaced 뒤 목적어가 있어 수동도 안 됨 → 들어갈 수 없음 // ① replacing(분사구문) ② which replaced ③ and replaced ④ which was replacing → 가능 // ',
+  19: 'endowed by their creators with reasoning and learning = 만든 이들에게 추론과 학습 능력을 부여받은 → ④ // ① 인간 개입 없이 스스로 발전 ② 단순 반복 작업 ③ 이미 인간을 넘어섬 ⑤ 자료 수집만 → 다름 // be endowed with = ~을 갖추다',
+  21: '③ supplying → supplied: stay + 과거분사(물을 "공급받은" 상태로 있다) // ① during + 명사 ② meaning(분사구문) ④ allow + 목적어 + to부정사 ⑤ so ~ that 맞음 // ',
+  22: '틀린 것 allows → allowing(분사구문, 앞에 동사 acts가 있음) · stopping → to stop(remind + 목적어 + to부정사) · lost → losing(분사구문, 방광을 비워 물을 "잃는") → 3개 // immobile(움직이지 않는) · terrified(사람에게 들려 "겁먹은") 맞음 // ',
+  23: '❺ retaining → losing: 방광을 비우면 소중한 물 비축분을 "잃는다" // ❶ avoids ❷ immobile ❸ sophisticated ❹ remind 맞음 // ',
+  24: '주어진 글(더위를 피한다) → (B) 겨울잠 · 굴속, 비 온 뒤 나와 물을 비축 → (A) 하지만 긴 겨울잠 동안은 정교한 방광에 의존 → (C) 방광이 중요해서 공원 순찰대원이 들어 옮기지 말라고 함 // // But to stay supplied / And because its bladder 신호',
+  25: '"1년 동안 물 없이 지낼 수 있다" → 방광이 물을 다시 흡수한다는 설명 바로 뒤 ④ // // Incredibly = 앞 내용의 놀라운 결과',
+  28: '겨울잠 동안 물을 공급받으려고 "매우 정교한 방광"에 의존 → highly developed bladder system // ① 땅 파는 능력 ② 땅속 생활 ③ 빗물 모으기 ⑤ 먹이 부족 적응 → 다음 문장(방광이 저장 탱크)과 이어지지 않음 // ',
+  29: '방광이 저장 탱크 역할을 하며 "물을 다시 몸으로 흡수하게 해 준다" → 그래서 1년 동안 물 없이 지냄 // ① 체온 ② 영양분 ④ 빗물 모으기 ⑤ 방광 보호 → 다음 문장과 이어지지 않음 // ',
+  30: '② 여름 대부분을 굴속에서 보냄 ③ 방광이 물을 다시 몸으로 흡수 // ① 일생의 절반도 안 되게 쉼 ❌(90% 이상 움직이지 않음) ④ 길을 건너게 옮기라고 권함 ❌ ⑤ 가장 더운 날 나옴 ❌(비 온 뒤) // ',
+  31: '③ 조심해서 들어 올리라고 권함 ❌(멈춰서 돕지 말라고 함) ④ 방광이 생존에 거의 영향 없음 ❌ ⑤ 매우 건조할 때 나옴 ❌(비 온 뒤) // ① 식물을 먹고 빗물을 모음 ② 몇 달 동안 물 없이 삶 → 일치 // ',
+  32: '(A) 1년 대부분 굴로 "물러나(retreats)" (B) 독특한 방광으로 물을 "아낀다(conserves)" // ③ ④ emerge(나타나다) → (A) 반대 ② ⑤ release · ④ loses → (B) 반대 // ',
+  34: '사막 거북이 극한의 더위를 견디는 전략(피하기 · 물 비축 · 방광) → ③ // ① 강우의 역할 ② 이동 ④ 환경 위협 ⑤ 번식 → 다름 // ',
+  35: 'How Desert Tortoises Survive Extreme Heat → ② // ① 사막 동물의 물 모으기(일부) ③ 기후 변화 ④ 숨은 위험 ⑤ 생애 주기 → 다름 // ',
+  37: '④ remind = 상기시키다(to make someone remember something). "완전히 잊고 무시하다"는 반대 뜻 // ① immobile ② sophisticated ③ go(~ 없이 지내다) ⑤ reserves(비축분) 바름 // ',
+  40: 'acts as a holding tank = 저장 탱크 역할을 한다 → 물을 보존하는 저장 장치 → ④ // ① 과식 방지 ② 물속 호흡 ③ 포식자 감지 ⑤ 체온 조절 → 다름 // ',
+ },
+)

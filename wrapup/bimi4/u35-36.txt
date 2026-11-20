@@ -1,0 +1,337 @@
+다음 밑줄 친 부분 중에서 어법상 틀린 것은?  (35번)
+http://edu-lab.kr 교육연구소                                          
+
+비밀노트       2025년 9월 모의고사        [고1]                         
+edu-lab.kr – 수능대비/내신대비       /                                    비밀노트
+ ②
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. There ❶have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, ❷that released ills upon the world). Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then ❸developed the Turing test to measure a machine’s intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy coined “artificial intelligence,” ❹replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that ❺are programmed to think like humans ― endowed by their creators with reasoning and learning.  
+     
+다음 밑줄 친 부분 중 어법상 어색한 부분의 개수는? (35번)
+ ③
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. There were myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine’s intelligence and whether the machines can think autonomous. A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans ― endowing by their creators with reasoning and learning. 
+①1개  ②2개  ③3개  ④4개  ⑤5개 
+다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?  (35번)
+ ⑤
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. There have been ❶myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, ❷literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then ❸developed the Turing test to measure a machine’s intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy coined “artificial intelligence,” ❹replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans ― ❺deprived by their creators with reasoning and learning. 
+     
+주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?  (35번)
+ ④
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). 
+(A) Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine’s intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” 
+(B) Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans ― endowed by their creators with reasoning and learning. 
+(C) Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). In 1950, British mathematician 
+① (A) - (C) - (B)  ② (B) - (A) - (C)
+③ (B) - (C) - (A)  ④ (C) - (A) - (B)
+⑤ (C) - (B) - (A)
+글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?  (35번)
+ ④
+He then developed the Turing test to measure a machine’s intelligence and whether the machines can think autonomously.
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. ( ① ) There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). ( ② ) Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). ( ③ ) In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans. ( ④ ) A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” ( ⑤ ) Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans ― endowed by their creators with reasoning and learning. 
+다음 글에서 전체 흐름과 관계 없는 문장은?  (35번)
+ ③
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. ①There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). ②Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). ③In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine’s intelligence and whether the machines can think under human supervision. ④A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” ⑤Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans ― endowed by their creators with reasoning and learning. 
+     
+다음 글에서 어법/문맥상 어색한 단어를 각각  찾아 수정하시오.  (35번)
+ 
+
+수정 전
+수정 후
+어법상
+programming
+programmed
+문맥상
+removed
+coined
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine’s intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy removed “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programming to think like humans ― endowed by their creators with reasoning and learning. 
+
+수정 전
+수정 후
+어법상
+문맥상
+다음 빈칸에 들어갈 말로 가장 적절한 것은?  (35번)
+ ①
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine’s intelligence and whether the machines can _______________________. A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans ― endowed by their creators with reasoning and learning.  
+① think and act independently
+② analyze only basic data
+③ rely on human instructions
+④ avoid logical reasoning
+⑤ perform limited mechanical tasks
+다음 빈칸에 들어갈 말로 가장 적절한 것은?  (35번)
+ ③
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine’s intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “__________________________” that are programmed to think like humans ― endowed by their creators with reasoning and learning.  
+① developing advanced mechanical tools
+② discovering human cognitive limits
+③ making intelligent machines 
+④ restricting computational processes
+⑤ maintaining human superiority
+다음 글의 내용으로 일치하는 것을 모두 고르시오.  (35번)
+ ②④
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine’s intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans ― endowed by their creators with reasoning and learning.  
+① Ancient Greek stories ignored the idea of artificial beings.
+② Some writers in the past imagined machines that could act like humans. 
+③ Alan Turing rejected the possibility that machines could think.
+④ The term "artificial intelligence" was introduced to replace a previous expression. 
+⑤ AI systems are designed only to perform simple mechanical tasks.
+다음 글의 내용으로 일치하지 않는 것을 모두 고르시오.  (35번)
+ ②③⑤
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine’s intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans ― endowed by their creators with reasoning and learning. 
+① There have been old legends describing human-like machines.
+② Alan Turing believed machines could never make decisions independently. 
+③ John McCarthy used the term “automata studies” instead of artificial intelligence. 
+④ AI research focuses on creating systems that can learn and think like humans.
+⑤ Artificial intelligence originally aimed to control human behavior. 
+다음 글의 내용을 한 문장으로 요약하고자 한다. 빈칸(A),(B)에 들어갈 말로 가장 적절한 것은?   (35번)
+ ④
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine’s intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans ― endowed by their creators with reasoning and learning. 
+➠For centuries, humans have imagined machines with _____(A)_____ abilities like their own, and artificial intelligence has now become a field dedicated to developing systems capable of _____(B)_____ like humans.
+
+    (A)
+    (B)
+①
+emotional
+copying
+②
+creative
+controlling
+③
+mechanical
+calculating
+④
+intellectual
+reasoning
+⑤
+autonomous
+memorizing
+다음 글의 내용을 한 문장으로 요약 할 때, 빈칸에 들어갈 말을 본문에서 찾아 쓰되, 필요시 변형하시오.  (35번)
+ intelligent / making / think / reason / artificial intelligence / endowed
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine’s intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans ― endowed by their creators with reasoning and learning. 
+➠Humans have long imagined machines with ____________ abilities, and artificial intelligence focuses on ____________ machines that can ____________ and ____________ like humans, a concept called ____________ _____________ and ____________ by their creators.
+다음 글의 주제로 가장 적절한 것은?  (35번)
+ ③
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine’s intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans ― endowed by their creators with reasoning and learning. 
+① myths about robots in ancient societies
+② challenges in controlling autonomous systems
+③ the development and goals of artificial intelligence 
+④ ethical concerns over replacing human workers
+⑤ advantages of using machines for manual labor
+다음 글의 제목으로 가장 적절한 것은?  (35번)
+ ②
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine’s intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans ― endowed by their creators with reasoning and learning. 
+① Dreams of Human-Like Machines
+② The Rise of Artificial Intelligence 
+③ Myths and Legends of Technology
+④ Understanding Autonomous Behavior
+⑤ History of Mechanical Inventions 
+다음 [보기]의 영영풀이에 해당하는 어휘를 본문에서 찾아 쓰되, 필요시 어형을 바꾸어 쓰시오.  (35번)
+ endowed / intelligence / coined / replacing
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine’s intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans ― endowed by their creators with reasoning and learning.  
+[보기]
+
+❶
+:                
+to give something to someone, especially a quality, ability, or right
+❷
+:                
+the ability to think and make decisions independently
+❸
+:                
+to create a new word or phrase that becomes widely used
+❹
+:                
+the process of replacing something old with a new one
+다음 글의 빈칸에 어법상 들어갈 수 없는 하나는? (35번)
+ ⑤
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine’s intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy coined “artificial intelligence,” ___________________ the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans ― endowed by their creators with reasoning and learning. 
+① replacing
+② which replaced
+③ and replaced
+④ which was replacing
+⑤ while replaced
+다음 글 (A),(B)의 주어진 모든 어휘를 써서 [보기]의 의미가 통하도록, 변형하거나 추가 없이 재배열하시오.(대소문자 구별 없음)  (35번)
+ (A) Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions
+(B) developed the Turing test to measure a machine’s intelligence and whether the machines can think autonomously
+ (A)[machines / dreamed / for / become / that / could / decisions / make / humans / have / like / centuries / human / intelligent / and / of]. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then (B)[the / and / Turing test / measure / machines / can / to / whether / machine’s / developed / think / a / intelligence / autonomously / the]. A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans ― endowed by their creators with reasoning and learning. 
+[보기] 
+(A) 인간은 수 세기 동안 지능적이게 될 수 있고 인간과 같은 결정을 내릴 수 있는 기계를 꿈꿔왔다.
+(B )기계의 지능과 기계가 자율적으로 사고할 수 있는지를 측정하기 위해 튜링 테스트를 개발했다.
+ 
+다음 글을 읽고 물음에 답하시오. (35번)
+ Humans for centuries have dreamed of machines that could become intelligent and make human­like decisions. There have been myths about robots, automatons, and artificial beings since ancient Greece (e.g., the myth of Pandora, who released ills upon the world). Likewise, literature throughout history has dreamed of creating human­like creatures and thinking machines (e.g., Mary Shelley’s Frankenstein). In 1950, British mathematician Alan Turing asked whether machines could think and reason like humans and then developed the Turing test to measure a machine’s intelligence and whether the machines can think autonomously. A few years later, MIT professor John McCarthy coined “artificial intelligence,” replacing the previously used expression “automata studies.” Since then, artificial intelligence has become the study and practice of “making intelligent machines” that are programmed to think like humans ― (A)endowed by their creators with reasoning and learning.  
+밑줄 친 (A)endowed by their creators with reasoning and learning가 의미하는 바로 가장 적절한 것은?
+ ④
+① the machines independently advanced their intelligence without human intervention
+② the machines are programmed only for simple repetitive tasks
+③ the machines have already surpassed human intelligence in most areas
+④ the machines were equipped by their creators with reasoning and learning abilities 
+⑤ the machines were initially designed only to collect and store data
+위 글의 주어진 주제를 상자안의 단어를 활용하여 영작하시오.
+ The development and evolving purpose of modern artificial intelligence systems
+modern / systems / intelligence / of / development / evolving / artificial / the / purpose / and
+다음 밑줄 친 부분 중에서 어법상 틀린 것은?  (36번)
+http://edu-lab.kr 교육연구소                                          
+
+비밀노트       2025년 9월 모의고사        [고1]                         
+edu-lab.kr – 수능대비/내신대비       /                                    비밀노트
+ ③
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. The slow­moving creature hibernates ❶during the winter and stays in its tunnel for much of the summer, ❷meaning that it spends more than 90 percent of its life immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay ❸supplying with water through its extended hibernation, the reptile relies on something else ― its highly sophisticated bladder. Unlike most animals, the tortoise’s bladder acts as a holding tank, allowing it ❹to reabsorb water back into its body. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. And because its bladder is so important to a tortoise’s survival, park rangers often remind visitors not to stop and help the slow­movers across the road. Tortoises become so terrified when people pick them up ❺that they empty their bladders, losing their precious water reserves. 
+     
+다음 밑줄 친 부분 중 어법상 어색한 부분의 개수는? (36번)
+ ③
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, meaning that it spends more than 90 percent of its life immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly sophisticated bladder. Unlike most animals, the tortoise’s bladder acts as a holding tank, allows it to reabsorb water back into its body. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. And because its bladder is so important to a tortoise’s survival, park rangers often remind visitors not stopping and help the slow­movers across the road. Tortoises become so terrified when people pick them up that they empty their bladders, lost their precious water reserves.
+①1개  ②2개  ③3개  ④4개  ⑤5개 
+다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?  (36번)
+ ⑤
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It ❶avoids it. The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, meaning that it spends more than 90 percent of its life ❷immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly ❸sophisticated bladder. Unlike most animals, the tortoise’s bladder acts as a holding tank, allowing it to reabsorb water back into its body. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. And because its bladder is so important to a tortoise’s survival, park rangers often ❹remind visitors not to stop and help the slow­movers across the road. Tortoises become so terrified when people pick them up that they empty their bladders, ❺retaining their precious water reserves.
+     
+ 
+주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?  (36번)
+ ②
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. 
+(A) But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly sophisticated bladder. Unlike most animals, the tortoise’s bladder acts as a holding tank, allowing it to reabsorb water back into its body. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. 
+(B) The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, meaning that it spends more than 90 percent of its life immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. 
+(C) And because its bladder is so important to a tortoise’s survival, park rangers often remind visitors not to stop and help the slow­movers across the road. Tortoises become so terrified when people pick them up that they empty their bladders, losing their precious water reserves.
+① (A) - (C) - (B)  ② (B) - (A) - (C)
+③ (B) - (C) - (A)  ④ (C) - (A) - (B)
+⑤ (C) - (B) - (A)
+글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?  (36번)
+ ④
+Incredibly, a desert tortoise can go a full year without taking in any freshwater at all.
+ In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. ( ① ) The tortoise stocks up on water by eating plants and digging holes to collect rain. ( ② ) But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly sophisticated bladder. ( ③ ) Unlike most animals, the tortoise’s bladder acts as a holding tank, allowing it to reabsorb water back into its body. ( ④ ) And because its bladder is so important to a tortoise’s survival, park rangers often remind visitors not to stop and help the slow­movers across the road. ( ⑤ ) Tortoises become so terrified when people pick them up that they empty their bladders, losing their precious water reserves.
+다음 밑줄 친 부분 ①~⑤중 어법상 어색한 것을 모두 골라 틀린 부분을 각각 바르게 고치시오. (36번)
+ ①meaning that it spends more than 90 percent of its life immobile
+③the tortoise’s bladder acts as a holding tank, allowing it to reabsorb water back into its body
+⑤Tortoises become so terrified when people pick them up that they empty their bladders, losing their precious water reserves
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, ①meaning what it spends more than 90 percent of its life immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. ②The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly sophisticated bladder. Unlike most animals, ③the tortoise’s bladder acts as a holding tank, allowing itself to reabsorb water back into its body. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. And because ④its bladder is so important to a tortoise’s survival, park rangers often remind visitors not to stop and help the slow­movers across the road. ⑤Tortoises become so terrified when people pick up them that they empty their bladders, losing their precious water reserves.
+다음 글에서 어법/문맥상 어색한 단어를 각각  찾아 수정하시오.  (36번)
+ 
+
+수정 전
+수정 후
+어법상
+문맥상
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, meaning that it spends more than 90 percent of its life active. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly sophisticated bladder. Unlike most animals, the tortoise’s bladder acts as a holding tank, allowing it to reabsorb water back into its body. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. And because its bladder is so important to a tortoise’s survival, park rangers often remind visitors not to stop and help the slow­movers across the road. Tortoises become so terrifying when people pick them up that they empty their bladders, losing their precious water reserves.
+
+수정 전
+수정 후
+어법상
+문맥상
+다음 빈칸에 들어갈 말로 가장 적절한 것은?  (36번)
+ ④
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, meaning that it spends more than 90 percent of its life immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay supplied with water through its extended hibernation, the reptile relies on something else ― ______________________________. Unlike most animals, the tortoise’s bladder acts as a holding tank, allowing it to reabsorb water back into its body. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. And because its bladder is so important to a tortoise’s survival, park rangers often remind visitors not to stop and help the slow­movers across the road. Tortoises become so terrified when people pick them up that they empty their bladders, losing their precious water reserves. 
+① its remarkable digging abilities
+② its habit of staying underground
+③ its efficient rain collection skills
+④ its highly developed bladder system 
+⑤ its adaptation to desert food shortages
+다음 빈칸에 들어갈 말로 가장 적절한 것은?  (36번)
+ ③
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, meaning that it spends more than 90 percent of its life immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly sophisticated bladder. Unlike most animals, the tortoise’s bladder acts as a holding tank, _______________________________________. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. And because its bladder is so important to a tortoise’s survival, park rangers often remind visitors not to stop and help the slow­movers across the road. Tortoises become so terrified when people pick them up that they empty their bladders, losing their precious water reserves. 
+① helping regulate its body temperature
+② storing nutrients during hibernation
+③ allowing it to reabsorb water back into its body 
+④ collecting rainwater through digging holes
+⑤ protecting the bladder from dehydration
+다음 글의 내용으로 일치하는 것을 모두 고르시오.  (36번)
+ ②③
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, meaning that it spends more than 90 percent of its life immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly sophisticated bladder. Unlike most animals, the tortoise’s bladder acts as a holding tank, allowing it to reabsorb water back into its body. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. And because its bladder is so important to a tortoise’s survival, park rangers often remind visitors not to stop and help the slow­movers across the road. Tortoises become so terrified when people pick them up that they empty their bladders, losing their precious water reserves. 
+① The tortoise spends less than half of its life inactive.
+② The tortoise hides underground for most of the summer season. 
+③ Its bladder allows it to take back water into its body. 
+④ Park rangers encourage visitors to move the tortoises across the road.
+⑤ Tortoises usually appear on the surface during the hottest days.
+다음 글의 내용으로 일치하지 않는 것을 모두 고르시오.  (36번)
+ ③④⑤
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, meaning that it spends more than 90 percent of its life immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly sophisticated bladder. Unlike most animals, the tortoise’s bladder acts as a holding tank, allowing it to reabsorb water back into its body. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. And because its bladder is so important to a tortoise’s survival, park rangers often remind visitors not to stop and help the slow­movers across the road. Tortoises become so terrified when people pick them up that they empty their bladders, losing their precious water reserves.
+① The tortoise stores water by eating vegetation and collecting rain.
+② A desert tortoise can live for many months without drinking.
+③ Park rangers advise visitors to pick up tortoises carefully. 
+④ The bladder has little impact on the tortoise’s survival. 
+⑤ Tortoises usually come out when the weather is extremely dry.
+다음 글의 내용을 한 문장으로 요약하고자 한다. 빈칸(A),(B)에 들어갈 말로 가장 적절한 것은?   (36번)
+ ①
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, meaning that it spends more than 90 percent of its life immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly sophisticated bladder. Unlike most animals, the tortoise’s bladder acts as a holding tank, allowing it to reabsorb water back into its body. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. And because its bladder is so important to a tortoise’s survival, park rangers often remind visitors not to stop and help the slow­movers across the road. Tortoises become so terrified when people pick them up that they empty their bladders, losing their precious water reserves.
+➠To survive in Death Valley’s extreme heat, the desert tortoise _____(A)_____ during most of the year and _____(B)_____ water using its unique physiological adaptation.
+
+    (A)
+    (B)
+①
+retreats
+conserves
+②
+retreats
+release
+③
+emerge
+conserves
+④
+emerge
+loses
+⑤
+adapts
+release
+다음 글의 내용을 한 문장으로 요약 할 때, 빈칸에 들어갈 말을 본문에서 찾아 쓰되, 필요시 변형하시오.  (36번)
+ hibernating / surfacing / stocking / relying / reabsorbing / surviving
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, meaning that it spends more than 90 percent of its life immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly sophisticated bladder. Unlike most animals, the tortoise’s bladder acts as a holding tank, allowing it to reabsorb water back into its body. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. And because its bladder is so important to a tortoise’s survival, park rangers often remind visitors not to stop and help the slow­movers across the road. Tortoises become so terrified when people pick them up that they empty their bladders, losing their precious water reserves.
+➠The desert tortoise survives the extreme heat by _______________ in its tunnel, _______________ only after rain, _______________ water by eating plants, _______________ on a highly sophisticated bladder, _______________ water back into its body, and _______________ for a year without freshwater.
+다음 글의 주제로 가장 적절한 것은?  (36번)
+ ③
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, meaning that it spends more than 90 percent of its life immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly sophisticated bladder. Unlike most animals, the tortoise’s bladder acts as a holding tank, allowing it to reabsorb water back into its body. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. And because its bladder is so important to a tortoise’s survival, park rangers often remind visitors not to stop and help the slow­movers across the road. Tortoises become so terrified when people pick them up that they empty their bladders, losing their precious water reserves.
+① the role of rainfall in desert wildlife
+② the migration patterns of desert animals
+③ the desert tortoise’s strategies for surviving extreme heat 
+④ the environmental threats to desert habitats
+⑤ the reproduction habits of reptiles in dry regions
+다음 글의 제목으로 가장 적절한 것은?  (36번)
+ ②
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, meaning that it spends more than 90 percent of its life immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly sophisticated bladder. Unlike most animals, the tortoise’s bladder acts as a holding tank, allowing it to reabsorb water back into its body. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. And because its bladder is so important to a tortoise’s survival, park rangers often remind visitors not to stop and help the slow­movers across the road. Tortoises become so terrified when people pick them up that they empty their bladders, losing their precious water reserves.
+① Water Collection Methods of Desert Animals
+② How Desert Tortoises Survive Extreme Heat 
+③ The Impact of Climate Change on Desert Species
+④ Hidden Dangers in Arid Ecosystems
+⑤ The Mysterious Life Cycle of Reptile
+다음 [보기]의 영영풀이에 해당하는 어휘를 본문에서 찾아 쓰되, 필요시 어형을 바꾸어 쓰시오.  (36번)
+ hibernates, relies, surfaces, reabsorbs
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, meaning that it spends more than 90 percent of its life immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly sophisticated bladder. Unlike most animals, the tortoise’s bladder acts as a holding tank, allowing it to reabsorb water back into its body. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. And because its bladder is so important to a tortoise’s survival, park rangers often remind visitors not to stop and help the slow­movers across the road. Tortoises become so terrified when people pick them up that they empty their bladders, losing their precious water reserves. 
+[보기]
+
+❶
+:                
+to sleep through the winter to survive harsh conditions
+❷
+:                
+to depend on someone or something for support
+❸
+:                
+to come out and become visible after being hidden
+❹
+:                
+to take back something into the body or system
+다음 밑줄 친 부분 중 영영풀이가 잘못된 것은? (36번)
+ ④
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, meaning that it spends more than 90 percent of its life ①immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly ②sophisticated bladder. Unlike most animals, the tortoise’s bladder acts as a holding tank, allowing it to reabsorb water back into its body. Incredibly, a desert tortoise can ③go a full year without taking in any freshwater at all. And because its bladder is so important to a tortoise’s survival, park rangers often ④remind visitors not to stop and help the slow­movers across the road. Tortoises become so terrified when people pick them up that they empty their bladders, losing their precious water ⑤reserves. 
+① not moving; staying still
+② highly advanced and well-designed in function
+③ to manage to last without receiving or using something
+④ to forget something completely and ignore it
+⑤ a supply kept for future use; a store set aside
+다음 글 (A)의 주어진 모든 어휘를 써서 [보기]의 의미가 통하도록, 변형하거나 추가 없이 재배열하시오.(대소문자 구별 없음)  (36번)
+ Tortoises become so terrified when people pick them up that they empty their bladders
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, meaning that it spends more than 90 percent of its life immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly sophisticated bladder. Unlike most animals, the tortoise’s bladder acts as a holding tank, allowing it to reabsorb water back into its body. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. And because its bladder is so important to a tortoise’s survival, park rangers often remind visitors not to stop and help the slow­movers across the road. (A)[empty / become / up / they / Tortoises / bladders / pick / people / when / terrified / them / so / that / their], losing their precious water reserves.
+[보기] ( 거북은 사람들이 그들을 들어 올릴 때 너무 겁을 먹어 그들의 방광을 비워버린다. )
+다음 글 (A)의 주어진 모든 어휘를 써서 [보기]의 의미가 통하도록, 변형하거나 추가 없이 재배열하시오.(대소문자 구별 없음)  (36번)
+ park rangers often remind visitors not to stop and help the slow­movers across the road
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, meaning that it spends more than 90 percent of its life immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly sophisticated bladder. Unlike most animals, the tortoise’s bladder acts as a holding tank, allowing it to reabsorb water back into its body. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. And because its bladder is so important to a tortoise’s survival, (A)[road / slow­movers / visitors / park / remind / rangers / across / often / help / the / and / to / not / stop / the]. Tortoises become so terrified when people pick them up that they empty their bladders, losing their precious water reserves.
+[보기] (공원 순찰대원들은 종종 방문객들에게 멈추어 그 느리게 움직이는 것을 도로를 건너도록 도와주지 않을 것을 상기시킨다)
+다음 글을 읽고 물음에 답하시오. (36번)
+ The desert tortoise has a simple solution for coping with Death Valley’s extreme heat: It avoids it. The slow­moving creature hibernates during the winter and stays in its tunnel for much of the summer, meaning that it spends more than 90 percent of its life immobile. In fact, the tortoise usually only surfaces after a good rain. Then, it gets to work. The tortoise stocks up on water by eating plants and digging holes to collect rain. But to stay supplied with water through its extended hibernation, the reptile relies on something else ― its highly sophisticated bladder. Unlike most animals, the tortoise’s bladder (A)acts as a holding tank, allowing it to reabsorb water back into its body. Incredibly, a desert tortoise can go a full year without taking in any freshwater at all. And because its bladder is so important to a tortoise’s survival, park rangers often remind visitors not to stop and help the slow­movers across the road. Tortoises become so terrified when people pick them up that they empty their bladders, losing their precious water reserves. 
+밑줄 친 (A)acts as a holding tank가 의미하는 바로 가장 적절한 것은?
+ ④
+① It prevents the tortoise from eating too much food
+② It helps the tortoise breathe underwater
+③ It enables the tortoise to detect predators easily
+④ It serves as a storage system that preserves water 
+⑤ It controls the tortoise’s body temperature
+위 글의 주어진 주제를 상자안의 단어를 활용하여 영작하시오.
+ The desert tortoise survives extreme heat by storing water
+storing / by / heat / desert / tortoise / survives / water / the / extreme
+정답
