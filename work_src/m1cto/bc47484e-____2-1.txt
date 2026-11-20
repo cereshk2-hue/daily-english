@@ -1,0 +1,662 @@
+◈ 동명사 
+
+내신문법                         동명사(2)
+
+▣ 형태: [동사원형 + ing]의 형태로 동사의 의
+         미나 성질을 가지면서 명사 역할을 함.
+
+동명사 만드는 법
+- -e로 끝나는 동사: e를 빼고 –ing (take →taking)
+-ie로 끝나는 동사: ie를 y로 고치고 –ing (die→dying)
+단모음+자음으로 끝나는 동사: 자음을 하나 더 쓰고 –ing (run→ running)
+
+- cook '요리하다‘ 
+      ⇨ cooking '요리하는 것’
+- sing a song '노래를 부르다‘ 
+      ⇨ singing a song '노래를 부르는 것'
+- ride a horse ‘말을 타다’
+      ⇨ riding a horse '말을 타는 것' 
+▣ 동명사는 문장에서 주어, 목적어, 보어의 역할
+  을 한다.
+1. 주어
+  Riding a bicycle is fun.
+  자전거를 타는 것은 재미있다.
+  Seeing is believing.
+  보는 것이 믿는 것이다.
+▶cf. 동명사는 단수 취급한다.
+  Playing soccer with my friends is a lot of fun. 
+  친구들과 축구를 하는 것은 아주 재미있다.
+2. 보어
+  His dream is making a lot of money.
+  그녀의 꿈은 많은 돈을 버는 것이다.
+  My job is selling flowers.
+  나의 직업은 꽃들을 파는 것이다.  
+3. 목적어
+  3-1 타동사의 목적어
+  She enjoys talking about Korean culture.
+  그녀는 한국 문화에 대해 이야기하는 것을 즐긴다.
+  He finished doing his English homework.
+  그는 영어 숙제하는 것을 끝마쳤다.
+  3-2 전치사의 목적어
+  Thank you for inviting me.
+  나를 초대해줘서 고마워.
+  I am good at playing the piano.
+  나는 피아노 치는 것을 잘한다.
+▣ 동명사는 명사의 역할을 하지만 동시에 동사의 성질도 지님, 즉 동사처럼 목적어, 보어, 의미상 주어(동명사 앞에 소유격, 또는 목적격)를 가질 수 있고, 동명사 앞에 not, never을 붙여 부정을 나타낼 수 있음
+ ex) Reading books is his hobby.
+    (동명사의 목적어)
+    Would you mind my opening the door?
+    (동명사의 의미상 주어)
+▣ 동명사 VS To+동사원형 
+▶동명사만 목적어로 취하는 동사 
+-enjoy, forgive, finish, give up, mind, miss, practice, quit, suggest, save, avoid, keep, imagine, understand등
+ ex)He enjoys shopping with his friends.(o)
+    He enjoys to shop with his friends.(x)
+▶to부정사만 목적어로 취하는 동사
+-want,hope,wish,expect,decide,plan,agree,promise등
+ ex)She wants to speak English well.(o)
+    She wants speaking English well.(x)
+▶동명사, to부정사 둘 다 목적어로 취하는 동사
+-like, love, start, begin, hate, continue, prefer등
+ ex) I like to draw animals. 
+   = I like drawing animals.
+▶동명사,to부정사 둘 다 취하나 의미가 달라지는 동사
+-remember + ~ing: (과거)~한 것을 기억하다.
+           + to부정사: (미래)~할 것을 기억하다.
+-forget + ~ing: (과거)~한 것을 잊다.
+        + to부정사: (미래)~할 것을 잊다.
+-stop + ~ing: ~하는 것을 멈추다. 
+      + to부정사: ~하기 위해서 멈추다.
+-try + ~ing: 시험 삼아 한번 시도해보다.
+     + to부정사: ~을 노력하다.
+[1-6] 다음 우리말을 참고하여 빈칸에 알맞은 말을 쓰시오.
+일찍 일어나는 것은 건강에 좋다.
+ Getting
+→              up early is good for your health.
+나는 편지 쓰는 것을 좋아한다. 
+ writing
+→ I like              letters.
+컴퓨터 게임 하는 것은 재미있다.
+ Playing
+→              computer games is interesting.
+그의 일은 사무실을 청소하는 것입니다.
+ cleaning
+  → His work is         offices. 
+늦어서 죄송합니다.
+ being
+ → I am sorry for         late. 
+괜찮으시다면 역으로 가는 길 좀 알려 주시겠습니까?
+ telling
+  → Would you mind         me the way to the station?(tell)
+. 다음 동명사의 용법을 쓰시오. (주어, 목적어, 보어)
+ 1) 주어, 2) 목적어, 3) 보어
+1) Making a paper castle is interesting.
+→
+2) Mary finished cleaning her room.
+→
+3) His advice is joining the book club.
+→
+다음 밑줄 친 부분과 바꾸어 쓸 수 있는 것은?
+ ④
+I like to swim in the sea.
+① swim 	② swam 	③ to swam
+④ swimming	⑤ to swimming
+ 틀린 부분을 찾아 고치시오
+ 1) send→sending, 2) take→taking
+1) E-mail is a way of send messages to other countries.
+____________________ ⇨ ____________________ 
+2) It was very sunny this morning. I thought of take a walk with my dog.
+____________________ ⇨ ____________________
+다음 중 밑줄 친 부분의 형태가 바른 것은?
+ ⑤
+① Listenning to music is my hobby.
+② I planned to go to hiking this weekend.
+③ I want being a doctor someday.
+④ My friends enjoyed danceing at the party.
+⑤ Working out regularly is good for you.
+[11-12] 다음 우리 말에 맞게 배열하시오.
+ The girl (began, cry, to) suddenly.
+ began to cry
+그 소녀는 갑자기 울기 시작했다.
+➡ _________________________________________________________
+ I (to, him, remember, call).
+ remember to call him.
+나는 그에게 전화할 것을 기억하고 있다.
+➡ _________________________________________________________
+[13-14] 다음 빈칸에 알맞은 말을 고르시오.
+The children wanted            baseball in the park.
+ ④
+① play		② playing	③ to plays
+④ to play	⑤ to playing
+The children enjoyed          baseball in the park.
+ ②
+① play		② playing	③ to plays
+④ to play	⑤ to playing
+[15-16] 주어진 단어를 이용하여 다음 문장의 빈칸에 공통으로 알맞은 말을 쓰시오.
+         a bike is fun, so I enjoy          a bike every week. (ride)
+ Riding / riding
+         is fun, so I want          every week. (cook)
+ Cooking / to cook
+다음 빈칸에 들어 갈 수 없는 것은?
+ ③
+I          writing a letter in English.
+① enjoyed	② finished	③ decided
+④ liked 	⑤ gave up
+다음 우리말을 영어로 바르게 옮긴 것은?
+ ②
+
+ 오늘 저녁에 드라이브 하실래요?
+  ① How about go for a drive tonight? 
+  ② How about going for a drive tonight? 
+  ③ How about to go for a drive tonight? 
+  ④ What about to going for a drive tonight? 
+  ⑤ What about will go for a drive tonight? 
+다음 중 어법상 알맞은 문장은?
+ ④
+①Send email is easier than writing letters. 
+②I often enjoy listen to classical music. 
+③Spielberg is good at to create fun characters. 
+④She is interested in learning foreign languages. 
+⑤Imagine knowing not where your cell phone is. 
+다음 우리말과 뜻이 같도록 할 때, 빈칸에 알맞은 것은?
+ ④
+
+ 도시락 가져가는 것 잊지 마.
+ → Don't forget        your lunch box.
+  ① bring		  ② brought  
+  ③ bringing		  ④ to bring  
+  ⑤ to have brought  
+[21-23] (   ) 안에서 알맞은 말을 고르시오.
+She practices (to play, playing) tennis.
+ playing
+What about (take, taking) a walk?
+ taking
+He succeeded in (to swim, swimming) across the river.
+ swimming
+[24-25] 다음 괄호 안에서 알맞은 말을 고르시오
+그들은 서로 싸우는 것을 그만두었다.
+ fighting
+ They stopped (to fight, fighting) each other.
+나는 어제 수미를 상점에서 만났던 것을 기억한다.
+ meeting
+ I remember (to meet, meeting) Sumi at the store yesterday.
+[26-29] 다음 (   ) 안에서 알맞은 것을 고르시오.
+We decided (helping, to help) poor people.
+ to help
+He gave up (going, to go) on a picnic.
+ going
+Would you mind (carrying, to carry) this box?
+ carrying
+Don't forget (locking, to lock) the door when you go out.
+ to lock
+[30-31] 다음 문장에서 잘못된 부분을 찾아 고쳐 쓰시오
+My brother always avoids to clean his room.
+ to clean ➞ cleaning
+I planned studying for exam.
+ studying ➞ to study
+[32-35] 다음 (  ) 안의 단어를 알맞은 형태로 고쳐 쓰시오.
+)Don't forget ______________________ your homework tomorrow. (bring)
+ to bring
+I hope _____________________ a tennis player. (become)
+ to become
+She finished _____________________ her teeth. (brush)
+ brushing
+I remember _______________________ the festival last year. (enjoy)
+ enjoying
+▣ 현재분사 VS 동명사
+-현재분사 (V-ing) 
+① 품사 형용사로 명사를 수식하거나, 보어로 쓰이고,  ‘~하고 있는’  으로 해석
+ex) The girl singing under the tree is my sister. 
+            명사수식   
+    I am teaching English.
+          보어자리
+-동명사 (V-ing) 
+① 품사 명사로 주어, 보어, 목적어(동사의 목적어/     전치사의 목적어)로 쓰이고,  ‘~하는 것’ 으로 해석
+ex) Teaching English is my job. (주어자리)
+    My job is teaching English. (보어자리)
+    I enjoy teaching English. (동사의 목적어자리)
+    I am good at teaching English. (전치사의 목적어      자리)
+② 용도, 목적으로 쓰임
+ex) a sleeping bag = a bag for sleeping 침낭
+위 글의 밑줄 친 'Using'과 용법이 다른 것을 고르시오. 
+ ④
+
+Using shadow puppets is a very old storytelling tradition around the world.
+① The baby began crying.
+② Writing letters is my hobby.
+③ His dream is teaching English.
+④ I saw him running on the playground.
+⑤ Would you mind opening the window?
+* 밑줄 친 부분의 쓰임이 다른 것을 고르시오.
+
+ ⑤
+① Fishing is popular among many adults. 
+② What do you like doing on Sundays?
+③ I enjoy watching movies. 
+④ She is good at swimming. 
+⑤ Listening to classical music is a little boring.
+
+ ④
+① She has practiced swimming a lot. 
+② I love listening to music. 
+③ Sora enjoys spending time with her parents.
+④ I'm e-mailing my e-pals these days.
+⑤ She likes reading books or collecting coins. 
+ 밑줄 친 부분과 쓰임이 같은 것은?
+ ①
+
+① I'm making a boat for my son.
+② How about walking to school?
+③ I kept thinking about you.
+④ She puts off cleaning her car.
+⑤ Watching English TV programs helps you improve your English. 
+Heejin was walking toward the river.
+ 다음 밑줄 친 부분과 쓰임이 다른 하나는?
+
+ ①
+How about meeting at the bus stop?
+① She is studying science now.
+② My hobby is riding a bicycle.
+③ My brother loves making cards.
+④ John will start swimming next week.
+⑤ Studying English is difficult.
+* 다음 밑줄 친 부분이 동명사인지 현재분사인지 적으시오.
+I am taking a picture.
+ 현재분사
+She bought a pair of running shoes.
+ 동명사
+Susan was sitting in the living room reading a newpaper.
+ 동명사 
+Her friend, Jane, is whispering to her.
+ 현재분사 
+He is afraid of missing the last train.
+ 동명사 
+He was standing on the diving board.
+ 동명사 
+What is she doing right now?
+ 현재분사 
+My duty is delivering pizza
+ 동명사 
+The goal is finding a safe place to build a campfire for dinner.
+ 동명사
+My grandparents bought my brother a sleeping bag for camping.
+ 동명사
+* 다음 밑줄 친 부분의 용법상 다른 하나는?
+
+ ③
+① Look at the girl singing in the rain.	
+② She took care of the crying baby.
+③ He was good at playing baseball.	
+④ The girl playing the piano is my sister.
+⑤ She was walking with a dog.
+
+ ②
+① The topsoil is needed for growing crops.
+② We are making some flowers for our parents.
+③ I stopped reading a magazine.
+④ Writing in English is not easy.
+⑤ My grandmother needs a good walking stick.
+♣동명사(~ing)의 쓰임
+-생김새 : 동사원형+ing
+-역할 : 명사처럼 문장에서 주어, 보어, 목적어 역할을 하고 동사처럼 보어나 목적어를 가지며, “~하기,~하는 것”으로 해석한다. 
+-동명사의 부정: 동명사 앞에 not과 같은 부정어를 쓴다.
+• 「동사원형 + ing」 만드는 방법
+① 동사의 마지막 철자가 -e로 끝나면 e를 생략하고 -ing를 붙인다.
+
+write – writing  come - coming  make - making
+② 동사의 마지막 철자가 -ie이면 ie를 y로 바꾼 뒤 -ing를 붙인다.
+
+lie - lying    die - dying    tie - tying
+③ 동사의 마지막이 「단모음 + 단자음」으로 끝나는 경우 마지막 자음을 한 번 더 쓰고 -ing를 붙인다.
+
+swim - swimming  put - putting   run - running
+1) 주어 (~하는 것은)
+ex) Walking fast is a good exercise.
+    빨리 걷는 것은 좋은 운동이다.
+    Not going to bed late is important.
+    늦게 잠자리에 들지 않는 것은 중요하다
+2) 보어 (be동사 뒤) (~하는 것이다)
+ex) My hobby is collecting stamps.
+    나의 취미는 우표를 모으는 것이다.
+3) 목적어 (일반동사 뒤) (~하는 것을)
+ex) I like reading novels. 
+    나는 소설을 읽는 것을 좋아한다.
+** 동명사만을 목적어로 취하는 동사
+enjoy, finish, mind, stop, give up, avoid, practice, admit, deny, postpone, delay, put off, quit 등
+** to부정사만을 목적어로 취하는 동사
+want, hope, wish, decide, expect, plan, need, agree, learn refuse, would like, promise등
+** to부정사와 동명사를 모두 목적어로 취하는 동사
+  (의미 변화 없음)
+like, love, hate, start, begin, continue 등
+**동명사, to부정사 둘 다 취할 수 있으나 의미가 달라    지는 동사
+-remember ~ing: ~한 것을 기억하다.
+           to부정사: ~할 것을 기억하다.
+-forget ~ing: ~한 것을 잊다.
+       to부정사: ~할 것을 잊다.
+-stop ~ing: ~하는 것을 멈추다.
+      to부정사: ~하기 위해 멈추다.
+ ex)He wanted to stop smoking. 
+		      (담배 피는 것을)
+≠ He wanted to stop to smoke.
+		     (담배 피우기 위해)
+-try ~ing: 시험 삼아 한번 ~해보다.
+    to부정사: 노력하다
+-regret ~ing: ~한 것을 후회하다
+       to부정사: ~하게 되어 유감이다
+4) 전치사의 목적어
+  Thank you for inviting me.
+  나를 초대해줘서 고마워.
+  I am good at playing the piano.
+  나는 피아노 치는 것을 잘한다.
+다음 괄호 안에서 알맞은 말을 고르세요.
+ 1) making, 2) going
+1) (Make / Making) a robot is interesting.
+2) Sally enjoys (go / going) to the movies.
+다음 빈칸을 동사-ing 형태를 이용하여 문장을 완성하세요.
+ 1) taking       2) swimming  
+   3) listening to music  4) Playing badminton
+1) Yunho's hobby is ______________ pictures of people.
+   윤호의 취미는 사람들의 사진을 찍는 것이다.
+2) Dohun does not like __________________.
+   도훈이는 수영하기를 좋아하지 않는다.
+3) Jisu enjoys _________________________.
+   지수는 음악 듣는 것을 즐긴다.
+4) __________________ is difficult for Yunmi.
+   배드민턴을 치는 것은 윤미에게 어렵다.
+다음 문장에서 어법상 어색한 부분을 찾아 바르게 고쳐 쓰세요.
+ read -> reading
+  I can’t finish read this book in 5 minutes.
+♣ 다음 문장에서 어법상 어색한 부분을 바르게 고쳐 문장 전체를 다시 쓰시오.
+I finished to wash the dishes.
+ I finished washing the dishes.
+                                                     .
+♣다음 괄호 안의 낱말을 빈칸에 알맞은 형태로 쓰시오.
+               in the sea can be dangerous. (swim)
+ Swimming
+Do you mind                 the window? (open)
+ opening
+다음 중 어법상 어색한 문장은? 
+ 3
+①It stopped snowing.
+②Don’t give up trying.
+③The men need taking a break.
+④He finished playing the piano.
+⑤I enjoyed playing basketball with my friends.
+다음 밑줄 친 단어의 형태로 알맞은 것은? 
+ 3
+Is take pictures still your favorite hobby?
+①takes          ②took          ③taking  
+④taken          ⑤to taking
+
+다음 빈칸에 알맞지 않은 것은? 
+ 3
+He _____ to be a good student this year.
+①hopes       ②is planning        ③enjoys
+④is trying     ⑤promised
+다음 밑줄 친 부분의 쓰임이 나머지와 다른 것은? 
+ 4
+①It started raining again.
+②I finished reading this book.
+③I enjoy meeting new people.
+④Mom is talking on the phone.
+⑤Keeping a diary is a good habit.
+다음 문장에서 어색한 부분을 찾아 바르게 고쳐 쓰시오. (두가지 가능한 경우 둘다 써주세요)
+ (1) Enjoying or To enjoy     (2) doing 
+    (3) drawing or to draw
+(1) Enjoy bicycles is my favorite hobby.
+(2) She finished do her project.
+(3) My homework is draw a picture of myself.
+다음 밑줄 친 단어를 알맞은 형태로 바꿔 쓰시오.
+ (1) watching  (2) talking (to talk)  (3) writing (to write)
+    (4) to tell
+(1) I enjoyed watch the opera.
+(2) He likes talk.
+(3) She began write a letter.
+(4) You promised tell me everything.
+다음 문장의 괄호 안에서 알맞은 것을 고르시오.
+ playing
+We enjoy (play / playing / to play) soccer every Sunday.
+다음 빈칸에 올 동사 walk의 형태가 같은 것끼리 짝지어진 것은?
+ 2
+
+(A) Did you enjoy _________ with me?
+(B) Would you like _________ the dog?
+(C) __________ AND jogging are my mother’s favorite exercises.
+(D) He needs _________ for 30 minutes every day.
+①(A), (B)  ②(A), (C)   ③(A), (D)   ④(B), (C)   ⑤(C), (D)
+다음 우리말을 올바르게 영작하시오. [동명사 사용]
+  1)My future dream is being a great English teacher.
+     2)Not eating too much fast food is important.
+1) 나의 미래의 꿈은 훌륭한 영어 선생님이 되는 것이다.
+→                                                 
+2) 패스트푸드를 너무 많이 먹지 않는 것은 중요하다.
+→                                                 
+다음 괄호 안에서 알맞은 것을 고르세요.
+ to move / talking / working
+1) We decided ( to move, moving ) to a new city.
+2) I don't enjoy ( to talk, talking ) to strangers.
+3) She finished ( to work, working ) it yesterday.
+괄호 안에 주어진 동사를 문맥상 알맞은 형태로 
+ smoking/ reading/ closing/ watching/ Eating (To eat)
+    바꾸시오.(두가지 가능할 경우 둘다 써주세요)
+1) Father told me to give up (smoke).
+2) We must finish (read) this book by next Sunday.
+3) Would you mind (close) the door?
+4) We enjoyed (watch) the soccer game on TV.
+5) (Eat) too much is bad for the health.
+우리말과 일치하도록 영어로 옮기시오.
+ I enjoy listening to music.
+A : What do you do when you are alone?
+B : 나는 음악 듣는 것을 즐겨.
+→                                            
+다음 우리말과 뜻이 같도록 괄호 안의 말을 이용하여 문장을 완성하시오.
+ 1) I don't mind eating an apple(apples).
+    2) Peter avoided talking to her.
+    3) Mary is interested in making clothes.
+1) 나는 사과 먹는 것을 꺼려하지 않아. (mind)
+→                                                 
+2) Peter는 그녀에게 이야기 하는 것을 피했다.
+   (avoid, talk)
+→                                                 
+3) Mary는 옷을 만드는 것에 관심이 있다.
+   (interest, make)
+→                                                 
+다음 괄호 안에서 알맞은 것을 고르시오.
+ shutting/ fixing/ to go/ cooking/ to harm
+1) Would you mind (shutting / to shut) the door?
+2) I gave up (fixing / to fix) my computer.
+3) My family planned (going / to go) to Canada.
+4) My dad enjoys (cooking / to cook) for my family.
+5) I don't intend (harming / to harm) you.
+다음 빈칸에 알맞은 말을 <보기>에서 골라 알맞은 형태로 쓰시오.
+ to breathe(breathing)/to work(working)/to hand/meeting/
+    to tell
+
+<보기> 
+work    hand     meet     tell    breathe
+1) I love             the cool mountain air.
+2) My father hates                 on weekend.
+3) Don't forget              in your report by Friday.
+4) He remembers                you last Monday.
+5) She tried                 him the truth.
+다음 괄호 안의 말을 빈칸에 알맞은 형태로 쓰시오.
+ seeing / to write / to pack
+1) I remember           Niagara Falls. (see)
+2) She tried             in pencil, but she couldn't. 
+   (write)
+3) Remember             your swimsuit. We'll go to the pool. (pack)
+ 틀린 부분을 찾아 고치시오
+ 1) send→sending, 2) take→taking
+1) E-mail is a way of send messages to other countries.
+____________________ ⇨ ____________________ 
+2) It was very sunny this morning. I thought of take a walk with my dog.
+____________________ ⇨ ____________________
+ 다음 동명사의 용법을 쓰시오. (주어, 목적어, 보어)
+ 1) 주어, 2) 목적어, 3) 보어
+1) Making a paper castle is interesting.
+→
+2) Mary finished cleaning her room.
+→
+3) His advice is joining the book club.
+→
+ 다음 우리말과 같은 뜻이 되도록 빈칸에 알맞은 말을 넣으시오. 
+ 1) buying, 2) Learning
+1) 나는 새 코트 사는 것을 포기했다.
+= I gave up              a new coat.
+2) 새로운 언어를 배우는 것은 어렵다.
+=               new language is difficult.
+<보기>에서 알맞은 동사를 골라 동명사의 형태로 바꾸어 빈칸에 쓰세요.
+ cooking / reading / taking / listening 
+
+(1) She always enjoys cooking new food.
+(2) He likes reading books.
+(3) Taking a walk is good exercise.
+(4) My hobby is listening to music.
+
+<보기>
+take      read    listen     cook              
+밑줄 친 동명사의 쓰임과 같은 것을 <보기>에서 골라 그 번호를 쓰세요.
+ ④ / ③ / ① / ② / ① / ③ / ② / ①
+
+(1) Talking with him is boring.         [ ④ ]
+(2) Cats are good at climbing.         [ ③ ]
+(3) We love watching movies.          [ ① ]
+(4) My dream is becoming a teacher.  [ ② ]
+(5) He enjoys playing the piano.       [ ① ]
+(6) I'm sorry for being late.            [ ③ ]
+(7) Mike's plan is studying abroad.     [ ② ]
+(8) I love lying on the beach.          [ ① ]
+<보기>
+[①] I finished cleaning my room.
+[②] Her habit is keeping a diary every day.
+[③] They talked about joining a science club.
+[④] Recycling paper is a good idea.
+♣ (   ) 안에서 알맞은 말을 고르시오.
+She practices (to play, playing) tennis.
+ playing
+What about (take, taking) a walk?
+ taking
+He succeeded in (to swim, swimming) across the river.
+
+ swimming
+밑줄 친 부분의 쓰임이 나머지와 다른 하나는?
+ 2
+① I like reading books.
+② She is listening to music.
+③ Learning English is not easy.
+④ He finished doing his homework.
+⑤ My father stopped smoking last year.
+다음 밑줄 친 부분이 어법상 어색한 것은?
+ 5
+① I enjoy talking with him.
+② Reading this book is fun.
+③ I'm not good at swimming.
+④ I don't like to play computer games.
+⑤ He stopped to walk and sat on the bench.
+Stop          a fool of yourself by          
+on          the same question.
+ 1
+ ① making – keeping – repeating
+ ② making – to keep – repeating
+ ③ to make – keeping – to repeat
+ ④ to make – to keep – to repeat
+ ⑤ to make – to keep – repeating
+She was proud          rich.
+ 5
+ ① been   	② being	         ③ to be
+ ④ to being	⑤ of being
+(현재분사와 쓰임 구분하기)
+♣ 현재분사 V+ing
+1) 진행형 (be + ~ing):~하는 중이다
+  (He is watching a movie now.)
+2) 명사수식 
+  (I know the girl playing the piano.)
+3) 지각동사의 목적격보어
+  watch, see, hear, listen to, feel
+  (He saw me dancing.)
+4) 분사구문
+  (Walking down the street, I saw her.)
+♣ 용도를 나타내면 동명사, 상태를 나타내면 현재분사
+ 동명사: a smoking room (흡연실), a washing room(빨래방)
+ 현재분사: a sleeping baby(잠자는 아기), a crying girl(울고 있는 소녀)
+♣ 기타 숙어처럼 외우는 관용용법
+ 󰊓 be busy Ving : ~하느라 바쁘다
+ 󰊔 go Ving : ~하러가다
+ 󰊕 look forward to Ving : ~하는 것을 학수고대하다
+ 󰊖 Keep (on) Ving : 계속 ~하다
+ 󰊗 feel like Ving : ~하고 싶다
+ 󰊘 How about Ving : ~하는게 어때
+ 󰊙 be good at Ving : ~를 잘하다, 익숙하다
+ 󰊚 be interested in Ving : ~하는데 흥미가 있다
+  9 far from Ving: 결코 아니다.
+♣ 밑줄이 동명사면 동, 현재분사이면 현이라고 쓰세요.
+She is making some food.
+ 현
+He was in the waiting room.
+ 동
+Did you finish cleaning your room?
+ 동
+I am watching TV now.
+ 현
+I went skiing last winter.
+ 동
+The girl playing the piano is my sister.
+ 현
+He is good at fixing machine.
+ 동
+Dave and jane were playing tennis at that time.
+ 현
+He was making a call when I got into the waiting room
+ 현, 동
+ 다음 문장들에서 어법상 틀린 부분을 고르고 올바르게 고치시오.
+ (1) to accept  (2) having  (3) seeing
+(1) She refused accepting his apology.
+(2) He complains about not have time to study.
+(3) We are all looking forward to see you.
+ 다음 중 쓰임이 다른 하나는?
+ ③
+① I enjoy jogging every morning.
+② She stopped working.
+③ Ben is watching TV now.
+④ Minhee likes taking pictures.
+⑤ My hobby is playing soccer.  
+♣밑줄 친 부분의 쓰임이 다른 것을 고르시오.
+
+ 5
+① Fishing is popular among many adults. 
+② What do you like doing on Sundays?
+③ I enjoy watching movies. 
+④ She is good at swimming. 
+⑤ Listening to classical music is a little boring.
+
+ 4
+① She has practiced swimming a lot. 
+② I love listening to music. 
+③ Sora enjoys spending time with her parents.
+④ I'm e-mailing my e-pals these days.
+⑤ She likes reading books or collecting coins. 
+ 밑줄 친 부분과 쓰임이 같은 것은?
+ ①
+
+① I'm making a boat for my son.
+② How about walking to school?
+③ I kept thinking about you.
+④ She puts off cleaning her car.
+⑤ Watching English TV programs helps you improve        your English. 
+Heejin was walking toward the river.
+다음 문장의 틀린 곳을 바르게 고치시오.
+ tell→telling / fish→fishing
+1) He is far from tell a lie.
+2) His father went fish yesterday.
+ 다음 밑줄 친 부분이 동명사인지 현재분사인지 적으시오.
+ 1) 현재분사, 2) 동명사
+1) I am taking a picture.
+2) She bought a pair of running shoes.
+다음 중 밑줄 친 부분의 쓰임이 나머지와 다른 것은?
+ 2 
+ ① Do you like cooking?
+ ② He is drawing a dog now.
+ ③ Playing basketball is fun.
+ ④ I like swimming in the sea.
+ ⑤ Her hobby is collecting stamps.
+답지

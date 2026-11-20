@@ -81,3 +81,6 @@ F = D + 'm1-chunjae-so-L6.js'
 emit(F, tests)
 # 11/18 중산중1과 같은 실전 문법(접속사 that) 1~3차도 뒤에 붙임
 exec(open('/home/claude/srcrepo/wrapup/m1c4/add_m1cs.py', encoding='utf-8').read())
+
+# 11/20 실전 문법 동명사 1~4차도 뒤에 붙임
+exec(open("/home/claude/srcrepo/wrapup/m1c4/add_m1cg.py", encoding="utf-8").read())
