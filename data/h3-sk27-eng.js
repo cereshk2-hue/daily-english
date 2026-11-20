@@ -3,6 +3,7 @@
 window.PKG = {
   id: 'h3-sk27-eng',
   school: '고3 수능특강',
+  boardGrade: '수능특강',   /* 보드에서 고3 탭과 분리 (11/20) */
   unit: '수능특강 2027 영어 · 유형편',
   title: 'EBS Suneung Special 2027',
   titleKo: '고3 수능특강 영어 · 유형편 강별 실전',

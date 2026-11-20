@@ -82,7 +82,7 @@ window.UNITS = [{"folder": "h1-donga-lee-L3-h5syj", "grade": "고1", "publisher"
   'use strict';
   var U = window.UNITS, root = document.getElementById('hub');
   function E(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-  var ORDER = ['초3', '초4', '초5', '초6', '중1', '중2', '중3', '고1', '고2', '고3'];
+  var ORDER = ['초3', '초4', '초5', '초6', '중1', '중2', '중3', '고1', '고2', '고3', '수능특강'];
   var grades = U.map(function (u) { return u.grade; }).filter(function (g, i, a) { return a.indexOf(g) === i; })
     .sort(function (a, b) { return (ORDER.indexOf(a) + 99) % 199 - (ORDER.indexOf(b) + 99) % 199; });
   var cur = null; try { cur = localStorage.getItem('hub:grade'); } catch (e) {}

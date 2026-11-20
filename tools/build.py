@@ -19,6 +19,8 @@ for f in sorted(glob.glob(os.path.join(R,'data','*.js'))):
     title,school,unit=get('title'),get('school'),get('unit')
     base=did.replace('-so-','-'); SEC['units'].setdefault(base,code(5)); folder=base+'-'+SEC['units'][base]
     grade,publisher=school.split(' ',1)
+    mg=re.search(r"boardGrade:\s*'([^']*)'",js)   # 11/20 보드 학년 탭 따로(예: 수능특강)
+    if mg: grade=mg.group(1)
     days=[{'name':m[0],'range':m[1]} for m in re.findall(r"name:\s*'([^']+)',\s*range:\s*'([^']+)'",js)]
     blocks=re.split(r"id: '[^']+', name:",js)[1:]
     for d,b in zip(days,blocks): d['steps']=len(re.findall(r"\{ type: '",b))
