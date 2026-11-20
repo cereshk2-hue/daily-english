@@ -2258,7 +2258,7 @@ window.UNITS = [
   },
   {
     "folder": "h3-sk27-eng-53nx4",
-    "grade": "고3",
+    "grade": "수능특강",
     "publisher": "수능특강",
     "unit": "수능특강 2027 영어 · 유형편",
     "title": "EBS Suneung Special 2027",
@@ -2303,7 +2303,7 @@ window.UNITS = [
   'use strict';
   var U = window.UNITS, root = document.getElementById('hub');
   function E(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-  var ORDER = ['초3', '초4', '초5', '초6', '중1', '중2', '중3', '고1', '고2', '고3'];
+  var ORDER = ['초3', '초4', '초5', '초6', '중1', '중2', '중3', '고1', '고2', '고3', '수능특강'];
   var grades = U.map(function (u) { return u.grade; }).filter(function (g, i, a) { return a.indexOf(g) === i; })
     .sort(function (a, b) { return (ORDER.indexOf(a) + 99) % 199 - (ORDER.indexOf(b) + 99) % 199; });
   var cur = null; try { cur = localStorage.getItem('hub:grade'); } catch (e) {}
