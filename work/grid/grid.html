@@ -57,7 +57,9 @@ function colOf(u,r){var ds=String(r[3]),z=nz(ds);
   if(u.meta){
     if(/^Wrap-up/.test(ds)){var ttl=ds.indexOf("¦")>=0?nz(ds.split("¦")[1]):"";if(ttl)for(var j=0;j<u.meta.tests.length;j++){if(nz(u.meta.tests[j][2])===ttl)return"t:"+u.meta.tests[j][0]}for(var i=0;i<u.meta.tests.length;i++){var t=u.meta.tests[i];if(t[1]&&z.indexOf(nz("Wrap-up "+t[1]))===0)return"t:"+t[0]}}
     else{var rg=nz(ds.replace(/^DAY\s*\d+\s*/,"")),hit=null,nm=nz((/^DAY\s*\d+/.exec(ds)||[""])[0]);
-      u.meta.days.forEach(function(d){if(nz(d[2])===rg&&(!hit||nz(d[1])===nm))hit=d});if(hit)return"d:"+hit[0]}
+      u.meta.days.forEach(function(d){if(nz(d[2])===rg&&(!hit||nz(d[1])===nm))hit=d});
+      if(!hit)u.meta.days.forEach(function(d){if((d[4]||[]).some(function(a){return nz(a)===rg})&&(!hit||nz(d[1])===nm))hit=d});/* 11/20 DAY 이름이 바뀐 예전 기록(d[4] = 예전 이름들)도 같은 칸 */
+      if(hit)return"d:"+hit[0]}
   }
   return"x:"+z;
 }

@@ -33,6 +33,7 @@ def pkg(src):
     try: return json.loads(p.stdout.decode() or 'null')
     except Exception: return None
 uk, cur = {}, {}
+olddays = {}   # 11/20 (단원, DAY id) → 예전 DAY 범위 이름들 (이름이 바뀐 예전 기록을 같은 칸에)
 paths = sorted(set(x for x in g('log', '--all', '--format=', '--name-only', '--', '*/data/*.js').split('\n') if x.endswith('.js')))
 for path in paths:
     for c in [x for x in g('log', '--all', '--format=%h', '--', path).split() if x]:
@@ -42,6 +43,7 @@ for path in paths:
         if not P: continue
         pid = RETIRED.get(P['id'], P['id'])
         uk.setdefault(nz(P.get('unit', '') + ' ' + P.get('title', '')), pid)
+        for x in P.get('days', []): olddays.setdefault((pid, x.get('id')), set()).add(x.get('range', ''))
 # 지금 단원
 for d in sorted(os.listdir(REPO)):
     dd = os.path.join(REPO, d, 'data')
@@ -52,7 +54,7 @@ for d in sorted(os.listdir(REPO)):
         uk[nz(P.get('unit', '') + ' ' + P.get('title', ''))] = RETIRED.get(P['id'], P['id'])
         if P['id'] in RETIRED: continue
         cur[P['id']] = {'book': P.get('school', ''), 'school': SCHOOL.get(P['id'], ''), 'unit': P.get('unit', ''), 'title': P.get('title', ''), 'folder': d,
-                        'days': [[x['id'], x['name'], x.get('range', ''), day_label(x)] for x in P['days']],
+                        'days': [[x['id'], x['name'], x.get('range', ''), day_label(x)] + ([al] if (al := sorted(r for r in olddays.get((P['id'], x['id']), ()) if nz(r) != nz(x.get('range', '')) and nz(r) not in {nz(y.get('range', '')) for y in P['days']})) else []) for x in P['days']],
                         'tests': [['w:' + t['id'], t.get('short', ''), t.get('title', '')] + list(test_label(t)) + ([dict(P.get('testReset') or [])[t['id']]] if t['id'] in dict(P.get('testReset') or []) else []) for t in P.get('tests', [])]}  # 11/18 리셋 시각(ms) → 진도표가 그 전 기록을 뺌
 # 지금 보드에 없는 예전 단원은 지도에서 빼서(이름 그대로 따로 묶임) 혼동 없게
 uk = {k: v for k, v in uk.items() if v in cur}
