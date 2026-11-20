@@ -8,7 +8,8 @@ exec(src[:src.index("F = D + 'h1-mock-2509.js'")])
 W = '/home/claude/work/wrapup/'
 import enrich
 ALL = [('nrtd8', str(k), '너른터 실전 8과 %d회' % k, '8과 %d회' % k) for k in range(1, 10)]
-IT = [('m2it', k, '실전 문법 %s차 (가주어 it · 진주어)' % k, '가주어 %s차' % k) for k in '123']
+IT = [('m2it', k, '실전 문법 %s차 (가주어 it · 진주어)' % k, '가주어 %s차' % k) for k in '123'] + \
+     [('m2pp', k, '실전 문법 %s차 (현재완료)' % k, '현재완료 %s차' % k) for k in '123456']  # 11/20 m2pp_wu.py
 for p, k, _, _ in ALL + IT: enrich.E['%s-%s' % (p, k)] = {int(a): b for a, b in json.load(open(W + 'en-%s-%s.json' % (p, k))).items()}
 F = D + 'm2-donga-yoon-L7.js'; O = origin(F)
 TS = [parse('wrapup-%s-%s.html' % (p, k), {'id': '%s-%s' % (p, k), 'title': t, 'short': sh, 'school': '중2 동아', 'minutes': 30, 'pts': 5}, O) for p, k, t, sh in ALL]
