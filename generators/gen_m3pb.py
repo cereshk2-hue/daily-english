@@ -35,31 +35,31 @@ VOC = [('picture bride', '사진신부'), ('wharf', '부두, 선창'), ('shore',
        ('tent-shaped', '텐트 모양의'), ('surrounding', '주변의'), ('immigrate', '이민 가다'), ('plantation', '대농장')]
 TF = [  # (문장, 정답, 친절한 해설, 근거(본문 탭 요약 문장 일부)) — 11/20 선생님: 왜 그런지 친절한 설명
  ("The grandmother was twenty-three at the time of leaving Korea.", True,
-  "정답 T ✔\n시의 첫 부분(칸 1)에서 할머니가 한국을 떠날 때 스물셋이었다고 했어요.\n→ 그대로 맞는 내용이라 T예요. 학교 프린트 Activity 3의 1번 정답(23세)과 같아요.", "only twenty-three"),
+  "정답 T ✔\n문장 해석 ▶ 할머니는 한국을 떠날 때 스물세 살이었다.\n시의 첫 부분(칸 1)에서 할머니가 한국을 떠날 때 스물셋이었다고 했어요.\n→ 그대로 맞는 내용이라 T예요. 학교 프린트 Activity 3의 1번 정답(23세)과 같아요.", "only twenty-three"),
  ("The speaker is younger than her grandmother was at the time of leaving Korea.", False,
-  "정답 F ✘\n칸 1에서 할머니는 화자보다 한 살 어렸다고 했어요. 즉 화자가 할머니보다 한 살 많아요.\n→ 할머니가 23세였으니 화자는 24세예요. 화자가 더 어리다는 건 반대라서 F예요.", "just one year younger"),
+  "정답 F ✘\n문장 해석 ▶ 화자는 한국을 떠날 때의 할머니보다 나이가 어리다.\n칸 1에서 할머니는 화자보다 한 살 어렸다고 했어요. 즉 화자가 할머니보다 한 살 많아요.\n→ 할머니가 23세였으니 화자는 24세예요. 화자가 더 어리다는 건 반대라서 F예요.", "just one year younger"),
  ("The grandmother got on the ship in Seoul.", False,
-  "정답 F ✘\n칸 3에서 할머니는 부산(Pusan)의 양복점 거리를 지나 부두까지 갔다고 했어요.\n→ 배를 탄 곳은 서울이 아니라 부산이라서 F예요. (프린트 Activity 3의 2번 정답: 부산)", "tailor shops in Pusan"),
+  "정답 F ✘\n문장 해석 ▶ 할머니는 서울에서 배를 탔다.\n칸 3에서 할머니는 부산(Pusan)의 양복점 거리를 지나 부두까지 갔다고 했어요.\n→ 배를 탄 곳은 서울이 아니라 부산이라서 F예요. (프린트 Activity 3의 2번 정답: 부산)", "tailor shops in Pusan"),
  ("The grandmother had known the island's name for many years.", False,
-  "정답 F ✘\n칸 4에서 할머니가 그 섬의 이름을 최근에야(only recently) 알게 되었다고 했어요.\n→ 오래전부터 알았던 게 아니라 얼마 전에야 안 낯선 곳이라 F예요. 할머니가 느꼈을 불안함을 보여 주는 부분이에요.", "a place she barely knew"),
+  "정답 F ✘\n문장 해석 ▶ 할머니는 그 섬의 이름을 여러 해 동안 알고 있었다.\n칸 4에서 할머니가 그 섬의 이름을 최근에야(only recently) 알게 되었다고 했어요.\n→ 오래전부터 알았던 게 아니라 얼마 전에야 안 낯선 곳이라 F예요. 할머니가 느꼈을 불안함을 보여 주는 부분이에요.", "a place she barely knew"),
  ("The man on the island had a photo of the grandmother.", True,
-  "정답 T ✔\n칸 5에서 섬의 해안에서 한 남자가 할머니의 사진을 빛에 비춰 보며 기다렸다고 했어요.\n→ 사진을 가지고 있었으니 T예요. 사진만 보고 결혼을 약속한 '사진신부'라는 제목과 연결돼요.", "holding her picture up to the light"),
+  "정답 T ✔\n문장 해석 ▶ 섬에 있는 남자는 할머니의 사진을 가지고 있었다.\n칸 5에서 섬의 해안에서 한 남자가 할머니의 사진을 빛에 비춰 보며 기다렸다고 했어요.\n→ 사진을 가지고 있었으니 T예요. 사진만 보고 결혼을 약속한 '사진신부'라는 제목과 연결돼요.", "holding her picture up to the light"),
  ("The man worked near a sugar mill.", True,
-  "정답 T ✔\n칸 6에서 남자는 와이알루아 설탕 공장(Sugar Mill) 밖의 숙소에서 지냈다고 했어요.\n→ 사탕수수 농장에서 일하는 노동자였다는 뜻이라 T예요.", "Waialua Sugar Mill"),
+  "정답 T ✔\n문장 해석 ▶ 그 남자는 설탕 공장 근처에서 일했다.\n칸 6에서 남자는 와이알루아 설탕 공장(Sugar Mill) 밖의 숙소에서 지냈다고 했어요.\n→ 사탕수수 농장에서 일하는 노동자였다는 뜻이라 T예요.", "Waialua Sugar Mill"),
  ("The man's room became bright because of fireflies.", False,
-  "정답 F ✘\n칸 7에서 방을 환하게 만든 것은 사탕수수 줄기에서 날아온 나방(moths)의 날개라고 했어요.\n→ 반딧불이(fireflies)가 아니라 나방이라서 F예요. 빛나는 방은 신부를 기다리는 남자의 설렘을 보여 줘요.", "Moths from the sugarcane fields"),
+  "정답 F ✘\n문장 해석 ▶ 남자의 방은 반딧불이 때문에 환해졌다.\n칸 7에서 방을 환하게 만든 것은 사탕수수 줄기에서 날아온 나방(moths)의 날개라고 했어요.\n→ 반딧불이(fireflies)가 아니라 나방이라서 F예요. 빛나는 방은 신부를 기다리는 남자의 설렘을 보여 줘요.", "Moths from the sugarcane fields"),
  ("The speaker knows exactly what her grandmother took with her.", False,
-  "정답 F ✘\n칸 8에서 화자는 할머니가 어떤 물건들을 가지고 갔을지 묻기만 해요(질문).\n→ 화자는 답을 모르기 때문에 상상하며 묻는 거예요. '정확히 안다'는 건 반대라서 F예요.", "cannot know what her grandmother packed"),
+  "정답 F ✘\n문장 해석 ▶ 화자는 할머니가 무엇을 가지고 갔는지 정확히 알고 있다.\n칸 8에서 화자는 할머니가 어떤 물건들을 가지고 갔을지 묻기만 해요(질문).\n→ 화자는 답을 모르기 때문에 상상하며 묻는 거예요. '정확히 안다'는 건 반대라서 F예요.", "cannot know what her grandmother packed"),
  ("The grandmother and her husband had met many times before the wedding.", False,
-  "정답 F ✘\n칸 9에서 할머니가 도착해 들여다본 남편의 얼굴은 낯선 사람(stranger)의 얼굴이었어요.\n→ 사진으로만 알던 사이라 그날 처음 만났어요. 여러 번 만났다는 건 반대라서 F예요. (프린트 Activity 3 B-2도 X)", "met her husband for the first time"),
+  "정답 F ✘\n문장 해석 ▶ 할머니와 남편은 결혼 전에 여러 번 만난 적이 있었다.\n칸 9에서 할머니가 도착해 들여다본 남편의 얼굴은 낯선 사람(stranger)의 얼굴이었어요.\n→ 사진으로만 알던 사이라 그날 처음 만났어요. 여러 번 만났다는 건 반대라서 F예요. (프린트 Activity 3 B-2도 X)", "met her husband for the first time"),
  ("The grandmother was thirteen years younger than her husband.", True,
-  "정답 T ✔\n칸 9에서 남편은 할머니보다 열세 살 많았다고 했어요.\n→ 남편이 13살 많다 = 할머니가 13살 어리다, 같은 뜻이라 T예요. (3살·23살과 헷갈리지 않기)", "13 years her senior"),
+  "정답 T ✔\n문장 해석 ▶ 할머니는 남편보다 열세 살 어렸다.\n칸 9에서 남편은 할머니보다 열세 살 많았다고 했어요.\n→ 남편이 13살 많다 = 할머니가 13살 어리다, 같은 뜻이라 T예요. (3살·23살과 헷갈리지 않기)", "13 years her senior"),
  ("The grandmother was wearing Korean clothes when she met him.", True,
-  "정답 T ✔\n칸 10에서 할머니가 저고리(jacket)의 비단 고름(silk bow)을 예의 바르게 풀었을까 하고 물어요.\n→ 고름이 있는 저고리, 즉 한복을 입고 있었으니 T예요.", "ribbon on her Korean jacket"),
+  "정답 T ✔\n문장 해석 ▶ 할머니는 그를 만났을 때 한복을 입고 있었다.\n칸 10에서 할머니가 저고리(jacket)의 비단 고름(silk bow)을 예의 바르게 풀었을까 하고 물어요.\n→ 고름이 있는 저고리, 즉 한복을 입고 있었으니 T예요.", "ribbon on her Korean jacket"),
  ("A cold, wet wind was blowing when she arrived.", False,
-  "정답 F ✘\n칸 11에서 남자들이 사탕수수를 태우던 들판에서 건조한(dry) 바람이 불어와 치마를 부풀렸다고 했어요.\n→ 차갑고 축축한 바람이 아니라 뜨겁고 건조한 바람이라 F예요. 앞으로 살아갈 거친 노동 현실을 암시해요.", "Hot, dry wind"),
+  "정답 F ✘\n문장 해석 ▶ 할머니가 도착했을 때 차갑고 축축한 바람이 불고 있었다.\n칸 11에서 남자들이 사탕수수를 태우던 들판에서 건조한(dry) 바람이 불어와 치마를 부풀렸다고 했어요.\n→ 차갑고 축축한 바람이 아니라 뜨겁고 건조한 바람이라 F예요. 앞으로 살아갈 거친 노동 현실을 암시해요.", "Hot, dry wind"),
  ("Most of the poem is made up of questions.", True,
-  "정답 T ✔\n시는 '그저 떠났을까?', '먼 길이었을까?', '무엇을 가져갔을까?', '고름을 풀었을까?'처럼 거의 다 질문이에요.\n→ 화자가 직접 볼 수 없었던 할머니의 과거를 상상하며 궁금해하기 때문이에요. 그래서 T예요.", None),
+  "정답 T ✔\n문장 해석 ▶ 시의 대부분은 질문으로 이루어져 있다.\n시는 '그저 떠났을까?', '먼 길이었을까?', '무엇을 가져갔을까?', '고름을 풀었을까?'처럼 거의 다 질문이에요.\n→ 화자가 직접 볼 수 없었던 할머니의 과거를 상상하며 궁금해하기 때문이에요. 그래서 T예요.", None),
 ]
 MC = [
  {'q': '시의 내용과 일치하지 <u>않는</u> 것은?', 'opts': ['The man had never seen the grandmother\'s photo.', 'The grandmother left Korea from Pusan.', 'The man waited for her on an island.', 'The husband was much older than the grandmother.', 'Men were burning sugarcane in the fields.'],
@@ -102,10 +102,14 @@ GM = [{'q': '빈칸에 알맞은 것은?<br><b>I visited a town ______ name I ha
       {'q': '빈칸에 알맞은 것은?<br><b>She walked on, her skirt ______ with the wind.</b>', 'opts': ['filling', 'filled', 'to fill', 'fills'], 'ex': '독립분사구문 명사 + -ing — 시 칸 11: 바람에 부푼 치마'}]
 for s_ in [e for _, e, _ in SUM] + [t[0] for t in TF] + FLOW + [o for m in MC for o in m['opts']] + SCENE + [l for l, _, _ in ODD for l in l] + [b[0] for b in BL] + [p[0] for p in PICK] + [g['q'] for g in GM]:
     nocopy(re.sub(r'\{([^|}]*)\|[^}]*\}', r'\1', s_))
+def tfx(c, b):  # 정답 / 문장 해석 / 본문 ▶ / 왜 T·F? ▶ 로 줄 이름 붙이기
+    L = c.split('\n'); L[2] = '본문 ▶ ' + (L[2][3:] if L[2].startswith('본문 ') else L[2])
+    return '\n'.join(L).replace('\n→ ', '\n왜 %s일까? ▶ ' % ('T' if b else 'F'))
+
 day = {'id': 'pb1', 'name': '', 'range': '외부지문 2 · Picture Bride (사진신부, 시)', 'story': '학교 프린트 외부지문 시 · 내용·숨은 뜻·이야기 흐름 중심 (원문은 프린트 2·3쪽)',
        'passage': passage, 'steps': [
   {'type': 'vocab', 'title': '핵심어휘', 'quizN': 15, 'items': [list(v) for v in VOC]},
-  {'type': 'tf', 'title': 'T/F 내용 확인', 'guide': '시의 내용과 일치하면 T, 다르면 F를 고르세요. (칸 번호 = 학교 프린트 3쪽 표 순서)', 'items': [[a, b, c, None, d] if d else [a, b, c] for a, b, c, d in TF]},
+  {'type': 'tf', 'title': 'T/F 내용 확인', 'guide': '시의 내용과 일치하면 T, 다르면 F를 고르세요. (칸 번호 = 학교 프린트 3쪽 표 순서)', 'items': [[a, b, tfx(c, b), None, d] if d else [a, b, tfx(c, b)] for a, b, c, d in TF]},
   {'type': 'mc', 'title': '내용 일치 · 숨은 뜻', 'guide': '시의 내용과 숨은 뜻을 생각하며 답을 고르세요.', 'items': MC},
   {'type': 'order', 'title': '이야기 순서', 'guide': '장면을 이야기 순서대로 눌러서 배열하세요.', 'items': [{'lines': l, 'flow': [f]} for l, f in zip(ORD, FLOW)]},
   {'type': 'odd', 'title': '흐름과 관계없는 문장', 'guide': '이야기 흐름과 관계없는 문장을 고르세요.', 'items': [{'lines': l, 'odd': o, 'ex': e} for l, o, e in ODD]},

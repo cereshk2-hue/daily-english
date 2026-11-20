@@ -44,21 +44,21 @@ P1 = [
 ]
 TF = [  # (문장, 정답, 친절한 해설, 근거 문장 일부) — 11/20 선생님: 왜 그런지 친절한 설명
  ("People take off their shoes before entering a traditional Japanese house.", True,
-  "정답 T ✔\n본문 2번 문장에서 집에 들어가기 전에(before entering the house) 현관인 겐칸에서 신발을 벗어야 한다(take off your shoes)고 했어요.\n→ 문제 문장과 같은 내용이라 T예요.", "take off your shoes in the genkan"),
+  "정답 T ✔\n문장 해석 ▶ 사람들은 일본 전통 가옥에 들어가기 전에 신발을 벗는다.\n본문 2번 문장에서 집에 들어가기 전에(before entering the house) 현관인 겐칸에서 신발을 벗어야 한다(take off your shoes)고 했어요.\n→ 문제 문장과 같은 내용이라 T예요.", "take off your shoes in the genkan"),
  ("In a traditional house, many Japanese sit on chairs.", False,
-  "정답 F ✘\n본문 3번 문장: 많은 일본 사람들은 집 안에서 의자를 사용하지 않는다(do not use chairs)고 했어요. 4번 문장: 대신(Instead) 다다미 위에 바로 앉아요.\n→ 의자에 앉는다는 건 본문과 반대라서 F예요.", "many Japanese do not use chairs"),
+  "정답 F ✘\n문장 해석 ▶ 전통 가옥에서 많은 일본 사람들은 의자에 앉는다.\n본문 3번 문장: 많은 일본 사람들은 집 안에서 의자를 사용하지 않는다(do not use chairs)고 했어요. 4번 문장: 대신(Instead) 다다미 위에 바로 앉아요.\n→ 의자에 앉는다는 건 본문과 반대라서 F예요.", "many Japanese do not use chairs"),
  ("Tatami mats are made from woven grass.", True,
-  "정답 T ✔\n본문 4번 문장: 다다미 매트는 엮은 풀로 만들어진다(made from woven grass)고 했어요.\n→ 그대로 맞는 내용이라 T예요.", "made from woven grass"),
+  "정답 T ✔\n문장 해석 ▶ 다다미 매트는 엮은 풀로 만들어진다.\n본문 4번 문장: 다다미 매트는 엮은 풀로 만들어진다(made from woven grass)고 했어요.\n→ 그대로 맞는 내용이라 T예요.", "made from woven grass"),
  ("Shoji doors are made from stone and glass.", False,
-  "정답 F ✘\n본문 5번 문장: 쇼지는 나무와 얇은 종이(wood and thin paper)로 만들어진다고 했어요.\n→ 돌과 유리(stone and glass)가 아니라 나무와 종이예요. 그래서 F예요. (가볍기 때문에 떼어 낼 수도 있어요)", "made from wood and thin paper"),
+  "정답 F ✘\n문장 해석 ▶ 쇼지 문은 돌과 유리로 만들어진다.\n본문 5번 문장: 쇼지는 나무와 얇은 종이(wood and thin paper)로 만들어진다고 했어요.\n→ 돌과 유리(stone and glass)가 아니라 나무와 종이예요. 그래서 F예요. (가볍기 때문에 떼어 낼 수도 있어요)", "made from wood and thin paper"),
  ("Shoji doors can be taken away to make one large room.", True,
-  "정답 T ✔\n본문 6번 문장: 큰 모임을 위해 이 문들을 떼어 내서(can be removed) 큰 방 하나를 만들 수 있다고 했어요.\n→ taken away(치워지다) = removed(떼어 내지다), 바꿔 쓴 표현이라 T예요.", "these doors can be removed"),
+  "정답 T ✔\n문장 해석 ▶ 쇼지 문은 떼어 내서 큰 방 하나를 만들 수 있다.\n본문 6번 문장: 큰 모임을 위해 이 문들을 떼어 내서(can be removed) 큰 방 하나를 만들 수 있다고 했어요.\n→ taken away(치워지다) = removed(떼어 내지다), 바꿔 쓴 표현이라 T예요.", "these doors can be removed"),
  ("People use a kotatsu to stay cool in summer.", False,
-  "정답 F ✘\n본문 7번 문장: 날씨가 추워지면(When the weather gets cold) 열이 나는 탁자(a heated table)인 고타쓰에 앉는다고 했어요.\n→ 여름에 시원하게가 아니라 겨울에 몸을 따뜻하게 하려고 써요. 그래서 F예요.", "When the weather gets cold"),
+  "정답 F ✘\n문장 해석 ▶ 사람들은 여름에 시원하게 지내려고 고타쓰를 사용한다.\n본문 7번 문장: 날씨가 추워지면(When the weather gets cold) 열이 나는 탁자(a heated table)인 고타쓰에 앉는다고 했어요.\n→ 여름에 시원하게가 아니라 겨울에 몸을 따뜻하게 하려고 써요. 그래서 F예요.", "When the weather gets cold"),
  ("The floor is raised to keep the living area safe from flooding.", True,
-  "정답 T ✔\n본문 10번 문장: 바닥을 땅에서 조금 높여서(raised a little off the ground) 생활 공간을 홍수로부터 건조하고 안전하게 지킨다고 했어요.\n→ 같은 내용이라 T예요. (9번 문장: 여름 폭우로 홍수가 날 수 있어서)", "is raised a little off the ground"),
+  "정답 T ✔\n문장 해석 ▶ 생활 공간을 홍수로부터 안전하게 지키려고 바닥을 높인다.\n본문 10번 문장: 바닥을 땅에서 조금 높여서(raised a little off the ground) 생활 공간을 홍수로부터 건조하고 안전하게 지킨다고 했어요.\n→ 같은 내용이라 T예요. (9번 문장: 여름 폭우로 홍수가 날 수 있어서)", "is raised a little off the ground"),
  ("Kawara tiles catch fire easily.", False,
-  "정답 F ✘\n본문 13번 문장: 가와라 기와는 방수가 될 뿐 아니라 불에도 강하다(fireproof)고 했어요.\n→ catch fire easily(불이 쉽게 붙다)는 fireproof(불에 강한)와 반대라서 F예요.", "not only water-resistant but also fireproof"),
+  "정답 F ✘\n문장 해석 ▶ 가와라 기와는 불이 쉽게 붙는다.\n본문 13번 문장: 가와라 기와는 방수가 될 뿐 아니라 불에도 강하다(fireproof)고 했어요.\n→ catch fire easily(불이 쉽게 붙다)는 fireproof(불에 강한)와 반대라서 F예요.", "not only water-resistant but also fireproof"),
 ]
 MC1 = [
  {"n": "Reading File", "box": ["Reading File"], "q": "글의 내용과 일치하지 <u>않는</u> 것은?",
@@ -155,11 +155,15 @@ for m in MC1:
         for e in ev:
             for piece in e.split(' ... '): assert piece in ' '.join(E), piece
 assert sum(1 for s, _ in P2 if True) >= len(E) - 4
+def tfx(c, b):  # 정답 / 문장 해석 / 본문 ▶ / 왜 T·F? ▶ 로 줄 이름 붙이기
+    L = c.split('\n'); L[2] = '본문 ▶ ' + (L[2][3:] if L[2].startswith('본문 ') else L[2])
+    return '\n'.join(L).replace('\n→ ', '\n왜 %s일까? ▶ ' % ('T' if b else 'F'))
+
 day = {'id': 'rf7', 'name': '', 'range': '7과 외부지문 · Reading File (일본 전통 가옥)', 'story': '학교 프린트 맨 뒷장 외부지문 · 한 줄씩 꼼꼼하게',
        'passage': passage, 'steps': [
   {'type': 'vocab', 'title': '핵심어휘·숙어', 'quizN': 15, 'items': [list(v) for v in VOC]},
   {'type': 'pick', 'title': '어휘선택', 'guide': '문맥에 맞는 낱말을 고르세요.', 'items': [{'s': s, 'ex': e} for s, e in P1]},
-  {'type': 'tf', 'title': 'T/F 내용 확인', 'guide': '본문 내용과 일치하면 T, 다르면 F를 고르세요.', 'items': [[a, b, c, None, d] for a, b, c, d in TF]},
+  {'type': 'tf', 'title': 'T/F 내용 확인', 'guide': '본문 내용과 일치하면 T, 다르면 F를 고르세요.', 'items': [[a, b, tfx(c, b), None, d] for a, b, c, d in TF]},
   {'type': 'mc', 'title': '일치·불일치', 'guide': '선택지는 본문 표현을 쉬운 말로 조금 바꿔 썼어요. 해설의 "바꿔 쓴 표현"을 꼭 확인하세요.', 'items': MC1},
   {'type': 'pick', 'title': '어법선택', 'guide': '어법상 알맞은 것을 고르세요.', 'items': [{'s': s, 'ex': e} for s, e in P2]},
   {'type': 'verb', 'title': '동사변형', 'guide': '( ) 안의 동사를 알맞은 형태로 바꿔 쓰세요.', 'items': [{'s': s, 'v': v, 'a': a, 'ex': e} for s, v, a, e in VB]},
