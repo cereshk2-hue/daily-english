@@ -594,7 +594,7 @@
   }
   /* 채점: { score, max, c(선택형 맞은 수), mcN, wrong: [문항 번호(k)], wb: {'k_b': 'ok'|'no'|'chk'} } */
   function grade(t, a) {
-    var r = { score: 0, max: 0, c: 0, mcN: 0, wrong: [], wb: {} };
+    var r = { score: t.bonus || 0, max: t.bonus || 0, c: 0, mcN: 0, wrong: [], wb: {} }; /* 11/20 t.bonus: 종이로 안 푸는 부분(수능 듣기 등) 가산점 — 점수·만점에 같이 더함 */
     t.items.forEach(function (it, k) {
       r.max += it.pts;
       if (!isW(it)) { r.mcN++; if (sameAns(it, a[k])) { r.c++; r.score += it.pts; } else r.wrong.push(k); return; }
@@ -763,7 +763,7 @@
     var wty = order.filter(function (ty) { return TY[ty].wn.length; });
     h += '<section class="card pop stack tres" style="gap:10px"><div class="eyebrow">' + E(tlOf(t)) + ' · ' + (practice ? '연습 결과 · 처음 점수는 그대로예요' : '제출 완료 · 선생님께 전달돼요') + '</div>' +
       '<div class="tsum"><div class="donut" style="--p:' + score + '" role="img" aria-label="' + score + '점"><span><b>' + score + '</b>점</span></div>' +
-      '<div class="tsum-r"><div class="tsum-name">' + E(S.name || '') + '</div><div class="tsum-t">' + E(t.title) + '</div><div class="note" style="margin:0">맞은 문제 <b>' + rec.c + ' / ' + rec.t + '</b>' + (w ? ' (선택형)' : '') + '<br>' + fmtTime(rec.at) + ' 제출</div></div></div>' +
+      '<div class="tsum-r"><div class="tsum-name">' + E(S.name || '') + '</div><div class="tsum-t">' + E(t.title) + '</div><div class="note" style="margin:0">맞은 문제 <b>' + rec.c + ' / ' + rec.t + '</b>' + (w ? ' (선택형)' : '') + (t.bonus ? '<br><small>' + E(t.bonusNote || ('가산점 ' + t.bonus + '점 포함')) + '</small>' : '') + '<br>' + fmtTime(rec.at) + ' 제출</div></div></div>' +
       '<div class="ttypes">' + order.map(function (ty) { var x = TY[ty]; return '<span class="' + (x.wn.length ? 'no' : 'ok') + '">' + E(ty) + ' <b>' + x.c + '/' + x.n + '</b>' + (x.wn.length ? ' <small>' + E(x.wn.join('·')) + '</small>' : '') + '</span>'; }).join('') + '</div>' +
       (wty.length ? '<p class="twrong"><b>학습이 필요한 약한 유형</b> ' + wty.map(E).join(' · ') + '</p>' : '<p class="twrong ok"><b>모든 유형 통과</b></p>') +
       (chk ? '<p class="note" style="margin:0"><b>서술형 ' + chk + '칸은 선생님이 확인해요.</b> 정해 둔 답과 달라서 아직 점수에 넣지 않았어요.</p>' : '') +
