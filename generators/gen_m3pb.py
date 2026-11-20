@@ -33,19 +33,34 @@ VOC = [('picture bride', '사진신부'), ('wharf', '부두, 선창'), ('shore',
        ('lantern', '등불'), ('sugar mill', '설탕 공장'), ('light – lit – lit', '불을 켜다'), ('luminous', '빛나는'), ('moth', '나방'), ('migrate', '이동하다'),
        ('cane stalk', '사탕수수 줄기'), ('stranger', '낯선 사람'), ('politely', '예의 바르게'), ('untie', '풀다'), ('silk', '비단'), ('bow', '매듭, 고름'),
        ('tent-shaped', '텐트 모양의'), ('surrounding', '주변의'), ('immigrate', '이민 가다'), ('plantation', '대농장')]
-TF = [("The grandmother was twenty-three at the time of leaving Korea.", True, '칸 1 · 스물셋에 한국을 떠남'),
-      ("The speaker is younger than her grandmother was at the time of leaving Korea.", False, '칸 1 · 화자는 할머니보다 한 살 많다 → 24세'),
-      ("The grandmother got on the ship in Seoul.", False, '칸 3 · 부산의 부두'),
-      ("The grandmother had known the island's name for many years.", False, '칸 4 · 이름을 최근에야 알게 됨'),
-      ("The man on the island had a photo of the grandmother.", True, '칸 5 · 사진을 빛에 비춰 보며 기다림'),
-      ("The man worked near a sugar mill.", True, '칸 6 · 와이알루아 설탕 공장 옆 숙소'),
-      ("The man's room became bright because of fireflies.", False, '칸 7 · 사탕수수에서 날아온 나방(moths)'),
-      ("The speaker knows exactly what her grandmother took with her.", False, '칸 8 · 무엇을 가져갔는지 화자는 모른다(질문)'),
-      ("The grandmother and her husband had met many times before the wedding.", False, '칸 9 · 처음 보는 낯선 사람(stranger)'),
-      ("The grandmother was thirteen years younger than her husband.", True, '칸 9 · 열세 살 연상'),
-      ("The grandmother was wearing Korean clothes when she met him.", True, '칸 10 · 저고리의 비단 고름'),
-      ("A cold, wet wind was blowing when she arrived.", False, '칸 11 · 건조한(dry) 바람, 사탕수수를 태우는 들판'),
-      ("Most of the poem is made up of questions.", True, '시 전체가 의문문 — 화자가 상상하며 묻는다')]
+TF = [  # (문장, 정답, 친절한 해설, 근거(본문 탭 요약 문장 일부)) — 11/20 선생님: 왜 그런지 친절한 설명
+ ("The grandmother was twenty-three at the time of leaving Korea.", True,
+  "정답 T ✔\n시의 첫 부분(칸 1)에서 할머니가 한국을 떠날 때 스물셋이었다고 했어요.\n→ 그대로 맞는 내용이라 T예요. 학교 프린트 Activity 3의 1번 정답(23세)과 같아요.", "only twenty-three"),
+ ("The speaker is younger than her grandmother was at the time of leaving Korea.", False,
+  "정답 F ✘\n칸 1에서 할머니는 화자보다 한 살 어렸다고 했어요. 즉 화자가 할머니보다 한 살 많아요.\n→ 할머니가 23세였으니 화자는 24세예요. 화자가 더 어리다는 건 반대라서 F예요.", "just one year younger"),
+ ("The grandmother got on the ship in Seoul.", False,
+  "정답 F ✘\n칸 3에서 할머니는 부산(Pusan)의 양복점 거리를 지나 부두까지 갔다고 했어요.\n→ 배를 탄 곳은 서울이 아니라 부산이라서 F예요. (프린트 Activity 3의 2번 정답: 부산)", "tailor shops in Pusan"),
+ ("The grandmother had known the island's name for many years.", False,
+  "정답 F ✘\n칸 4에서 할머니가 그 섬의 이름을 최근에야(only recently) 알게 되었다고 했어요.\n→ 오래전부터 알았던 게 아니라 얼마 전에야 안 낯선 곳이라 F예요. 할머니가 느꼈을 불안함을 보여 주는 부분이에요.", "a place she barely knew"),
+ ("The man on the island had a photo of the grandmother.", True,
+  "정답 T ✔\n칸 5에서 섬의 해안에서 한 남자가 할머니의 사진을 빛에 비춰 보며 기다렸다고 했어요.\n→ 사진을 가지고 있었으니 T예요. 사진만 보고 결혼을 약속한 '사진신부'라는 제목과 연결돼요.", "holding her picture up to the light"),
+ ("The man worked near a sugar mill.", True,
+  "정답 T ✔\n칸 6에서 남자는 와이알루아 설탕 공장(Sugar Mill) 밖의 숙소에서 지냈다고 했어요.\n→ 사탕수수 농장에서 일하는 노동자였다는 뜻이라 T예요.", "Waialua Sugar Mill"),
+ ("The man's room became bright because of fireflies.", False,
+  "정답 F ✘\n칸 7에서 방을 환하게 만든 것은 사탕수수 줄기에서 날아온 나방(moths)의 날개라고 했어요.\n→ 반딧불이(fireflies)가 아니라 나방이라서 F예요. 빛나는 방은 신부를 기다리는 남자의 설렘을 보여 줘요.", "Moths from the sugarcane fields"),
+ ("The speaker knows exactly what her grandmother took with her.", False,
+  "정답 F ✘\n칸 8에서 화자는 할머니가 어떤 물건들을 가지고 갔을지 묻기만 해요(질문).\n→ 화자는 답을 모르기 때문에 상상하며 묻는 거예요. '정확히 안다'는 건 반대라서 F예요.", "cannot know what her grandmother packed"),
+ ("The grandmother and her husband had met many times before the wedding.", False,
+  "정답 F ✘\n칸 9에서 할머니가 도착해 들여다본 남편의 얼굴은 낯선 사람(stranger)의 얼굴이었어요.\n→ 사진으로만 알던 사이라 그날 처음 만났어요. 여러 번 만났다는 건 반대라서 F예요. (프린트 Activity 3 B-2도 X)", "met her husband for the first time"),
+ ("The grandmother was thirteen years younger than her husband.", True,
+  "정답 T ✔\n칸 9에서 남편은 할머니보다 열세 살 많았다고 했어요.\n→ 남편이 13살 많다 = 할머니가 13살 어리다, 같은 뜻이라 T예요. (3살·23살과 헷갈리지 않기)", "13 years her senior"),
+ ("The grandmother was wearing Korean clothes when she met him.", True,
+  "정답 T ✔\n칸 10에서 할머니가 저고리(jacket)의 비단 고름(silk bow)을 예의 바르게 풀었을까 하고 물어요.\n→ 고름이 있는 저고리, 즉 한복을 입고 있었으니 T예요.", "ribbon on her Korean jacket"),
+ ("A cold, wet wind was blowing when she arrived.", False,
+  "정답 F ✘\n칸 11에서 남자들이 사탕수수를 태우던 들판에서 건조한(dry) 바람이 불어와 치마를 부풀렸다고 했어요.\n→ 차갑고 축축한 바람이 아니라 뜨겁고 건조한 바람이라 F예요. 앞으로 살아갈 거친 노동 현실을 암시해요.", "Hot, dry wind"),
+ ("Most of the poem is made up of questions.", True,
+  "정답 T ✔\n시는 '그저 떠났을까?', '먼 길이었을까?', '무엇을 가져갔을까?', '고름을 풀었을까?'처럼 거의 다 질문이에요.\n→ 화자가 직접 볼 수 없었던 할머니의 과거를 상상하며 궁금해하기 때문이에요. 그래서 T예요.", None),
+]
 MC = [
  {'q': '시의 내용과 일치하지 <u>않는</u> 것은?', 'opts': ['The man had never seen the grandmother\'s photo.', 'The grandmother left Korea from Pusan.', 'The man waited for her on an island.', 'The husband was much older than the grandmother.', 'Men were burning sugarcane in the fields.'],
   'ex': '정답 근거: 칸 5 — 남자는 그녀의 사진을 빛에 비춰 보며 기다렸다.\n· 나머지: 부산 출발(칸 3) · 섬에서 기다림(칸 5) · 13살 연상(칸 9) · 사탕수수를 태움(칸 11)'},
@@ -63,6 +78,10 @@ MC = [
 ORD = [[SUM[0][1], SUM[2][1], SUM[3][1], SUM[4][1]], [SUM[4][1], SUM[5][1], SUM[6][1], SUM[8][1]], [SUM[7][1], SUM[8][1], SUM[9][1], SUM[10][1]]]
 SCENE = ["The grandmother leaves her home in Korea.", "She takes a ship to an island she hardly knows.", "A man waits for her, looking at her photo.", "She finally meets the stranger who is her husband."]
 ORD.append(SCENE)
+FLOW = ['23세에 한국을 떠남 → 부산 양복점 거리 지나 항구로 → 배 타고 낯선 하와이로 → 섬에서 사진 든 남자가 기다림',
+        '사진을 빛에 비춰 보며 기다리는 남자 → 설탕 공장 숙소, 저녁 등불 → 나방 날개로 빛나는 방 → 도착: 낯선 남편과 첫 만남',
+        '무엇을 챙겼을까? (질문) → 도착: 13살 많은 낯선 남편 → 예의 바르게 고름을 풂 → 건조한 바람에 부푼 치마',
+        '집을 떠남 → 배·이름도 낯선 섬 → 사진 든 남자의 기다림 → 낯선 남편과의 만남']
 ODD = [([SUM[2][1], SUM[3][1], "The grandmother had visited Hawaii many times as a child.", SUM[4][1]], 2, '섬은 이름도 최근에 안 낯선 곳 — 어릴 때 여러 번 갔다는 말은 흐름과 맞지 않아요.'),
        ([SUM[8][1], SUM[9][1], "Her husband gave her a big birthday party that night.", SUM[10][1]], 2, '첫 만남의 어색함·거친 바람 장면에 생일 파티는 관계없어요.')]
 BL = [("The grandmother was a ____ who married a man she knew only from a photo.", ['picture bride', 'tailor', 'sugar worker', 'teacher'], '사진만 보고 결혼한 신부 = picture bride'),
@@ -81,14 +100,14 @@ GM = [{'q': '빈칸에 알맞은 것은?<br><b>I visited a town ______ name I ha
       {'q': '빈칸에 알맞은 것은?<br><b>This is the port ______ the ship was waiting for us.</b>', 'opts': ['where', 'which', 'whose', 'what'], 'ex': '장소 + 완전한 문장 → 관계부사 where (시 칸 4: 부두를 꾸미는 where)'},
       {'q': '빈칸에 알맞은 것은?<br><b>He waited by the door, ______ her photo in his hand.</b>', 'opts': ['holding', 'held', 'to hold', 'holds'], 'ex': '분사구문(동시동작) -ing — 시 칸 5: 사진을 돌려 보며 기다림'},
       {'q': '빈칸에 알맞은 것은?<br><b>She walked on, her skirt ______ with the wind.</b>', 'opts': ['filling', 'filled', 'to fill', 'fills'], 'ex': '독립분사구문 명사 + -ing — 시 칸 11: 바람에 부푼 치마'}]
-for s_ in [e for _, e, _ in SUM] + [t[0] for t in TF] + [o for m in MC for o in m['opts']] + SCENE + [l for l, _, _ in ODD for l in l] + [b[0] for b in BL] + [p[0] for p in PICK] + [g['q'] for g in GM]:
+for s_ in [e for _, e, _ in SUM] + [t[0] for t in TF] + FLOW + [o for m in MC for o in m['opts']] + SCENE + [l for l, _, _ in ODD for l in l] + [b[0] for b in BL] + [p[0] for p in PICK] + [g['q'] for g in GM]:
     nocopy(re.sub(r'\{([^|}]*)\|[^}]*\}', r'\1', s_))
 day = {'id': 'pb1', 'name': '', 'range': '외부지문 2 · Picture Bride (사진신부, 시)', 'story': '학교 프린트 외부지문 시 · 내용·숨은 뜻·이야기 흐름 중심 (원문은 프린트 2·3쪽)',
        'passage': passage, 'steps': [
   {'type': 'vocab', 'title': '핵심어휘', 'quizN': 15, 'items': [list(v) for v in VOC]},
-  {'type': 'tf', 'title': 'T/F 내용 확인', 'guide': '시의 내용과 일치하면 T, 다르면 F를 고르세요. (칸 번호 = 학교 프린트 3쪽 표 순서)', 'items': [list(t) for t in TF]},
+  {'type': 'tf', 'title': 'T/F 내용 확인', 'guide': '시의 내용과 일치하면 T, 다르면 F를 고르세요. (칸 번호 = 학교 프린트 3쪽 표 순서)', 'items': [[a, b, c, None, d] if d else [a, b, c] for a, b, c, d in TF]},
   {'type': 'mc', 'title': '내용 일치 · 숨은 뜻', 'guide': '시의 내용과 숨은 뜻을 생각하며 답을 고르세요.', 'items': MC},
-  {'type': 'order', 'title': '이야기 순서', 'guide': '장면을 이야기 순서대로 눌러서 배열하세요.', 'items': [{'lines': l} for l in ORD]},
+  {'type': 'order', 'title': '이야기 순서', 'guide': '장면을 이야기 순서대로 눌러서 배열하세요.', 'items': [{'lines': l, 'flow': [f]} for l, f in zip(ORD, FLOW)]},
   {'type': 'odd', 'title': '흐름과 관계없는 문장', 'guide': '이야기 흐름과 관계없는 문장을 고르세요.', 'items': [{'lines': l, 'odd': o, 'ex': e} for l, o, e in ODD]},
   {'type': 'blank', 'title': '내용 빈칸', 'guide': '시의 내용에 맞게 빈칸에 들어갈 말을 고르세요.', 'items': [{'s': s, 'opts': o, 'ex': e} for s, o, e in BL]},
   {'type': 'pick', 'title': '어휘선택', 'guide': '시의 장면에 맞는 낱말을 고르세요.', 'items': [{'s': s, 'ex': e} for s, e in PICK]},
