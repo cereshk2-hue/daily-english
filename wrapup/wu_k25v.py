@@ -13,7 +13,8 @@ src = src.replace('<span>정답 분포 ①~⑤ 각 4개</span>', '<span>정답 �
 src = src.replace('· 내신 대비</span>', '· 기출 변형</span>')
 assert src.count('%d문항 · 100점') == 1 and 'k + 21' in src and 'NQ' in src, '빌더 바뀜'
 psrc = inspect.getsource(B.Test.place).replace("assert cnt == [4] * 5, cnt", "assert cnt == [5] * 5, cnt").replace("assert max(cnt) <= 4,", "assert max(cnt) <= 5,")
-assert '[5] * 5' in psrc
+psrc = psrc.replace("rot = 0", "rot = getattr(s, 'rot0', 0)")   # 11/22 세트마다 정답 배열 다르게(기본 0 = 예전과 같음)
+assert '[5] * 5' in psrc and 'rot0' in psrc
 ns = {}; exec(compile('class _X:\n' + src + psrc, 'wu_k25v', 'exec'), dict(B.__dict__, NQ=NQ), ns)
 PT = lambda p: ' <span class="pt">[%d점]</span>' % p
 class Test(B.Test):
