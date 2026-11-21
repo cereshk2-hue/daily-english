@@ -73,7 +73,9 @@ def sheet(P, t, answers):
                 h.append('<div class="ctx">%s</div>' % ctx)
             last = ctx or last if ctx else last
             q = ['<div class="q"><div class="stem"><span class="n">%s.</span> %s <span class="src">%s</span></div>' % (E(it['n']), it.get('stem', ''), E(it.get('src', '')))]
-            if it.get('body'): q.append(it['body'])
+            body = it.get('body') or ''
+            if last and body.startswith(last): body = body[len(last):]   # 11/20 서술형 본문에 같은 지문이 또 들어 있으면 빼기(지문 두 번 인쇄 방지)
+            if body: q.append(body)
             if it.get('opts'): q.append('<ul class="opts">%s</ul>' % ''.join('<li>%s %s</li>' % (NUM[i], o) for i, o in enumerate(it['opts'])))
             if it.get('kind') == 'write':
                 n = max(2, len(it.get('blanks') or []))
@@ -101,7 +103,8 @@ mf, todo = {}, []
 for uid, folder, P in units:
     for t in P['tests']:
         key = '%s__%s' % (uid, t['id'])
-        hsh = hashlib.md5(json.dumps([P.get('school'), P.get('unit'), P.get('title'), t], ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:12]
+        dup = any(it.get('kind') == 'write' and it.get('body', '').startswith('<div class="wbox">') for it in t['items'])   # 11/20 서술형 지문 중복 빼기 → 해당 시험만 다시 렌더
+        hsh = hashlib.md5(json.dumps([P.get('school'), P.get('unit'), P.get('title'), t] + (['w2'] if dup else []), ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:12]
         mf[key] = {'hash': hsh, 'made': old.get(key, {}).get('made') if old.get(key, {}).get('hash') == hsh else None}
         files = [os.path.join(OUT, 'pdf', key + s) for s in ('-q.pdf', '-a.pdf')]
         if mf[key]['made'] is None or not all(os.path.exists(x) for x in files): todo.append((key, P, t, files))
