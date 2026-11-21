@@ -7,11 +7,16 @@ def units(s):
     v, e = dec.raw_decode(s[i:]); return v, i, i + e
 S = open(src, encoding='utf-8').read(); D = open(dst, encoding='utf-8').read()
 new, _, _ = units(S); old, a, b = units(D); N = {u['folder']: u for u in new}
-for f in sys.argv[1:]:
+AFTER = None   # 11/21 --after=<폴더> 새 항목을 그 폴더 바로 뒤에
+args = [a for a in sys.argv[1:] if not (a.startswith('--after=') and (AFTER := a.split('=', 1)[1]) is not None)]
+for f in args:
     k = [i for i, u in enumerate(old) if u['folder'] == f]
     u = dict(N[f])
     if k: u['link'] = old[k[0]].get('link') or u.get('link'); old[k[0]] = u
-    else: u.setdefault('link', 'https://cereshk2-hue.github.io/daily-english/%s/' % f); old.append(u)
+    else:
+        u.setdefault('link', 'https://cereshk2-hue.github.io/daily-english/%s/' % f)
+        j = [i for i, x in enumerate(old) if x['folder'] == AFTER]
+        old.insert(j[0] + 1, u) if j else old.append(u)
     print(f, 'updated' if k else 'added', [d['name'] for d in u.get('days', [])][-3:], u.get('tests', '')[:0] if isinstance(u.get('tests'), str) else '')
 D = D[:a] + json.dumps(old, ensure_ascii=False, indent=2) + D[b:]
 open(dst, 'w', encoding='utf-8').write(D)

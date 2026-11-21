@@ -1,0 +1,342 @@
+{
+ "30": {
+  "sents": [
+   "Keep your paragraphs short.",
+   "Writing is visual — it catches the eye before it has a chance to catch the brain.",
+   "Short paragraphs put air around what you write and make it look inviting, whereas a long chunk of type can discourage a reader from even starting to read.",
+   "Newspaper paragraphs should be only two or three sentences long; newspaper type is set in a narrow width, and the inches quickly add up.",
+   "You may think such frequent paragraphing will damage the development of your point.",
+   "Obviously The New Yorker is obsessed by this fear — a reader can go for miles without relief.",
+   "Don’t worry; the gains far outweigh the hazards.",
+   "But don’t go too far.",
+   "A succession of tiny paragraphs is as annoying as a paragraph that’s too long.",
+   "I’m thinking of all those tiny paragraphs — verbless wonders — written by modern journalists trying to make their articles quick ‘n’ easy.",
+   "Actually they make the reader’s job easier by chopping up a natural train of thought."
+  ],
+  "ko": [
+   "단락을 짧게 유지하라.",
+   "글쓰기는 시각적인데 즉 그것이 뇌를 사로잡을 기회를 갖기 전에 눈을 사로잡는다.",
+   "짧은 단락은 당신이 쓴 것 주변에 여백을 넣어 그것을 매력적으로 보이게 하는 반면, 긴 활자 덩어리는 독자가 아예 읽기 시작하는 것조차 꺼리게 만들 수 있다.",
+   "신문 단락은 오직 두세 문장 길이여야 하는데, 신문의 활자는 좁은 폭으로 짜여 있고, 인치는 빠르게 늘어난다.",
+   "당신은 이러한 잦은 단락 나누기가 당신의 요지 전개에 해를 입힐 것이라고 생각할 수도 있다.",
+   "명백히 The New Yorker는 이 두려움에 사로잡혀 있는데, 독자는 쉼 없이 수 마일을 갈 수 있다.",
+   "걱정하지 마라. 얻는 이점이 위험성을 훨씬 능가한다.",
+   "하지만 너무 지나치지는 말라.",
+   "아주 작은 단락의 연속은 너무 긴 단락만큼이나 짜증스럽다.",
+   "나는 기사를 빠르‘고’ 쉽게 만들려고 애쓰는 현대의 기자들에 의해 쓰여진 그 모든 아주 작은 단락들, 즉 동사가 없는 경이로운 것들을 떠올리고 있다.",
+   "사실 그것들은 자연스러운 생각의 맥락을 잘라내 버림으로써 독자의 일을 더 어렵게 만든다."
+  ],
+  "checks": [
+   "Keep your paragraphs (short / shortly).",
+   "Writing is visual — it catches the eye before it has a chance (to catch / catching) the brain.",
+   "Short paragraphs put air around (that / what) you write and (making / make) it (look / to look) inviting, whereas a long chunk of type can discourage a reader from even (to start / starting) to read.",
+   "Newspaper paragraphs should be only two or three sentences long; newspaper type (sets / is set) in a narrow width, and the inches quickly add up.",
+   "You may think (that / what) such frequent paragraphing will damage the development of your point.",
+   "A succession of tiny paragraphs (is / are) as (annoying / annoyed) as a paragraph (that’s / what’s) too long.",
+   "I’m thinking of all those tiny (paragraph / paragraphs) — verbless wonders — (writing / written) by modern journalists (try / trying) to make their articles (quick ‘n’ easy / quickly ‘n’ easily).",
+   "Actually they make the reader’s job harder by (chop / chopping) up a natural train of thought."
+  ],
+  "given": null
+ },
+ "33": {
+  "sents": [
+   "The ancient Greeks felt that the visual artist’s goal was to copy visual experience.",
+   "This approach appears in the realism of ancient Greek sculpture and pottery.",
+   "We must sadly note that, due to the action of time and weather, no paintings from ancient Greek artists exist today.",
+   "We can only surmise their quality based on tales such as that of Zeuxis and Parhassios, the obvious skill in ancient Greek sculpture, and in drawings that survive on ancient Greek pottery.",
+   "This definition of art as copying reality has a problem, though.",
+   "Jackson Pollock, a leader in the New York School of the 1950’s, intentionally did not copy existing objects in his art.",
+   "While painting these works, Pollock and his fellow artists would consciously avoid making marks or passages that resembled recognizable objects.",
+   "They succeeded at making artwork that did not copy anything, thus demonstrating that the ancient Greek view of art as mimesis — simple copying — _____________________________."
+  ],
+  "ko": [
+   "고대 그리스인들은 시각 예술가의 목표가 시각적 경험을 모방하는 것이라고 생각했다.",
+   "이런 접근은 고대 그리스 조각과 도자기의 사실주의에 나타난다.",
+   "우리는 시간과 날씨의 작용 때문에 고대 그리스 예술가들의 회화 작품이 오늘날 존재하지 않는다는 점을 슬프게도 주목해야 한다.",
+   "우리는 Zeuxis와 Parhassios의 그것과 같은 이야기, 고대 그리스 조각의 분명한 기량, 그리고 고대 그리스 도자기 위에 남아 있는 그림들을 바탕으로 그것들의 질을 오직 짐작할 수 있을 뿐이다.",
+   "하지만, 현실을 모방하는 것으로의 예술의 이런 정의는 문제가 있다.",
+   "1950년대 뉴욕 화파의 리더 Jackson Pollock은 그의 예술 안에서 기존 사물을 의도적으로 모방하지 않았다.",
+   "이러한 작품들을 그리는 동안, Pollock과 그의 동료 예술가들은 알아볼 수 있는 사물과 닮은 흔적이나 부분을 만드는 것을 의식적으로 피하곤 했다.",
+   "그들은 어떤 것도 모방하지 않은 예술 작품을 만드는 데 성공했고, 그러므로 모사, 즉 단순한 모방으로서의 고대 그리스 예술관은 예술을 충분히 정의하지는 못한다는 점을 보여주었다."
+  ],
+  "checks": [
+   "The ancient Greeks felt (that / what) the visual artist’s goal was to (copy / copying) visual experience.",
+   "This approach (appears / is appeared) in the realism of ancient Greek sculpture and pottery.",
+   "We must sadly note (that / what), due to the action of time and weather, no paintings from ancient Greek artists (to exist / exist) today.",
+   "We can only surmise their quality based on tales such as (that / those) of Zeuxis and Parhassios, the obvious skill in ancient Greek sculpture, and in drawings that (survive / survives) on ancient Greek pottery.",
+   "This definition of art as (copy / copying) reality has a problem, though.",
+   "While (painting / painted) these works, Pollock and his fellow artists would consciously avoid (to make / making) marks or passages (that / what) resembled recognizable objects.",
+   "They succeeded at (make / making) artwork (that / what) did not copy anything, thus (demonstrating / demonstrated) (that / what) the ancient Greek view of art as mimesis — simple copying — (do / does) not sufficiently define art."
+  ],
+  "given": null
+ },
+ "34": {
+  "sents": [
+   "If our bodies know best, why are they easily injured when we do something so seemingly natural as running?",
+   "On the one hand, running seems very easy, but that is only because ____________________________________.",
+   "The most powerful supercomputer on the planet cannot administer the enormous number of computations it takes to run, untethered, on two legs.",
+   "Wherever our running intelligence is, running is not all conscious to us and is so complicated that only the T-1000 Terminators of our imagination are able to do it.",
+   "Because our running knowledge is buried so deeply within muscle fibres, cells and our DNA, we have to accept that we cannot fully explain its complexities.",
+   "That doesn’t mean our bodies don’t know how to do it.",
+   "We may feel our way towards understanding the alchemy of running by learning how to use our senses, getting them firing, and seeing what they are capable of, and accepting that our bodies know more about running than we ever will."
+  ],
+  "ko": [
+   "만약 우리의 몸이 가장 잘 안다면, 왜 그들은 우리가 달리기처럼 겉보기에 자연스러운 무언가를 할 때 쉽게 다칠까?",
+   "한편으로, 달리기는 매우 쉬워 보이지만, 그것은 오직 우리의 몸이 그것을 아주 잘하기 때문이다.",
+   "지구상의 가장 강력한 슈퍼컴퓨터도 매인 줄이 풀린 채 두 다리로 달리는 데 필요한 엄청난 수의 계산을 처리할 수 없다.",
+   "우리의 달리기 지능이 어디에 있든 간에, 달리기는 우리에게 완전히 의식적이지 않고, 너무 복잡해서 오직 우리의 상상 속 T-1000 터미네이터만이 그것을 할 수 있다.",
+   "우리의 달리기 지식은 근섬유, 세포, 그리고 우리의 DNA 속에 아주 깊이 묻혀 있기 때문에, 우리는 우리가 그것의 복잡성을 완전히 설명할 수 없다는 것을 받아들여야 한다.",
+   "그것은 우리의 몸이 그것을 어떻게 하는지 모른다는 것을 의미하지는 않는다.",
+   "우리는 우리의 감각을 사용하는 법을 배우고, 그것들을 활성화하게 하고, 그리고 그것들이 무엇을 할 수 있는지 봄으로써, 달리기의 연금술을 이해하고, 우리의 몸이 우리가 장차 그러할 것보다 달리기에 대해 더 잘 알고 있다는 것을 받아들이는 쪽으로 더듬어 나아갈 수 있다."
+  ],
+  "checks": [
+   "If our bodies know best, why are they easily (injuring / injured) when we do something so seemingly (natural / naturally) as running?",
+   "On the one hand, running seems very (easy / easily), but that is only because our bodies are so very good at it.",
+   "The most powerful supercomputer on the planet cannot administer the enormous number of computations it takes (running / to run), untethered, on two legs.",
+   "(Whenever / Wherever) our running intelligence is, running is not all conscious to us and is so (complicated / complicatedly) (that / what) only the T-1000 Terminators of our imagination (is / are) able to do it.",
+   "Because our running knowledge (buries / is buried) so deeply within muscle fibres, cells and our DNA, we have to accept (that / what) we cannot fully explain its complexities.",
+   "That doesn’t mean our bodies don’t know (how / why) (doing / to do) it."
+  ],
+  "given": null
+ },
+ "35": {
+  "sents": [
+   "Our number one criterion for how we care for our pets should be, “Is this what they actually need?",
+   "How is it impacting them?” rather than, “What do I want?”",
+   "For example, we have encountered many dog owners who bathe their dogs religiously multiple times a week because they want to avoid the ‘doggy’ smell, but veterinary dermatologists warn against such practices, as they are not good for a dog’s skin.",
+   "If someone is really concerned about their dog’s smell they can use waterless shampoo and thoroughly brush their dog every day but keep the baths down to once or twice a week at most.",
+   "Unless they have a skin condition for which a vet has prescribed medicated baths, most dogs don’t need to be bathed on a regular basis.",
+   "Regular pet check-ups can help identify health problems before they become severe, making it easier to treat and manage them.",
+   "Even dogs with thick, heavy coats generally only need baths every 6 to 8 weeks."
+  ],
+  "ko": [
+   "우리가 우리의 반려동물을 어떻게 돌보는지에 대한 우리의 첫 번째 기준은 ‘내가 무엇을 원하는가?’보다는 ‘이것이 그들이 실제로 필요한 것인가? 그것이 그들에게 어떻게 영향을 미치고 있는가?’가 되어야 한다.",
+   "예를 들어, 그들은 ‘개’ 냄새를 피하고 싶기 때문에 일주일에 여러 번 계율을 지키듯이 그들의 개를 목욕시키는 많은 반려동물 주인들을 마주쳐왔지만 수의 피부과 전문의는 그것들이 개의 피부에 좋지 않기 때문에 그러한 관행에 대해 경고한다.",
+   "만약 누군가가 그들의 개의 냄새에 대해 정말로 걱정한다면, 그들은 물이 필요 없는 샴푸를 사용할 수 있고 매일 충분히 그들의 개를 빗질해줄 수 있지만, 목욕은 기껏해야 일주일에 한두 번으로 제한해야 한다.",
+   "그들이 수의사가 약욕을 처방한 피부 상태를 가지고 있지 않는다면, 대부분의 개는 주기적으로 목욕시켜질 ‘필요’가 없다.",
+   "심지어 빽빽하고 무거운 털이 있는 개조차도 일반적으로 오직 6주에서 8주마다 목욕을 필요로 한다."
+  ],
+  "checks": [
+   "Our number one criterion for how (we care / do we care) for our pets should be, “Is this (that / what) they actually need? How is it impacting them?” rather than, “What do I want?”",
+   "For example, we have (encountered / been encountered) many dog owners who (bathe / bathes) their dogs religiously multiple times a week because they want (to avoid / avoiding) the ‘doggy’ smell, but veterinary dermatologists warn against such practices, as they are not good for a dog’s skin.",
+   "If someone is really concerned about their dog’s smell they can use waterless shampoo and thoroughly (brush / brushes) their dog every day but (keeping / keep) the baths down to once or twice a week at most.",
+   "Unless they have a skin condition for (that / which) a vet has prescribed medicated baths, most dogs don’t need to (bathe / be bathed)) on a regular basis.",
+   "Even dogs with thick, heavy coats generally only (need / needs) baths every 6 to 8 (week / weeks)."
+  ],
+  "given": null
+ },
+ "36": {
+  "sents": [
+   "The central concerns of mathematics are not numbers, but patterns, structures, symmetries and connections.",
+   "(A) But the numerical values of the digits are irrelevant; what is important is that there are nine distinct symbols.",
+   "They could be nine letters or nine shapes.",
+   "It’s the pattern that matters.",
+   "One Irish daily paper publishes these puzzles with the statement ‘There’s no maths involved, simply use reasoning and logic!’ (B) Take, for example, the Sudoku puzzles that appear daily in newspapers.",
+   "The objective is to complete a 9×9 grid, starting from a few given numbers or clues, while ensuring that each row, each column and each 3×3 block contains all the digits from 1 to 9 once and only once.",
+   "(C) It seems that even the idea that something might be spoiled by mathematics is enough to scare off potential solvers!",
+   "Could you imagine the promotion of an exhibition in the National Gallery with the slogan ‘No art involved, just painting and sculpture’?",
+   "If you can do Sudoku, you can do maths!"
+  ],
+  "ko": [
+   "수학의 주요 관심사는 숫자가 아니라, 패턴, 구조, 대칭 그리고 연결이다.",
+   "신문에 매일 실리는 스도쿠 퍼즐을 예로 들어보자.",
+   "그 목표는 각 행, 각 열, 그리고 각 3×3 블록이 1부터 9까지의 모든 숫자를 한 번씩 그리고 오직 한 번만 포함하는 것을 확실하게 하면서, 몇 개의 주어진 숫자나 단서로부터 시작하여 9×9 격자를 완성하는 것이다.",
+   "그러나 숫자의 수치적인 값은 관련이 없다. 중요한 것은 아홉 개의 별개의 기호가 있다는 것이다.",
+   "그것들은 아홉 개의 글자 또는 아홉 개의 모양일 수도 있다.",
+   "중요한 것은 패턴이다.",
+   "한 아일랜드 일간지는 ‘수학과 관련이 없습니다. 단지 추론과 논리를 사용하세요!’라는 말과 함께 이러한 퍼즐을 게재했다.",
+   "수학에 의해서 더럽혀질지도 모른다는 ‘생각’만으로도 잠재적인 풀이자들을 겁주어 쫓아 버리기에 충분한 것처럼 보인다!",
+   "당신은 ‘예술과 관련이 없습니다. 단지 그림과 조각뿐’이라는 슬로건을 가진 국립 미술관의 전시회 홍보를 상상할 수 있겠는가?",
+   "만약 당신이 스도쿠를 할 수 있다면, 당신은 수학을 할 수 있다!"
+  ],
+  "checks": [
+   "(Take / Taking), for example, the Sudoku puzzles (that / what) (appear / appears) daily in newspapers.",
+   "But the numerical values of the digits are irrelevant; (what / that) is important (is / are) (what / that) there (is / are) nine distinct symbols.",
+   "It’s the pattern (that / what) (matter / matters).",
+   "One Irish daily paper publishes these puzzles with the statement ‘(There’s / There’re) no maths (involving / involved), simply use reasoning and logic!’",
+   "It seems (that / what) even the idea (which / that) something might be spoiled by mathematics (is / are) enough (scaring / to scare) off potential solvers!"
+  ],
+  "given": null
+ },
+ "37": {
+  "sents": [
+   "Even before telescopes existed, people looked out into space and tried to understand the universe.",
+   "(A) Using a telescope, the Italian scientist Galileo Galilei discovered the four largest moons of Jupiter and observed craters on Earth’s Moon.",
+   "He also confirmed that Copernicus’ theory was correct.",
+   "Over the centuries, scientific discoveries and information from telescopes advanced our knowledge of how the universe works.",
+   "(B) He concluded that the view of the universe accepted at the time — that the Sun traveled around Earth — was wrong, and that it was in fact Earth that traveled around the Sun.",
+   "Despite widespread objections to his ideas, he published his theory in a book.",
+   "Later astronomers built on Copernicus’ work.",
+   "Technological improvements led to the development of the telescope in the early 17th century.",
+   "(C) The Egyptians, Babylonians, Greeks, and Maya were among the first peoples to map the movements of the stars.",
+   "In Europe, a 16th-century Polish mathematician named Nicolaus Copernicus put forth a revolutionary idea.",
+   "Copernicus watched the stars and took measurements by eye."
+  ],
+  "ko": [
+   "망원경이 존재하기도 전에, 사람들은 우주로 밖을 내다보았고 우주를 이해하려고 노력했다.",
+   "이집트인, 바빌로니아인, 그리스인, 그리고 마야인들은 별들의 움직임을 지도로 만든 최초의 민족 중에 있었다.",
+   "유럽에서는, Nicolaus Copernicus라고 불리는 16세기의 폴란드 수학자가 한 가지 혁명적인 아이디어를 제기했다.",
+   "Copernicus는 별들을 관찰했고 맨눈으로 측정했다.",
+   "그는 그 당시에 받아들여진 우주에 대한 관점, 즉 태양이 지구 주위를 이동했다는 것이 틀렸고, 태양 주위를 이동한 것은 사실 지구였다고 결론지었다.",
+   "그의 아이디어에 대해 널리 퍼진 반대에도 불구하고, 그는 한 권의 책에 그의 이론을 출판했다.",
+   "나중에 천문학자들은 Copernicus의 연구를 바탕으로 삼았다.",
+   "기술적인 개선은 17세기 초에 망원경의 발전으로 이어졌다.",
+   "망원경을 사용하여, 이탈리아 과학자 Galileo Galilei는 목성의 네 개의 가장 큰 위성을 발견했고 지구의 달에 있는 분화구를 관찰했다.",
+   "그는 또한 Copernicus의 이론이 옳았음을 확증했다.",
+   "수 세기에 걸쳐, 망원경으로부터 온 과학적 발견과 정보는 우주가 어떻게 작동하는지에 대한 우리의 지식을 전진시켰다."
+  ],
+  "checks": [
+   "Even before telescopes (existed / were existed), people looked out into space and (trying / tried) (understand / to understand) the universe.",
+   "The Egyptians, Babylonians, Greeks, and Maya (was / were) among the first peoples (mapped / to map) the movements of the stars.",
+   "In Europe, a 16th-century Polish mathematician (named / was named) Nicolaus Copernicus (put / was put) forth a revolutionary idea.",
+   "Copernicus watched the stars and (taking / took) measurements by eye.",
+   "(Despite / Although) widespread objections (to / for) his ideas, (he / who) published his theory in a book.",
+   "Later astronomers (built / was built) on Copernicus’ work.",
+   "Technological improvements (led / leading) to the development of the telescope in the early 17th century.",
+   "(Use / Using) a telescope, the Italian scientist Galileo Galilei discovered the four largest (moons / Moons) of Jupiter and (observing / observed) craters on Earth’s Moon.",
+   "He also confirmed (that / what) Copernicus’ theory was correct.",
+   "Over the centuries, scientific discoveries and information from telescopes (advancing / advanced) our knowledge of how (the universe works / does the universe work)."
+  ],
+  "given": null
+ },
+ "38": {
+  "sents": [
+   "To harness the full potential of units of measurement, we need some degree of consistency.",
+   "Subjective measures contain useful knowledge, but this can be difficult to share, based as it is on an individual’s experience.",
+   "The historian of science Theodore M.",
+   "Porter describes measurement as a ‘technology of distance’: a tool that uses shared rules to bridge differences of culture and geography, allowing for the exchange of information.",
+   "Following this logic, if measurement is another sort of language, then just as with words, individual units need reliable definitions in order to communicate.",
+   "In the earliest societies, these definitions might need to be shared no more widely than a single settlement, meaning that the definition can be no more complex than knowing that a unit was equal to a certain body part.",
+   "Imagine a disagreement over trade or tribute: it is a moment of conflict that demands greater consistency in measurement."
+  ],
+  "ko": [
+   "측정 단위의 최대 잠재력을 이용하려면 우리는 어느 정도의 일관성이 필요하다.",
+   "주관적인 측정은 유용한 지식을 포함하고 있지만 이것은 개인의 경험에 기반하기 때문에 공유하기 어려울 수 있다.",
+   "과학사학자 Theodore M. Porter는 측정을 ‘거리의 기술’이라고 묘사한다. 즉, 문화와 지리의 차이를 메우기 위해 공유된 규칙을 사용하여 정보의 교환을 가능하게 하는 도구이다.",
+   "이러한 논리에 따라서, 측정이 또 다른 종류의 언어라면, 단어와 마찬가지로, 개별 단위는 의사소통을 하기 위해 신뢰할 만한 정의가 필요하다.",
+   "가장 초기의 사회에서, 이러한 정의는 하나의 정착지 정도의 범위로만 공유될 필요가 있었을 것이고, 이는 그 정의가 한 단위는 특정 신체 부위와 대등하다는 것을 아는 정도로만 복잡하면 된다는 것을 의미한다.",
+   "하지만 이러한 공동체들이 규모가 커지면서, 이 체계의 불충분함이 분명해졌다.",
+   "무역이나 조공에 관한 불일치를 상상해 보아라. 그것은 측정에 있어 더 큰 일관성을 요구하는 갈등의 순간이다."
+  ],
+  "checks": [
+   "(Harness / To harness) the full potential of units of measurement, we need some degree of consistency.",
+   "Subjective measures (contain / containing) useful knowledge, but this can be difficult to (share / share it), (base / based) as it is on an individual’s experience.",
+   "The historian of science Theodore M. Porter (describes / is described) measurement as a ‘technology of distance’: a tool (that / what) uses shared rules (bridge / to bridge) differences of culture and geography, (allows / allowing) for the exchange of information.",
+   "(Follow / Following) this logic, if measurement is (other / another) sort of language, then just as with words, individual units need reliable definitions in order (communicate / to communicate).",
+   "As these communities grew in size, though, the inadequacies of this system would become (evident / evidently).",
+   "(Imagine / Imagining) a disagreement over trade or tribute: it is a moment of conflict (demands / that demands) greater consistency in measurement."
+  ],
+  "given": "As these communities grew in size, though, the inadequacies of this system would become evident."
+ },
+ "39": {
+  "sents": [
+   "With millions of members in a colony, leaf-cutter ants cultivate their own food.",
+   "Just like humans, they’re farmers.",
+   "Some of the ants set forth from the nest to find fresh vegetation; when they find it, they chew off large pieces that they carry back to the nest.",
+   "However, the ants don’t eat these leaves.",
+   "The ants feed the fungus, and the fungus blossoms into small fruiting bodies which the ants later eat.",
+   "Using this successful farming strategy, the ants build enormous nests underground, something spanning hundreds of square meters.",
+   "Just like humans, they have perfected an agricultural civilization."
+  ],
+  "ko": [
+   "한 군락에 수백만 마리의 구성원이 있는 절엽 개미는 그들만의 먹이를 경작한다.",
+   "인간과 마찬가지로, 그들은 농부이다.",
+   "몇몇 개미는 신선한 식물을 찾기 위해 둥지를 떠난다. 그리고 그들이 그것을 찾으면, 그들은 그들이 둥지로 다시 짊어지고 올 큰 조각을 씹어 떼어낸다.",
+   "하지만, 개미는 이 잎을 먹지 않는다.",
+   "대신에, 더 작은 일개미가 잎 조각을 가져다가 그것들을 더 작은 조각으로 씹고, 그것들을 커다란 지하 ‘정원’에서 균류를 키우기 위한 비료로 사용한다.",
+   "개미는 균류에게 먹이를 주고, 균류는 개미가 나중에 먹을 작은 자실체로 피어난다.",
+   "이 성공적인 농업 전략을 사용하여, 개미는 지하에 거대한 둥지, 수백 제곱미터에 달하는 것을 짓는다.",
+   "인간과 마찬가지로, 그들은 농업 문명을 완성했다."
+  ],
+  "checks": [
+   "With millions of members in a colony, leaf-cutter ants (cultivate / are cultivated) their own food.",
+   "Some of the ants set forth from the nest to (find / be found) fresh vegetation; when they find it, they chew off large pieces (that / what) they carry back to the nest.",
+   "Instead, smaller worker ants take the pieces of leaves, chew them into smaller pieces, and (use / using) these as fertilizer to (grow / be grown) fungus in large underground ‘gardens.’",
+   "The ants (feed / are fed) the fungus, and the fungus blossoms into small fruiting bodies (which / where) the ants later eat.",
+   "(Using / Used) this successful farming strategy, the ants (build / are built) enormous nests underground, something (spanning / spanned) hundreds of square meters."
+  ],
+  "given": "Instead, smaller worker ants take the pieces of leaves, chew them into smaller pieces, and use these as fertilizer to grow fungus in large underground ‘gardens.’"
+ },
+ "40": {
+  "sents": [
+   "From an evolutionary perspective, self-esteem has developed as a monitoring mechanism for the quality of our relationships.",
+   "The system monitors other people’s reactions to our behaviors and sends an alarm that alerts us to any possible changes in our inclusion status.",
+   "The monitoring system generally operates nonconsciously until it detects that our relational value is falling or low.",
+   "When the alarm bell rings, the threat to our social bonds is pushed into conscious awareness and we evaluate the situation.",
+   "Am I being accepted or am I being pushed out?",
+   "Do I need to adjust my behaviors to fix the relationship?",
+   "With such a high value for survival closely tied with relationships, it makes sense that the way we mobilize our internal resources around relationships would be highly networked in our brain and body.",
+   "It also makes sense that we would develop specific mechanisms to attend to minimizing rejection and enhancing acceptance.",
+   "The continuous scanning is normal, a part of being human.",
+   "We all have an interpersonal process of searching for cues from the environment to assess our value in the social structure. ??",
+   "Self-esteem works as a monitoring mechanism that signals that there might be (A)______________ in people’s social bonds, allowing them to adjust their behavior to enhance (B)______________.",
+   "(A)\t\t    (B)"
+  ],
+  "ko": [
+   "진화적 관점에서, 자아존중감은 우리 관계의 질을 위한 감시 기제로서 발달해 왔다.",
+   "이 시스템은 우리의 행동에 대한 다른 사람들의 반응을 감시하고, 우리의 포함 상태에서의 어떠한 가능한 변화에 대해 우리를 경계시키는 경보를 보낸다.",
+   "이 감시 시스템은 그것이 우리의 관계적 가치가 떨어지거나 낮다는 것을 탐지할 때까지 보통 무의식적으로 작동한다.",
+   "경보가 울릴 때, 우리의 사회적 유대에 대한 위협이 의식적 인식으로 밀려 들어오고 우리는 그 상황을 평가한다.",
+   "‘내가 수용되고 있는가, 아니면 밀려나고 있는가? 나는 관계를 바로잡기 위해 내 행동을 조정할 필요가 있는가?’",
+   "관계와 밀접하게 연결된 생존을 위한 그러한 높은 가치와 함께, 우리가 관계를 중심으로 내부 자원을 동원하는 방식이 우리의 뇌와 신체 내에서 고도로 연결되어있다는 것은 타당하다.",
+   "우리가 거절을 최소화하고 수용을 높이는 것에 주의를 기울이기 위한 특정한 기제들을 발달시켰다는 점 또한 타당하다.",
+   "지속적인 점검은 정상적이며, 인간다움의 한 부분이다.",
+   "우리 모두는 사회적 구조 내에서 우리의 가치를 평가하기 위해 환경에서 단서를 찾는 대인 관계적 과정을 가지고 있다.",
+   "자아존중감은 사람들의 사회적 유대에 문제가 있을지도 모른다고 신호를 보내는 감시 기제로서 작용하며, 이는 그들이 관계를 향상시키기 위해 그들의 행동을 조정하게 한다."
+  ],
+  "checks": [
+   "The system (monitors / is monitored) other people’s reactions to our behaviors and sends an alarm (that / what) alerts us to any possible changes in our inclusion status.",
+   "The monitoring system generally operates nonconsciously until it detects (that / what) our relational value is falling or low.",
+   "When the alarm bell rings, the threat to our social bonds (is / are) (pushing / pushed) into conscious awareness and we (evaluate / are evaluated) the situation.",
+   "Am I (accepting / being accepted) or am I (pushing / being pushed) out? Do I need (adjusting / to adjust) my behaviors to fix the relationship?",
+   "With (a such / such a) high value for survival closely (tying / tied) with relationships, (it / this) makes sense (that / what) the way we mobilize our internal resources around relationships would be highly (networking / networked) in our brain and body.",
+   "(It / This) also makes sense (that / what) we would develop specific mechanisms to attend to (minimize / minimizing) rejection and (enhance / enhancing) acceptance.",
+   "We all have an interpersonal process of (searching / to search) for cues from the environment to (assess / be assessed) our value in the social structure."
+  ],
+  "given": null
+ },
+ "41~42": {
+  "sents": [
+   "The role of ‘slang’ in popular culture has fundamentally changed because of the internet.",
+   "Since the emergence of Standard English, the rule makers of language have been in charge, and their prescriptive norms about a ‘correct’ version of the English language have dominated our (a)channels of communication.",
+   "If you wanted your voice to be heard by the public, you had to work (b)within their limits, conforming to the strict expectations of either print or broadcast media.",
+   "Social media completely broke that barrier.",
+   "The playing field is now level, and public access is democratized.",
+   "Anybody and everybody can become a public figure on the new communicative platforms, meaning that nobody’s left to (c)enforce the old rules.",
+   "TV presenters and journalists might not have been able to use slang, but content creators can.",
+   "We regularly use words like ‘function’ and ‘side-eye,’ and our influence both legitimizes these terms and gives them a large platform to spread quicker than they could have before.",
+   "Content creators also come from a (d)greater variety of backgrounds than people working in traditional media.",
+   "This means that slang can more naturally go beyond the economic and social barriers that once limited its growth.",
+   "The loose social networks that previously connected us geographically are simply (e)weaker online, and memes are now transmitted at rapid pace. 윗글의 제목으로 가장 적절한 것은?",
+   "When Slang Meets New Media  Slang: Respected Throughout History  Content Creators, Use Standard Language!",
+   "Break the Barrier Between Social Networks  How Language Evolves in Traditional Media 밑줄 친 (a)~(e) 중에서 문맥상 낱말의 쓰임이 적절하지 않은 것은?"
+  ],
+  "ko": [
+   "대중문화에서 ‘슬랭’의 역할은 인터넷 때문에 근본적으로 변화해 왔다.",
+   "표준 영어의 등장 이후, 언어 규칙 제정자들이 통제해 왔으며, 영어의 ‘올바른’ 형태에 대한 그들의 규범적 기준이 우리의 의사소통 경로를 지배해 왔다.",
+   "만약 당신이 당신의 목소리가 대중에게 들리기를 원했다면, 당신은 인쇄 혹은 방송 매체의 엄격한 기대에 순응하며, 그들의 제약 안에서 활동해야만 했다.",
+   "소셜 미디어가 그 장벽을 완전히 허물었다.",
+   "경기장은 이제 평평하며, 대중의 접근은 민주화되었다.",
+   "누구나 그리고 모두가 새로운 의사소통 플랫폼에서 공적인 인물이 될 수 있으며, 이는 옛 규칙을 강제하기 위해 남겨진 사람이 아무도 없음을 의미한다.",
+   "TV 진행자와 기자들은 슬랭을 사용할 수 없었을지도 모르지만, 콘텐츠 제작자들은 할 수 있다.",
+   "우리는 ‘function’과 ‘side-eye’ 같은 단어를 일상적으로 사용하며, 우리의 영향력은 이러한 용어를 합법화하고 그것들이 이전보다 더 빠르게 퍼질 수 있는 큰 플랫폼을 제공한다.",
+   "콘텐츠 제작자들은 또한 전통적인 매체에서 일하는 사람들보다 더 큰 다양한 배경 출신이다.",
+   "이것은 슬랭이 한때 그것의 성장을 제한했던 경제적, 사회적 장벽을 더 자연스럽게 넘어설 수 있다는 것을 의미한다.",
+   "이전에는 지리적으로 우리를 연결했던 느슨한 사회적 네트워크가 온라인상에서는 단순히 더 강하며, 밈은 이제 빠른 속도로 전파된다."
+  ],
+  "checks": [
+   "The role of ‘slang’ in popular culture has fundamentally changed (because / because of) the internet.",
+   "Since the emergence of Standard English, the rule makers of language (has / have) been in charge, and their prescriptive norms about a ‘correct’ version of the English language (has / have) dominated our channels of communication.",
+   "If you wanted your voice (be heard / to be heard) by the public, you had to work within their limits, (conforming / conformed) to the strict expectations of either print (or / and) broadcast media.",
+   "Social media completely (broke / were broken) that barrier.",
+   "The playing field is now level, and public access (democratizes / is democratized).",
+   "Anybody and everybody can become a public figure on the new communicative platforms, (meaning / meant) (that / what) nobody’s (leaving / left) to enforce the old rules.",
+   "TV presenters and journalists might not have been able (using / to use) slang, but content creators can.",
+   "We regularly use words like ‘function’ and ‘side-eye,’ and our influence both legitimizes these terms (or / and) (give / gives) (them / to them) a large platform to spread quicker than they could have before.",
+   "Content creators also come from a greater variety of backgrounds than people (work / working) in traditional media.",
+   "This means (that / what) slang can more naturally go beyond the economic and social barriers (that / what) once limited its growth.",
+   "The loose social networks (that / what) previously connected us geographically (is / are) simply stronger online, and memes are now (transmitting / transmitted) at rapid pace."
+  ],
+  "given": null
+ }
+}

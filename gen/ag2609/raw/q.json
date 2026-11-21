@@ -1,0 +1,292 @@
+{
+ "30": {
+  "stem": "다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?",
+  "ps": [
+   "Keep your paragraphs short. Writing is ①visual — it catches the eye before it has a chance to catch the brain. Short paragraphs put air around what you write and make it look ②inviting, whereas a long chunk of type can discourage a reader from even starting to read. Newspaper paragraphs should be only two or three sentences long; newspaper type is set in a narrow width, and the inches quickly add up. You may think such frequent paragraphing will ③damage the development of your point. Obviously The New Yorker is obsessed by this fear — a reader can go for miles without relief. Don’t worry; the gains far outweigh the hazards. But don’t go too far. A succession of tiny paragraphs is as ④annoying as a paragraph that’s too long. I’m thinking of all those tiny paragraphs — verbless wonders — written by modern journalists trying to make their articles quick ‘n’ easy. Actually they make the reader’s job ⑤easier by chopping up a natural train of thought."
+  ],
+  "foot": [
+   "*type: 활자　**hazard: 위험성"
+  ],
+  "opts": [],
+  "ans": "[정답] ⑤",
+  "tr": "[해석] 단락을 짧게 유지하라. 글쓰기는 시각적인데 즉 그것이 뇌를 사로잡을 기회를 갖기 전에 눈을 사로잡는다. 짧은 단락은 당신이 쓴 것 주변에 여백을 넣어 그것을 매력적으로 보이게 하는 반면, 긴 활자 덩어리는 독자가 아예 읽기 시작하는 것조차 꺼리게 만들 수 있다. 신문 단락은 오직 두세 문장 길이여야 하는데, 신문의 활자는 좁은 폭으로 짜여 있고, 인치는 빠르게 늘어난다. 당신은 이러한 잦은 단락 나누기가 당신의 요지 전개에 해를 입힐 것이라고 생각할 수도 있다. 명백히 The New Yorker는 이 두려움에 사로잡혀 있는데, 독자는 쉼 없이 수 마일을 갈 수 있다. 걱정하지 마라. 얻는 이점이 위험성을 훨씬 능가한다. 하지만 너무 지나치지는 말라. 아주 작은 단락의 연속은 너무 긴 단락만큼이나 짜증스럽다. 나는 기사를 빠르‘고’ 쉽게 만들려고 애쓰는 현대의 기자들에 의해 쓰여진 그 모든 아주 작은 단락들, 즉 동사가 없는 경이로운 것들을 떠올리고 있다. 사실 그것들은 자연스러운 생각의 맥락을 잘라내 버림으로써 독자의 일을 더 쉽게(→ 더 어렵게) 만든다.",
+  "ko": [
+   "단락을 짧게 유지하라.",
+   "글쓰기는 시각적인데 즉 그것이 뇌를 사로잡을 기회를 갖기 전에 눈을 사로잡는다.",
+   "짧은 단락은 당신이 쓴 것 주변에 여백을 넣어 그것을 매력적으로 보이게 하는 반면, 긴 활자 덩어리는 독자가 아예 읽기 시작하는 것조차 꺼리게 만들 수 있다.",
+   "신문 단락은 오직 두세 문장 길이여야 하는데, 신문의 활자는 좁은 폭으로 짜여 있고, 인치는 빠르게 늘어난다.",
+   "당신은 이러한 잦은 단락 나누기가 당신의 요지 전개에 해를 입힐 것이라고 생각할 수도 있다.",
+   "명백히 The New Yorker는 이 두려움에 사로잡혀 있는데, 독자는 쉼 없이 수 마일을 갈 수 있다.",
+   "걱정하지 마라. 얻는 이점이 위험성을 훨씬 능가한다.",
+   "하지만 너무 지나치지는 말라.",
+   "아주 작은 단락의 연속은 너무 긴 단락만큼이나 짜증스럽다.",
+   "나는 기사를 빠르‘고’ 쉽게 만들려고 애쓰는 현대의 기자들에 의해 쓰여진 그 모든 아주 작은 단락들, 즉 동사가 없는 경이로운 것들을 떠올리고 있다.",
+   "사실 그것들은 자연스러운 생각의 맥락을 잘라내 버림으로써 독자의 일을 더 어렵게 만든다."
+  ],
+  "words": "paragraph\t단락\nshort \t\t짧은 \nvisual\t\t시각적인\ncatch\t\t~을 사로잡다 \ninviting\t\t매력적인\nchunk\t\t덩어리\ndiscourage A from -ing \n    \t      A가 ~하지 못하게 하다\nnarrow\t\t좁은\nwidth\t\t폭\nadd up\t\t점점 늘어나다 \nfrequent\t\t잦은\ndamage\t\t~에 해를 입히다 \ndevelopment\t전개\npoint\t\t요지 \nobviously\t\t명백히, 분명하게\nobsessed by ~\t~에 사로잡힌, 집착하는\nfear\t\t두려움\nrelief\t\t휴식, 안도 \ngo too far\t너무 지나치다 \nsuccession\t연속\ntiny\t\t아주 작은 \nannoying\t\t짜증나는 \nverbless\t\t동사가 없는\nwonder\t\t경이로운 것\nmodern\t\t현대의 \njournalist\t\t기자 \narticle\t\t기사 \nchop ~ up\t~을 잘라내다 \na train of ~\t~의 연속, 일련의 ~\n*type\t\t활자　\n**hazard\t\t위험성"
+ },
+ "33": {
+  "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+  "ps": [
+   "The ancient Greeks felt that the visual artist’s goal was to copy visual experience. This approach appears in the realism of ancient Greek sculpture and pottery. We must sadly note that, due to the action of time and weather, no paintings from ancient Greek artists exist today. We can only surmise their quality based on tales such as that of Zeuxis and Parhassios, the obvious skill in ancient Greek sculpture, and in drawings that survive on ancient Greek pottery. This definition of art as copying reality has a problem, though. Jackson Pollock, a leader in the New York School of the 1950’s, intentionally did not copy existing objects in his art. While painting these works, Pollock and his fellow artists would consciously avoid making marks or passages that resembled recognizable objects. They succeeded at making artwork that did not copy anything, thus demonstrating that the ancient Greek view of art as mimesis — simple copying — _____________________________."
+  ],
+  "foot": [
+   "*surmise: 짐작하다"
+  ],
+  "opts": [
+   "① does not sufficiently define art",
+   "② is historically preferred to abstract art",
+   "③ cannot be criticized as much as modern art",
+   "④ proves art is universal regardless of time period",
+   "⑤ inspires modern artists to revive the Greek style"
+  ],
+  "ans": "[정답] ①",
+  "tr": "[해석] 고대 그리스인들은 시각 예술가의 목표가 시각적 경험을 모방하는 것이라고 생각했다. 이런 접근은 고대 그리스 조각과 도자기의 사실주의에 나타난다. 우리는 시간과 날씨의 작용 때문에 고대 그리스 예술가들의 회화 작품이 오늘날 존재하지 않는다는 점을 슬프게도 주목해야 한다. 우리는 Zeuxis와 Parhassios의 그것과 같은 이야기, 고대 그리스 조각의 분명한 기량, 그리고 고대 그리스 도자기 위에 남아 있는 그림들을 바탕으로 그것들의 질을 오직 짐작할 수 있을 뿐이다. 하지만, 현실을 모방하는 것으로의 예술의 이런 정의는 문제가 있다. 1950년대 뉴욕 화파의 리더 Jackson Pollock은 그의 예술 안에서 기존 사물을 의도적으로 모방하지 않았다. 이러한 작품들을 그리는 동안, Pollock과 그의 동료 예술가들은 알아볼 수 있는 사물과 닮은 흔적이나 부분을 만드는 것을 의식적으로 피하곤 했다. 그들은 어떤 것도 모방하지 않은 예술 작품을 만드는 데 성공했고, 그러므로 모사, 즉 단순한 모방으로서의 고대 그리스 예술관은 예술을 충분히 정의하지는 못한다는 점을 보여주었다.",
+  "ko": [
+   "고대 그리스인들은 시각 예술가의 목표가 시각적 경험을 모방하는 것이라고 생각했다.",
+   "이런 접근은 고대 그리스 조각과 도자기의 사실주의에 나타난다.",
+   "우리는 시간과 날씨의 작용 때문에 고대 그리스 예술가들의 회화 작품이 오늘날 존재하지 않는다는 점을 슬프게도 주목해야 한다.",
+   "우리는 Zeuxis와 Parhassios의 그것과 같은 이야기, 고대 그리스 조각의 분명한 기량, 그리고 고대 그리스 도자기 위에 남아 있는 그림들을 바탕으로 그것들의 질을 오직 짐작할 수 있을 뿐이다.",
+   "하지만, 현실을 모방하는 것으로의 예술의 이런 정의는 문제가 있다.",
+   "1950년대 뉴욕 화파의 리더 Jackson Pollock은 그의 예술 안에서 기존 사물을 의도적으로 모방하지 않았다.",
+   "이러한 작품들을 그리는 동안, Pollock과 그의 동료 예술가들은 알아볼 수 있는 사물과 닮은 흔적이나 부분을 만드는 것을 의식적으로 피하곤 했다.",
+   "그들은 어떤 것도 모방하지 않은 예술 작품을 만드는 데 성공했고, 그러므로 모사, 즉 단순한 모방으로서의 고대 그리스 예술관은 예술을 충분히 정의하지는 못한다는 점을 보여주었다."
+  ],
+  "words": "ancient\t\t고대의 \nGreek\t\t그리스의\ngoal\t\t목표 \ncopy\t\t모방하다\nvisual\t\t시각적인\nexperience\t경험\napproach\t\t접근 \nsculpture\t\t조각\npottery\t\t도자기\nnote \t\t~을 주목하다 \ndue to ~\t\t~ 때문에\naction\t\t작용\nexist\t\t존재하다 \nquality\t\t질\nbased on\t~\t~에 근거하여\ntale\t\t이야기 \nobvious\t\t분명한\nsurvive\t\t남아있다, 현존하다\ndefinition\t\t정의\nreality\t\t현실\nschool\t\t학파\nintentionally\t의도적으로 \nexisting\t\t기존의\nobject\t\t사물\nconsciously\t의식적으로 \nmark\t\t흔적들\npassage\t\t(그림의) 특정 부분\nresemble\t\t~을 닮다\nrecognizable\t알아볼 수 있는, 인식할 수 있는\nsucceed at -ing\t~하는 데 성공하다\nartwork\t\t예술 작품\nmimesis\t\t모사, 모방\nsufficiently\t충분히 \ndefine \t\t정의하다\n*surmise\t\t짐작하다"
+ },
+ "34": {
+  "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+  "ps": [
+   "If our bodies know best, why are they easily injured when we do something so seemingly natural as running? On the one hand, running seems very easy, but that is only because ____________________________________. The most powerful supercomputer on the planet cannot administer the enormous number of computations it takes to run, untethered, on two legs. Wherever our running intelligence is, running is not all conscious to us and is so complicated that only the T-1000 Terminators of our imagination are able to do it. Because our running knowledge is buried so deeply within muscle fibres, cells and our DNA, we have to accept that we cannot fully explain its complexities. That doesn’t mean our bodies don’t know how to do it. We may feel our way towards understanding the alchemy of running by learning how to use our senses, getting them firing, and seeing what they are capable of, and accepting that our bodies know more about running than we ever will."
+  ],
+  "foot": [
+   "*untether: 매인 줄을 풀다 **alchemy: 연금술"
+  ],
+  "opts": [
+   "① it doesn’t need much equipment",
+   "② our bodies are so very good at it",
+   "③ it requires less energy than imagined",
+   "④ we have practiced it since our early childhood",
+   "⑤ its simple movements demand conscious thought"
+  ],
+  "ans": "[정답] ②",
+  "tr": "[해석] 만약 우리의 몸이 가장 잘 안다면, 왜 그들은 우리가 달리기처럼 겉보기에 자연스러운 무언가를 할 때 쉽게 다칠까? 한편으로, 달리기는 매우 쉬워 보이지만, 그것은 오직 우리의 몸이 그것을 아주 잘하기 때문이다. 지구상의 가장 강력한 슈퍼컴퓨터도 매인 줄이 풀린 채 두 다리로 달리는 데 필요한 엄청난 수의 계산을 처리할 수 없다. 우리의 달리기 지능이 어디에 있든 간에, 달리기는 우리에게 완전히 의식적이지 않고, 너무 복잡해서 오직 우리의 상상 속 T-1000 터미네이터만이 그것을 할 수 있다. 우리의 달리기 지식은 근섬유, 세포, 그리고 우리의 DNA 속에 아주 깊이 묻혀 있기 때문에, 우리는 우리가 그것의 복잡성을 완전히 설명할 수 없다는 것을 받아들여야 한다. 그것은 우리의 몸이 그것을 어떻게 하는지 모른다는 것을 의미하지는 않는다. 우리는 우리의 감각을 사용하는 법을 배우고, 그것들을 활성화하게 하고, 그리고 그것들이 무엇을 할 수 있는지 봄으로써, 달리기의 연금술을 이해하고, 우리의 몸이 우리가 장차 그러할 것보다 달리기에 대해 더 잘 알고 있다는 것을 받아들이는 쪽으로 더듬어 나아갈 수 있다.",
+  "ko": [
+   "만약 우리의 몸이 가장 잘 안다면, 왜 그들은 우리가 달리기처럼 겉보기에 자연스러운 무언가를 할 때 쉽게 다칠까?",
+   "한편으로, 달리기는 매우 쉬워 보이지만, 그것은 오직 우리의 몸이 그것을 아주 잘하기 때문이다.",
+   "지구상의 가장 강력한 슈퍼컴퓨터도 매인 줄이 풀린 채 두 다리로 달리는 데 필요한 엄청난 수의 계산을 처리할 수 없다.",
+   "우리의 달리기 지능이 어디에 있든 간에, 달리기는 우리에게 완전히 의식적이지 않고, 너무 복잡해서 오직 우리의 상상 속 T-1000 터미네이터만이 그것을 할 수 있다.",
+   "우리의 달리기 지식은 근섬유, 세포, 그리고 우리의 DNA 속에 아주 깊이 묻혀 있기 때문에, 우리는 우리가 그것의 복잡성을 완전히 설명할 수 없다는 것을 받아들여야 한다.",
+   "그것은 우리의 몸이 그것을 어떻게 하는지 모른다는 것을 의미하지는 않는다.",
+   "우리는 우리의 감각을 사용하는 법을 배우고, 그것들을 활성화하게 하고, 그리고 그것들이 무엇을 할 수 있는지 봄으로써, 달리기의 연금술을 이해하고, 우리의 몸이 우리가 장차 그러할 것보다 달리기에 대해 더 잘 알고 있다는 것을 받아들이는 쪽으로 더듬어 나아갈 수 있다."
+  ],
+  "words": "injure\t\t~을 다치게 하다\nseemingly\t겉보기에\nnatural\t\t자연스러운\nbe good at ~\t~에 능숙하다, 잘하다\npowerful\t\t강력한\nsupercomputer\t슈퍼컴퓨터\nadminister\t~을 처리하다, 수행하다\nenormous\t엄청난\ncomputation\t계산\nintelligence\t지능\nconscious\t\t의식적인\ncomplicated\t복잡한 \nimagination\t상상\nbury\t\t~을 묻다\ndeeply\t\t깊게\nfibre\t\t섬유소, 섬유 \ncell\t\t세포 \nfully\t\t완전히 \ncomplexity\t복잡성 \nfeel one's way\t더듬어 나아가다\nfire\t\t활성화되다 \nbe capable of ~\t~을 할 수 있다\naccept\t\t~을 받아들이다\n*untether\t\t매인 줄을 풀다\n**alchemy\t연금술"
+ },
+ "35": {
+  "stem": "다음 글에서 전체 흐름과 관계 없는 문장은?",
+  "ps": [
+   "Our number one criterion for how we care for our pets should be, “Is this what they actually need? How is it impacting them?” rather than, “What do I want?” ①For example, we have encountered many dog owners who bathe their dogs religiously multiple times a week because they want to avoid the ‘doggy’ smell, but veterinary dermatologists warn against such practices, as they are not good for a dog’s skin. ②If someone is really concerned about their dog’s smell they can use waterless shampoo and thoroughly brush their dog every day but keep the baths down to once or twice a week at most. ③Unless they have a skin condition for which a vet has prescribed medicated baths, most dogs don’t need to be bathed on a regular basis. ④Regular pet check-ups can help identify health problems before they become severe, making it easier to treat and manage them. ⑤Even dogs with thick, heavy coats generally only need baths every 6 to 8 weeks."
+  ],
+  "foot": [
+   "*veterinary dermatologist: 수의 피부과 전문의"
+  ],
+  "opts": [],
+  "ans": "[정답] ④",
+  "tr": "[해석] 우리가 우리의 반려동물을 어떻게 돌보는지에 대한 우리의 첫 번째 기준은 ‘내가 무엇을 원하는가?’보다는 ‘이것이 그들이 실제로 필요한 것인가? 그것이 그들에게 어떻게 영향을 미치고 있는가?’가 되어야 한다. 예를 들어, 그들은 ‘개’ 냄새를 피하고 싶기 때문에 일주일에 여러 번 계율을 지키듯이 그들의 개를 목욕시키는 많은 반려동물 주인들을 마주쳐왔지만 수의 피부과 전문의는 그것들이 개의 피부에 좋지 않기 때문에 그러한 관행에 대해 경고한다. 만약 누군가가 그들의 개의 냄새에 대해 정말로 걱정한다면, 그들은 물이 필요 없는 샴푸를 사용할 수 있고 매일 충분히 그들의 개를 빗질해줄 수 있지만, 목욕은 기껏해야 일주일에 한두 번으로 제한해야 한다. 그들이 수의사가 약욕을 처방한 피부 상태를 가지고 있지 않는다면, 대부분의 개는 주기적으로 목욕시켜질 ‘필요’가 없다. (정기적인 반려동물 건강 검진은 그들이 심각해지기 전에 건강 문제를 확인하는 데 도움을 줄 수 있고, 그것들을 치료하고 관리하는 것을 더 쉽게 만든다.) 심지어 빽빽하고 무거운 털이 있는 개조차도 일반적으로 오직 6주에서 8주마다 목욕을 필요로 한다.",
+  "ko": [
+   "우리가 우리의 반려동물을 어떻게 돌보는지에 대한 우리의 첫 번째 기준은 ‘내가 무엇을 원하는가?’보다는 ‘이것이 그들이 실제로 필요한 것인가? 그것이 그들에게 어떻게 영향을 미치고 있는가?’가 되어야 한다.",
+   "예를 들어, 그들은 ‘개’ 냄새를 피하고 싶기 때문에 일주일에 여러 번 계율을 지키듯이 그들의 개를 목욕시키는 많은 반려동물 주인들을 마주쳐왔지만 수의 피부과 전문의는 그것들이 개의 피부에 좋지 않기 때문에 그러한 관행에 대해 경고한다.",
+   "만약 누군가가 그들의 개의 냄새에 대해 정말로 걱정한다면, 그들은 물이 필요 없는 샴푸를 사용할 수 있고 매일 충분히 그들의 개를 빗질해줄 수 있지만, 목욕은 기껏해야 일주일에 한두 번으로 제한해야 한다.",
+   "그들이 수의사가 약욕을 처방한 피부 상태를 가지고 있지 않는다면, 대부분의 개는 주기적으로 목욕시켜질 ‘필요’가 없다.",
+   "심지어 빽빽하고 무거운 털이 있는 개조차도 일반적으로 오직 6주에서 8주마다 목욕을 필요로 한다."
+  ],
+  "words": "number one\t최고의\ncriterion\t\t기준 \ncare for ~\t~을 돌보다 \nimpact\t\t~에게 영향을 미치다\nrather than  \t~라기 보다 \nencounter\t~을 마주치다 \nowner\t\t주인\nbathe\t\t~을 목욕시키다\nreligiously\t(신앙 활동을 하듯이) 열성적으로, 꼬박꼬박\nmultiple\t\t많은, 다수의\nwarn against ~\t~을 하지 말라고 경고하다 \npractice \t\t관행 \nskin\t\t피부\nconcerned about ~ ~에 대해 걱정하는, 우려하는 \nwaterless\t\t물이 필요하지 않는\nthoroughly\t완전히, 철저히\nbrush\t\t~에 빗질을 하다 \nkeep A down to B \tA를 B까지 억제하다, 낮추다, 제한하다 \nat most\t\t기껏해야, 많아 봐야\ncondition\t\t상태; 질환 \nvet\t\t수의사 \nprescribe\t\t~을 처방하다 \nmedicated\t약제가 든, 의약용의\nbath\t\t목욕 \non a regular basis\t정기적으로, \n주기적으로 \nthick\t\t빽빽한\ncoat\t\t털, 가죽 \ngenerally\t\t일반적으로 \n*veterinary dermatologist\n\t\t수의 피부과 전문의"
+ },
+ "36": {
+  "stem": "주어진 글 다음에 이어질 글의 순서로 가장 적절한 것을 고르시오.",
+  "ps": [
+   "The central concerns of mathematics are not numbers, but patterns, structures, symmetries and connections.",
+   "(A) But the numerical values of the digits are irrelevant; what is important is that there are nine distinct symbols. They could be nine letters or nine shapes. It’s the pattern that matters. One Irish daily paper publishes these puzzles with the statement ‘There’s no maths involved, simply use reasoning and logic!’",
+   "(B) Take, for example, the Sudoku puzzles that appear daily in newspapers. The objective is to complete a 9×9 grid, starting from a few given numbers or clues, while ensuring that each row, each column and each 3×3 block contains all the digits from 1 to 9 once and only once.",
+   "(C) It seems that even the idea that something might be spoiled by mathematics is enough to scare off potential solvers! Could you imagine the promotion of an exhibition in the National Gallery with the slogan ‘No art involved, just painting and sculpture’? If you can do Sudoku, you can do maths!"
+  ],
+  "foot": [
+   "*symmetry: 대칭 **grid: 격자"
+  ],
+  "opts": [
+   "① (A)-(C)-(B)",
+   "② (B)-(A)-(C)",
+   "③ (B)-(C)-(A)",
+   "④ (C)-(A)-(B)",
+   "⑤ (C)-(B)-(A)"
+  ],
+  "ans": "[정답] ②",
+  "tr": "[해석] 수학의 주요 관심사는 숫자가 아니라, 패턴, 구조, 대칭 그리고 연결이다. (B) 신문에 매일 실리는 스도쿠 퍼즐을 예로 들어보자. 그 목표는 각 행, 각 열, 그리고 각 3×3 블록이 1부터 9까지의 모든 숫자를 한 번씩 그리고 오직 한 번만 포함하는 것을 확실하게 하면서, 몇 개의 주어진 숫자나 단서로부터 시작하여 9×9 격자를 완성하는 것이다. (A) 그러나 숫자의 수치적인 값은 관련이 없다. 중요한 것은 아홉 개의 별개의 기호가 있다는 것이다. 그것들은 아홉 개의 글자 또는 아홉 개의 모양일 수도 있다. 중요한 것은 패턴이다. 한 아일랜드 일간지는 ‘수학과 관련이 없습니다. 단지 추론과 논리를 사용하세요!’라는 말과 함께 이러한 퍼즐을 게재했다. (C) 수학에 의해서 더럽혀질지도 모른다는 ‘생각’만으로도 잠재적인 풀이자들을 겁주어 쫓아 버리기에 충분한 것처럼 보인다! 당신은 ‘예술과 관련이 없습니다. 단지 그림과 조각뿐’이라는 슬로건을 가진 국립 미술관의 전시회 홍보를 상상할 수 있겠는가? 만약 당신이 스도쿠를 할 수 있다면, 당신은 수학을 할 수 있다!",
+  "ko": [
+   "수학의 주요 관심사는 숫자가 아니라, 패턴, 구조, 대칭 그리고 연결이다.",
+   "신문에 매일 실리는 스도쿠 퍼즐을 예로 들어보자.",
+   "그 목표는 각 행, 각 열, 그리고 각 3×3 블록이 1부터 9까지의 모든 숫자를 한 번씩 그리고 오직 한 번만 포함하는 것을 확실하게 하면서, 몇 개의 주어진 숫자나 단서로부터 시작하여 9×9 격자를 완성하는 것이다.",
+   "그러나 숫자의 수치적인 값은 관련이 없다. 중요한 것은 아홉 개의 별개의 기호가 있다는 것이다.",
+   "그것들은 아홉 개의 글자 또는 아홉 개의 모양일 수도 있다.",
+   "중요한 것은 패턴이다.",
+   "한 아일랜드 일간지는 ‘수학과 관련이 없습니다. 단지 추론과 논리를 사용하세요!’라는 말과 함께 이러한 퍼즐을 게재했다.",
+   "수학에 의해서 더럽혀질지도 모른다는 ‘생각’만으로도 잠재적인 풀이자들을 겁주어 쫓아 버리기에 충분한 것처럼 보인다!",
+   "당신은 ‘예술과 관련이 없습니다. 단지 그림과 조각뿐’이라는 슬로건을 가진 국립 미술관의 전시회 홍보를 상상할 수 있겠는가?",
+   "만약 당신이 스도쿠를 할 수 있다면, 당신은 수학을 할 수 있다!"
+  ],
+  "words": "central\t\t중요한 \nconcern\t\t관심사\nmathematics\t수학\nnumber\t\t숫자\npattern\t\t패턴\nstructure\t\t구조 \nconnection\t연결\nobjective\t\t목표\ncomplete\t\t완성하다\ngiven\t\t주어진\nclue\t\t단서 \nensure\t\t~을 확실히 하다 \nrow\t\t행\ncolumn\t\t열\ncontain\t\t~을 포함하다 \ndigit\t\t숫자, 숫자 기호  \nnumerical\t\t수의, 수치적인, 수와 관련된\nvalue\t\t값; 가치 \nirrelevant\t\t관계없는 \ndistinct \t\t뚜렷이 다른, 별개의 \nsymbol\t\t기호 \nletter\t\t글자\nshape\t\t모양\nmatter\t\t중요하다 \ndaily paper\t일간지 \nstatement\t말, 진술 \ninvolve\t\t~와 관련시키다 \nreasoning\t\t추론 \nlogic\t\t논리 \nspoil\t\t~을 망치다 \nscare ~ off\t~에게 겁을 주다 \npotential \t\t잠재적인\npromotion\t홍보\nexhibition\t\t전시 \nsculpture\t\t조각 \n*symmetry\t대칭 \n**grid\t\t격자"
+ },
+ "37": {
+  "stem": "주어진 글 다음에 이어질 글의 순서로 가장 적절한 것을 고르시오.",
+  "ps": [
+   "Even before telescopes existed, people looked out into space and tried to understand the universe.",
+   "(A) Using a telescope, the Italian scientist Galileo Galilei discovered the four largest moons of Jupiter and observed craters on Earth’s Moon. He also confirmed that Copernicus’ theory was correct. Over the centuries, scientific discoveries and information from telescopes advanced our knowledge of how the universe works.",
+   "(B) He concluded that the view of the universe accepted at the time — that the Sun traveled around Earth — was wrong, and that it was in fact Earth that traveled around the Sun. Despite widespread objections to his ideas, he published his theory in a book. Later astronomers built on Copernicus’ work. Technological improvements led to the development of the telescope in the early 17th century.",
+   "(C) The Egyptians, Babylonians, Greeks, and Maya were among the first peoples to map the movements of the stars. In Europe, a 16th-century Polish mathematician named Nicolaus Copernicus put forth a revolutionary idea. Copernicus watched the stars and took measurements by eye."
+  ],
+  "foot": [
+   "*crater: 분화구"
+  ],
+  "opts": [
+   "① (A)-(C)-(B)",
+   "② (B)-(A)-(C)",
+   "③ (B)-(C)-(A)",
+   "④ (C)-(A)-(B)",
+   "⑤ (C)-(B)-(A)"
+  ],
+  "ans": "[정답] ⑤",
+  "tr": "[해석] 망원경이 존재하기도 전에, 사람들은 우주로 밖을 내다보았고 우주를 이해하려고 노력했다. (C) 이집트인, 바빌로니아인, 그리스인, 그리고 마야인들은 별들의 움직임을 지도로 만든 최초의 민족 중에 있었다. 유럽에서는, Nicolaus Copernicus라고 불리는 16세기의 폴란드 수학자가 한 가지 혁명적인 아이디어를 제기했다. Copernicus는 별들을 관찰했고 맨눈으로 측정했다. (B) 그는 그 당시에 받아들여진 우주에 대한 관점, 즉 태양이 지구 주위를 이동했다는 것이 틀렸고, 태양 주위를 이동한 것은 사실 지구였다고 결론지었다. 그의 아이디어에 대해 널리 퍼진 반대에도 불구하고, 그는 한 권의 책에 그의 이론을 출판했다. 나중에 천문학자들은 Copernicus의 연구를 바탕으로 삼았다. 기술적인 개선은 17세기 초에 망원경의 발전으로 이어졌다. (A) 망원경을 사용하여, 이탈리아 과학자 Galileo Galilei는 목성의 네 개의 가장 큰 위성을 발견했고 지구의 달에 있는 분화구를 관찰했다. 그는 또한 Copernicus의 이론이 옳았음을 확증했다. 수 세기에 걸쳐, 망원경으로부터 온 과학적 발견과 정보는 우주가 어떻게 작동하는지에 대한 우리의 지식을 전진시켰다.",
+  "ko": [
+   "망원경이 존재하기도 전에, 사람들은 우주로 밖을 내다보았고 우주를 이해하려고 노력했다.",
+   "이집트인, 바빌로니아인, 그리스인, 그리고 마야인들은 별들의 움직임을 지도로 만든 최초의 민족 중에 있었다.",
+   "유럽에서는, Nicolaus Copernicus라고 불리는 16세기의 폴란드 수학자가 한 가지 혁명적인 아이디어를 제기했다.",
+   "Copernicus는 별들을 관찰했고 맨눈으로 측정했다.",
+   "그는 그 당시에 받아들여진 우주에 대한 관점, 즉 태양이 지구 주위를 이동했다는 것이 틀렸고, 태양 주위를 이동한 것은 사실 지구였다고 결론지었다.",
+   "그의 아이디어에 대해 널리 퍼진 반대에도 불구하고, 그는 한 권의 책에 그의 이론을 출판했다.",
+   "나중에 천문학자들은 Copernicus의 연구를 바탕으로 삼았다.",
+   "기술적인 개선은 17세기 초에 망원경의 발전으로 이어졌다.",
+   "망원경을 사용하여, 이탈리아 과학자 Galileo Galilei는 목성의 네 개의 가장 큰 위성을 발견했고 지구의 달에 있는 분화구를 관찰했다.",
+   "그는 또한 Copernicus의 이론이 옳았음을 확증했다.",
+   "수 세기에 걸쳐, 망원경으로부터 온 과학적 발견과 정보는 우주가 어떻게 작동하는지에 대한 우리의 지식을 전진시켰다."
+  ],
+  "words": "telescope \t망원경\nexist \t\t존재하다\nlook out into ~ \t~을 향해 바깥을 내다보다\nspace \t\t우주\ntry+to부정사 \t~하려고 노력하다\nuniverse \t\t우주\nEgyptian \t\t이집트인\nBabylonian \t바빌로니아인\nGreek \t\t그리스인\nMaya \t\t마야인(단·복수 동형)\namong \t\t~ 사이에\npeople \t\t민족\nmap \t\t~을 지도화하다\nmovement \t움직임\nPolish \t\t폴란드의\nmathematician \t수학자\nput ~ forth \t~을 제기하다\nrevolutionary \t혁명적인\ntake measurements\t측정하다\nby eye \t\t눈대중으로\nconclude \t~을 결론짓다\nview \t\t관점\naccept \t\t~을 받아들이다\nat the time \t그 당시에\ntravel around ~ \t~의 주위를 돌다\nin fact \t\t사실\ndespite \t\t~에도\nwidespread \t널리 퍼진\nobjection to ~ \t~에 대한 반대\npublish \t\t~을 출판하다\ntheory \t\t이론\nlater \t\t나중에\nastronomer \t천문학자\nbuild on ~ \t~을 기반으로 하다\nwork \t\t연구; 작동하다\ntechnological \t기술적인\nimprovement \t개선\nlead to ~ \t~로 이어지다\nItalian \t\t이탈리아의\ndiscover \t\t~을 발견하다\nmoon \t\t위성\nJupiter \t\t목성\nobserve \t\t~을 관찰하다\nMoon \t\t달\nconfirm \t\t~을 확증하다\ncorrect \t\t옳은\ndiscovery \t발견\nadvance \t\t~을 진보시키다\n*crater\t\t분화구"
+ },
+ "38": {
+  "stem": "글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳을 고르시오.",
+  "ps": [
+   "As these communities grew in size, though, the inadequacies of this system would become evident.",
+   "To harness the full potential of units of measurement, we need some degree of consistency. ( ① ) Subjective measures contain useful knowledge, but this can be difficult to share, based as it is on an individual’s experience. ( ② ) The historian of science Theodore M. Porter describes measurement as a ‘technology of distance’: a tool that uses shared rules to bridge differences of culture and geography, allowing for the exchange of information. ( ③ ) Following this logic, if measurement is another sort of language, then just as with words, individual units need reliable definitions in order to communicate. ( ④ ) In the earliest societies, these definitions might need to be shared no more widely than a single settlement, meaning that the definition can be no more complex than knowing that a unit was equal to a certain body part. ( ⑤ ) Imagine a disagreement over trade or tribute: it is a moment of conflict that demands greater consistency in measurement."
+  ],
+  "foot": [
+   "*harness: 이용하다 **tribute: 조공"
+  ],
+  "opts": [],
+  "ans": "[정답] ⑤",
+  "tr": "[해석] 측정 단위의 최대 잠재력을 이용하려면 우리는 어느 정도의 일관성이 필요하다. 주관적인 측정은 유용한 지식을 포함하고 있지만 이것은 개인의 경험에 기반하기 때문에 공유하기 어려울 수 있다. 과학사학자 Theodore M. Porter는 측정을 ‘거리의 기술’이라고 묘사한다. 즉, 문화와 지리의 차이를 메우기 위해 공유된 규칙을 사용하여 정보의 교환을 가능하게 하는 도구이다. 이러한 논리에 따라서, 측정이 또 다른 종류의 언어라면, 단어와 마찬가지로, 개별 단위는 의사소통을 하기 위해 신뢰할 만한 정의가 필요하다. 가장 초기의 사회에서, 이러한 정의는 하나의 정착지 정도의 범위로만 공유될 필요가 있었을 것이고, 이는 그 정의가 한 단위는 특정 신체 부위와 대등하다는 것을 아는 정도로만 복잡하면 된다는 것을 의미한다. 하지만 이러한 공동체들이 규모가 커지면서, 이 체계의 불충분함이 분명해졌다. 무역이나 조공에 관한 불일치를 상상해 보아라. 그것은 측정에 있어 더 큰 일관성을 요구하는 갈등의 순간이다.",
+  "ko": [
+   "측정 단위의 최대 잠재력을 이용하려면 우리는 어느 정도의 일관성이 필요하다.",
+   "주관적인 측정은 유용한 지식을 포함하고 있지만 이것은 개인의 경험에 기반하기 때문에 공유하기 어려울 수 있다.",
+   "과학사학자 Theodore M. Porter는 측정을 ‘거리의 기술’이라고 묘사한다. 즉, 문화와 지리의 차이를 메우기 위해 공유된 규칙을 사용하여 정보의 교환을 가능하게 하는 도구이다.",
+   "이러한 논리에 따라서, 측정이 또 다른 종류의 언어라면, 단어와 마찬가지로, 개별 단위는 의사소통을 하기 위해 신뢰할 만한 정의가 필요하다.",
+   "가장 초기의 사회에서, 이러한 정의는 하나의 정착지 정도의 범위로만 공유될 필요가 있었을 것이고, 이는 그 정의가 한 단위는 특정 신체 부위와 대등하다는 것을 아는 정도로만 복잡하면 된다는 것을 의미한다.",
+   "하지만 이러한 공동체들이 규모가 커지면서, 이 체계의 불충분함이 분명해졌다.",
+   "무역이나 조공에 관한 불일치를 상상해 보아라. 그것은 측정에 있어 더 큰 일관성을 요구하는 갈등의 순간이다."
+  ],
+  "words": "potential \t\t잠재력\nunit \t\t단위\nmeasurement \t측정\nsome degree of ~\t어느 정도의 ~\nconsistency \t일관성\nsubjective \t주관적인\nmeasure \t\t측정 단위\ncontain \t\t~을 포함하다\nshare \t\t~을 공유하다\nbe based on ~ \t~에 근거 두어지다\nindividual \t개인; 개별적인\nexperience \t경험\nhistorian \t\t사학자\ndescribe ~ as … \t~을 …이라고 묘사\n하다\ntechnology \t기술\ndistance \t\t거리\ntool \t\t도구\nrule \t\t규칙\nbridge \t\t(차이·구분 등)을 줄\n이다, 없애다\ndifference\t차이\ngeography \t지리\nallow for ~ \t~을 가능하게 하다\nexchange \t교환\nfollowing \t~에 따라서, ~을 \n따르면\nlogic \t\t논리\nsort \t\t종류\njust as with ~ \t~와 똑같이\nreliable \t\t신뢰할 만한\ndefinition \t정의\nin order+to부정사 \t~하기 위해\ncommunicate \t의미를 전달하다\nno+비교급+than ~ ~보다 더 …한 것은[…하게는] 전혀 아닌\nwidely \t\t널리\nsingle \t\t단일한\nsettlement \t정착지\ncomplex \t\t복잡한\nequal to ~ \t~와 대등한\ncertain \t\t특정한 \nbody part \t신체 부위\ncommunity \t공동체\ngrow \t\t성장하다\ninadequacy \t부적절함\nevident \t\t분명한\ndisagreement over ~ \n\t\t~에 대한 불일치\ntrade \t\t무역\nmoment \t\t순간\nconflict \t\t갈등\ndemand \t\t~을 요구하다\n*harness\t\t이용하다 \n**tribute\t\t조공"
+ },
+ "39": {
+  "stem": "글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳을 고르시오.",
+  "ps": [
+   "Instead, smaller worker ants take the pieces of leaves, chew them into smaller pieces, and use these as fertilizer to grow fungus in large underground ‘gardens.’",
+   "With millions of members in a colony, leaf-cutter ants cultivate their own food. Just like humans, they’re farmers. ( ① ) Some of the ants set forth from the nest to find fresh vegetation; when they find it, they chew off large pieces that they carry back to the nest. ( ② ) However, the ants don’t eat these leaves. ( ③ ) The ants feed the fungus, and the fungus blossoms into small fruiting bodies which the ants later eat. ( ④ ) Using this successful farming strategy, the ants build enormous nests underground, something spanning hundreds of square meters. ( ⑤ ) Just like humans, they have perfected an agricultural civilization."
+  ],
+  "foot": [
+   "*fungus: 균류"
+  ],
+  "opts": [],
+  "ans": "[정답] ③",
+  "tr": "[해석] 한 군락에 수백만 마리의 구성원이 있는 절엽 개미는 그들만의 먹이를 경작한다. 인간과 마찬가지로, 그들은 농부이다. 몇몇 개미는 신선한 식물을 찾기 위해 둥지를 떠난다. 그리고 그들이 그것을 찾으면, 그들은 그들이 둥지로 다시 짊어지고 올 큰 조각을 씹어 떼어낸다. 하지만, 개미는 이 잎을 먹지 않는다. 대신에, 더 작은 일개미가 잎 조각을 가져다가 그것들을 더 작은 조각으로 씹고, 그것들을 커다란 지하 ‘정원’에서 균류를 키우기 위한 비료로 사용한다. 개미는 균류에게 먹이를 주고, 균류는 개미가 나중에 먹을 작은 자실체로 피어난다. 이 성공적인 농업 전략을 사용하여, 개미는 지하에 거대한 둥지, 수백 제곱미터에 달하는 것을 짓는다. 인간과 마찬가지로, 그들은 농업 문명을 완성했다.",
+  "ko": [
+   "한 군락에 수백만 마리의 구성원이 있는 절엽 개미는 그들만의 먹이를 경작한다.",
+   "인간과 마찬가지로, 그들은 농부이다.",
+   "몇몇 개미는 신선한 식물을 찾기 위해 둥지를 떠난다. 그리고 그들이 그것을 찾으면, 그들은 그들이 둥지로 다시 짊어지고 올 큰 조각을 씹어 떼어낸다.",
+   "하지만, 개미는 이 잎을 먹지 않는다.",
+   "대신에, 더 작은 일개미가 잎 조각을 가져다가 그것들을 더 작은 조각으로 씹고, 그것들을 커다란 지하 ‘정원’에서 균류를 키우기 위한 비료로 사용한다.",
+   "개미는 균류에게 먹이를 주고, 균류는 개미가 나중에 먹을 작은 자실체로 피어난다.",
+   "이 성공적인 농업 전략을 사용하여, 개미는 지하에 거대한 둥지, 수백 제곱미터에 달하는 것을 짓는다.",
+   "인간과 마찬가지로, 그들은 농업 문명을 완성했다."
+  ],
+  "words": "colony \t\t군락\ncultivate \t\t~을 경작하다\njust like \t\t~과 마찬가지로\nset forth \t\t출발하다\nvegetation \t식물\nchew off \t\t씹어서 떼어내다\nfertilizer \t\t비료\nunderground \t지하의, 지하에\nfeed \t\t~에게 먹이를 주다\nblossom \t\t피어나다\nfruiting body \t자실체\nstrategy \t\t전략\nenormous \t거대한\nnest \t\t둥지\nspan \t\t~에 달하다\nperfect \t\t~을 완성하다\nagricultural \t농업의\ncivilization \t문명\n*fungus \t\t균류"
+ },
+ "40": {
+  "stem": "다음 글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?",
+  "ps": [
+   "From an evolutionary perspective, self-esteem has developed as a monitoring mechanism for the quality of our relationships. The system monitors other people’s reactions to our behaviors and sends an alarm that alerts us to any possible changes in our inclusion status. The monitoring system generally operates nonconsciously until it detects that our relational value is falling or low. When the alarm bell rings, the threat to our social bonds is pushed into conscious awareness and we evaluate the situation. Am I being accepted or am I being pushed out? Do I need to adjust my behaviors to fix the relationship? With such a high value for survival closely tied with relationships, it makes sense that the way we mobilize our internal resources around relationships would be highly networked in our brain and body. It also makes sense that we would develop specific mechanisms to attend to minimizing rejection and enhancing acceptance. The continuous scanning is normal, a part of being human. We all have an interpersonal process of searching for cues from the environment to assess our value in the social structure.",
+   "??",
+   "Self-esteem works as a monitoring mechanism that signals that there might be (A)______________ in people’s social bonds, allowing them to adjust their behavior to enhance (B)______________.",
+   "(A)\t\t    (B)"
+  ],
+  "foot": [],
+  "opts": [
+   "① problems\t\trelationships",
+   "② improvements\t\tinteractions",
+   "③ improvements\t\tadaptation",
+   "④ patterns\t\tcomfort",
+   "⑤ problems\t\tworry"
+  ],
+  "ans": "[정답] ①",
+  "tr": "[해석] 진화적 관점에서, 자아존중감은 우리 관계의 질을 위한 감시 기제로서 발달해 왔다. 이 시스템은 우리의 행동에 대한 다른 사람들의 반응을 감시하고, 우리의 포함 상태에서의 어떠한 가능한 변화에 대해 우리를 경계시키는 경보를 보낸다. 이 감시 시스템은 그것이 우리의 관계적 가치가 떨어지거나 낮다는 것을 탐지할 때까지 보통 무의식적으로 작동한다. 경보가 울릴 때, 우리의 사회적 유대에 대한 위협이 의식적 인식으로 밀려 들어오고 우리는 그 상황을 평가한다. ‘내가 수용되고 있는가, 아니면 밀려나고 있는가? 나는 관계를 바로잡기 위해 내 행동을 조정할 필요가 있는가?’ 관계와 밀접하게 연결된 생존을 위한 그러한 높은 가치와 함께, 우리가 관계를 중심으로 내부 자원을 동원하는 방식이 우리의 뇌와 신체 내에서 고도로 연결되어있다는 것은 타당하다. 우리가 거절을 최소화하고 수용을 높이는 것에 주의를 기울이기 위한 특정한 기제들을 발달시켰다는 점 또한 타당하다. 지속적인 점검은 정상적이며, 인간다움의 한 부분이다. 우리 모두는 사회적 구조 내에서 우리의 가치를 평가하기 위해 환경에서 단서를 찾는 대인 관계적 과정을 가지고 있다.",
+  "ko": [
+   "진화적 관점에서, 자아존중감은 우리 관계의 질을 위한 감시 기제로서 발달해 왔다.",
+   "이 시스템은 우리의 행동에 대한 다른 사람들의 반응을 감시하고, 우리의 포함 상태에서의 어떠한 가능한 변화에 대해 우리를 경계시키는 경보를 보낸다.",
+   "이 감시 시스템은 그것이 우리의 관계적 가치가 떨어지거나 낮다는 것을 탐지할 때까지 보통 무의식적으로 작동한다.",
+   "경보가 울릴 때, 우리의 사회적 유대에 대한 위협이 의식적 인식으로 밀려 들어오고 우리는 그 상황을 평가한다.",
+   "‘내가 수용되고 있는가, 아니면 밀려나고 있는가? 나는 관계를 바로잡기 위해 내 행동을 조정할 필요가 있는가?’",
+   "관계와 밀접하게 연결된 생존을 위한 그러한 높은 가치와 함께, 우리가 관계를 중심으로 내부 자원을 동원하는 방식이 우리의 뇌와 신체 내에서 고도로 연결되어있다는 것은 타당하다.",
+   "우리가 거절을 최소화하고 수용을 높이는 것에 주의를 기울이기 위한 특정한 기제들을 발달시켰다는 점 또한 타당하다.",
+   "지속적인 점검은 정상적이며, 인간다움의 한 부분이다.",
+   "우리 모두는 사회적 구조 내에서 우리의 가치를 평가하기 위해 환경에서 단서를 찾는 대인 관계적 과정을 가지고 있다.",
+   "자아존중감은 사람들의 사회적 유대에 문제가 있을지도 모른다고 신호를 보내는 감시 기제로서 작용하며, 이는 그들이 관계를 향상시키기 위해 그들의 행동을 조정하게 한다."
+  ],
+  "words": "evolutionary \t진화의\nperspective \t관점\nself-esteem \t자아존중감\nmonitoring \t감시\nmechanism \t기제\nquality \t\t질\nrelationship \t관계\nmonitor \t\t~을 감시하다\nreaction \t\t반응\nbehavior \t\t행동\nalert \t\t~을 경계시키다\ninclusion \t\t포함\nstatus \t\t상태\noperate \t\t작동하다\nnonconsciously \t무의식적으로\ndetect \t\t~을 탐지하다\nrelational \t관계적\nthreat \t\t위협\nbond \t\t유대\nconscious \t의식적인\nawareness \t인식\nevaluate \t\t~을 평가하다\nsituation \t\t상황\naccept \t\t~을 받아들이다\npush ~ out \t~을 밀어내다\nadjust \t\t~을 조정하다\nfix \t\t~을 바로잡다\nsurvival \t\t생존\nclosely \t\t밀접하게\ntie \t\t~을 연결하다\nmake sense \t타당하다\nmobilize \t\t~을 동원하다\ninternal \t\t내부의\nresource \t\t자원\nspecific \t\t특정한\nattend to \t\t~에 주의를 기울이다\nminimize \t~을 최소화하다\nrejection \t\t거절\nenhance \t\t~을 높이다\nacceptance \t수용\ncontinuous \t지속적인\nnormal \t\t정상적인\ninterpersonal \t대인 관계적인\nprocess \t\t과정\nsearch for \t~을 찾다\ncue \t\t단서\nassess \t\t~을 평가하다\nstructure \t\t구조"
+ },
+ "41~42": {
+  "stem": "다음 글을 읽고 물음에 답하시오.",
+  "ps": [
+   "The role of ‘slang’ in popular culture has fundamentally changed because of the internet. Since the emergence of Standard English, the rule makers of language have been in charge, and their prescriptive norms about a ‘correct’ version of the English language have dominated our (a)channels of communication. If you wanted your voice to be heard by the public, you had to work (b)within their limits, conforming to the strict expectations of either print or broadcast media. Social media completely broke that barrier. The playing field is now level, and public access is democratized. Anybody and everybody can become a public figure on the new communicative platforms, meaning that nobody’s left to (c)enforce the old rules. TV presenters and journalists might not have been able to use slang, but content creators can. We regularly use words like ‘function’ and ‘side-eye,’ and our influence both legitimizes these terms and gives them a large platform to spread quicker than they could have before. Content creators also come from a (d)greater variety of backgrounds than people working in traditional media. This means that slang can more naturally go beyond the economic and social barriers that once limited its growth. The loose social networks that previously connected us geographically are simply (e)weaker online, and memes are now transmitted at rapid pace.",
+   "윗글의 제목으로 가장 적절한 것은?",
+   "① When Slang Meets New Media",
+   "② Slang: Respected Throughout History",
+   "③ Content Creators, Use Standard Language!",
+   "④ Break the Barrier Between Social Networks",
+   "⑤ How Language Evolves in Traditional Media",
+   "밑줄 친 (a)~(e) 중에서 문맥상 낱말의 쓰임이 적절하지 않은 것은?"
+  ],
+  "foot": [
+   "*prescriptive norm: 규범적 기준　**conform: 순응하다 ***legitimize: 합법화하다"
+  ],
+  "opts": [
+   "① (a)",
+   "② (b)",
+   "③ (c)",
+   "④ (d)",
+   "⑤ (e)"
+  ],
+  "ans": "[정답] 41. ① 42. ⑤",
+  "tr": "[해석] 대중문화에서 ‘슬랭’의 역할은 인터넷 때문에 근본적으로 변화해 왔다. 표준 영어의 등장 이후, 언어 규칙 제정자들이 통제해 왔으며, 영어의 ‘올바른’ 형태에 대한 그들의 규범적 기준이 우리의 의사소통 경로를 지배해 왔다. 만약 당신이 당신의 목소리가 대중에게 들리기를 원했다면, 당신은 인쇄 혹은 방송 매체의 엄격한 기대에 순응하며, 그들의 제약 안에서 활동해야만 했다. 소셜 미디어가 그 장벽을 완전히 허물었다. 경기장은 이제 평평하며, 대중의 접근은 민주화되었다. 누구나 그리고 모두가 새로운 의사소통 플랫폼에서 공적인 인물이 될 수 있으며, 이는 옛 규칙을 강제하기 위해 남겨진 사람이 아무도 없음을 의미한다. TV 진행자와 기자들은 슬랭을 사용할 수 없었을지도 모르지만, 콘텐츠 제작자들은 할 수 있다. 우리는 ‘function’과 ‘side-eye’ 같은 단어를 일상적으로 사용하며, 우리의 영향력은 이러한 용어를 합법화하고 그것들이 이전보다 더 빠르게 퍼질 수 있는 큰 플랫폼을 제공한다. 콘텐츠 제작자들은 또한 전통적인 매체에서 일하는 사람들보다 더 큰 다양한 배경 출신이다. 이것은 슬랭이 한때 그것의 성장을 제한했던 경제적, 사회적 장벽을 더 자연스럽게 넘어설 수 있다는 것을 의미한다. 이전에는 지리적으로 우리를 연결했던 느슨한 사회적 네트워크가 온라인상에서는 단순히 더 약(→더 강)하며, 밈은 이제 빠른 속도로 전파된다.",
+  "ko": [
+   "대중문화에서 ‘슬랭’의 역할은 인터넷 때문에 근본적으로 변화해 왔다.",
+   "표준 영어의 등장 이후, 언어 규칙 제정자들이 통제해 왔으며, 영어의 ‘올바른’ 형태에 대한 그들의 규범적 기준이 우리의 의사소통 경로를 지배해 왔다.",
+   "만약 당신이 당신의 목소리가 대중에게 들리기를 원했다면, 당신은 인쇄 혹은 방송 매체의 엄격한 기대에 순응하며, 그들의 제약 안에서 활동해야만 했다.",
+   "소셜 미디어가 그 장벽을 완전히 허물었다.",
+   "경기장은 이제 평평하며, 대중의 접근은 민주화되었다.",
+   "누구나 그리고 모두가 새로운 의사소통 플랫폼에서 공적인 인물이 될 수 있으며, 이는 옛 규칙을 강제하기 위해 남겨진 사람이 아무도 없음을 의미한다.",
+   "TV 진행자와 기자들은 슬랭을 사용할 수 없었을지도 모르지만, 콘텐츠 제작자들은 할 수 있다.",
+   "우리는 ‘function’과 ‘side-eye’ 같은 단어를 일상적으로 사용하며, 우리의 영향력은 이러한 용어를 합법화하고 그것들이 이전보다 더 빠르게 퍼질 수 있는 큰 플랫폼을 제공한다.",
+   "콘텐츠 제작자들은 또한 전통적인 매체에서 일하는 사람들보다 더 큰 다양한 배경 출신이다.",
+   "이것은 슬랭이 한때 그것의 성장을 제한했던 경제적, 사회적 장벽을 더 자연스럽게 넘어설 수 있다는 것을 의미한다.",
+   "이전에는 지리적으로 우리를 연결했던 느슨한 사회적 네트워크가 온라인상에서는 단순히 더 강하며, 밈은 이제 빠른 속도로 전파된다."
+  ],
+  "words": "role \t\t역할\nfundamentally \t근본적으로\nemergence \t출현\nin charge \t통제하는\ndominate \t~을 지배하다\nchannel \t\t경로\nlimit \t\t제한; ~을 제한하다\nstrict \t\t엄격한\nexpectation \t기대\ncompletely \t완전히\nbarrier \t\t장벽\nlevel \t\t평평한\naccess \t\t접근\ndemocratize \t~을 민주화하다\nfigure \t\t인물\ncommunicative \t의사소통의\nenforce \t\t~을 시행하다\npresenter \t진행자\nregularly \t\t정기적으로\nspread \t\t퍼지다\nbackground \t배경\ntraditional \t전통적인\neconomic \t경제적인\nsocial 사\t\t회적인\nloose \t\t느슨한\npreviously \t이전에\nconnect \t\t~을 연결하다\ngeographically \t지리적으로\ntransmit \t\t~을 전파시키다\nrapid \t\t빠른\npace \t\t속도\n*prescriptive norm\t규범적 기준\n**conform \t순응하다\n***legitimize \t합법화하다"
+ }
+}

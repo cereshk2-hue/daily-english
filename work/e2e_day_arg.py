@@ -1,7 +1,7 @@
 import subprocess, time, sys
 from playwright.sync_api import sync_playwright
 srv=subprocess.Popen([sys.executable,'-m','http.server',sys.argv[1],'-d','/home/claude/proj/dist/github/'+sys.argv[4]],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL); time.sleep(1)
-SH='/home/claude/work/shots_h3_'+sys.argv[1]+'_'; errs=[]
+SH='/home/claude/work/shots_ag1_'+sys.argv[1]+'_'; errs=[]
 def solve(pg):
     rs=pg.evaluate('__dbg()'); q=rs['qs'][rs['qi']]; t=q['t']
     if t in('choice','pick'): pg.locator('.opt').nth(q['opts'].index(q['ans'])).click()
