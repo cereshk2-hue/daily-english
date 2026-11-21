@@ -36,44 +36,44 @@
   "made": "2026-11-16"
  },
  "h1-mock-2509__boss2509a": {
-  "hash": "c24d7b280b7f",
-  "made": "2026-11-16"
+  "hash": "9115d9a04a77",
+  "made": "2026-11-20"
  },
  "h1-mock-2509__boss2509b": {
-  "hash": "799627c08272",
-  "made": "2026-11-16"
+  "hash": "cf14469dd295",
+  "made": "2026-11-20"
  },
  "h1-mock-2509__boss2509c": {
-  "hash": "4ee868cbe94d",
-  "made": "2026-11-16"
+  "hash": "06992e4ac363",
+  "made": "2026-11-20"
  },
  "h1-mock-2509__boss2509d": {
-  "hash": "ee674e80dd8f",
-  "made": "2026-11-16"
+  "hash": "a43c712eb60d",
+  "made": "2026-11-20"
  },
  "h1-mock-2509__boss2509e": {
-  "hash": "f073b389f41c",
-  "made": "2026-11-16"
+  "hash": "67a97f90f62d",
+  "made": "2026-11-20"
  },
  "h1-mock-2509__boss2509f": {
-  "hash": "dd5991e2917c",
-  "made": "2026-11-16"
+  "hash": "b2bba0dab26f",
+  "made": "2026-11-20"
  },
  "h1-mock-2509__boss2509g": {
-  "hash": "56d90f3af7aa",
-  "made": "2026-11-16"
+  "hash": "d611d3630235",
+  "made": "2026-11-20"
  },
  "h1-mock-2509__boss2509h": {
-  "hash": "b5ea03cc3ce8",
-  "made": "2026-11-16"
+  "hash": "799cd671ac6a",
+  "made": "2026-11-20"
  },
  "h1-mock-2509__boss2509i": {
-  "hash": "94037ba5936b",
-  "made": "2026-11-16"
+  "hash": "45d517ce6465",
+  "made": "2026-11-20"
  },
  "h1-mock-2509__boss2509j": {
-  "hash": "547a22550346",
-  "made": "2026-11-16"
+  "hash": "2cfa520383bd",
+  "made": "2026-11-20"
  },
  "h1-mock-2509__bimi-1819": {
   "hash": "4de99cca95c9",
@@ -160,36 +160,36 @@
   "made": "2026-11-17"
  },
  "h1-mock-2610-jeodong__bossjd1": {
-  "hash": "20bf97458a07",
-  "made": "2026-11-19"
+  "hash": "606f21ae1ffe",
+  "made": "2026-11-20"
  },
  "h1-mock-2610-jeodong__bossjd2": {
-  "hash": "b7ac4e0c58fd",
-  "made": "2026-11-19"
+  "hash": "a1da9acd1404",
+  "made": "2026-11-20"
  },
  "h1-mock-2610-jeodong__bossjd3": {
-  "hash": "84e6ac6f8dee",
-  "made": "2026-11-19"
+  "hash": "f6973970adcb",
+  "made": "2026-11-20"
  },
  "h1-mock-2610-jeodong__bossjd4": {
-  "hash": "c87756d2c9f8",
-  "made": "2026-11-19"
+  "hash": "f9eadc3fb510",
+  "made": "2026-11-20"
  },
  "h1-mock-2610-jeodong__bossjd5": {
-  "hash": "27026443f858",
-  "made": "2026-11-19"
+  "hash": "fbdf707d490c",
+  "made": "2026-11-20"
  },
  "h1-mock-2610-jeodong__bossjd6": {
-  "hash": "5109cdff1007",
-  "made": "2026-11-19"
+  "hash": "a8f5b6067d35",
+  "made": "2026-11-20"
  },
  "h1-mock-2610-jeodong__bossjd7": {
-  "hash": "12da3d1c505d",
-  "made": "2026-11-19"
+  "hash": "33ce7ea59425",
+  "made": "2026-11-20"
  },
  "h1-mock-2610-jeodong__bossjd8": {
-  "hash": "8bd31eb0c21b",
-  "made": "2026-11-19"
+  "hash": "f97e8a35d364",
+  "made": "2026-11-20"
  },
  "h1-ne-min-L3__jd-ne-l3": {
   "hash": "37b1b2b47ad8",
@@ -206,6 +206,10 @@
  "h1-ne-min-L3__jd-ne-mix2": {
   "hash": "1601f53993a1",
   "made": "2026-11-16"
+ },
+ "h1-ne-min-L3__jd-gc2": {
+  "hash": "0ea586284db9",
+  "made": "2026-11-21"
  },
  "h2-mirae-kim-L4__js2-mirae-l4": {
   "hash": "0c45acae7262",
@@ -224,36 +228,36 @@
   "made": "2026-11-16"
  },
  "h2-mock-2609-angok__bossag1": {
-  "hash": "b18fe9901494",
-  "made": "2026-11-16"
+  "hash": "362eb81047fe",
+  "made": "2026-11-20"
  },
  "h2-mock-2609-angok__bossag2": {
-  "hash": "577fd6d4002d",
-  "made": "2026-11-16"
+  "hash": "12a380080da0",
+  "made": "2026-11-20"
  },
  "h2-mock-2609-angok__bossag3": {
-  "hash": "016814f68db0",
-  "made": "2026-11-16"
+  "hash": "73ff2533406e",
+  "made": "2026-11-20"
  },
  "h2-mock-2609-angok__bossag4": {
-  "hash": "0315289cac83",
-  "made": "2026-11-17"
+  "hash": "96dfc1b88207",
+  "made": "2026-11-20"
  },
  "h2-mock-2609-angok__bossag5": {
-  "hash": "48451e34862b",
-  "made": "2026-11-17"
+  "hash": "de1b388d8504",
+  "made": "2026-11-20"
  },
  "h2-mock-2609-angok__bossag6": {
-  "hash": "97fc797daf9a",
-  "made": "2026-11-17"
+  "hash": "c1228b9b2e9e",
+  "made": "2026-11-20"
  },
  "h2-mock-2609-angok__bossag7": {
-  "hash": "a8f0e4bb3738",
-  "made": "2026-11-17"
+  "hash": "c301b7ed7b7b",
+  "made": "2026-11-20"
  },
  "h2-mock-2609-angok__bossag8": {
-  "hash": "be318d6397f9",
-  "made": "2026-11-17"
+  "hash": "a3f9d9a0ebac",
+  "made": "2026-11-20"
  },
  "h2-mock-2609-jungsan__js2609-1922": {
   "hash": "29ec07753698",
@@ -268,43 +272,43 @@
   "made": "2026-11-16"
  },
  "h2-mock-2609-jungsan__boss2609a": {
-  "hash": "302954465aa9",
-  "made": "2026-11-16"
+  "hash": "b4fc93ee0be0",
+  "made": "2026-11-20"
  },
  "h2-mock-2609-jungsan__boss2609b": {
-  "hash": "fbfeecdf52dc",
-  "made": "2026-11-16"
+  "hash": "caa83b40f1ff",
+  "made": "2026-11-20"
  },
  "h2-mock-2609-jungsan__boss2609c": {
-  "hash": "d6ab99601065",
-  "made": "2026-11-16"
+  "hash": "a4cbd4699859",
+  "made": "2026-11-20"
  },
  "h2-mock-2609-jungsan__boss2609d": {
-  "hash": "f28f7d94e4c0",
+  "hash": "d9122bd18f32",
   "made": "2026-11-20"
  },
  "h2-mock-2609-jungsan__boss2609e": {
-  "hash": "f28e0c5e6e36",
+  "hash": "c56d26aac859",
   "made": "2026-11-20"
  },
  "h2-mock-2609-jungsan__boss2609f": {
-  "hash": "0556ae160128",
+  "hash": "7929e3952075",
   "made": "2026-11-20"
  },
  "h2-mock-2609-jungsan__boss2609g": {
-  "hash": "ae1446f48a6a",
+  "hash": "72e57b7161b2",
   "made": "2026-11-20"
  },
  "h2-mock-2609-jungsan__boss2609h": {
-  "hash": "d62487aa37a6",
+  "hash": "6abf3beac490",
   "made": "2026-11-20"
  },
  "h2-mock-2609-jungsan__boss2609i": {
-  "hash": "be3c0aac0dbc",
+  "hash": "2a492ea70732",
   "made": "2026-11-20"
  },
  "h2-mock-2609-jungsan__boss2609j": {
-  "hash": "caa1c6887c76",
+  "hash": "10dee1949a4d",
   "made": "2026-11-20"
  },
  "h2-mock-2609-jungsan__jsb-19": {
