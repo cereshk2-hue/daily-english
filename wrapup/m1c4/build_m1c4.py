@@ -84,3 +84,4 @@ exec(open('/home/claude/srcrepo/wrapup/m1c4/add_m1cs.py', encoding='utf-8').read
 
 # 11/20 실전 문법 동명사 1~4차도 뒤에 붙임
 exec(open("/home/claude/srcrepo/wrapup/m1c4/add_m1cg.py", encoding="utf-8").read())
+exec(open("/home/claude/srcrepo/wrapup/m1c4/add_m1cc.py", encoding="utf-8").read())   # 11/23 5과 비교급·최상급
