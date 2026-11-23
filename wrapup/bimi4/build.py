@@ -146,8 +146,10 @@ if __name__ == '__main__':
         try: C = importlib.import_module('cfg_' + fk.replace('-', '').replace('_', '')).C
         except ModuleNotFoundError: continue
         its, grs = parse(fk, C)
-        its = [i for i in its if i.get('kind') != 'write']   # 중산고1 학교 시험에 서술형 없음 → 객관식만, 번호 다시
-        for k, i in enumerate(its, 1): i['n'] = str(k)
+        its = [i for i in its if i.get('kind') != 'write']   # 중산고1 학교 시험에 서술형 없음 → 객관식만
+        # 11/23 번호 = 원본 시험지 번호(서술형 번호 건너뜀). 다시 매기면 원본으로 푸는 학생 번호와 어긋남(중산고2에서 제보)
+        OFF = {'bimi-26': 19}   # 파일 24-26: 24번 19문항 다음 20번부터
+        for i in its: i['n'] = str(int(i['n']) + OFF.get(tid, 0))
         GR[tid] = {str(k): v for k, v in grs.items()}
         tests.append({'id': tid, 'kind': 'bimi', 'title': '비밀노트 변형문제 ' + sh, 'short': '비밀노트 ' + sh, 'school': '중산고 1학년', 'minutes': 50, 'items': its})
         mc = [i for i in its if i.get('kind') != 'write']

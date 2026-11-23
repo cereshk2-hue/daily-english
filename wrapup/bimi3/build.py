@@ -147,6 +147,8 @@ if __name__ == '__main__':
         its, grs = parse(fk, C)
         its = [i for i in its if i.get('kind') != 'write']   # 11/17 중산고2는 서술형 없음 → 객관식만
         # 11/23 번호는 원본 시험지 번호 그대로(서술형 번호는 건너뜀) — 학생들이 edu-lab 원본으로 풀어 다시 매긴 번호와 어긋났음(원본 9·10번 '모두'가 OMR 7·8번에)
+        OFF = {'jsb-19': 16}   # 파일 18-19에서 19번만 씀 → 원본 시험지는 18번 16문항 다음 17번부터
+        for i in its: i['n'] = str(int(i['n']) + OFF.get(tid, 0))
         GR[tid] = {str(k): v for k, v in grs.items()}
         tests.append({'id': tid, 'kind': 'bimi', 'title': '비밀노트 변형문제 ' + sh, 'short': '비밀노트 ' + sh, 'school': '중산고 2학년', 'minutes': 50, 'items': its})
         mc = [i for i in its if i.get('kind') != 'write']
