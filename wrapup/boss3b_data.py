@@ -726,6 +726,7 @@ S41c = [
 SETS_B.append({'id': 'bossag8', 'no': 8, 'nums': ('40', '41~42'), 'pre': '고3 6월 ', 'exam': '영어Ⅱ 수능유형 연습 · 고3 6월 모의평가',
                'P': (P40, P41c), 'items': S40 + S41c, 'titles': ('고3 6월 40번 · 기술적 실업의 위협', '고3 6월 41~42번 · 이음매 없는 기술'), 'dist': (4, 4, 3, 3, 4)})
 
+exec(open('/home/claude/srcrepo/wrapup/boss3b_hard.py', encoding='utf-8').read())   # 11/23 5·6세트 어휘 끝판왕화
 for S in SETS_B:
     place(S['items'], S.pop('dist'), 'ag' + S['id'])
-    S['mean'] = MEAN_B
+    S['mean'] = dict(MEAN_B, **HMEAN) if S.pop('hard', False) else MEAN_B
