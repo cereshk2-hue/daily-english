@@ -2,7 +2,7 @@
 # 요약문 끝판왕 챌린지: boss_data.py → ① 앱 시험(P.tests, kind 'boss') ② A4 시험지(학생용·교사용) HTML → PDF
 import re, json, html, subprocess, sys
 sys.path.insert(0, '/home/claude/srcrepo/wrapup')
-from bossjd_data import SETS, MEAN, EXTRA, M, TR
+from bossjd_data import SETS, MEAN, EXTRA, M, TR, CTX
 C = '①②③④⑤'
 esc = lambda s: html.escape(s, quote=False)
 DATA = '/home/claude/proj/data/h1-mock-2610-jeodong.js'
@@ -25,6 +25,7 @@ def autofix(it, sid, k):
 
 def finalize():
     for S in SETS:
+        CTX['hard'] = S['no'] >= 4
         for k, it in enumerate(S['items']):
             it['no'] = k + 1
             it['src'] = S['nums'][k // 10] + '번'
@@ -69,12 +70,14 @@ for d in PK['days']:
             elif cur: cur = None
         elif cur and l[2]: KO[cur].append([l[1], l[2]])
 for S in SETS:
+    CTX['hard'] = S['no'] >= 4
     for n in S['nums']: assert KO.get(n), n
 
 # ═════════ ① 앱 시험 ═════════
 def app_tests():
     tests = []
     for S in SETS:
+        CTX['hard'] = S['no'] >= 4
         items = []
         for it in S['items']:
             P = S['P'][(it['no'] - 1) // 10]; num = S['nums'][(it['no'] - 1) // 10]
@@ -214,6 +217,7 @@ def teacher(S):
 if __name__ == '__main__':
     import os; os.makedirs(OUT, exist_ok=True)
     for S in SETS:
+        CTX['hard'] = S['no'] >= 4
         print('세트', S['no'], S['nums'], '정답', ''.join(C[it['ans']] if it['lv'] != '서술' else '서' for it in S['items']), '분포', S['dist'])
         open(OUT + 'boss%d-student.html' % S['no'], 'w', encoding='utf-8').write(student(S))
         open(OUT + 'boss%d-teacher.html' % S['no'], 'w', encoding='utf-8').write(teacher(S))

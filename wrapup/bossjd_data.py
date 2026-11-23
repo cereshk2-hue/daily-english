@@ -922,9 +922,15 @@ S40 = [
 ]
 SETS.append({'id': 'bossjd8', 'no': 8, 'nums': ('39', '40'), 'P': (P['39'], P['40']), 'items': S39 + S40, 'titles': ('39번 · 수압과 잠수', '40번 · 미역취의 경보 신호')})
 
+exec(open('/home/claude/srcrepo/wrapup/bossjd_hard.py', encoding='utf-8').read())   # 11/23 4~8세트 어휘 끝판왕화
 MEAN = dict(x.split(':', 1) for x in open('/home/claude/srcrepo/wrapup/bossjd_mean.txt', encoding='utf-8').read().strip().split('|'))
 EXTRA = {}
-def M(w): return MEAN.get(w, '')
+CTX = {'hard': False}   # 4~8세트를 그릴 때 True → 하드 뜻풀이 우선
+_OLD = {w for _S in SETS[:3] for _it in _S['items'] for _p in _it.get('o', []) for w in _p}
+for _w, _v in HMEAN.items():
+    if _w not in _OLD: MEAN[_w] = _v   # 1~3세트에 쓰인 낱말은 원래 뜻풀이 유지
+    elif _w not in MEAN: MEAN[_w] = _v
+def M(w): return (HMEAN.get(w) if CTX['hard'] else None) or MEAN.get(w, '')
 for _S in SETS:   # 선택지 낱말은 모두 뜻이 있어야 함
     for _it in _S['items']:
         for _p in _it.get('o', []):
