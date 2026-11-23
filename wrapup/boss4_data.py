@@ -129,7 +129,9 @@ MEAN.update({
 EXTRA.update({'adenosine': '아데노신(수면 유도 화합물)', 'sleep debt': '수면 빚(부족한 잠)', 'significant digit': '유효 숫자', 'infrastructure': '기반 시설',
               'excavate': '채굴하다', 'undermine': '약화시키다', 'automaton': '자동 장치', 'coin': '(새말을) 만들다', 'hibernate': '동면하다', 'bladder': '방광',
               'axle': '바퀴 축', 'nonlinear': '비선형의', 'slapstick': '슬랩스틱(과장된 몸짓 희극)', 'impartially': '치우침 없이', 'rote': '기계적인', 'on the defensive': '방어적인 태도로'})
-def M(w): return MEAN.get(w, MEAN.get(w + '_', ''))
+CTX = {'hard': False}   # 11/23 7~10세트 그릴 때 True → boss4_hard.py 뜻풀이 우선
+HMEAN = {}
+def M(w): return (HMEAN.get(w) if CTX['hard'] else None) or MEAN.get(w, MEAN.get(w + '_', ''))
 TR = {}
 SETS = []
 ATS = [0, 3, 1, 4, 2, 0, 3, 1, 2, 4, 1, 0, 3, 2, 4, 1, 0, 2]   # 세트마다 돌려 씀 → 정답 분포 4·4·4·3·3
@@ -823,3 +825,4 @@ S41 = [
     gm='come across as ~ = ~라는 인상을 주다'),
 ]
 SETS.append({'id': 'boss2509j', 'no': 10, 'nums': ('41~42', '41~42'), 'P': (P41, P41), 'items': S41, 'titles': ('41~42번 · "May I help you?"의 함정', '41~42번 · "May I help you?"의 함정')})
+exec(open('/home/claude/srcrepo/wrapup/boss4_hard.py', encoding='utf-8').read())   # 11/23 7~10세트 어휘 끝판왕화
