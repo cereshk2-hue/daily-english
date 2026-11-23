@@ -11,11 +11,13 @@ ATS2 = [2, 4, 0, 3, 1, 4, 0, 2, 3, 1, 3, 4, 0, 1, 2, 0, 3, 1]   # 세트 9·10�
 def rot(k, T=None): return [(a + k) % 5 for a in (T or ATS)]
 _PK = json.loads(subprocess.check_output(['node', '-e', "global.window={};require('/home/claude/proj/data/h2-mock-2609-jungsan.js');process.stdout.write(JSON.stringify(window.PKG))"]))
 P = {}
-for d in _PK['days']:
-    cur = None
+for d in _PK['days']:   # 11/23: 같은 번호 지문이 뒤 DAY(유의어 학습 등)에 또 나오면 첫 DAY 것만 씀 (지문 두 번 붙는 문제)
+    cur = None; mine = set()
     for l in d['passage']:
         if l[0] == '#':
-            mm = re.match(r'(\d+(?:~\d+)?)번', l[1]); cur = mm.group(1) if mm else None; P.setdefault(cur, [])
+            mm = re.match(r'(\d+(?:~\d+)?)번', l[1]); cur = mm.group(1) if mm else None
+            if cur and cur not in P: P[cur] = []; mine.add(cur)
+            if cur not in mine: cur = None
         elif cur: P[cur].append(l[1])
 P = {k: ' '.join(v).replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"') for k, v in P.items()}
 B2 = lambda a, b: [{'label': '(A)', 'pts': 3, 'ans': a, 'chk': []}, {'label': '(B)', 'pts': 3, 'ans': b, 'chk': []}]
@@ -824,5 +826,9 @@ MEAN.update(_b2.MEAN)
 try: MEAN.update(dict(x.split(':', 1) for x in open('/home/claude/srcrepo/wrapup/boss5_mean.txt', encoding='utf-8').read().strip().split('|') if ':' in x))
 except FileNotFoundError: pass
 EXTRA = {}
-def M(w): return MEAN.get(w, '')
+CTX = {'hard': False}   # 11/23 6~10세트 그릴 때 True → boss5_hard.py 뜻풀이 우선
+HMEAN = {}
+exec(open('/home/claude/srcrepo/wrapup/boss5_hard.py', encoding='utf-8').read())   # 11/23 6~10세트 어휘 끝판왕화
+def M(w): return (HMEAN.get(w) if CTX['hard'] else None) or MEAN.get(w, '')
+MEAN.update({_k: _v for _k, _v in HMEAN.items() if _k not in MEAN})   # 새 낱말만 (기존 뜻 불변)
 MISSING = sorted({w for _S in SETS for _it in _S['items'] for _p in _it.get('o', []) for w in _p if w not in MEAN})
