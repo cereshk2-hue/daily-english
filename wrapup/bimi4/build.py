@@ -147,9 +147,9 @@ if __name__ == '__main__':
         except ModuleNotFoundError: continue
         its, grs = parse(fk, C)
         its = [i for i in its if i.get('kind') != 'write']   # 중산고1 학교 시험에 서술형 없음 → 객관식만
-        # 11/23 번호 = 원본 시험지 번호(서술형 번호 건너뜀). 다시 매기면 원본으로 푸는 학생 번호와 어긋남(중산고2에서 제보)
-        OFF = {'bimi-26': 19}   # 파일 24-26: 24번 19문항 다음 20번부터
-        for i in its: i['n'] = str(int(i['n']) + OFF.get(tid, 0))
+        # 11/24 선생님: 중산고1은 11/20에 보낸 시험지(서술형 뺀 새 시험지, 1번부터 차례로)로 시험 → OMR도 1부터 차례로.
+        #   (11/23에 원본 번호로 바꿨던 것 되돌림 — 그건 원본 edu-lab 시험지로 푸는 중산고2 기준)
+        for k, i in enumerate(its, 1): i['n'] = str(k)
         GR[tid] = {str(k): v for k, v in grs.items()}
         tests.append({'id': tid, 'kind': 'bimi', 'title': '비밀노트 변형문제 ' + sh, 'short': '비밀노트 ' + sh, 'school': '중산고 1학년', 'minutes': 50, 'items': its})
         mc = [i for i in its if i.get('kind') != 'write']
