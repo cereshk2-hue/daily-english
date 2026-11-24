@@ -19,13 +19,24 @@ def sent_of(d, w):
     for r in d['passage']:
         if r[0] != '#' and re.search(r'(?<![A-Za-z])%s(?![A-Za-z])' % re.escape(w), r[1]): return r[1], r[2]
     return '', ''
+def trapinfo(d, w):
+    for st in d['steps'][4:]:
+        for q in st['items']:
+            if q['q'].startswith('<b class="en">%s</b>' % w):
+                m = re.search(r'끝판왕 문장\((.*?)번\) ▶ (.*)\n해석: (.*)\n이 자리의 정답은 (.*?)\(', q['ex'])
+                return m.groups()
+    return None
 def B(s, w): return re.sub(r'(?<![A-Za-z])(%s)(?![A-Za-z])' % re.escape(E(w)), r'<b>\1</b>', E(s), count=1)
 def page(d, ans=False):
     cards = d['steps'][0]['items']; picks = d['steps'][3]['items']
-    t = '<h1>%s · %s</h1><div class="sub">중산고1 9월 모고 요약문 끝판왕 정답 어휘 %d개 · 빨간 글씨 = 흔히 아는 뜻(함정)</div>' % (E(d['name']), E(d['range']), len(cards))
+    t = '<h1>%s · %s</h1><div class="sub">중산고1 9월 모고 요약문 끝판왕 정답·함정 선택지 어휘 %d개 · 빨간 글씨 = 흔히 아는 뜻(함정) · 함정 선택지 어휘는 정답 자리 문장과 함께</div>' % (E(d['name']), E(d['range']), len(cards))
     if not ans:
         t += '<h2>① 어휘표</h2><table><tr><th>#</th><th>어휘</th><th>이 문장 속 뜻</th><th>끝판왕 문장 · 해석</th></tr>'
         for i, c in enumerate(cards, 1):
+            if len(c) < 4:
+                n_, en_, ko_, cw = trapinfo(d, c[0])
+                t += '<tr><td>%d</td><td class="w en">%s</td><td>%s</td><td><span class="tr">%s번 함정 선택지 · 이 자리 정답은 <b class="en">%s</b></span></td></tr>' % (i, E(c[0]), E(c[1]), n_, E(cw))
+                continue
             en, ko = sent_of(d, c[3]); trp = tr_of(d, c[0])
             t += '<tr><td>%d</td><td class="w en">%s</td><td>%s%s</td><td><span class="en">%s</span><br><span class="ko">%s</span></td></tr>' % (
                 i, E(c[0]), E(c[1]), ('<br><span class="tr">✗ %s</span>' % E(trp)) if trp else '', B(en, c[3]), E(ko))

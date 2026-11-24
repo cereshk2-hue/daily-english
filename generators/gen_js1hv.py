@@ -17,6 +17,22 @@ TRAPFIX = {'profile': '(SNS) 프로필, 자기소개', 'posed': '포즈를 취�
 SIMILAR = [{'bespoke', 'tailored'}, {'alien', 'foreign'}, {'averted', 'stemmed'}, {'biased', 'partial', 'slanted'}, {'glide', 'coast', 'coasts'}, {'perpetual', 'incessant'}, {'with', 'by'}]
 EXCL = {('dealings', 'trades')}          # dealings도 '거래'로 읽힐 수 있어 오답에서 뺌
 FILLW = {'unleashed': ['eclipsed'], 'grip': ['hasten'], 'pervasive': ['fictional'], 'rote': ['seasoned'], 'dealings': ['motives'], 'sporadic': ['vestigial'], 'against': ['beyond'], 'neutral': ['cleared', 'bleached']}
+# 11/24 선생님: "taxed 같은 어휘는 빠지고 without 같은 어휘는 들어가 있네" → 쉬운 기본 어휘(흔한 뜻 그대로)는 빼고, 함정 선택지의 어려운 어휘도 넣음
+EASY = set('''ancient settled mask borrowed banned revived spelled upgraded remotely paid aloud timed makers users rivals critics awaited lifted recent
+dries gives dives sums without spilled on for via frozen motionless migration startled pay train drowsy rescue bribe speed leaky
+gradually abruptly instantly sharply lazily gently slowly float parallel boost released engaged oiled overlook leans bottle generated floating stored drifting
+absent cure foreign extend abstract fictional restrict exotic backwards forwards sideways upwards rewind record limited pause delayed ban blur solutions
+locks excited fixes filed margin ribbon stamp posted processing puzzle game magnified search locate erase save borrow tape revisions doubling copies errors
+hurry mood inserted sealed buried archived barely randomly rarely wages ignore looks copy manners accident against choice with habit by documentary horror
+spread central vital dimmed intentions speaks sleeps dreams rejects abandons essential relevant single patterns latest routines neutral cleared overhead
+motion inside memory functional emotional legal shapes meanings uses display decode filter depth vivid familiar unlike chance like beyond luck despite light
+trades gladly offensive eagerly freely forbid devoted nod escorted hurried concerts trips contests rescued scolded binder fined band ranked warmly guidance
+payment coupons public cash welcomed conceals adore rush alert fee exit refund helpful constructive hostile warm decline welcome seize reward deadlines
+respectful guard echoes echoed cards imaginary fitting class trends'''.split()) | {'take off', 'speed up', 'along with', 'in charge', 'in favor', 'in need', 'gather pace', 'coast to a halt'}
+def chunk(tr, v):
+    for c in re.split(r'\s*①\s*', tr)[1:]:
+        if re.search(r'(?<![A-Za-z])%s(?![A-Za-z])' % re.escape(v), c): return c.strip()
+    return ''
 def similar(u, v): return any(u in g and v in g for g in SIMILAR)
 def toks(m): return set(t.strip() for t in re.split(r'[,;]', re.sub(r'\([^)]*\)', '', m)) if t.strip())
 def clean(m): return re.sub(r'\s*\([^()]*✗\)', '', m.split(': ')[0]).strip()
@@ -39,7 +55,7 @@ GROUPS = [('35·36', [('35', B.H35), ('36', B.H36)]), ('37·38', [('37', B.H37),
 days = []
 FILLED = []
 for gi, (lab, parts) in enumerate(GROUPS, 1):
-    passage, cards, poly, ctx, picks, seen = [], [], [], [], [], set()
+    passage, cards, poly, ctx, picks, seen, trapv = [], [], [], [], [], set(), []
     POOL = list(dict.fromkeys(p[i] for _, L in parts for x in L if id(x) not in orig for p in x['o'][1:] for i in (0, 1) if p[i] not in (x['o'][0][0], x['o'][0][1])))
     for num, L in parts:
         its = [x for x in L if id(x) not in orig]
@@ -51,6 +67,7 @@ for gi, (lab, parts) in enumerate(GROUPS, 1):
             assert o[1][0] == a and o[1][1] != b and o[2][1] == b and o[2][0] != a, x['s']
             for slot, w, oth in (('A', a, b), ('B', b, a)):
                 assert w in HM, w
+                if w in EASY: continue
                 if w not in seen:
                     seen.add(w); cards.append([w, clean(HM[w]), int(num.split('~')[0]), w])
                 ix = 0 if slot == 'A' else 1
@@ -76,19 +93,46 @@ for gi, (lab, parts) in enumerate(GROUPS, 1):
                         clean(HM[w]), w, clean(HM[w]), ' / '.join('%s = %s' % (v, m) for v, m in wm), base)
                     ctx.append({'q': q, 'opts': opts, 'ex': ex})
                 assert len(set(opts)) == len(opts) and len(opts) >= 4, (w, opts)
-            # ④ 한 끗 함정: 문항마다 한 칸(번갈아)
+            # 함정 선택지의 어려운 어휘
+            for ix in (0, 1):
+                for p in o[1:]:
+                    v = p[ix]
+                    if v in (a, b) or v in EASY or v in seen: continue
+                    seen.add(v); cards.append([v, mean(v)]); trapv.append((v, num, x, ix, [q_[ix] for q_ in o if q_[ix] not in (v, a, b)]))
+            # ④ 한 끗 함정: 문항마다 한 칸(번갈아, 정답이 쉬운 말인 칸은 피함)
             slot = 'A' if k % 2 == 0 else 'B'
+            if a in EASY and b not in EASY: slot = 'B'
+            if b in EASY and a not in EASY: slot = 'A'
             w, tw = (a, o[2][0]) if slot == 'A' else (b, o[1][1])
             s = x['s'].replace('{%s}' % slot, '{%s|%s}' % (w, tw)).replace('{%s}' % ('B' if slot == 'A' else 'A'), b if slot == 'A' else a)
             if s.startswith('{'): pass
             picks.append({'s': s, 'ex': '정답 ▶ %s (%s)\n오답 ▶ %s (%s) ← 끝판왕에서 이 칸만 틀린 함정\n해석: %s\n근거(본문) ▶ %s\n포인트 ▶ %s' % (
                 w, clean(HM[w]), tw, mean(tw), x['ko'], x['gr'], point(x['tr']))})
-    steps = [{'type': 'vocab', 'title': '끝판왕 어휘 카드', 'guide': '끝판왕 %s번 정답 어휘예요. 뜻을 고르면 그 단어가 쓰인 끝판왕 문장과 해석이 함께 나와요.' % lab, 'quizN': 15, 'items': cards},
+    # ⑤ 함정 선택지 어휘 뜻
+    HARD = [c[0] for c in cards]
+    tq = []
+    for v, num, x, ix, nb in trapv:
+        wm, ms = [], {mean(v)}
+        for u in [y for y in nb if y not in EASY] + random.sample(HARD, len(HARD)):
+            if len(wm) == 3: break
+            if u == v or similar(u, v) or any(similar(u, z) for z, _ in wm) or mean(u) in ms or toks(mean(u)) & toks(mean(v)): continue
+            wm.append((u, mean(u))); ms.add(mean(u))
+        cw = x['o'][0][ix]; sent = fill(x['s'], *x['o'][0])
+        c = chunk(x['tr'], v)
+        ex = '정답 ▶ %s = %s\n오답 ▶ %s\n끝판왕 문장(%s번) ▶ %s\n해석: %s\n이 자리의 정답은 %s(%s). %s는 함정 선택지였어요.%s' % (
+            v, mean(v), ' / '.join('%s = %s' % (u, m) for u, m in wm), num, sent, x['ko'], cw, mean(cw), v, ('\n포인트 ▶ ' + c) if c else '')
+        tq.append({'q': '<b class="en">%s</b>의 뜻은? <small>(%s번 끝판왕 함정 선택지)</small>' % (v, num), 'opts': [mean(v)] + [m for _, m in wm], 'ex': ex})
+        assert len(set(tq[-1]['opts'])) == 4, tq[-1]['opts']
+    steps = [{'type': 'vocab', 'title': '끝판왕 어휘 카드', 'guide': '끝판왕 %s번의 정답 어휘와 함정 선택지 어휘예요. 정답 어휘는 뜻을 고르면 끝판왕 문장과 해석이 함께 나와요.' % lab, 'quizN': 20, 'items': cards},
              {'type': 'mc', 'title': '쉬운 단어, 숨은 뜻', 'guide': '아는 단어 같아도 끝판왕에서는 덜 알려진 뜻으로 나와요. 흔히 아는 뜻은 함정!', 'items': poly},
              {'type': 'mc', 'title': '문장 속 뜻', 'guide': '밑줄 친 말의 이 문장 속 뜻을 고르세요. 오답은 끝판왕에서 같은 자리에 나왔던 함정 낱말의 뜻이에요.', 'items': ctx},
-             {'type': 'pick', 'title': '한 끗 함정 고르기', 'guide': '끝판왕 선택지에서 한 칸만 틀린 함정이에요. 문장에 맞는 말을 고르세요.', 'items': picks}]
+             {'type': 'pick', 'title': '한 끗 함정 고르기', 'guide': '끝판왕 선택지에서 한 칸만 틀린 함정이에요. 문장에 맞는 말을 고르세요.', 'items': picks},
+            ]
+    h = (len(tq) + 1) // 2
+    for j, part in enumerate((tq[:h], tq[h:]), 1):
+        steps.append({'type': 'mc', 'title': '함정 선택지 어휘 %s' % '①②'[j - 1], 'guide': '끝판왕 오답 선택지에 나온 어려운 어휘예요(%s). 함정으로 나왔어도 다음엔 정답이 될 수 있어요!' % ('앞쪽 문항' if j == 1 else '뒤쪽 문항'), 'items': part})
     rng = '끝판왕 어휘 심화 %d · %s번' % (gi, lab)
-    days.append({'id': 'hv%d' % gi, 'name': '', 'range': rng, 'story': '9월 모고 %s번 요약문 끝판왕 · 어휘 심화 (카드 → 숨은 뜻 → 문장 속 뜻 → 한 끗 함정)' % lab,
+    days.append({'id': 'hv%d' % gi, 'name': '', 'range': rng, 'story': '9월 모고 %s번 요약문 끝판왕 · 어휘 심화 (카드 → 숨은 뜻 → 문장 속 뜻 → 한 끗 함정 → 함정 선택지 어휘)' % lab,
                  'passage': passage, 'steps': steps})
     print(rng, [(s['title'], len(s['items'])) for s in steps])
 
