@@ -22,7 +22,7 @@ def test_label(t):
     return kind or '시험', sub[:14]
 def day_label(d):
     r = str(d.get('range', ''))
-    r = re.sub(r'^실전 어휘 뚫기\s*\d+\s*·\s*', '어휘 ', r); r = re.sub(r'^내용 꿰뚫기\s*\d*\s*·\s*', '꿰뚫기 ', r)
+    r = re.sub(r'^실전 어휘 뚫기\s*\d+\s*·\s*', '어휘 ', r); r = re.sub(r'^내용 꿰뚫기\s*\d*\s*·\s*', '꿰뚫기 ', r); r = re.sub(r'^끝판왕 어휘 심화\s*\d*\s*·\s*', '심화 ', r)
     r = re.sub(r'^YBM\s*', 'YBM', r).replace(' · ', ' ').replace('번', '').replace('Lesson ', 'L').replace('본문 ', '본문')
     return re.sub(r'\s+', ' ', r).strip()[:12]
 RETIRED = {'h1-ybm-kim-L3': 'h1-mock-2509', 'm1-grammar-that': 'm1-grammar-to1'}  # 합쳐진 단원 → 지금 단원
