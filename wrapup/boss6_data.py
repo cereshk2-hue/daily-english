@@ -3,6 +3,8 @@
 import boss6_a, boss6_b
 from boss6_core import P
 SETS = boss6_a.SETS + boss6_b.SETS
+exec(open('/home/claude/srcrepo/wrapup/boss6_s3.py', encoding='utf-8').read())   # 11/24 26번 제외 → 세트 3 = 24번 20문항(고정 규칙 어휘)
+CTX = {'hard': False}
 TR = {}
 import boss2_data as _b2
 MEAN = {}
@@ -11,5 +13,6 @@ for f in ('bossjd_mean.txt', 'boss5_mean.txt', 'boss6_mean.txt'):
     except FileNotFoundError: pass
     if f == 'bossjd_mean.txt': MEAN.update(_b2.MEAN)
 EXTRA = {}
-def M(w): return MEAN.get(w, '')
+def M(w): return (HMEAN3.get(w) if CTX['hard'] else None) or MEAN.get(w, '')
+MEAN.update({_k: _v for _k, _v in HMEAN3.items() if _k not in MEAN})
 MISSING = sorted({w for _S in SETS for _it in _S['items'] for _p in _it.get('o', []) for w in _p if w not in MEAN})

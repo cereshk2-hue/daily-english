@@ -331,7 +331,7 @@ S26 = [
    'He died on November 1, 2008, but his legacy remains an inspiration and example for his fellow ocean explorers.',
    '(출생)은 1922년의 일이에요.', '(낙담시키다)는 inspiration과 반대.'),
 ]
-SETS.append({'id': 'bossdj3', 'no': 3, 'nums': ('24', '26'), 'P': (P['24'], P['26']), 'items': S24 + S26, 'titles': ('24번 · 아리스토텔레스 윤리학의 한계', '26번 · Jacques Piccard')})
+SETS.append({'id': 'bossdj3', 'no': 3, 'nums': ('24', '26'), 'P': (P['24'], P.get('26', '')), 'items': S24 + S26, 'titles': ('24번 · 아리스토텔레스 윤리학의 한계', '26번 · Jacques Piccard')})
 
 # ═════════════ 세트 4: 29·30 ═════════════
 m = Maker(rot(4))
