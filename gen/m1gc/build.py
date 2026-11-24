@@ -40,7 +40,7 @@ def lesson(o):
     return {'5과': '5과', '6과': '6과', '7과': '7과'}.get(t, '6·7과' if '7' in t else '5·6과')
 EXCL.update(EXCL_B)
 FIX_TXT.update({'b9': [("I'rn Peter", "I'm Peter")], 'b5': [('히루:', '리우:')], 'b33': [('vore a wig', 'wore a wig')], 'b34': [('가리지는', '가리키는')],
-                'b95': [('hadn signals', 'hand signals')], 'b167': [('tum off', 'turn off')], 'b169': [('to cat healthier', 'to eat healthier')]})
+                'b95': [('hadn signals', 'hand signals')], 'b167': [('tum off', 'turn off')], 'b169': [('to cat healthier', 'to eat healthier')], 'b149': [('The girl jobs every day', 'The girl jogs every day')]})
 NOTE.update({'b5': '원본 <보기> 이름 오타(히루 → 리우)', 'b95': '원본 오타 hadn → hand(③도 틀린 것처럼 보이던 문제)', 'b27': '원본 선택지 ③ 오타(ⓔ ⓔ ⓓ → ⓔ ⓐ ⓓ)'})
 FIX_ANS.update({'b169': (0, '원본 정답 ③은 오류: need to go는 가능. practice는 to부정사를 쓰지 않으므로(practiced playing) ①이 정답'),
                 'b178': (0, '원본 정답 ③은 오류: Domingo = Reuse, Minsu = Recycle → Reduce–Reuse–Recycle ①'),
