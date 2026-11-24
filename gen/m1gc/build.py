@@ -1,6 +1,7 @@
 # 11/24 중산중1 동아(윤정미) 2026 2학기 중간 기출(7개교: 해원·지산·삼성·남인천여·사하·연화·부산수영) → 25문항씩 OMR (m1-donga-yoon-L6, /* M1GC-TESTS */)
 # 범위 5·6(·7)과 → [4과] 문항 제외. 그림·표지판·색 표 등 이미지가 필요한 문항, 정답이 둘이거나 근거가 애매한 문항 제외. 오타·정답 오류는 고쳐 넣고 해설에 적음
 import json, re, html, sys
+exec(open(__import__('os').path.join(__import__('os').path.dirname(__file__) or '.', 'ex.py'), encoding='utf-8').read())
 SRC = [('a', '/home/claude/work/m1gc/', '2026 2학기 중간'), ('b', '/home/claude/work/m1gc25/', '2025 2학기 기말')]
 DATA = '/home/claude/proj/data/m1-donga-yoon-L6.js'
 D = [(p + str(i), o, lab) for p, w, lab in SRC for i, o in enumerate(json.load(open(w + 'items.json')))]
@@ -105,7 +106,9 @@ def test(no, S):
                 rng = '[%d~%d] ' % (n, n + len(u) - 1) if len(u) > 1 else ''
                 body = '<div class="wbox"><p><b>%s%s</b></p><p>%s</p></div>' % (rng, html.escape(it['ghead']), it['ghtml']) + (('<div>' + body + '</div>') if body.strip() else '')
             elif body.strip(): body = '<div class="wbox"><p>%s</p></div>' % body
-            ex = '정답 ▶ %s\n출처 ▶ %s %s · %s' % (C[it['ans']], it['school'], it['lab'], it['lesson'])
+            assert it['i'] in EX, it['i']
+            exb = '\n'.join(l for l in EX[it['i']].split('\n') if not (it['note'] and l.startswith('확인 ▶')))
+            ex = '정답 ▶ %s\n%s\n출처 ▶ %s %s · %s' % (C[it['ans']], exb, it['school'], it['lab'], it['lesson'])
             if it['note']: ex += '\n확인 ▶ ' + it['note']
             its.append({'n': n, 'src': '%s · %s' % (it['school'].replace('학교', ''), it['lesson']), 'stem': html.escape(it['stem']).replace('않은', '<u>않은</u>').replace('없는', '<u>없는</u>').replace('어색한', '<u>어색한</u>'),
                         'body': body, 'opts': it['opts'], 'en': True, 'ans': it['ans'], 'ex': ex, 'ctx': '', 'pts': pts[n - 1], 'words': [], 'kos': []})
