@@ -21,7 +21,14 @@ def autofix(it, sid, k):
             idx = [i for i, (a, b) in enumerate(o) if i != it['ans'] and (a == ww or b == ww)]
             if idx: return ''.join(C[i] for i in idx) + ' ' + m.group(2)
         return m.group(0)
-    return re.sub(r'([①②③④⑤]+)\s*([A-Za-z][A-Za-z\-]*(?: [a-z][a-z\-]*)?)', rep, it['tr'])
+    out = re.sub(r'([①②③④⑤]+)\s*([A-Za-z][A-Za-z\-]*(?: [a-z][a-z\-]*)?)', rep, it['tr'])
+    if sid >= 8:   # 11/24 2×2 격자: 'X → Y' 짝 설명은 그 짝 하나의 번호로
+        def rep2(m):
+            idx = [i for i, p in enumerate(o) if p == (m.group(2), m.group(3))]
+            return (C[idx[0]] + ' ' if len(idx) == 1 else m.group(1) + ' ') + m.group(2) + ' → ' + m.group(3)
+        out = re.sub(r'([①②③④⑤]+) ([A-Za-z][A-Za-z\- ]*?) → ([A-Za-z][A-Za-z\- ]*?)(?=[:(])', rep2, out)
+        out = re.sub(r'^함정 ▶\s*', '', out)
+    return out
 
 def finalize():
     for S in SETS:

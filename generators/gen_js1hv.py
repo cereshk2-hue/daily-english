@@ -64,7 +64,9 @@ for gi, (lab, parts) in enumerate(GROUPS, 1):
         for k, x in enumerate(its):
             (a, b), o = x['o'][0], x['o']
             en = fill(x['s'], a, b); passage.append(['', en, x['ko']])
-            assert o[1][0] == a and o[1][1] != b and o[2][1] == b and o[2][0] != a, x['s']
+            # 11/24 37번부터 선택지 순서를 섞어서(2×2 격자) 위치 대신 짝 모양으로 찾음
+            onlyA = [p for p in o[1:] if p[0] == a and p[1] != b]; onlyB = [p for p in o[1:] if p[1] == b and p[0] != a]
+            assert len(onlyA) == 1 and len(onlyB) == 1, x['s']
             for slot, w, oth in (('A', a, b), ('B', b, a)):
                 assert w in HM, w
                 if w in EASY: continue
@@ -103,7 +105,7 @@ for gi, (lab, parts) in enumerate(GROUPS, 1):
             slot = 'A' if k % 2 == 0 else 'B'
             if a in EASY and b not in EASY: slot = 'B'
             if b in EASY and a not in EASY: slot = 'A'
-            w, tw = (a, o[2][0]) if slot == 'A' else (b, o[1][1])
+            w, tw = (a, onlyB[0][0]) if slot == 'A' else (b, onlyA[0][1])
             s = x['s'].replace('{%s}' % slot, '{%s|%s}' % (w, tw)).replace('{%s}' % ('B' if slot == 'A' else 'A'), b if slot == 'A' else a)
             if s.startswith('{'): pass
             picks.append({'s': s, 'ex': '정답 ▶ %s (%s)\n오답 ▶ %s (%s) ← 끝판왕에서 이 칸만 틀린 함정\n해석: %s\n근거(본문) ▶ %s\n포인트 ▶ %s' % (

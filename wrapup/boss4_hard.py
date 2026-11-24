@@ -479,6 +479,27 @@ H41 = [
    '"May I help you?" are the worst four words that a retail salesperson can utter ~ The approach has to promote a comfortable environment',
    '함정 ▶ indict는 \'기소하다\'에서 \'비판하다\', tactful = 요령 있는. ① brusque(퉁명스러운)는 comfortable과 반대. ① endorses(지지하다)는 the worst four words와 반대. ① lauds → pushy: 칭찬·밀어붙이기는 반대. ① echoes → servile: 되풀이·비굴한도 틀려요.'),
 ]
+# 11/24 학생 제보: "두 단어가 교집합으로 같은 게 답" — (A)·(B) 정답 낱말이 각각 두 번씩 나오고 다른 낱말은 한 번뿐이라 겹치는 짝만 고르면 맞음.
+# → 37번부터(세트 8~10) 선택지를 2×2 격자 + 1로: (a,b)✓ (a,b') (a',b) (a',b') (z,w). a·a'·b·b'가 모두 두 번씩 나와 빈도로는 답을 못 고름.
+#    원래 4번째 짝(x,y)은 빼고 (a',b')로 바꿈. 상시 규칙: 끝판왕 선택지에 '교집합 = 정답' 패턴 금지 (작업메모)
+def _gloss(w): return re.sub(r'\s*\([^()]*✗\)', '', HMEAN.get(w, '')).split(': ')[0].strip()
+def _grid(L):
+    for x in L:
+        if x['lv'] == '서술' or x.get('_grid'): continue
+        o = x['o']; (a, b), (a2, b2), (x3, y3) = o[0], (o[2][0], o[1][1]), o[3]
+        assert o[1][0] == a and o[2][1] == b and a2 != a and b2 != b
+        ch = x['tr'].split(' ① ')
+        k = [i for i, c in enumerate(ch) if re.match(re.escape(x3) + r'(?![A-Za-z])', c)]
+        assert len(k) == 1, x['tr']
+        ch[k[0]] = '%s → %s: 두 칸 모두 함정이에요(%s · %s).' % (a2, b2, _gloss(a2) or a2, _gloss(b2) or b2)
+        x['tr'] = ' ① '.join(ch)
+        rest = [o[1], o[2], (a2, b2), o[4]]; _R.shuffle(rest)   # 오답 순서도 섞음(격자 자리로 정답 추측 못 하게)
+        x['o'] = [o[0]] + rest
+        assert len(set(x['o'])) == 5 and len({p[0] for p in x['o']}) == 3 and len({p[1] for p in x['o']}) == 3, x['o']
+        x['_grid'] = True
+import re, random as _rnd
+_R = _rnd.Random(1124)
+for _L in (H37, H38, H39, H40, H41): _grid(_L)
 for _sid, _items in (('boss2509g', H35 + H36), ('boss2509h', H37 + H38), ('boss2509i', H39 + H40), ('boss2509j', H41)):
     assert len(_items) == 20, _sid
     next(s for s in SETS if s['id'] == _sid)['items'] = _items
