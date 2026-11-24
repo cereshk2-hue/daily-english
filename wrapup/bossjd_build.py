@@ -23,6 +23,8 @@ def autofix(it, sid, k):
         return m.group(0)
     return re.sub(r'([①②③④⑤]+)\s*([A-Za-z][A-Za-z\-]*(?: [a-z][a-z\-]*)?)', rep, it['tr'])
 
+import gridfix as GF, random as _rnd
+_GR = _rnd.Random(2411)
 def finalize():
     for S in SETS:
         CTX['hard'] = S['no'] >= 4
@@ -31,10 +33,12 @@ def finalize():
             it['src'] = S['nums'][k // 10] + '번'
             it['pts'] = {'하': 3, '중': 5, '상': 6, '서술': 6}[it['lv']]
             if it['lv'] == '서술': continue
+            GF.fix(it, _GR, word_mean, TR, (S['no'], k + 1))   # 11/24 교집합 패턴 제거
             o = list(it['o']); c = o.pop(0); o.insert(it['at'], c)
             assert len(set(o)) == 5, (S['no'], k + 1)
             it['opts'], it['ans'] = o, it['at']
             it['tr'] = autofix(it, S['no'], k)
+            it['tr'] = GF.post(it)
         mc = [it for it in S['items'] if it['lv'] != '서술']
         S['dist'] = [sum(1 for it in mc if it['ans'] == i) for i in range(5)]
         assert sum(it['pts'] for it in S['items']) == 100, S['no']
