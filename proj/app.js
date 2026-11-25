@@ -531,13 +531,15 @@
     }
     var TABS = [['today', '오늘의 학습', '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>'], ['text', '본문', '<path d="M5 3h10l4 4v14H5z"/><path d="M9 12h6M9 16h4"/>'],
       ['types', '유형별 연습', '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>']];
-    if (TESTS.some(function (t) { return !isBoss(t) && !isBimi(t); })) TABS.push(['test', TL, '<path d="M6 3h9l4 4v14H6z"/><path d="M9 13l2 2 4-4"/>']);
+    if (TESTS.some(function (t) { return !isBoss(t) && !isBimi(t) && !isExam(t); })) TABS.push(['test', TL, '<path d="M6 3h9l4 4v14H6z"/><path d="M9 13l2 2 4-4"/>']);
     if (TESTS.some(isBoss)) TABS.push(['boss', '끝판왕', '<path d="M12 3c1 3 4 4.5 4 8.5a4 4 0 0 1-8 0c0-2 1-3 1-3 .5 1.5 1.5 2 2 2 0-3-1-5 1-7.5z"/><path d="M8 21h8"/>']);
+    if (TESTS.some(isExam)) TABS.push(['exam', '실전기출', '<path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h8M8 17h5"/>']);
     if (TESTS.some(isBimi)) TABS.push(['bimi', '비밀노트 변형문제', '<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v3"/>']);
     h += '<div class="stack">';
     if (TAB === 'test' && TESTS.length) h += testsHTML();
     if (TAB === 'boss' && TESTS.length) h += bossHTML();
     if (TAB === 'bimi' && TESTS.length) h += bimiHTML();
+    if (TAB === 'exam' && TESTS.length) h += examHTML();
     if (TAB === 'today') h += todayHTML();
     if (TAB === 'text') h += '<h3 class="sech">본문</h3>' + daySwitch() + (inProgress(P.days[SEL]) ? lockHTML(P.days[SEL], '본문') : P.passLock && !DS(P.days[SEL].id).scores[0] ? '<section class="card"><b>먼저 실전 1문제를 풀어 보세요.</b><p class="note" style="margin:6px 0 0">문제를 풀고 나면 문장별 해석과 노트 정리용 핵심 문장이 여기에 열려요.</p></section>' : passageHTML(P.days[SEL]));
     if (TAB === 'types') h += '<h3 class="sech">유형별 연습</h3>' + daySwitch() + (inProgress(P.days[SEL]) ? lockHTML(P.days[SEL], '유형별 연습') : typesHTML(P.days[SEL]));
@@ -577,9 +579,10 @@
   function sameAns(it, v) { return isM(it) ? Array.isArray(v) && v.slice().sort().join() === it.ans.slice().sort().join() : v === it.ans; }
   function ansTxt(v) { return v == null || (Array.isArray(v) && !v.length) ? '안 씀' : Array.isArray(v) ? v.slice().sort().map(function (i) { return CIRC[i]; }).join('') : CIRC[v]; }
   function isBoss(t) { return t.kind === 'boss'; } /* 11/2 요약문 끝판왕 챌린지: 아래 '끝판왕' 탭에 따로 (주말 도전) */
+  function isExam(t) { return t.kind === 'exam'; } /* 11/25 심학중1 실전기출(다른 학교 기출 25문항 세트): 아래 '실전기출' 탭에 따로 */
   function isBimi(t) { return t.kind === 'bimi'; } /* 11/11 중산고1 비밀노트 변형문제: 아래 '비밀노트 변형문제' 탭에 따로 (종이 시험지 + 답안지) */
-  function tlOf(t) { return isBoss(t) ? '끝판왕' : isBimi(t) ? '비밀노트 변형문제' : TL; }
-  function listTab(t) { return isBoss(t) ? 'boss' : isBimi(t) ? 'bimi' : 'test'; }
+  function tlOf(t) { return isBoss(t) ? '끝판왕' : isBimi(t) ? '비밀노트 변형문제' : isExam(t) ? '실전기출' : TL; }
+  function listTab(t) { return isBoss(t) ? 'boss' : isBimi(t) ? 'bimi' : isExam(t) ? 'exam' : 'test'; }
   function hasW(t) { return t.items.some(isW); }
   function wnorm(s) { return norm(String(s || '').replace(/[“”]/g, '"')).replace(/[.\s]+$/, ''); }
   function testQ(t, k, b) {
@@ -594,7 +597,7 @@
   }
   /* 채점: { score, max, c(선택형 맞은 수), mcN, wrong: [문항 번호(k)], wb: {'k_b': 'ok'|'no'|'chk'} } */
   function grade(t, a) {
-    var r = { score: 0, max: 0, c: 0, mcN: 0, wrong: [], wb: {} };
+    var r = { score: t.bonus || 0, max: t.bonus || 0, c: 0, mcN: 0, wrong: [], wb: {} }; /* 11/20 t.bonus: 종이로 안 푸는 부분(수능 듣기 등) 가산점 — 점수·만점에 같이 더함 */
     t.items.forEach(function (it, k) {
       r.max += it.pts;
       if (!isW(it)) { r.mcN++; if (sameAns(it, a[k])) { r.c++; r.score += it.pts; } else r.wrong.push(k); return; }
@@ -671,7 +674,11 @@
   }
   function testsHTML() {
     return '<h3 class="sech">' + TL + (/시험|문제/.test(TL) ? '' : ' 시험') + '</h3><p class="sub" style="margin:0 0 12px">종이 시험지 대신 여기에서 답을 입력해요. <b>처음 제출한 점수</b>가 선생님께 전달돼요. 틀린 문제는 해설을 보고 <b>시험지에 정리</b>해요 (오답 노트에는 담기지 않아요).</p>' +
-      TESTS.map(function (t, ti) { return isBoss(t) || isBimi(t) ? '' : testCardHTML(ti); }).join('');
+      TESTS.map(function (t, ti) { return isBoss(t) || isBimi(t) || isExam(t) ? '' : testCardHTML(ti); }).join('');
+  }
+  function examHTML() {
+    return '<h3 class="sech">실전기출</h3><p class="sub" style="margin:0 0 12px">다른 학교에서 실제로 나온 <b>기출 문제</b>를 25문항씩 묶었어요. 선생님이 나눠 준 시험지로 풀고, 여기에는 <b>답만</b> 입력해요. 시험지 번호 그대로 입력하면 돼요. <b>처음 제출한 점수</b>가 선생님께 전달돼요.</p>' +
+      TESTS.map(function (t, ti) { return isExam(t) ? testCardHTML(ti) : ''; }).join('');
   }
   function bimiHTML() {
     return '<h3 class="sech">비밀노트 변형문제</h3><p class="sub" style="margin:0 0 12px">선생님이 나눠 준 <b>비밀노트 변형문제</b> 시험지로 풀고, 여기에는 <b>답만</b> 입력해요. 시험지 번호 그대로 입력하면 돼요. <b>모두</b>라고 적힌 번호는 정답을 모두 골라요. 서술형은 시험지에 쓴 답을 그대로 옮겨 적어요. <b>처음 제출한 점수</b>가 선생님께 전달돼요.</p>' +
@@ -738,7 +745,7 @@
     if (first) st.first = rec; else (st.tries = st.tries || []).push(rec);
     st.draft = null;
     save();
-    reportTest((isBoss(t) ? '끝판왕' : isBimi(t) ? '비밀노트' : 'Wrap-up') + (first ? ' 제출' : ' 연습'), t, { stepScore: (first ? '' : '연습 ') + g.score + '/' + g.max + '점' });
+    reportTest((isBoss(t) ? '끝판왕' : isBimi(t) ? '비밀노트' : isExam(t) ? '실전기출' : 'Wrap-up') + (first ? ' 제출' : ' 연습'), t, { stepScore: (first ? '' : '연습 ') + g.score + '/' + g.max + '점' });
     var ti = TV.ti; TV = null; testResult(ti, rec);
   }
   function qtype(it) { /* 문항 유형: 발문으로 판별 (결과 카드의 유형별 결과) */
@@ -763,7 +770,7 @@
     var wty = order.filter(function (ty) { return TY[ty].wn.length; });
     h += '<section class="card pop stack tres" style="gap:10px"><div class="eyebrow">' + E(tlOf(t)) + ' · ' + (practice ? '연습 결과 · 처음 점수는 그대로예요' : '제출 완료 · 선생님께 전달돼요') + '</div>' +
       '<div class="tsum"><div class="donut" style="--p:' + score + '" role="img" aria-label="' + score + '점"><span><b>' + score + '</b>점</span></div>' +
-      '<div class="tsum-r"><div class="tsum-name">' + E(S.name || '') + '</div><div class="tsum-t">' + E(t.title) + '</div><div class="note" style="margin:0">맞은 문제 <b>' + rec.c + ' / ' + rec.t + '</b>' + (w ? ' (선택형)' : '') + '<br>' + fmtTime(rec.at) + ' 제출</div></div></div>' +
+      '<div class="tsum-r"><div class="tsum-name">' + E(S.name || '') + '</div><div class="tsum-t">' + E(t.title) + '</div><div class="note" style="margin:0">맞은 문제 <b>' + rec.c + ' / ' + rec.t + '</b>' + (w ? ' (선택형)' : '') + (t.bonus ? '<br><small>' + E(t.bonusNote || ('가산점 ' + t.bonus + '점 포함')) + '</small>' : '') + '<br>' + fmtTime(rec.at) + ' 제출</div></div></div>' +
       '<div class="ttypes">' + order.map(function (ty) { var x = TY[ty]; return '<span class="' + (x.wn.length ? 'no' : 'ok') + '">' + E(ty) + ' <b>' + x.c + '/' + x.n + '</b>' + (x.wn.length ? ' <small>' + E(x.wn.join('·')) + '</small>' : '') + '</span>'; }).join('') + '</div>' +
       (wty.length ? '<p class="twrong"><b>학습이 필요한 약한 유형</b> ' + wty.map(E).join(' · ') + '</p>' : '<p class="twrong ok"><b>모든 유형 통과</b></p>') +
       (chk ? '<p class="note" style="margin:0"><b>서술형 ' + chk + '칸은 선생님이 확인해요.</b> 정해 둔 답과 달라서 아직 점수에 넣지 않았어요.</p>' : '') +
