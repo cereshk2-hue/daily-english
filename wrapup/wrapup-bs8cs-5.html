@@ -1,0 +1,360 @@
+<title>발산중2 실전 문법 간접의문문 5차</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: A4 시험지. 1~3쪽 = 문항(넓은 화면·인쇄는 2단), 마지막 쪽 = 정답과 해설. 종이 한 가지 모습으로 고정 */
+:root {
+  color-scheme: light;
+  --desk: #e6e9ee; --paper: #ffffff; --ink: #1b2129; --muted: #5d6672;
+  --navy: #1f3a5f; --navy-soft: #e9eef5; --rule: #b8c2cf; --key: #a3341f;
+  --f-ko: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-en: "Source Serif 4", "Noto Serif KR", "Noto Serif CJK KR", Georgia, serif;
+}
+* { box-sizing: border-box }
+html, body { background: var(--desk) }
+body { color: var(--ink); font: 400 14px/1.6 var(--f-ko); padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.page { max-width: 880px; margin: 0 auto 20px; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); padding: 26px 30px 28px }
+.top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted) }
+.top b { color: var(--ink) }
+.title { margin-top: 8px; border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 0 }
+.title .g { font-weight: 700; font-size: 14px }
+.title h1 { margin: 0; text-align: center; font: 900 clamp(20px, 4.4vw, 27px)/1.2 var(--f-ko); color: var(--navy); letter-spacing: .02em; text-wrap: balance }
+.title h1 small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .08em }
+.title .when { font-size: 12.5px; text-align: right; line-height: 1.5 }
+.idrow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; border: 1px solid var(--rule); font-size: 12.5px }
+.idrow div { padding: 7px 10px; border-right: 1px solid var(--rule); color: var(--muted) }
+.idrow div:last-child { border-right: 0; color: var(--navy); font-weight: 700 }
+.notice { margin: 10px 0 0; font-size: 12.5px; color: var(--muted) }
+.qs { columns: 2; column-gap: 30px; column-rule: 1px solid var(--rule); margin-top: 16px }
+.q { break-inside: avoid; margin: 0 0 18px; display: grid; gap: 7px }
+.stem { font-weight: 500; font-size: 14px }
+.stem .n { font-weight: 900; color: var(--navy); margin-right: 4px; font-variant-numeric: tabular-nums }
+.stem .src { font-size: 11.5px; color: var(--muted); font-weight: 500; margin-left: 4px }
+.box { border: 1px solid var(--rule); padding: 9px 11px; font: 400 13.6px/1.62 var(--f-en); text-align: justify; hyphens: auto; overflow-wrap: anywhere }
+.box p { margin: 0 0 4px }
+.box p:last-child { margin: 0 }
+.box u { text-underline-offset: 3px; text-decoration-thickness: 1px }
+.box .tag { font-family: var(--f-ko); font-size: 12px; font-weight: 700 }
+.box .gap { font-family: var(--f-ko); font-weight: 700; font-size: 12.5px; white-space: nowrap }
+.blank { display: inline-block; min-width: 9em; border-bottom: 1px solid var(--ink); height: 1em }
+.given { border: 1.5px solid var(--navy); background: var(--navy-soft); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum { border: 1px dashed var(--muted); padding: 8px 11px; font: 400 13.6px/1.6 var(--f-en) }
+.sum b { font-family: var(--f-ko) }
+.ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: 13.4px }
+.ol li { display: grid; grid-template-columns: 1.5em 1fr; gap: 2px; min-width: 0 }
+.ol.en li { font-family: var(--f-en); font-size: 13.4px; line-height: 1.45 }
+.ol li span:first-child { font-family: var(--f-ko) }
+table.ch { border-collapse: collapse; font: 400 13.2px/1.4 var(--f-en); width: 100% }
+table.ch th { font: 700 12px var(--f-ko); color: var(--muted); text-align: left; padding: 2px 6px; border-bottom: 1px solid var(--rule) }
+table.ch td { padding: 2px 6px }
+table.ch td:first-child { font-family: var(--f-ko); width: 1.8em; padding-left: 0 }
+.foot { margin-top: 10px; display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 6px }
+/* 정답 */
+.keygrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: 1px solid var(--rule); margin-top: 14px; font-variant-numeric: tabular-nums }
+.keygrid div { text-align: center; padding: 6px 0; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px }
+.keygrid div:nth-child(10n) { border-right: 0 }
+.keygrid div:nth-last-child(-n+10) { border-bottom: 0 }
+.keygrid b { display: block; color: var(--key); font-size: 15px }
+.exp { columns: 2; column-gap: 28px; margin-top: 14px; font-size: 12.6px; line-height: 1.55 }
+.exp p { break-inside: avoid; margin: 0 0 8px }
+.exp b { color: var(--navy) }
+.exp .k { color: var(--key); font-weight: 700 }
+.exp i { font-family: var(--f-en); font-style: italic }
+@page { size: A4; margin: 11mm }
+@media print {
+  html, body { background: #fff } body { padding: 0 }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0; break-after: page }
+  .page:last-child { break-after: auto }
+  .qs, .exp { columns: 2 }
+}
+/* A4 시험지 (10/31): 스크립트가 문항을 A4 쪽(210×297mm)에 왼쪽 단 → 오른쪽 단 → 다음 쪽 순서로 직접 나눠 담고 쪽 번호를 붙인다.
+   화면·인쇄·PDF 어디서나 같은 쪽 구성. 좁은 화면에서는 쪽 전체를 축소해서 보여 준다. */
+.q, .exp p { break-inside: avoid }
+body { font-size: 9.6pt }
+.stem { font-size: 9.8pt } .stem .src { font-size: 8pt }
+.box, .given, .sum { font-size: 9.4pt; line-height: 1.46; padding: 2.2mm 2.8mm }
+.ol, .ol.en li { font-size: 9.3pt; line-height: 1.38 }
+table.ch { font-size: 9.2pt } table.ch th { font-size: 8.4pt }
+.q { margin-bottom: 3.6mm; gap: 1.6mm }
+.exp { font-size: 7.8pt; line-height: 1.36; margin-top: 3mm } .exp p { margin-bottom: 1mm }
+.top, .notice, .idrow, .title .when, .foot { font-size: 8.6pt }
+.title h1 { font-size: 18pt } .title h1 small { font-size: 8.6pt }
+.keygrid div { font-size: 9pt; padding: 1.2mm 0 } .keygrid b { font-size: 10.5pt }
+.page { width: 210mm; max-width: 100%; padding: 11mm }
+.sheets { display: grid; justify-content: center; gap: 16px }
+.sheet { width: 210mm; height: 297mm; padding: 11mm; background: var(--paper); box-shadow: 0 2px 14px rgba(31,58,95,.14); overflow: hidden }
+/* 내용 영역 188×256mm: A4 여백 0~20mm, Letter 기본 여백에서도 한 장에 들어가는 크기 */
+.sheet > .inner { width: 188mm; height: 256mm; display: flex; flex-direction: column; overflow: hidden }
+.inner > .top.run { padding-bottom: 2mm; border-bottom: 1px solid var(--rule); margin-bottom: 1mm }
+.cols { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr);
+  column-gap: 6mm; margin-top: 4mm; position: relative }
+.cols::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid var(--rule) }
+.cols > .col { columns: auto !important; margin: 0 !important; min-height: 0; overflow: hidden }
+.inner > .foot { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center }
+.inner > .foot span:last-child { text-align: right }
+.inner > .foot .pno { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums }
+@page { size: A4; margin: 12mm 11mm }
+@media print {
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  body { padding: 0 !important; margin: 0 }
+  .sheets { display: block }
+  .sheet { zoom: 1 !important; width: auto; height: auto; padding: 0; margin: 0; box-shadow: none; overflow: visible; break-after: page; page-break-after: always }
+  .sheet:last-child { break-after: auto; page-break-after: auto }
+  .sheet > .inner { margin: 0 auto }
+  .page { max-width: none; margin: 0; box-shadow: none; break-after: page }
+}
+</style>
+<script>
+/* A4 쪽 나누기: 왼쪽 단 → 오른쪽 단 → 다음 쪽, 쪽 번호 n / 전체 */
+(function () {
+  function build() {
+    var main = document.querySelector('main'); if (!main || document.querySelector('.sheets')) return;
+    var secs = [].slice.call(main.querySelectorAll('section.page'));
+    var out = document.createElement('div'); out.className = 'sheets'; main.appendChild(out);
+    var pages = [];
+    secs.forEach(function (sec) {
+      var box = sec.querySelector('.qs, .exp'); if (!box) return;
+      var items = [].slice.call(box.children), foot = sec.querySelector('.foot'), top = sec.querySelector('.top');
+      var head = [].slice.call(sec.children).filter(function (e) { return e !== box && e !== foot && !(e.classList.contains('keygrid') && false); });
+      var cols, ci, first = true;
+      function newPage() {
+        var sh = document.createElement('div'); sh.className = 'sheet'; var pg = document.createElement('div'); pg.className = 'inner'; sh.appendChild(pg);
+        if (first) head.forEach(function (e) { pg.appendChild(e); });
+        else { var t = top.cloneNode(true); t.classList.add('run'); pg.appendChild(t); }
+        first = false;
+        cols = document.createElement('div'); cols.className = 'cols';
+        for (var i = 0; i < 2; i++) { var c = document.createElement('div'); c.className = 'col ' + box.className; cols.appendChild(c); }
+        pg.appendChild(cols);
+        var f = foot.cloneNode(true), sp = f.querySelectorAll('span'), mid = document.createElement('span'); mid.className = 'pno';
+        f.insertBefore(mid, sp[1] || null); pg.appendChild(f);
+        out.appendChild(sh); pages.push(pg); ci = 0;
+      }
+      function over(c) { return c.scrollHeight > c.clientHeight + 1; }
+      newPage();
+      items.forEach(function (it) {
+        var c = cols.children[ci]; c.appendChild(it);
+        if (over(c) && c.children.length > 1) {
+          c.removeChild(it); ci++;
+          if (ci > 1) newPage();
+          cols.children[ci].appendChild(it);
+        }
+      });
+      sec.parentNode.removeChild(sec);
+    });
+    pages.forEach(function (p, i) { p.querySelector('.pno').textContent = (i + 1) + ' / ' + pages.length; });
+    fit();
+  }
+  function fit() {
+    var w = document.documentElement.clientWidth - 24, s = Math.min(1, w / 794);
+    [].forEach.call(document.querySelectorAll('.sheet'), function (p) { p.style.zoom = s < 1 ? s : ''; });
+  }
+  function go() { (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(build, build); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  window.addEventListener('resize', function () { if (document.querySelector('.sheets')) fit(); });
+})();
+</script>
+
+
+<main>
+<section class="page">
+  <div class="top"><span>중2 영어 비상(황종배) 8과 간접의문문 · <b>간접의문문 5차</b></span><span>발산중학교 2학년 · 비상(황종배) · 내신 대비</span></div>
+  <div class="title">
+    <div class="g">영어</div>
+    <h1>실전 문법 간접의문문 5차<small>간접의문문 · 하 6 · 중 8 · 상 6</small></h1>
+    <div class="when">20문항 · 각 5점<br>제한 시간 30분</div>
+  </div>
+  <div class="idrow"><div>반</div><div>번호</div><div>이름</div><div>점수 &nbsp;&nbsp;&nbsp; / 100</div></div>
+  <p class="notice">범위: 8과 간접의문문 — 의문사 + 주어 + 동사(do/does/did 빼고 시제는 동사에), 의문사가 주어면 의문사 + 동사, 의문사 없으면 if/whether, think·believe·guess·suppose·imagine이면 의문사를 맨 앞으로. 쉬운 문제부터 어려운 문제까지 고루 섞었어요.</p>
+
+  <div class="qs">
+  <div class="q">
+    <div class="stem"><span class="n">1.</span>두 문장을 한 문장으로 바르게 연결한 것은?<span class="src">[의문사 + 주어 + 동사 · 하]</span></div>
+    <div class="box"><p>Do you know? + Where did she go?</p></div>
+    <ol class="ol en"><li><span>①</span><span>Do you know where did she go?</span></li><li><span>②</span><span>Do you know where she did go?</span></li><li><span>③</span><span>Do you know where does she go?</span></li><li><span>④</span><span>Do you know where she goes?</span></li><li><span>⑤</span><span>Do you know where she went?</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">2.</span>주어진 문장을 간접의문문으로 바꿀 때 빈칸에 알맞은 것은?<span class="src">[의문사 + 주어 + 동사 · 하]</span></div>
+    <div class="box"><p>What did you buy?<br>→ Can you show me <span class="blank"></span>?</p></div>
+    <ol class="ol en"><li><span>①</span><span>what did you buy</span></li><li><span>②</span><span>what you bought</span></li><li><span>③</span><span>what you buy</span></li><li><span>④</span><span>you buy what</span></li><li><span>⑤</span><span>you bought what</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">3.</span>다음 대화의 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[think류 → 의문사 맨 앞 · 하]</span></div>
+    <div class="box"><p>A: Where do you <span class="blank"></span> they will meet?<br>B: They will meet at the bus stop.</p></div>
+    <ol class="ol en"><li><span>①</span><span>think</span></li><li><span>②</span><span>see</span></li><li><span>③</span><span>know</span></li><li><span>④</span><span>like</span></li><li><span>⑤</span><span>want</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">4.</span>다음 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[if / whether · 하]</span></div>
+    <div class="box"><p>I wonder <span class="blank"></span> it will rain tomorrow.</p></div>
+    <ol class="ol en"><li><span>①</span><span>what</span></li><li><span>②</span><span>who</span></li><li><span>③</span><span>which</span></li><li><span>④</span><span>whose</span></li><li><span>⑤</span><span>if</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">5.</span>다음 대화의 빈칸에 들어갈 말로 알맞은 것은?<span class="src">[think류 → 의문사 맨 앞 · 하]</span></div>
+    <div class="box"><p>A: Do you <span class="blank"></span> where the post office is?<br>B: Yes. It's next to the bank.</p></div>
+    <ol class="ol en"><li><span>①</span><span>know</span></li><li><span>②</span><span>think</span></li><li><span>③</span><span>believe</span></li><li><span>④</span><span>guess</span></li><li><span>⑤</span><span>suppose</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">6.</span>주어진 문장을 간접의문문으로 바꿀 때 빈칸에 알맞은 것은?<span class="src">[의문사 + 주어 + 동사 · 하]</span></div>
+    <div class="box"><p>Why did he leave here?<br>→ Please tell me <span class="blank"></span>.</p></div>
+    <ol class="ol en"><li><span>①</span><span>why did he leave here</span></li><li><span>②</span><span>why left he here</span></li><li><span>③</span><span>why he left here</span></li><li><span>④</span><span>why he leave here</span></li><li><span>⑤</span><span>he left why here</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">7.</span>두 문장을 한 문장으로 바르게 연결한 것은?<span class="src">[think류 → 의문사 맨 앞 · 중]</span></div>
+    <div class="box"><p>Do you think? + Why did he leave early?</p></div>
+    <ol class="ol en"><li><span>①</span><span>Do you think why he left early?</span></li><li><span>②</span><span>Why do you think he left early?</span></li><li><span>③</span><span>Why do you think he leave early?</span></li><li><span>④</span><span>Do you think why he had left early?</span></li><li><span>⑤</span><span>Do you think why did he leave early?</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">8.</span>다음 중 어법상 어색한 문장은?<span class="src">[간접의문문 판단 · 중]</span></div>
+    <ol class="ol en"><li><span>①</span><span>Do you know when she did leave?</span></li><li><span>②</span><span>Can you tell me where you want to go?</span></li><li><span>③</span><span>I don't know exactly what happened.</span></li><li><span>④</span><span>She asked me how I got an A in math.</span></li><li><span>⑤</span><span>He doesn't know when I'm going to arrive.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">9.</span>다음 대화의 밑줄 친 ⓐ~ⓔ 중 어법상 틀린 것은?<span class="src">[간접의문문 판단 · 중]</span></div>
+    <div class="box"><p>A: <u>ⓐWho is he?</u><br>B: I don't know <u>ⓑwho he is</u>.<br>A: Do you know <u>ⓒwhat does he do</u> for a living?<br>B: I think <u>ⓓhe is a musician</u>.<br>A: Tell me <u>ⓔwhy you think so</u>.</p></div>
+    <ol class="ol en"><li><span>①</span><span>ⓐ</span></li><li><span>②</span><span>ⓑ</span></li><li><span>③</span><span>ⓒ</span></li><li><span>④</span><span>ⓓ</span></li><li><span>⑤</span><span>ⓔ</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">10.</span>다음 중 어법상 틀린 문장은?<span class="src">[간접의문문 판단 · 중]</span></div>
+    <ol class="ol en"><li><span>①</span><span>I don't know what she bought.</span></li><li><span>②</span><span>Do you know who is she?</span></li><li><span>③</span><span>No one knows who invented it.</span></li><li><span>④</span><span>Tell me why she is so angry.</span></li><li><span>⑤</span><span>I want to know how old he is.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">11.</span>다음 밑줄 친 if를 whether로 바꾸어 쓸 수 <u>없는</u> 것은?<span class="src">[화법 · 쓰임 구별 · 중]</span></div>
+    <ol class="ol en"><li><span>①</span><span>They want to know <u>if</u> I am married.</span></li><li><span>②</span><span>I wonder <u>if</u> you like sunflowers or not.</span></li><li><span>③</span><span>Tell me <u>if</u> she is in her room or not.</span></li><li><span>④</span><span>They don't know <u>if</u> the pandas ate the bamboo.</span></li><li><span>⑤</span><span><u>If</u> he visits my house, I will make him a nice dinner.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">12.</span>다음 중 어법상 바른 문장은?<span class="src">[간접의문문 판단 · 중]</span></div>
+    <ol class="ol en"><li><span>①</span><span>Do you think who I am?</span></li><li><span>②</span><span>Do you know what does Peter want?</span></li><li><span>③</span><span>Tell me how you solved it.</span></li><li><span>④</span><span>I don't know when will he come back.</span></li><li><span>⑤</span><span>I want to know if can he come to my party.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">13.</span>다음 중 어법상 올바른 문장은?<span class="src">[간접의문문 판단 · 중]</span></div>
+    <ol class="ol en"><li><span>①</span><span>I absolutely agree with your report if we need more trees.</span></li><li><span>②</span><span>Do you know which car will he choose?</span></li><li><span>③</span><span>If you go there or not, I don't care.</span></li><li><span>④</span><span>What do you believe is the best way?</span></li><li><span>⑤</span><span>I'm just curious because he is happy or not.</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">14.</span>두 문장을 한 문장으로 바르게 연결한 것은?<span class="src">[think류 → 의문사 맨 앞 · 중]</span></div>
+    <div class="box"><p>Do you think? + What will happen tomorrow?</p></div>
+    <ol class="ol en"><li><span>①</span><span>What do you think will happen tomorrow?</span></li><li><span>②</span><span>What do you think it will happen tomorrow?</span></li><li><span>③</span><span>Do you think what will happen tomorrow?</span></li><li><span>④</span><span>What will do you think happen tomorrow?</span></li><li><span>⑤</span><span>Do you think what happens tomorrow?</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">15.</span>대화의 내용을 한 문장으로 옮길 때 빈칸에 알맞은 말이 바르게 짝지어진 것은?<span class="src">[화법 · 쓰임 구별 · 상]</span></div>
+    <div class="box"><p>Tom: Can I borrow your dictionary?<br>Jane: OK, here you are.<br>→ Tom asked Jane <span class="blank"></span> he could borrow <span class="blank"></span> dictionary.</p></div>
+    <ol class="ol en"><li><span>①</span><span>that − his</span></li><li><span>②</span><span>that − my</span></li><li><span>③</span><span>whether − her</span></li><li><span>④</span><span>if − your</span></li><li><span>⑤</span><span>whether − Tom's</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">16.</span>다음 중 어법상 옳은 문장은 모두 몇 개인가?<span class="src">[간접의문문 판단 · 상]</span></div>
+    <div class="box"><p>(a) Tell me where were you.<br>(b) Do you know who drew this?<br>(c) Let me know how much the pencil is.<br>(d) I wonder why she is always so busy.<br>(e) She asked me when the show started.</p></div>
+    <ol class="ol en"><li><span>①</span><span>1개</span></li><li><span>②</span><span>2개</span></li><li><span>③</span><span>3개</span></li><li><span>④</span><span>4개</span></li><li><span>⑤</span><span>5개</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">17.</span>다음 중 어법상 옳은 문장끼리 짝지은 것은?<span class="src">[간접의문문 판단 · 상]</span></div>
+    <div class="box"><p>(a) Do you know where she went?<br>(b) Tell me whether you will buy it.<br>(c) Did you know why was he angry again?<br>(d) Do you think how they get there?<br>(e) I don't know when she will call me.</p></div>
+    <ol class="ol en"><li><span>①</span><span>(a), (c), (d)</span></li><li><span>②</span><span>(b), (c), (e)</span></li><li><span>③</span><span>(a), (d), (e)</span></li><li><span>④</span><span>(a), (b), (e)</span></li><li><span>⑤</span><span>(b), (d), (e)</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">18.</span>간접의문문의 어순이 바른 문장은 모두 몇 개인가?<span class="src">[간접의문문 판단 · 상]</span></div>
+    <div class="box"><p>(a) I wonder where my phone is.<br>(b) Do you know what time does the bank open?<br>(c) Who do you think broke the vase?<br>(d) Can you tell me how tall the tower is?<br>(e) I'm not sure whether he will join us.</p></div>
+    <ol class="ol en"><li><span>①</span><span>1개</span></li><li><span>②</span><span>2개</span></li><li><span>③</span><span>3개</span></li><li><span>④</span><span>4개</span></li><li><span>⑤</span><span>5개</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">19.</span>두 문장을 한 문장으로 바르게 연결한 것은?<span class="src">[think류 → 의문사 맨 앞 · 상]</span></div>
+    <div class="box"><p>Do you suppose? + Where does he come from?</p></div>
+    <ol class="ol en"><li><span>①</span><span>Where do you suppose does he come from?</span></li><li><span>②</span><span>Do you suppose where he comes from?</span></li><li><span>③</span><span>Where do you suppose he come from?</span></li><li><span>④</span><span>Where does you suppose he comes from?</span></li><li><span>⑤</span><span>Where do you suppose he comes from?</span></li></ol>
+  </div>
+
+  <div class="q">
+    <div class="stem"><span class="n">20.</span>두 문장을 한 문장으로 바르게 연결한 것은?<span class="src">[의문사 + 주어 + 동사 · 상]</span></div>
+    <div class="box"><p>I wonder. + How long have you been waiting for me?</p></div>
+    <ol class="ol en"><li><span>①</span><span>I wonder how long have you been waiting for me.</span></li><li><span>②</span><span>I wonder how long you have been waiting for me.</span></li><li><span>③</span><span>I wonder how long you been have waiting for me.</span></li><li><span>④</span><span>I wonder how you have been waiting long for me.</span></li><li><span>⑤</span><span>I wonder how long you waited have for me.</span></li></ol>
+  </div>
+  </div>
+  <div class="foot"><span>비상(황종배) 8과 간접의문문 CS 간접의문문 5차 · 실전 문법</span><span>발산중 2학년 영어 · 실전 문법</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><span>실전 문법 간접의문문 5차 · <b>정답과 해설</b></span><span>발산중학교 2학년 · 비상(황종배)</span></div>
+  <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">각 5점 · 100점</div></div>
+  <div class="keygrid">
+    <div>1<b>⑤</b></div><div>2<b>②</b></div><div>3<b>①</b></div><div>4<b>⑤</b></div><div>5<b>①</b></div><div>6<b>③</b></div><div>7<b>②</b></div><div>8<b>①</b></div><div>9<b>③</b></div><div>10<b>②</b></div>
+    <div>11<b>⑤</b></div><div>12<b>③</b></div><div>13<b>④</b></div><div>14<b>①</b></div><div>15<b>③</b></div><div>16<b>④</b></div><div>17<b>④</b></div><div>18<b>④</b></div><div>19<b>⑤</b></div><div>20<b>②</b></div>
+  </div>
+  <div class="exp">
+    <p><b>1</b> <span class="k">⑤</span> 이유 ▶ did를 빼고 과거는 동사에 → where she went<br>
+오답 ▶ ① did 그대로 ② did를 남기면 ❌ ③ 시제·어순 ❌ ④ 과거(did) → 현재로 바뀜<br>
+포인트 ▶ 간접의문문 = 의문사 + 주어 + 동사 (do/does/did는 빼고 시제·수는 동사에)</p>
+    <p><b>2</b> <span class="k">②</span> 이유 ▶ did를 빼고 buy → bought<br>
+오답 ▶ ① did 그대로 ③ 과거 → 현재로 바뀜 ④·⑤ 의문사는 맨 앞<br>
+포인트 ▶ 간접의문문 = 의문사 + 주어 + 동사 (do/does/did는 빼고 시제·수는 동사에)</p>
+    <p><b>3</b> <span class="k">①</span> 이유 ▶ 의문사(Where)가 맨 앞 + do you ___ + 주어 + 동사 → 이 어순은 think류만 가능<br>
+오답 ▶ ③ know는 의문사를 맨 앞으로 보내지 않음(Do you know where ~?) ②·④·⑤ 뒤에 '주어 + 동사'가 올 수 없음<br>
+포인트 ▶ think · believe · guess · suppose · imagine → 의문사 + do you think + 주어 + 동사 (know는 해당 ❌)</p>
+    <p><b>4</b> <span class="k">⑤</span> 이유 ▶ 내일 비가 올지 안 올지 궁금하다 → if(= whether)<br>
+오답 ▶ ①·②·③·④ 뒤 문장(it will rain tomorrow)에 빠진 말이 없어 의문사 ❌<br>
+포인트 ▶ 의문사가 없는 의문문 → if / whether + 주어 + 동사 (~인지 아닌지)</p>
+    <p><b>5</b> <span class="k">①</span> 이유 ▶ Do you ___ where ~? 어순 + Yes로 대답 → know<br>
+오답 ▶ ②·③·④·⑤ think·believe·guess·suppose는 의문사를 맨 앞으로: Where do you think ~?<br>
+포인트 ▶ think · believe · guess · suppose · imagine → 의문사 + do you think + 주어 + 동사 (know는 해당 ❌)</p>
+    <p><b>6</b> <span class="k">③</span> 이유 ▶ did를 빼고 leave → left<br>
+오답 ▶ ① did 그대로 ② 동사가 주어 앞 ④ 과거(did)인데 동사원형 ⑤ 의문사는 맨 앞<br>
+포인트 ▶ 간접의문문 = 의문사 + 주어 + 동사 (do/does/did는 빼고 시제·수는 동사에)</p>
+    <p><b>7</b> <span class="k">②</span> 이유 ▶ think → 의문사(Why)를 맨 앞 + do you think + 주어 + 동사(left)<br>
+오답 ▶ ①·④·⑤ 의문사가 뒤에 있음 ③ 과거(did)인데 동사원형 leave<br>
+포인트 ▶ think · believe · guess · suppose · imagine → 의문사 + do you think + 주어 + 동사 (know는 해당 ❌)</p>
+    <p><b>8</b> <span class="k">①</span> 이유 ▶ when she did leave → when she left (did 빼고 과거는 동사에)<br>
+오답 ▶ ② where + you + want ③ 의문사 what이 주어 → what happened ④ how + I + got ⑤ when + I + am going<br>
+포인트 ▶ 간접의문문 = 의문사 + 주어 + 동사 (do/does/did는 빼고 시제·수는 동사에)</p>
+    <p><b>9</b> <span class="k">③</span> 이유 ▶ ⓒ what does he do → what he does<br>
+오답 ▶ ⓐ 직접의문문이라 바름 ⓑ who + he + is ⓓ think 뒤 that절 ⓔ why + you + think<br>
+포인트 ▶ 간접의문문 = 의문사 + 주어 + 동사 (do/does/did는 빼고 시제·수는 동사에)</p>
+    <p><b>10</b> <span class="k">②</span> 이유 ▶ who is she → who she is<br>
+오답 ▶ ① what + she + bought ③ 의문사 주어 + 동사 ④·⑤ 어순 바름<br>
+포인트 ▶ 간접의문문 = 의문사 + 주어 + 동사 (do/does/did는 빼고 시제·수는 동사에)</p>
+    <p><b>11</b> <span class="k">⑤</span> 이유 ▶ 그가 우리 집에 오면(조건) → '만약 ~라면'이라 whether ❌<br>
+오답 ▶ ①·②·③·④ '~인지 아닌지' → whether로 바꿀 수 있음</p>
+    <p><b>12</b> <span class="k">③</span> 이유 ▶ how + you + solved ✔<br>
+오답 ▶ ① Who do you think I am? ② what Peter wants ④ when he will come back ⑤ if he can come<br>
+포인트 ▶ 간접의문문 = 의문사 + 주어 + 동사 (do/does/did는 빼고 시제·수는 동사에)</p>
+    <p><b>13</b> <span class="k">④</span> 이유 ▶ believe → 의문사 What 맨 앞, What이 주어라 바로 is ✔<br>
+오답 ▶ ① agree ~ that we need ② which car he will choose ③ Whether you go there or not ⑤ curious if(whether) he is happy<br>
+포인트 ▶ think · believe · guess · suppose · imagine → 의문사 + do you think + 주어 + 동사 (know는 해당 ❌)</p>
+    <p><b>14</b> <span class="k">①</span> 이유 ▶ 의문사 What이 주어 → What + do you think + 동사(will happen)<br>
+오답 ▶ ② 주어 What이 있는데 it을 또 씀 ③·⑤ 의문사가 뒤 ④ 어순 ❌<br>
+포인트 ▶ think · believe · guess · suppose · imagine → 의문사 + do you think + 주어 + 동사 (know는 해당 ❌)</p>
+    <p><b>15</b> <span class="k">③</span> 이유 ▶ 의문사 없는 질문 → whether(if) / your dictionary = Jane의 사전 → her<br>
+오답 ▶ ①·② that ❌ ④ your 그대로 ❌ ⑤ Tom의 사전이 아님<br>
+포인트 ▶ 의문사가 없는 의문문 → if / whether + 주어 + 동사 (~인지 아닌지)</p>
+    <p><b>16</b> <span class="k">④</span> 이유 ▶ 옳은 것 (b)·(c)·(d)·(e) 4개<br>
+오답 ▶ (a) where you were<br>
+포인트 ▶ (b) 의문사 who가 주어 → who drew ✔</p>
+    <p><b>17</b> <span class="k">④</span> 이유 ▶ 옳은 것 (a)·(b)·(e)<br>
+오답 ▶ (c) why he was angry (d) How do you think they get there?<br>
+포인트 ▶ think · believe · guess · suppose · imagine → 의문사 + do you think + 주어 + 동사 (know는 해당 ❌)</p>
+    <p><b>18</b> <span class="k">④</span> 이유 ▶ 바른 것 (a)·(c)·(d)·(e) 4개<br>
+오답 ▶ (b) what time the bank opens<br>
+포인트 ▶ (c) think → Who 맨 앞, Who가 주어라 바로 broke ✔</p>
+    <p><b>19</b> <span class="k">⑤</span> 이유 ▶ Where + do you suppose + he + comes(does 빼고 3인칭 단수)<br>
+오답 ▶ ① does 그대로 ② 의문사가 뒤 ③ 수 일치 ❌ ④ 주어 you → do<br>
+포인트 ▶ think · believe · guess · suppose · imagine → 의문사 + do you think + 주어 + 동사 (know는 해당 ❌)</p>
+    <p><b>20</b> <span class="k">②</span> 이유 ▶ how long + 주어(you) + 동사(have been waiting)<br>
+오답 ▶ ① have가 주어 앞 ③·⑤ 동사 덩어리 순서 ❌ ④ how와 long이 떨어짐<br>
+포인트 ▶ 간접의문문 = 의문사 + 주어 + 동사 (do/does/did는 빼고 시제·수는 동사에)</p>
+  </div>
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>발산중 2학년 영어 · 실전 문법</span></div>
+</section>
+</main>

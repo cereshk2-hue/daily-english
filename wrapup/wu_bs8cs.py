@@ -1,4 +1,4 @@
-# 11/13 발산중 비상(황종배) 8과 문법 실전 변형 빌더 (wu_js2.py 복사 · 학교 표기만 다름) (wu_ag.py 복사 · 머리글을 세트별로 지정: HEAD = (짧은이름, 위 왼쪽, 아래 왼쪽, 파일 접두))
+# 11/25 발산중2 비상(황종배) 8과 실전 문법(간접의문문) CS 빌더 — wu_m2it.py 복사(학교 표기만 발산중)
 # 선택지 위치는 정답 분포(①~⑤ 각 4개)를 맞추도록 자동 배치. 해설 안의 {a}=정답 번호, {1}~{4}=오답(적은 순서) 번호.
 import sys, re, json, html as H
 sys.path.insert(0, '/home/claude/work/wrapup')
@@ -29,7 +29,7 @@ class Test:
         for it in s.items:
             if it['k'] == 'fixed': cnt[it['ans']] += 1
         assert max(cnt) <= 4, ('고정 정답이 한 번호에 너무 많음', cnt)
-        rot = 0
+        rot = getattr(s, 'rot0', 0)  # 11/19 세트마다 정답 배치가 같지 않게(기본 0 = 예전과 같음)
         for it in s.items:
             if it['k'] == 'fixed': continue
             m = min(cnt); cand = [i for i in range(5) if cnt[i] == m]
@@ -67,11 +67,11 @@ class Test:
             EN[n] = {'w': it['w']}
             if okos: EN[n]['o'] = okos
         key = '<div class="keygrid">\n    ' + ''.join('<div>%d<b>%s</b></div>' % (k + 1, a) for k, a in enumerate(ans[:10])) + '\n    ' + ''.join('<div>%d<b>%s</b></div>' % (k + 11, a) for k, a in enumerate(ans[10:])) + '\n  </div>\n  <div class="exp">\n' + ''.join('    <p><b>%d</b> <span class="k">%s</span> %s</p>\n' % (k + 1, ans[k], e.replace('\n', '<br>\n')) for k, e in enumerate(E)) + '  </div>'
-        page = ('<title>발산중 @H0@ %s</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n' % s.short + fonts + css + '''
+        page = ('<title>발산중2 @H0@ %s</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n' % s.short + fonts + css + '''
 
 <main>
 <section class="page">
-  <div class="top"><span>@H1@ · <b>%s</b></span><span>발산중학교 · 비상(황종배) · 내신 대비</span></div>
+  <div class="top"><span>@H1@ · <b>%s</b></span><span>발산중학교 2학년 · 비상(황종배) · 내신 대비</span></div>
   <div class="title">
     <div class="g">영어</div>
     <h1>@H0@ %s<small>%s</small></h1>
@@ -81,14 +81,14 @@ class Test:
   <p class="notice">%s</p>
 
   <div class="qs">''' % (s.short, s.short, s.title, s.notice) + ''.join(qs) + '''  </div>
-  <div class="foot"><span>@H2@ %s · 상·중·하 섞음</span><span>발산중 영어 · 8과 문법 실전</span></div>
+  <div class="foot"><span>@H2@ %s · 실전 문법</span><span>발산중 2학년 영어 · 실전 문법</span></div>
 </section>
 
 <section class="page">
-  <div class="top"><span>@H0@ %s · <b>정답과 해설</b></span><span>발산중학교 · 비상(황종배)</span></div>
+  <div class="top"><span>@H0@ %s · <b>정답과 해설</b></span><span>발산중학교 2학년 · 비상(황종배)</span></div>
   <div class="title"><div class="g">영어</div><h1>정답과 해설</h1><div class="when">각 5점 · 100점</div></div>
   ''' % (s.short, s.short) + key + '''
-  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>발산중 영어 · 8과 문법 실전</span></div>
+  <div class="foot"><span>정답 분포 ①~⑤ 각 4개</span><span>발산중 2학년 영어 · 실전 문법</span></div>
 </section>
 </main>
 ''')

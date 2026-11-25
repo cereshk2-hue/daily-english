@@ -1,0 +1,792 @@
+* 간접의문문
+
+내신문법                     간접의문문(3)
+◆ 의문문이 문장에서 주어, 목적어, 보어 역할을 하여    문장의 일부가 되는 것을 말한다. 간접의문문은 직접의문문보다 좀 더 공손하고 형식적인 표현이다. 
+* Why did you do it? -> Could you tell me why you did it?
+   당신이 왜 그렇게 했는지 말해 주시겠어요?
+◆ 의문사가 있는 간접의문문 : 의문사가 접속사 역할을 하며   [의문사+주어+동사]의 어순으로 쓴다.
+* Can you tell me?+ What time is it now?
+ -> Can you tell me what time it is now? 
+     지금이 몇 시인지 얘기해 줄래? 
+* I don't know + How did he make it? 
+ -> I don't know how he made it. 
+     나는 그가 그것을 어떻게 만들었는지 모른다. 
+◆ 의문사가 주어인 경우에는 의문사 + 동사의 어순이 된다. 
+* Do you know? + Who moved my chair? 
+-> Do you know who moved my chair?  
+    너는 누가 내 의자를 옮겼는지 알고 있니? 
+* Tell me + What made him so happy?
+-> Tell me what made him so happy. 
+   무엇이 그를 행복하게 하는지 말해줘 
+◆ 일반동사가 있는 의문문을 간접의문문을 만들 경우 종속절의 동사를 시제와 인칭에 맞게 바꿔야 한다. 
+ Tell me + Where did you stay last night?
+-> Tell me where you stayed last night. 
+   어디에서 묵었는지 내게 말해줘 
+◆ 의문사가 없는 간접의문문 : 의문사가 없는 문장의 
+간접의문문은 접속사 if나 whether를 이용하여 만들어 [접속사+주어+동사]의 어순이 된다. 
+이 때 if나 whether를 ‘~인지 아닌지’라고 해석한다. 
+* I'm not sure + Is David married?
+-> I'm not sure if [whether] David is married. 
+   나는 David가 결혼했는지 안 했는지 잘 모른다.
+* Can you tell me + Did you meet Jason last night? 
+-> Can you tell me if [whether] you met Jason last night? 
+◆ 간접의문문은 다음과 같은 표현들과 같이 쓰이는 경우가 많다. 
+* Can you tell me~?  * Do you know / remember ~?
+* I don't know / remember~ * I wonder~
+* I'm not sure ~ * I'd like to know ~
+* Do you happen to know~? 
+◆ 주절에 동사 think, believe, imagine, guess, suppose 등의 동사가 오는 Yes/No로 대답할 수 없는 특수 구문일 경우에는 의문사가 문두로 이동해 [의문사+주절+주어+동사]의 어순이 된다. 
+* Do you think? + Where does she live?
+  -> Do you think where she lives? (x)
+  -> Where do you think she lives? (o) 
+     너는 그녀가 어디에 산다고 생각하니? 
+* Do you guess? + What is the correct answer? 
+-> Do you guess what is the correct answer? (x)
+-> What do you guess is the correct answer? (o)      너는 정답이 무엇인 것 같니? 
+ 다음 우리말과 영문이 일치하도록 주어진 단어의 올바른 순서를 결정하시오. 
+ Do you know what a diplomat is?
+여러분은 외교관이 무엇인지 아십니까? 
+(is / you / diplomat / a / what / know / do)?
+                                              
+ 다음 빈칸에 들어갈 말로 알맞은 것을 고르시오. 
+ 4
+I don't know               he has a pet. 
+① who ② which ③ what ④ whether ⑤ whose 
+ 다음 빈칸에 들어갈 말로 알맞은 것을 고르시오. 
+ 1
+I  know               last summer. 
+① what you did
+② what did you do
+③ what do you did
+④ what did do
+⑤ what do you do
+ 다음 빈칸에 들어갈 말로 알맞은 것을 고르시오. 
+ 3
+Do you know               Nick arrives? 
+① what ② who ③ when ④ which ⑤ why 
+ 다음 두 문장을 한 문장으로 올바르게 연결한 것을 고르면? 
+ 2
+ I don't know + Why is she tired? 
+① I don't know why is she tired.
+② I don't know why she is tired.
+③ I don't know why tired is she.
+④ Why I don't know she is tired.
+⑤ Why I don't know is she tired.
+ 다음 빈칸에 들어갈 말로 알맞은 것을 고르시오. 
+ 4
+We can't expect             much the admission will be.
+① what ② who ③ when ④ how ⑤ where 
+[ 7-9 ] 주어진 문장을 알맞게 바꿔 문장을 완성하시오.
+Have you seen my dog? 
+ if [whether] you have seen my dog
+-> Can you tell me                                 ?  
+Why did she go home so early? 
+ why she went home so early
+-> I don't know                                 .
+Where should we go? 
+ where we should go
+-> Do you know                                 ?
+ 다음 중 어법상 바르지 못한 것은? 
+ 4
+① What do you believe is true? 
+② She asked me if I was single.
+③ Nobody knows what the answer is. 
+④ You must tell me what did he tell you. 
+⑤ Do you know how he escaped from prison?
+ 다음 빈칸에 들어갈 알맞은 말을 고르시오. 
+ 5
+I'm not sure              Ken comes back        today or tomorrow. 
+⓵ that   ⓶ after   ⓷ until   ⓸ since   ⓹ if
+ 다음 밑줄 친 우리말을 영어로 바르게 옮긴 것은? 
+ 3
+People don't know 어떤 빵집이 가장 신선한 빵을 굽는지. 
+① which bakery the freshest bread bakes. 
+② which bakery bakes bread the freshest. 
+③ which bakery bakes the freshest bread. 
+④ bakes which bakery the freshest bread. 
+⑤ bakes which bakery bread freshest.
+ 다음 중 어법상 올바른 문장을 고르시오.  
+정답 2번 ① Who do you think I am  ③ what does Peter wants-> what Peter wants ⓸ when will he-> when he will ⑤  if can he come -> if he can come 
+⓵  Do you think who I am?   
+⓶ Tell me how you solved it. 
+⓷ Do you know what does Peter wants?
+⓸ I don't know when will he come back.   
+⓹ I want to know if can he come to my party.
+ 다음 빈칸에 들어갈 말로 알맞은 것을 고르시오. 
+ 4
+A:                                     
+B: No, I don't.
+① What do you believe that woman is doing? 
+② How old do you think she is? 
+③ Where do you think she is going? 
+④ Do you know what her name is?
+⑤ What do you think her hobby is?
+ 다음 우리말을 영어로 바르게 옮긴 것은? 
+ 4
+너는 내일 경기에서 누가 이길 거라고 생각하니? 
+① Do you think who will win the game tomorrow? 
+② Do you think who will the game win tomorrow?
+③ Who do you think the game will win tomorrow?
+④ Who do you think will win the game tomorrow?
+⑤ Who will win do you think the game tomorrow?
+다음 중 어법상 어색한 문장은? 
+ 1
+① I don't care that he is alive or not.
+② Do you believe that Jack will be back? 
+③ Whether the apples are ripe or not doesn't matter. 
+④ She didn't know what she should do.
+⑤ What do you think the longest river is? 
+다음 우리말과 같은 뜻이 되도록 빈칸에 알맞은 말을 쓰시오. 
+ Why she left
+  * 너는 그녀가 왜 말도 없이 나를 떠나갔는지 아니? 
+Do you know                                     me without a word? 
+[18- 20] 다음 두 문장을 한 문장으로 바꿔 쓰시오. 
+ Could you tell me ? What's your favorite fruit? 
+ Could you tell me what your favorite fruit is?
+->                                               
+ Do you know? Where is the cake? 
+ Do you know where the cake is?
+->                                              
+ I wonder. What did he want? 
+ I wonder what he wanted. 
+->                                               
+다음 두 문장을 한 문장으로 올바르게 연결한 것을 모두 고르면? 
+ 2,4
+Do you know? Are bats blind? 
+① Do you know bats are blind?
+② Do you know if bats are blind?
+③ Do you know are bats blind?
+④ Do you know whether bats are blind?
+⑤ Do you know do bats blind? 
+ 다음 중 어법상 어색한 문장은? 
+ 2
+① Can you tell me where you want to go?
+② Do you know when she did leave? 
+③ I don't know exactly what happened. 
+④ She asked me how I got an A in math.
+⑤ He doesn't know when I'm going to arrive. 
+ 다음  글의 괄호 속의 단어를 알맞게 배열한 것을 고르시오. 
+ 2
+Suppose you phone the bus terminal and ask     ( the next, when, is. leaving, bus, to, Gwangju ).    They will not say, "In the morning." Instead, they    will tell you the exact time to you. 
+① when is leaving the next bus to Gwangju
+② when the next bus to Gwangju is leaving
+③ when is the next bus to Gwangju leaving
+④ the next bus to Gwangju is leaving when
+⑤ the next bus to Gwangju is when leaving
+다음 두 문장을 한 문장으로 올바르게 연결한 것을 고르시오. 
+ 5
+When will the concert be held?+Do you think?
+① Do you think when will the concert be held?
+② When do you think will the concert be held?
+③ Do you think when the concert will be held?
+④ When will you think the concert be held?
+⑤ When do you think the concert will be held?
+다음 두 문장을 한 문장으로 바꿔 쓰시오. 
+ what do you think will happen tomorrow?
+Do you think ? + What will happen tomorrow? 
+->                                               
+ 다음 대화의 빈칸에 알맞은 것은? 
+ 5
+A: Where do you            they will meet?
+B: They will meet at the bus stop. 
+① see ② know ③ like ④ say ⑤ think 
+[27-28] 빈칸에 알맞은 것을 고르시오. 
+ I asked her, "Are you Pete's sister?" 
+ 3
+->                                               
+① I asked her that she was Pete's sister. 
+② I asked her you are Pete's sister.
+③ I asked her if she was Pete's sister.
+④ I asked her whether you were Pete's sister.
+⑤ I asked her how she was Pete's sister.
+ Do you know + What time will they arrive? 
+ 2
+->                                               
+① Do you know what time will they arrive?
+② Do you know what time they will arrive? 
+③ What time do you know they will arrive?
+④ What time do you know will they arrive?
+⑤ What time do you know they arrive? 
+ 다음 중 어법상 어색한 문장을 고르시오.  
+ 2
+⓵ Do you know why he is running? 
+⓶ Do you imagine where the birds go? 
+⓷ I wonder if she still likes chocolate. 
+⓸ I don't know why he was absent today. 
+⓹ Ask her if she will come here tomorrow. 
+다음 밑줄 친 부분이 어법상 틀린 것은 ? 
+ 3
+⓵ I can't remember what the girl's name is.
+⓶ Tom doesn't know why the customer called him. 
+⓷ He doesn't know why is Cathy sad.  
+⓸ The problem is when they met that day. 
+⓹ She knows how much the computer is. 
+다음 두 문장을 한 문장으로 올바르게 연결한 것을 고르면? 
+ 2
+Do you think? Why did he leave early? 
+① Do you think why he left early? 
+② Why do you think he left early?  
+③ Why do you think he leave early?  
+④ Do you think? Why he had leave early? 
+⑤ Do you think why did he leave early? 
+다음 대화의 빈칸에 들어갈 알맞은 말을 고르시오. 
+ 3
+A: When do you           they will come?
+B: Around 6:00 p.m. 
+⓵ know ⓶ hope ⓷ think ⓸ want ⓹ like
+ 가로 안의 문장을 활용하여 우리말을 영어로 옮겨 쓰시오. 
+ (1) I wonder whether[if] he is responsible or not.
+(2) You need to ask him whether[if] he has his passport. 
+(1) 나는 그가 책임감이 있는지 그렇지 않는지가 궁금하다. ( wonder/ responsible or not ) 
+->                                               
+                                                 
+(2) 당신은 그에게 여권이 있는지 물어볼 필요가 있어요. ( need, ask, his passport ) 
+->                                               
+                                                 
+다음 중 어법상 맞는 문장은? 
+ 4
+① Can you tell me where is the classroom? 
+② How tall your brother is?
+③ I want to know when does the plane leave.
+④ I don't know whether she will come or not. 
+⑤ If you like it or not, you must do it. 
+ 다음 빈칸에 들어갈 말로 순서대로 짝지어진 것은? 
+ 5
+I wonder           I should wear a cap. 
+          he comes or not, the result will be the same.
+It's true           the pen is mightier than the sword.  
+① if - Whether - whether 
+② whether - That - if
+③ if - That - whether 
+④ whether - Whether - if 
+⑤ if - Whether - that
+ 다음 중 어법상 어색한 문장을 고르시오.  
+ 2
+⓵ I can't understand what you're saying. 
+⓶ Tell me the reason why did he catch a cold. 
+⓷ I wonder if she still likes chocolate. 
+⓸ I don't know why he was absent today. 
+⓹ Ask her if she will come here tomorrow.  
+ 다음 밑줄 친 부분이 어법상 틀린 것은?
+ 3
+⓵ Do you know where he's going?
+⓶ Do you know what time the shops close? 
+⓷ Do you know how far is it from here?  
+⓸ Do you know whether he can speak Korean?
+⓹ Do you know why she quit her job? 
+다음 중 어법상 올바른 문장을 고르시오.  
+정답 4번 ① if-> that ② will he -> he will 
+③ if-> whether 
+(부사절에서 ‘이든 아니든’의 의미로 쓰일때는 if가 쓰일 수 없다
+⑤ because -> if
+⓵ I absolutely agree with your report if we need more trees.  
+⓶ Do you know which car will he choose?
+⓷ If you go there or not, I don't care. 
+⓸ What do you believe is the best way?  
+⓹ I'm just curious because he is happy or not.  
+다음 중 어법상 어색한 문장을 고르시오. 
+ 4
+⓵ I don't know how much it costs. 
+⓶ I wonder whether you are going to marry him. 
+⓷ I don't know if it's good to invite her or not. 
+⓸ I can't remember how much I had money. 
+⓹ What do you think she will wear for the party?
+다음 중 어법상 어색한 문장을 고르시오.  
+ 4
+⓵ Can you show me how I get there? 
+⓶ Whether you succeed or fail, I will still love you. 
+⓷ I forgot where I met him.
+⓸ Do you guess how long it will take to get there? 
+⓹ What do you think she will wear for the party?
+다음 우리말을 영어로 바르게 옮긴 것은? 
+ 3
+ 너는 그가 몇 살인지 아니? 
+① Do you know he is old? 
+② Do you know how old is he?
+③ Do you know how old he is? 
+④ How old do you know is he? 
+⑤ How old do you know he is? 
+ 다음 대화의 내용을 다음과 같이 한 문장을 옮길 때 빈칸에 알맞은 말이 순서대로 바르게 짝지어진 것은? 
+ 3
+Tom: Can I borrow your dictionary? 
+Jane: OK, here you are. 
+-> Tom asked Jane       he could borrow                       dictionary. 
+① that - his            ② that - my
+③ whether - her        ④ if - your 
+⑤ whether - Tom's
+다음 주어진 문장과 의미가 같은 것은? 
+ 5
+He said to me, "Do you know her address" 
+->                                            
+① He asked me that you knew her address.
+② He asked me if you knew her address.
+③ He told me that you knew her address. 
+④ He asked me that I knew her address.
+⑤ He asked me if I knew her address. 
+다음 중 어법상 올바른 문장을 고르시오.  
+ 1 
+⓵  I don't know how I should go there.   
+⓶ Nobody knows when did the first break out. 
+⓷ Where do you know she went?
+⓸ I don't remember what did I do. 
+⓹ Do you think why he's so amazed?  
+ 다음 중 어법상 올바른 문장을 고르시오.  
+ 2
+① where did she go-> where she went 
+③ why was he -> why he was
+④ Do you think how -> How do you think
+⑤ when will she ->when she will 
+⓵  Do you know where did she go? 
+⓶ Tell me whether you will buy it. 
+⓷ Did you know why was he angry again? 
+⓸ Do you think how they get there? 
+⓹ I don't know when will she call me.  
+
+내신문법                     간접의문문(3)
+ 다음 두 문장을 한 문장으로 바꿔 쓰시오. 
+ It was stupid of you to tell him a lie.
+You told him a lie + You were stupid.
+->                                               
+다음 밑줄 친 if 중 whether로 바꾸어 쓸 수 없는 것은? 
+ 2 
+Whether이 부사절에 쓰이면 or not 과 함께 쓰이면 ~이든 아니든 이라는 뜻으로 쓰이므로 문맥살 whether은 알맞지 않다. 나머지는 명사절을 이끄는 접속사로 쓰여서 서로 바꿔쓸 수 있다.  
+①  They want to know if I am married.
+②  If he visits my house, I will make him a nice dinner. 
+③  I wonder if you like sunflowers or not. 
+④  Tell me if she is in her room or not. 
+⑤  They don't know if the pandas ate the bamboo. 
+다음 문장에서 어법상 틀린 부분을 찾아 바르게 고쳐 쓰시오. 
+ comes-> will come 
+간접의문문에서 쓰인 if절은 명사절을 이끄는 접속사로 미래일을 나타낼 때 미래시제를 사용할 수 있다. 
+I want to know if she comes next Saturday. 
+다음 중 밑줄 친 부분의 쓰임이 나머지와 다른 하나는?  
+ 1 - 1번은 부사절접속사로 if 로 만약 ~라면 이라는 뜻으로 쓰이고 나머지는 명사절접속사로 ~인지 아닌지 라는 뜻으로 사용됨.  
+⓵ I will not wait if he is late again. 
+⓶ Do you know if she is sick? 
+⓷ Will you ask her if she likes reading?
+⓸ I wonder if he can make a pinata. 
+⓹ He didn't say if he would do it. 
+ 다음 글을 아래와 같이 요약할 때, 주어진 문장의 빈칸에 알맞은 말을 쓰시오. 
+ what she[catsup] ate.
+When Minsu comes back, he sees Catsup sleeping happily, Catsup's bowl is still full. Catsup can't sleep when she is hungry. If she didn't eat the cat food, what did she eat?
+Minsu sees his cat sleeping without eating her meal. He doesn't know what sh              e ate. 
+ 다음 대화의 빈칸에 알맞은 말을 쓰시오.  
+ where my English teacher live.  
+A: Where does your English teacher live?  
+B: I don't know where m   y English teacher l     ive.. 
+ 다음 <보기>를 참고하여 주어진 문장을 괄호 안의 지시대로 바꿔 쓰시오.  
+ When do you think the game starts? 
+What is he doing? ( I don't know를 넣어서)
+-> I don't know what he is doing.
+When does the game start? (do you think를 넣어서) ->When do you think              the game starts? 
+ 다음 대화의 밑줄 친 부분을 어법에 맞게 고치시오.  
+ where I put it.
+A: Where is my bag? I can't remember where did I put it.
+B: Let's go back to the all of places you have been today. 
+[간접의문문]
+◈ 간접의문문
+❶ 의문문이 문장에서 주어, 목적어, 보어 역할을 하여 문장의 일부가 되는 것을 말한다. 간접의문문은 직접의문문보다 좀 더 공손하고 형식적인 표현이다. 
+ex) Why did you do it? -> Could you tell me why you did it?
+   당신이 왜 그렇게 했는지 말해 주시겠어요?
+❷ 의문사가 있는 간접의문문 : 의문사가 접속사 역할을 하며   [의문사+주어+동사]의 어순으로 쓴다.
+ex) Can you tell me?+ What time is it now?
+ -> Can you tell me what time it is now? 
+     지금이 몇 시인지 얘기해 줄래? 
+ex) I don't know + How did he make it? 
+ -> I don't know how he made it. 
+     나는 그가 그것을 어떻게 만들었는지 모른다. 
+cf) how + 형용사(부사)의 경우, 형용사와 부사도 how와 함께 움직인다.
+ex) I want to know. + How tall is she?
+ -> I want to know how tall she is.
+❸ 의문사가 없는 간접의문문 : 의문사가 없는 문장의 간접의문문은 접속사 if나 whether를 이용하여 만들어 [접속사+주어+동사]의 어순이 된다. 
+이 때 if나 whether를 ‘~인지 아닌지’라고 해석한다. 
+ex) I'm not sure + Is David married?
+-> I'm not sure if [whether] David is married. 
+   나는 David가 결혼했는지 안 했는지 잘 모른다.
+ex) Can you tell me + Did you meet Jason last night? 
+-> Can you tell me if [whether] you met Jason last night? 
+◆ 의문사가 주어인 경우에는 의문사 + 동사의 어순이 된다. 
+ex) Do you know? + Who moved my chair? 
+-> Do you know who moved my chair?  
+    너는 누가 내 의자를 옮겼는지 알고 있니? 
+ex) Tell me + What made him so happy?
+-> Tell me what made him so happy. 
+   무엇이 그를 행복하게 하는지 말해줘 
+◆ 일반 동사가 있는 의문문을 간접의문문을 만들 경우 종속절의 동사를 시제와 인칭에 맞게 바꿔야 한다. 
+ex) Tell me + Where did you stay last night?
+-> Tell me where you stayed last night. 
+   어디에서 묵었는지 내게 말해줘.
+◆ 간접의문문은 다음과 같은 표현들과 같이 쓰이는 경우가 많다. 
+* Can you tell me~?  * Do you know / remember ~?
+* I don't know / remember~ * I wonder~
+* I'm not sure ~ * I'd like to know ~
+* Do you happen to know~? 
+[주관식_교과서 및 자습서 문제]
+◈ 다음 문장에서 어법상 어색한 부분을 찾아 바르게 고치시오.
+Do you know who is she?
+ who is she? → who she is
+                    →                    
+Can you tell me how she is old?
+ how she is old? → how old she is
+                    →                    
+I want to know where did you go last night.
+ where did you go → where you went
+                    →                    
+No one knows what does she do after school.
+ what does she do → what she does
+                    →                    
+◈ 다음 우리말과 같도록 괄호 안의 말을 배열하여 문장을 완성하시오.
+나는 그 집이 얼마나 큰지 모른다.
+ how big the house is
+→ I have no idea                                  .
+  (is / big / how / the house)
+제가 언제 새 휴대 전화를 가질 수 있는지 말해 줄 수 있나요?
+ when I can get a new cellphone
+→ Can you tell me                                  ?
+  (a / cellphone / I / when / get / can / new)
+그녀는 그가 그녀를 좋아하는지 알고 싶어 한다.
+ if he likes her
+→ She wants to know                              .
+  (her / if / he / likes)
+◈ 괄호 안의 말을 바르게 배열하여 문장을 완성하시오.
+I want to know                                  .
+ how I can fix this computer
+  (I / this computer / can / how / fix)
+He can't remember                              .
+ where he lost his watch
+  (lost / where / his watch / he)
+Tell me                                        .
+ why you were late for school this morning
+  (this morning / were / you / for school / late / why)
+◈ 다음 글에 이어질 내용을 괄호 안의 단어를 사용하여 글의 빈칸을 완성하시오.
+
+ Yena made a new friend, Taeho. She wants to know a lot of things about him.
+She wants to know                            .
+ where he lives.
+    (where, live)
+And she wants to know                         .
+ when his birthday is
+    (when, his birthday)
+She also wants to know                        .
+ what his favorite movie is
+    (what, his favorite movie)
+And she wants to know                        .
+ who his best friend is
+    (who, his best friend)
+She will ask him                           in his free time. (what, do)
+ what he does
+[주관식_응용문제]
+◈ 주어진 문장을 알맞게 바꿔 문장을 완성하시오.
+Have you seen my dog? 
+ if [whether] you have seen my dog
+-> Can you tell me                                 ?  
+Why did she go home so early? 
+ why she went home so early
+-> I don't know                                 .
+Where should we go? 
+ where we should go
+-> Do you know                                 ?
+◈ 다음 두 문장을 간접의문문을 사용하여 한 문장으로 연결하시오.
+She told me. + Why didn't he come?
+ She told me why he didn't come
+->She told me                                     .
+I don't know. + Did she eat dinner?
+ I don’t know if(whether) she ate dinner
+->She told me                                     .
+I don't know. + When does the shop open?
+ I don't know when the shop opens.
+->She told me                                     .
+Please tell me. + Where is the bakery?
+ Please tell me where the bakery is.
+->She told me                                     .
+Do you think ? + What will happen tomorrow? 
+ What do you think will happen tomorrow?
+->She told me                                     .
+◈ 다음 문장에서 어법상 틀린 부분을 찾아 문장을 바르게 고쳐 쓰시오.
+
+ Why do you think Bora is interested in making friends with you?
+
+Do you think why is Bora interested in making friends with you?
+->She told me                                     .
+
+ Do you think ⟶ Who do you think
+
+Do you think who will be your partner?
+->She told me                                     .
+◈ 다음 문장의 밑줄 친 부분을 어법에 바르게 고치시오. 
+Could you tell me where is the post office?
+ where the post office is
+->She told me                                     .
+I'd like to know why is she happy.
+ why she is happy
+->She told me                                     .
+ I wonder where did I put the bag. 
+ where I put the bag
+->She told me                                     .
+Do you know what movie does she want to see?
+ what movie she wants to see
+->She told me                                     .
+ 다음 주어진 문장을 직접의문문은 간접의문문으로,
+간접의문문은 직접의문문으로 바꿔 쓰시오.
+  
+1) if/whether he got married to the French woman
+2) Where have we met before?
+3) how long it takes to get to the gym on foot.
+4) Why didn't he take part in the singing contest?
+1) Do you know? + Did he get married to the French woman?
+ ⟶ Do you know                                  ?
+2) I don't remember where we have met before.
+ ⟶ I don't remember. +                           ?
+3) I wonder. + How long does it take to get to the gym on foot?
+ ⟶ I wonder                                       .
+4) I want to know why he didn't take part in the singing contest.
+ ⟶ I want to know. +                              ?
+[객관식_교과서 및 자습서, 평가 문제]
+◈ 간접화법으로 고친 문장의 밑줄 친 부분 중 어색한 것은?
+
+ 3 (he → I)
+
+ Tom said to me, "Are you done with your homework?"
+→ Tom ①asked me ②if ③he ④was done with 
+⑤my homework.
+
+ 3 (want → wanted)
+
+ She said to her mom, "I want to raise more money on my 10th birthday."
+→ She ①told her mom that ②she ③want to raise more money ④on ⑤her 10th birthday.
+◈ 다음을 읽고 괄호 안의 말을 바르게 배열한 것을 고르시오.
+
+ 4
+
+ This beach remained a garbage dump since1967.
+Then, the city leaders and local people found out 
+(the problem / was / serious / how) and began various cleanup programs.
+① how the problem was serious
+② the problem how serious was
+③ the problem how was serious
+④ how serious the problem was
+⑤ how serious was the problem
+ 
+ 3
+
+ Sumi said to me, "I will go swimming tomorrow."
+→ Sumi told me that (go / would / the next day / she / swimming).
+① she go would swimming the next day
+② the next day she would go swimming
+③ she would go swimming the next day
+④ she would go the swimming next day
+⑤ she go would swimming the next day
+
+ 1
+
+ I don't know (took / this / he / where / picture).
+① where he took this picture
+② where took he this picture
+③ this picture where he took
+④ this picture he where took
+⑤ he took where this picture
+[객관식_응용문제]
+◈ 다음 두 문장을 한 문장으로 올바르게 연결한 것은?
+
+ 2
+I don't know + Why is she tired?
+① I don't know why is she tired.
+② I don't know why she is tired.
+③ I don't know why tired is she.
+④ Why I don't know she is tired.
+⑤ Why I don't know is she tired.
+
+ 2
+ Do you know? + What time will they arrive? 
+① Do you know what time will they arrive?
+② Do you know what time they will arrive? 
+③ What time do you know they will arrive?
+④ What time do you know will they arrive?
+⑤ What time do you know they arrive?
+
+ 2
+
+Do you think? Why did he leave early? 
+① Do you think why he left early? 
+② Why do you think he left early?  
+③ Why do you think he leave early?  
+④ Do you think? Why he had leave early? 
+⑤ Do you think why did he leave early? 
+다음 빈칸에 들어갈 알맞은 말을 고르시오. 
+ 5
+
+ I'm not sure              Ken comes back        today or tomorrow. 
+① that     ② after    ③ until    ④ since    ⑤ if
+다음 밑줄 친 우리말을 영어로 바르게 옮긴 것은? 
+ 3
+
+People don't know 어떤 빵집이 가장 신선한 빵을 굽는지. 
+① which bakery the freshest bread bakes  
+② which bakery bakes bread the freshest 
+③ which bakery bakes the freshest bread 
+④ bakes which bakery the freshest bread 
+⑤ bakes which bakery bread freshest 
+다음 중 어법상 바르지 못한 것은? 
+ 1, 4 (1-that->if/whether / 4-did he tell->he told)
+① I don't care that he is alive or not.
+② She asked me if I was single.
+③ Nobody knows what the answer is. 
+④ You must tell me what did he tell you. 
+⑤ Do you know how he escaped from prison?
+ 다음 중 어법상 어색한 문장은? 
+ 2 (did leave->left)
+① Can you tell me where you want to go?
+② Do you know when she did leave? 
+③ I don't know exactly what happened. 
+④ She asked me how I got an A in math.
+⑤ He doesn't know when I'm going to arrive. 
+다음 글의 괄호 속의 단어를 알맞게 배열한 것을 고르시오.
+ 2
+
+ Suppose you phone the bus terminal and ask        ( the next, when, is. leaving, bus, to, Gwangju ).    They will not say, "In the morning." Instead, they    will tell you the exact time to you. 
+① when is leaving the next bus to Gwangju
+② when the next bus to Gwangju is leaving
+③ when is the next bus to Gwangju leaving
+④ the next bus to Gwangju is leaving when
+⑤ the next bus to Gwangju is when leaving
+다음 대화의 빈칸에 알맞은 것은?
+ 5
+
+A: Where do you           they will meet?
+B: They will meet at the bus stop. 
+① see    ②    know    ③ like   ④ say    ⑤ think 
+다음 밑줄 친 부분이 어법상 틀린 것은 ? 
+ 3 (why cathy is sad)
+① I can't remember what the girl's name is.
+② Tom doesn't know why the customer called him. 
+③ He doesn't know why is Cathy sad.  
+④ The problem is when they met that day. 
+⑤ She knows how much the computer is. 
+다음 중 어법상 올바른 문장은? 
+ 4
+1- is the classroom -> the classroom is
+2- you brother is -> is your brother
+3- does the plane -> the plane leaves
+5- If -> whether
+① Can you tell me where is the classroom? 
+② How tall your brother is?
+③ I want to know when does the plane leave.
+④ I don't know whether she will come or not. 
+⑤ Whether you like it or not, you must do it. 
+다음 우리말을 영어로 바르게 옮긴 것은?
+ 4
+
+너는 내일 경기에서 누가 이길 거라고 생각하니? 
+① Do you think who will win the game tomorrow? 
+② Do you think who will the game win tomorrow?
+③ Who do you think the game will win tomorrow?
+④ Who do you think will win the game tomorrow?
+⑤ Who will win do you think the game tomorrow?
+ 다음 중 어법상 어색한 문장을 고르시오.  
+ 2
+① I can't understand what you're saying. 
+② Tell me the reason he caught a cold. 
+③ I wonder if she still likes chocolate. 
+④ I don't know why he was absent today. 
+⑤ Ask her if she will come here tomorrow.  
+다음 중 어법상 올바른 문장은?
+ 4
+1- will Suji -> Suji will
+2- does she live -> she lives
+3- can solve -> can be solved
+5- when do we have -> when we have
+Do you believe that will Suji be back? 
+Do you think where does she live?
+I don't know if the problem can solve by him.
+Why do you think she was late for the meeting?
+Do you know when do we have to hand in the essay.
+직접의문문을 간접의문문으로 바꾼 것으로 옳은 것은?
+ 5
+1- Tell me if Andrew likes spicy food
+2- I wonder whether you are a Chinese.
+3- What do you think Allan will do next?
+4- I wonder if my brothers finished doing their homework.
+① Tell me + Does Andrew like spicy food?
+-> Tell me if Andrew like spicy food.   
+② I wonder + Are you a Chinese?
+-> I wonder whether are you a Chinese. 
+③ Do you think + What will Allan do next?
+-> Do you think what Allan will do next? 
+④ I wonder. Did my brothers finish doing their homework?
+-> I wonder if my brothers finish doing their homework.
+⑤ My wife is asking + How much is the white skirt?
+-> My wife is asking how much the white skirt is? 
+[심화문법]
+❶ 주절에 동사 think, believe, imagine, guess, suppose 등의 동사가 오는 Yes/No로 대답할 수 없는 특수 구문일 경우에는 의문사가 문두로 이동해 [의문사+주절+주어+동사]의 어순이 된다. 
+ex) Do you think? + Where does she live?
+  -> Do you think where she lives? (x)
+  -> Where do you think she lives? (o) 
+ex) Do you guess? + What is the correct answer? 
+-> Do you guess what is the correct answer? (x)
+-> What do you guess the correct answer is? (o)
+❷ 주의: Can you ~? 와 같이 상대방이 추측능력을 물어 볼 때는 의문사가 문장 맨 앞으로 가지 않는다. 대답역시 “Yes/No” 로 한다.  
+ex) Can you guess who brought this flower?
+- Yes, I can. / No, I can’t.
+◈ 간접의문문의 시제 일치 
+ 주절의 시제가 과거 시제일 때 종속절의 동사를 과거시제로 바꿔준다. 
+ e.g. He asked him. + What is Jack doing here?
+-> He asked him what Jack was doing here. 
+◈ 다음 두 문장을 한 문장으로 연결하시오.
+She asks me. + Where does Jackson live? 
+ She asks me where Jackson lives. 
+->                                             .
+James asked him. + How old is this school?
+ James asked him how old this school was.
+->                                             .
+I asked her. + "Are you Pete's sister?" 
+ I asked her if she was Pete's sister.
+->                                             .
+Can you tell me? + Who do you like most?
+ Can you tell me who you like most?
+->                                             .
+Do you imagine? + What did Melissa say to me?
+ What do you imagine Melissa said to me?
+->                                             .
+다음 주어진 문장과 의미가 같은 것은?    
+ 5
+
+He said to me, "Do you know her address" 
+=                                        
+① He asked me that you knew her address.
+② He asked me if you knew her address.
+③ He told me that you knew her address. 
+④ He asked me that I knew her address.
+⑤ He asked me if I knew her address. 
+ 다음 중 어법상 어색한 문장은? 
+ 2 (did leave->left)
+① Can you tell me where you want to go?
+② Do you know when she did leave? 
+③ I don't know exactly what happened. 
+④ She asked me how I got an A in math.
+⑤ He doesn't know when I'm going to arrive.
+ 다음 대화의 내용을 다음과 같이 한 문장을 옮길 때 빈칸에 알맞은 말이 순서대로 바르게 짝지어진 것은?
+ 3
+
+Tom: Can I borrow your dictionary? 
+Jane: OK, here you are.
+->Tom asked Jane       he could borrow        
+dictionary. 
+① that – his            ② that - my
+③ whether – her        ④ if - your 
+⑤ whether - Tom's
+ 다음 문장들을 올바르게 연결한 것을 모두 고르시오.
+ 1, 3 
+2 - “I wonder what made your parents upset. 
+4 - Why do you think he cut the class?
+5 - We asked her if(=whether) she was from America. 
+① Tell me. + What did you buy?
+ ->Tell me what you bought.  
+② I wonder. + What made your parents upset?
+ -> I wonder what your parents made upset.
+③ I know. + What did you do after school yesterday?
+ -> I know what you did after school yesterday. 
+④ Do you think? + Why did he cut the class?
+ -> Why did you think he cut the class?
+⑤ We asked her, “ Are you from America?”
+ -> We asked her you are from America or not. 
+답지
