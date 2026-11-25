@@ -1,0 +1,640 @@
+발산중2 외부지문 문장단위 구문 분석지 · 정답
+Reading Material 1 (나라별 대화 방식, 12문장) · Reading Material 2 (우주 비행사의 사인 보험, 19문장)
+  주절 성분 (S·V·O·C)     종속절 성분 (S'·V'·O')    구 안의 성분 (v·o·oc) 〈 〉 부사절·부사구 굵은 물결 = 핵심 구문 초록 = 단어장 어휘
+ S 주어       V 동사      O 목적어        C 보어      OC 목적격보어         점선 = 앞 명사를 꾸밈
+
+
+   Reading Material 1 대화 방식을 스포츠에 비유하기 · 12문장
+  지문 흐름 (Flow)
+주제 나라마다 대화 방식이 다르므로, 외국인과 대화할 때는 상대의 방식을 이해하고 맞춰야 한다.
+ 흐름                   문장       핵심 내용                                              연결어·키워드
+ ① 도입                 1–2      나라마다 대화 방식이 다르고, 스포츠에 비유할 수 있다                     compare A to B
+ ② 일본 = 볼링            3–5      차례를 기다림, 멈춤이 있어도 끼어들지 않음                           just like, Even if
+ ③ 미국 = 농구            6–8      머뭇거리면 다른 사람이 끼어듦 (공 가로채기)                          On the other hand (대조)
+ ④ 이탈리아 = 럭비          9–11     손짓이 많고 자주 끼어듦 → 관심의 표시로 여김                         Interestingly, rather than
+ ⑤ 결론                 12       외국인 친구의 대화 방식을 기억하고 맞춰라                            The next time, try to
+구조: 도입(비유 제시) → 예시 1 일본(볼링) ↔ 예시 2 미국(농구) → 예시 3 이탈리아(럭비) → 결론(필자의 주장)
+
+  원문
+   1 Every country has its own unique conversation style. 2 You can compare the different styles
+   to sports. 3 Japanese conversations are like bowling. 4 Each person waits for their turn, just
+   like bowlers. 5 Even if there are long pauses during conversation, others never break in.
+   6 On the other hand, American conversations are like basketball. 7 When someone hesitates,
+   another person interrupts. 8 It's like when basketball players steal the ball. 9 Italian
+   conversations are like rugby. 10 Just like rugby players, Italians use a lot of hand gestures
+   and interrupt others frequently. 11 Interestingly, Italians tend to take interruptions as a sign
+   of interest in the conversation rather than a lack of thoughtfulness. 12 The next time you
+   talk with foreign friends, remember that they have their ways of “playing ball” and try to
+   match them.
+
+  문장단위 분석
+ RM1-01     POINT ·· every + 단수명사 → 단수 동사
+                     its own (자기 고유의)                                          ① 도입
+
+ 핵심어      unique 독특한, 고유한
+Every countryS hasV its own unique1 conversation styleO.
+   직독직해
+   / Every country has                                모든 나라는 가지고 있다
+   / its own unique conversation style.               그 나라만의 독특한 대화 방식을
+해석 모든 나라는 그 나라만의 독특한 대화 방식을 가지고 있다.
+ 결국 이 얘기 나라마다 대화하는 스타일이 달라요.
+문법
+  Every + 단수 명사 → 단수 취급: has (have X)
+  its(소유격 ‘그것의’) vs it's(= it is)
+  one's own + 명사 = ~ 자신만의
+단어 1unique 독특한, 고유한
+
+ RM1-02     POINT · compare A to B (A를 B에 비유하다)                                ① 도입
+
+ 핵심어      compare A to B A를 B에 비유하다
+YouS can compare1V the different stylesO to sports.
+   직독직해
+   / You can compare the different styles             너는 그 다양한 방식들을 비유할 수 있다
+   / to sports.                                       스포츠에
+해석 너는 그 다양한 방식들을 스포츠에 비유할 수 있다.
+ 결국 이 얘기 대화 방식을 스포츠에 빗대어 볼 수 있어요. → 글 전체의 틀
+ 시험 포인트 compare A to B ← 주제 문장: 대화 방식 = 스포츠
+문법
+  compare A to B: A를 B에 비유하다 / compare A with B: A와 B를 비교하다
+  can + 동사원형 (가능)
+단어 1compare A to B A를 B에 비유하다
+ RM1-03     POINT · be like + 명사 (~와 같다)                         ② 일본 = 볼링
+
+ 핵심어      bowling 볼링
+Japanese conversationsS areV like bowlingC.
+   직독직해
+   / Japanese conversations are               일본인의 대화는
+   / like bowling.                            볼링과 같다
+해석 일본인의 대화는 볼링과 같다.
+ 결국 이 얘기 일본식 대화는 볼링 같아요.
+문법
+  like = 전치사 ‘~와 같은’ (동사 like ‘좋아하다’ 아님)
+  주어 conversations 복수 → are
+
+
+ RM1-04     POINT ·· each   + 단수명사 → 단수 동사
+                     just like (~와 꼭 마찬가지로)                      ② 일본 = 볼링
+
+ 핵심어      turn 차례
+Each personS waits forV their turn1O, 〈just like bowlers2〉.
+   직독직해
+   / Each person waits for their turn,        각자는 자신의 차례를 기다린다
+   / just like bowlers.                       볼링 선수들과 꼭 마찬가지로
+해석 볼링 선수들과 꼭 마찬가지로 각자는 자신의 차례를 기다린다.
+ 결국 이 얘기 볼링처럼 한 사람씩 차례를 지켜 말해요.
+문법
+  Each + 단수 명사 → 단수 동사 waits (wait X)
+  wait for ~을 기다리다
+  their: 성별을 정하지 않는 단수 대명사로 쓰임
+단어 1turn 차례 2bowler 볼링 하는 사람
+ RM1-05     POINT ·· even if (비록 ~일지라도)
+                     there are + 복수 주어 / break in                         ② 일본 = 볼링
+
+ 핵심어      break in (대화에) 끼어들다
+〈Even if there areV' long pauses1S' during conversation〉, othersS never break
+in2V.
+  직독직해
+  / Even if there are long pauses                   긴 멈춤이 있더라도
+  / during conversation,                            대화 중에
+  / others never break in.                          다른 사람들은 절대 끼어들지 않는다
+해석 대화 중에 긴 멈춤이 있더라도 다른 사람들은 절대 끼어들지 않는다.
+ 결국 이 얘기 말이 오래 끊겨도 아무도 끼어들지 않아요.
+ 시험 포인트 Even if ← 양보 접속사, even though와 의미 비슷
+문법
+  Even if + 주어 + 동사: 비록 ~일지라도 (양보)
+  There are + 복수 주어(pauses) → 진짜 주어는 동사 뒤
+  during + 명사 / while + 주어 + 동사
+  others = other people (대명사)
+  never는 일반동사 앞에 위치
+단어 1pause 멈춤, 잠시 멈추다 2break in 끼어들다
+
+ RM1-06     POINT · On the other hand (반면에) – 대조                          ③ 미국 = 농구
+
+ 핵심어      on the other hand 반면에
+On the other hand, American conversationsS areV like basketballC.
+  직독직해
+  / On the other hand,                              반면에
+  / American conversations are like basketball.     미국인의 대화는 농구와 같다
+해석 반면에 미국인의 대화는 농구와 같다.
+ 결국 이 얘기 미국식 대화는 일본과 반대로 농구 같아요.
+문법
+  On the other hand: 앞 내용(일본)과 대조되는 내용(미국)을 이끄는 연결어 → 빈칸·연결어 문제 단골
+ RM1-07     POINT ·· when 부사절
+                     someone / another + 단수                                      ③ 미국 = 농구
+
+ 핵심어      hesitate 머뭇거리다, 망설이다
+〈When someoneS' hesitates1V'〉, another personS interrupts2V.
+   직독직해
+   / When someone hesitates,                               누군가 머뭇거리면
+   / another person interrupts.                            다른 사람이 (말을) 끊고 들어온다
+해석 누군가 머뭇거리면 다른 사람이 말을 끊고 들어온다.
+ 결국 이 얘기 누가 잠깐 멈칫하면 바로 다른 사람이 치고 들어와요.
+문법
+  someone(단수) → hesitates / another + 단수 명사(person) → interrupts
+  When 부사절: ~할 때
+단어 1hesitate 머뭇거리다, 망설이다 2interrupt (말을) 가로막다, 방해하다
+
+ RM1-08     POINT · It's like when ~ (~할 때와 같다)                                  ③ 미국 = 농구
+
+ 핵심어      steal 훔치다, 가로채다
+ItS'sV like 〈when basketball playersS' steal1V' the ballO'〉C.
+   직독직해
+   / It's like                                             그것은 ~와 같다
+   / when basketball players steal the ball.               농구 선수들이 공을 가로챌 때
+해석 그것은 농구 선수들이 공을 가로챌 때와 같다.
+ 결국 이 얘기 농구에서 공을 가로채듯 말할 기회를 가로채요.
+문법
+  It = 앞 문장의 상황(머뭇거릴 때 끼어드는 것)
+  like + when절: ~할 때와 같다
+  steal – stole – stolen
+단어 1steal 훔치다, 가로채다
+ RM1-09     POINT · be like + 명사                                              ④ 이탈리아 = 럭비
+
+ 핵심어      rugby 럭비
+Italian conversationsS areV like rugbyC.
+  직독직해
+  / Italian conversations are like rugby.               이탈리아인의 대화는 럭비와 같다
+해석 이탈리아인의 대화는 럭비와 같다.
+ 결국 이 얘기 이탈리아식 대화는 럭비 같아요.
+문법
+  Italian(형용사) 이탈리아의 / Italians(명사) 이탈리아인들
+
+
+ RM1-10     POINT ·· a병렬구조      use ~ and interrupt ~
+                       lot of / frequently                                    ④ 이탈리아 = 럭비
+
+ 핵심어      gesture 몸짓
+〈Just like rugby players〉, ItaliansS useV a lot of hand gestures1O and interruptV
+othersO frequently2.
+  직독직해
+  / Just like rugby players,                            럭비 선수들과 꼭 마찬가지로
+  / Italians use a lot of hand gestures                 이탈리아인들은 손짓을 많이 사용하고
+  / and interrupt others frequently.                    다른 사람들의 말을 자주 끊는다
+해석 럭비 선수들과 꼭 마찬가지로 이탈리아인들은 손짓을 많이 사용하고 다른 사람들의 말을 자주 끊는다.
+ 결국 이 얘기 손짓을 크게 하며 서로 자주 끼어들어요.
+문법
+  병렬: use ~ and interrupt ~ (주어 Italians 복수 → 동사원형 형태)
+  a lot of = many(셀 수 있는) / much(셀 수 없는)
+  frequently = often
+단어 1gesture 몸짓 2frequently 자주, 빈번히
+ RM1-11     POINT ·· tend to + 동사원형 / take A as B
+                     A rather than B                                                          ④ 이탈리아 = 럭비
+
+ 핵심어      take A as B A를 B로 여기다
+Interestingly1, ItaliansS tend to2 takeV interruptionsO as a sign of interest3 in the
+conversation rather than4 a lack of5 thoughtfulness6.
+   직독직해
+   / Interestingly,                                        흥미롭게도
+   / Italians tend to take interruptions                   이탈리아인들은 끼어들기를 여기는 경향이 있다
+   / as a sign of interest in the conversation             대화에 대한 관심의 표시로
+   / rather than a lack of thoughtfulness.                 배려심의 부족이라기보다는
+해석 흥미롭게도 이탈리아인들은 끼어들기를 배려심의 부족이라기보다는 대화에 대한 관심의 표시로 여기는 경향이 있다.
+ 결국 이 얘기 이탈리아에서는 끼어드는 걸 무례함이 아니라 ‘관심 있다’는 뜻으로 받아들여요.
+  시험 포인트 take interruptions as a sign of interest ← 주제와 직결 · 내용 일치 단골
+문법
+  tend to + 동사원형: ~하는 경향이 있다
+  take A as B: A를 B로 여기다 (= regard A as B, think of A as B)
+  A rather than B: B라기보다는 A → A(a sign of interest)와 B(a lack of thoughtfulness) 모두 명사구로 병렬
+  interruption(명) ← interrupt(동) / thoughtfulness(명) ← thoughtful(형)
+  Interestingly: 문장 전체를 꾸미는 부사
+단어 1interestingly 흥미롭게도 2tend to ~하는 경향이 있다 3interest 관심, 흥미 4rather than ~라기보다는
+5a lack of ~의 부족 6thoughtfulness 배려심, 사려 깊음
+ RM1-12     POINT ··the next time + 주어 + 동사 (다음에 ~할 때)
+                     명령문 병렬 remember ~ and try ~                                     ⑤ 결론
+
+ 핵심어      match 맞추다
+〈The next time youS' talkV' with foreign friends〉, (You) rememberV that theyS'
+haveV' their ways of “playing ball”O'O and tryV to match1 themO.
+   직독직해
+   / The next time you talk with foreign friends,        다음에 외국인 친구들과 이야기할 때
+   / remember that they have their ways                  그들에게는 그들의 방식이 있다는 것을 기억하라
+   / of “playing ball”                                   ‘공놀이를 하는’
+   / and try to match them.                              그리고 그것들에 맞추려고 노력하라
+해석 다음에 외국인 친구들과 이야기할 때, 그들에게는 그들만의 ‘공놀이 방식’이 있다는 것을 기억하고 그것에 맞추려고 노력하라.
+ 결국 이 얘기 외국 친구와 말할 땐 그 나라 대화 방식을 기억하고 맞춰 주세요. → 글쓴이의 주장
+  시험 포인트 try to match them ← 글의 요지(필자의 주장) 문장
+문법
+  The next time + 주어 + 동사: 다음에 ~할 때 (접속사처럼 쓰임)
+  명령문: 주어 You 생략 → Remember ~ and try ~ (병렬)
+  remember + that절(목적어) / try to ~: ~하려고 노력하다 (try -ing: 시험 삼아 ~해 보다)
+  them = their ways / “playing ball” = 대화 방식을 스포츠에 빗댄 표현
+단어 1match 맞추다, 어울리다
+   Reading Material 2 사인 형태의 생명 보험 · 19문장
+  지문 흐름 (Flow)
+주제 보험 가입을 거절당한 초기 우주 비행사들이 사인을 ‘생명 보험’으로 활용한 창의적인 방법
+ 흐름        문장       핵심 내용                                           연결어·키워드
+ ① 상황      1–5      1960년대 우주 비행은 위험, 비행사들은 가족 걱정                   Besides, make sure
+ ② 문제      6–7      보험사가 생명 보험 가입을 거절 (너무 위험)                       However (역접)
+ ③ 해결      8–15     수천 장의 사인 → 발사일 소인 → 가족에게 = 사인 보험                Then, in the form of
+ ④ 결과      16–19    팔 계획이었지만, 무사 귀환해 필요 없었음                         If ~ could, Thankfully, however
+구조: 상황 → 문제(However) → 해결(창의적 방법) → 결과(Thankfully, however)
+
+  원문
+   1In the 1960s, going to space was a new venture. 2 It was incredibly dangerous. 3 Many of the
+   young men who wanted to be the first astronauts had families. 4 Besides worrying about
+   training, they were worried about their wives and children. 5 They wanted to make sure if
+   they died, their families would be taken care of. 6 However, insurance companies did not
+   want to give life insurance policies to these astronauts. 7 It was simply too risky. 8 The
+   astronauts decided to use a creative way to get money. 9 They signed thousands of
+   autographs for eager fans. 10 They knew that people liked to collect famous things. 11 They
+   gave the autographs to their friends. 12 On the day of the launch, the friends took them to
+   the post office to have the envelopes stamped with the date. 13 Then, the envelopes were
+   given to the astronauts' families. 14 It was life insurance in the form of autographs. 15 People
+   really wanted their autographs. 16 If the astronauts did not return from the moon, their
+   families could sell them. 17 Thankfully, however, life insurance autographs were not
+   needed. 18 They walked on the moon and came home safely. 19 They probably signed tens of
+   thousands more autographs for free.
+
+  문장단위 분석
+ RM2-01     POINT · 동명사 주어 → 단수 동사                                      ① 상황
+
+ 핵심어      venture 모험(적인 사업)
+In the 1960s, going to spaceS wasV a new venture1C.
+  직독직해
+  / In the 1960s,                                1960년대에
+  / going to space was a new venture.            우주에 가는 것은 새로운 모험이었다
+해석 1960년대에 우주에 가는 것은 새로운 모험이었다.
+ 결국 이 얘기 1960년대엔 우주 가는 일 자체가 새로운 도전이었어요.
+ 시험 포인트 going to space was ← 동명사 주어 + 단수 동사
+문법
+  동명사구 주어(going to space) → 단수 취급 was (were X)
+  in the 1960s: 1960년대에
+단어 1venture 모험(적인 사업)
+
+ RM2-02     POINT · 부사 + 형용사                                            ① 상황
+
+ 핵심어      incredibly 믿을 수 없을 정도로
+ItS wasV incredibly1 dangerousC.
+  직독직해
+  / It was incredibly dangerous.                 그것은 믿을 수 없을 정도로 위험했다
+해석 그것은 믿을 수 없을 정도로 위험했다.
+ 결국 이 얘기 엄청나게 위험한 일이었어요.
+문법
+  It = going to space
+  incredibly(부사)가 형용사 dangerous를 꾸밈
+단어 1incredibly 믿을 수 없을 정도로, 엄청나게
+ RM2-03     POINT ·· 주격 관계대명사 who
+                     진짜 동사 찾기 (wanted X → had)                             ① 상황
+
+ 핵심어      astronaut 우주 비행사
+Many of the young menS whoS' wantedV' to be the first astronauts1O' hadV
+familiesO.
+  직독직해
+  / Many of the young men                          젊은 남자들 중 많은 이들은
+  / who wanted to be the first astronauts          최초의 우주 비행사가 되고 싶어 했던
+  / had families.                                  가족이 있었다
+해석 최초의 우주 비행사가 되고 싶어 했던 젊은 남자들 중 많은 이들은 가족이 있었다.
+ 결국 이 얘기 우주 비행사 지원자 대부분이 가족이 있는 가장이었어요.
+ 시험 포인트 Many of the young men who ~ had ← 관계절을 걷어내면 주어 + had
+문법
+  who = 주격 관계대명사 (선행사 the young men, 사람)
+  문장의 진짜 동사는 had (wanted는 관계절 안의 동사)
+  Many of the + 복수 명사 → 복수 취급
+단어 1astronaut 우주 비행사
+ RM2-04     POINT ·· besides + 동명사 (~ 외에도)
+                     be worried about                                    ① 상황
+
+ 핵심어      besides ~ 외에도
+〈Besides worrying about training1〉, theyS were worriedV about their wives
+and children.
+   직독직해
+   / Besides worrying about training,                훈련에 대해 걱정하는 것 외에도
+   / they were worried                               그들은 걱정했다
+   / about their wives and children.                 그들의 아내와 아이들에 대해
+해석 훈련에 대해 걱정하는 것 외에도 그들은 아내와 아이들에 대해 걱정했다.
+ 결국 이 얘기 훈련보다 가족 걱정이 컸어요.
+ 시험 포인트 Besides worrying ← 전치사 뒤 동명사
+문법
+  besides(전치사) + 동명사: ~ 외에도 / beside: ~ 옆에 (혼동 주의)
+  worry about = be worried about: ~에 대해 걱정하다
+단어 1training 훈련
+ RM2-05     POINT ··make sure (that) ~
+                    구동사의 수동태 be taken care of                               ① 상황
+
+ 핵심어      take care of ~을 돌보다
+TheyS wantedV to make sure 〈if theyS' diedV'〉, their familiesS' would be taken
+care ofV'O.
+   직독직해
+   / They wanted to make sure                          그들은 확실히 하고 싶었다
+   / if they died,                                     만약 그들이 죽는다면
+   / their families would be taken care of.            그들의 가족이 보살핌을 받을 것을
+해석 그들은 만약 자신들이 죽더라도 가족이 보살핌을 받을 수 있도록 확실히 해 두고 싶었다.
+ 결국 이 얘기 자신이 죽어도 가족이 살아갈 수 있게 대비하고 싶었어요.
+ 시험 포인트 would be taken care of ← 구동사 수동태: of 생략 X
+문법
+  make sure (that) + 주어 + 동사: ~을 확실히 하다
+  If they died, ~ would: 일어날 수 있는 일을 상상 (가정법 과거 형태)
+  take care of(돌보다)의 수동태 → be taken care of (전치사 of를 꼭 남김)
+ RM2-06     POINT ·· However   (역접)
+                     give A to B                                           ② 문제
+
+ 핵심어      insurance policy 보험 증권(보험 계약)
+However1, insurance2 companiesS did not wantV to give life insurance policies3
+to these astronautsO.
+  직독직해
+  / However,                                  하지만
+  / insurance companies did not want          보험 회사들은 원하지 않았다
+  / to give life insurance policies           생명 보험 증권을 주는 것을
+  / to these astronauts.                      이 우주 비행사들에게
+해석 하지만 보험 회사들은 이 우주 비행사들에게 생명 보험을 들어 주고 싶어 하지 않았다.
+ 결국 이 얘기 그런데 보험 회사들이 보험 가입을 거절했어요.
+문법
+  However: 앞 내용(가족을 지키고 싶음)과 반대되는 상황
+  want + to부정사(목적어)
+  give A to B = give B A (3형식 ↔ 4형식)
+단어 1however 하지만 2insurance 보험 3policy 보험 증권; 정책
+
+ RM2-07     POINT · too + 형용사 (지나치게 ~한)                                    ② 문제
+
+ 핵심어      risky 위험한
+ItS wasV simply too risky1C.
+  직독직해
+  / It was simply too risky.                  그것은 그야말로 너무 위험했다
+해석 그것은 그야말로 너무 위험했다.
+ 결국 이 얘기 보험사 입장에선 너무 위험한 거래였어요.
+문법
+  It = 우주 비행사에게 보험을 들어 주는 것
+  too + 형용사: 지나치게 ~한 (부정적 의미)
+  simply: 그야말로, 정말로
+단어 1risky 위험한
+ RM2-08     POINT ·· decide + to부정사
+                     to부정사 형용사적 용법 (a way to ~)                            ③ 해결
+
+ 핵심어      creative 창의적인
+The astronautsS decidedV to use a creative1 wayO to get money.
+  직독직해
+  / The astronauts decided                           우주 비행사들은 결심했다
+  / to use a creative way                            창의적인 방법을 사용하기로
+  / to get money.                                    돈을 얻을
+해석 우주 비행사들은 돈을 얻을 창의적인 방법을 사용하기로 결심했다.
+ 결국 이 얘기 그래서 기발한 방법을 생각해 냈어요.
+문법
+  decide + to부정사 (decide -ing X)
+  a creative way to get money: to부정사가 앞 명사 way를 꾸밈 (형용사적 용법, ‘돈을 얻을 방법’)
+단어 1creative 창의적인
+
+ RM2-09     POINT · thousands of (수천의)                                     ③ 해결
+
+ 핵심어      autograph (유명인의) 사인
+TheyS signed1V thousands of autographs2O for eager3 fans.
+  직독직해
+  / They signed thousands of autographs              그들은 수천 장의 사인을 했다
+  / for eager fans.                                  열성적인 팬들을 위해
+해석 그들은 열성적인 팬들을 위해 수천 장의 사인을 했다.
+ 결국 이 얘기 팬들을 위한 사인을 엄청나게 해 두었어요.
+문법
+  thousands of + 복수 명사: 수천의 / two thousand (숫자 뒤에서는 -s X)
+  sign(동) 서명하다 / autograph(명) 유명인의 사인 (‘사인’을 sign으로 쓰지 않음)
+단어 1sign 서명하다 2autograph (유명인의) 사인 3eager 열망하는, 열성적인
+ RM2-10       POINT ·· 명사절 접속사 that
+                       시제 일치                                                          ③ 해결
+
+ 핵심어      collect 모으다
+TheyS knewV that peopleS' likedV' to collect famous thingsO'O.
+   직독직해
+   / They knew                                                       그들은 알았다
+   / that people liked                                               사람들이 좋아한다는 것을
+   / to collect famous things.                                       유명한 물건을 모으는 것을
+해석 그들은 사람들이 유명한 물건을 모으는 것을 좋아한다는 것을 알았다.
+ 결국 이 얘기 사람들이 유명인 물건을 모으고 싶어 한다는 걸 알았거든요.
+문법
+  that = 명사절 접속사 (knew의 목적어, 생략 가능)
+  주절 과거(knew) → that절도 과거(liked) : 시제 일치
+  like + to부정사 / 동명사 모두 가능
+
+
+ RM2-11       POINT · give A to B                                                     ③ 해결
+
+ 핵심어      give A to B A를 B에게 주다
+TheyS gaveV the autographsO to their friends.
+   직독직해
+   / They gave the autographs                                        그들은 그 사인들을 주었다
+   / to their friends.                                               그들의 친구들에게
+해석 그들은 그 사인들을 친구들에게 주었다.
+ 결국 이 얘기 사인을 친구들에게 맡겼어요.
+문법
+  give A to B = give B A → They gave their friends the autographs.
+ RM2-12     POINT ·· have + 목적어 + 과거분사 (사역, 수동)
+                     to부정사 부사적 용법(목적)                                       ③ 해결
+
+ 핵심어      stamp (소인·도장을) 찍다
+On the day of the launch1, the friendsS tookV themO to the post office 〈to havev
+the envelopes2o stamped3oc with the date〉.
+  직독직해
+  / On the day of the launch,                          발사 당일에
+  / the friends took them                              친구들은 그것들을 가져갔다
+  / to the post office                                 우체국으로
+  / to have the envelopes stamped                      봉투에 소인이 찍히게 하기 위해
+  / with the date.                                     날짜로
+해석 발사 당일에 친구들은 봉투에 날짜 소인을 받기 위해 그것들을 우체국으로 가져갔다.
+ 결국 이 얘기 발사 날 우체국에서 봉투에 그날 날짜 도장을 받았어요.
+ 시험 포인트 have the envelopes stamped ← 사역동사 have + O + p.p.
+문법
+  them = the autographs (사인이 든 봉투)
+  to have = ~하기 위해 (목적)
+  have + 목적어 + 과거분사: 목적어가 ~되게 하다 (봉투가 ‘찍히는’ 수동 → stamped, stamp X)
+  on the day of ~ 당일에
+단어 1launch 발사 2envelope 봉투 3stamp (소인·도장을) 찍다
+ RM2-13      POINT ·· 수동태 were given to
+                      복수 소유격 astronauts'                                                   ③ 해결
+
+ 핵심어      envelope 봉투
+Then1, the envelopesS were givenV to the astronauts' families.
+   직독직해
+   / Then,                                                      그런 다음
+   / the envelopes were given                                   그 봉투들은 주어졌다
+   / to the astronauts' families.                               우주 비행사들의 가족에게
+해석 그런 다음, 그 봉투들은 우주 비행사들의 가족에게 전달되었다.
+ 결국 이 얘기 도장 찍힌 봉투는 가족들에게 전해졌어요.
+문법
+  수동태: were given to ~ (능동: The friends gave the envelopes to the astronauts' families.)
+  astronauts': -s로 끝나는 복수 명사의 소유격은 ’만 붙임
+단어 1then 그런 다음
+
+ RM2-14      POINT · in the form of (~의 형태로)                                               ③ 해결
+
+ 핵심어      in the form of ~의 형태로
+ItS wasV life insuranceC in the form of autographs.
+   직독직해
+   / It was life insurance                                      그것은 생명 보험이었다
+   / in the form of autographs.                                 사인 형태의
+해석 그것은 사인 형태의 생명 보험이었다.
+ 결국 이 얘기 사인이 곧 보험이었던 셈이에요. → 글의 핵심
+  시험 포인트 life insurance in the form of autographs ← 제목·요지 문제 핵심 표현
+문법
+  It = 사인이 든 봉투(를 가족에게 주는 방법)
+  in the form of ~: ~의 형태로
+ RM2-15     POINT · 3형식 문장                                                  ③ 해결
+
+ 핵심어      really 정말로
+PeopleS really wantedV their autographsO.
+  직독직해
+  / People really wanted their autographs.       사람들은 정말로 그들의 사인을 원했다
+해석 사람들은 정말로 그들의 사인을 원했다.
+ 결국 이 얘기 사인이 그만큼 값어치가 있었어요.
+문법
+  their = the astronauts'
+
+
+ RM2-16     POINT · If + 과거, could + 동사원형                                   ④ 결과
+
+ 핵심어      return 돌아오다
+〈If the astronautsS' did not returnV' from the moon〉, their familiesS could sellV
+themO.
+  직독직해
+  / If the astronauts did not return             만약 우주 비행사들이 돌아오지 못한다면
+  / from the moon,                               달에서
+  / their families could sell them.              그들의 가족은 그것들을 팔 수 있었다
+해석 만약 우주 비행사들이 달에서 돌아오지 못한다면, 그들의 가족은 그것들을 팔 수 있었다.
+ 결국 이 얘기 비행사가 돌아오지 못하면 가족이 사인을 팔아 생활비를 마련할 계획이었어요.
+문법
+  If + 주어 + 과거동사, 주어 + could + 동사원형: 일어날 수 있는 상황을 가정 (가정법 과거 형태)
+  them = the envelopes(사인)
+  return from ~에서 돌아오다
+ RM2-17     POINT ·· however
+                     수동태 부정 were not needed
+                             삽입                                       ④ 결과
+
+ 핵심어      thankfully 다행스럽게도
+Thankfully1, however2, life insurance autographsS were not neededV.
+  직독직해
+  / Thankfully, however,                         하지만 다행스럽게도
+  / life insurance autographs were not needed.   생명 보험 사인은 필요하지 않았다
+해석 하지만 다행스럽게도 생명 보험 사인은 필요하지 않았다.
+ 결국 이 얘기 다행히 그 사인을 쓸 일은 없었어요.
+문법
+  수동태 부정: be + not + p.p.
+  however는 문장 중간에 콤마와 함께 삽입 가능
+단어 1thankfully 다행스럽게도, 고맙게도 2however 하지만
+
+
+ RM2-18     POINT ·· come
+                     병렬구조 walked and came
+                          home (home = 부사)                            ④ 결과
+
+ 핵심어      safely 안전하게
+TheyS walkedV on the moon and cameV home safely1.
+  직독직해
+  / They walked on the moon                      그들은 달 위를 걸었고
+  / and came home safely.                        무사히 집에 돌아왔다
+해석 그들은 달 위를 걸었고 무사히 집에 돌아왔다.
+ 결국 이 얘기 모두 달에 갔다가 무사히 돌아왔어요.
+문법
+  병렬: walked ~ and came ~ (둘 다 과거)
+  come home: home은 부사 → come to home (X)
+  safely(부사)가 동사 came 수식
+단어 1safely 안전하게
+ RM2-19     POINT ·· tens  of thousands (수만의)
+                     for free (무료로)                                              ④ 결과
+
+ 핵심어      probably 아마도
+TheyS probably1 signedV tens of thousands more autographsO for free2.
+   직독직해
+   / They probably signed                                   그들은 아마도 사인을 했을 것이다
+   / tens of thousands more autographs                      수만 장 더 많은
+   / for free.                                              무료로
+해석 그들은 아마 수만 장의 사인을 더 무료로 해 주었을 것이다.
+ 결국 이 얘기 돌아온 뒤로는 공짜로 사인을 훨씬 더 많이 해 줬겠죠.
+문법
+  tens of thousands: 수만 (thousands of 수천, hundreds of 수백)
+  for free = free of charge 무료로
+  probably: 일반동사 앞
+단어 1probably 아마도 2for free 무료로
+ 핵심 문법 한눈에
+문법                                      예문                                                        시험 함정
+every / each + 단수명사 (RM1-1, 4)          Every country has ~ / Each person waits ~                 have, wait (X)
+compare A to B (RM1-2)                  compare the different styles to sports                    비유 to / 비교 with
+Even if (RM1-5)                         Even if there are long pauses, ~                          there are + 복수 주어
+tend to / take A as B / A rather than B tend to take interruptions as a sign of interest rather   A·B 병렬(명사구) · tend to
+(RM1-11)                                than a lack of ~                                          + 원형
+명령문 병렬 (RM1-12)                         Remember ~ and try to match them.                         try to(노력) vs try -ing(시
+                                                                                                  도)
+동명사 주어 (RM2-1)                            Going to space was ~                                    were (X)
+주격 관계대명사 who (RM2-3)                      the young men who wanted ~ had families                 진짜 동사 had 찾기
+besides + -ing (RM2-4)                    Besides worrying about training                         beside(옆에)와 혼동
+구동사 수동태 (RM2-5)                           would be taken care of                                  of 생략 (X)
+have + O + p.p. (RM2-12)                  to have the envelopes stamped                           stamp / stamping (X)
+수동태 (RM2-13, 17)                          were given to · were not needed                         능동·수동 전환
+If + 과거, could (RM2-16)                   If they did not return, ~ could sell them               will sell (X)
+thousands of / tens of thousands          thousands of autographs · tens of thousands more        two thousands (X)
+(RM2-9, 19)
+
+ 단어장 · Reading Material 1
+단어·숙어                        뜻                                       단어·숙어                        뜻
+unique                       독특한, 고유한                                tend to                      ~하는 경향이 있다
+compare A to B               A를 B에 비유하다                              take A as B                  A를 B로 여기다
+turn                         차례                                      interest                     관심, 흥미
+bowler                       볼링 하는 사람                                rather than                  ~라기보다는
+pause                        멈춤; 잠시 멈추다                              a lack of                    ~의 부족
+break in                     끼어들다                                    thoughtfulness               배려심, 사려 깊음
+hesitate                     머뭇거리다, 망설이다                             the next time                다음에 ~할 때
+interrupt                    (말을) 가로막다, 방해하다                         match                        맞추다, 어울리다
+steal                        훔치다, 가로채다                               be free to *                 마음껏 ~하다
+ gesture                       몸짓                                        jump in *                     (대화에) 끼어들다
+ frequently                    자주, 빈번히                                   reply *                       대답; 대답하다
+* 표시는 프린트 단어장에만 있고 본문에는 나오지 않는 단어예요.
+
+  단어장 · Reading Material 2
+ 단어·숙어                    뜻                                    단어·숙어                    뜻
+ incredibly               믿을 수 없을 정도로                          launch                   발사; 발사하다
+ astronaut                우주 비행사                               stamp                    (소인·도장을) 찍다; 우표
+ training                 훈련                                   venture                  모험(적인 사업)
+ insurance                보험                                   creative                 창의적인
+ policy                   보험 증권; 정책                            sign                     서명하다
+ risky                    위험한                                  envelope                 봉투
+ autograph                (유명인의) 사인                            thankfully               다행스럽게도
+ eager                    열망하는, 열성적인                           probably                 아마도
+
+  확인 문제
+Q1. [RM1] 어법상 알맞은 것을 고르시오.
+ 1. Every country ( has / have ) its own unique conversation style.
+ 2. Each person ( wait / waits ) for their turn.
+ 3. Italians tend to ( take / taking ) interruptions as a sign of interest.
+ 4. Remember that they have their ways and try ( matching / to match ) them. (맞추려고 노력하라)
+Q2. [RM1] 빈칸에 들어갈 연결어로 알맞은 것은?
+Japanese conversations are like bowling. … Others never break in. ( ________ ), American conversations are like basketball.
+ 1. For example
+ 2. As a result
+ 3. On the other hand
+ 4. In addition
+ 5. That is
+Q3. [RM1] 본문 내용과 일치하지 않는 것은?
+ 1. 일본인은 대화 중 긴 멈춤이 있어도 끼어들지 않는다.
+ 2. 미국인은 누군가 머뭇거리면 끼어든다.
+ 3. 이탈리아인은 손짓을 많이 사용한다.
+ 4. 이탈리아인은 끼어들기를 배려가 부족한 행동으로 여긴다.
+ 5. 필자는 외국인 친구의 대화 방식에 맞추라고 조언한다.
+Q4. [RM1] 우리말에 맞게 배열하시오.
+나는 대화 방식을 스포츠에 비유할 수 있다. ( the conversation styles / compare / to / I / sports / can )
+Q5. [RM2] 어법상 틀린 부분을 찾아 고치시오.
+ 1. In the 1960s, going to space were a new venture.
+ 2. They wanted to make sure their families would be taken care.
+ 3. The friends took them to the post office to have the envelopes stamp with the date.
+ 4. Beside worrying about training, they were worried about their wives.
+Q6. [RM2] 다음 문장의 진짜 동사를 쓰시오.
+Many of the young men who wanted to be the first astronauts had families. → ________
+Q7. [RM2] 우주 비행사들이 사인을 한 이유로 알맞은 것은?
+ 1. 팬들에게 인기를 얻고 싶어서
+ 2. 훈련 비용을 마련하기 위해서
+ 3. 보험 대신 가족에게 남길 재산을 마련하기 위해서
+ 4. 우체국의 요청이 있어서
+ 5. 달에 가져가기 위해서
+Q8. [RM2] 글의 제목으로 가장 알맞은 것은?
+ 1. How to Become an Astronaut
+ 2. Autographs as Life Insurance
+ 3. The History of the Post Office
+ 4. Why Fans Love Astronauts
+ 5. Dangerous Training in Space
+Q9. [RM2] 우리말에 맞게 빈칸을 채우시오.
+그것은 사인 형태의 생명 보험이었다. → It was life insurance ____ ____ ____ ____ autographs.
+  정답
+  Q1 has / waits / take / to match
+  Q2 ③ (일본 ↔ 미국 대조)
+  Q3 ④ (a lack of thoughtfulness가 아니라 a sign of interest로 여김)
+  Q4 I can compare the conversation styles to sports.
+  Q5 ① were → was (동명사 주어) ② taken care → taken care of ③ stamp → stamped (have + O + p.p.) ④ Beside → Besides
+  Q6 had
+  Q7 ③
+  Q8 ②
+  Q9 in the form of
+
