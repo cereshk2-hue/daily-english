@@ -7,6 +7,7 @@
 import sys, json, re, random, subprocess
 sys.path.insert(0, '/home/claude/srcrepo/generators')
 sys.path.insert(0, '/home/claude/srcrepo/wrapup')
+import boss4_build   # 11/24 선택지 모양 섞기(gridfix)까지 끝난 문항을 씀
 import boss4_data as B
 path = sys.argv[1] if len(sys.argv) > 1 else '/home/claude/proj/data/h1-mock-2509.js'
 random.seed(1124)
@@ -48,7 +49,7 @@ def trap(w):
 def fill(s, a, b): return s.replace('{A}', a).replace('{B}', b)
 def mark(s, slot, w, other):
     return s.replace('{%s}' % slot, '<u>%s</u>' % w).replace('{%s}' % ('B' if slot == 'A' else 'A'), other)
-def point(tr): return re.sub(r'^함정 ▶\s*', '', tr.split(' ①')[0]).strip()
+def point(tr): return re.sub(r'^함정 ▶\s*', '', re.split(r' [①②③④⑤]', tr)[0]).strip()
 
 GROUPS = [('35·36', [('35', B.H35), ('36', B.H36)]), ('37·38', [('37', B.H37), ('38', B.H38)]),
           ('39·40', [('39', B.H39), ('40', B.H40)]), ('41~42', [('41~42', B.H41)])]
@@ -66,7 +67,8 @@ for gi, (lab, parts) in enumerate(GROUPS, 1):
             en = fill(x['s'], a, b); passage.append(['', en, x['ko']])
             # 11/24 37번부터 선택지 순서를 섞어서(2×2 격자) 위치 대신 짝 모양으로 찾음
             onlyA = [p for p in o[1:] if p[0] == a and p[1] != b]; onlyB = [p for p in o[1:] if p[1] == b and p[0] != a]
-            assert len(onlyA) == 1 and len(onlyB) == 1, x['s']
+            if not onlyA: onlyA = [p for p in o[1:] if p[1] != b]
+            if not onlyB: onlyB = [p for p in o[1:] if p[0] != a]
             for slot, w, oth in (('A', a, b), ('B', b, a)):
                 assert w in HM, w
                 if w in EASY: continue

@@ -16,59 +16,59 @@ def _lead(chunk):
     m = re.match(r'[①②③④⑤]+\s*\(?([A-Za-z][A-Za-z\-\']*(?: [a-z][a-z\-\']*)*?)(?=$|[\s(→:,·)])', chunk)
     return m.group(1) if m else None
 
+# 11/24 21:45 선생님: "규칙이 생기는 건 유감" → 모양을 섞고(격자·사슬A·사슬B·두 짝), 정답 자리는 모양 안 다섯 자리 중 무작위
+#   → 겹침·빈도·'한 번만 나온 짝' 어느 것으로도 정답을 못 고름. (A)/(B) 각 칸의 틀린 낱말은 원래 오답 낱말에서만 씀
+TEMPL = {'grid': [(0, 0), (0, 1), (1, 0), (1, 1), (2, 2)], 'chainA': [(0, 0), (1, 0), (1, 1), (2, 1), (3, 2)],
+         'chainB': [(0, 0), (0, 1), (1, 1), (1, 2), (2, 3)], 'pairs': [(0, 0), (0, 1), (1, 2), (2, 2), (3, 3)]}
+FALLBACK = {'fanA': [(0, 0), (1, 0), (2, 0), (0, 1), (1, 1)], 'fanB': [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1)]}   # 한쪽 오답 낱말이 하나뿐일 때
+STATS = {}
 def fix(it, rng, gloss, TR=None, key=None):
     import os
     if os.environ.get("NOGRID"): return False
-    """it['o'][0] = 정답 짝. 패턴이 있으면 격자로 바꾸고 True"""
     o = [tuple(p) for p in it['o']]
-    if not leak(o): return False
     a, b = o[0]
-    onlyA = [p for p in o[1:] if p[0] == a]; onlyB = [p for p in o[1:] if p[1] == b]
-    wrongA = [p[0] for p in o[1:] if p[0] != a]; wrongB = [p[1] for p in o[1:] if p[1] != b]
-    # a' = 정답 b와 짝지어졌던 틀린 (A)(= 확실히 틀린 말), 없으면 다른 틀린 (A)
-    a2 = onlyB[0][0] if onlyB else wrongA[0]
-    b2 = onlyA[0][1] if onlyA else wrongB[0]
-    if a2 == a or b2 == b: raise SystemExit('grid fail %r' % (o,))
-    grid = [(a, b), (a, b2), (a2, b), (a2, b2)]
-    rest = [p for p in o[1:] if p not in grid and p[0] not in (a, a2) and p[1] not in (b, b2)]
-    za = [p[0] for p in o[1:] if p[0] not in (a, a2)]; zb = [p[1] for p in o[1:] if p[1] not in (b, b2)]
-    cands = rest + [(x, y) for x in za for y in zb] + [(x, b2) for x in za] + [(a2, y) for y in zb]
-    z = next((c for c in cands if c not in grid and not leak(grid + [c])), None)
-    assert z, o
-    new = grid[1:] + [z]; rng.shuffle(new)
-    it['o'] = [(a, b)] + new
+    onlyB = [p[0] for p in o[1:] if p[1] == b and p[0] != a]; onlyA = [p[1] for p in o[1:] if p[0] == a and p[1] != b]
+    WA = list(dict.fromkeys(onlyB + [p[0] for p in o[1:] if p[0] != a]))   # 한 칸 함정 낱말을 앞에
+    WB = list(dict.fromkeys(onlyA + [p[1] for p in o[1:] if p[1] != b]))
+    ok = [k for k, T in TEMPL.items() if len({x for x, _ in T}) - 1 <= len(WA) and len({y for _, y in T}) - 1 <= len(WB)]
+    if not ok: ok = [k for k, T in FALLBACK.items() if len({x for x, _ in T}) - 1 <= len(WA) and len({y for _, y in T}) - 1 <= len(WB)]
+    assert ok, o
+    name = rng.choice(sorted(ok)); T = {**TEMPL, **FALLBACK}[name]; ci = rng.randrange(5)
+    ca, cb = T[ci]
+    ia = [x for x in dict.fromkeys(x for x, _ in T) if x != ca]; ib = [y for y in dict.fromkeys(y for _, y in T) if y != cb]
+    MA = {ca: a, **{x: WA[i] for i, x in enumerate(ia)}}; MB = {cb: b, **{y: WB[i] for i, y in enumerate(ib)}}
+    new = [(MA[x], MB[y]) for x, y in T]
+    wrong = [p for i, p in enumerate(new) if i != ci]; rng.shuffle(wrong)
+    it['o'] = [(a, b)] + wrong
     assert len(set(it['o'])) == 5 and not leak(it['o']), it['o']
-    # 해설: 낱말 하나를 설명하는 '① w(뜻)…' 조각만 남기고(빠진 낱말이 섞인 조각·짝 설명 'X → Y' 조각은 지움),
-    #       설명이 없는 오답 짝은 '두 칸 모두 함정' 줄을 새로 붙임
+    STATS[(name, ci)] = STATS.get((name, ci), 0) + 1
+    # 해설: 낱말 하나를 설명하는 '① w(뜻)…' 조각만 남기고(빠진 낱말이 섞인 조각·짝 설명 'X → Y' 조각은 지움), 설명 없는 오답은 줄을 새로 붙임
     src = TR.pop(key) if (TR is not None and key in TR) else it['tr']
     G = dict(re.findall(r'([A-Za-z][A-Za-z\-]*)\(([^()]*?)\)', src))
     gl = lambda w: G.get(w) or gloss(w) or ''
     words = {w for p in it['o'] for w in p}
     parts = re.split(r' (?=[①②③④⑤]+\s*\(?[A-Za-z])', src)
+    if re.match(r'[①②③④⑤]', parts[0]): parts = [''] + parts
     def tagged(c): return re.findall(r'[①②③④⑤]+\s*\(?([A-Za-z][A-Za-z\-]*(?: [a-z][a-z\-]*)?)', c)
-    def ok(c):
+    first = {w.split()[0] for w in words}
+    def good(c):
         if '→' in c: return False
-        for t in tagged(c):
-            if not (t in words or t.split()[0] in {w.split()[0] for w in words}): return False
-        return True
-    if re.match(r'[①②③④⑤]', parts[0]): parts = [''] + parts      # 머리말 없이 바로 '① …'로 시작
-    kept = [c for c in parts[1:] if ok(c)]
+        return all(t in words or t.split()[0] in first for t in tagged(c))
+    kept = [c for c in parts[1:] if good(c)]
     expl = set()
     for c in kept:
-        for t in tagged(c):
-            expl |= {w for w in words if w == t or w.split()[0] == t.split()[0]}
+        for t in tagged(c): expl |= {w for w in words if w == t or w.split()[0] == t.split()[0]}
     out = [parts[0].strip()] + kept
-    def gg(ws): 
+    def gg(ws):
         g = [gl(w) for w in ws if gl(w)]
         return '(%s)' % ' · '.join(g) if len(g) == len(ws) else ''
     for p in it['o'][1:]:
-        wrong = [w for w, c in zip(p, (a, b)) if w != c]
-        if p == (a2, b2): out.append('① %s → %s: 두 칸 모두 함정이에요%s.' % (p[0], p[1], gg(p))); continue
-        if all(w in expl for w in wrong): continue
-        if len(wrong) == 1:
-            w = wrong[0]; out.append('① %s%s는 %s 자리에 맞지 않아요.' % (w, ('(%s)' % gl(w)) if gl(w) else '', '(A)' if p[0] == w else '(B)'))
-        else: out.append('① %s → %s: 둘 다 근거와 맞지 않아요%s.' % (p[0], p[1], gg(p)))
-        expl |= set(wrong)
+        wi = [i for i, (w, c) in enumerate(zip(p, (a, b))) if w != c]; wr = [p[i] for i in wi]
+        if all(w in expl and w not in (a, b) for w in wr): continue
+        if len(wr) == 1:
+            w = wr[0]; out.append('① %s%s는 %s 자리에 맞지 않아요.' % (w, ('(%s)' % gl(w)) if gl(w) else '', '(AB)'[wi[0] * 1 + 0:wi[0] + 1] and ('(A)' if wi[0] == 0 else '(B)')))
+        else: out.append('① %s → %s: 두 칸 모두 함정이에요%s.' % (p[0], p[1], gg(p)))
+        expl |= set(wr)
     it['tr'] = ' '.join(x for x in out if x)
     it['_grid'] = True
     return True

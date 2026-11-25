@@ -499,7 +499,8 @@ def _grid(L):
         x['_grid'] = True
 import re, random as _rnd
 _R = _rnd.Random(1124)
-for _L in (H37, H38, H39, H40, H41): _grid(_L)
+# 11/24 21:45 격자 고정 대신 gridfix.py가 모든 세트 선택지 모양을 섞음 → 여기서는 원래 선택지 그대로 둠
+# for _L in (H37, H38, H39, H40, H41): _grid(_L)
 for _sid, _items in (('boss2509g', H35 + H36), ('boss2509h', H37 + H38), ('boss2509i', H39 + H40), ('boss2509j', H41)):
     assert len(_items) == 20, _sid
     next(s for s in SETS if s['id'] == _sid)['items'] = _items
