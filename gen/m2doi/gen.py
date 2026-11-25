@@ -160,13 +160,18 @@ it7 = [ord_item(S7, o, t) for o, t in zip(O7, tg7)] + [ins_test(x, '7과') for x
 key8 = {(m, i) for m, i in T8}; sel8 = [x for x, (m, i, _) in zip(IT8, I8) if (m, i) in key8]; assert len(sel8) == 11
 it8 = [ord_item(S8, o, t) for o, t in zip(O8, tg8)] + [ins_test(x, '8과') for x in sel8]
 TESTS = [test('m2oi-7', '순서·삽입 실전 7과 (본문 4개 축제)', '순서·삽입 7과', it7), test('m2oi-8', '순서·삽입 실전 8과 (본문 시간 여행·공룡)', '순서·삽입 8과', it8)]
+exec(open(__file__.replace('gen.py', 'mood.py'), encoding='utf-8').read())
+mi = mood_test_items(); mt = {'id': 'm2oi-9', 'title': '심경 변화·내용 T/F 실전 8과', 'short': '심경·T/F 8과', 'school': '중2 동아(윤정미)', 'minutes': 30,
+      'items': [dict(it, n=n, en=True, ctx='', pts=4, words=[], kos=[]) for n, it in enumerate(mi, 1)]}
+assert len(mt['items']) == 25 and sum(x['pts'] for x in mt['items']) == 100
+TESTS.append(mt)
 print('삽입 DAY', len(IT7), len(IT8), '· 시험 정답', [''.join(C[i['ans']] for i in t['items']) for t in TESTS])
 if 'emit' in sys.argv:
     od7 = order_day('od7', '7과 본문 · 문장 순서', S7, [['❶', '❷'], ['❸', '❹']], sum(len(S7[m]) for m in S7))
     od8 = order_day('od8', '8과 본문 · 문장 순서', S8, [['❶', '❷'], ['❸', '❹'], ['❺', '❻']], sum(len(S8[m]) for m in S8))
     oi7 = ins_day('oi7', '7과 본문 · 문장 삽입', IT7); oi8 = ins_day('oi8', '8과 본문 · 문장 삽입', IT8)
-    oi7['passage'] = D['d1']['passage'] + D['d2']['passage']; oi8['passage'] = D['d3']['passage'] + D['d4']['passage']
-    PK['days'] = [d for d in PK['days'] if d['id'] not in ('od7', 'oi7', 'od8', 'oi8')] + [od7, oi7, od8, oi8]
+    oi7['passage'] = D['d1']['passage'] + D['d2']['passage']; oi8['passage'] = D['d3']['passage'] + D['d4']['passage']; oe8['passage'] = D['d3']['passage'] + D['d4']['passage']
+    PK['days'] = [d for d in PK['days'] if d['id'] not in ('od7', 'oi7', 'od8', 'oi8', 'oe8')] + [od7, oi7, od8, oi8, oe8]
     for i, d in enumerate(PK['days']): d['name'] = 'DAY %d' % (i + 1)
     src = open(path, encoding='utf-8').read(); head = src[:src.index('window.PKG')]
     tail = src[src.index('/* WRAPUP-TESTS'):] if '/* WRAPUP-TESTS' in src else ''
@@ -178,4 +183,4 @@ if 'emit' in sys.argv:
         ids = [t['id'] for t in TESTS]
         tail = tail.rstrip('\n') + '\n/* M2OI-TESTS: gen/m2doi/gen.py 로 만듦 (손으로 고치지 말 것) */\nwindow.PKG.tests = (window.PKG.tests || []).filter(function (t) { return %s.indexOf(t.id) < 0; }).concat(%s);\n/* /M2OI-TESTS */\n' % (json.dumps(ids), json.dumps(TESTS, ensure_ascii=False))
         open(path, 'a', encoding='utf-8').write(tail)
-    print([d['name'] + ' ' + d['range'] for d in PK['days']][-4:], [len(it['lines']) for it in od7['steps'][0]['items']], [len(it['lines']) for it in od8['steps'][0]['items']])
+    print([d['name'] + ' ' + d['range'] for d in PK['days']][-5:], [len(it['lines']) for it in od7['steps'][0]['items']], [len(it['lines']) for it in od8['steps'][0]['items']])
