@@ -87,9 +87,11 @@ def sheet(P, t, answers):
     return '\n'.join(h)
 
 # ---- 1) 시험 모으기
+SKIP = {'m2v'}
 units = []
 for f in sorted(os.listdir(os.path.join(R, 'data'))):
     if not f.endswith('.js'): continue
+    if f[:-3] in SKIP: continue   # 11/25 배포 안 한 옛 복사본(m2v = 중2 비상 황종배 옛 단원) → 보관함에 두 번 나오던 것
     P = load(os.path.join(R, 'data', f))
     if not P.get('tests'): continue
     folder = next((d for d in os.listdir(os.path.join(R, 'dist', 'github')) if d.startswith(f[:-3] + '-')), '')
