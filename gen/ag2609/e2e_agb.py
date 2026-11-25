@@ -12,7 +12,7 @@ try:
     T=pg.evaluate('PKG.tests.map((t,ti)=>({ti:ti,id:t.id,kind:t.kind,items:t.items.map(i=>({n:i.n,ans:i.ans,bl:(i.blanks||[]).map(b=>b.ans[0])}))})).filter(t=>t.kind==="bimi")')
     for t in T:
         for mode in ('right','wrong'):
-            if mode=='wrong' and t['id']!='agb-38': continue
+            if mode=='wrong' and t['id']!='agb-j35': continue
             pg.goto('http://localhost:%s/?test'%port); pg.wait_for_timeout(400)
             pg.locator('[data-tab="bimi"]').click(); pg.wait_for_timeout(300)
             if mode=='right': pg.locator('[data-tgo2="%d"]'%t['ti']).click()
