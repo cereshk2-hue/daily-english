@@ -4,6 +4,7 @@ import boss6_a, boss6_b
 from boss6_core import P
 SETS = boss6_a.SETS + boss6_b.SETS
 exec(open('/home/claude/srcrepo/wrapup/boss6_s3.py', encoding='utf-8').read())   # 11/24 26번 제외 → 세트 3 = 24번 20문항(고정 규칙 어휘)
+exec(open('/home/claude/srcrepo/wrapup/boss6_hard.py', encoding='utf-8').read())   # 11/25 1·2·4~10세트 어휘 끝판왕화 (선생님: 고2인 만큼 난이도 확실히)
 CTX = {'hard': False}
 TR = {}
 import boss2_data as _b2
