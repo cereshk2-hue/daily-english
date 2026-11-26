@@ -1,4 +1,4 @@
-# 11/26 대진고2 10월 모고(2026 경기 고2 학평) 시험범위 20~24·29~42번 '어법·어휘 한 판' DAY 6개 (h2-ne-oh-L3 맨 끝: gm1~gm6, 3지문씩 = 덩이 3개)
+# 11/26 대진고2 10월 모고(2026 경기 고2 학평) 시험범위 20~24·29~42번 '어법·어휘 한 판' DAY 6개 (h2-ne-oh-L3 맨 끝: gm1~gm6, 3지문씩, 11/26부터 문장 하나씩 덩이 + 앞뒤 문장은 흐린 문맥)
 # 선생님 자료: 이그잼포유 WORKBOOK 6 어법·어휘 고르기 hwp → work_src/djmock/oct_wb6.txt. 괄호·정답은 워크북 그대로(정답 줄 대조), 해설 ex.py 손글씨
 # 고친 것: a(n) → 본문 관사, 41~42번 presenting → 본문 providing, 29번 첫 문장 앞 25~28번 실용문 떼기, 40번 요약문 문장 뺌
 # 뺀 괄호(다른 쪽도 말이 됨): 24 assertion/assumption, 39 textual/visual, 40 frequency/duration
@@ -42,12 +42,15 @@ for gi, G in enumerate(GROUPS, 1):
                 if a.split()[-1].lower().replace('’', "'") not in ex.lower(): BAD.append((k, a, ex[:60]))
             parts.append({'s': s, 'ko': ko, 'ex': ex})
         c = sum(p['s'].count('{') for p in parts); nb += c
-        items.append({'title': '%s번 · %s (괄호 %d개)' % (k, TOPIC[k], c), 'parts': parts})
+        for j, p in enumerate(parts):   # 11/26 선생님: 힘들어 보임 → 문장 하나씩 덩이(틀리면 그 문장만 다시)
+            cx = lambda q: {'s': plain(q['s']), 'ko': q['ko'], 'ex': '', 'ctx': True}   # 앞뒤 문장은 문맥으로만(괄호 없음, 흐리게)
+            ps = ([cx(parts[j - 1])] if j else []) + [p] + ([cx(parts[j + 1])] if j + 1 < len(parts) else [])
+            items.append({'title': '%s번 %d/%d · %s (괄호 %d개)' % (k, j + 1, len(parts), TOPIC[k], p['s'].count('{')), 'parts': ps})
     nums = '·'.join(G)
     days.append({'id': 'gm%d' % gi, 'name': '', 'range': '모의고사 어법·어휘 한 판 · 10월 %s번' % nums,
-                 'story': '모의고사 어법·어휘 한 판 · 10월 모고 %s번 · 괄호 %d개, 지문 3개 = 덩이 3개 · 덩이마다 모두 맞혀야 100점' % (nums, nb),
+                 'story': '모의고사 어법·어휘 한 판 · 10월 모고 %s번 · 괄호 %d개, 문장 하나씩 %d덩이 · 문장마다 모두 맞혀야 통과' % (nums, nb, len(items)),
                  'passage': sum((D['q' + k.split('~')[0]]['passage'] for k in G), []),
-                 'steps': [{'type': 'gate', 'title': '모의고사 어법·어휘 한 판', 'guide': "지문 3개를 한 덩이씩 풀어요. 어법 괄호와 어휘(문맥상 반대말·헷갈리는 낱말) 괄호가 섞여 있어요. 덩이마다 괄호를 모두 맞혀야 100점, 하나라도 틀리면 0점! 3번 안에 통과 못 하면 틀린 문장만 해설과 함께 연습하고 다시 도전해요.",
+                 'steps': [{'type': 'gate', 'title': '모의고사 어법·어휘 한 판', 'guide': "지문 3개를 문장 하나씩 풀어요. 흐린 글씨는 앞뒤 문장(문맥)이에요. 어법 괄호와 어휘(문맥상 반대말·헷갈리는 낱말) 괄호가 섞여 있어요. 문장 속 괄호를 모두 맞히면 통과, 틀리면 그 문장만 다시! 3번 안에 통과 못 하면 해설을 보고 연습한 뒤 다시 도전해요.",
                             'items': items}]})
     tot += nb
 assert not BAD, '\n'.join(map(str, BAD))

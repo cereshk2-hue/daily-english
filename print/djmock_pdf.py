@@ -40,8 +40,11 @@ H = '<!doctype html><html><head><meta charset="utf-8"><style>%s</style></head><b
 P, K = [], []
 for gid, les in [('gm%d' % i, '10월 모고') for i in range(1, 7)]:
     d = next(x for x in PK['days'] if x['id'] == gid)
+    G = {}   # 11/26 문장 하나씩 덩이 → 번호별로 다시 묶고 문맥(ctx) 문장은 뺌
     for it in d['steps'][0]['items']:
-        R = [(p['s'], p['ex']) for p in it['parts']]; t = it['title']
+        no = it['title'].split('번')[0]; G.setdefault(no, [re.sub(r' \d+/\d+ · ', ' · ', re.sub(r' \(괄호 \d+개\)', '', it['title'])), []])[1] += [(p['s'], p['ex']) for p in it['parts'] if not p.get('ctx')]
+    for t, R in G.values():
+        t = '%s (괄호 %d개)' % (t, sum(s.count('{') for s, _ in R))
         P.append(page(les, t, R)); K.append(key(les, t, R))
 doc = H + '<div class="pb"></div>'.join(P) + ''.join(K) + '</body></html>'
 open('/home/claude/out/djmock/djmock.html', 'w', encoding='utf-8').write(doc)
