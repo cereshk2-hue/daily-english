@@ -1,6 +1,9 @@
-# 11/26 대진고2 10월 모고 20~24·29~42번 (gm1~gm6) — djgate_pdf.py 복사. 원래: 3·4과 본문 어법·어휘 한 판 인쇄용 PDF (덩이별 문제지 + 정답·해설) — data/h2-ne-oh-L3.js gt3·gt4 그대로
-import re, html, json, subprocess
-PK = json.loads(subprocess.check_output(['node', '-e', "global.window={};require('/home/claude/proj/data/h2-ne-oh-L3.js');process.stdout.write(JSON.stringify(window.PKG))"]))
+# 11/26 모고 어법·어휘 한 판 인쇄용 PDF (지문별 문제지 + 정답·해설). 사용: python3 djmock_pdf.py [단원 id] [DAY id 접두어들,] [머리글] [출력 pdf]
+#   기본 = 대진고2 h2-ne-oh-L3 gm (10월 경기 고2). 안곡고1: h1-donga-lee-L3 gs,go '안곡고1 · 2026 9·10월 고1 학평' …
+import re, html, json, subprocess, sys
+A = sys.argv[1:] + [None] * 4
+UNIT = A[0] or 'h2-ne-oh-L3'; PRE = tuple((A[1] or 'gm').split(',')); HEADL = A[2] or '대진고2 · 2026 10월 경기 고2 학평'; OUT = A[3] or '/home/claude/out/djmock/대진고2_10월모고_어법어휘한판.pdf'
+PK = json.loads(subprocess.check_output(['node', '-e', "global.window={};require('/home/claude/proj/data/%s.js')" % UNIT + ";process.stdout.write(JSON.stringify(window.PKG))"]))
 E = lambda s: html.escape(s, quote=False)
 def q(s, n):
     out = []
@@ -30,7 +33,7 @@ def key(i, title, R):
     return '<div class="pb"></div><h1>외부지문 %d · 정답과 해설</h1><div class="sub">Reading Material %d · %s</div>%s<h2>문장별 해설</h2>%s' % (i, i, title, t, exs)
 def page(les, it, R):
     n = [0]; body = ' '.join(q(s, n) for s, _ in R)
-    return '<h1>%s · %s <span class="nm">이름 ________ 점수 ____ / %d</span></h1><div class="sub">대진고2 · 2026 10월 경기 고2 학평 · 어법·어휘 한 판 · 괄호 안에서 어법·문맥에 맞는 것에 ○ 하세요.</div><div class="pass">%s</div>' % (les, it, n[0], body)
+    return '<h1>%s · %s <span class="nm">이름 ________ 점수 ____ / %d</span></h1><div class="sub">%s · 어법·어휘 한 판 · 괄호 안에서 어법·문맥에 맞는 것에 ○ 하세요.</div><div class="pass">%s</div>' % (les, it, n[0], HEADL, body)
 def key(les, it, R):
     rows = ans(R); half = (len(rows) + 1) // 2
     t = '<table><tr><th>번호</th><th>정답</th><th>오답</th><th>번호</th><th>정답</th><th>오답</th></tr>' + ''.join('<tr>%s%s</tr>' % (rows[j], rows[j + half] if j + half < len(rows) else '<td></td><td></td><td></td>') for j in range(half)) + '</table>'
@@ -38,8 +41,8 @@ def key(les, it, R):
     return '<div class="pb"></div><h1>%s · %s · 정답과 해설</h1>%s<h2>문장별 해설</h2>%s' % (les, it, t, exs)
 H = '<!doctype html><html><head><meta charset="utf-8"><style>%s</style></head><body>' % CSS
 P, K = [], []
-for gid, les in [('gm%d' % i, '10월 모고') for i in range(1, 7)]:
-    d = next(x for x in PK['days'] if x['id'] == gid)
+for d in [x for x in PK['days'] if x['id'].startswith(PRE) and x['steps'][0]['type'] == 'gate']:
+    les = '모의고사'
     G = {}   # 11/26 문장 하나씩 덩이 → 번호별로 다시 묶고 문맥(ctx) 문장은 뺌
     for it in d['steps'][0]['items']:
         no = it['title'].split('번')[0]; G.setdefault(no, [re.sub(r' \d+/\d+ · ', ' · ', re.sub(r' \(괄호 \d+개\)', '', it['title'])), []])[1] += [(p['s'], p['ex']) for p in it['parts'] if not p.get('ctx')]
@@ -47,9 +50,9 @@ for gid, les in [('gm%d' % i, '10월 모고') for i in range(1, 7)]:
         t = '%s (괄호 %d개)' % (t, sum(s.count('{') for s, _ in R))
         P.append(page(les, t, R)); K.append(key(les, t, R))
 doc = H + '<div class="pb"></div>'.join(P) + ''.join(K) + '</body></html>'
-open('/home/claude/out/djmock/djmock.html', 'w', encoding='utf-8').write(doc)
+open(OUT[:-4] + '.html', 'w', encoding='utf-8').write(doc)
 from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
-    b = p.chromium.launch(); pg = b.new_page(); pg.goto('file:///home/claude/out/djmock/djmock.html'); pg.wait_for_timeout(500)
-    pg.pdf(path='/home/claude/out/djmock/대진고2_10월모고_어법어휘한판.pdf', format='A4', print_background=True); b.close()
+    b = p.chromium.launch(); pg = b.new_page(); pg.goto('file://' + OUT[:-4] + '.html'); pg.wait_for_timeout(500)
+    pg.pdf(path=OUT, format='A4', print_background=True); b.close()
 print('ok')

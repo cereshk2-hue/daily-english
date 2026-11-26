@@ -23,7 +23,7 @@ def test_label(t):
 def day_label(d):
     r = str(d.get('range', '')).replace('어법·어휘 한 판', '어법어휘')
     m = re.match(r'^모의고사 (어법어휘|문장 순서) · (\d+월) (.+?)번$', r)
-    if m: return '모고 %s %s' % ('순서' if m.group(1) == '문장 순서' else m.group(1), m.group(3))   # 11/26 대진고 모고 어법·어휘 한 판 (12자 넘어도 자르지 않음)
+    if m: return '모고 %s %s %s' % ('순서' if m.group(1) == '문장 순서' else m.group(1), m.group(2), m.group(3))   # 9월 30 · 10월 30 구분   # 11/26 대진고 모고 어법·어휘 한 판 (12자 넘어도 자르지 않음)
     r = re.sub(r'^실전 어휘 뚫기\s*\d+\s*·\s*', '어휘 ', r); r = re.sub(r'^내용 꿰뚫기\s*\d*\s*·\s*', '꿰뚫기 ', r); r = re.sub(r'^끝판왕 어휘 심화\s*\d*\s*·\s*', '심화 ', r)
     r = re.sub(r'^YBM\s*', 'YBM', r).replace(' · ', ' ').replace('번', '').replace('Lesson ', 'L').replace('본문 ', '본문')
     return re.sub(r'\s+', ' ', r).strip()[:12]
