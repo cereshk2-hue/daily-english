@@ -7,7 +7,7 @@ def fix3(*pairs):
 C = dict(
  STEMS=[0, 11, 19, 28, 32, 37, 44, 54, 61, 68, 80, 84, 88, 96, 116, 124, 133, 141, 149, 158, 162, 167, 174, 184, 191, 198, 211, 215, 219, 224, 244, 255],
  END=264,
- LINEFIX={217: _L[217].replace('relieved', 'intensified')},
+ LINEFIX={217: _L[217].replace('relieved', 'intensified'), 182: '다음 글을 읽고 물음에 답하시오.(23)'},   # 11/26 '다음을 읽고' 머리말이 묶음으로 안 잡혀 23번 본문에 24·25번 지문이 붙고 24·25번엔 지문이 없던 것
  FIXT=[('자가장 적절한', '가장 적절한'), ('further clarified texts', 'further clarify texts'), ('in which the rhythm is unambiguous', 'which the rhythm is unambiguous'), ('where ⓐ[expect]', 'where ㉤[expect]')],
  DROP={10: [70], 13: [89, 90, 91], 14: list(range(97, 109)) + list(range(110, 116)), 15: [117, 118, 119], 16: [125, 126], 26: [200],
        29: [220], 30: list(range(225, 237)) + list(range(238, 244)), 31: [245, 246], 32: [256, 257]},

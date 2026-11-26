@@ -166,6 +166,9 @@ def parse(fk):
         exs += orig
         it.update({'body': esc('\n'.join(rest).strip()).replace('\n', '<br>'), 'opts': [esc(o) for o in opts], 'en': sum(c.isascii() and c.isalpha() for c in opts[0]) > len(opts[0]) * .5,
                    'ans': ans[0] if len(ans) == 1 else ans, 'ex': '\n'.join(exs)})
+        if key == ('3', 28):   # 11/26 FIXT로 번호(③→④·④→⑤)를 고치면서 ④ 밑줄 시작이 빠지고 끝 </u>가 하나 남던 것
+            assert it['body'].count('④ Spending') == 1 and it['body'].count('happiness</u>') == 1
+            it['body'] = it['body'].replace('④ Spending', '④ <u>Spending').replace('happiness</u>', 'happiness')
         it.setdefault('ctx', '')
         items.append(it)
     return items, groups

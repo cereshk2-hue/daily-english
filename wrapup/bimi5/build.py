@@ -118,6 +118,7 @@ def parse(fk, C):
             else: rest.append(bl_[i].rstrip())
             i += 1
         if not all(opts): opts = [o or CIRC[k] for k, o in enumerate(opts)]
+        opts = [re.sub(r'\s+–\s+(?=[-…])', ' ', o) for o in opts]   # 11/26 표 모양 선택지 줄바꿈 찌꺼기 ' – -' · ' – ……' 지움
         if n in C.get('OPTS', {}): opts = C['OPTS'][n]
         mk = ''.join(CIRC[a] for a in ans)
         kexp = kx_ + kexp
