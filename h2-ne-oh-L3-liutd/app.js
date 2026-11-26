@@ -409,7 +409,7 @@
       return { t: 'gate', title: ch.title || ('덩이 ' + (ci + 1)), key: (step.title || '한 판') + ' · ' + (ch.title || ci + 1), round: 1, tries: 0, miss: [], phase: 'play',
         parts: ch.parts.map(function (p) { var segs = [], re = /\{([^}]*)\}/g, last = 0, m;
           while ((m = re.exec(p.s))) { segs.push({ x: p.s.slice(last, m.index) }); var o = m[1].split('|'); segs.push({ ans: o[0], opts: shuffle(o.slice()) }); last = m.index + m[0].length; }
-          segs.push({ x: p.s.slice(last) }); return { segs: segs, ko: p.ko || '', ex: p.ex || '' }; }) };
+          segs.push({ x: p.s.slice(last) }); return { segs: segs, ko: p.ko || '', ex: p.ex || '', ctx: !!p.ctx }; }) }; /* 11/26 ctx: 앞뒤 문맥 문장(괄호 없음, 흐리게) */
     });
     if (t === 'tf') return shuffle(it).map(function (q) { return { t: 'tf', s: q[0], ans: q[1], ex: q[2], key: q[0].split(' ').slice(0, 4).join(' ') + '…' }; });
     if (t === 'verb') return shuffle(it).map(function (q) { return { t: 'verb', s: q.s, v: q.v, a: q.a, ex: q.ex, ph: step.ph, key: q.v + '→' + q.a[0] }; });
@@ -1116,7 +1116,7 @@
   function gateCSS() {
     if (document.getElementById('gatecss')) return;
     var c = document.createElement('style'); c.id = 'gatecss';
-    c.textContent = '.pool .chip.wrong{border-color:var(--bad);background:var(--bad-soft);color:var(--bad)}.gatebar{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent);border-radius:12px;padding:9px 12px;margin:0 0 8px;font-size:14px}.gatebar.bad{background:var(--bad-soft);color:var(--bad)}.gatebar.ok{background:var(--ok-soft);color:var(--ok)}' +
+    c.textContent = '.gs.ctx{color:var(--muted);font-size:.92em}.pool .chip.wrong{border-color:var(--bad);background:var(--bad-soft);color:var(--bad)}.gatebar{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent);border-radius:12px;padding:9px 12px;margin:0 0 8px;font-size:14px}.gatebar.bad{background:var(--bad-soft);color:var(--bad)}.gatebar.ok{background:var(--ok-soft);color:var(--ok)}' +
       '.gpara{line-height:2.15;font-size:15.5px}.gpara .gs{margin:0 0 10px}.gb{display:inline-flex;align-items:center;gap:2px;border:1.5px dashed var(--line);border-radius:10px;padding:1px 3px;margin:0 2px;white-space:nowrap}.gb i{font-style:normal;color:var(--muted);font-size:12px}' +
       '.gopt{font:inherit;font-size:14.5px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:1px 8px;line-height:1.6;cursor:pointer}.gopt.picked{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}' +
       '.gopt.right{border-color:var(--ok);background:var(--ok-soft);color:var(--ok);font-weight:700}.gopt.wrong{border-color:var(--bad);background:var(--bad-soft);color:var(--bad);text-decoration:line-through}.gb.done{border-style:solid;border-color:var(--ok)}' +
@@ -1126,7 +1126,7 @@
   }
   function gateCount(q) { var n = 0; q.parts.forEach(function (p) { p.segs.forEach(function (s) { if (s.opts) n++; }); }); return n; }
   function gateSent(p, pi, rev) {
-    return '<p class="gs">' + p.segs.map(function (s, si) { return s.opts ? '<span class="gb" data-g="' + pi + ':' + si + '">' + s.opts.map(function (o, oi) { return '<button class="gopt" data-o="' + oi + '">' + E(o) + '</button>'; }).join('<i>/</i>') + '</span>' : E(s.x); }).join('') +
+    return '<p class="gs' + (p.ctx ? ' ctx' : '') + '">' + p.segs.map(function (s, si) { return s.opts ? '<span class="gb" data-g="' + pi + ':' + si + '">' + s.opts.map(function (o, oi) { return '<button class="gopt" data-o="' + oi + '">' + E(o) + '</button>'; }).join('<i>/</i>') + '</span>' : E(s.x); }).join('') +
       '<span class="gko">' + E(p.ko) + '</span>' + (rev ? '<span class="gex" hidden>' + E(p.ex ? '해설 ▶ ' + p.ex : '') + '</span>' : '') + '</p>';
   }
   function ordBar(q) { /* 11/19 문장 순서 3번 도전: 틀려도 어디가 틀렸는지 안 알려 줌 → 3번 다 틀리면 오답 학습(맞는 조각만 들어감) → 처음부터 다시 3번 */
@@ -1186,7 +1186,7 @@
         q.passed = true; chk.hidden = true;
         card.querySelectorAll('.gopt').forEach(function (x) { x.disabled = true; if (x.classList.contains('picked')) { x.classList.remove('picked'); x.classList.add('right'); } });
         $('#gpara').classList.add('showko');
-        var first = q.round === 1, lines = q.parts.map(function (p, pi) { return (pi + 1) + ') ' + p.segs.filter(function (sg) { return sg.opts; }).map(function (sg) { return sg.ans; }).join(' / ') + (p.ex ? '  · ' + p.ex : ''); });
+        var first = q.round === 1, lines = q.parts.filter(function (p) { return !p.ctx; }).map(function (p, pi) { return (pi + 1) + ') ' + p.segs.filter(function (sg) { return sg.opts; }).map(function (sg) { return sg.ans; }).join(' / ') + (p.ex ? '  · ' + p.ex : ''); });
         answer(first, lines.join('\n'), '<b>100점! 통과</b> · ' + (first ? q.tries + '번째 도전에 통과했어요.' : q.round + '라운드 만에 통과했어요. (처음 3번 안에 못 해서 오답으로 남아요)'));
         return;
       }
