@@ -126,6 +126,16 @@ def parse(fk, C):
         if note: exs.insert(0, '[수정] ' + note)
         it.update({'body': esc('\n'.join(rest).strip()).replace('\n', '<br>'), 'opts': [esc(o) for o in opts], 'en': sum(c.isascii() and c.isalpha() for c in opts[0]) > len(opts[0]) * .5,
                    'ans': ans[0] if len(ans) == 1 else ans, 'ex': '\n'.join(x for x in exs if x)})
+        bx = re.search(r'<br>\s*① ?(\d)개\s+② ?(\d)개\s+③ ?(\d)개\s+④ ?(\d)개\s+⑤ ?(\d)개\s*$', it['body'])
+        if bx and '&lt;보기&gt;' in it['body'] and '개' not in ''.join(it['opts']):
+            # 11/26 선생님(학생 오류 신고): <보기> ①~⑩ 중 ①~⑤ 문장이 선택지로 잘못 읽히고 '① 2개 …' 줄이 본문에 남음 → 문장은 <보기>로, 선택지는 개수로
+            fixo = lambda o: re.sub(r'\s+', ' ', o.replace(' – ', ' ').replace('________', ' ')).strip()
+            body0 = it['body'][:bx.start()]
+            pre, post = body0.split('&lt;보기&gt;', 1)
+            post = re.sub(r'(?<=<br>)([⑥-⑩]) ', lambda m: m.group(1) + ' ', post)
+            post = '<br>'.join(fixo(x) for x in post.split('<br>'))
+            it['body'] = pre + '&lt;보기&gt;' + ''.join('<br>%s %s' % (CIRC[k], fixo(o)) for k, o in enumerate(it['opts'])) + post.rstrip('<br>').rstrip()
+            it['opts'] = ['%s개' % g for g in bx.groups()]; it['en'] = False
         if it_g is not None: it['grp'] = it_g; it['ctx'] = '<b>' + esc(groups[it_g]['head']) + '</b><br>' + esc(groups[it_g]['text']).replace('\n', '<br>')
         it.setdefault('ctx', '')
         items.append(it)

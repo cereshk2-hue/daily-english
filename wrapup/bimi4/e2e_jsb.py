@@ -18,7 +18,7 @@ try:
             if mode=='right': pg.locator('[data-tgo2="%d"]'%t['ti']).click()
             else: pg.locator('[data-tgo2="%d"]'%t['ti']).click()
             pg.wait_for_timeout(400)
-            if t['id']=='bimi-3536' and mode=='right': pg.screenshot(path='/home/claude/work/j1b_omr.png',full_page=True)
+            if t['id'] in ('bimi-3536','bimi-3738') and mode=='right': pg.screenshot(path='/home/claude/work/j1b_omr.png',full_page=True)
             for k,it in enumerate(t['items']):
                 if it['bl']:
                     for inp,v in zip(pg.locator('#tq%d input'%k).all(),it['bl']): inp.fill(v)
@@ -32,7 +32,7 @@ try:
             if pg.locator('#tsubmit').count(): pg.click('#tsubmit')
             pg.wait_for_timeout(700)
             res.append((t['id'],mode,pg.locator('.tres').inner_text().replace('\n',' ')[:150]))
-            if t['id']=='bimi-3536' and mode=='right': pg.screenshot(path='/home/claude/work/j1bimi_res.png',full_page=True)
+            if t['id'] in ('bimi-3536','bimi-3738') and mode=='right': pg.screenshot(path='/home/claude/work/j1bimi_res.png',full_page=True)
     print(errs); b.close()
 finally: srv.terminate()
 for r in res: print(r)
