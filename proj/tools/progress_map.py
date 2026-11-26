@@ -11,18 +11,20 @@ SCHOOL = {  # 단원 → 학교·학년 (진도표 검색용 · 모르는 단원
 def test_label(t):
     # 진도표 시험 칸 머리: (종류, 작은 글씨) — 여기만 고치면 진도표 이름이 바뀜(Code.gs 다시 붙일 필요 없음)
     ti = re.sub(r'\s+', ' ', t.get('title', '') or t.get('short', ''))
-    kinds = [('끝판왕', '끝판왕'), ('비밀노트', '비밀노트'), ('Wrap-up', 'Wrap-up'), ('변형기출', '변형기출'), ('기출 마무리', '기출마무리'), ('기출 선별', '기출선별'), ('실전 변형', '실전변형'), ('실전 문제', '실전문제'), ('문법', '문법')]
+    kinds = [('끝판왕', '끝판왕'), ('비밀노트', '비밀노트'), ('실전기출', '실전기출'), ('Wrap-up', 'Wrap-up'), ('변형기출', '변형기출'), ('기출 마무리', '기출마무리'), ('기출 선별', '기출선별'), ('기출 변형', '기출변형'), ('최종 점검', '최종점검'), ('실전 변형', '실전변형'), ('실전 문제', '실전문제'), ('문법', '문법')]
     kind = next((k for w, k in kinds if w.lower() in ti.lower()), '')
     m = re.search(r'(\d{4})\s*기출', ti)
     if not kind and m: kind = '%s 기출' % m.group(1)
     sub = ti
-    for w in ['너른터 ', '끝판왕 ', '비밀노트 ', '변형기출 ', '기출 마무리 ', '기출 선별 ', '실전 변형 ', '실전 문제 ', '요약문 ', '문법 ', '%s 기출 ' % (m.group(1) if m else '@@')]: sub = sub.replace(w, '')
+    for w in ['너른터 ', '끝판왕 ', '비밀노트 ', '변형기출 ', '기출 마무리 ', '기출 선별 ', '기출 변형 ', '최종 점검 ', '실전 변형 ', '실전 문제 ', '요약문 ', '문법 ', '%s 기출 ' % (m.group(1) if m else '@@')]: sub = sub.replace(w, '')
     sub = re.sub(r'(?i)\s*wrap-?up\s*', ' ', sub); sub = re.sub(r'\d+월\s*학평\s*', '', sub); sub = re.sub(r'^(천재|동아|비상|능률|미래엔|지학사)\s*', '', sub)
     sub = re.sub(r'\(([^)]*)\)', r'\1', sub).replace('번', '').replace(' · ', ' ').strip()
     return kind or '시험', sub[:14]
 def day_label(d):
-    r = str(d.get('range', ''))
-    r = re.sub(r'^실전 어휘 뚫기\s*\d+\s*·\s*', '어휘 ', r); r = re.sub(r'^내용 꿰뚫기\s*\d*\s*·\s*', '꿰뚫기 ', r)
+    r = str(d.get('range', '')).replace('어법·어휘 한 판', '어법어휘')
+    m = re.match(r'^모의고사 어법어휘 · (\d+월) (.+?)번$', r)
+    if m: return '모고 어법어휘 ' + m.group(2)   # 11/26 대진고 모고 어법·어휘 한 판 (12자 넘어도 자르지 않음)
+    r = re.sub(r'^실전 어휘 뚫기\s*\d+\s*·\s*', '어휘 ', r); r = re.sub(r'^내용 꿰뚫기\s*\d*\s*·\s*', '꿰뚫기 ', r); r = re.sub(r'^끝판왕 어휘 심화\s*\d*\s*·\s*', '심화 ', r)
     r = re.sub(r'^YBM\s*', 'YBM', r).replace(' · ', ' ').replace('번', '').replace('Lesson ', 'L').replace('본문 ', '본문')
     return re.sub(r'\s+', ' ', r).strip()[:12]
 RETIRED = {'h1-ybm-kim-L3': 'h1-mock-2509', 'm1-grammar-that': 'm1-grammar-to1'}  # 합쳐진 단원 → 지금 단원
@@ -33,6 +35,7 @@ def pkg(src):
     try: return json.loads(p.stdout.decode() or 'null')
     except Exception: return None
 uk, cur = {}, {}
+olddays = {}   # 11/20 (단원, DAY id) → 예전 DAY 범위 이름들 (이름이 바뀐 예전 기록을 같은 칸에)
 paths = sorted(set(x for x in g('log', '--all', '--format=', '--name-only', '--', '*/data/*.js').split('\n') if x.endswith('.js')))
 for path in paths:
     for c in [x for x in g('log', '--all', '--format=%h', '--', path).split() if x]:
@@ -42,6 +45,7 @@ for path in paths:
         if not P: continue
         pid = RETIRED.get(P['id'], P['id'])
         uk.setdefault(nz(P.get('unit', '') + ' ' + P.get('title', '')), pid)
+        for x in P.get('days', []): olddays.setdefault((pid, x.get('id')), set()).add(x.get('range', ''))
 # 지금 단원
 for d in sorted(os.listdir(REPO)):
     dd = os.path.join(REPO, d, 'data')
@@ -52,7 +56,7 @@ for d in sorted(os.listdir(REPO)):
         uk[nz(P.get('unit', '') + ' ' + P.get('title', ''))] = RETIRED.get(P['id'], P['id'])
         if P['id'] in RETIRED: continue
         cur[P['id']] = {'book': P.get('school', ''), 'school': SCHOOL.get(P['id'], ''), 'unit': P.get('unit', ''), 'title': P.get('title', ''), 'folder': d,
-                        'days': [[x['id'], x['name'], x.get('range', ''), day_label(x)] for x in P['days']],
+                        'days': [[x['id'], x['name'], x.get('range', ''), day_label(x)] + ([al] if (al := sorted(r for r in olddays.get((P['id'], x['id']), ()) if nz(r) != nz(x.get('range', '')) and nz(r) not in {nz(y.get('range', '')) for y in P['days']})) else []) for x in P['days']],
                         'tests': [['w:' + t['id'], t.get('short', ''), t.get('title', '')] + list(test_label(t)) + ([dict(P.get('testReset') or [])[t['id']]] if t['id'] in dict(P.get('testReset') or []) else []) for t in P.get('tests', [])]}  # 11/18 리셋 시각(ms) → 진도표가 그 전 기록을 뺌
 # 지금 보드에 없는 예전 단원은 지도에서 빼서(이름 그대로 따로 묶임) 혼동 없게
 uk = {k: v for k, v in uk.items() if v in cur}

@@ -44,10 +44,10 @@ for gi, G in enumerate(GROUPS, 1):
         c = sum(p['s'].count('{') for p in parts); nb += c
         items.append({'title': '%s번 · %s (괄호 %d개)' % (k, TOPIC[k], c), 'parts': parts})
     nums = '·'.join(G)
-    days.append({'id': 'gm%d' % gi, 'name': '', 'range': '10월 모고 %s번 · 어법·어휘 한 판' % nums,
-                 'story': '10월 모고 %s번 어법·어휘 한 판 · 괄호 %d개, 지문 3개 = 덩이 3개 · 덩이마다 모두 맞혀야 100점' % (nums, nb),
+    days.append({'id': 'gm%d' % gi, 'name': '', 'range': '모의고사 어법·어휘 한 판 · 10월 %s번' % nums,
+                 'story': '모의고사 어법·어휘 한 판 · 10월 모고 %s번 · 괄호 %d개, 지문 3개 = 덩이 3개 · 덩이마다 모두 맞혀야 100점' % (nums, nb),
                  'passage': sum((D['q' + k.split('~')[0]]['passage'] for k in G), []),
-                 'steps': [{'type': 'gate', 'title': '어법·어휘 한 판', 'guide': "지문 3개를 한 덩이씩 풀어요. 어법 괄호와 어휘(문맥상 반대말·헷갈리는 낱말) 괄호가 섞여 있어요. 덩이마다 괄호를 모두 맞혀야 100점, 하나라도 틀리면 0점! 3번 안에 통과 못 하면 틀린 문장만 해설과 함께 연습하고 다시 도전해요.",
+                 'steps': [{'type': 'gate', 'title': '모의고사 어법·어휘 한 판', 'guide': "지문 3개를 한 덩이씩 풀어요. 어법 괄호와 어휘(문맥상 반대말·헷갈리는 낱말) 괄호가 섞여 있어요. 덩이마다 괄호를 모두 맞혀야 100점, 하나라도 틀리면 0점! 3번 안에 통과 못 하면 틀린 문장만 해설과 함께 연습하고 다시 도전해요.",
                             'items': items}]})
     tot += nb
 assert not BAD, '\n'.join(map(str, BAD))
