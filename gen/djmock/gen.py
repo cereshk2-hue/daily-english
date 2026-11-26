@@ -1,4 +1,4 @@
-# 11/26 대진고2 10월 모고(2026 경기 고2 학평) 시험범위 20~24·29~42번 '어법·어휘 한 판' DAY 6개 (h2-ne-oh-L3 맨 끝: gm1~gm6, 3지문씩, 11/26부터 문장 하나씩 덩이 + 앞뒤 문장은 흐린 문맥)
+# 11/26 대진고2 10월 모고(2026 경기 고2 학평) 시험범위 20~24·29~42번 '어법·어휘 한 판' — 선생님: 한 지문이 한 판(완성) → 지문 하나 = DAY 하나 = 덩이 하나 (gm20~gm41, 18 DAY)
 # 선생님 자료: 이그잼포유 WORKBOOK 6 어법·어휘 고르기 hwp → work_src/djmock/oct_wb6.txt. 괄호·정답은 워크북 그대로(정답 줄 대조), 해설 ex.py 손글씨
 # 고친 것: a(n) → 본문 관사, 41~42번 presenting → 본문 providing, 29번 첫 문장 앞 25~28번 실용문 떼기, 40번 요약문 문장 뺌
 # 뺀 괄호(다른 쪽도 말이 됨): 24 assertion/assumption, 39 textual/visual, 40 frequency/duration
@@ -27,7 +27,7 @@ plain = lambda s: re.sub(r'\{([^|}]*)\|[^}]*\}', r'\1', s)
 TOPIC = {'20': '정원사 같은 부모', '21': '이자와 시간 인식', '22': '창작자의 사회적 책임', '23': '문어의 팔 뉴런', '24': '아리스토텔레스의 한계', '29': '인류 생존의 허들',
          '30': '비언어 신호의 우위', '31': '자동화된 습관', '32': '대중문화와 법원', '33': '발달의 가소성', '34': '상호 연결과 복잡한 실패', '35': '감염병 치료의 진보',
          '36': '사용성 테스트', '37': '재평가와 회복 탄력성', '38': '물의 수질 기준', '39': '사회사가의 사료 읽기', '40': '돌고래의 반향정위 뇌', '41~42': '지루함의 가치'}
-GROUPS = [['20', '21', '22'], ['23', '24', '29'], ['30', '31', '32'], ['33', '34', '35'], ['36', '37', '38'], ['39', '40', '41~42']]
+GROUPS = [[k] for k in ['20', '21', '22', '23', '24', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41~42']]
 days, tot, BAD = [], 0, []
 for gi, G in enumerate(GROUPS, 1):
     items, nb = [], 0
@@ -42,19 +42,16 @@ for gi, G in enumerate(GROUPS, 1):
                 if a.split()[-1].lower().replace('’', "'") not in ex.lower(): BAD.append((k, a, ex[:60]))
             parts.append({'s': s, 'ko': ko, 'ex': ex})
         c = sum(p['s'].count('{') for p in parts); nb += c
-        for j, p in enumerate(parts):   # 11/26 선생님: 힘들어 보임 → 문장 하나씩 덩이(틀리면 그 문장만 다시)
-            cx = lambda q: {'s': plain(q['s']), 'ko': q['ko'], 'ex': '', 'ctx': True}   # 앞뒤 문장은 문맥으로만(괄호 없음, 흐리게)
-            ps = ([cx(parts[j - 1])] if j else []) + [p] + ([cx(parts[j + 1])] if j + 1 < len(parts) else [])
-            items.append({'title': '%s번 %d/%d · %s (괄호 %d개)' % (k, j + 1, len(parts), TOPIC[k], p['s'].count('{')), 'parts': ps})
+        items.append({'title': '%s번 · %s (괄호 %d개)' % (k, TOPIC[k], c), 'parts': parts})
     nums = '·'.join(G)
-    days.append({'id': 'gm%d' % gi, 'name': '', 'range': '모의고사 어법·어휘 한 판 · 10월 %s번' % nums,
-                 'story': '모의고사 어법·어휘 한 판 · 10월 모고 %s번 · 괄호 %d개, 문장 하나씩 %d덩이 · 문장마다 모두 맞혀야 통과' % (nums, nb, len(items)),
+    days.append({'id': 'gm' + G[0].split('~')[0], 'name': '', 'range': '모의고사 어법·어휘 한 판 · 10월 %s번' % nums,
+                 'story': '모의고사 어법·어휘 한 판 · 10월 모고 %s번 · %s · 괄호 %d개 · 지문 전체를 한 번에 모두 맞혀야 100점' % (nums, TOPIC[G[0]], nb),
                  'passage': sum((D['q' + k.split('~')[0]]['passage'] for k in G), []),
-                 'steps': [{'type': 'gate', 'title': '모의고사 어법·어휘 한 판', 'guide': "지문 3개를 문장 하나씩 풀어요. 흐린 글씨는 앞뒤 문장(문맥)이에요. 어법 괄호와 어휘(문맥상 반대말·헷갈리는 낱말) 괄호가 섞여 있어요. 문장 속 괄호를 모두 맞히면 통과, 틀리면 그 문장만 다시! 3번 안에 통과 못 하면 해설을 보고 연습한 뒤 다시 도전해요.",
+                 'steps': [{'type': 'gate', 'title': '모의고사 어법·어휘 한 판', 'guide': "지문 하나를 한 판으로 완성해요. 어법 괄호와 어휘(문맥상 반대말·헷갈리는 낱말) 괄호가 섞여 있어요. 괄호를 모두 맞혀야 100점, 하나라도 틀리면 0점! 3번 안에 통과 못 하면 틀린 문장만 해설과 함께 연습하고 다시 도전해요.",
                             'items': items}]})
     tot += nb
 assert not BAD, '\n'.join(map(str, BAD))
-NEW = [d['id'] for d in days]
+NEW = [d['id'] for d in days] + ['gm%d' % i for i in range(1, 7)]   # 예전 3지문 DAY gm1~gm6 지움
 PK['days'] = [d for d in PK['days'] if d['id'] not in NEW] + days
 for i, d in enumerate(PK['days']): d['name'] = 'DAY %d' % (i + 1)
 src = open(path, encoding='utf-8').read(); head = src[:src.index('window.PKG')]
