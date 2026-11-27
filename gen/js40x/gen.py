@@ -1,6 +1,7 @@
 # 11/27 중산고1 9월 모고 40번·41~42번 '내용 정밀 독해' 학습 강화 (선생님: 40-41 내용 자세히 보라고 하심)
 #  DAY x40 · x41 (h1-mock-2509 맨 끝): 문장별 정밀 T/F 16 + 한글 오지선다 세부 내용 6~8
-#  시험 js2509-x4042 '40·41~42번 내용 심화' 20문항 OMR (/* X4042-TESTS */ 블록) — 해설에 선택지마다 ✔/✘ 이유(영어 선택지는 해석까지)
+#  11/27 선생님: 40번은 범위 아님(실수) → DAY는 x41만, 시험은 js2509-x4142 '41~42번 내용 심화'로 바꿈 (x40·js2509-x4042 지움)
+#  시험 (원래) js2509-x4042 '40·41~42번 내용 심화' 20문항 OMR (/* X4042-TESTS */ 블록) — 해설에 선택지마다 ✔/✘ 이유(영어 선택지는 해석까지)
 import sys, json, re, subprocess
 sys.path.insert(0, '/home/claude/srcrepo/generators')
 from gencommon import write
@@ -186,7 +187,22 @@ def mc_test(M, tag):
         body = PASS[tag] + ('<div class="wbox"><p class="en">%s</p></div>' % sub if sub else '')
         out.append(('%s · 세부 내용' % tag, q, body, [o[0] for o in opts], 0, mc_ex(opts).split('\n', 1)[1]))
     return out
-RAW = mc_test(MC40, '40번')[:6] + EXTRA[0:2] + [EXTRA[4]] + mc_test(MC41, '41~42번') + EXTRA[2:4] + [EXTRA[5], EXTRA[6]]
+_q = open('/home/claude/srcrepo/gen/js40x/q41plus.py', encoding='utf-8').read(); _ns = {}
+exec(_q[_q.index('TF = ['):_q.index('def mc_item')], _ns)   # DAY 15 보강(q41plus.py)의 T/F·오지선다를 같이 씀
+TFQ = _ns['TF']; MCQ = _ns['MC']
+X2 = [add_box(TFQ, [0, 1, 2, 3, 4, 5], '41~42번', ["필자는 '도와드릴까요?'가 고객이 더 말하고 싶게 만든다고 생각한다.", "'도와드릴까요?'는 판매가 제대로 시작되기도 전에 끝내 버리곤 한다.", "'특별히 찾으시는 게 있나요?'는 더 나은 첫 질문으로 제시된다.", "고객은 보통 '도와드릴까요?'라고 말하는 판매원이 자기에게 진심으로 관심이 있다고 믿는다.", "훈련받지 않은 판매원은 '도와드릴까요?'를 거의 쓰지 않는다.", "'도와드릴까요?'는 고객이 마치 구조가 필요한 사람처럼 느끼게 한다."]),
+      add_box(TFQ, [7, 10, 12, 1, 2, 11], '41~42번', ["고객은 실제로 도움이 필요할 때도 도움을 거절하곤 한다.", "좋은 접근은 고객이 서두를 필요가 없다고 느끼게 한다.", "글은 판매원이 혼자 둘러보려는 고객의 바람을 존중해야 한다고 말한다.", "'도와드릴까요?'는 판매가 제대로 시작되기도 전에 끝내 버리곤 한다.", "'특별히 찾으시는 게 있나요?'는 더 나은 첫 질문으로 제시된다.", "판매원은 혼자 둘러보려는 고객의 질문에 절대 답하지 말아야 한다."])]
+def mcq_test(m):
+    q, opts, why = m
+    lab = lambda o: o[0] + (' (%s)' % o[1] if o[1] else '')
+    ex = '이유 ▶ %s\n오답 ▶\n%s' % (why, '\n'.join('✘ %s → %s' % (lab(o), o[2]) for o in opts[1:]))
+    if opts[0][1]: ex = '정답 해석 ▶ %s\n' % opts[0][1] + ex
+    return ('41~42번 · 내용 일치·불일치', q, PASS['41~42번'], [o[0] for o in opts], 0, ex)
+GIST = ('41~42번 · 요지', '글의 요지로 가장 적절한 것은?', PASS['41~42번'], [
+  "'May I help you?' 같은 판에 박힌 질문 대신, 고객이 편하게 둘러볼 수 있게 다가가야 판매에 성공한다.", '판매원은 고객이 도움을 요청할 때까지 기다리기만 하면 된다.', '친절한 인사 한마디가 판매의 전부이다.', '고객은 판매원에게 먼저 도움을 청하는 것이 예의이다.', '명함은 판매원의 신뢰를 높이는 가장 좋은 도구이다.'], 0,
+  "이유 ▶ 최악의 질문(May I help you?) → 더 나은 질문 → 압박하지 말고 편안한 환경·혼자 둘러볼 자유 → 판매 성공\n오답 ▶\n✘ 기다리기만 → 더 나은 질문으로 다가가라고 함\n✘ 친절한 인사가 전부 → '도와드릴까요?'도 인사지만 최악\n✘ 고객의 예의 → 고객에게 하는 말이 아님\n✘ 명함이 최고의 도구 → 명함은 마지막 조언의 일부")
+RAW = mc_test(MC41, '41~42번') + EXTRA[2:4] + X2 + [EXTRA[5], EXTRA[6], GIST] + [mcq_test(MCQ[i]) for i in (0, 1, 2, 3, 4, 5)]
+RAW = RAW[:20]
 assert len(RAW) == 20, len(RAW)
 # 정답 자리를 ①~⑤ 4개씩: 선택지를 돌려 정답을 원하는 자리로 (개수형은 순서 고정이라 그대로 두고 나머지로 맞춤)
 fixed = [i for i, r in enumerate(RAW) if r[3][0] == '1개']
@@ -205,11 +221,11 @@ for i, (src_, stem, body, opts, ans, ex) in enumerate(RAW):
                   'ex': '정답 ▶ %s %s\n' % (C[tgt], o[tgt]) + ex, 'ctx': '', 'pts': 5, 'words': [], 'kos': []})
 from collections import Counter
 cnt = Counter(it['ans'] for it in items); assert all(cnt[k] == 4 for k in range(5)), cnt
-TEST = {'id': 'js2509-x4042', 'title': '9월 학평 40·41~42번 내용 심화', 'short': '40·41~42 내용 심화', 'school': '중산고 1학년', 'minutes': 30, 'items': items}
+TEST = {'id': 'js2509-x4142', 'title': '9월 학평 41~42번 내용 심화', 'short': '41~42 내용 심화', 'school': '중산고 1학년', 'minutes': 30, 'items': items}
 # DAY는 HV-DAYS 블록(끝에서 다시 번호 매김) 뒤에 붙여야 기존 DAY 번호가 안 바뀜 → 데이터 파일은 그대로, 꼬리 블록으로만 추가
 tail = re.sub(r'/\* X4042-TESTS.*?/\* /X4042-TESTS \*/\n?', '', tail, flags=re.S)
 tail = re.sub(r'/\* X40-DAYS.*?/\* /X40-DAYS \*/\n?', '', tail, flags=re.S)
-tail = tail.rstrip('\n') + '\n/* X40-DAYS: 11/27 40번·41~42번 내용 정밀 독해 DAY x40·x41 맨 끝 (gen/js40x/gen.py 로 만듦 · 손으로 고치지 말 것) */\n(function(){var P=window.PKG,N=%s;P.days=P.days.filter(function(d){return d.id!=="x40"&&d.id!=="x41"}).concat(N);P.days.forEach(function(d,i){d.name="DAY "+(i+1)});})();\n/* /X40-DAYS */\n' % json.dumps([x40, x41], ensure_ascii=False)
-tail = tail.rstrip('\n') + '\n/* X4042-TESTS: gen/js40x/gen.py 로 만듦 (손으로 고치지 말 것) */\nwindow.PKG.tests = (window.PKG.tests || []).filter(function (t) { return t.id !== "js2509-x4042"; }).concat([%s]);\n/* /X4042-TESTS */\n' % json.dumps(TEST, ensure_ascii=False)
+tail = tail.rstrip('\n') + '\n/* X40-DAYS: 11/27 41~42번 내용 정밀 독해 DAY x41 맨 끝 (40번 x40은 범위 아니라 뺌) (gen/js40x/gen.py 로 만듦 · 손으로 고치지 말 것) */\n(function(){var P=window.PKG,N=%s;P.days=P.days.filter(function(d){return d.id!=="x40"&&d.id!=="x41"}).concat(N);P.days.forEach(function(d,i){d.name="DAY "+(i+1)});})();\n/* /X40-DAYS */\n' % json.dumps([x41], ensure_ascii=False)
+tail = tail.rstrip('\n') + '\n/* X4042-TESTS: gen/js40x/gen.py 로 만듦 (손으로 고치지 말 것) */\nwindow.PKG.tests = (window.PKG.tests || []).filter(function (t) { return t.id !== "js2509-x4042" && t.id !== "js2509-x4142"; }).concat([%s]);\n/* /X4042-TESTS */\n' % json.dumps(TEST, ensure_ascii=False)
 open(path, 'w', encoding='utf-8').write(src[:cut] + tail)
 print(dict(cnt), ''.join(C[it['ans']] for it in items))
