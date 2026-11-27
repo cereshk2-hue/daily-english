@@ -5,6 +5,7 @@
 /* 11/1: 8과 본문 뒤 DAY 13~18 = 8과 문법 not only ~ but also · 간접의문문 (gen/gen_v8gram.py) */
 /* 11/16: 7과 본문 어법 한 판 DAY gt7 (generators/gen_m2gate.py) */
 /* 11/25: 외부지문 어법·어휘 한 판 DAY ex1·ex2 맨 끝 (generators/gen_bsext.py) */
+/* 11/27: 대화문 꿰뚫기 DAY (gen/m1dlg/gen.py, 과별 l5·l6·l7.py) 맨 끝 */
 window.PKG = {
   id: 'm2-visang-hwang-L7',
   school: '중2 비상(황종배)',
@@ -1098,6 +1099,176 @@ window.PKG = {
         { s: 'They walked on the moon and {came|come} home safely.', ko: '그들은 달 위를 걸었고 무사히 집에 돌아왔다.', ex: 'walked와 and로 나란히(과거) → came' },
         { s: 'They probably signed tens of {thousands|thousand} more autographs for {free|freely}.', ko: '그들은 아마 수만 장의 사인을 더 무료로 해 주었을 것이다.', ex: 'tens of thousands = 수만의 / for free = 무료로 (for 뒤에는 freely ✘)' }
       ] }
+    ] }
+  ] },
+  { id: 'kv7a', name: 'DAY 23', range: '7과 대화문 꿰뚫기 ① 경험 묻기', story: '7과 대화문 꿰뚫기 ① 경험 묻기 · 대화문 꿰뚫기 (표현 카드 → 대화 순서 → 고르기 → 모든 줄 스크램블 22 → 표현 쓰기 12 → T/F 11 → 상황·심경·기능 9)', passage: [['#', '7과 Listen & Choose 1 · 한라산', ''], ['W', 'Have you climbed Hallasan?', '너는 한라산에 올라가 본 적 있어?'], ['M', 'No, I haven\'t. Have you?', '아니, 없어. 너는?'], ['W', 'No, but I\'m going to go there with my uncle this weekend.', '나는 없지만, 이번 주말에 삼촌과 함께 거기에 갈 거야.'], ['M', 'That\'s cool. I hope you have a great time with your family.', '멋지다. 네가 가족과 좋은 시간 보내길 바라.'], ['W', 'Thanks.', '고마워.'], ['#', '7과 Listen & Choose 2 · 시드니', ''], ['W', 'What are you going to do this winter?', '너는 이번 겨울에 뭐 할 거야?'], ['M', 'I\'m going to travel to Sydney. Have you been there?', '나는 시드니로 여행 갈 거야. 너는 거기 가 본 적 있어?'], ['W', 'No, I haven\'t. What are your plans there?', '아니, 없어. 거기서 너의 계획은 뭐야?'], ['M', 'I\'m going to visit the Sydney Opera House with my family.', '나는 가족과 함께 시드니 오페라하우스를 방문할 거야.'], ['W', 'Sounds exciting!', '정말 신나겠다!'], ['#', '7과 Listen & Choose 3 · 마술쇼', ''], ['W', 'What are you watching?', '너는 무엇을 보고 있니?'], ['M', 'I\'m watching Steve Kim\'s magic show. Have you watched his show before?', '난 Steve Kim의 마술쇼를 보고 있어. 너는 그의 쇼를 전에 본 적 있어?'], ['W', 'Yes, I have. I really like his show.', '응, 있어. 난 그의 쇼를 정말 좋아해.'], ['M', 'Look at this card magic. It is amazing.', '이 카드 마술 좀 봐. 정말 놀라워.'], ['W', 'Yeah, he moves his hands really fast!', '응, 그는 손을 정말 빠르게 움직인다!'], ['#', '7과 Watch & Guess · 원데이 클래스', ''], ['M', 'Excuse me, I\'d like to sign up for a one-day class.', '실례합니다, 저는 원데이 클래스를 신청하고 싶어요.'], ['W', 'Have you taken a one-day class here before?', '여기서 전에 원데이 클래스를 들어본 적 있으세요?'], ['M', 'No, this is my first time.', '아니요, 이번이 처음이에요.'], ['W', 'Okay, I\'ll help you. What do you want to learn?', '알겠습니다, 제가 도와드릴게요. 무엇을 배우고 싶으세요?'], ['M', 'I\'m interested in experiencing foreign cultures.', '저는 외국 문화를 체험하는 데 관심이 있어요.'], ['W', 'Then, we have two Vietnamese culture classes. One is hat-making and the other is traditional cooking.', '그러면 베트남 문화 수업이 두 가지가 있어요. 하나는 모자 만들기이고, 다른 하나는 전통 요리예요.'], ['M', 'Oh, I\'d love to make a Vietnamese hat.', '오, 저는 베트남 모자를 만들어 보고 싶어요.'], ['W', 'That\'s a great choice! The hat-making class is a lot of fun.', '좋은 선택이에요! 모자 만들기 수업은 매우 재미있어요.']], steps: [
+    { type: 'vocab', title: '대화 핵심 표현', guide: '대화에 나오는 표현이에요. 뜻을 정확히 익혀요.', quizN: 10, items: [['Have you ever + p.p. ~?', '~해 본 적 있니?(경험 묻기)'], ['Yes, I have. / No, I haven\'t.', '응, 있어. / 아니, 없어.'], ['climb', '오르다'], ['be going to', '~할 예정이다'], ['I hope you have a great time.', '좋은 시간 보내길 바라.'], ['travel to', '~로 여행 가다'], ['Sounds exciting!', '정말 신나겠다!'], ['magic show', '마술쇼'], ['amazing', '놀라운'], ['sign up for', '~을 신청하다, 등록하다'], ['one-day class', '원데이(하루) 수업'], ['first time', '처음'], ['be interested in -ing', '~하는 데 관심이 있다'], ['experience', '체험하다, 경험하다'], ['foreign culture', '외국 문화'], ['Vietnamese', '베트남의'], ['One is ~, and the other is ...', '하나는 ~이고, 다른 하나는 …이다'], ['traditional', '전통적인'], ['a lot of fun', '아주 재미있는']] },
+    { type: 'order', title: '대화 순서 맞추기', tries: 3, guide: '대화 한 편을 처음부터 끝까지 순서대로 놓아요. 묻는 말 → 대답, 허락 구하기 → 허락/거절 → 이유의 흐름을 떠올려요.', items: [
+      { lines: ['Have you climbed Hallasan?', 'No, I haven\'t. Have you?', 'No, but I\'m going to go there with my uncle this weekend.', 'That\'s cool. I hope you have a great time with your family.', 'Thanks.'], flow: ['W: 한라산 올라가 봤어?', 'M: 아니, 너는?', 'W: 없지만 이번 주말에 삼촌이랑 가', 'M: 멋지다, 좋은 시간 보내', 'W: 고마워'] },
+      { lines: ['What are you going to do this winter?', 'I\'m going to travel to Sydney. Have you been there?', 'No, I haven\'t. What are your plans there?', 'I\'m going to visit the Sydney Opera House with my family.', 'Sounds exciting!'], flow: ['W: 이번 겨울에 뭐 해?', 'M: 시드니 여행, 가 봤어?', 'W: 아니, 거기서 계획은?', 'M: 가족이랑 오페라하우스 방문', 'W: 신나겠다!'] },
+      { lines: ['What are you watching?', 'I\'m watching Steve Kim\'s magic show. Have you watched his show before?', 'Yes, I have. I really like his show.', 'Look at this card magic. It is amazing.', 'Yeah, he moves his hands really fast!'], flow: ['W: 뭐 보고 있어?', 'M: Steve Kim 마술쇼, 본 적 있어?', 'W: 응, 정말 좋아해', 'M: 카드 마술 봐, 놀라워', 'W: 손이 정말 빨라!'] },
+      { lines: ['Excuse me, I\'d like to sign up for a one-day class.', 'Have you taken a one-day class here before?', 'No, this is my first time.', 'Okay, I\'ll help you. What do you want to learn?', 'I\'m interested in experiencing foreign cultures.', 'Then, we have two Vietnamese culture classes. One is hat-making and the other is traditional cooking.', 'Oh, I\'d love to make a Vietnamese hat.', 'That\'s a great choice! The hat-making class is a lot of fun.'], flow: ['M: 원데이 클래스 신청하고 싶어요', 'W: 전에 들어 본 적 있어요?', 'M: 처음이에요', 'W: 도와드릴게요, 뭘 배우고 싶어요?', 'M: 외국 문화 체험에 관심', 'W: 베트남 수업 두 개: 모자·요리', 'M: 모자 만들고 싶어요', 'W: 좋은 선택, 아주 재미있어요'] }
+    ] },
+    { type: 'pick', title: '어법·의미 고르기', guide: '대화 속 헷갈리는 말을 골라요.', items: [
+      { s: 'Have you {climbed|climb} Hallasan?', ex: '정답 ▶ climbed\n이유: Have you + 과거분사 ~? = ~해 본 적 있니?(현재완료 경험)' },
+      { s: 'No, I {haven\'t|didn\'t}. Have you?', ex: '정답 ▶ haven\'t\n이유: Have you ~?에는 have로 대답 → No, I haven\'t.' },
+      { s: 'No, but I\'m going to go there with my uncle {this|last} weekend.', ex: '정답 ▶ this\n이유: be going to(미래)와 어울리는 말 → this weekend (last weekend는 과거)' },
+      { s: 'I\'m going to travel to Sydney. Have you {been|gone} there?', ex: '정답 ▶ been\n이유: Have you been (to) ~? = ~에 가 본 적 있니? (have gone은 \'가 버렸다\')' },
+      { s: 'Have you {watched|watching} his show before?', ex: '정답 ▶ watched\n이유: have + 과거분사' },
+      { s: 'Yeah, he moves his hands really {fast|fastly}!', ex: '정답 ▶ fast\n이유: fast는 형용사·부사 모양이 같음 (fastly ✘)' },
+      { s: 'Excuse me, I\'d like to sign up {for|to} a one-day class.', ex: '정답 ▶ for\n이유: sign up for ~ = ~을 신청하다' },
+      { s: 'I\'m interested in {experiencing|experience} foreign cultures.', ex: '정답 ▶ experiencing\n이유: 전치사 in 뒤에는 동명사' },
+      { s: 'One is hat-making and {the other|another} is traditional cooking.', ex: '정답 ▶ the other\n이유: 둘 중 하나는 one, 나머지 하나는 the other' },
+      { s: 'Oh, I\'d love {to make|making} a Vietnamese hat.', ex: '정답 ▶ to make\n이유: would love + to부정사 = ~하고 싶다' }
+    ] },
+    { type: 'scramble', title: '모든 줄 스크램블', guide: '대화의 모든 줄을 우리말 보고 영어로 완성해요. 이것만 다 하면 대화가 통째로 외워져요.', items: [
+      { ko: '너는 한라산에 올라가 본 적 있어?', en: 'Have you climbed Hallasan?' },
+      { ko: '아니, 없어. 너는?', en: 'No, I haven\'t. Have you?' },
+      { ko: '나는 없지만, 이번 주말에 삼촌과 함께 거기에 갈 거야.', en: 'No, but I\'m going to go there with my uncle this weekend.' },
+      { ko: '멋지다. 네가 가족과 좋은 시간 보내길 바라.', en: 'That\'s cool. I hope you have a great time with your family.' },
+      { ko: '너는 이번 겨울에 뭐 할 거야?', en: 'What are you going to do this winter?' },
+      { ko: '나는 시드니로 여행 갈 거야. 너는 거기 가 본 적 있어?', en: 'I\'m going to travel to Sydney. Have you been there?' },
+      { ko: '아니, 없어. 거기서 너의 계획은 뭐야?', en: 'No, I haven\'t. What are your plans there?' },
+      { ko: '나는 가족과 함께 시드니 오페라하우스를 방문할 거야.', en: 'I\'m going to visit the Sydney Opera House with my family.' },
+      { ko: '너는 무엇을 보고 있니?', en: 'What are you watching?' },
+      { ko: '난 Steve Kim의 마술쇼를 보고 있어. 너는 그의 쇼를 전에 본 적 있어?', en: 'I\'m watching Steve Kim\'s magic show. Have you watched his show before?' },
+      { ko: '응, 있어. 난 그의 쇼를 정말 좋아해.', en: 'Yes, I have. I really like his show.' },
+      { ko: '이 카드 마술 좀 봐. 정말 놀라워.', en: 'Look at this card magic. It is amazing.' },
+      { ko: '응, 그는 손을 정말 빠르게 움직인다!', en: 'Yeah, he moves his hands really fast!' },
+      { ko: '실례합니다, 저는 원데이 클래스를 신청하고 싶어요.', en: 'Excuse me, I\'d like to sign up for a one-day class.' },
+      { ko: '여기서 전에 원데이 클래스를 들어본 적 있으세요?', en: 'Have you taken a one-day class here before?' },
+      { ko: '아니요, 이번이 처음이에요.', en: 'No, this is my first time.' },
+      { ko: '알겠습니다, 제가 도와드릴게요. 무엇을 배우고 싶으세요?', en: 'Okay, I\'ll help you. What do you want to learn?' },
+      { ko: '저는 외국 문화를 체험하는 데 관심이 있어요.', en: 'I\'m interested in experiencing foreign cultures.' },
+      { ko: '그러면 베트남 문화 수업이 두 가지가 있어요.', en: 'Then, we have two Vietnamese culture classes.' },
+      { ko: '하나는 모자 만들기이고, 다른 하나는 전통 요리예요.', en: 'One is hat-making and the other is traditional cooking.' },
+      { ko: '오, 저는 베트남 모자를 만들어 보고 싶어요.', en: 'Oh, I\'d love to make a Vietnamese hat.' },
+      { ko: '좋은 선택이에요! 모자 만들기 수업은 매우 재미있어요.', en: 'That\'s a great choice! The hat-making class is a lot of fun.' }
+    ] },
+    { type: 'verb', title: '핵심 표현 쓰기', ph: '영어로 쓰기', guide: '빈칸에 들어갈 영어를 직접 써요(괄호 속 우리말 힌트).', items: [
+      { s: 'Have you ___ Hallasan?', v: 'climb (경험)', a: ['climbed'], ex: '정답 ▶ climbed' },
+      { s: 'No, I ___. Have you?', v: '없어', a: ['haven\'t', 'have not'], ex: '정답 ▶ haven\'t / have not' },
+      { s: 'I ___ you have a great time with your family.', v: '바라다', a: ['hope'], ex: '정답 ▶ hope' },
+      { s: 'I\'m going to travel to Sydney. Have you ___ there?', v: '가 본 적 있니', a: ['been'], ex: '정답 ▶ been' },
+      { s: 'Sounds ___!', v: '신나는', a: ['exciting'], ex: '정답 ▶ exciting' },
+      { s: 'Have you watched his show ___?', v: '전에', a: ['before'], ex: '정답 ▶ before' },
+      { s: 'Look at this card magic. It is ___.', v: '놀라운', a: ['amazing'], ex: '정답 ▶ amazing' },
+      { s: 'Excuse me, I\'d like to ___ a one-day class.', v: '~을 신청하다', a: ['sign up for'], ex: '정답 ▶ sign up for' },
+      { s: 'No, this is my ___.', v: '처음', a: ['first time'], ex: '정답 ▶ first time' },
+      { s: 'I\'m ___ experiencing foreign cultures.', v: '~에 관심이 있다', a: ['interested in'], ex: '정답 ▶ interested in' },
+      { s: 'One is hat-making and ___ is traditional cooking.', v: '나머지 하나', a: ['the other'], ex: '정답 ▶ the other' },
+      { s: 'That\'s a great choice! The hat-making class is ___.', v: '아주 재미있는', a: ['a lot of fun'], ex: '정답 ▶ a lot of fun' }
+    ] },
+    { type: 'mc', title: '대화 내용 T/F', guide: '문제 위에 그 대화가 나와요. 누가 무엇을 했는지, 허락했는지 금지했는지 대화와 대조해서 T/F를 골라요.', items: [
+      { q: 'The woman has climbed Hallasan before.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 Listen & Choose 1 · 한라산'], ex: '정답 ▶ F (틀리다)\n이유: 없다고 해요. 이번 주말에 처음 가요.\n근거 ▶ No, but I\'m going to go there' },
+      { q: 'The woman is going to Hallasan with her uncle this weekend.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 Listen & Choose 1 · 한라산'], ex: '정답 ▶ T (맞다)\n이유: 이번 주말에 삼촌과 가요.\n근거 ▶ I\'m going to go there with my uncle this weekend' },
+      { q: 'The man has been to Sydney before.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 Listen & Choose 2 · 시드니'], ex: '정답 ▶ F (틀리다)\n이유: 이번 겨울에 갈 예정이에요(처음).\n근거 ▶ I\'m going to travel to Sydney. Have you been there?' },
+      { q: 'The man is going to visit the Sydney Opera House with his family.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 Listen & Choose 2 · 시드니'], ex: '정답 ▶ T (맞다)\n이유: 가족과 오페라하우스를 방문해요.\n근거 ▶ I\'m going to visit the Sydney Opera House with my family' },
+      { q: 'The woman has never watched Steve Kim\'s magic show.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 Listen & Choose 3 · 마술쇼'], ex: '정답 ▶ F (틀리다)\n이유: 본 적 있고 정말 좋아해요.\n근거 ▶ Yes, I have. I really like his show.' },
+      { q: 'The woman says Steve Kim moves his hands very slowly.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 Listen & Choose 3 · 마술쇼'], ex: '정답 ▶ F (틀리다)\n이유: 정말 빠르게(fast) 움직여요.\n근거 ▶ he moves his hands really fast' },
+      { q: 'The man has taken a one-day class there before.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 Watch & Guess · 원데이 클래스'], ex: '정답 ▶ F (틀리다)\n이유: 이번이 처음이에요.\n근거 ▶ No, this is my first time.' },
+      { q: 'The man is interested in experiencing foreign cultures.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 Watch & Guess · 원데이 클래스'], ex: '정답 ▶ T (맞다)\n이유: 외국 문화 체험에 관심 있어요.\n근거 ▶ I\'m interested in experiencing foreign cultures' },
+      { q: 'There are three Vietnamese culture classes.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 Watch & Guess · 원데이 클래스'], ex: '정답 ▶ F (틀리다)\n이유: 두(two) 가지예요.\n근거 ▶ we have two Vietnamese culture classes' },
+      { q: 'The man chooses the traditional cooking class.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 Watch & Guess · 원데이 클래스'], ex: '정답 ▶ F (틀리다)\n이유: 모자 만들기를 골라요.\n근거 ▶ I\'d love to make a Vietnamese hat' },
+      { q: 'The woman thinks the hat-making class is a lot of fun.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 Watch & Guess · 원데이 클래스'], ex: '정답 ▶ T (맞다)\n이유: 아주 재미있다고 해요.\n근거 ▶ The hat-making class is a lot of fun.' }
+    ] },
+    { type: 'mc', title: '상황·심경·기능', guide: '장소, 관계, 심경, 의도, 빈칸, 어색한 대화까지 시험에 나오는 모양 그대로예요.', items: [
+      { q: '대화 1에서 남자(M)가 여자에게 한 말의 의도로 가장 알맞은 것은?<br><span class="en">I hope you have a great time with your family.</span>', opts: ['기원하기(좋은 시간 보내길 바람)', '경험 묻기', '사과하기', '충고하기', '거절하기'], ex: '정답 ▶ 기원하기(좋은 시간 보내길 바람)\n이유: I hope ~ = ~하기를 바라(기원)\n오답 ▶ 경험 묻기 / 사과하기 / 충고하기 / 거절하기', box: ['7과 Listen & Choose 1 · 한라산'] },
+      { q: '대화 2에서 여자(W)의 마지막 말에 담긴 심정으로 알맞은 것은?', opts: ['감탄·기대(정말 신나겠다)', '실망', '걱정', '화남', '지루함'], ex: '정답 ▶ 감탄·기대(정말 신나겠다)\n이유: Sounds exciting! = 정말 신나겠다\n오답 ▶ 실망 / 걱정 / 화남 / 지루함', box: ['7과 Listen & Choose 2 · 시드니'] },
+      { q: '대화 3에서 두 사람이 하고 있는 일로 가장 알맞은 것은?', opts: ['마술쇼를 보고 있다.', '카드 게임을 하고 있다.', '마술을 배우고 있다.', '공연 표를 사고 있다.', '손 운동을 하고 있다.'], ex: '정답 ▶ 마술쇼를 보고 있다.\n이유: I\'m watching Steve Kim\'s magic show. / Look at this card magic.\n오답 ▶ 카드 게임을 하고 있다. / 마술을 배우고 있다. / 공연 표를 사고 있다. / 손 운동을 하고 있다.', box: ['7과 Listen & Choose 3 · 마술쇼'] },
+      { q: '대화 4가 이루어지는 장소로 가장 알맞은 곳은?', opts: ['문화 센터(수업 접수처)', '식당', '공항', '병원', '모자 가게'], ex: '정답 ▶ 문화 센터(수업 접수처)\n이유: 원데이 클래스를 신청하고 수업을 고르는 곳\n오답 ▶ 식당 / 공항 / 병원 / 모자 가게', box: ['7과 Watch & Guess · 원데이 클래스'] },
+      { q: '대화 4에서 두 사람의 관계로 가장 알맞은 것은?', opts: ['수강 신청자 – 접수 직원', '학생 – 선생님', '손님 – 요리사', '환자 – 의사', '형 – 동생'], ex: '정답 ▶ 수강 신청자 – 접수 직원\n이유: I\'d like to sign up for a one-day class. / I\'ll help you.\n오답 ▶ 학생 – 선생님 / 손님 – 요리사 / 환자 – 의사 / 형 – 동생', box: ['7과 Watch & Guess · 원데이 클래스'] },
+      { q: '대화 4에서 남자가 신청할 수업으로 알맞은 것은?', opts: ['베트남 모자 만들기', '베트남 전통 요리', '스페인 요리', '카드 마술', '한국 전통 모자 만들기'], ex: '정답 ▶ 베트남 모자 만들기\n이유: Oh, I\'d love to make a Vietnamese hat.\n오답 ▶ 베트남 전통 요리 / 스페인 요리 / 카드 마술 / 한국 전통 모자 만들기', box: ['7과 Watch & Guess · 원데이 클래스'] },
+      { q: '다음 중 \'경험 묻기\' 표현이 <u>아닌</u> 것은?', opts: ['What are you going to do this winter?', 'Have you climbed Hallasan?', 'Have you been to Sydney?', 'Have you watched his show before?', 'Have you taken a one-day class here before?'], ex: '정답 ▶ What are you going to do this winter?\n이유: What are you going to do ~?는 계획 묻기. 나머지는 Have you + p.p. ~?(경험 묻기)\n오답 ▶ Have you climbed Hallasan? / Have you been to Sydney? / Have you watched his show before? / Have you taken a one-day class here before?' },
+      { q: '다음 대화의 빈칸에 들어갈 말로 가장 알맞은 것은?<br><span class="en">A: Have you watched his show before?<br>B: ________ I really like his show.</span>', opts: ['Yes, I have.', 'No, I haven\'t.', 'Yes, I do.', 'No, I didn\'t.', 'Yes, I did.'], ex: '정답 ▶ Yes, I have.\n이유: Have you ~?에는 have로 대답, 뒤에서 정말 좋아한다고 했으니 Yes, I have.\n오답 ▶ No, I haven\'t. / Yes, I do. / No, I didn\'t. / Yes, I did.' },
+      { q: '다음 중 짝지어진 대화가 <u>어색한</u> 것은?', opts: ['A: Have you been to Sydney? B: Yes, I did.', 'A: What are you watching? B: I\'m watching a magic show.', 'A: Have you climbed Hallasan? B: No, I haven\'t.', 'A: What do you want to learn? B: I\'m interested in cooking.', 'A: I\'m going to travel to Sydney. B: Sounds exciting!'], ex: '정답 ▶ A: Have you been to Sydney? B: Yes, I did.\n이유: Have you ~?에는 Yes, I have.로 대답 — Yes, I did. ✘\n오답 ▶ A: What are you watching? B: I\'m watching a magic show. / A: Have you climbed Hallasan? B: No, I haven\'t. / A: What do you want to learn? B: I\'m interested in cooking. / A: I\'m going to travel to Sydney. B: Sounds exciting!' }
+    ] }
+  ] },
+  { id: 'kv7b', name: 'DAY 24', range: '7과 대화문 꿰뚫기 ② 음식 권하기', story: '7과 대화문 꿰뚫기 ② 음식 권하기 · 대화문 꿰뚫기 (표현 카드 → 대화 순서 → 고르기 → 모든 줄 스크램블 24 → 표현 쓰기 14 → T/F 12 → 상황·심경·기능 9)', passage: [['#', '7과 Listen & Number 1 · 핫도그', ''], ['W', 'Hi, Dad. I\'m home.', '안녕하세요, 아빠. 저 집에 왔어요.'], ['M', 'Hi, Susan. I\'ve made some hot dogs for a snack. Would you like some?', '안녕, Susan. 간식으로 핫도그를 만들었어. 좀 먹어 볼래?'], ['W', 'Actually, I just had gimbap with my friends. Can I have them later?', '사실, 방금 친구들과 김밥을 먹고 왔어요. 나중에 먹어도 될까요?'], ['M', 'Sure. I\'ll put them in the refrigerator.', '물론이지. 냉장고에 넣어 둘게.'], ['W', 'Thank you, Dad.', '감사합니다, 아빠.'], ['#', '7과 Listen & Number 2 · 크림 떡볶이', ''], ['W', 'Are you making spaghetti, Uncle David? It smells really good.', 'David 삼촌, 스파게티 만들고 계세요? 냄새가 정말 좋아요.'], ['M', 'No. I\'m making tteokbokki.', '아니야. 떡볶이를 만들고 있어.'], ['W', 'Is it really tteokbokki? The sauce is white.', '정말 떡볶이 맞아요? 소스가 하얀데요.'], ['M', 'Yes. I\'ve made a creamy one. Would you like some?', '응. 크림 소스로 만들었어. 좀 먹어 볼래?'], ['W', 'Okay, I\'ll try it.', '네, 한 번 먹어 볼게요.'], ['#', '7과 Listen & Number 3 · 샌드위치', ''], ['W', 'I\'m so hungry, but it\'s only 10 a.m.', '나 배가 너무 고파, 그런데 아직 오전 10시야.'], ['M', 'Didn\'t you eat anything in the morning?', '너는 아침에 아무것도 안 먹었어?'], ['W', 'No. I woke up late, so I couldn\'t.', '응. 나는 늦게 일어나서 못 먹었어.'], ['M', 'I brought some sandwiches. Would you like some?', '내가 샌드위치를 좀 가져왔어. 좀 먹어 볼래?'], ['W', 'Oh, that would be great. Thank you.', '오, 너무 좋아. 고마워.'], ['#', '7과 Watch & Present · 파에야', ''], ['M', 'What are you cooking, Lucy?', 'Lucy, 너는 뭐 요리하고 있어?'], ['W', 'I\'m making paella. I\'m going to share it with my friends at school tomorrow.', '나는 파에야를 만들고 있어. 내일 학교에서 친구들과 그걸 나눠 먹을 거야.'], ['M', 'Oh, what is paella?', '오, 파에야가 뭐야?'], ['W', 'It\'s a traditional Spanish rice dish with seafood and vegetables.', '그건 해산물과 채소가 들어간 스페인 전통 쌀 요리야.'], ['M', 'It smells nice.', '냄새가 좋다.'], ['W', 'Would you like some?', '좀 먹어 볼래?'], ['M', 'Yes, I\'d like some. Wow, it tastes really good. I\'m sure your friends will love this.', '응, 먹어 볼게. 와, 정말 맛있다. 네 친구들은 분명 이걸 좋아할 거야.'], ['W', 'Thanks. I hope so.', '고마워. 그러길 바라.']], steps: [
+    { type: 'vocab', title: '대화 핵심 표현', guide: '대화에 나오는 표현이에요. 뜻을 정확히 익혀요.', quizN: 10, items: [['Would you like some?', '좀 먹어 볼래?(음식 권하기)'], ['Yes, I\'d like some. / No, thanks.', '응, 먹을게. / 아니, 괜찮아.'], ['snack', '간식'], ['actually', '사실은'], ['later', '나중에'], ['put A in B', 'A를 B에 넣다'], ['refrigerator', '냉장고'], ['smell good', '좋은 냄새가 나다'], ['sauce', '소스'], ['creamy', '크림 같은, 크림 맛의'], ['try', '먹어 보다, 시도하다'], ['wake up late', '늦게 일어나다'], ['bring - brought', '가져오다 - 가져왔다'], ['That would be great.', '그거 좋겠다.'], ['share A with B', 'A를 B와 나누다'], ['traditional', '전통적인'], ['Spanish', '스페인의'], ['rice dish', '쌀 요리'], ['seafood', '해산물'], ['taste good', '맛이 좋다'], ['I\'m sure ~', '분명 ~일 거야']] },
+    { type: 'order', title: '대화 순서 맞추기', tries: 3, guide: '대화 한 편을 처음부터 끝까지 순서대로 놓아요. 묻는 말 → 대답, 허락 구하기 → 허락/거절 → 이유의 흐름을 떠올려요.', items: [
+      { lines: ['Hi, Dad. I\'m home.', 'Hi, Susan. I\'ve made some hot dogs for a snack. Would you like some?', 'Actually, I just had gimbap with my friends. Can I have them later?', 'Sure. I\'ll put them in the refrigerator.', 'Thank you, Dad.'], flow: ['W: 아빠, 저 왔어요', 'M: 간식으로 핫도그 만들었어, 먹을래?', 'W: 방금 김밥 먹었어요, 나중에 먹어도 돼요?', 'M: 물론, 냉장고에 넣어 둘게', 'W: 고마워요'] },
+      { lines: ['Are you making spaghetti, Uncle David? It smells really good.', 'No. I\'m making tteokbokki.', 'Is it really tteokbokki? The sauce is white.', 'Yes. I\'ve made a creamy one. Would you like some?', 'Okay, I\'ll try it.'], flow: ['W: 삼촌, 스파게티 만들어요? 냄새 좋아요', 'M: 아니, 떡볶이야', 'W: 정말요? 소스가 하얀데요', 'M: 크림으로 만들었어, 먹어 볼래?', 'W: 네, 먹어 볼게요'] },
+      { lines: ['I\'m so hungry, but it\'s only 10 a.m.', 'Didn\'t you eat anything in the morning?', 'No. I woke up late, so I couldn\'t.', 'I brought some sandwiches. Would you like some?', 'Oh, that would be great. Thank you.'], flow: ['W: 배고픈데 아직 10시야', 'M: 아침에 아무것도 안 먹었어?', 'W: 응, 늦게 일어나서 못 먹었어', 'M: 샌드위치 가져왔어, 먹을래?', 'W: 너무 좋아, 고마워'] },
+      { lines: ['What are you cooking, Lucy?', 'I\'m making paella. I\'m going to share it with my friends at school tomorrow.', 'Oh, what is paella?', 'It\'s a traditional Spanish rice dish with seafood and vegetables.', 'It smells nice.', 'Would you like some?', 'Yes, I\'d like some. Wow, it tastes really good. I\'m sure your friends will love this.', 'Thanks. I hope so.'], flow: ['M: 뭐 요리해?', 'W: 파에야, 내일 친구들과 나눠 먹을 거야', 'M: 파에야가 뭐야?', 'W: 해산물·채소 넣은 스페인 쌀 요리', 'M: 냄새 좋다', 'W: 좀 먹어 볼래?', 'M: 응, 정말 맛있다, 친구들이 좋아할 거야', 'W: 고마워, 그러길 바라'] }
+    ] },
+    { type: 'pick', title: '어법·의미 고르기', guide: '대화 속 헷갈리는 말을 골라요.', items: [
+      { s: 'I\'ve made some hot dogs {for|to} a snack.', ex: '정답 ▶ for\n이유: for a snack = 간식으로' },
+      { s: 'Sure. I\'ll put them {in|on} the refrigerator.', ex: '정답 ▶ in\n이유: 냉장고 \'안에\' 넣다' },
+      { s: 'Are you making spaghetti, Uncle David? It smells really {good|well}.', ex: '정답 ▶ good\n이유: smell + 형용사 = ~한 냄새가 나다' },
+      { s: 'Yes. I\'ve made a creamy {one|it}. Would you like some?', ex: '정답 ▶ one\n이유: one = (같은 종류의) 떡볶이 하나, 앞의 명사를 대신하는 부정대명사' },
+      { s: 'No. I woke up late, {so|but} I couldn\'t.', ex: '정답 ▶ so\n이유: 늦게 일어나서(원인) → 그래서 못 먹었다(결과)' },
+      { s: 'I {brought|bringed} some sandwiches.', ex: '정답 ▶ brought\n이유: bring - brought - brought (불규칙)' },
+      { s: 'I\'m going to share it {with|to} my friends at school tomorrow.', ex: '정답 ▶ with\n이유: share A with B = A를 B와 나누다' },
+      { s: 'Wow, it tastes really {good|well}.', ex: '정답 ▶ good\n이유: taste + 형용사' },
+      { s: 'Didn\'t you eat {anything|something} in the morning?', ex: '정답 ▶ anything\n이유: 부정 의문문 → anything' }
+    ] },
+    { type: 'scramble', title: '모든 줄 스크램블', guide: '대화의 모든 줄을 우리말 보고 영어로 완성해요. 이것만 다 하면 대화가 통째로 외워져요.', items: [
+      { ko: '안녕하세요, 아빠. 저 집에 왔어요.', en: 'Hi, Dad. I\'m home.' },
+      { ko: '안녕, Susan. 간식으로 핫도그를 만들었어.', en: 'Hi, Susan. I\'ve made some hot dogs for a snack.' },
+      { ko: '좀 먹어 볼래?', en: 'Would you like some?' },
+      { ko: '사실, 방금 친구들과 김밥을 먹고 왔어요.', en: 'Actually, I just had gimbap with my friends.' },
+      { ko: '나중에 먹어도 될까요?', en: 'Can I have them later?' },
+      { ko: '물론이지. 냉장고에 넣어 둘게.', en: 'Sure. I\'ll put them in the refrigerator.' },
+      { ko: 'David 삼촌, 스파게티 만들고 계세요? 냄새가 정말 좋아요.', en: 'Are you making spaghetti, Uncle David? It smells really good.' },
+      { ko: '아니야. 떡볶이를 만들고 있어.', en: 'No. I\'m making tteokbokki.' },
+      { ko: '정말 떡볶이 맞아요? 소스가 하얀데요.', en: 'Is it really tteokbokki? The sauce is white.' },
+      { ko: '응. 크림 소스로 만들었어.', en: 'Yes. I\'ve made a creamy one.' },
+      { ko: '네, 한 번 먹어 볼게요.', en: 'Okay, I\'ll try it.' },
+      { ko: '나 배가 너무 고파, 그런데 아직 오전 10시야.', en: 'I\'m so hungry, but it\'s only 10 a.m.' },
+      { ko: '너는 아침에 아무것도 안 먹었어?', en: 'Didn\'t you eat anything in the morning?' },
+      { ko: '응. 나는 늦게 일어나서 못 먹었어.', en: 'No. I woke up late, so I couldn\'t.' },
+      { ko: '내가 샌드위치를 좀 가져왔어.', en: 'I brought some sandwiches.' },
+      { ko: '오, 너무 좋아. 고마워.', en: 'Oh, that would be great. Thank you.' },
+      { ko: 'Lucy, 너는 뭐 요리하고 있어?', en: 'What are you cooking, Lucy?' },
+      { ko: '나는 파에야를 만들고 있어.', en: 'I\'m making paella.' },
+      { ko: '내일 학교에서 친구들과 그걸 나눠 먹을 거야.', en: 'I\'m going to share it with my friends at school tomorrow.' },
+      { ko: '오, 파에야가 뭐야?', en: 'Oh, what is paella?' },
+      { ko: '그건 해산물과 채소가 들어간 스페인 전통 쌀 요리야.', en: 'It\'s a traditional Spanish rice dish with seafood and vegetables.' },
+      { ko: '응, 먹어 볼게. 와, 정말 맛있다.', en: 'Yes, I\'d like some. Wow, it tastes really good.' },
+      { ko: '네 친구들은 분명 이걸 좋아할 거야.', en: 'I\'m sure your friends will love this.' },
+      { ko: '고마워. 그러길 바라.', en: 'Thanks. I hope so.' }
+    ] },
+    { type: 'verb', title: '핵심 표현 쓰기', ph: '영어로 쓰기', guide: '빈칸에 들어갈 영어를 직접 써요(괄호 속 우리말 힌트).', items: [
+      { s: 'I\'ve made some hot dogs for a snack. ___ some?', v: '좀 먹어 볼래?', a: ['Would you like'], ex: '정답 ▶ Would you like' },
+      { s: '___, I just had gimbap with my friends.', v: '사실은', a: ['Actually'], ex: '정답 ▶ Actually' },
+      { s: 'Can I have them ___?', v: '나중에', a: ['later'], ex: '정답 ▶ later' },
+      { s: 'Sure. I\'ll put them in the ___.', v: '냉장고', a: ['refrigerator', 'fridge'], ex: '정답 ▶ refrigerator / fridge' },
+      { s: 'It ___ really good.', v: '냄새가 나다', a: ['smells'], ex: '정답 ▶ smells' },
+      { s: 'Is it really tteokbokki? The ___ is white.', v: '소스', a: ['sauce'], ex: '정답 ▶ sauce' },
+      { s: 'Okay, I\'ll ___ it.', v: '먹어 보다', a: ['try'], ex: '정답 ▶ try' },
+      { s: 'No. I ___ late, so I couldn\'t.', v: '일어났다', a: ['woke up'], ex: '정답 ▶ woke up' },
+      { s: 'I ___ some sandwiches.', v: '가져왔다', a: ['brought'], ex: '정답 ▶ brought' },
+      { s: 'Oh, that ___ be great.', v: '~일 것이다', a: ['would'], ex: '정답 ▶ would' },
+      { s: 'I\'m going to ___ it with my friends at school tomorrow.', v: '나누다', a: ['share'], ex: '정답 ▶ share' },
+      { s: 'It\'s a ___ Spanish rice dish with seafood and vegetables.', v: '전통적인', a: ['traditional'], ex: '정답 ▶ traditional' },
+      { s: 'Wow, it ___ really good.', v: '맛이 나다', a: ['tastes'], ex: '정답 ▶ tastes' },
+      { s: 'I\'m ___ your friends will love this.', v: '분명 ~이다', a: ['sure'], ex: '정답 ▶ sure' }
+    ] },
+    { type: 'mc', title: '대화 내용 T/F', guide: '문제 위에 그 대화가 나와요. 누가 무엇을 했는지, 허락했는지 금지했는지 대화와 대조해서 T/F를 골라요.', items: [
+      { q: 'Susan\'s dad made some hot dogs for a snack.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 Listen & Number 1 · 핫도그'], ex: '정답 ▶ T (맞다)\n이유: 아빠가 간식으로 핫도그를 만들었어요.\n근거 ▶ I\'ve made some hot dogs for a snack' },
+      { q: 'Susan eats the hot dogs right away.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 Listen & Number 1 · 핫도그'], ex: '정답 ▶ F (틀리다)\n이유: 방금 김밥을 먹어서 나중에 먹겠다고 해요.\n근거 ▶ Can I have them later?' },
+      { q: 'Dad will put the hot dogs in the refrigerator.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 Listen & Number 1 · 핫도그'], ex: '정답 ▶ T (맞다)\n이유: 냉장고에 넣어 둬요.\n근거 ▶ I\'ll put them in the refrigerator' },
+      { q: 'Uncle David is making spaghetti.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 Listen & Number 2 · 크림 떡볶이'], ex: '정답 ▶ F (틀리다)\n이유: 스파게티가 아니라 떡볶이예요.\n근거 ▶ No. I\'m making tteokbokki.' },
+      { q: 'The tteokbokki has a white sauce.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 Listen & Number 2 · 크림 떡볶이'], ex: '정답 ▶ T (맞다)\n이유: 크림 소스라 하얘요.\n근거 ▶ The sauce is white.' },
+      { q: 'The girl refuses to try the creamy tteokbokki.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 Listen & Number 2 · 크림 떡볶이'], ex: '정답 ▶ F (틀리다)\n이유: 한 번 먹어 보겠다고 해요.\n근거 ▶ Okay, I\'ll try it.' },
+      { q: 'The girl ate breakfast in the morning.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 Listen & Number 3 · 샌드위치'], ex: '정답 ▶ F (틀리다)\n이유: 늦게 일어나서 못 먹었어요.\n근거 ▶ No. I woke up late, so I couldn\'t.' },
+      { q: 'The boy brought some sandwiches.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 Listen & Number 3 · 샌드위치'], ex: '정답 ▶ T (맞다)\n이유: 샌드위치를 가져왔어요.\n근거 ▶ I brought some sandwiches.' },
+      { q: 'Lucy is going to share the paella with her family tonight.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 Watch & Present · 파에야'], ex: '정답 ▶ F (틀리다)\n이유: 내일 학교에서 친구들과 나눠요.\n근거 ▶ share it with my friends at school tomorrow' },
+      { q: 'Paella is a traditional Spanish rice dish.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 Watch & Present · 파에야'], ex: '정답 ▶ T (맞다)\n이유: 스페인 전통 쌀 요리예요.\n근거 ▶ It\'s a traditional Spanish rice dish' },
+      { q: 'Paella has meat and fruit in it.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 Watch & Present · 파에야'], ex: '정답 ▶ F (틀리다)\n이유: 해산물과 채소가 들어가요.\n근거 ▶ with seafood and vegetables' },
+      { q: 'The boy thinks Lucy\'s friends will love the paella.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 Watch & Present · 파에야'], ex: '정답 ▶ T (맞다)\n이유: 친구들이 분명 좋아할 거라고 해요.\n근거 ▶ I\'m sure your friends will love this.' }
+    ] },
+    { type: 'mc', title: '상황·심경·기능', guide: '장소, 관계, 심경, 의도, 빈칸, 어색한 대화까지 시험에 나오는 모양 그대로예요.', items: [
+      { q: '대화 5에서 Susan이 핫도그를 지금 먹지 않는 이유로 알맞은 것은?', opts: ['방금 친구들과 김밥을 먹어서', '핫도그를 좋아하지 않아서', '배가 아파서', '숙제를 해야 해서', '핫도그가 너무 뜨거워서'], ex: '정답 ▶ 방금 친구들과 김밥을 먹어서\n이유: Actually, I just had gimbap with my friends.\n오답 ▶ 핫도그를 좋아하지 않아서 / 배가 아파서 / 숙제를 해야 해서 / 핫도그가 너무 뜨거워서', box: ['7과 Listen & Number 1 · 핫도그'] },
+      { q: '대화 5에서 두 사람의 관계로 알맞은 것은?', opts: ['아빠 – 딸', '삼촌 – 조카', '선생님 – 학생', '점원 – 손님', '친구 – 친구'], ex: '정답 ▶ 아빠 – 딸\n이유: Hi, Dad. / Hi, Susan.\n오답 ▶ 삼촌 – 조카 / 선생님 – 학생 / 점원 – 손님 / 친구 – 친구', box: ['7과 Listen & Number 1 · 핫도그'] },
+      { q: '대화 6에서 여자가 소스를 보고 놀란 이유로 알맞은 것은?', opts: ['떡볶이 소스가 하얀색이라서', '소스가 너무 매워서', '소스가 없어서', '스파게티 소스라서', '소스 냄새가 이상해서'], ex: '정답 ▶ 떡볶이 소스가 하얀색이라서\n이유: Is it really tteokbokki? The sauce is white.\n오답 ▶ 소스가 너무 매워서 / 소스가 없어서 / 스파게티 소스라서 / 소스 냄새가 이상해서', box: ['7과 Listen & Number 2 · 크림 떡볶이'] },
+      { q: '대화 7에서 여자의 상황으로 가장 알맞은 것은?', opts: ['늦게 일어나 아침을 못 먹어 배가 고프다.', '아침을 너무 많이 먹었다.', '샌드위치를 만들고 있다.', '점심 약속에 늦었다.', '10시에 일어났다.'], ex: '정답 ▶ 늦게 일어나 아침을 못 먹어 배가 고프다.\n이유: I\'m so hungry ~ I woke up late, so I couldn\'t.\n오답 ▶ 아침을 너무 많이 먹었다. / 샌드위치를 만들고 있다. / 점심 약속에 늦었다. / 10시에 일어났다.', box: ['7과 Listen & Number 3 · 샌드위치'] },
+      { q: '대화 7에서 여자의 마지막 말에 담긴 심정으로 알맞은 것은?', opts: ['고마움·기쁨', '실망', '짜증', '걱정', '부끄러움'], ex: '정답 ▶ 고마움·기쁨\n이유: Oh, that would be great. Thank you.\n오답 ▶ 실망 / 짜증 / 걱정 / 부끄러움', box: ['7과 Listen & Number 3 · 샌드위치'] },
+      { q: '대화 8에서 Lucy가 파에야를 만드는 이유로 알맞은 것은?', opts: ['내일 학교 친구들과 나눠 먹으려고', '저녁으로 가족과 먹으려고', '요리 대회에 나가려고', '스페인 여행을 준비하려고', '요리 숙제를 하려고'], ex: '정답 ▶ 내일 학교 친구들과 나눠 먹으려고\n이유: I\'m going to share it with my friends at school tomorrow.\n오답 ▶ 저녁으로 가족과 먹으려고 / 요리 대회에 나가려고 / 스페인 여행을 준비하려고 / 요리 숙제를 하려고', box: ['7과 Watch & Present · 파에야'] },
+      { q: '다음 중 \'음식 권하기\' 표현으로 알맞은 것은?', opts: ['Would you like some?', 'Have you eaten paella?', 'What are you cooking?', 'It smells nice.', 'Can I have them later?'], ex: '정답 ▶ Would you like some?\n이유: Would you like some? = 좀 먹어 볼래?(음식 권하기)\n오답 ▶ Have you eaten paella? / What are you cooking? / It smells nice. / Can I have them later?' },
+      { q: '다음 대화의 빈칸에 들어갈 말로 알맞은 것은?<br><span class="en">A: I brought some sandwiches. Would you like some?<br>B: ________ Thank you.</span>', opts: ['Oh, that would be great.', 'No, I haven\'t.', 'I woke up late.', 'It\'s only 10 a.m.', 'Yes, I have.'], ex: '정답 ▶ Oh, that would be great.\n이유: 권하는 말에 수락(그거 좋겠다) + 고마워\n오답 ▶ No, I haven\'t. / I woke up late. / It\'s only 10 a.m. / Yes, I have.' },
+      { q: '다음 중 짝지어진 대화가 <u>어색한</u> 것은?', opts: ['A: Would you like some? B: Yes, I have.', 'A: What is paella? B: It\'s a Spanish rice dish.', 'A: It smells nice. B: Would you like some?', 'A: Can I have them later? B: Sure.', 'A: Didn\'t you eat anything? B: No. I woke up late.'], ex: '정답 ▶ A: Would you like some? B: Yes, I have.\n이유: Would you like some?에는 Yes, I\'d like some. / No, thanks. — Yes, I have. ✘\n오답 ▶ A: What is paella? B: It\'s a Spanish rice dish. / A: It smells nice. B: Would you like some? / A: Can I have them later? B: Sure. / A: Didn\'t you eat anything? B: No. I woke up late.' }
     ] }
   ] }
   ]
