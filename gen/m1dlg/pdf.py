@@ -28,7 +28,7 @@ for gid, c in M.DLG.items():
     tfn = getattr(M, 'TFN', {}).get(gid)
     dl = []
     for name, lines, flow in c['order']:
-        sp = [l for l in D[c['src']] if l[1] in lines]
+        sp = [l for l in D[c['src']] + [x for x in c.get('extra', []) if x[0] != '#'] if l[1] in lines]
         dl.append('<div class="box"><b>%s</b>%s</div>' % (E(name), ''.join('<div class="en">%s: %s</div>' % (E(x[0]), E(x[1])) for x in sp)))
     h += '<div class="pb"></div><h1>%s · 대화 보고 풀기 <span class="nm">이름 ________</span></h1><div class="sub">아래 대화를 읽고 4·5번을 풀어요.</div>' % E(c['range']) + ''.join(dl)
     h += '<h2>4. 대화 내용과 맞으면 T, 틀리면 F</h2><ol>' + ''.join('<li class="en">%s%s ( T / F )</li>' % (('[대화 %d] ' % tfn[i]) if tfn else '', E(s)) for i, (s, b, ev, why) in enumerate(c['tf'])) + '</ol>'

@@ -9,7 +9,7 @@ PK = json.loads(subprocess.check_output(['node', '-e', "global.window={};eval(re
 D = {d['id']: d for d in PK['days']}
 def norm(t): return re.sub(r'\s+', ' ', t.replace('’', "'")).strip().lower()
 def build(gid, c):
-    P = D[c['src']]['passage']; TX = {norm(l[1]) for l in P if l[0] != '#'}
+    P = D[c['src']]['passage'] + c.get('extra', []); TX = {norm(l[1]) for l in P if l[0] != '#'}
     for _, lines, flow in c['order']: assert all(norm(l) in TX for l in lines), lines; assert len(lines) == len(flow)
     for ko, en in c['scr']: assert norm(en) in norm(' '.join(TX)), en
     for s, ex in c['pick']: assert norm(re.sub(r'\{([^|}]*)\|[^}]*\}', r'\1', s)).split(': ', 1)[-1] in norm(' '.join(TX)), s

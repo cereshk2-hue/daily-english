@@ -1114,6 +1114,160 @@ window.PKG = {
       { q: 'Review 2에서 두 사람의 관계로 가장 알맞은 것은?', opts: ['손님 – 점원', '손자 – 할머니', '학생 – 선생님', '환자 – 의사', '요리사 – 손님'], ex: '정답 ▶ 손님 – 점원\n이유: 선물을 찾는 손님과 가방을 권하는 점원\n오답 ▶ 손자 – 할머니 / 학생 – 선생님 / 환자 – 의사 / 요리사 – 손님', box: ['7과 Review · Listening 2 · 할머니 선물'] },
       { q: '다음 대화의 빈칸에 들어갈 말로 알맞은 것은?<br><span class="en">A: I guess we can ride bikes or go for a boat ride. Which do you like more?<br>B: ________ I think it\'ll be more fun.</span>', opts: ['Going for a boat ride.', 'Yes, I do.', 'No, I don\'t like it.', 'I like both of them.', 'What a surprise!'], ex: '정답 ▶ Going for a boat ride.\n이유: Which 질문에는 고른 것으로 대답 → Going for a boat ride.\n오답 ▶ Yes, I do. / No, I don\'t like it. / I like both of them. / What a surprise!' }
     ] }
+  ] },
+  { id: 'kk6a', name: 'DAY 22', range: '6과 대화문 꿰뚫기 ① 종류 묻기·추천 (대화 1~4)', story: '6과 대화문 꿰뚫기 ① 종류 묻기·추천 (대화 1~4) · 대화문 꿰뚫기 (표현 카드 → 대화 순서 → 고르기 → 모든 줄 스크램블 18 → 표현 쓰기 12 → T/F 10 → 상황·심경·기능 8)', passage: [['#', '6과 대화 1 · 공상 과학 소설 추천 (Watch and Check)', ''], ['B', 'What kinds of books do you usually read?', '너는 주로 어떤 종류의 책을 읽니?'], ['G', 'I usually read sci-fi novels.', '나는 보통 공상 과학 소설을 읽어.'], ['B', 'Then, can you recommend a good sci-fi novel for me?', '그럼, 좋은 공상 과학 소설 하나 추천해 줄래?'], ['G', 'How about The Time Machine? I think it\'s the best.', '‘The Time Machine’은 어때? 나는 그것이 최고라고 생각해.'], ['#', '6과 대화 2 · 새 탄산음료 추천 (Watch and Check)', ''], ['G', 'What kinds of soft drinks do you usually have?', '너는 주로 어떤 종류의 탄산음료를 마시니?'], ['B', 'I usually drink apple soda, but today, I want to try something else. Can you recommend some new soft drinks?', '나는 보통 사과 소다를 마시는데, 오늘은 다른 것을 마셔 보고 싶어. 새로운 탄산음료를 추천해 줄래?'], ['G', 'Try a cherry soda. The cherry soda here is good.', '체리 소다를 마셔 봐. 여기 체리 소다가 맛있어.'], ['B', 'OK. I\'ll give it a try, then.', '알았어. 그럼, 한번 마셔 볼게.'], ['#', '6과 대화 3 · 액션 영화 추천 (Watch and Check)', ''], ['B', 'What kinds of movies do you like?', '너는 어떤 종류의 영화를 좋아하니?'], ['G', 'I like action movies. Spider-Man is my favorite.', '나는 액션 영화를 좋아해. ‘스파이더맨’이 가장 좋아하는 영화야.'], ['B', 'Oh, I didn\'t see it.', '오, 나는 그거 안 봤어.'], ['G', 'You didn\'t? It\'s really fun. I strongly recommend it.', '안 봤다고? 정말 재미있어. 강력히 추천해.'], ['#', '6과 대화 4 · 과학 잡지 추천 (Watch and Check)', ''], ['B', 'What kinds of magazines do you have?', '어떤 종류의 잡지가 있니?'], ['G', 'We have all kinds of magazines.', '모든 종류의 잡지가 있어.'], ['B', 'I\'m really interested in science. Can you recommend a science magazine for me?', '나는 과학에 정말 관심이 있어. 과학 잡지 하나 추천해 줄래?'], ['G', 'Sure. You\'ll love this one, Teen\'s Science.', '그럼. ‘Teen’s Science’가 아주 마음에 들 거야.']], steps: [
+    { type: 'vocab', title: '대화 핵심 표현', guide: '대화에 나오는 표현이에요. 뜻을 정확히 익혀요.', quizN: 10, items: [['What kinds of ~ do you like?', '어떤 종류의 ~을 좋아하니?(종류 묻기)'], ['Can you recommend ~ for me?', '~을 추천해 줄래?(추천 요청)'], ['How about ~?', '~은 어때?(추천)'], ['sci-fi novel', '공상 과학 소설'], ['soft drink', '탄산음료'], ['something else', '다른 것'], ['Try ~.', '~을 (먹어/마셔) 봐.'], ['give it a try', '한번 해 보다'], ['favorite', '가장 좋아하는 것'], ['strongly recommend', '강력히 추천하다'], ['magazine', '잡지'], ['all kinds of', '모든 종류의'], ['be interested in', '~에 관심이 있다'], ['You\'ll love ~', '~이 아주 마음에 들 거야']] },
+    { type: 'order', title: '대화 순서 맞추기', tries: 3, guide: '대화 한 편을 처음부터 끝까지 순서대로 놓아요. 묻는 말 → 대답, 허락 구하기 → 허락/거절 → 이유의 흐름을 떠올려요.', items: [
+      { lines: ['What kinds of books do you usually read?', 'I usually read sci-fi novels.', 'Then, can you recommend a good sci-fi novel for me?', 'How about The Time Machine? I think it\'s the best.'], flow: ['B: 주로 어떤 책 읽어?', 'G: 공상 과학 소설', 'B: 좋은 거 추천해 줄래?', 'G: The Time Machine 어때? 최고야'] },
+      { lines: ['What kinds of soft drinks do you usually have?', 'I usually drink apple soda, but today, I want to try something else. Can you recommend some new soft drinks?', 'Try a cherry soda. The cherry soda here is good.', 'OK. I\'ll give it a try, then.'], flow: ['G: 주로 어떤 탄산음료?', 'B: 사과 소다, 오늘은 다른 거, 추천해 줄래?', 'G: 체리 소다 마셔 봐', 'B: 한번 마셔 볼게'] },
+      { lines: ['What kinds of movies do you like?', 'I like action movies. Spider-Man is my favorite.', 'Oh, I didn\'t see it.', 'You didn\'t? It\'s really fun. I strongly recommend it.'], flow: ['B: 어떤 영화 좋아해?', 'G: 액션, 스파이더맨이 최애', 'B: 안 봤어', 'G: 정말 재밌어, 강력 추천'] },
+      { lines: ['What kinds of magazines do you have?', 'We have all kinds of magazines.', 'I\'m really interested in science. Can you recommend a science magazine for me?', 'Sure. You\'ll love this one, Teen\'s Science.'], flow: ['B: 어떤 잡지 있어요?', 'G: 모든 종류', 'B: 과학 관심, 추천해 줄래요?', 'G: Teen\'s Science 마음에 들 거예요'] }
+    ] },
+    { type: 'pick', title: '어법·의미 고르기', guide: '대화 속 헷갈리는 말을 골라요.', items: [
+      { s: 'What {kinds|kind} of books do you usually read?', ex: '정답 ▶ kinds\n이유: 대화 원문 What kinds of books (What kind of도 쓰지만 이 대화는 kinds)' },
+      { s: 'Then, can you {recommend|recommends} a good sci-fi novel for me?', ex: '정답 ▶ recommend\n이유: can + 동사원형' },
+      { s: 'How about The Time Machine? I think it\'s the {best|better}.', ex: '정답 ▶ best\n이유: \'최고\'라고 생각 → 최상급 the best' },
+      { s: 'Today, I want {to try|trying} something else.', ex: '정답 ▶ to try\n이유: want + to부정사' },
+      { s: 'I want to try {something else|else something}.', ex: '정답 ▶ something else\n이유: something 뒤에 else' },
+      { s: 'OK. I\'ll give it a {try|trying}, then.', ex: '정답 ▶ try\n이유: give it a try = 한번 해 보다(명사 try)' },
+      { s: 'You didn\'t? It\'s really fun. I strongly recommend {it|them}.', ex: '정답 ▶ it\n이유: Spider-Man(영화 한 편) → it' },
+      { s: 'I\'m really interested {in|on} science.', ex: '정답 ▶ in\n이유: be interested in' },
+      { s: 'Sure. You\'ll love this {one|ones}, Teen\'s Science.', ex: '정답 ▶ one\n이유: 잡지 한 권 → this one' }
+    ] },
+    { type: 'scramble', title: '모든 줄 스크램블', guide: '대화의 모든 줄을 우리말 보고 영어로 완성해요. 이것만 다 하면 대화가 통째로 외워져요.', items: [
+      { ko: '너는 주로 어떤 종류의 책을 읽니?', en: 'What kinds of books do you usually read?' },
+      { ko: '나는 보통 공상 과학 소설을 읽어.', en: 'I usually read sci-fi novels.' },
+      { ko: '그럼, 좋은 공상 과학 소설 하나 추천해 줄래?', en: 'Then, can you recommend a good sci-fi novel for me?' },
+      { ko: '\'The Time Machine\'은 어때? 나는 그것이 최고라고 생각해.', en: 'How about The Time Machine? I think it\'s the best.' },
+      { ko: '너는 주로 어떤 종류의 탄산음료를 마시니?', en: 'What kinds of soft drinks do you usually have?' },
+      { ko: '나는 보통 사과 소다를 마시는데, 오늘은 다른 것을 마셔 보고 싶어.', en: 'I usually drink apple soda, but today, I want to try something else.' },
+      { ko: '새로운 탄산음료를 추천해 줄래?', en: 'Can you recommend some new soft drinks?' },
+      { ko: '체리 소다를 마셔 봐. 여기 체리 소다가 맛있어.', en: 'Try a cherry soda. The cherry soda here is good.' },
+      { ko: '알았어. 그럼, 한번 마셔 볼게.', en: 'OK. I\'ll give it a try, then.' },
+      { ko: '너는 어떤 종류의 영화를 좋아하니?', en: 'What kinds of movies do you like?' },
+      { ko: '나는 액션 영화를 좋아해. \'스파이더맨\'이 가장 좋아하는 영화야.', en: 'I like action movies. Spider-Man is my favorite.' },
+      { ko: '오, 나는 그거 안 봤어.', en: 'Oh, I didn\'t see it.' },
+      { ko: '안 봤다고? 정말 재미있어. 강력히 추천해.', en: 'You didn\'t? It\'s really fun. I strongly recommend it.' },
+      { ko: '어떤 종류의 잡지가 있니?', en: 'What kinds of magazines do you have?' },
+      { ko: '모든 종류의 잡지가 있어.', en: 'We have all kinds of magazines.' },
+      { ko: '나는 과학에 정말 관심이 있어.', en: 'I\'m really interested in science.' },
+      { ko: '과학 잡지 하나 추천해 줄래?', en: 'Can you recommend a science magazine for me?' },
+      { ko: '그럼. \'Teen\'s Science\'가 아주 마음에 들 거야.', en: 'Sure. You\'ll love this one, Teen\'s Science.' }
+    ] },
+    { type: 'verb', title: '핵심 표현 쓰기', ph: '영어로 쓰기', guide: '빈칸에 들어갈 영어를 직접 써요(괄호 속 우리말 힌트).', items: [
+      { s: 'What ___ of books do you usually read?', v: '종류', a: ['kinds', 'kind'], ex: '정답 ▶ kinds / kind' },
+      { s: 'I usually read sci-fi ___.', v: '소설들', a: ['novels'], ex: '정답 ▶ novels' },
+      { s: 'Then, can you ___ a good sci-fi novel for me?', v: '추천하다', a: ['recommend'], ex: '정답 ▶ recommend' },
+      { s: '___ The Time Machine?', v: '~은 어때?', a: ['How about', 'What about'], ex: '정답 ▶ How about / What about' },
+      { s: 'What kinds of ___ do you usually have?', v: '탄산음료', a: ['soft drinks'], ex: '정답 ▶ soft drinks' },
+      { s: 'Today, I want to try ___.', v: '다른 것', a: ['something else'], ex: '정답 ▶ something else' },
+      { s: '___ a cherry soda.', v: '~을 마셔 봐', a: ['Try'], ex: '정답 ▶ Try' },
+      { s: 'OK. I\'ll ___, then.', v: '한번 해 보다', a: ['give it a try'], ex: '정답 ▶ give it a try' },
+      { s: 'Spider-Man is my ___.', v: '가장 좋아하는 것', a: ['favorite', 'favourite'], ex: '정답 ▶ favorite / favourite' },
+      { s: 'It\'s really fun. I ___ recommend it.', v: '강력히', a: ['strongly'], ex: '정답 ▶ strongly' },
+      { s: 'We have ___ magazines.', v: '모든 종류의', a: ['all kinds of'], ex: '정답 ▶ all kinds of' },
+      { s: 'I\'m really ___ science.', v: '~에 관심이 있는', a: ['interested in'], ex: '정답 ▶ interested in' }
+    ] },
+    { type: 'mc', title: '대화 내용 T/F', guide: '문제 위에 그 대화가 나와요. 누가 무엇을 했는지, 허락했는지 금지했는지 대화와 대조해서 T/F를 골라요.', items: [
+      { q: 'The girl usually reads sci-fi novels.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 1 · 공상 과학 소설 추천 (Watch and Check)'], ex: '정답 ▶ T (맞다)\n이유: 보통 공상 과학 소설을 읽어요.\n근거 ▶ I usually read sci-fi novels.' },
+      { q: 'The girl recommends The Time Machine to the boy.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 1 · 공상 과학 소설 추천 (Watch and Check)'], ex: '정답 ▶ T (맞다)\n이유: The Time Machine을 추천해요.\n근거 ▶ How about The Time Machine?' },
+      { q: 'The boy usually drinks cherry soda.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 대화 2 · 새 탄산음료 추천 (Watch and Check)'], ex: '정답 ▶ F (틀리다)\n이유: 보통 사과 소다를 마셔요.\n근거 ▶ I usually drink apple soda' },
+      { q: 'The boy wants to try a new soft drink today.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 2 · 새 탄산음료 추천 (Watch and Check)'], ex: '정답 ▶ T (맞다)\n이유: 오늘은 다른 것을 마셔 보고 싶어 해요.\n근거 ▶ today, I want to try something else' },
+      { q: 'The boy refuses to try the cherry soda.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 대화 2 · 새 탄산음료 추천 (Watch and Check)'], ex: '정답 ▶ F (틀리다)\n이유: 한번 마셔 보겠다고 해요.\n근거 ▶ I\'ll give it a try, then.' },
+      { q: 'The girl\'s favorite movie is Spider-Man.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 3 · 액션 영화 추천 (Watch and Check)'], ex: '정답 ▶ T (맞다)\n이유: 스파이더맨이 가장 좋아하는 영화예요.\n근거 ▶ Spider-Man is my favorite.' },
+      { q: 'The boy has seen Spider-Man.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 대화 3 · 액션 영화 추천 (Watch and Check)'], ex: '정답 ▶ F (틀리다)\n이유: 안 봤다고 해요.\n근거 ▶ Oh, I didn\'t see it.' },
+      { q: 'They have only science magazines.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 대화 4 · 과학 잡지 추천 (Watch and Check)'], ex: '정답 ▶ F (틀리다)\n이유: 모든 종류의 잡지가 있어요.\n근거 ▶ We have all kinds of magazines.' },
+      { q: 'The boy is interested in science.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 4 · 과학 잡지 추천 (Watch and Check)'], ex: '정답 ▶ T (맞다)\n이유: 과학에 관심이 있어요.\n근거 ▶ I\'m really interested in science.' },
+      { q: 'The girl recommends Teen\'s Science.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 4 · 과학 잡지 추천 (Watch and Check)'], ex: '정답 ▶ T (맞다)\n이유: Teen\'s Science를 추천해요.\n근거 ▶ You\'ll love this one, Teen\'s Science.' }
+    ] },
+    { type: 'mc', title: '상황·심경·기능', guide: '장소, 관계, 심경, 의도, 빈칸, 어색한 대화까지 시험에 나오는 모양 그대로예요.', items: [
+      { q: '대화 1에서 여자아이가 추천한 것으로 알맞은 것은?', opts: ['The Time Machine', 'Spider-Man', 'Teen\'s Science', 'The Song of Love', 'Travel to the Future'], ex: '정답 ▶ The Time Machine\n이유: How about The Time Machine?\n오답 ▶ Spider-Man / Teen\'s Science / The Song of Love / Travel to the Future', box: ['6과 대화 1 · 공상 과학 소설 추천 (Watch and Check)'] },
+      { q: '대화 2에서 남자아이가 새 탄산음료를 추천해 달라고 한 이유로 알맞은 것은?', opts: ['오늘은 다른 것을 마셔 보고 싶어서', '사과 소다가 다 떨어져서', '체리 소다를 싫어해서', '친구에게 선물하려고', '건강에 좋은 음료를 찾아서'], ex: '정답 ▶ 오늘은 다른 것을 마셔 보고 싶어서\n이유: today, I want to try something else\n오답 ▶ 사과 소다가 다 떨어져서 / 체리 소다를 싫어해서 / 친구에게 선물하려고 / 건강에 좋은 음료를 찾아서', box: ['6과 대화 2 · 새 탄산음료 추천 (Watch and Check)'] },
+      { q: '대화 2의 마지막 말 <span class="en">OK. I\'ll give it a try, then.</span>의 의미로 알맞은 것은?', opts: ['추천을 받아들여 한번 마셔 보겠다', '추천을 거절한다', '다음에 다시 오겠다', '다른 음료를 추천해 달라', '체리 소다를 사 주겠다'], ex: '정답 ▶ 추천을 받아들여 한번 마셔 보겠다\n이유: give it a try = 한번 해 보다\n오답 ▶ 추천을 거절한다 / 다음에 다시 오겠다 / 다른 음료를 추천해 달라 / 체리 소다를 사 주겠다', box: ['6과 대화 2 · 새 탄산음료 추천 (Watch and Check)'] },
+      { q: '대화 3에서 여자아이의 마지막 말에 담긴 의도로 알맞은 것은?', opts: ['영화를 강력히 추천하기', '영화를 같이 보자고 약속하기', '영화가 지루하다고 불평하기', '사과하기', '영화표를 사 달라고 부탁하기'], ex: '정답 ▶ 영화를 강력히 추천하기\n이유: I strongly recommend it.\n오답 ▶ 영화를 같이 보자고 약속하기 / 영화가 지루하다고 불평하기 / 사과하기 / 영화표를 사 달라고 부탁하기', box: ['6과 대화 3 · 액션 영화 추천 (Watch and Check)'] },
+      { q: '대화 4가 이루어지는 장소로 가장 알맞은 곳은?', opts: ['서점(잡지 파는 곳)', '식당', '영화관', '병원', '체육관'], ex: '정답 ▶ 서점(잡지 파는 곳)\n이유: What kinds of magazines do you have? / We have all kinds of magazines.\n오답 ▶ 식당 / 영화관 / 병원 / 체육관', box: ['6과 대화 4 · 과학 잡지 추천 (Watch and Check)'] },
+      { q: '다음 중 \'추천 요청하기\' 표현으로 알맞은 것은?', opts: ['Can you recommend a science magazine for me?', 'What kinds of movies do you like?', 'I strongly recommend it.', 'How about The Time Machine?', 'I\'m really interested in science.'], ex: '정답 ▶ Can you recommend a science magazine for me?\n이유: Can you recommend ~ for me? = 추천 요청 (②는 종류 묻기, ③④는 추천하기)\n오답 ▶ What kinds of movies do you like? / I strongly recommend it. / How about The Time Machine? / I\'m really interested in science.' },
+      { q: '다음 대화의 빈칸에 들어갈 말로 알맞은 것은?<br><span class="en">A: What kinds of movies do you like?<br>B: ________ Spider-Man is my favorite.</span>', opts: ['I like action movies.', 'Yes, I do.', 'I didn\'t see it.', 'I strongly recommend it.', 'We have all kinds of movies.'], ex: '정답 ▶ I like action movies.\n이유: 종류를 묻는 말에 종류로 대답 → I like action movies.\n오답 ▶ Yes, I do. / I didn\'t see it. / I strongly recommend it. / We have all kinds of movies.' },
+      { q: '다음 중 짝지어진 대화가 <u>어색한</u> 것은?', opts: ['A: What kinds of books do you read? B: Yes, I read books.', 'A: Can you recommend a soft drink? B: Try a cherry soda.', 'A: How about The Time Machine? B: OK. I\'ll read it.', 'A: I didn\'t see it. B: You didn\'t? It\'s really fun.', 'A: What kinds of magazines do you have? B: We have all kinds of magazines.'], ex: '정답 ▶ A: What kinds of books do you read? B: Yes, I read books.\n이유: What kinds of ~?에는 Yes/No가 아니라 구체적 종류로 대답\n오답 ▶ A: Can you recommend a soft drink? B: Try a cherry soda. / A: How about The Time Machine? B: OK. I\'ll read it. / A: I didn\'t see it. B: You didn\'t? It\'s really fun. / A: What kinds of magazines do you have? B: We have all kinds of magazines.' }
+    ] }
+  ] },
+  { id: 'kk6b', name: 'DAY 23', range: '6과 대화문 꿰뚫기 ② 대화 5·Listen Up·Review', story: '6과 대화문 꿰뚫기 ② 대화 5·Listen Up·Review · 대화문 꿰뚫기 (표현 카드 → 대화 순서 → 고르기 → 모든 줄 스크램블 17 → 표현 쓰기 13 → T/F 12 → 상황·심경·기능 8)', passage: [['#', '6과 대화 5 · 소미의 에세이 (Watch, Answer, and Role-play)', ''], ['G', 'Liam, can you please help me? I need to find some books for my homework.', 'Liam, 나 좀 도와줄래? 숙제를 위해 책을 몇 권 찾아야 해.'], ['B', 'What kinds of books are you looking for, Somi?', '어떤 종류의 책을 찾고 있니, 소미야?'], ['G', 'I\'m looking for books on famous people who helped others. I need to write an essay.', '다른 사람들을 도운 유명인들에 관한 책을 찾고 있어. 에세이를 써야 하거든.'], ['B', 'Who do you want to write about?', '너는 누구에 대해 쓰고 싶니?'], ['G', 'I was thinking about Dr. Schweitzer, but can you recommend someone else for me?', 'Schweitzer 박사를 생각하고 있었는데, 다른 사람을 추천해 줄 수 있어?'], ['B', 'What about Audrey Hepburn?', 'Audrey Hepburn은 어때?'], ['G', 'I know she was a famous actor, but what did she do to help others?', '그녀가 유명한 배우였다는 건 알지만, 다른 사람들을 돕기 위해 무엇을 했는데?'], ['B', 'She did a lot of volunteer work, especially for children.', '그녀는 특히 아이들을 위해서 많은 자원봉사를 했어.'], ['G', 'Really? Then, I can write about her. Thank you!', '정말? 그럼 그녀에 대해 쓸 수 있겠다. 고마워!'], ['#', '6과 Listen Up · 영화 소개 The Song of Love', ''], ['W', 'Hello, everyone.', '여러분, 안녕하세요.'], ['W', 'The movie I\'m going to introduce today is The Song of Love.', '제가 오늘 소개할 영화는 ‘The Song of Love’입니다.'], ['W', 'It\'s a movie about a pianist who loses his love for music.', '이것은 음악에 대한 사랑을 잃어버린 한 피아니스트에 관한 영화입니다.'], ['W', 'He moves to a small town for a new start.', '그는 새출발을 위해 작은 마을로 이사합니다.'], ['W', 'There, he begins teaching music to children and finds his love for music again.', '그곳에서 그는 아이들에게 음악을 가르치기 시작하며 음악에 대한 사랑을 되찾게 됩니다.'], ['W', 'This movie has great music and a touching story, so I strongly recommend it.', '이 영화는 훌륭한 음악과 감동적인 이야기를 담고 있어 강력히 추천합니다.'], ['#', '6과 Review · Listening 1 · 좋아하는 음식', ''], ['B', 'What kind of food do you like, Amy?', '너는 어떤 종류의 음식을 좋아하니, Amy?'], ['G', 'I like Italian food. How about you, Tom?', '나는 이탈리아 음식을 좋아해. 너는 어때, Tom?'], ['B', 'I love Indian food.', '나는 인도 음식을 정말 좋아해.'], ['G', 'Can you recommend a good Indian dish for me?', '좋은 인도 요리 하나 추천해 줄래?'], ['B', 'Well, why don\'t you try tandoori chicken? It\'s really good.', '음, 탄두리 치킨을 먹어 보는 게 어때? 정말 맛있어.'], ['#', '6과 Review · Listening 2 · 공상 과학 영화', ''], ['B', 'What kinds of movies do you like?', '너는 어떤 종류의 영화를 좋아하니?'], ['G', 'I like sci-fi movies.', '나는 공상 과학 영화를 좋아해.'], ['B', 'Me, too. Can you recommend a good sci-fi movie for me?', '나도. 좋은 공상 과학 영화 하나 추천해 줄래?'], ['G', 'Try Travel to the Future. It\'s really good.', '\'Travel to the Future\'를 봐. 정말 좋아.']], steps: [
+    { type: 'vocab', title: '대화 핵심 표현', guide: '대화에 나오는 표현이에요. 뜻을 정확히 익혀요.', quizN: 10, items: [['look for', '~을 찾다'], ['books on ~', '~에 관한 책'], ['famous', '유명한'], ['essay', '에세이, 글'], ['write about', '~에 대해 쓰다'], ['someone else', '다른 사람'], ['What about ~?', '~은 어때?'], ['actor', '배우'], ['volunteer work', '자원봉사'], ['especially', '특히'], ['introduce', '소개하다'], ['pianist', '피아니스트'], ['lose - lost', '잃다'], ['a new start', '새출발'], ['begin -ing', '~하기 시작하다'], ['touching', '감동적인'], ['Italian / Indian', '이탈리아의 / 인도의'], ['dish', '요리'], ['Why don\'t you ~?', '~하는 게 어때?(추천)'], ['Me, too.', '나도.']] },
+    { type: 'order', title: '대화 순서 맞추기', tries: 3, guide: '대화 한 편을 처음부터 끝까지 순서대로 놓아요. 묻는 말 → 대답, 허락 구하기 → 허락/거절 → 이유의 흐름을 떠올려요.', items: [
+      { lines: ['Liam, can you please help me? I need to find some books for my homework.', 'What kinds of books are you looking for, Somi?', 'I\'m looking for books on famous people who helped others. I need to write an essay.', 'Who do you want to write about?', 'I was thinking about Dr. Schweitzer, but can you recommend someone else for me?', 'What about Audrey Hepburn?', 'I know she was a famous actor, but what did she do to help others?', 'She did a lot of volunteer work, especially for children.', 'Really? Then, I can write about her. Thank you!'], flow: ['G: 숙제용 책 찾는 거 도와줘', 'B: 어떤 책?', 'G: 남을 도운 유명인 책, 에세이 써야 해', 'B: 누구에 대해 쓰고 싶어?', 'G: 슈바이처 생각했는데 다른 사람 추천해 줄래?', 'B: 오드리 헵번은?', 'G: 배우인 건 아는데 뭘 도왔어?', 'B: 특히 아이들 위한 자원봉사', 'G: 그럼 그녀로 쓸게, 고마워!'] },
+      { lines: ['Hello, everyone.', 'The movie I\'m going to introduce today is The Song of Love.', 'It\'s a movie about a pianist who loses his love for music.', 'He moves to a small town for a new start.', 'There, he begins teaching music to children and finds his love for music again.', 'This movie has great music and a touching story, so I strongly recommend it.'], flow: ['인사', '오늘 소개할 영화', '음악에 대한 사랑을 잃은 피아니스트', '새출발 위해 작은 마을로', '아이들 가르치며 사랑을 되찾음', '음악·이야기 좋아서 강력 추천'] },
+      { lines: ['What kind of food do you like, Amy?', 'I like Italian food. How about you, Tom?', 'I love Indian food.', 'Can you recommend a good Indian dish for me?', 'Well, why don\'t you try tandoori chicken? It\'s really good.'], flow: ['B: 어떤 음식 좋아해?', 'G: 이탈리아 음식, 너는?', 'B: 인도 음식', 'G: 인도 요리 추천해 줄래?', 'B: 탄두리 치킨 어때?'] },
+      { lines: ['What kinds of movies do you like?', 'I like sci-fi movies.', 'Me, too. Can you recommend a good sci-fi movie for me?', 'Try Travel to the Future. It\'s really good.'], flow: ['B: 어떤 영화 좋아해?', 'G: 공상 과학 영화', 'B: 나도, 추천해 줄래?', 'G: Travel to the Future 봐'] }
+    ] },
+    { type: 'pick', title: '어법·의미 고르기', guide: '대화 속 헷갈리는 말을 골라요.', items: [
+      { s: 'I need {to find|finding} some books for my homework.', ex: '정답 ▶ to find\n이유: need + to부정사' },
+      { s: 'What kinds of books are you looking {for|at}, Somi?', ex: '정답 ▶ for\n이유: look for = ~을 찾다' },
+      { s: 'I\'m looking for books on famous people {who|which} helped others.', ex: '정답 ▶ who\n이유: 선행사 people(사람) → who' },
+      { s: 'Can you recommend {someone else|else someone} for me?', ex: '정답 ▶ someone else\n이유: someone 뒤에 else' },
+      { s: 'I know she was a famous actor, but what did she do {to help|helping} others?', ex: '정답 ▶ to help\n이유: \'돕기 위해\'(목적) → to help' },
+      { s: 'She did a lot of volunteer work, {especially|special} for children.', ex: '정답 ▶ especially\n이유: \'특히\'(부사)' },
+      { s: 'It\'s a movie about a pianist who {loses|lose} his love for music.', ex: '정답 ▶ loses\n이유: 선행사 a pianist(단수) → loses' },
+      { s: 'This movie has great music and a {touching|touched} story, so I strongly recommend it.', ex: '정답 ▶ touching\n이유: 이야기가 감동을 \'주는\' → touching' },
+      { s: 'Well, why don\'t you {try|to try} tandoori chicken?', ex: '정답 ▶ try\n이유: Why don\'t you + 동사원형 ~?' }
+    ] },
+    { type: 'scramble', title: '모든 줄 스크램블', guide: '대화의 모든 줄을 우리말 보고 영어로 완성해요. 이것만 다 하면 대화가 통째로 외워져요.', items: [
+      { ko: 'Liam, 나 좀 도와줄래? 숙제를 위해 책을 몇 권 찾아야 해.', en: 'Liam, can you please help me? I need to find some books for my homework.' },
+      { ko: '어떤 종류의 책을 찾고 있니, 소미야?', en: 'What kinds of books are you looking for, Somi?' },
+      { ko: '다른 사람들을 도운 유명인들에 관한 책을 찾고 있어.', en: 'I\'m looking for books on famous people who helped others.' },
+      { ko: '에세이를 써야 하거든.', en: 'I need to write an essay.' },
+      { ko: '너는 누구에 대해 쓰고 싶니?', en: 'Who do you want to write about?' },
+      { ko: 'Schweitzer 박사를 생각하고 있었는데, 다른 사람을 추천해 줄 수 있어?', en: 'I was thinking about Dr. Schweitzer, but can you recommend someone else for me?' },
+      { ko: '그녀가 유명한 배우였다는 건 알지만, 다른 사람들을 돕기 위해 무엇을 했는데?', en: 'I know she was a famous actor, but what did she do to help others?' },
+      { ko: '그녀는 특히 아이들을 위해서 많은 자원봉사를 했어.', en: 'She did a lot of volunteer work, especially for children.' },
+      { ko: '정말? 그럼 그녀에 대해 쓸 수 있겠다. 고마워!', en: 'Really? Then, I can write about her. Thank you!' },
+      { ko: '제가 오늘 소개할 영화는 \'The Song of Love\'입니다.', en: 'The movie I\'m going to introduce today is The Song of Love.' },
+      { ko: '이것은 음악에 대한 사랑을 잃어버린 한 피아니스트에 관한 영화입니다.', en: 'It\'s a movie about a pianist who loses his love for music.' },
+      { ko: '그는 새출발을 위해 작은 마을로 이사합니다.', en: 'He moves to a small town for a new start.' },
+      { ko: '이 영화는 훌륭한 음악과 감동적인 이야기를 담고 있어 강력히 추천합니다.', en: 'This movie has great music and a touching story, so I strongly recommend it.' },
+      { ko: '나는 이탈리아 음식을 좋아해. 너는 어때, Tom?', en: 'I like Italian food. How about you, Tom?' },
+      { ko: '좋은 인도 요리 하나 추천해 줄래?', en: 'Can you recommend a good Indian dish for me?' },
+      { ko: '음, 탄두리 치킨을 먹어 보는 게 어때? 정말 맛있어.', en: 'Well, why don\'t you try tandoori chicken? It\'s really good.' },
+      { ko: '나도. 좋은 공상 과학 영화 하나 추천해 줄래?', en: 'Me, too. Can you recommend a good sci-fi movie for me?' }
+    ] },
+    { type: 'verb', title: '핵심 표현 쓰기', ph: '영어로 쓰기', guide: '빈칸에 들어갈 영어를 직접 써요(괄호 속 우리말 힌트).', items: [
+      { s: 'I need to find some books for my ___.', v: '숙제', a: ['homework'], ex: '정답 ▶ homework' },
+      { s: 'What kinds of books are you ___, Somi?', v: '~을 찾는 중', a: ['looking for'], ex: '정답 ▶ looking for' },
+      { s: 'I need to write an ___.', v: '에세이', a: ['essay'], ex: '정답 ▶ essay' },
+      { s: 'Who do you want to ___?', v: '~에 대해 쓰다', a: ['write about'], ex: '정답 ▶ write about' },
+      { s: 'Can you recommend ___ for me?', v: '다른 사람', a: ['someone else'], ex: '정답 ▶ someone else' },
+      { s: 'I know she was a famous ___, but what did she do to help others?', v: '배우', a: ['actor'], ex: '정답 ▶ actor' },
+      { s: 'She did a lot of ___, especially for children.', v: '자원봉사', a: ['volunteer work'], ex: '정답 ▶ volunteer work' },
+      { s: 'The movie I\'m going to ___ today is The Song of Love.', v: '소개하다', a: ['introduce'], ex: '정답 ▶ introduce' },
+      { s: 'He moves to a small town for a ___.', v: '새출발', a: ['new start'], ex: '정답 ▶ new start' },
+      { s: 'There, he begins ___ music to children and finds his love for music again.', v: '가르치는 것', a: ['teaching', 'to teach'], ex: '정답 ▶ teaching / to teach' },
+      { s: 'This movie has great music and a ___ story, so I strongly recommend it.', v: '감동적인', a: ['touching'], ex: '정답 ▶ touching' },
+      { s: 'Well, ___ try tandoori chicken?', v: '~하는 게 어때?', a: ['why don\'t you'], ex: '정답 ▶ why don\'t you' },
+      { s: '___ Can you recommend a good sci-fi movie for me?', v: '나도.', a: ['Me, too.', 'Me too.'], ex: '정답 ▶ Me, too. / Me too.' }
+    ] },
+    { type: 'mc', title: '대화 내용 T/F', guide: '문제 위에 그 대화가 나와요. 누가 무엇을 했는지, 허락했는지 금지했는지 대화와 대조해서 T/F를 골라요.', items: [
+      { q: 'Somi needs some books for her homework.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 5 · 소미의 에세이 (Watch, Answer, and Role-play)'], ex: '정답 ▶ T (맞다)\n이유: 숙제를 위해 책이 필요해요.\n근거 ▶ I need to find some books for my homework.' },
+      { q: 'Somi has to write an essay about famous people who helped others.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 5 · 소미의 에세이 (Watch, Answer, and Role-play)'], ex: '정답 ▶ T (맞다)\n이유: 남을 도운 유명인에 관한 에세이를 써요.\n근거 ▶ books on famous people who helped others. I need to write an essay' },
+      { q: 'Somi decides to write about Dr. Schweitzer.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 대화 5 · 소미의 에세이 (Watch, Answer, and Role-play)'], ex: '정답 ▶ F (틀리다)\n이유: Liam의 추천대로 Audrey Hepburn에 대해 써요.\n근거 ▶ Then, I can write about her.' },
+      { q: 'Liam recommends Audrey Hepburn.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 5 · 소미의 에세이 (Watch, Answer, and Role-play)'], ex: '정답 ▶ T (맞다)\n이유: Audrey Hepburn을 추천해요.\n근거 ▶ What about Audrey Hepburn?' },
+      { q: 'Somi didn\'t know that Audrey Hepburn was an actor.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 대화 5 · 소미의 에세이 (Watch, Answer, and Role-play)'], ex: '정답 ▶ F (틀리다)\n이유: 배우였다는 건 알아요.\n근거 ▶ I know she was a famous actor' },
+      { q: 'Audrey Hepburn did a lot of volunteer work, especially for children.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 5 · 소미의 에세이 (Watch, Answer, and Role-play)'], ex: '정답 ▶ T (맞다)\n이유: 특히 아이들을 위해 봉사했어요.\n근거 ▶ especially for children' },
+      { q: 'The Song of Love is about a pianist who loses his love for music.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 Listen Up · 영화 소개 The Song of Love'], ex: '정답 ▶ T (맞다)\n이유: 음악에 대한 사랑을 잃은 피아니스트 이야기예요.\n근거 ▶ a pianist who loses his love for music' },
+      { q: 'The pianist moves to a big city for a new start.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 Listen Up · 영화 소개 The Song of Love'], ex: '정답 ▶ F (틀리다)\n이유: 작은 마을로 이사해요.\n근거 ▶ He moves to a small town for a new start.' },
+      { q: 'The pianist never finds his love for music again.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 Listen Up · 영화 소개 The Song of Love'], ex: '정답 ▶ F (틀리다)\n이유: 아이들을 가르치며 다시 찾아요.\n근거 ▶ finds his love for music again' },
+      { q: 'Amy likes Indian food.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 Review · Listening 1 · 좋아하는 음식'], ex: '정답 ▶ F (틀리다)\n이유: Amy는 이탈리아 음식을 좋아해요.\n근거 ▶ I like Italian food.' },
+      { q: 'Tom recommends tandoori chicken.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 Review · Listening 1 · 좋아하는 음식'], ex: '정답 ▶ T (맞다)\n이유: 탄두리 치킨을 추천해요.\n근거 ▶ why don\'t you try tandoori chicken?' },
+      { q: 'Both of them like sci-fi movies.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 Review · Listening 2 · 공상 과학 영화'], ex: '정답 ▶ T (맞다)\n이유: 둘 다 공상 과학 영화를 좋아해요.\n근거 ▶ Me, too.' }
+    ] },
+    { type: 'mc', title: '상황·심경·기능', guide: '장소, 관계, 심경, 의도, 빈칸, 어색한 대화까지 시험에 나오는 모양 그대로예요.', items: [
+      { q: '대화 5에서 소미가 책을 찾는 이유로 알맞은 것은?', opts: ['에세이 숙제를 하려고', '독서 대회에 나가려고', '친구에게 선물하려고', '영화를 만들려고', '자원봉사를 신청하려고'], ex: '정답 ▶ 에세이 숙제를 하려고\n이유: I need to find some books for my homework. ~ I need to write an essay.\n오답 ▶ 독서 대회에 나가려고 / 친구에게 선물하려고 / 영화를 만들려고 / 자원봉사를 신청하려고', box: ['6과 대화 5 · 소미의 에세이 (Watch, Answer, and Role-play)'] },
+      { q: '대화 5에서 소미가 쓰기로 한 인물은?', opts: ['Audrey Hepburn', 'Dr. Schweitzer', 'Liam', 'The Song of Love의 피아니스트', 'Tom'], ex: '정답 ▶ Audrey Hepburn\n이유: Then, I can write about her. (her = Audrey Hepburn)\n오답 ▶ Dr. Schweitzer / Liam / The Song of Love의 피아니스트 / Tom', box: ['6과 대화 5 · 소미의 에세이 (Watch, Answer, and Role-play)'] },
+      { q: '대화 5의 마지막 말에 담긴 소미의 심정으로 알맞은 것은?', opts: ['고마움(도움을 받아 기쁨)', '실망', '화남', '지루함', '걱정'], ex: '정답 ▶ 고마움(도움을 받아 기쁨)\n이유: Really? Then, I can write about her. Thank you!\n오답 ▶ 실망 / 화남 / 지루함 / 걱정', box: ['6과 대화 5 · 소미의 에세이 (Watch, Answer, and Role-play)'] },
+      { q: 'Listen Up 담화의 목적으로 가장 알맞은 것은?', opts: ['영화를 소개하고 추천하려고', '피아노 수업을 홍보하려고', '작은 마을을 소개하려고', '음악 대회를 알리려고', '영화표 할인을 안내하려고'], ex: '정답 ▶ 영화를 소개하고 추천하려고\n이유: The movie I\'m going to introduce today ~ I strongly recommend it.\n오답 ▶ 피아노 수업을 홍보하려고 / 작은 마을을 소개하려고 / 음악 대회를 알리려고 / 영화표 할인을 안내하려고', box: ['6과 Listen Up · 영화 소개 The Song of Love'] },
+      { q: 'Listen Up의 영화 내용과 일치하는 것은?', opts: ['피아니스트가 아이들에게 음악을 가르치며 음악에 대한 사랑을 되찾는다.', '피아니스트가 큰 도시로 이사한다.', '피아니스트가 피아노 대회에서 우승한다.', '아이들이 피아니스트에게 노래를 가르친다.', '영화의 음악은 좋지 않다.'], ex: '정답 ▶ 피아니스트가 아이들에게 음악을 가르치며 음악에 대한 사랑을 되찾는다.\n이유: There, he begins teaching music to children and finds his love for music again.\n오답 ▶ 피아니스트가 큰 도시로 이사한다. / 피아니스트가 피아노 대회에서 우승한다. / 아이들이 피아니스트에게 노래를 가르친다. / 영화의 음악은 좋지 않다.', box: ['6과 Listen Up · 영화 소개 The Song of Love'] },
+      { q: 'Review 1에서 Tom이 Amy에게 추천한 것은?', opts: ['탄두리 치킨', '피자', '스파게티', '체리 소다', '김밥'], ex: '정답 ▶ 탄두리 치킨\n이유: why don\'t you try tandoori chicken?\n오답 ▶ 피자 / 스파게티 / 체리 소다 / 김밥', box: ['6과 Review · Listening 1 · 좋아하는 음식'] },
+      { q: 'Review 2에서 남자아이의 말 다음에 이어질 여자아이의 말로 알맞은 것은?<br><span class="en">B: Me, too. Can you recommend a good sci-fi movie for me?<br>G: ________</span>', opts: ['Try Travel to the Future. It\'s really good.', 'I like to watch sci-fi movies a lot.', 'OK. Why don\'t we watch a movie together?', 'I didn\'t see it.', 'What kinds of movies do you like?'], ex: '정답 ▶ Try Travel to the Future. It\'s really good.\n이유: 추천 요청에는 추천으로 대답 → Try ~. (교과서 Review 2번 정답)\n오답 ▶ I like to watch sci-fi movies a lot. / OK. Why don\'t we watch a movie together? / I didn\'t see it. / What kinds of movies do you like?' },
+      { q: '다음 중 \'추천하기\' 표현이 <u>아닌</u> 것은?', opts: ['What kinds of books are you looking for?', 'What about Audrey Hepburn?', 'Why don\'t you try tandoori chicken?', 'Try Travel to the Future.', 'I strongly recommend it.'], ex: '정답 ▶ What kinds of books are you looking for?\n이유: What kinds of ~?는 종류 묻기, 나머지는 추천하기\n오답 ▶ What about Audrey Hepburn? / Why don\'t you try tandoori chicken? / Try Travel to the Future. / I strongly recommend it.' }
+    ] }
   ] }
   ]
 };
