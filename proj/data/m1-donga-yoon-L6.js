@@ -3,6 +3,7 @@
    prose: true → 본문을 설명문으로 표시(대화문은 화자 표시) */
 /* 11/17: 6·7·5과 본문 어법 선택 한 판 DAY gt6·gt7·gt5 맨 끝 (generators/gen_m1dgate.py) */
 /* 11/19: 5·6·7과 본문 문장 순서(2문장 조각 · 3덩이) DAY od5·od6·od7 맨 끝 (generators/gen_m1dorder.py) */
+/* 11/27: 대화문 꿰뚫기 DAY (gen/m1dlg/gen.py, 과별 l5·l6·l7.py) 맨 끝 */
 window.PKG = {
   id: 'm1-donga-yoon-L6',
   school: '중1 동아(윤정미)',
@@ -869,6 +870,121 @@ window.PKG = {
       { lines: ['Hi, I\'m Jim Brown, the director of Happy Days. It\'s a movie about the friendship between Tom and his dog Max.', 'A lot of people are working hard to create this movie. Do you want to meet some of them?', 'I\'m Anna, and I found this beautiful beach. I\'m a location manager, and my job is to find perfect places for shooting.', 'Of course, it is not easy, but I love my job. I like to travel and enjoy challenges.'] },
       { lines: ['I\'m Peter, the director of photography for this movie. I\'m in charge of all the cameras.', 'Today, Tom and Max are going to play together with a ball on the beach. To capture their happy moments, I\'m going to use drones.', 'I\'m Jennifer. I trained and took care of Max for a long time.', 'Max is a great actor, but he sometimes gets too excited when a lot of people are around. So, I use hand signals to calm him.', 'Who am I? I\'m an animal wrangler.'] },
       { lines: ['My name is Emma, and I\'m a film editor. My work begins after the shooting is over.', 'To create a better story, I can change the order of scenes or delete some of them. Storytelling skills are important for my job, so I read a lot.', 'I\'m Chris, and I\'m a Foley artist. I create sound effects in my studio when recording on location is not easy.', 'Listen carefully. Do you hear the sound of waves?', 'I made that sound with rice and a plastic container. Doesn\'t it sound real?'] }
+    ] }
+  ] },
+  { id: 'k5a', name: 'DAY 19', range: '5과 대화문 꿰뚫기 ① 대화 1~4', story: '5과 대화문 꿰뚫기 ① 대화 1~4 · 대화문 꿰뚫기 (표현 카드 → 대화 순서 → 고르기 → 모든 줄 스크램블 14 → 표현 쓰기 13 → T/F 12 → 상황·심경·기능 9)', passage: [['#', '5과 대화 1 · 통화 금지', ''], ['W', 'Excuse me, but you must not talk on the phone here.', '실례합니다만, 여기서는 통화하시면 안 됩니다.'], ['B', 'I\'m terribly sorry. I\'ll turn off my phone.', '정말 죄송합니다. 휴대폰을 끌게요.'], ['W', 'You don\'t have to. Texting is OK.', '그럴 필요는 없어요. 문자하는 것은 괜찮아요.'], ['B', 'I see. Thank you.', '알겠습니다. 감사합니다.'], ['#', '5과 대화 2 · 만지기 금지', ''], ['G', 'Excuse me. May I touch this golden bear?', '실례합니다. 이 황금 곰을 만져 봐도 될까요?'], ['M', 'No, you may not. You must not touch anything in this room.', '아니요, 안 됩니다. 이 방에서는 어떤 것도 만지면 안 됩니다.'], ['G', 'OK, I understand.', '네, 알겠습니다.'], ['#', '5과 대화 3 · 뛰기 금지', ''], ['B', 'May I go to the video room, Mom?', '엄마, 비디오방에 가도 돼요?'], ['W', 'Of course, but don\'t run.', '물론이지, 하지만 뛰지는 마라.'], ['B', 'Why not?', '왜 안 돼요?'], ['W', 'Look at that sign. You must not run inside the museum.', '저 표지판을 보렴. 박물관 안에서 뛰면 안 된단다.'], ['#', '5과 대화 4 · 음식 금지', ''], ['B', 'May I take food into the museum?', '박물관에 음식을 가지고 들어가도 되나요?'], ['W', 'No, you may not. You must not bring any food inside.', '아니요, 안 됩니다. 어떤 음식도 내부로 가져오시면 안 됩니다.'], ['B', 'How about water?', '물은 어떤가요?'], ['W', 'Only bottled water is OK.', '병에 든 물만 괜찮습니다.']], steps: [
+    { type: 'vocab', title: '대화 핵심 표현', guide: '대화에 나오는 표현이에요. 뜻을 정확히 익혀요.', quizN: 10, items: [['must not', '~하면 안 된다(금지)'], ['Excuse me, but ~', '실례합니다만 ~'], ['talk on the phone', '통화하다'], ['terribly', '정말, 몹시'], ['turn off', '(전원을) 끄다'], ['You don\'t have to.', '그럴 필요 없어요.'], ['texting', '문자 보내기'], ['May I ~?', '~해도 될까요?(허락 구하기)'], ['No, you may not.', '아니요, 안 됩니다.(거절)'], ['golden', '금으로 된'], ['anything (부정문)', '어떤 것도'], ['Why not?', '왜 안 돼요?'], ['sign', '표지판'], ['inside', '~ 안에서, 안으로'], ['take A into B', 'A를 B에 가지고 들어가다'], ['bring', '가져오다'], ['How about ~?', '~는 어때요?'], ['bottled water', '병에 든 물'], ['only', '~만, 오직']] },
+    { type: 'order', title: '대화 순서 맞추기', tries: 3, guide: '대화 한 편을 처음부터 끝까지 순서대로 놓아요. 묻는 말 → 대답, 허락 구하기 → 허락/거절 → 이유의 흐름을 떠올려요.', items: [
+      { lines: ['Excuse me, but you must not talk on the phone here.', 'I\'m terribly sorry. I\'ll turn off my phone.', 'You don\'t have to. Texting is OK.', 'I see. Thank you.'], flow: ['W: 여기서 통화하면 안 돼요', 'B: 정말 죄송해요, 끌게요', 'W: 그럴 필요 없어요, 문자는 OK', 'B: 알겠어요, 고마워요'] },
+      { lines: ['Excuse me. May I touch this golden bear?', 'No, you may not. You must not touch anything in this room.', 'OK, I understand.'], flow: ['G: 황금 곰 만져도 돼요?', 'M: 안 돼요, 아무것도 만지면 안 돼요', 'G: 네, 알겠어요'] },
+      { lines: ['May I go to the video room, Mom?', 'Of course, but don\'t run.', 'Why not?', 'Look at that sign. You must not run inside the museum.'], flow: ['B: 비디오방 가도 돼요?', 'W: 물론, 하지만 뛰지 마', 'B: 왜 안 돼요?', 'W: 표지판 봐, 박물관 안에서 뛰면 안 돼'] },
+      { lines: ['May I take food into the museum?', 'No, you may not. You must not bring any food inside.', 'How about water?', 'Only bottled water is OK.'], flow: ['B: 음식 가지고 들어가도 돼요?', 'W: 안 돼요, 음식은 안 돼요', 'B: 물은요?', 'W: 병에 든 물만 OK'] }
+    ] },
+    { type: 'pick', title: '어법·의미 고르기', guide: '대화 속 헷갈리는 말을 골라요.', items: [
+      { s: 'W: You {don\'t have to|must not}. Texting is OK.', ex: '정답 ▶ don\'t have to\n이유: 휴대폰을 끌 \'필요는 없다\'(문자는 괜찮으니까). must not은 \'~하면 안 된다\'라 뜻이 정반대' },
+      { s: 'Excuse me, but you must not {talk|talking} on the phone here.', ex: '정답 ▶ talk\n이유: must not + 동사원형' },
+      { s: 'I\'m terribly sorry. I\'ll turn {off|on} my phone.', ex: '정답 ▶ off\n이유: 통화하면 안 된다는 말에 사과 → 휴대폰을 \'끈다\' turn off (turn on 켜다)' },
+      { s: 'Excuse me. May I {touch|touching} this golden bear?', ex: '정답 ▶ touch\n이유: May I + 동사원형 ~? 허락 구하기' },
+      { s: 'No, you may not. You must not touch {anything|something} in this room.', ex: '정답 ▶ anything\n이유: 부정문에서 \'어떤 것도\' = anything' },
+      { s: 'Of course, but {don\'t|doesn\'t} run.', ex: '정답 ▶ don\'t\n이유: 금지 명령문 Don\'t + 동사원형' },
+      { s: 'Look at that sign. You must not run {inside|outside} the museum.', ex: '정답 ▶ inside\n이유: 박물관 \'안에서\' 뛰면 안 된다' },
+      { s: 'May I take food {into|onto} the museum?', ex: '정답 ▶ into\n이유: take A into B = A를 B \'안으로\' 가지고 들어가다' },
+      { s: 'Only {bottled|bottle} water is OK.', ex: '정답 ▶ bottled\n이유: \'병에 든\' 물 = bottled water (형용사)' }
+    ] },
+    { type: 'scramble', title: '모든 줄 스크램블', guide: '대화의 모든 줄을 우리말 보고 영어로 완성해요. 이것만 다 하면 대화가 통째로 외워져요.', items: [
+      { ko: '실례합니다만, 여기서는 통화하시면 안 됩니다.', en: 'Excuse me, but you must not talk on the phone here.' },
+      { ko: '정말 죄송합니다. 휴대폰을 끌게요.', en: 'I\'m terribly sorry. I\'ll turn off my phone.' },
+      { ko: '그럴 필요는 없어요. 문자하는 것은 괜찮아요.', en: 'You don\'t have to. Texting is OK.' },
+      { ko: '알겠습니다. 감사합니다.', en: 'I see. Thank you.' },
+      { ko: '실례합니다. 이 황금 곰을 만져 봐도 될까요?', en: 'Excuse me. May I touch this golden bear?' },
+      { ko: '아니요, 안 됩니다. 이 방에서는 어떤 것도 만지면 안 됩니다.', en: 'No, you may not. You must not touch anything in this room.' },
+      { ko: '네, 알겠습니다.', en: 'OK, I understand.' },
+      { ko: '엄마, 비디오방에 가도 돼요?', en: 'May I go to the video room, Mom?' },
+      { ko: '물론이지, 하지만 뛰지는 마라.', en: 'Of course, but don\'t run.' },
+      { ko: '저 표지판을 보렴. 박물관 안에서 뛰면 안 된단다.', en: 'Look at that sign. You must not run inside the museum.' },
+      { ko: '박물관에 음식을 가지고 들어가도 되나요?', en: 'May I take food into the museum?' },
+      { ko: '아니요, 안 됩니다. 어떤 음식도 내부로 가져오시면 안 됩니다.', en: 'No, you may not. You must not bring any food inside.' },
+      { ko: '물은 어떤가요?', en: 'How about water?' },
+      { ko: '병에 든 물만 괜찮습니다.', en: 'Only bottled water is OK.' }
+    ] },
+    { type: 'verb', title: '핵심 표현 쓰기', ph: '영어로 쓰기', guide: '빈칸에 들어갈 영어를 직접 써요(괄호 속 우리말 힌트).', items: [
+      { s: 'Excuse me, but you ___ talk on the phone here.', v: '~하면 안 된다', a: ['must not'], ex: '정답 ▶ must not' },
+      { s: 'I\'m terribly sorry. I\'ll ___ my phone.', v: '끄다', a: ['turn off'], ex: '정답 ▶ turn off' },
+      { s: 'You don\'t ___. Texting is OK.', v: '~할 필요가 없다', a: ['have to'], ex: '정답 ▶ have to' },
+      { s: 'You don\'t have to. ___ is OK.', v: '문자 보내기', a: ['Texting'], ex: '정답 ▶ Texting' },
+      { s: 'Excuse me. ___ touch this golden bear?', v: '~해도 될까요?', a: ['May I', 'Can I'], ex: '정답 ▶ May I / Can I' },
+      { s: 'No, you ___. You must not touch anything in this room.', v: '안 된다(거절)', a: ['may not'], ex: '정답 ▶ may not' },
+      { s: 'You must not touch ___ in this room.', v: '어떤 것도', a: ['anything'], ex: '정답 ▶ anything' },
+      { s: 'Of course, but ___ run.', v: '~하지 마라', a: ['don\'t', 'do not'], ex: '정답 ▶ don\'t / do not' },
+      { s: 'Look at that ___. You must not run inside the museum.', v: '표지판', a: ['sign'], ex: '정답 ▶ sign' },
+      { s: 'You must not run ___ the museum.', v: '~ 안에서', a: ['inside'], ex: '정답 ▶ inside' },
+      { s: 'May I ___ food into the museum?', v: '가지고 가다', a: ['take'], ex: '정답 ▶ take' },
+      { s: '___ water?', v: '~는 어때요?', a: ['How about', 'What about'], ex: '정답 ▶ How about / What about' },
+      { s: 'Only ___ water is OK.', v: '병에 든', a: ['bottled'], ex: '정답 ▶ bottled' }
+    ] },
+    { type: 'tf', title: '대화 내용 T/F', guide: '누가 무엇을 했는지, 허락했는지 금지했는지 꼼꼼히 확인해요.', items: [['The woman tells the boy not to talk on the phone.', true, '정답 ▶ T\n이유: 통화하면 안 된다고 말해요.\n근거 ▶ you must not talk on the phone here', null, 'you must not talk on the phone here'], ['The boy gets angry at the woman.', false, '정답 ▶ F\n이유: 화내지 않고 정말 미안하다고 사과해요.\n근거 ▶ I\'m terribly sorry.', null, 'I\'m terribly sorry.'], ['The boy must turn off his phone.', false, '정답 ▶ F\n이유: 끌 필요는 없어요(don\'t have to).\n근거 ▶ You don\'t have to.', null, 'You don\'t have to.'], ['Sending text messages is allowed there.', true, '정답 ▶ T\n이유: 문자는 괜찮아요.\n근거 ▶ Texting is OK.', null, 'Texting is OK.'], ['The girl asks if she may touch the golden bear.', true, '정답 ▶ T\n이유: 황금 곰을 만져도 되는지 물어요.\n근거 ▶ May I touch this golden bear?', null, 'May I touch this golden bear?'], ['The man lets the girl touch only the golden bear.', false, '정답 ▶ F\n이유: 그 방에서는 어떤 것도 만지면 안 돼요.\n근거 ▶ You must not touch anything in this room.', null, 'You must not touch anything in this room.'], ['The boy asks his mom if he may go to the video room.', true, '정답 ▶ T\n이유: 엄마에게 비디오방에 가도 되는지 물어요.\n근거 ▶ May I go to the video room, Mom?', null, 'May I go to the video room, Mom?'], ['Mom says no to the boy\'s request.', false, '정답 ▶ F\n이유: 물론이라고 허락해요. 뛰지만 말라고 해요.\n근거 ▶ Of course, but don\'t run.', null, 'Of course, but don\'t run.'], ['Mom tells the boy to look at the sign.', true, '정답 ▶ T\n이유: 저 표지판을 보라고 해요.\n근거 ▶ Look at that sign.', null, 'Look at that sign.'], ['The boy can bring some snacks into the museum.', false, '정답 ▶ F\n이유: 어떤 음식도 가지고 들어가면 안 돼요.\n근거 ▶ You must not bring any food inside.', null, 'You must not bring any food inside.'], ['Any kind of drink is OK in the museum.', false, '정답 ▶ F\n이유: 병에 든 물\'만\' 괜찮아요.\n근거 ▶ Only bottled water is OK.', null, 'Only bottled water is OK.'], ['Bottled water is allowed inside the museum.', true, '정답 ▶ T\n이유: 병에 든 물은 괜찮아요.\n근거 ▶ Only bottled water is OK.', null, 'Only bottled water is OK.']] },
+    { type: 'mc', title: '상황·심경·기능', guide: '장소, 관계, 심경, 의도, 빈칸, 어색한 대화까지 시험에 나오는 모양 그대로예요.', items: [
+      { q: '대화 1에서 B(남자아이)의 심경 변화로 가장 알맞은 것은?', opts: ['미안함 → 안심함', '화남 → 기쁨', '지루함 → 신남', '질투함 → 부끄러움', '무서움 → 슬픔'], ex: '정답 ▶ 미안함 → 안심함\n이유: 통화하면 안 된다는 말에 I\'m terribly sorry(미안함) → 끌 필요 없고 문자는 된다는 말에 I see. Thank you.(안심함)\n오답 ▶ 화남 → 기쁨 / 지루함 → 신남 / 질투함 → 부끄러움 / 무서움 → 슬픔' },
+      { q: '대화 2·3·4가 이루어지는 장소로 가장 알맞은 곳은?', opts: ['박물관', '도서관', '식당', '영화관', '병원'], ex: '정답 ▶ 박물관\n이유: golden bear를 전시한 방, inside the museum, into the museum → 박물관\n오답 ▶ 도서관 / 식당 / 영화관 / 병원' },
+      { q: '대화 3에서 두 사람의 관계로 가장 알맞은 것은?', opts: ['엄마 – 아들', '선생님 – 학생', '직원 – 관람객', '의사 – 환자', '친구 – 친구'], ex: '정답 ▶ 엄마 – 아들\n이유: May I go to the video room, Mom? → 엄마와 아들\n오답 ▶ 선생님 – 학생 / 직원 – 관람객 / 의사 – 환자 / 친구 – 친구' },
+      { q: '대화 4의 대화가 끝난 뒤 B가 할 행동으로 가장 알맞은 것은?', opts: ['음식은 두고 병에 든 물만 가지고 들어간다.', '음식을 먹으면서 관람한다.', '물병을 버리고 음식을 가지고 들어간다.', '비디오방으로 뛰어간다.', '황금 곰을 만진다.'], ex: '정답 ▶ 음식은 두고 병에 든 물만 가지고 들어간다.\n이유: You must not bring any food inside. / Only bottled water is OK.\n오답 ▶ 음식을 먹으면서 관람한다. / 물병을 버리고 음식을 가지고 들어간다. / 비디오방으로 뛰어간다. / 황금 곰을 만진다.' },
+      { q: '다음 대화의 빈칸에 들어갈 말로 가장 알맞은 것은?<br><span class="en">B: May I take food into the museum?<br>W: No, you may not. ________<br>B: How about water?</span>', opts: ['You must not bring any food inside.', 'You must not touch anything in this room.', 'Of course, go ahead.', 'Texting is OK.', 'Look at that sign.'], ex: '정답 ▶ You must not bring any food inside.\n이유: No, you may not 뒤에 \'음식 금지\'를 다시 말하고, B가 \'물은요?\'라고 되물어요.\n오답 ▶ You must not touch anything in this room. / Of course, go ahead. / Texting is OK. / Look at that sign.' },
+      { q: '밑줄 친 <span class="en"><u>Why not?</u></span>(대화 3)의 의도로 가장 알맞은 것은?', opts: ['이유 묻기', '허락하기', '제안하기', '감사하기', '사과하기'], ex: '정답 ▶ 이유 묻기\n이유: 뛰지 말라는 말에 \'왜 안 돼요?\'라고 이유를 물어요.\n오답 ▶ 허락하기 / 제안하기 / 감사하기 / 사과하기' },
+      { q: '다음 중 \'허락 구하기\' 표현이 <u>아닌</u> 것은?', opts: ['You must not run here.', 'May I sit here?', 'Can I use your pen?', 'Is it OK if I open the window?', 'May I take a picture?'], ex: '정답 ▶ You must not run here.\n이유: You must not ~은 금지하기. 나머지는 모두 ~해도 될까요?(허락 구하기)\n오답 ▶ May I sit here? / Can I use your pen? / Is it OK if I open the window? / May I take a picture?' },
+      { q: '다음 중 짝지어진 대화가 <u>어색한</u> 것은?', opts: ['A: May I go to the video room? B: Yes, I may.', 'A: May I touch this? B: No, you may not.', 'A: You must not talk on the phone here. B: I\'m sorry.', 'A: How about water? B: Only bottled water is OK.', 'A: Why not? B: Look at that sign.'], ex: '정답 ▶ A: May I go to the video room? B: Yes, I may.\n이유: May I ~?에는 Yes, you may.(you로 대답) — Yes, I may. ✘\n오답 ▶ A: May I touch this? B: No, you may not. / A: You must not talk on the phone here. B: I\'m sorry. / A: How about water? B: Only bottled water is OK. / A: Why not? B: Look at that sign.' },
+      { q: '"You don\'t have to."(대화 1)의 뜻으로 알맞은 것은?', opts: ['그럴 필요 없어요.', '그러면 안 돼요.', '꼭 그래야 해요.', '그래도 돼요?', '그건 몰랐어요.'], ex: '정답 ▶ 그럴 필요 없어요.\n이유: don\'t have to = ~할 필요가 없다 (must not \'~하면 안 된다\'와 구별!)\n오답 ▶ 그러면 안 돼요. / 꼭 그래야 해요. / 그래도 돼요? / 그건 몰랐어요.' }
+    ] }
+  ] },
+  { id: 'k5b', name: 'DAY 20', range: '5과 대화문 꿰뚫기 ② 대화 5', story: '5과 대화문 꿰뚫기 ② 대화 5 · 대화문 꿰뚫기 (표현 카드 → 대화 순서 → 고르기 → 모든 줄 스크램블 9 → 표현 쓰기 11 → T/F 12 → 상황·심경·기능 9)', passage: [['#', '5과 대화 5 · 미술관에서 (Watch, Answer, and Talk)', ''], ['M', 'Everybody, look over here, please. This is Sunflowers by Van Gogh.', '여러분, 이쪽을 봐 주세요. 이것은 반 고흐의 \'해바라기\'입니다.'], ['G', 'Wow, this is my favorite painting. May I take a picture of it?', '와, 제가 가장 좋아하는 그림이에요. 이 그림의 사진을 찍어도 될까요?'], ['M', 'Yes, you may, but you must not use the flash.', '네, 됩니다. 하지만 플래시를 사용하시면 안 됩니다.'], ['G', 'Why not? It\'s a little dark in here.', '왜 안 되나요? 여기는 좀 어두운데요.'], ['M', 'I\'m sorry, but using the flash can damage paintings.', '죄송하지만, 플래시를 사용하는 것은 그림들을 훼손할 수 있습니다.'], ['G', 'Oh, I didn\'t know that.', '아, 그건 몰랐어요.'], ['M', 'Everyone, we\'ll move on to Monet\'s paintings next.', '여러분, 우리는 다음에 모네의 그림으로 이동하겠습니다.'], ['G', 'Great!', '좋아요!']], steps: [
+    { type: 'vocab', title: '대화 핵심 표현', guide: '대화에 나오는 표현이에요. 뜻을 정확히 익혀요.', quizN: 10, items: [['look over here', '이쪽을 보다'], ['Sunflowers', '(반 고흐의 그림) 해바라기'], ['by', '~이 그린, ~에 의한'], ['favorite', '가장 좋아하는'], ['take a picture of', '~의 사진을 찍다'], ['flash', '(카메라) 플래시'], ['a little', '조금, 약간'], ['dark', '어두운'], ['damage', '훼손하다, 손상시키다'], ['I didn\'t know that.', '그건 몰랐어요.'], ['move on to', '~로 넘어가다, 이동하다'], ['next', '다음에'], ['painting', '그림']] },
+    { type: 'order', title: '대화 순서 맞추기', tries: 3, guide: '대화 한 편을 처음부터 끝까지 순서대로 놓아요. 묻는 말 → 대답, 허락 구하기 → 허락/거절 → 이유의 흐름을 떠올려요.', items: [
+      { lines: ['Everybody, look over here, please. This is Sunflowers by Van Gogh.', 'Wow, this is my favorite painting. May I take a picture of it?', 'Yes, you may, but you must not use the flash.', 'Why not? It\'s a little dark in here.', 'I\'m sorry, but using the flash can damage paintings.', 'Oh, I didn\'t know that.', 'Everyone, we\'ll move on to Monet\'s paintings next.', 'Great!'], flow: ['M: 이쪽 보세요, 반 고흐의 해바라기', 'G: 제일 좋아하는 그림! 사진 찍어도 돼요?', 'M: 돼요, 하지만 플래시는 안 돼요', 'G: 왜요? 좀 어두운데요', 'M: 플래시가 그림을 훼손해요', 'G: 아, 몰랐어요', 'M: 다음은 모네 그림으로', 'G: 좋아요!'] }
+    ] },
+    { type: 'pick', title: '어법·의미 고르기', guide: '대화 속 헷갈리는 말을 골라요.', items: [
+      { s: 'Everybody, look {over|on} here, please.', ex: '정답 ▶ over\n이유: look over here = 이쪽을 보다' },
+      { s: 'This is Sunflowers {by|for} Van Gogh.', ex: '정답 ▶ by\n이유: 작품 + by + 작가 = ~이 그린' },
+      { s: 'May I take a picture {of|on} it?', ex: '정답 ▶ of\n이유: take a picture of ~ = ~의 사진을 찍다' },
+      { s: 'Yes, you may, but you must not {use|using} the flash.', ex: '정답 ▶ use\n이유: must not + 동사원형' },
+      { s: 'Why not? It\'s a little {dark|bright} in here.', ex: '정답 ▶ dark\n이유: 어두워서 플래시를 쓰고 싶은 것' },
+      { s: 'I\'m sorry, but {using|use} the flash can damage paintings.', ex: '정답 ▶ using\n이유: 주어 자리 → 동명사 using(사용하는 것)' },
+      { s: 'Using the flash can {damage|protect} paintings.', ex: '정답 ▶ damage\n이유: 플래시를 쓰면 안 되는 이유 → 그림을 \'훼손할\' 수 있어서' },
+      { s: 'Everyone, we\'ll move on {to|at} Monet\'s paintings next.', ex: '정답 ▶ to\n이유: move on to ~ = ~로 넘어가다' }
+    ] },
+    { type: 'scramble', title: '모든 줄 스크램블', guide: '대화의 모든 줄을 우리말 보고 영어로 완성해요. 이것만 다 하면 대화가 통째로 외워져요.', items: [
+      { ko: '여러분, 이쪽을 봐 주세요.', en: 'Everybody, look over here, please.' },
+      { ko: '이것은 반 고흐의 \'해바라기\'입니다.', en: 'This is Sunflowers by Van Gogh.' },
+      { ko: '와, 제가 가장 좋아하는 그림이에요.', en: 'Wow, this is my favorite painting.' },
+      { ko: '이 그림의 사진을 찍어도 될까요?', en: 'May I take a picture of it?' },
+      { ko: '네, 됩니다. 하지만 플래시를 사용하시면 안 됩니다.', en: 'Yes, you may, but you must not use the flash.' },
+      { ko: '왜 안 되나요? 여기는 좀 어두운데요.', en: 'Why not? It\'s a little dark in here.' },
+      { ko: '죄송하지만, 플래시를 사용하는 것은 그림들을 훼손할 수 있습니다.', en: 'I\'m sorry, but using the flash can damage paintings.' },
+      { ko: '아, 그건 몰랐어요.', en: 'Oh, I didn\'t know that.' },
+      { ko: '여러분, 우리는 다음에 모네의 그림으로 이동하겠습니다.', en: 'Everyone, we\'ll move on to Monet\'s paintings next.' }
+    ] },
+    { type: 'verb', title: '핵심 표현 쓰기', ph: '영어로 쓰기', guide: '빈칸에 들어갈 영어를 직접 써요(괄호 속 우리말 힌트).', items: [
+      { s: 'Everybody, ___ here, please.', v: '이쪽을 보다', a: ['look over'], ex: '정답 ▶ look over' },
+      { s: 'This is Sunflowers ___ Van Gogh.', v: '~이 그린', a: ['by'], ex: '정답 ▶ by' },
+      { s: 'Wow, this is my ___ painting.', v: '가장 좋아하는', a: ['favorite', 'favourite'], ex: '정답 ▶ favorite / favourite' },
+      { s: 'May I ___ of it?', v: '사진을 찍다', a: ['take a picture'], ex: '정답 ▶ take a picture' },
+      { s: 'Yes, you ___, but you must not use the flash.', v: '해도 된다(허락)', a: ['may', 'can'], ex: '정답 ▶ may / can' },
+      { s: 'Yes, you may, but you ___ use the flash.', v: '~하면 안 된다', a: ['must not'], ex: '정답 ▶ must not' },
+      { s: 'Why not? It\'s ___ dark in here.', v: '조금', a: ['a little'], ex: '정답 ▶ a little' },
+      { s: 'I\'m sorry, but ___ the flash can damage paintings.', v: '사용하는 것', a: ['using'], ex: '정답 ▶ using' },
+      { s: 'Using the flash can ___ paintings.', v: '훼손하다', a: ['damage'], ex: '정답 ▶ damage' },
+      { s: 'Oh, I ___ that.', v: '몰랐다', a: ['didn\'t know', 'did not know'], ex: '정답 ▶ didn\'t know / did not know' },
+      { s: 'Everyone, we\'ll ___ Monet\'s paintings next.', v: '~로 넘어가다', a: ['move on to'], ex: '정답 ▶ move on to' }
+    ] },
+    { type: 'tf', title: '대화 내용 T/F', guide: '누가 무엇을 했는지, 허락했는지 금지했는지 꼼꼼히 확인해요.', items: [['The man is showing paintings to a group of people.', true, '정답 ▶ T\n이유: 여러 사람(Everybody)에게 그림을 소개해요.\n근거 ▶ Everybody, look over here, please.', null, 'Everybody, look over here, please.'], ['Sunflowers was painted by Monet.', false, '정답 ▶ F\n이유: 해바라기는 반 고흐의 그림이에요.\n근거 ▶ This is Sunflowers by Van Gogh.', null, 'This is Sunflowers by Van Gogh.'], ['Sunflowers is the girl\'s favorite painting.', true, '정답 ▶ T\n이유: 소녀가 가장 좋아하는 그림이에요.\n근거 ▶ this is my favorite painting', null, 'this is my favorite painting'], ['The girl asks if she may take a picture of the painting.', true, '정답 ▶ T\n이유: 사진을 찍어도 되는지 물어요.\n근거 ▶ May I take a picture of it?', null, 'May I take a picture of it?'], ['The man says the girl must not take any pictures.', false, '정답 ▶ F\n이유: 사진은 찍어도 돼요. 플래시만 안 돼요.\n근거 ▶ Yes, you may', null, 'Yes, you may'], ['The girl may use the flash.', false, '정답 ▶ F\n이유: 플래시는 쓰면 안 돼요.\n근거 ▶ you must not use the flash', null, 'you must not use the flash'], ['The girl thinks it is a little dark in the room.', true, '정답 ▶ T\n이유: 안이 조금 어둡다고 해요.\n근거 ▶ It\'s a little dark in here.', null, 'It\'s a little dark in here.'], ['Using the flash can damage paintings.', true, '정답 ▶ T\n이유: 플래시는 그림을 훼손할 수 있어요.\n근거 ▶ using the flash can damage paintings', null, 'using the flash can damage paintings'], ['The girl already knew that the flash is bad for paintings.', false, '정답 ▶ F\n이유: 몰랐다고 해요.\n근거 ▶ Oh, I didn\'t know that.', null, 'Oh, I didn\'t know that.'], ['The group will see Monet\'s paintings next.', true, '정답 ▶ T\n이유: 다음은 모네의 그림이에요.\n근거 ▶ we\'ll move on to Monet\'s paintings next', null, 'we\'ll move on to Monet\'s paintings next'], ['The group will see more of Van Gogh\'s paintings next.', false, '정답 ▶ F\n이유: 다음은 반 고흐가 아니라 모네예요.\n근거 ▶ we\'ll move on to Monet\'s paintings next', null, 'we\'ll move on to Monet\'s paintings next'], ['The girl is happy to move on to the next paintings.', true, '정답 ▶ T\n이유: 좋아요!(Great!)라고 해요.\n근거 ▶ Great!', null, 'Great!']] },
+    { type: 'mc', title: '상황·심경·기능', guide: '장소, 관계, 심경, 의도, 빈칸, 어색한 대화까지 시험에 나오는 모양 그대로예요.', items: [
+      { q: '남자(M)의 직업으로 가장 알맞은 것은?', opts: ['미술관 안내원(가이드)', '화가', '사진작가', '경찰관', '의사'], ex: '정답 ▶ 미술관 안내원(가이드)\n이유: 여러 사람에게 그림을 소개하고 다음 그림으로 안내 → 미술관 안내원\n오답 ▶ 화가 / 사진작가 / 경찰관 / 의사' },
+      { q: '소녀가 플래시를 쓰고 싶어 한 이유로 알맞은 것은?', opts: ['안이 조금 어두워서', '그림이 너무 작아서', '사진을 친구에게 보내려고', '플래시가 그림을 보호해서', '모네의 그림을 찍으려고'], ex: '정답 ▶ 안이 조금 어두워서\n이유: Why not? It\'s a little dark in here.\n오답 ▶ 그림이 너무 작아서 / 사진을 친구에게 보내려고 / 플래시가 그림을 보호해서 / 모네의 그림을 찍으려고' },
+      { q: '플래시를 쓰면 안 되는 이유로 알맞은 것은?', opts: ['그림을 훼손할 수 있어서', '다른 관람객이 놀라서', '사진이 흐리게 나와서', '배터리가 빨리 닳아서', '그림이 너무 어두워 보여서'], ex: '정답 ▶ 그림을 훼손할 수 있어서\n이유: using the flash can damage paintings\n오답 ▶ 다른 관람객이 놀라서 / 사진이 흐리게 나와서 / 배터리가 빨리 닳아서 / 그림이 너무 어두워 보여서' },
+      { q: '대화의 내용과 일치하는 것은?', opts: ['소녀는 플래시 없이 사진을 찍을 수 있다.', '소녀는 모네의 그림을 가장 좋아한다.', '남자는 사진 촬영을 전혀 허락하지 않는다.', '전시실 안은 매우 밝다.', '일행은 다음에 반 고흐의 그림을 더 본다.'], ex: '정답 ▶ 소녀는 플래시 없이 사진을 찍을 수 있다.\n이유: Yes, you may, but you must not use the flash. → 사진은 OK, 플래시만 금지\n오답 ▶ 소녀는 모네의 그림을 가장 좋아한다. / 남자는 사진 촬영을 전혀 허락하지 않는다. / 전시실 안은 매우 밝다. / 일행은 다음에 반 고흐의 그림을 더 본다.' },
+      { q: '다음 대화의 빈칸에 들어갈 말로 가장 알맞은 것은?<br><span class="en">G: Why not? It\'s a little dark in here.<br>M: I\'m sorry, but ________</span>', opts: ['using the flash can damage paintings.', 'you may use the flash.', 'this is my favorite painting.', 'we\'ll move on to Monet\'s paintings next.', 'it\'s very bright in here.'], ex: '정답 ▶ using the flash can damage paintings.\n이유: 왜 안 되냐는 물음에 이유(그림 훼손)를 말해요.\n오답 ▶ you may use the flash. / this is my favorite painting. / we\'ll move on to Monet\'s paintings next. / it\'s very bright in here.' },
+      { q: '<span class="en">Yes, you may, but you must not use the flash.</span>에 담긴 의사소통 기능으로 알맞은 것은?', opts: ['허락하기 + 금지하기', '거절하기 + 제안하기', '허락 구하기 + 감사하기', '사과하기 + 이유 말하기', '칭찬하기 + 충고하기'], ex: '정답 ▶ 허락하기 + 금지하기\n이유: Yes, you may(허락하기) + you must not use the flash(금지하기)\n오답 ▶ 거절하기 + 제안하기 / 허락 구하기 + 감사하기 / 사과하기 + 이유 말하기 / 칭찬하기 + 충고하기' },
+      { q: '소녀의 말 <span class="en">Oh, I didn\'t know that.</span>에 담긴 심정으로 알맞은 것은?', opts: ['몰랐던 사실을 새로 알게 됨', '화가 나서 따짐', '지루해서 그만두고 싶음', '다른 사람을 칭찬함', '부탁을 거절함'], ex: '정답 ▶ 몰랐던 사실을 새로 알게 됨\n이유: 플래시가 그림을 훼손한다는 사실을 \'몰랐다\' → 새로 알게 됨\n오답 ▶ 화가 나서 따짐 / 지루해서 그만두고 싶음 / 다른 사람을 칭찬함 / 부탁을 거절함' },
+      { q: '소녀의 마지막 말 <span class="en">Great!</span>에 담긴 심정으로 알맞은 것은?', opts: ['기대됨', '실망함', '지루함', '걱정됨', '화남'], ex: '정답 ▶ 기대됨\n이유: 다음에 모네의 그림을 본다는 말에 \'좋아요!\' → 기대됨\n오답 ▶ 실망함 / 지루함 / 걱정됨 / 화남' },
+      { q: '다음 중 대화의 흐름상 <u>어색한</u> 응답은?', opts: ['A: May I take a picture of it? B: Yes, I may.', 'A: Why not? B: Using the flash can damage paintings.', 'A: This is Sunflowers by Van Gogh. B: Wow, this is my favorite painting.', 'A: We\'ll move on to Monet\'s paintings next. B: Great!', 'A: You must not use the flash. B: Oh, I didn\'t know that.'], ex: '정답 ▶ A: May I take a picture of it? B: Yes, I may.\n이유: May I ~?에는 Yes, you may.로 대답 — Yes, I may. ✘\n오답 ▶ A: Why not? B: Using the flash can damage paintings. / A: This is Sunflowers by Van Gogh. B: Wow, this is my favorite painting. / A: We\'ll move on to Monet\'s paintings next. B: Great! / A: You must not use the flash. B: Oh, I didn\'t know that.' }
     ] }
   ] }
   ]
