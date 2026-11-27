@@ -1,5 +1,6 @@
 # 11/11 중산고1 · 비밀노트(edu-lab) 2025년 고1 9월 변형문제 18~24번 → h1-mock-2509 '비밀노트 변형문제' 탭 (종이 시험지 + 답안지)
 # t1~t4.txt = hwp 글자(generators/hwpread.py). 11/13부터 t1u~t4u.txt(hwpread_u.py: 밑줄 구간 \ue000…\ue001 → <u>) 를 읽음. 문항 번호 = 파일 안 순서(묶음 '다음 글을 읽고 물음에 답하시오' 머리말은 번호 없음 — t3 '위 29번 참조'로 확인)
+from ex2223 import EX as EX2223
 import re, json, sys, html as H
 sys.path.insert(0, '/home/claude/srcrepo/wrapup/bimi'); from exp_bimi import fmt as XF
 D = '/home/claude/proj/data/h1-mock-2509.js'
@@ -120,7 +121,7 @@ def parse(fk):
         else:
             ai = next(i for i, l in enumerate(seg) if re.match(r'\s*[①-⑤➀-➄]', nc(l)) and l.startswith(' '))
             ans_line = nc(seg[ai].strip()); body = [l for l in seg[:ai] + seg[ai + 1:] if not TONLY.match(l)]
-            if key == ('3', 28):   # 제시문 해석(정답지용 우리말 정리) 빼기
+        if key == ('3', 28):   # 제시문 해석(정답지용 우리말 정리) 빼기
                 a0 = next(i for i, l in enumerate(body) if l.strip().startswith('제시문 해석')); a1 = next(i for i, l in enumerate(body) if l.strip().startswith('Gardening is Good'))
                 body = body[:a0] + body[a1:]
         hb = [h for h in HS if h < j]; g = hb[-1] if hb else None
@@ -166,6 +167,14 @@ def parse(fk):
         exs += orig
         it.update({'body': esc('\n'.join(rest).strip()).replace('\n', '<br>'), 'opts': [esc(o) for o in opts], 'en': sum(c.isascii() and c.isalpha() for c in opts[0]) > len(opts[0]) * .5,
                    'ans': ans[0] if len(ans) == 1 else ans, 'ex': '\n'.join(exs)})
+        if key == ('3', 27):   # 11/27 원본 선지 ③ incredible·⑤ thriving도 틀린 고침 → 답 하나가 되게 바로잡음
+            assert 'incredible' in it['opts'][2] and 'thriving' in it['opts'][4], it['opts']
+            it['opts'][2] = it['opts'][2].replace('incredible', 'incredibly'); it['opts'][4] = it['opts'][4].replace('thriving', 'thrive (그대로)')
+        if key[0] == '3' and int(key[1]) in EX2223:   # 11/27 해설 보강(영어 선지·해석·오답 이유)
+            old = it['ex']; keep = '\n'.join(l for l in old.split('\n') if l.startswith(('포인트 ▶', '출제 메모 ▶')))
+            assert old.startswith('정답 ▶ ' + CIRC[it['ans'] if not isinstance(it['ans'], list) else it['ans'][0]]), (key, old[:20])
+            assert EX2223[int(key[1])].startswith('정답 ▶ ' + CIRC[it['ans']]), key
+            it['ex'] = EX2223[int(key[1])] + ('\n' + keep if keep else '')
         if key == ('3', 28):   # 11/26 FIXT로 번호(③→④·④→⑤)를 고치면서 ④ 밑줄 시작이 빠지고 끝 </u>가 하나 남던 것
             assert it['body'].count('④ Spending') == 1 and it['body'].count('happiness</u>') == 1
             it['body'] = it['body'].replace('④ Spending', '④ <u>Spending').replace('happiness</u>', 'happiness')
