@@ -6,6 +6,7 @@
 /* 11/16: 7과 본문 어법 한 판 DAY gt7 (generators/gen_m2gate.py) */
 /* 11/25: 외부지문 어법·어휘 한 판 DAY ex1·ex2 맨 끝 (generators/gen_bsext.py) */
 /* 11/27: 대화문 꿰뚫기 DAY (gen/m1dlg/gen.py, 과별 l5·l6·l7.py) 맨 끝 */
+/* 11/27: 외부지문 3 DAY ex3(한 줄씩 완벽 학습 13단계)·ex3g(어법·어휘 한 판) 맨 끝 (generators/gen_bsrm3.py) */
 window.PKG = {
   id: 'm2-visang-hwang-L7',
   school: '중2 비상(황종배)',
@@ -1269,6 +1270,146 @@ window.PKG = {
       { q: '다음 중 \'음식 권하기\' 표현으로 알맞은 것은?', opts: ['Would you like some?', 'Have you eaten paella?', 'What are you cooking?', 'It smells nice.', 'Can I have them later?'], ex: '정답 ▶ Would you like some?\n이유: Would you like some? = 좀 먹어 볼래?(음식 권하기)\n오답 ▶ Have you eaten paella? / What are you cooking? / It smells nice. / Can I have them later?' },
       { q: '다음 대화의 빈칸에 들어갈 말로 알맞은 것은?<br><span class="en">A: I brought some sandwiches. Would you like some?<br>B: ________ Thank you.</span>', opts: ['Oh, that would be great.', 'No, I haven\'t.', 'I woke up late.', 'It\'s only 10 a.m.', 'Yes, I have.'], ex: '정답 ▶ Oh, that would be great.\n이유: 권하는 말에 수락(그거 좋겠다) + 고마워\n오답 ▶ No, I haven\'t. / I woke up late. / It\'s only 10 a.m. / Yes, I have.' },
       { q: '다음 중 짝지어진 대화가 <u>어색한</u> 것은?', opts: ['A: Would you like some? B: Yes, I have.', 'A: What is paella? B: It\'s a Spanish rice dish.', 'A: It smells nice. B: Would you like some?', 'A: Can I have them later? B: Sure.', 'A: Didn\'t you eat anything? B: No. I woke up late.'], ex: '정답 ▶ A: Would you like some? B: Yes, I have.\n이유: Would you like some?에는 Yes, I\'d like some. / No, thanks. — Yes, I have. ✘\n오답 ▶ A: What is paella? B: It\'s a Spanish rice dish. / A: It smells nice. B: Would you like some? / A: Can I have them later? B: Sure. / A: Didn\'t you eat anything? B: No. I woke up late.' }
+    ] }
+  ] },
+  { id: 'ex3', name: 'DAY 25', range: '외부지문 3 · 한 줄씩 완벽 학습 (큰곰·작은곰자리)', story: 'Reading Material 3 · 21문장 한 줄씩 꼼꼼하게 — 이것만 하면 다 외워져요', passage: [['#', 'Reading Material 3 · 외부지문 (발산중 프린트)', ''], ['', 'The Great Bear and the Little Bear', '큰곰자리와 작은곰자리'], ['', 'Every night, we can see the Great Bear and the Little Bear in the north sky.', '매일 밤, 우리는 북쪽 하늘에서 큰곰자리와 작은곰자리를 볼 수 있다.'], ['', 'How did the bears end up among the stars?', '그 곰들은 어떻게 해서 결국 별들 사이에 있게 되었을까?'], ['', 'There is a sad story behind these stars.', '이 별들 뒤에는 슬픈 이야기가 있다.'], ['', 'According to a Greek myth, there was a beautiful woman called Callisto whose job was to help the hunting goddess.', '그리스 신화에 따르면, 칼리스토라고 불리는 아름다운 여인이 있었는데, 그녀의 일은 사냥의 여신을 돕는 것이었다.'], ['', 'Callisto was so beautiful that Zeus, the king of the gods, fell in love with her even though he had a wife.', '칼리스토는 너무 아름다워서 신들의 왕인 제우스는 아내가 있었는데도 그녀와 사랑에 빠졌다.'], ['', 'From them, Arcas was born.', '그들에게서 아르카스가 태어났다.'], ['', 'As Arcas grew, the anger of Zeus\' wife also grew.', '아르카스가 자라면서, 제우스 아내의 분노도 커졌다.'], ['', 'One day, she happened to see Callisto in the forest.', '어느 날, 그녀는 숲에서 우연히 칼리스토를 보게 되었다.'], ['', 'She thought this was the perfect moment to get back at Callisto for stealing her husband.', '그녀는 지금이 자기 남편을 빼앗은 것에 대해 칼리스토에게 복수할 완벽한 순간이라고 생각했다.'], ['', 'So she turned Callisto into an ugly bear.', '그래서 그녀는 칼리스토를 못생긴 곰으로 바꾸어 버렸다.'], ['', 'Poor Callisto!', '불쌍한 칼리스토!'], ['', 'She became a huge bear.', '그녀는 거대한 곰이 되었다.'], ['', 'Many years passed.', '여러 해가 지났다.'], ['', 'Arcas grew up to be a strong hunter.', '아르카스는 자라서 강한 사냥꾼이 되었다.'], ['', 'One day while hunting in the forest, he ran into a huge bear.', '어느 날 숲에서 사냥을 하던 중에, 그는 거대한 곰과 마주쳤다.'], ['', 'How happy she was to see her son!', '그녀는 아들을 보게 되어 얼마나 기뻤을까!'], ['', 'But Arcas didn\'t recognize his mother and got ready to shoot her.', '하지만 아르카스는 자기 어머니를 알아보지 못하고 그녀를 쏠 준비를 했다.'], ['', 'At that moment, Zeus happened to see them.', '그 순간, 제우스가 우연히 그들을 보게 되었다.'], ['', 'To save the woman he loved, Zeus turned Arcas into a bear, too.', '자신이 사랑한 여인을 구하기 위해, 제우스는 아르카스도 곰으로 바꾸었다.'], ['', 'He placed both of them up in the night sky.', '그는 그 둘을 밤하늘 위에 올려놓았다.'], ['', 'If you ever see the Great Bear and the Little Bear in the night sky, remember this sad story and wish them happiness.', '혹시 밤하늘에서 큰곰자리와 작은곰자리를 보게 되면, 이 슬픈 이야기를 기억하고 그들의 행복을 빌어 주어라.']], steps: [
+    { type: 'vocab', title: '핵심어휘·숙어', quizN: 15, items: [['end up', '결국 ~하게 되다'], ['among', '~ 사이에(셋 이상)'], ['behind', '~ 뒤에'], ['according to', '~에 따르면'], ['Greek', '그리스의 (Greece 그리스)'], ['myth', '신화'], ['called', '~라고 불리는'], ['goddess', '여신'], ['fall in love with', '~와 사랑에 빠지다'], ['even though', '비록 ~일지라도 (= although)'], ['be born', '태어나다'], ['as', '~함에 따라, ~하면서'], ['anger', '분노 (angry 화난)'], ['happen to', '우연히 ~하다'], ['forest', '숲'], ['moment', '순간'], ['get back at', '~에게 복수하다 (= take revenge on)'], ['steal', '훔치다, 빼앗다'], ['turn A into B', 'A를 B로 바꾸다 (= change A into B)'], ['ugly', '못생긴'], ['huge', '거대한'], ['pass', '(시간이) 지나다'], ['grow up to be', '자라서 ~이 되다'], ['hunter', '사냥꾼'], ['run into', '~와 우연히 마주치다'], ['recognize', '알아보다'], ['get ready to', '~할 준비를 하다'], ['shoot', '쏘다'], ['at that moment', '그 순간'], ['save', '구하다'], ['place', '놓다, 배치하다'], ['both of them', '그 둘 다'], ['wish A B', 'A에게 B를 빌어 주다'], ['happiness', '행복']] },
+    { type: 'pick', title: '어휘선택', guide: '문맥에 맞는 낱말을 고르세요.', items: [
+      { s: 'There is a {sad|happy} story behind these stars.', ex: '뒤에 아내의 복수·엄마를 쏘려는 아들 → 슬픈(sad) 이야기 (마지막 문장 this sad story)' },
+      { s: 'Callisto was so beautiful that Zeus, the king of the gods, fell in love with her {even though|because} he had a wife.', ex: '아내가 있었는데\'도\' 사랑에 빠짐 → 양보 even though (because는 이유)' },
+      { s: 'As Arcas grew, the {anger|joy} of Zeus\' wife also grew.', ex: '다음에 복수가 이어짐 → 분노(anger)' },
+      { s: 'She thought this was the perfect moment to {get back at|thank} Callisto for stealing her husband.', ex: '남편을 빼앗은 것에 대해 → 복수하다(get back at)' },
+      { s: 'So she turned Callisto into an {ugly|beautiful} bear.', ex: '복수로 바꾼 것 → 못생긴(ugly) 곰' },
+      { s: '{Poor|Lucky} Callisto!', ex: '곰이 되어 버림 → 불쌍한(poor) 칼리스토' },
+      { s: 'Arcas grew up to be a strong {hunter|singer}.', ex: '다음 문장 while hunting in the forest → 사냥꾼(hunter)' },
+      { s: 'How {happy|angry} she was to see her son!', ex: '엄마가 아들을 보게 됨 → 기쁜(happy)' },
+      { s: 'But Arcas didn\'t {recognize|forget} his mother and got ready to shoot her.', ex: '엄마를 쏘려 함 → 알아보지(recognize) 못함' },
+      { s: 'To {save|punish} the woman he loved, Zeus turned Arcas into a bear, too.', ex: '사랑한 여인을 → 구하기(save) 위해' },
+      { s: 'If you ever see the Great Bear and the Little Bear in the night sky, remember this sad story and wish them {happiness|anger}.', ex: '슬픈 이야기의 주인공들에게 → 행복(happiness)을 빌어 줌' }
+    ] },
+    { type: 'tf', title: 'T/F 내용 확인', guide: '본문 내용과 일치하면 T, 다르면 F를 고르세요.', items: [['We can see the Great Bear and the Little Bear in the south sky.', false, '정답 F ✘\n문장 해석 ▶ 우리는 남쪽 하늘에서 큰곰자리와 작은곰자리를 볼 수 있다.\n본문 ▶ in the north sky\n왜 F일까? ▶ 본문은 북쪽 하늘(north sky)이에요. south(남쪽)가 아니라서 F.', null, 'in the north sky'], ['Callisto\'s job was to help the hunting goddess.', true, '정답 T ✔\n문장 해석 ▶ 칼리스토의 일은 사냥의 여신을 돕는 것이었다.\n본문 ▶ whose job was to help the hunting goddess\n왜 T일까? ▶ 4번 문장 그대로예요. whose job = Callisto\'s job → T.', null, 'whose job was to help the hunting goddess'], ['Zeus did not have a wife when he fell in love with Callisto.', false, '정답 F ✘\n문장 해석 ▶ 제우스는 칼리스토와 사랑에 빠졌을 때 아내가 없었다.\n본문 ▶ even though he had a wife\n왜 F일까? ▶ 아내가 있었는데도(even though he had a wife) 사랑에 빠졌어요 → F.', null, 'even though he had a wife'], ['Arcas was the son of Zeus and Callisto.', true, '정답 T ✔\n문장 해석 ▶ 아르카스는 제우스와 칼리스토의 아들이었다.\n본문 ▶ From them, Arcas was born.\n왜 T일까? ▶ them = 제우스와 칼리스토, 그들에게서 태어났으니 아들 → T.', null, 'From them, Arcas was born.'], ['Zeus\' wife turned Callisto into a bear.', true, '정답 T ✔\n문장 해석 ▶ 제우스의 아내가 칼리스토를 곰으로 바꾸었다.\n본문 ▶ So she turned Callisto into an ugly bear.\n왜 T일까? ▶ she = 제우스의 아내(앞 문장 Zeus\' wife) → T.', null, 'So she turned Callisto into an ugly bear.'], ['Arcas grew up to be a farmer.', false, '정답 F ✘\n문장 해석 ▶ 아르카스는 자라서 농부가 되었다.\n본문 ▶ Arcas grew up to be a strong hunter.\n왜 F일까? ▶ 농부(farmer)가 아니라 강한 사냥꾼(hunter) → F.', null, 'Arcas grew up to be a strong hunter.'], ['Arcas knew that the bear was his mother.', false, '정답 F ✘\n문장 해석 ▶ 아르카스는 그 곰이 자기 어머니라는 것을 알았다.\n본문 ▶ Arcas didn\'t recognize his mother\n왜 F일까? ▶ 어머니를 알아보지 못했어요(didn\'t recognize) → 몰랐으니 F.', null, 'Arcas didn\'t recognize his mother'], ['Zeus turned Arcas into a bear to save Callisto.', true, '정답 T ✔\n문장 해석 ▶ 제우스는 칼리스토를 구하려고 아르카스를 곰으로 바꾸었다.\n본문 ▶ To save the woman he loved, Zeus turned Arcas into a bear, too.\n왜 T일까? ▶ the woman he loved = 칼리스토 → T.', null, 'To save the woman he loved, Zeus turned Arcas into a bear, too.'], ['Zeus placed only Callisto in the night sky.', false, '정답 F ✘\n문장 해석 ▶ 제우스는 칼리스토만 밤하늘에 올려놓았다.\n본문 ▶ He placed both of them up in the night sky.\n왜 F일까? ▶ 둘 다(both of them) 올려놓았어요. only Callisto(칼리스토만)가 아니라서 F.', null, 'He placed both of them up in the night sky.']] },
+    { type: 'mc', title: '일치·불일치', guide: '선택지는 본문 표현을 쉬운 말로 조금 바꿔 썼어요. 해설의 "바꿔 쓴 표현"을 꼭 확인하세요.', items: [
+      { n: 'Reading Material 3', box: ['Reading Material 3'], q: '글의 내용과 일치하지 <u>않는</u> 것은?', opts: ['Arcas tried to shoot the bear because he knew it was his mother.', 'Callisto helped the hunting goddess.', 'Zeus\' wife got angrier as Arcas grew.', 'Zeus\' wife met Callisto in the forest by chance.', 'Zeus put both of them in the night sky.'], ex: '정답 근거: Arcas didn\'t recognize his mother and got ready to shoot her.\n· 바꿔 쓴 표현: happened to see = met ~ by chance · placed = put · the anger also grew = got angrier', per: [['아르카스는 그 곰이 어머니인 것을 알고 쏘려 했다.', 'Arcas didn\'t recognize his mother', '불일치 → 알아보지 못함'], ['칼리스토는 사냥의 여신을 도왔다.', 'whose job was to help the hunting goddess', '일치'], ['아르카스가 자라면서 제우스의 아내는 더 화가 났다.', 'As Arcas grew, the anger of Zeus\' wife also grew', '일치'], ['제우스의 아내는 숲에서 우연히 칼리스토를 만났다.', 'she happened to see Callisto in the forest', '일치 (happen to = by chance)'], ['제우스는 둘 다 밤하늘에 두었다.', 'He placed both of them up in the night sky', '일치 (placed = put)']] },
+      { n: 'Reading Material 3', box: ['Reading Material 3'], q: '글의 내용으로 보아 빈칸에 들어갈 말로 알맞은 것은?<br><b>Zeus\' wife wanted to ________________.</b>', opts: ['take revenge on Callisto for taking her husband', 'help Callisto hunt in the forest', 'thank Zeus for his love', 'make Callisto more beautiful', 'find a good job for Arcas'], ex: '정답 근거: the perfect moment to get back at Callisto for stealing her husband\n· 바꿔 쓴 표현: get back at = take revenge on · stealing = taking (프린트 단어장: get back at = take revenge on)', per: [['남편을 빼앗은 것에 대해 칼리스토에게 복수하기', 'to get back at Callisto for stealing her husband', '일치'], ['칼리스토가 숲에서 사냥하도록 돕기', 'to get back at Callisto', '불일치 → 복수하려 함'], ['제우스의 사랑에 감사하기', 'the anger of Zeus\' wife also grew', '불일치 → 분노가 커짐'], ['칼리스토를 더 아름답게 만들기', 'she turned Callisto into an ugly bear', '불일치 → 못생긴 곰으로'], ['아르카스에게 좋은 일자리 찾아 주기', 'to get back at Callisto', '본문에 없음']] }
+    ] },
+    { type: 'pick', title: '어법선택', guide: '어법상 알맞은 것을 고르세요.', items: [
+      { s: 'How did the bears {end up|ended up} among the stars?', ex: 'did + 주어 + 동사원형 → end up' },
+      { s: 'There {is|are} a sad story behind these stars.', ex: '주어 a sad story(단수) → is' },
+      { s: 'According to a Greek myth, there was a beautiful woman {called|calling} Callisto whose job was to help the hunting goddess.', ex: '\'불리는\' 수동 → 과거분사 called' },
+      { s: 'According to a Greek myth, there was a beautiful woman called Callisto {whose|who} job was to help the hunting goddess.', ex: '뒤에 명사 job → 소유격 관계대명사 whose' },
+      { s: 'Callisto was {so|such} beautiful that Zeus, the king of the gods, fell in love with her even though he had a wife.', ex: 'so + 형용사 + that (such는 such a + 형용사 + 명사)' },
+      { s: 'Callisto was so beautiful that Zeus, the king of the gods, fell in love with her {even though|despite} he had a wife.', ex: '뒤에 주어 + 동사(he had) → 접속사 even though (despite는 전치사)' },
+      { s: 'From them, Arcas {was born|born}.', ex: '태어나다 = be born' },
+      { s: 'One day, she happened {to see|seeing} Callisto in the forest.', ex: 'happen + to부정사: 우연히 ~하다' },
+      { s: 'She thought this was the perfect moment {to get|getting} back at Callisto for stealing her husband.', ex: '명사 moment를 꾸미는 to부정사(~할)' },
+      { s: 'She thought this was the perfect moment to get back at Callisto for {stealing|steal} her husband.', ex: '전치사 for + 동명사' },
+      { s: 'So she turned Callisto {into|to} an ugly bear.', ex: 'turn A into B: A를 B로 바꾸다' },
+      { s: 'Arcas grew up {to be|being} a strong hunter.', ex: 'grow up to be: 자라서 ~이 되다(결과)' },
+      { s: 'One day while {hunting|hunted} in the forest, he ran into a huge bear.', ex: 'while (he was) hunting — 그가 \'사냥하는\' 능동' },
+      { s: 'How {happy|happily} she was to see her son!', ex: 'be동사의 보어 → 형용사 happy (How + 형용사 + 주어 + 동사)' },
+      { s: 'But Arcas didn\'t recognize his mother and got ready {to shoot|shooting} her.', ex: 'get ready + to부정사' },
+      { s: 'To save the woman {he loved|he loved her}, Zeus turned Arcas into a bear, too.', ex: '목적격 관계대명사 생략 — 선행사 the woman이 loved의 목적어 → her 또 쓰면 ✘' },
+      { s: 'If you ever {see|will see} the Great Bear and the Little Bear in the night sky, remember this sad story and wish them happiness.', ex: '조건의 if절은 현재 시제(미래 뜻)' },
+      { s: 'If you ever see the Great Bear and the Little Bear in the night sky, remember this sad story and wish them {happiness|happy}.', ex: 'wish + 사람 + 명사(4형식) → happiness' }
+    ] },
+    { type: 'verb', title: '동사변형', guide: '( ) 안의 동사를 알맞은 형태로 바꿔 쓰세요.', items: [
+      { s: 'Callisto was so beautiful that Zeus, the king of the gods, ___ in love with her even though he had a wife.', v: 'fall', a: ['fell'], ex: '과거 이야기 → fall - fell - fallen' },
+      { s: 'According to a Greek myth, there was a beautiful woman ___ Callisto whose job was to help the hunting goddess.', v: 'call', a: ['called'], ex: '\'~라고 불리는\' → 과거분사 called' },
+      { s: 'From them, Arcas was ___.', v: 'bear', a: ['born'], ex: 'be born: 태어나다 (bear - bore - born)' },
+      { s: 'One day, she happened ___ Callisto in the forest.', v: 'see', a: ['to see'], ex: 'happen + to부정사' },
+      { s: 'She ___ this was the perfect moment to get back at Callisto for stealing her husband.', v: 'think', a: ['thought'], ex: 'think - thought - thought' },
+      { s: 'She thought this was the perfect moment to get back at Callisto for ___ her husband.', v: 'steal', a: ['stealing'], ex: '전치사 for + 동명사' },
+      { s: 'Many years ___.', v: 'pass', a: ['passed'], ex: '시간이 지났다 → 과거 passed (past ✘)' },
+      { s: 'One day while ___ in the forest, he ran into a huge bear.', v: 'hunt', a: ['hunting'], ex: 'while + -ing (= while he was hunting)' },
+      { s: 'One day while hunting in the forest, he ___ into a huge bear.', v: 'run', a: ['ran'], ex: 'run - ran - run / run into: 마주치다' },
+      { s: 'He ___ both of them up in the night sky.', v: 'place', a: ['placed'], ex: 'place(놓다)의 과거 placed' }
+    ] },
+    { type: 'error', title: '오류찾기', guide: '어법상 틀린 곳을 고르세요.', items: [
+      { s: 'According to a Greek myth, there [[was]] a beautiful woman [[calling]] Callisto [[whose]] job was [[to help]] the hunting goddess.', w: 1, fix: 'called', ex: '\'불리는\' 수동 → 과거분사 called' },
+      { s: 'Callisto was [[such]] beautiful [[that]] Zeus, the king of the gods, [[fell]] in love with her [[even though]] he had a wife.', w: 0, fix: 'so', ex: 'so + 형용사 + that' },
+      { s: 'One day, she [[happened]] [[seeing]] Callisto [[in]] the [[forest]].', w: 1, fix: 'to see', ex: 'happen + to부정사' },
+      { s: 'She thought this was the perfect moment [[to get]] back at Callisto [[for]] [[steal]] her [[husband]].', w: 2, fix: 'stealing', ex: '전치사 for + 동명사' },
+      { s: 'So she [[turned]] Callisto [[to]] an [[ugly]] [[bear]].', w: 1, fix: 'into', ex: 'turn A into B' },
+      { s: '[[How]] [[happily]] she [[was]] [[to see]] her son!', w: 1, fix: 'happy', ex: 'be동사의 보어 → 형용사 happy' },
+      { s: 'If you ever [[will see]] the Great Bear and the Little Bear in the night sky, [[remember]] this sad story and [[wish]] them [[happiness]].', w: 0, fix: 'see', ex: '조건의 if절은 현재 시제' }
+    ] },
+    { type: 'scramble', title: '본문 스크램블 (21문장 전부)', guide: '우리말에 맞게 단어를 눌러 문장을 완성하세요. 본문 한 줄씩 전부 나와요.', items: [
+      { ko: '매일 밤, 우리는 북쪽 하늘에서 큰곰자리와 작은곰자리를 볼 수 있다.', en: 'Every night, we can see the Great Bear and the Little Bear in the north sky.' },
+      { ko: '그 곰들은 어떻게 해서 결국 별들 사이에 있게 되었을까?', en: 'How did the bears end up among the stars?' },
+      { ko: '이 별들 뒤에는 슬픈 이야기가 있다.', en: 'There is a sad story behind these stars.' },
+      { ko: '그리스 신화에 따르면, 칼리스토라고 불리는 아름다운 여인이 있었는데, 그녀의 일은 사냥의 여신을 돕는 것이었다.', en: 'According to a Greek myth, there was a beautiful woman called Callisto whose job was to help the hunting goddess.' },
+      { ko: '칼리스토는 너무 아름다워서 신들의 왕인 제우스는 아내가 있었는데도 그녀와 사랑에 빠졌다.', en: 'Callisto was so beautiful that Zeus, the king of the gods, fell in love with her even though he had a wife.' },
+      { ko: '그들에게서 아르카스가 태어났다.', en: 'From them, Arcas was born.' },
+      { ko: '아르카스가 자라면서, 제우스 아내의 분노도 커졌다.', en: 'As Arcas grew, the anger of Zeus\' wife also grew.' },
+      { ko: '어느 날, 그녀는 숲에서 우연히 칼리스토를 보게 되었다.', en: 'One day, she happened to see Callisto in the forest.' },
+      { ko: '그녀는 지금이 자기 남편을 빼앗은 것에 대해 칼리스토에게 복수할 완벽한 순간이라고 생각했다.', en: 'She thought this was the perfect moment to get back at Callisto for stealing her husband.' },
+      { ko: '그래서 그녀는 칼리스토를 못생긴 곰으로 바꾸어 버렸다.', en: 'So she turned Callisto into an ugly bear.' },
+      { ko: '불쌍한 칼리스토!', en: 'Poor Callisto!' },
+      { ko: '그녀는 거대한 곰이 되었다.', en: 'She became a huge bear.' },
+      { ko: '여러 해가 지났다.', en: 'Many years passed.' },
+      { ko: '아르카스는 자라서 강한 사냥꾼이 되었다.', en: 'Arcas grew up to be a strong hunter.' },
+      { ko: '어느 날 숲에서 사냥을 하던 중에, 그는 거대한 곰과 마주쳤다.', en: 'One day while hunting in the forest, he ran into a huge bear.' },
+      { ko: '그녀는 아들을 보게 되어 얼마나 기뻤을까!', en: 'How happy she was to see her son!' },
+      { ko: '하지만 아르카스는 자기 어머니를 알아보지 못하고 그녀를 쏠 준비를 했다.', en: 'But Arcas didn\'t recognize his mother and got ready to shoot her.' },
+      { ko: '그 순간, 제우스가 우연히 그들을 보게 되었다.', en: 'At that moment, Zeus happened to see them.' },
+      { ko: '자신이 사랑한 여인을 구하기 위해, 제우스는 아르카스도 곰으로 바꾸었다.', en: 'To save the woman he loved, Zeus turned Arcas into a bear, too.' },
+      { ko: '그는 그 둘을 밤하늘 위에 올려놓았다.', en: 'He placed both of them up in the night sky.' },
+      { ko: '혹시 밤하늘에서 큰곰자리와 작은곰자리를 보게 되면, 이 슬픈 이야기를 기억하고 그들의 행복을 빌어 주어라.', en: 'If you ever see the Great Bear and the Little Bear in the night sky, remember this sad story and wish them happiness.' }
+    ] },
+    { type: 'order', title: '문장순서', guide: '문장을 본문 순서대로 눌러서 배열하세요.', items: [
+      { lines: ['According to a Greek myth, there was a beautiful woman called Callisto whose job was to help the hunting goddess.', 'Callisto was so beautiful that Zeus, the king of the gods, fell in love with her even though he had a wife.', 'From them, Arcas was born.', 'As Arcas grew, the anger of Zeus\' wife also grew.'], flow: ['칼리스토 소개(사냥의 여신을 도움) → 너무 아름다워 제우스가 사랑에 빠짐 → 아르카스 탄생 → 아르카스가 자라며 아내의 분노도 커짐'] },
+      { lines: ['As Arcas grew, the anger of Zeus\' wife also grew.', 'One day, she happened to see Callisto in the forest.', 'She thought this was the perfect moment to get back at Callisto for stealing her husband.', 'So she turned Callisto into an ugly bear.'], flow: ['아내의 분노 → 어느 날 숲에서 칼리스토를 봄 → 복수할 때라고 생각 → 그래서(So) 곰으로 바꿈'] },
+      { lines: ['Arcas grew up to be a strong hunter.', 'One day while hunting in the forest, he ran into a huge bear.', 'How happy she was to see her son!', 'But Arcas didn\'t recognize his mother and got ready to shoot her.'], flow: ['사냥꾼이 된 아르카스 → 사냥하다 곰과 마주침 → 엄마는 기쁨(How happy!) → 하지만(But) 알아보지 못하고 쏘려 함'] },
+      { lines: ['At that moment, Zeus happened to see them.', 'To save the woman he loved, Zeus turned Arcas into a bear, too.', 'He placed both of them up in the night sky.', 'If you ever see the Great Bear and the Little Bear in the night sky, remember this sad story and wish them happiness.'], flow: ['그 순간 제우스가 봄 → 구하려고 아르카스도 곰으로 → 둘을 밤하늘에 → 별을 보면 행복을 빌어 주자'] }
+    ] },
+    { type: 'insert', title: '문장삽입', guide: '주어진 문장이 들어가기에 가장 알맞은 곳을 고르세요.', items: [
+      { lines: ['As Arcas grew, the anger of Zeus\' wife also grew.', 'One day, she happened to see Callisto in the forest.', 'She thought this was the perfect moment to get back at Callisto for stealing her husband.', 'So she turned Callisto into an ugly bear.'], given: 3, ex: '\'복수할 완벽한 순간이라고 생각했다\' 뒤에 So(그래서) 곰으로 바꾸었다가 온다.' },
+      { lines: ['One day while hunting in the forest, he ran into a huge bear.', 'How happy she was to see her son!', 'But Arcas didn\'t recognize his mother and got ready to shoot her.', 'At that moment, Zeus happened to see them.'], given: 2, ex: '\'엄마는 기뻤다\' 뒤에 But(하지만) 아르카스는 알아보지 못하고 쏘려 했다 — 반대되는 상황.' },
+      { lines: ['At that moment, Zeus happened to see them.', 'To save the woman he loved, Zeus turned Arcas into a bear, too.', 'He placed both of them up in the night sky.', 'If you ever see the Great Bear and the Little Bear in the night sky, remember this sad story and wish them happiness.'], given: 2, ex: '아르카스도 곰으로 바꾼 뒤 → 둘 다(both of them) 밤하늘에 올려놓았다.' }
+    ] },
+    { type: 'odd', title: '어색한 문장', guide: '글의 흐름과 관계없는 문장을 고르세요.', items: [
+      { lines: ['As Arcas grew, the anger of Zeus\' wife also grew.', 'One day, she happened to see Callisto in the forest.', 'Zeus\' wife loved Callisto like her own daughter.', 'She thought this was the perfect moment to get back at Callisto for stealing her husband.'], odd: 2, ex: '아내는 칼리스토에게 화가 나 복수하려 했다 — \'딸처럼 사랑했다\'는 흐름과 반대.' },
+      { lines: ['Arcas grew up to be a strong hunter.', 'One day while hunting in the forest, he ran into a huge bear.', 'Arcas wanted to become a famous singer in the city.', 'How happy she was to see her son!'], odd: 2, ex: '사냥꾼 아르카스가 숲에서 곰과 마주치는 장면과 관계없다.' }
+    ] },
+    { type: 'blank', title: '빈칸추론', guide: '빈칸에 들어갈 말로 가장 알맞은 것을 고르세요.', items: [
+      { s: 'She thought this was the perfect moment to ____ Callisto for stealing her husband.', opts: ['get back at', 'fall in love with', 'say thank you to', 'run away from'], ex: '남편을 빼앗은 것에 대해 → 복수하다(get back at = take revenge on)' },
+      { s: 'But Arcas didn\'t ____ his mother and got ready to shoot her.', opts: ['recognize', 'miss', 'call', 'love'], ex: '엄마를 쏘려 함 → 알아보지(recognize) 못했다' },
+      { s: 'To save the woman he loved, Zeus ____.', opts: ['turned Arcas into a bear, too', 'made Arcas a stronger hunter', 'sent Arcas to another forest', 'forgot about Callisto'], ex: '아르카스도 곰으로 바꿔 둘을 하늘에 올림' }
+    ] },
+    { type: 'mc', title: '핵심문법', guide: '알맞은 답을 고르세요.', items: [
+      { q: '빈칸에 알맞은 것은?<br><b>Callisto was ______ beautiful that Zeus fell in love with her.</b>', opts: ['so', 'such', 'too', 'very'], ex: 'so + 형용사 + that ~: 너무 ~해서 …하다' },
+      { q: '빈칸에 알맞은 것은?<br><b>There was a woman called Callisto ______ job was to help the hunting goddess.</b>', opts: ['whose', 'who', 'which', 'what'], ex: '뒤에 명사 job → 소유격 관계대명사 whose' },
+      { q: '밑줄 친 <u>to be</u>의 쓰임은?<br><b>Arcas grew up <u>to be</u> a strong hunter.</b>', opts: ['결과 (자라서 ~이 되다)', '목적 (~하기 위해)', '감정의 원인 (~해서)', '명사 (~하는 것)'], ex: 'grow up to be: 자라서 ~이 되다 (결과)' },
+      { q: '밑줄 친 <u>to see</u>의 쓰임은?<br><b>How happy she was <u>to see</u> her son!</b>', opts: ['감정의 원인 (~해서)', '목적 (~하기 위해)', '결과 (그 결과 ~하다)', '명사 (~하는 것)'], ex: '감정(happy) 뒤 to부정사 = 감정의 원인' },
+      { q: '같은 뜻이 되도록 빈칸에 알맞은 것은?<br><b>Zeus fell in love with her even though he had a wife.<br>= Zeus fell in love with her ______ he had a wife.</b>', opts: ['although', 'because', 'so', 'if'], ex: 'even though = although (비록 ~일지라도)' },
+      { q: '어법상 <u>틀린</u> 문장은?', opts: ['To save the woman he loved her, Zeus turned Arcas into a bear.', 'She happened to see Callisto in the forest.', 'She turned Callisto into an ugly bear.', 'Arcas grew up to be a strong hunter.', 'He placed both of them up in the night sky.'], ex: 'the woman (that) he loved — 관계대명사가 목적어 역할 → her를 또 쓰면 ✘' }
+    ] }
+  ] },
+  { id: 'ex3g', name: 'DAY 26', range: '외부지문 3 · 어법·어휘 한 판', story: 'Reading Material 3 · 큰곰자리와 작은곰자리 (그리스 신화) · 괄호 31개, 모두 맞혀야 100점', passage: [['#', 'Reading Material 3 · 큰곰자리와 작은곰자리 (그리스 신화)', ''], ['', 'Every night, we can see the Great Bear and the Little Bear in the north sky.', '매일 밤, 우리는 북쪽 하늘에서 큰곰자리와 작은곰자리를 볼 수 있다.'], ['', 'How did the bears end up among the stars?', '그 곰들은 어떻게 해서 결국 별들 사이에 있게 되었을까?'], ['', 'There is a sad story behind these stars.', '이 별들 뒤에는 슬픈 이야기가 있다.'], ['', 'According to a Greek myth, there was a beautiful woman called Callisto whose job was to help the hunting goddess.', '그리스 신화에 따르면, 칼리스토라고 불리는 아름다운 여인이 있었는데, 그녀의 일은 사냥의 여신을 돕는 것이었다.'], ['', 'Callisto was so beautiful that Zeus, the king of the gods, fell in love with her even though he had a wife.', '칼리스토는 너무 아름다워서 신들의 왕인 제우스는 아내가 있었는데도 그녀와 사랑에 빠졌다.'], ['', 'From them, Arcas was born.', '그들에게서 아르카스가 태어났다.'], ['', 'As Arcas grew, the anger of Zeus\' wife also grew.', '아르카스가 자라면서, 제우스 아내의 분노도 커졌다.'], ['', 'One day, she happened to see Callisto in the forest.', '어느 날, 그녀는 숲에서 우연히 칼리스토를 보게 되었다.'], ['', 'She thought this was the perfect moment to get back at Callisto for stealing her husband.', '그녀는 지금이 자기 남편을 빼앗은 것에 대해 칼리스토에게 복수할 완벽한 순간이라고 생각했다.'], ['', 'So she turned Callisto into an ugly bear.', '그래서 그녀는 칼리스토를 못생긴 곰으로 바꾸어 버렸다.'], ['', 'Poor Callisto!', '불쌍한 칼리스토!'], ['', 'She became a huge bear.', '그녀는 거대한 곰이 되었다.'], ['', 'Many years passed.', '여러 해가 지났다.'], ['', 'Arcas grew up to be a strong hunter.', '아르카스는 자라서 강한 사냥꾼이 되었다.'], ['', 'One day while hunting in the forest, he ran into a huge bear.', '어느 날 숲에서 사냥을 하던 중에, 그는 거대한 곰과 마주쳤다.'], ['', 'How happy she was to see her son!', '그녀는 아들을 보게 되어 얼마나 기뻤을까!'], ['', 'But Arcas didn\'t recognize his mother and got ready to shoot her.', '하지만 아르카스는 자기 어머니를 알아보지 못하고 그녀를 쏠 준비를 했다.'], ['', 'At that moment, Zeus happened to see them.', '그 순간, 제우스가 우연히 그들을 보게 되었다.'], ['', 'To save the woman he loved, Zeus turned Arcas into a bear, too.', '자신이 사랑한 여인을 구하기 위해, 제우스는 아르카스도 곰으로 바꾸었다.'], ['', 'He placed both of them up in the night sky.', '그는 그 둘을 밤하늘 위에 올려놓았다.'], ['', 'If you ever see the Great Bear and the Little Bear in the night sky, remember this sad story and wish them happiness.', '혹시 밤하늘에서 큰곰자리와 작은곰자리를 보게 되면, 이 슬픈 이야기를 기억하고 그들의 행복을 빌어 주어라.']], steps: [
+    { type: 'gate', title: '어법·어휘 한 판', guide: '지문 전체를 한 번에 풀어요. 어법(문법)과 어휘(문맥에 맞는 낱말) 괄호를 모두 맞혀야 100점, 하나라도 틀리면 0점! 3번 안에 통과 못 하면 틀린 문장만 해설과 함께 연습하고 다시 도전해요.', items: [
+      { title: 'Reading Material 3 · 큰곰자리와 작은곰자리 (그리스 신화) (괄호 31개)', parts: [
+        { s: 'Every night, we can {see|seeing} the Great Bear and the Little Bear in the north sky.', ko: '매일 밤, 우리는 북쪽 하늘에서 큰곰자리와 작은곰자리를 볼 수 있다.', ex: 'can + 동사원형 → see' },
+        { s: 'How did the bears {end up|ended up} among the stars?', ko: '그 곰들은 어떻게 해서 결국 별들 사이에 있게 되었을까?', ex: 'did + 주어 + 동사원형 → end up' },
+        { s: 'There {is|are} a {sad|happy} story behind these stars.', ko: '이 별들 뒤에는 슬픈 이야기가 있다.', ex: 'a sad story(단수) → is / 뒤에 복수·아들이 엄마를 쏘려는 이야기 → sad' },
+        { s: 'According to a Greek myth, there was a beautiful woman {called|calling} Callisto {whose|who} job was to help the hunting goddess.', ko: '그리스 신화에 따르면, 칼리스토라고 불리는 아름다운 여인이 있었는데, 그녀의 일은 사냥의 여신을 돕는 것이었다.', ex: '\'불리는\' → 과거분사 called / 뒤에 명사 job → 소유격 whose' },
+        { s: 'Callisto was {so|such} beautiful that Zeus, the king of the gods, fell in love with her {even though|because} he had a wife.', ko: '칼리스토는 너무 아름다워서 신들의 왕인 제우스는 아내가 있었는데도 그녀와 사랑에 빠졌다.', ex: 'so + 형용사 + that / 아내가 있었는데\'도\' → even though' },
+        { s: 'From them, Arcas {was born|born}.', ko: '그들에게서 아르카스가 태어났다.', ex: '태어나다 = be born' },
+        { s: 'As Arcas grew, the {anger|joy} of Zeus\' wife also grew.', ko: '아르카스가 자라면서, 제우스 아내의 분노도 커졌다.', ex: '뒤에 복수가 이어짐 → 분노(anger)' },
+        { s: 'One day, she happened {to see|seeing} Callisto in the forest.', ko: '어느 날, 그녀는 숲에서 우연히 칼리스토를 보게 되었다.', ex: 'happen + to부정사' },
+        { s: 'She thought this was the perfect moment to {get back at|thank} Callisto for {stealing|steal} her husband.', ko: '그녀는 지금이 자기 남편을 빼앗은 것에 대해 칼리스토에게 복수할 완벽한 순간이라고 생각했다.', ex: '남편을 빼앗은 것에 → 복수하다(get back at) / 전치사 for + 동명사 stealing' },
+        { s: 'So she turned Callisto {into|to} an {ugly|beautiful} bear.', ko: '그래서 그녀는 칼리스토를 못생긴 곰으로 바꾸어 버렸다.', ex: 'turn A into B / 복수 → 못생긴(ugly)' },
+        { s: '{Poor|Lucky} Callisto!', ko: '불쌍한 칼리스토!', ex: '곰이 되어 버림 → 불쌍한(poor)' },
+        { s: 'She became a {huge|tiny} bear.', ko: '그녀는 거대한 곰이 되었다.', ex: '뒤에 아르카스가 \'거대한 곰(a huge bear)\'과 마주침 → huge' },
+        { s: 'Many years {passed|stopped}.', ko: '여러 해가 지났다.', ex: '시간이 지나다 → passed (뒤에 아르카스가 자라서 사냥꾼이 됨)' },
+        { s: 'Arcas grew up {to be|being} a strong {hunter|singer}.', ko: '아르카스는 자라서 강한 사냥꾼이 되었다.', ex: 'grow up to be(결과) / 다음 문장 hunting → hunter' },
+        { s: 'One day while {hunting|hunted} in the forest, he {ran into|ran away from} a huge bear.', ko: '어느 날 숲에서 사냥을 하던 중에, 그는 거대한 곰과 마주쳤다.', ex: 'while (he was) hunting / 뒤에 곰을 쏘려 함 → 마주쳤다(ran into)' },
+        { s: 'How {happy|happily} she was to see her son!', ko: '그녀는 아들을 보게 되어 얼마나 기뻤을까!', ex: 'be동사의 보어 → 형용사 happy' },
+        { s: 'But Arcas didn\'t {recognize|recognized} his mother and got ready {to shoot|shooting} her.', ko: '하지만 아르카스는 자기 어머니를 알아보지 못하고 그녀를 쏠 준비를 했다.', ex: 'didn\'t + 동사원형 / get ready + to부정사' },
+        { s: 'At that moment, Zeus happened {to see|seeing} them.', ko: '그 순간, 제우스가 우연히 그들을 보게 되었다.', ex: 'happen + to부정사' },
+        { s: 'To {save|punish} the woman {he loved|he loved her}, Zeus turned Arcas into a bear, too.', ko: '자신이 사랑한 여인을 구하기 위해, 제우스는 아르카스도 곰으로 바꾸었다.', ex: '사랑한 여인을 → 구하다(save) / 목적격 관계대명사 생략 → her 또 쓰면 ✘' },
+        { s: 'He {placed|place} both of them up in the night sky.', ko: '그는 그 둘을 밤하늘 위에 올려놓았다.', ex: '과거 이야기, 주어 He → placed (place ✘)' },
+        { s: 'If you ever {see|will see} the Great Bear and the Little Bear in the night sky, remember this sad story and wish them {happiness|happy}.', ko: '혹시 밤하늘에서 큰곰자리와 작은곰자리를 보게 되면, 이 슬픈 이야기를 기억하고 그들의 행복을 빌어 주어라.', ex: '조건 if절은 현재 → see / wish + 사람 + 명사 → happiness' }
+      ] }
     ] }
   ] }
   ]
