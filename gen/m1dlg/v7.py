@@ -1,5 +1,6 @@
 # 11/27 발산중2 비상(황종배) 7과 대화문 꿰뚫기 (m2-visang-hwang-L7 맨 끝 DAY: kv7a 경험 묻기 대화 1~4 · kv7b 음식 권하기 대화 5~8). 8과 대화문은 파일 받으면 v8.py
 UNIT = '/home/claude/proj/data/m2-visang-hwang-L7.js'
+PDF = ('Balsan_M2_L7_dialogue', '발산중2 비상(황종배)')
 HEAD = {1: '7과 Listen & Choose 1 · 한라산', 2: '7과 Listen & Choose 2 · 시드니', 3: '7과 Listen & Choose 3 · 마술쇼', 4: '7과 Watch & Guess · 원데이 클래스',
         5: '7과 Listen & Number 1 · 핫도그', 6: '7과 Listen & Number 2 · 크림 떡볶이', 7: '7과 Listen & Number 3 · 샌드위치', 8: '7과 Watch & Present · 파에야'}
 DLG = {

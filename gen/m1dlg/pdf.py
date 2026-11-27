@@ -41,7 +41,7 @@ for gid, c in M.DLG.items():
              % (E(c['range']), '<br>'.join(E(x) for x in key), ''.join('<li>%s</li>' % E(en) for ko, en in c['scr']), ''.join('<li>%s</li>' % E(' / '.join(a)) for s, v, a in c['verb']),
                 ''.join('<li>%s — %s</li>' % ('T' if b else 'F', E(why)) for s, b, ev, why in c['tf']), ' '.join('%d) %s' % (i + 1, m) for i, m in enumerate(mk))))
 doc = '<!doctype html><html><head><meta charset="utf-8"><style>%s</style></head><body>%s<div class="pb"></div>%s</body></html>' % (CSS, '<div class="pb"></div>'.join(P), '<div class="pb"></div>'.join(K))
-out = '/home/claude/out/m1dlg/' + ('Balsan_M2_L%s_dialogue' % L[1:] if L.startswith('v') else 'Jungsan_M1_L%s_dialogue' % L[1:])
+out = '/home/claude/out/m1dlg/' + M.PDF[0]
 open(out + '.html', 'w', encoding='utf-8').write(doc)
 from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
