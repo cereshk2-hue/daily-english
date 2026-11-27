@@ -678,7 +678,7 @@
       TESTS.map(function (t, ti) { return isBoss(t) || isBimi(t) || isExam(t) ? '' : testCardHTML(ti); }).join('');
   }
   function examHTML() {
-    return '<h3 class="sech">실전기출</h3><p class="sub" style="margin:0 0 12px">다른 학교에서 실제로 나온 <b>기출 문제</b>를 25문항씩 묶었어요. 선생님이 나눠 준 시험지로 풀고, 여기에는 <b>답만</b> 입력해요. 시험지 번호 그대로 입력하면 돼요. <b>처음 제출한 점수</b>가 선생님께 전달돼요.</p>' +
+    return '<h3 class="sech">실전기출</h3><p class="sub" style="margin:0 0 12px">다른 학교에서 실제로 나온 <b>기출 문제</b>를 한 세트씩 묶었어요. 선생님이 나눠 준 시험지로 풀고, 여기에는 <b>답만</b> 입력해요. 시험지 번호 그대로 입력하면 돼요. <b>처음 제출한 점수</b>가 선생님께 전달돼요.</p>' +
       TESTS.map(function (t, ti) { return isExam(t) ? testCardHTML(ti) : ''; }).join('');
   }
   function bimiHTML() {
