@@ -2,9 +2,9 @@
 import sys, json, re, subprocess, importlib
 sys.path.insert(0, '/home/claude/srcrepo/generators'); sys.path.insert(0, '/home/claude/srcrepo/gen/m1dlg')
 from gencommon import write
-path = '/home/claude/proj/data/m1-donga-yoon-L6.js'
 LESSONS = sys.argv[1:] or ['l5']
-src = open(path, encoding='utf-8').read(); cut = src.index('/* WRAPUP-TESTS'); head, tail = src[:src.index('window.PKG')], src[cut:]
+path = getattr(importlib.import_module(LESSONS[0]), 'UNIT', '/home/claude/proj/data/m1-donga-yoon-L6.js')   # 11/27 발산중2(v7.py)도 같이 씀
+src = open(path, encoding='utf-8').read(); cut = re.search(r'\n/\* [A-Z0-9]+-TESTS', src).start() + 1; head, tail = src[:src.index('window.PKG')], src[cut:]
 PK = json.loads(subprocess.check_output(['node', '-e', "global.window={};eval(require('fs').readFileSync(0,'utf8'));process.stdout.write(JSON.stringify(window.PKG))"], input=src[:cut].encode()))
 D = {d['id']: d for d in PK['days']}
 def norm(t): return re.sub(r'\s+', ' ', t.replace('’', "'")).strip().lower()

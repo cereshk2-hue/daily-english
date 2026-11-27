@@ -9,10 +9,10 @@ h1{font-size:14pt;margin:0 0 2px}h2{font-size:11pt;margin:12px 0 5px;border-bott
 .pb{page-break-after:always}.opt{display:block;margin-left:10px}.k{font-size:9.3pt}.k li{margin:0 0 3px}"""
 C = '①②③④⑤'; P, K = [], []
 import json, subprocess
-_pk = json.loads(subprocess.check_output(['node', '-e', "global.window={};require('/home/claude/proj/data/m1-donga-yoon-L6.js');process.stdout.write(JSON.stringify(window.PKG.days))"]))
+_pk = json.loads(subprocess.check_output(['node', '-e', "global.window={};require('%s')" % getattr(M, 'UNIT', '/home/claude/proj/data/m1-donga-yoon-L6.js') + ";process.stdout.write(JSON.stringify(window.PKG.days))"]))
 D = {d['id']: [l for l in d['passage'] if l[0] != '#'] for d in _pk}
 for gid, c in M.DLG.items():
-    rnd = random.Random(gid); h = '<h1>%s <span class="nm">이름 ________</span></h1><div class="sub">중산중1 동아(윤정미) · 대화문 꿰뚫기 학습지</div>' % E(c['range'])
+    rnd = random.Random(gid); h = '<h1>%s <span class="nm">이름 ________</span></h1><div class="sub">%s · 대화문 꿰뚫기 학습지</div>' % (E(c['range']), '발산중2 비상(황종배)' if L.startswith('v') else '중산중1 동아(윤정미)')
     h += '<h2>1. 대화 순서 맞추기</h2>'; key = []
     for name, lines, flow in c['order']:
         idx = list(range(len(lines)))
@@ -41,7 +41,7 @@ for gid, c in M.DLG.items():
              % (E(c['range']), '<br>'.join(E(x) for x in key), ''.join('<li>%s</li>' % E(en) for ko, en in c['scr']), ''.join('<li>%s</li>' % E(' / '.join(a)) for s, v, a in c['verb']),
                 ''.join('<li>%s — %s</li>' % ('T' if b else 'F', E(why)) for s, b, ev, why in c['tf']), ' '.join('%d) %s' % (i + 1, m) for i, m in enumerate(mk))))
 doc = '<!doctype html><html><head><meta charset="utf-8"><style>%s</style></head><body>%s<div class="pb"></div>%s</body></html>' % (CSS, '<div class="pb"></div>'.join(P), '<div class="pb"></div>'.join(K))
-out = '/home/claude/out/m1dlg/중산중1_%s과_대화문꿰뚫기' % L[1:]
+out = '/home/claude/out/m1dlg/' + ('Balsan_M2_L%s_dialogue' % L[1:] if L.startswith('v') else 'Jungsan_M1_L%s_dialogue' % L[1:])
 open(out + '.html', 'w', encoding='utf-8').write(doc)
 from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
