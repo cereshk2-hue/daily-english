@@ -145,3 +145,11 @@ DLG = {
    ("다음 중 대화의 흐름상 <u>어색한</u> 응답은?", ["A: May I take a picture of it? B: Yes, I may.", "A: Why not? B: Using the flash can damage paintings.", "A: This is Sunflowers by Van Gogh. B: Wow, this is my favorite painting.", "A: We'll move on to Monet's paintings next. B: Great!", "A: You must not use the flash. B: Oh, I didn't know that."],
     "May I ~?에는 Yes, you may.로 대답 — Yes, I may. ✘")]},
 }
+# 11/27 선생님: 지문 없이 '대화 1의 심경'을 물으면 아이들은 모름 → 해당 대화를 문제 위에 같이(box), T/F에는 [대화 n] 표시
+HEAD = {1: '5과 대화 1 · 통화 금지', 2: '5과 대화 2 · 만지기 금지', 3: '5과 대화 3 · 뛰기 금지', 4: '5과 대화 4 · 음식 금지', 5: '5과 대화 5 · 미술관에서 (Watch, Answer, and Talk)'}
+BOX = {   # 질문 첫머리 → 대화 번호 (빈칸·어색한 대화·표현 문항은 문제 안에 대화가 있거나 일반 표현이라 뺌)
+ '대화 1에서 B(남자아이)의 심경': [1], '대화 2·3·4가 이루어지는 장소': [2, 3, 4], '대화 3에서 두 사람의 관계': [3], '대화 4의 대화가 끝난 뒤': [4],
+ '밑줄 친 <span class="en"><u>Why not?</u></span>(대화 3)': [3], '"You don\'t have to."(대화 1)': [1],
+ '남자(M)의 직업': [5], '소녀가 플래시를 쓰고 싶어 한 이유': [5], '플래시를 쓰면 안 되는 이유': [5], '대화의 내용과 일치하는 것은?': [5],
+ '<span class="en">Yes, you may, but you must not use the flash.</span>': [5], '소녀의 말 <span class="en">Oh, I didn\'t know that.</span>': [5], '소녀의 마지막 말': [5]}
+TFN = {'k5a': [1, 1, 1, 1, 2, 2, 3, 3, 3, 4, 4, 4], 'k5b': None}

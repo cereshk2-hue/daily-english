@@ -16,10 +16,17 @@ def build(gid, c):
     for s, v, a in c['verb']: assert norm(s.replace('___', a[0])) in norm(' '.join(TX)), s
     for s, b, ev, why in c['tf']: assert norm(ev) in norm(' '.join(TX)), ev
     mc = []
-    for q, opts, why in c['mc']:
+    heads = {l[1] for l in P if l[0] == '#'}
+    for m in c['mc']:
+        q, opts, why = m[:3]; box = m[3] if len(m) > 3 else None
+        hit = [v for k, v in getattr(MOD, 'BOX', {}).items() if q.startswith(k)]
+        if hit and not box: box = [MOD.HEAD[x] for x in hit[0]]
         assert len(opts) == 5 and len(set(opts)) == 5
-        mc.append({'q': q, 'opts': opts, 'ex': '정답 ▶ %s\n이유: %s\n오답 ▶ %s' % (opts[0], why, ' / '.join(opts[1:]))})
-    n = len(c['scr'])
+        it = {'q': q, 'opts': opts, 'ex': '정답 ▶ %s\n이유: %s\n오답 ▶ %s' % (opts[0], why, ' / '.join(opts[1:]))}
+        if box: assert all(b in heads for b in box), box; it['box'] = box   # 11/27 선생님: 대화문을 문제 위에 같이 보여 줘야 앎
+        mc.append(it)
+    n = len(c['scr']); tfn = getattr(MOD, 'TFN', {}).get(gid)
+    if tfn: assert len(tfn) == len(c['tf'])
     return {'id': gid, 'name': '', 'range': c['range'],
             'story': '%s · 대화문 꿰뚫기 (표현 카드 → 대화 순서 → 고르기 → 모든 줄 스크램블 %d → 표현 쓰기 %d → T/F %d → 상황·심경·기능 %d)' % (c['range'], n, len(c['verb']), len(c['tf']), len(mc)),
             'passage': P,
@@ -30,11 +37,13 @@ def build(gid, c):
              {'type': 'pick', 'title': '어법·의미 고르기', 'guide': '대화 속 헷갈리는 말을 골라요.', 'items': [{'s': s, 'ex': ex} for s, ex in c['pick']]},
              {'type': 'scramble', 'title': '모든 줄 스크램블', 'guide': '대화의 모든 줄을 우리말 보고 영어로 완성해요. 이것만 다 하면 대화가 통째로 외워져요.', 'items': [{'ko': ko, 'en': en} for ko, en in c['scr']]},
              {'type': 'verb', 'title': '핵심 표현 쓰기', 'ph': '영어로 쓰기', 'guide': '빈칸에 들어갈 영어를 직접 써요(괄호 속 우리말 힌트).', 'items': [{'s': s, 'v': v, 'a': a, 'ex': '정답 ▶ %s' % ' / '.join(a)} for s, v, a in c['verb']]},
-             {'type': 'tf', 'title': '대화 내용 T/F', 'guide': '누가 무엇을 했는지, 허락했는지 금지했는지 꼼꼼히 확인해요.', 'items': [[s, b, '정답 ▶ %s\n이유: %s\n근거 ▶ %s' % ('T' if b else 'F', why, ev), None, ev] for s, b, ev, why in c['tf']]},
+             {'type': 'mc', 'title': '대화 내용 T/F', 'guide': '문제 위에 그 대화가 나와요. 누가 무엇을 했는지, 허락했는지 금지했는지 대화와 대조해서 T/F를 골라요.',
+              'items': [{'q': s, 'opts': ['T (맞다)', 'F (틀리다)'], 'keep': True, 'a': 0 if b else 1, 'box': [MOD.HEAD[tfn[i]] if tfn else MOD.HEAD[5]],
+                         'ex': '정답 ▶ %s\n이유: %s\n근거 ▶ %s' % ('T (맞다)' if b else 'F (틀리다)', why, ev)} for i, (s, b, ev, why) in enumerate(c['tf'])]},
              {'type': 'mc', 'title': '상황·심경·기능', 'guide': '장소, 관계, 심경, 의도, 빈칸, 어색한 대화까지 시험에 나오는 모양 그대로예요.', 'items': mc}]}
-new = []
+new = []; MOD = None
 for L in LESSONS:
-    M = importlib.import_module(L)
+    M = importlib.import_module(L); MOD = M
     for gid, c in M.DLG.items(): new.append(build(gid, c))
 ids = {d['id'] for d in new}
 old = [d['id'] for d in PK['days']]
