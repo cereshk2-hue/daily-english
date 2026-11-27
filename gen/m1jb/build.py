@@ -95,7 +95,7 @@ for S in SETS:
         mark = ''.join(C[x] for x in A) if multi else C[A]
         items.append({'n': n, 'src': typ, 'stem': '%d번%s' % (n, ' (%d개 고르기)' % len(A) if multi else ''), 'body': '', 'opts': list(C), 'en': False, 'ans': A,
                       'ex': '정답 ▶ %s\n풀이 ▶ %s' % (mark, why), 'ctx': '', 'pts': 4, 'words': [], 'kos': []})
-    tests.append({'id': S['id'], 'kind': 'exam', 'title': S['title'], 'short': S['short'], 'school': '중산중 1학년', 'minutes': 40, 'note': '문제는 종이 족보(%s)로 풀고, 여기엔 답만 입력해요.' % S['src'], 'items': items})
+    tests.append({'id': S['id'], 'kind': 'exam', 'retry': 1, 'title': S['title'], 'short': S['short'], 'school': '중산중 1학년', 'minutes': 40, 'note': '문제는 종이 족보(%s)로 풀고, 여기엔 답만 입력해요.' % S['src'], 'items': items})
 src = open(path, encoding='utf-8').read()
 src = re.sub(r'/\* M1JB-TESTS.*?/\* /M1JB-TESTS \*/\n?', '', src, flags=re.S)
 ids = [t['id'] for t in tests]

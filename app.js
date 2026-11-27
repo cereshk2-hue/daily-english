@@ -409,7 +409,7 @@
       return { t: 'gate', title: ch.title || ('덩이 ' + (ci + 1)), key: (step.title || '한 판') + ' · ' + (ch.title || ci + 1), round: 1, tries: 0, miss: [], phase: 'play',
         parts: ch.parts.map(function (p) { var segs = [], re = /\{([^}]*)\}/g, last = 0, m;
           while ((m = re.exec(p.s))) { segs.push({ x: p.s.slice(last, m.index) }); var o = m[1].split('|'); segs.push({ ans: o[0], opts: shuffle(o.slice()) }); last = m.index + m[0].length; }
-          segs.push({ x: p.s.slice(last) }); return { segs: segs, ko: p.ko || '', ex: p.ex || '' }; }) };
+          segs.push({ x: p.s.slice(last) }); return { segs: segs, ko: p.ko || '', ex: p.ex || '', ctx: !!p.ctx }; }) }; /* 11/26 ctx: 앞뒤 문맥 문장(괄호 없음, 흐리게) */
     });
     if (t === 'tf') return shuffle(it).map(function (q) { return { t: 'tf', s: q[0], ans: q[1], ex: q[2], key: q[0].split(' ').slice(0, 4).join(' ') + '…' }; });
     if (t === 'verb') return shuffle(it).map(function (q) { return { t: 'verb', s: q.s, v: q.v, a: q.a, ex: q.ex, ph: step.ph, key: q.v + '→' + q.a[0] }; });
@@ -531,13 +531,15 @@
     }
     var TABS = [['today', '오늘의 학습', '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>'], ['text', '본문', '<path d="M5 3h10l4 4v14H5z"/><path d="M9 12h6M9 16h4"/>'],
       ['types', '유형별 연습', '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>']];
-    if (TESTS.some(function (t) { return !isBoss(t) && !isBimi(t); })) TABS.push(['test', TL, '<path d="M6 3h9l4 4v14H6z"/><path d="M9 13l2 2 4-4"/>']);
+    if (TESTS.some(function (t) { return !isBoss(t) && !isBimi(t) && !isExam(t); })) TABS.push(['test', TL, '<path d="M6 3h9l4 4v14H6z"/><path d="M9 13l2 2 4-4"/>']);
     if (TESTS.some(isBoss)) TABS.push(['boss', '끝판왕', '<path d="M12 3c1 3 4 4.5 4 8.5a4 4 0 0 1-8 0c0-2 1-3 1-3 .5 1.5 1.5 2 2 2 0-3-1-5 1-7.5z"/><path d="M8 21h8"/>']);
+    if (TESTS.some(isExam)) TABS.push(['exam', '실전기출', '<path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h8M8 17h5"/>']);
     if (TESTS.some(isBimi)) TABS.push(['bimi', '비밀노트 변형문제', '<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v3"/>']);
     h += '<div class="stack">';
     if (TAB === 'test' && TESTS.length) h += testsHTML();
     if (TAB === 'boss' && TESTS.length) h += bossHTML();
     if (TAB === 'bimi' && TESTS.length) h += bimiHTML();
+    if (TAB === 'exam' && TESTS.length) h += examHTML();
     if (TAB === 'today') h += todayHTML();
     if (TAB === 'text') h += '<h3 class="sech">본문</h3>' + daySwitch() + (inProgress(P.days[SEL]) ? lockHTML(P.days[SEL], '본문') : P.passLock && !DS(P.days[SEL].id).scores[0] ? '<section class="card"><b>먼저 실전 1문제를 풀어 보세요.</b><p class="note" style="margin:6px 0 0">문제를 풀고 나면 문장별 해석과 노트 정리용 핵심 문장이 여기에 열려요.</p></section>' : passageHTML(P.days[SEL]));
     if (TAB === 'types') h += '<h3 class="sech">유형별 연습</h3>' + daySwitch() + (inProgress(P.days[SEL]) ? lockHTML(P.days[SEL], '유형별 연습') : typesHTML(P.days[SEL]));
@@ -577,9 +579,10 @@
   function sameAns(it, v) { return isM(it) ? Array.isArray(v) && v.slice().sort().join() === it.ans.slice().sort().join() : v === it.ans; }
   function ansTxt(v) { return v == null || (Array.isArray(v) && !v.length) ? '안 씀' : Array.isArray(v) ? v.slice().sort().map(function (i) { return CIRC[i]; }).join('') : CIRC[v]; }
   function isBoss(t) { return t.kind === 'boss'; } /* 11/2 요약문 끝판왕 챌린지: 아래 '끝판왕' 탭에 따로 (주말 도전) */
+  function isExam(t) { return t.kind === 'exam'; } /* 11/25 심학중1 실전기출(다른 학교 기출 25문항 세트): 아래 '실전기출' 탭에 따로 */
   function isBimi(t) { return t.kind === 'bimi'; } /* 11/11 중산고1 비밀노트 변형문제: 아래 '비밀노트 변형문제' 탭에 따로 (종이 시험지 + 답안지) */
-  function tlOf(t) { return isBoss(t) ? '끝판왕' : isBimi(t) ? '비밀노트 변형문제' : TL; }
-  function listTab(t) { return isBoss(t) ? 'boss' : isBimi(t) ? 'bimi' : 'test'; }
+  function tlOf(t) { return isBoss(t) ? '끝판왕' : isBimi(t) ? '비밀노트 변형문제' : isExam(t) ? '실전기출' : TL; }
+  function listTab(t) { return isBoss(t) ? 'boss' : isBimi(t) ? 'bimi' : isExam(t) ? 'exam' : 'test'; }
   function hasW(t) { return t.items.some(isW); }
   function wnorm(s) { return norm(String(s || '').replace(/[“”]/g, '"')).replace(/[.\s]+$/, ''); }
   function testQ(t, k, b) {
@@ -662,7 +665,8 @@
         (f.wb && Object.keys(f.wb).some(function (k) { return f.wb[k] === 'chk'; }) ? '<br><small>서술형 일부는 선생님이 확인해요 (점수에 아직 안 들어감)</small>' : '')
       : !dr && st.remote ? '<b>다른 기기에서 제출 · ' + st.remote.pct + '점</b>' + (st.remote.c != null ? ' (' + st.remote.c + '/' + st.remote.tt + ')' : '') + (st.remote.at ? ' · ' + fmtTime(st.remote.at) : '') + '<br><small>결과 · 해설은 제출한 기기에서 볼 수 있어요</small>'
       : dr ? '<b>푸는 중</b> · ' + Object.keys(dr.a).filter(function (k) { return dr.a[k] !== '' && dr.a[k] != null && !(Array.isArray(dr.a[k]) && !dr.a[k].length); }).length + '칸 답함' : '아직 안 풀었어요';
-    var btns = f ? '<button class="btn plank" data-tres="' + ti + '">결과 · 해설 보기</button>' +
+    if (rtOn(t)) status += '<br><b style="color:var(--bad)">틀린 ' + st.rt.wrong.length + '문제 다시 도전 중</b> · 다시 풀어야 정답·해설이 열려요';
+    var btns = rtOn(t) ? '<button class="btn plank" data-tres="' + ti + '">틀린 문제 다시 도전하기</button>' : f ? '<button class="btn plank" data-tres="' + ti + '">결과 · 해설 보기</button>' +
         '<button class="btn ghost" data-tgo2="' + ti + '">' + (dr ? '연습 이어서 풀기' : '처음부터 다시 풀기 (연습)') + '</button>'
       : '<button class="btn plank" data-tgo2="' + ti + '">' + (dr ? '이어서 풀기' : '시험 시작하기') + '</button>';
     return '<section class="card day" style="margin-bottom:12px"><div class="eyebrow">' + E(t.school) + ' · ' + n + '문항' + (w ? ' (서술형 포함)' : '') + ' · ' + t.minutes + '분</div>' +
@@ -671,7 +675,11 @@
   }
   function testsHTML() {
     return '<h3 class="sech">' + TL + (/시험|문제/.test(TL) ? '' : ' 시험') + '</h3><p class="sub" style="margin:0 0 12px">종이 시험지 대신 여기에서 답을 입력해요. <b>처음 제출한 점수</b>가 선생님께 전달돼요. 틀린 문제는 해설을 보고 <b>시험지에 정리</b>해요 (오답 노트에는 담기지 않아요).</p>' +
-      TESTS.map(function (t, ti) { return isBoss(t) || isBimi(t) ? '' : testCardHTML(ti); }).join('');
+      TESTS.map(function (t, ti) { return isBoss(t) || isBimi(t) || isExam(t) ? '' : testCardHTML(ti); }).join('');
+  }
+  function examHTML() {
+    return '<h3 class="sech">실전기출</h3><p class="sub" style="margin:0 0 12px">다른 학교에서 실제로 나온 <b>기출 문제</b>를 25문항씩 묶었어요. 선생님이 나눠 준 시험지로 풀고, 여기에는 <b>답만</b> 입력해요. 시험지 번호 그대로 입력하면 돼요. <b>처음 제출한 점수</b>가 선생님께 전달돼요.</p>' +
+      TESTS.map(function (t, ti) { return isExam(t) ? testCardHTML(ti) : ''; }).join('');
   }
   function bimiHTML() {
     return '<h3 class="sech">비밀노트 변형문제</h3><p class="sub" style="margin:0 0 12px">선생님이 나눠 준 <b>비밀노트 변형문제</b> 시험지로 풀고, 여기에는 <b>답만</b> 입력해요. 시험지 번호 그대로 입력하면 돼요. <b>모두</b>라고 적힌 번호는 정답을 모두 골라요. 서술형은 시험지에 쓴 답을 그대로 옮겨 적어요. <b>처음 제출한 점수</b>가 선생님께 전달돼요.</p>' +
@@ -690,6 +698,7 @@
   }
   function startTest(ti) {
     var t = TESTS[ti], st = TST(t);
+    if (rtOn(t)) return retryView(ti);
     if (!st.draft) { st.draft = { a: {}, started: Date.now(), retake: !!st.first }; save(); }
     TV = { ti: ti, armed: false }; examView();
   }
@@ -701,7 +710,8 @@
     var h = '<div class="topbar"><div class="row"><button class="xbtn" id="tquit" aria-label="나가기"><span aria-hidden="true">✕</span></button><span class="crumb"><b>' + E(t.title) + '</b>' +
       (dr.retake ? ' · 연습 (점수 그대로)' : ' · 답안지') + '</span><span class="qpill" id="tcount">' + cnt() + ' / ' + n + '</span></div></div>';
     h += '<div class="stack examwrap"><p class="note" style="margin:0">' + (dr.retake ? '처음 제출한 점수는 그대로 남아요. 연습으로 다시 풀어 보세요.'
-      : (t.items.some(isM) ? '<b>모두</b>라고 적힌 번호는 정답을 <b>모두</b> 눌러요 (다시 누르면 취소). ' : '') + '문제는 종이 시험지로 풀고, 여기에는 <b>답만</b> 입력해요. 고른 답은 바로 저장돼요. 다 입력하고 <b>제출하기</b>를 누르면 점수가 선생님께 전달되고, 해설이 나와요. 틀린 문제는 해설을 보고 시험지에 정리해요.') + '</p>';
+      : (t.items.some(isM) ? '<b>모두</b>라고 적힌 번호는 정답을 <b>모두</b> 눌러요 (다시 누르면 취소). ' : '') + (t.retry ? '문제는 종이 시험지로 풀고, 여기에는 <b>답만</b> 입력해요. 고른 답은 바로 저장돼요. <b>제출하기</b>를 누르면 점수가 선생님께 전달되고, <b>틀린 번호만</b> 알려 줘요. 틀린 문제를 <b>한 번 더</b> 풀어 본 뒤에 정답과 해설이 열려요.'
+        : '문제는 종이 시험지로 풀고, 여기에는 <b>답만</b> 입력해요. 고른 답은 바로 저장돼요. 다 입력하고 <b>제출하기</b>를 누르면 점수가 선생님께 전달되고, 해설이 나와요. 틀린 문제는 해설을 보고 시험지에 정리해요.')) + '</p>';
     h += '<section class="card omrsheet">' + t.items.map(function (it, k) {
       if (isW(it)) return '<div class="orow w" id="tq' + k + '"><span class="onum">' + it.n.replace('서술형 ', '서') + '</span><div class="wins">' + it.blanks.map(function (bl, b) {
         return '<label class="win">' + (bl.label ? '<b>' + bl.label + '</b>' : '') + '<input class="en" data-tw="' + k + '_' + b + '" value="' + E(a[k + '_' + b] || '') + '" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="' + E(it.n) + (bl.label ? ' ' + bl.label : '') + ' 답 쓰기"></label>'; }).join('') + '</div></div>';
@@ -737,9 +747,56 @@
     var rec = { at: Date.now(), started: dr.started, a: dr.a, c: g.c, t: g.mcN, score: g.score, max: g.max, wrong: g.wrong, wb: g.wb }, first = !st.first;
     if (first) st.first = rec; else (st.tries = st.tries || []).push(rec);
     st.draft = null;
+    var rk = g.wrong.filter(function (k) { return !isW(t.items[k]); });
+    if (first && t.retry && rk.length) st.rt = { left: t.retry, total: t.retry, a: JSON.parse(JSON.stringify(dr.a)), wrong: rk, fixed: {}, hist: [], done: false };
     save();
-    reportTest((isBoss(t) ? '끝판왕' : isBimi(t) ? '비밀노트' : 'Wrap-up') + (first ? ' 제출' : ' 연습'), t, { stepScore: (first ? '' : '연습 ') + g.score + '/' + g.max + '점' });
+    reportTest((isBoss(t) ? '끝판왕' : isBimi(t) ? '비밀노트' : isExam(t) ? '실전기출' : 'Wrap-up') + (first ? ' 제출' : ' 연습'), t, { stepScore: (first ? '' : '연습 ') + g.score + '/' + g.max + '점' });
     var ti = TV.ti; TV = null; testResult(ti, rec);
+  }
+  /* 11/27 다시 도전 (t.retry = 기회 수, 족보 OMR): 첫 제출 → 점수는 선생님께 그대로 가고, 틀린 '번호'만 알려 줌(정답 ✘) →
+     틀린 문제만 다시 골라 채점 → 기회를 다 쓰거나 다 맞히면 정답·해설이 열림. 서술형은 다시 도전 대상 아님 */
+  function rtOn(t) { var st = TST(t); return !!(t.retry && st.first && st.rt && !st.rt.done); }
+  function retryView(ti) {
+    RS = null; top();
+    var t = TESTS[ti], st = TST(t), rt = st.rt, f = st.first, na = rt.na || (rt.na = {}), round = rt.total - rt.left + 2, last = rt.left === 1;
+    var nm = function (ks) { return ks.map(function (k) { return t.items[k].n; }).join(', '); };
+    var filled = function (k) { var v = na[k]; return Array.isArray(v) ? v.length > 0 : v != null; };
+    var cnt = function () { return rt.wrong.filter(filled).length; };
+    var prev = rt.hist.length ? rt.hist[rt.hist.length - 1] : null;
+    var h = '<div class="topbar"><div class="row"><button class="xbtn" id="tquit" aria-label="나가기"><span aria-hidden="true">✕</span></button><span class="crumb"><b>' + E(t.title) + '</b> · 다시 도전 ' + round + '번째</span><span class="qpill" id="tcount">' + cnt() + ' / ' + rt.wrong.length + '</span></div></div>';
+    h += '<div class="stack examwrap"><section class="card pop stack" style="gap:8px"><div class="eyebrow">' + E(tlOf(t)) + ' · 처음 점수 ' + pctOf(recScore(t, f), recMax(t, f)) + '점 (' + f.c + '/' + f.t + ') · 선생님께 전달됐어요</div>' +
+      (prev && prev.fixed.length ? '<p class="note" style="margin:0"><b style="color:var(--ok)">✔ ' + prev.fixed.length + '문제를 다시 맞혔어요!</b> (' + nm(prev.fixed) + '번)</p>' : prev ? '<p class="note" style="margin:0">이번에 다시 맞힌 문제는 없어요. 시험지를 한 번 더 꼼꼼히 읽어 봐요.</p>' : '') +
+      '<p style="margin:0"><b style="color:var(--bad)">틀린 문제 ' + rt.wrong.length + '개</b> · ' + nm(rt.wrong) + '번</p>' +
+      '<p class="note" style="margin:0">정답은 아직 안 알려 줘요. 시험지에서 이 문제들을 <b>다시 풀고</b> 답을 골라요. ' + (last ? '<b>이번이 마지막 기회</b>예요. 채점하면 정답과 해설이 열려요.' : '기회가 ' + rt.left + '번 남았어요.') + ' 줄 그은 번호는 앞에서 골랐다가 틀린 답이에요.</p></section>';
+    h += '<section class="card omrsheet">' + rt.wrong.map(function (k) {
+      var it = t.items[k], old = rt.a[k];
+      return '<div class="orow' + (isM(it) ? ' multi' : '') + '" id="tq' + k + '"><span class="onum">' + it.n + (isM(it) ? '<small>모두</small>' : '') + '</span><div class="obub">' + [0, 1, 2, 3, 4].map(function (i) {
+        var was = !isM(it) && picked(old, i);
+        return '<button class="bub' + (picked(na[k], i) ? ' sel' : '') + (was ? ' was' : '') + '" data-rq="' + k + ':' + i + '" aria-label="' + it.n + '번 ' + (i + 1) + '번' + (was ? ' (앞에서 틀린 답)' : '') + '" aria-pressed="' + picked(na[k], i) + '">' + CIRC[i] + '</button>'; }).join('') + '</div></div>';
+    }).join('') + '</section><p class="note" id="tleft" style="margin:0" hidden></p><button class="btn plank" id="rsubmit" style="width:100%">' + (last ? '채점하고 해설 보기' : '다시 채점하기') + '</button></div>';
+    app.innerHTML = h;
+    var armed = false;
+    $('#tquit').onclick = function () { home(listTab(t)); };
+    app.querySelectorAll('[data-rq]').forEach(function (b) { b.onclick = function () {
+      var p = b.dataset.rq.split(':'), k = +p[0], i = +p[1];
+      if (isM(t.items[k])) { var v = Array.isArray(na[k]) ? na[k] : [], j = v.indexOf(i); if (j < 0) v.push(i); else v.splice(j, 1); v.sort(); na[k] = v; } else na[k] = i;
+      save(); armed = false; $('#tleft').hidden = true;
+      app.querySelectorAll('[data-rq^="' + k + ':"]').forEach(function (x) { var on = picked(na[k], +x.dataset.rq.split(':')[1]); x.classList.toggle('sel', on); x.setAttribute('aria-pressed', on); });
+      $('#tcount').textContent = cnt() + ' / ' + rt.wrong.length;
+    }; });
+    $('#rsubmit').onclick = function () {
+      var miss = rt.wrong.filter(function (k) { return !filled(k); }), tl = $('#tleft');
+      if (miss.length && !armed) { armed = true; tl.hidden = false;
+        tl.innerHTML = '<b style="color:var(--bad)">아직 ' + nm(miss) + '번을 안 골랐어요.</b> 그래도 채점하려면 한 번 더 누르세요.'; return; }
+      var fixed = [], still = [];
+      rt.wrong.forEach(function (k) { if (filled(k)) rt.a[k] = na[k]; (filled(k) && sameAns(t.items[k], na[k]) ? fixed : still).push(k); });
+      fixed.forEach(function (k) { rt.fixed[k] = round; });
+      rt.hist.push({ at: Date.now(), round: round, fixed: fixed, wrong: still });
+      rt.wrong = still; rt.na = {}; rt.left--; if (!still.length || rt.left <= 0) rt.done = true;
+      save();
+      reportTest(tlOf(t) + ' 다시 도전', t, { stepScore: round + '번째 도전 ' + fixed.length + '개 더 맞힘' + (still.length ? ' · 남은 오답 ' + nm(still) + '번' : ' · 모두 맞힘') });
+      if (rt.done) testResult(ti); else retryView(ti);
+    };
   }
   function qtype(it) { /* 문항 유형: 발문으로 판별 (결과 카드의 유형별 결과) */
     if (isW(it)) return '서술형';
@@ -754,6 +811,8 @@
   function testResult(ti, rec) {
     RS = null; top();
     var t = TESTS[ti], st = TST(t), f = st.first; rec = rec || f;
+    if (rtOn(t) && rec === f) return retryView(ti);
+    var RT = rec === f && st.rt && st.rt.done ? st.rt : null;
     var left = testLeft(t), practice = rec !== f, w = hasW(t), sc = recScore(t, rec), mx = recMax(t, rec), chk = Object.keys(rec.wb || {}).filter(function (k) { return rec.wb[k] === 'chk'; }).length;
     var h = '<div class="topbar"><div class="row"><button class="link" id="tback">← ' + tlOf(t) + ' 목록</button><span class="crumb">' + E(t.title) + ' · <b>결과</b></span></div></div><div class="stack examwrap">';
     /* 11/11 결과 카드: 원형 그래프(정답률) + 유형별 결과 + 틀린 유형 한 줄 — 캡처해서 학부모님께 보내기 좋게 */
@@ -768,6 +827,8 @@
       (wty.length ? '<p class="twrong"><b>학습이 필요한 약한 유형</b> ' + wty.map(E).join(' · ') + '</p>' : '<p class="twrong ok"><b>모든 유형 통과</b></p>') +
       (chk ? '<p class="note" style="margin:0"><b>서술형 ' + chk + '칸은 선생님이 확인해요.</b> 정해 둔 답과 달라서 아직 점수에 넣지 않았어요.</p>' : '') +
       (practice ? '<p class="note" style="margin:0">처음 제출: ' + pctOf(recScore(t, f), recMax(t, f)) + '점 · ' + fmtTime(f.at) + '</p>' : '') +
+      (RT ? '<p class="note" style="margin:0"><b>다시 도전</b> ' + (Object.keys(RT.fixed).length ? '다시 맞힘 ' + Object.keys(RT.fixed).map(function (k) { return t.items[k].n; }).join(', ') + '번' : '다시 맞힌 문제 없음') +
+        (RT.wrong.length ? ' · <b style="color:var(--bad)">끝까지 틀림 ' + RT.wrong.map(function (k) { return t.items[k].n; }).join(', ') + '번</b>' : ' · 결국 모두 맞혔어요!') + '</p>' : '') +
       (rec.wrong.length ? 
         '<p class="wguide"><b>시험지에 적어 오기</b> 틀린 문제마다 아래 해설을 보고 시험지에 ① 정답과 이유 ② 모르는 단어 뜻 ③ 문장 해석을 적어서 선생님께 내요.</p>' : '<p class="note" style="margin:0">모두 맞혔어요!</p>') +
       '</section>';
@@ -779,8 +840,8 @@
             return '<li class="' + sts[b] + '">' + (bl.label ? '<b>' + bl.label + '</b> ' : '') + '<span class="en">' + E(rec.a[k + '_' + b] || '(안 씀)') + '</span> <i>' + ({ ok: '✔ ' + bl.pts + '점', no: '✗', chk: '선생님 확인' }[sts[b]]) + '</i></li>'; }).join('') + '</ul>' +
           '<p class="wex"><b>모범 답안</b> <span class="en">' + E(it.model) + '</span>\n' + E(it.ex) + '</p></div></details>';
       }
-      var my = rec.a[k], ok = sameAns(it, my);
-      return '<details class="card wres' + (ok ? ' ok' : ' no') + '"' + (ok ? '' : ' open') + '><summary><span class="wmark">' + (ok ? '✔' : '✗') + '</span><b>' + it.n + '번</b> <span class="note">내 답 ' + ansTxt(my) + ' · 정답 ' + ansTxt(it.ans) + '</span></summary>' +
+      var my = rec.a[k], ok = sameAns(it, my), rf = RT && RT.fixed[k];
+      return '<details class="card wres' + (ok ? ' ok' : ' no') + '"' + (ok ? '' : ' open') + '><summary><span class="wmark">' + (ok ? '✔' : '✗') + '</span><b>' + it.n + '번</b> <span class="note">내 답 ' + ansTxt(my) + (RT && !ok ? ' → ' + (rf ? '다시 풀어 맞힘 ✔' : '다시 고른 답 ' + ansTxt(RT.a[k]) + ' ✗') : '') + ' · 정답 ' + ansTxt(it.ans) + '</span></summary>' +
         '<div class="wq">' + expHTML(it, my, !ok) + '<details class="wctx"><summary>문제 보기</summary><div class="wq-stem">' + it.stem + '</div>' + (it.ctx ? it.ctx : '') + it.body + '</details></div></details>';
     }).join('') + '</div>';
     app.innerHTML = h;
@@ -1109,7 +1170,7 @@
   function gateCSS() {
     if (document.getElementById('gatecss')) return;
     var c = document.createElement('style'); c.id = 'gatecss';
-    c.textContent = '.pool .chip.wrong{border-color:var(--bad);background:var(--bad-soft);color:var(--bad)}.gatebar{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent);border-radius:12px;padding:9px 12px;margin:0 0 8px;font-size:14px}.gatebar.bad{background:var(--bad-soft);color:var(--bad)}.gatebar.ok{background:var(--ok-soft);color:var(--ok)}' +
+    c.textContent = '.gs.ctx{color:var(--muted);font-size:.92em}.pool .chip.wrong{border-color:var(--bad);background:var(--bad-soft);color:var(--bad)}.gatebar{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent);border-radius:12px;padding:9px 12px;margin:0 0 8px;font-size:14px}.gatebar.bad{background:var(--bad-soft);color:var(--bad)}.gatebar.ok{background:var(--ok-soft);color:var(--ok)}' +
       '.gpara{line-height:2.15;font-size:15.5px}.gpara .gs{margin:0 0 10px}.gb{display:inline-flex;align-items:center;gap:2px;border:1.5px dashed var(--line);border-radius:10px;padding:1px 3px;margin:0 2px;white-space:nowrap}.gb i{font-style:normal;color:var(--muted);font-size:12px}' +
       '.gopt{font:inherit;font-size:14.5px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:1px 8px;line-height:1.6;cursor:pointer}.gopt.picked{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}' +
       '.gopt.right{border-color:var(--ok);background:var(--ok-soft);color:var(--ok);font-weight:700}.gopt.wrong{border-color:var(--bad);background:var(--bad-soft);color:var(--bad);text-decoration:line-through}.gb.done{border-style:solid;border-color:var(--ok)}' +
@@ -1119,7 +1180,7 @@
   }
   function gateCount(q) { var n = 0; q.parts.forEach(function (p) { p.segs.forEach(function (s) { if (s.opts) n++; }); }); return n; }
   function gateSent(p, pi, rev) {
-    return '<p class="gs">' + p.segs.map(function (s, si) { return s.opts ? '<span class="gb" data-g="' + pi + ':' + si + '">' + s.opts.map(function (o, oi) { return '<button class="gopt" data-o="' + oi + '">' + E(o) + '</button>'; }).join('<i>/</i>') + '</span>' : E(s.x); }).join('') +
+    return '<p class="gs' + (p.ctx ? ' ctx' : '') + '">' + p.segs.map(function (s, si) { return s.opts ? '<span class="gb" data-g="' + pi + ':' + si + '">' + s.opts.map(function (o, oi) { return '<button class="gopt" data-o="' + oi + '">' + E(o) + '</button>'; }).join('<i>/</i>') + '</span>' : E(s.x); }).join('') +
       '<span class="gko">' + E(p.ko) + '</span>' + (rev ? '<span class="gex" hidden>' + E(p.ex ? '해설 ▶ ' + p.ex : '') + '</span>' : '') + '</p>';
   }
   function ordBar(q) { /* 11/19 문장 순서 3번 도전: 틀려도 어디가 틀렸는지 안 알려 줌 → 3번 다 틀리면 오답 학습(맞는 조각만 들어감) → 처음부터 다시 3번 */
@@ -1179,7 +1240,7 @@
         q.passed = true; chk.hidden = true;
         card.querySelectorAll('.gopt').forEach(function (x) { x.disabled = true; if (x.classList.contains('picked')) { x.classList.remove('picked'); x.classList.add('right'); } });
         $('#gpara').classList.add('showko');
-        var first = q.round === 1, lines = q.parts.map(function (p, pi) { return (pi + 1) + ') ' + p.segs.filter(function (sg) { return sg.opts; }).map(function (sg) { return sg.ans; }).join(' / ') + (p.ex ? '  · ' + p.ex : ''); });
+        var first = q.round === 1, lines = q.parts.filter(function (p) { return !p.ctx; }).map(function (p, pi) { return (pi + 1) + ') ' + p.segs.filter(function (sg) { return sg.opts; }).map(function (sg) { return sg.ans; }).join(' / ') + (p.ex ? '  · ' + p.ex : ''); });
         answer(first, lines.join('\n'), '<b>100점! 통과</b> · ' + (first ? q.tries + '번째 도전에 통과했어요.' : q.round + '라운드 만에 통과했어요. (처음 3번 안에 못 해서 오답으로 남아요)'));
         return;
       }
