@@ -12,7 +12,7 @@ import json, subprocess
 _pk = json.loads(subprocess.check_output(['node', '-e', "global.window={};require('%s')" % getattr(M, 'UNIT', '/home/claude/proj/data/m1-donga-yoon-L6.js') + ";process.stdout.write(JSON.stringify(window.PKG.days))"]))
 D = {d['id']: [l for l in d['passage'] if l[0] != '#'] for d in _pk}
 for gid, c in M.DLG.items():
-    rnd = random.Random(gid); h = '<h1>%s <span class="nm">이름 ________</span></h1><div class="sub">%s · 대화문 꿰뚫기 학습지</div>' % (E(c['range']), '발산중2 비상(황종배)' if L.startswith('v') else '중산중1 동아(윤정미)')
+    rnd = random.Random(gid); h = '<h1>%s <span class="nm">이름 ________</span></h1><div class="sub">%s · 대화문 꿰뚫기 학습지</div>' % (E(c['range']), M.PDF[1])
     h += '<h2>1. 대화 순서 맞추기</h2>'; key = []
     for name, lines, flow in c['order']:
         idx = list(range(len(lines)))
