@@ -1012,6 +1012,267 @@ window.PKG = {
       { q: '소녀의 마지막 말 <span class="en">Great!</span>에 담긴 심정으로 알맞은 것은?', opts: ['기대됨', '실망함', '지루함', '걱정됨', '화남'], ex: '정답 ▶ 기대됨\n이유: 다음에 모네의 그림을 본다는 말에 \'좋아요!\' → 기대됨\n오답 ▶ 실망함 / 지루함 / 걱정됨 / 화남', box: ['5과 대화 5 · 미술관에서 (Watch, Answer, and Talk)'] },
       { q: '다음 중 대화의 흐름상 <u>어색한</u> 응답은?', opts: ['A: May I take a picture of it? B: Yes, I may.', 'A: Why not? B: Using the flash can damage paintings.', 'A: This is Sunflowers by Van Gogh. B: Wow, this is my favorite painting.', 'A: We\'ll move on to Monet\'s paintings next. B: Great!', 'A: You must not use the flash. B: Oh, I didn\'t know that.'], ex: '정답 ▶ A: May I take a picture of it? B: Yes, I may.\n이유: May I ~?에는 Yes, you may.로 대답 — Yes, I may. ✘\n오답 ▶ A: Why not? B: Using the flash can damage paintings. / A: This is Sunflowers by Van Gogh. B: Wow, this is my favorite painting. / A: We\'ll move on to Monet\'s paintings next. B: Great! / A: You must not use the flash. B: Oh, I didn\'t know that.' }
     ] }
+  ] },
+  { id: 'k6a', name: 'DAY 21', range: '6과 대화문 꿰뚫기 ① 대화 1~4', story: '6과 대화문 꿰뚫기 ① 대화 1~4 · 대화문 꿰뚫기 (표현 카드 → 대화 순서 → 고르기 → 모든 줄 스크램블 13 → 표현 쓰기 11 → T/F 11 → 상황·심경·기능 8)', passage: [['#', '6과 대화 1 · 문 닫기 (Watch and Choose)', ''], ['W', 'Excuse me, but can you please close the door? The air conditioner is on.', '실례지만, 문을 닫아 주시겠어요? 에어컨이 켜져 있어서요.'], ['B', 'Oh, I didn\'t know that. I\'ll close it right away.', '아, 몰랐네요. 즉시 닫을게요.'], ['W', 'Thanks.', '감사합니다.'], ['#', '6과 대화 2 · 카페에서 (Watch and Choose)', ''], ['M', 'For here or to go?', '여기에서 드실 건가요, 아니면 가져가실 건가요?'], ['G', 'For here, please. And can you please put my smoothie in a plastic cup, not in a glass?', '여기서 먹고 갈게요. 그리고 제 스무디를 유리잔 말고 플라스틱 컵에 담아 주시겠어요?'], ['M', 'I\'m sorry, but we don\'t use single-use plastic cups inside the café.', '죄송하지만, 카페 안에서는 일회용 플라스틱 컵을 사용하지 않아요.'], ['G', 'Oh, I see.', '아, 그렇군요.'], ['#', '6과 대화 3 · 물 잠그기 (Watch and Choose)', ''], ['W', 'Look. Somebody forgot to turn off the water.', '봐. 누군가 물을 잠그는 걸 깜빡했네.'], ['B', 'Again? People are so forgetful.', '또요? 사람들은 너무 잘 잊어요.'], ['W', 'I know. Can you run over there and turn off the water?', '그러게. 저기로 뛰어가서 물을 잠가 주겠니?'], ['B', 'Sure. No problem.', '물론이죠. 문제없어요.'], ['#', '6과 대화 4 · 상자 옮기기 (Watch and Choose)', ''], ['M', 'Can you please carry this box to my car?', '이 상자를 내 차로 옮겨 줄래?'], ['G', 'I\'m really sorry, Dad, but I\'m late for my class.', '정말 죄송해요, 아빠, 그런데 제가 수업에 늦었어요.'], ['M', 'Oh, I see. I\'ll ask somebody else.', '아, 그렇구나. 다른 사람에게 부탁할게.']], steps: [
+    { type: 'vocab', title: '대화 핵심 표현', guide: '대화에 나오는 표현이에요. 뜻을 정확히 익혀요.', quizN: 10, items: [['Excuse me, but ~', '실례합니다만 ~'], ['Can you please ~?', '~해 주시겠어요?(요청하기)'], ['air conditioner', '에어컨'], ['be on', '(전원이) 켜져 있다'], ['right away', '바로, 즉시'], ['For here or to go?', '여기서 드세요, 가져가세요?'], ['For here, please.', '여기서 먹을게요.'], ['smoothie', '스무디'], ['plastic cup', '플라스틱 컵'], ['glass', '유리잔'], ['single-use', '일회용의'], ['forget to', '~하는 것을 잊다'], ['turn off', '(물·전원을) 잠그다, 끄다'], ['forgetful', '잘 잊어버리는'], ['run over there', '저쪽으로 뛰어가다'], ['Sure. No problem.', '물론이지. 문제없어.(요청 수락)'], ['carry', '나르다'], ['I\'m really sorry, but ~', '정말 미안하지만 ~(요청 거절)'], ['be late for', '~에 늦다'], ['somebody else', '다른 누군가']] },
+    { type: 'order', title: '대화 순서 맞추기', tries: 3, guide: '대화 한 편을 처음부터 끝까지 순서대로 놓아요. 묻는 말 → 대답, 허락 구하기 → 허락/거절 → 이유의 흐름을 떠올려요.', items: [
+      { lines: ['Excuse me, but can you please close the door? The air conditioner is on.', 'Oh, I didn\'t know that. I\'ll close it right away.', 'Thanks.'], flow: ['A: 문 좀 닫아 줄래요? 에어컨이 켜져 있어요', 'B: 몰랐어요, 바로 닫을게요', 'A: 고마워요'] },
+      { lines: ['For here or to go?', 'For here, please. And can you please put my smoothie in a plastic cup, not in a glass?', 'I\'m sorry, but we don\'t use single-use plastic cups inside the café.', 'Oh, I see.'], flow: ['직원: 여기서? 가져가?', '손님: 여기서요, 스무디는 플라스틱 컵에', '직원: 죄송하지만 매장 안에선 일회용 컵 안 써요', '손님: 아, 알겠어요'] },
+      { lines: ['Look. Somebody forgot to turn off the water.', 'Again? People are so forgetful.', 'I know. Can you run over there and turn off the water?', 'Sure. No problem.'], flow: ['A: 누가 물 안 잠갔어', 'B: 또? 사람들 정말 잘 잊어', 'A: 그러게. 뛰어가서 잠가 줄래?', 'B: 그래, 문제없어'] },
+      { lines: ['Can you please carry this box to my car?', 'I\'m really sorry, Dad, but I\'m late for my class.', 'Oh, I see. I\'ll ask somebody else.'], flow: ['아빠: 이 상자 차까지 옮겨 줄래?', '자녀: 정말 죄송해요, 수업에 늦었어요', '아빠: 그래, 다른 사람한테 부탁할게'] }
+    ] },
+    { type: 'pick', title: '어법·의미 고르기', guide: '대화 속 헷갈리는 말을 골라요.', items: [
+      { s: 'Excuse me, but can you please {close|open} the door? The air conditioner is on.', ex: '정답 ▶ close\n이유: 에어컨이 켜져 있으니 문을 \'닫아\' 달라는 요청' },
+      { s: 'Oh, I didn\'t know that. I\'ll {close|closing} it right away.', ex: '정답 ▶ close\n이유: will + 동사원형' },
+      { s: 'For here {or|and} to go?', ex: '정답 ▶ or\n이유: 여기서 먹을지 \'또는\' 가져갈지 묻는 말' },
+      { s: 'And can you please put my smoothie in a plastic cup, not {in|on} a glass?', ex: '정답 ▶ in\n이유: 컵·잔 \'안에\' 담다 → in' },
+      { s: 'I\'m sorry, but we don\'t use {single-use|reusable} plastic cups inside the café.', ex: '정답 ▶ single-use\n이유: 매장 안에서 쓰지 않는 것은 \'일회용\' 플라스틱 컵' },
+      { s: 'Look. Somebody forgot {to turn|turning} off the water.', ex: '정답 ▶ to turn\n이유: (해야 할 일을) 잊다 → forget + to부정사' },
+      { s: 'Again? People are so {forgetful|careful}.', ex: '정답 ▶ forgetful\n이유: 물 잠그는 걸 또 잊음 → 잘 잊어버리는' },
+      { s: 'I know. Can you run over there and {turn|turns} off the water?', ex: '정답 ▶ turn\n이유: Can you + 동사원형(run)과 and로 나란히 → turn' },
+      { s: 'I\'m really sorry, Dad, but I\'m late {for|to} my class.', ex: '정답 ▶ for\n이유: be late for ~ = ~에 늦다' }
+    ] },
+    { type: 'scramble', title: '모든 줄 스크램블', guide: '대화의 모든 줄을 우리말 보고 영어로 완성해요. 이것만 다 하면 대화가 통째로 외워져요.', items: [
+      { ko: '실례합니다만, 문 좀 닫아 주시겠어요? 에어컨이 켜져 있어요.', en: 'Excuse me, but can you please close the door? The air conditioner is on.' },
+      { ko: '아, 몰랐어요. 바로 닫을게요.', en: 'Oh, I didn\'t know that. I\'ll close it right away.' },
+      { ko: '여기서 드세요, 아니면 가져가세요?', en: 'For here or to go?' },
+      { ko: '여기서 먹을게요.', en: 'For here, please.' },
+      { ko: '그리고 제 스무디를 유리잔 말고 플라스틱 컵에 담아 주시겠어요?', en: 'And can you please put my smoothie in a plastic cup, not in a glass?' },
+      { ko: '죄송하지만, 저희는 카페 안에서 일회용 플라스틱 컵을 사용하지 않아요.', en: 'I\'m sorry, but we don\'t use single-use plastic cups inside the café.' },
+      { ko: '봐. 누군가 물 잠그는 걸 잊었어.', en: 'Look. Somebody forgot to turn off the water.' },
+      { ko: '또? 사람들은 정말 잘 잊어버려.', en: 'Again? People are so forgetful.' },
+      { ko: '그러게. 저기로 뛰어가서 물 좀 잠가 줄래?', en: 'I know. Can you run over there and turn off the water?' },
+      { ko: '물론이지. 문제없어.', en: 'Sure. No problem.' },
+      { ko: '이 상자를 내 차까지 옮겨 줄 수 있니?', en: 'Can you please carry this box to my car?' },
+      { ko: '정말 죄송해요, 아빠. 그런데 저 수업에 늦었어요.', en: 'I\'m really sorry, Dad, but I\'m late for my class.' },
+      { ko: '아, 그렇구나. 다른 사람에게 부탁할게.', en: 'Oh, I see. I\'ll ask somebody else.' }
+    ] },
+    { type: 'verb', title: '핵심 표현 쓰기', ph: '영어로 쓰기', guide: '빈칸에 들어갈 영어를 직접 써요(괄호 속 우리말 힌트).', items: [
+      { s: 'Excuse me, but ___ close the door?', v: '~해 주시겠어요?', a: ['can you please'], ex: '정답 ▶ can you please' },
+      { s: 'The air conditioner ___.', v: '켜져 있다', a: ['is on'], ex: '정답 ▶ is on' },
+      { s: 'I\'ll close it ___.', v: '바로', a: ['right away'], ex: '정답 ▶ right away' },
+      { s: 'For here or ___?', v: '가져가다', a: ['to go'], ex: '정답 ▶ to go' },
+      { s: 'I\'m sorry, but we don\'t use ___ plastic cups inside the café.', v: '일회용의', a: ['single-use'], ex: '정답 ▶ single-use' },
+      { s: 'Somebody ___ turn off the water.', v: '~하는 걸 잊었다', a: ['forgot to'], ex: '정답 ▶ forgot to' },
+      { s: 'Again? People are so ___.', v: '잘 잊어버리는', a: ['forgetful'], ex: '정답 ▶ forgetful' },
+      { s: 'Can you run over there and ___ the water?', v: '잠그다', a: ['turn off'], ex: '정답 ▶ turn off' },
+      { s: 'Can you please ___ this box to my car?', v: '나르다', a: ['carry'], ex: '정답 ▶ carry' },
+      { s: 'I\'m really sorry, Dad, but I\'m ___ my class.', v: '~에 늦다', a: ['late for'], ex: '정답 ▶ late for' },
+      { s: 'Oh, I see. I\'ll ask ___.', v: '다른 누군가', a: ['somebody else'], ex: '정답 ▶ somebody else' }
+    ] },
+    { type: 'mc', title: '대화 내용 T/F', guide: '문제 위에 그 대화가 나와요. 누가 무엇을 했는지, 허락했는지 금지했는지 대화와 대조해서 T/F를 골라요.', items: [
+      { q: 'The speaker asks to close the door because the air conditioner is on.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 1 · 문 닫기 (Watch and Choose)'], ex: '정답 ▶ T (맞다)\n이유: 에어컨이 켜져 있어서 문을 닫아 달라고 해요.\n근거 ▶ The air conditioner is on.' },
+      { q: 'The listener already knew that the air conditioner was on.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 대화 1 · 문 닫기 (Watch and Choose)'], ex: '정답 ▶ F (틀리다)\n이유: 몰랐다고 해요.\n근거 ▶ Oh, I didn\'t know that.' },
+      { q: 'The customer will drink the smoothie in the café.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 2 · 카페에서 (Watch and Choose)'], ex: '정답 ▶ T (맞다)\n이유: 여기서 먹겠다고 해요.\n근거 ▶ For here, please.' },
+      { q: 'The customer wants the smoothie in a glass.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 대화 2 · 카페에서 (Watch and Choose)'], ex: '정답 ▶ F (틀리다)\n이유: 유리잔이 아니라 플라스틱 컵을 원해요.\n근거 ▶ put my smoothie in a plastic cup, not in a glass' },
+      { q: 'The café uses single-use plastic cups inside.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 대화 2 · 카페에서 (Watch and Choose)'], ex: '정답 ▶ F (틀리다)\n이유: 매장 안에서는 일회용 플라스틱 컵을 쓰지 않아요.\n근거 ▶ we don\'t use single-use plastic cups inside the café' },
+      { q: 'Someone forgot to turn off the water.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 3 · 물 잠그기 (Watch and Choose)'], ex: '정답 ▶ T (맞다)\n이유: 누군가 물 잠그는 걸 잊었어요.\n근거 ▶ Somebody forgot to turn off the water.' },
+      { q: 'This is the first time that people forgot to turn off the water.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 대화 3 · 물 잠그기 (Watch and Choose)'], ex: '정답 ▶ F (틀리다)\n이유: 또(Again)라고 했으니 처음이 아니에요.\n근거 ▶ Again?' },
+      { q: 'The second speaker agrees to turn off the water.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 3 · 물 잠그기 (Watch and Choose)'], ex: '정답 ▶ T (맞다)\n이유: 물론이라며 수락해요.\n근거 ▶ Sure. No problem.' },
+      { q: 'Dad asks his child to carry a box to his car.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 4 · 상자 옮기기 (Watch and Choose)'], ex: '정답 ▶ T (맞다)\n이유: 상자를 차까지 옮겨 달라고 해요.\n근거 ▶ Can you please carry this box to my car?' },
+      { q: 'The child helps Dad carry the box.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 대화 4 · 상자 옮기기 (Watch and Choose)'], ex: '정답 ▶ F (틀리다)\n이유: 수업에 늦어서 거절해요.\n근거 ▶ I\'m late for my class.' },
+      { q: 'Dad will ask someone else for help.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 4 · 상자 옮기기 (Watch and Choose)'], ex: '정답 ▶ T (맞다)\n이유: 다른 사람에게 부탁하겠다고 해요.\n근거 ▶ I\'ll ask somebody else.' }
+    ] },
+    { type: 'mc', title: '상황·심경·기능', guide: '장소, 관계, 심경, 의도, 빈칸, 어색한 대화까지 시험에 나오는 모양 그대로예요.', items: [
+      { q: '대화 1에서 A가 문을 닫아 달라고 한 이유로 알맞은 것은?', opts: ['에어컨이 켜져 있어서', '밖이 너무 시끄러워서', '비가 들어와서', '추워서', '벌레가 들어와서'], ex: '정답 ▶ 에어컨이 켜져 있어서\n이유: The air conditioner is on.\n오답 ▶ 밖이 너무 시끄러워서 / 비가 들어와서 / 추워서 / 벌레가 들어와서', box: ['6과 대화 1 · 문 닫기 (Watch and Choose)'] },
+      { q: '대화 2가 이루어지는 장소로 가장 알맞은 곳은?', opts: ['카페', '도서관', '병원', '학교 교실', '박물관'], ex: '정답 ▶ 카페\n이유: For here or to go? / smoothie / inside the café → 카페\n오답 ▶ 도서관 / 병원 / 학교 교실 / 박물관', box: ['6과 대화 2 · 카페에서 (Watch and Choose)'] },
+      { q: '대화 2에서 손님의 요청이 이루어지지 않은 이유로 알맞은 것은?', opts: ['카페 안에서는 일회용 플라스틱 컵을 쓰지 않아서', '스무디가 다 팔려서', '유리잔이 모두 깨져서', '가져가는 손님만 컵을 줘서', '손님이 돈을 내지 않아서'], ex: '정답 ▶ 카페 안에서는 일회용 플라스틱 컵을 쓰지 않아서\n이유: we don\'t use single-use plastic cups inside the café\n오답 ▶ 스무디가 다 팔려서 / 유리잔이 모두 깨져서 / 가져가는 손님만 컵을 줘서 / 손님이 돈을 내지 않아서', box: ['6과 대화 2 · 카페에서 (Watch and Choose)'] },
+      { q: '대화 3에서 B의 말 <span class="en">Again? People are so forgetful.</span>에 담긴 심정으로 알맞은 것은?', opts: ['못마땅함', '자랑스러움', '고마움', '신남', '부러움'], ex: '정답 ▶ 못마땅함\n이유: 또 물을 안 잠갔다니 → 사람들이 잘 잊어서 못마땅함\n오답 ▶ 자랑스러움 / 고마움 / 신남 / 부러움', box: ['6과 대화 3 · 물 잠그기 (Watch and Choose)'] },
+      { q: '대화 4에서 자녀가 아빠의 부탁을 들어주지 못한 이유는?', opts: ['수업에 늦어서', '상자가 너무 무거워서', '차 열쇠가 없어서', '몸이 아파서', '숙제를 해야 해서'], ex: '정답 ▶ 수업에 늦어서\n이유: I\'m late for my class.\n오답 ▶ 상자가 너무 무거워서 / 차 열쇠가 없어서 / 몸이 아파서 / 숙제를 해야 해서', box: ['6과 대화 4 · 상자 옮기기 (Watch and Choose)'] },
+      { q: '다음 중 \'요청하기\' 표현으로 알맞은 것은?', opts: ['Can you please carry this box?', 'I\'ll ask somebody else.', 'I didn\'t know that.', 'People are so forgetful.', 'For here, please.'], ex: '정답 ▶ Can you please carry this box?\n이유: Can you please ~? = ~해 주시겠어요?(요청하기)\n오답 ▶ I\'ll ask somebody else. / I didn\'t know that. / People are so forgetful. / For here, please.' },
+      { q: '다음 대화의 빈칸에 들어갈 말로 가장 알맞은 것은?<br><span class="en">A: Can you please carry this box to my car?<br>B: ________ I\'m late for my class.</span>', opts: ['I\'m really sorry, but', 'Sure. No problem.', 'Of course.', 'Thanks a lot.', 'Me, too.'], ex: '정답 ▶ I\'m really sorry, but\n이유: 뒤에 \'수업에 늦었다\'는 거절 이유 → 거절 표현\n오답 ▶ Sure. No problem. / Of course. / Thanks a lot. / Me, too.' },
+      { q: '다음 중 짝지어진 대화가 <u>어색한</u> 것은?', opts: ['A: Can you turn off the water? B: Sure. I\'m late for my class.', 'A: For here or to go? B: For here, please.', 'A: Can you close the door? B: I\'ll close it right away.', 'A: Can you carry this box? B: I\'m really sorry, but I\'m busy.', 'A: Somebody forgot to turn off the water. B: Again?'], ex: '정답 ▶ A: Can you turn off the water? B: Sure. I\'m late for my class.\n이유: Sure(수락) 뒤에 \'수업에 늦었어\'(거절 이유)는 어울리지 않아요.\n오답 ▶ A: For here or to go? B: For here, please. / A: Can you close the door? B: I\'ll close it right away. / A: Can you carry this box? B: I\'m really sorry, but I\'m busy. / A: Somebody forgot to turn off the water. B: Again?' }
+    ] }
+  ] },
+  { id: 'k6b', name: 'DAY 22', range: '6과 대화문 꿰뚫기 ② 대화 5', story: '6과 대화문 꿰뚫기 ② 대화 5 · 대화문 꿰뚫기 (표현 카드 → 대화 순서 → 고르기 → 모든 줄 스크램블 9 → 표현 쓰기 10 → T/F 9 → 상황·심경·기능 7)', passage: [['#', '6과 대화 5 · 플로깅 (Watch, Answer, and Talk)', ''], ['Alex', 'Hi, Yuna. What are you doing here?', '안녕, 유나야. 여기에서 뭐 하고 있니?'], ['Yuna', 'Hi, Alex. I\'m plogging with my club members.', '안녕, Alex. 동아리 회원들과 플로깅을 하고 있어.'], ['Alex', 'Excuse me?', '뭐라고?'], ['Yuna', 'Plogging. It means jogging and picking up trash at the same time.', '플로깅. 조깅과 쓰레기 줍기를 동시에 한다는 뜻이야.'], ['Alex', 'Sounds cool! So you\'re a member of a plogging club.', '멋지다! 그럼 너는 플로깅 동아리의 회원이구나.'], ['Yuna', 'Yes. We plog together every Saturday morning from 10 to 12. Interested?', '응. 우리는 매주 토요일 아침 10시부터 12시까지 함께 플로깅을 해. 관심 있니?'], ['Alex', 'Well, I\'ll think about it.', '음, 생각해 볼게.'], ['Yuna', 'OK. By the way, can you please help me with this trash bag? It\'s heavy.', '알겠어. 그런데, 이 쓰레기봉투 드는 것 좀 도와줄래? 무거워.'], ['Alex', 'Sure. No problem.', '물론이지. 문제없어.']], steps: [
+    { type: 'vocab', title: '대화 핵심 표현', guide: '대화에 나오는 표현이에요. 뜻을 정확히 익혀요.', quizN: 10, items: [['plog', '플로깅하다(조깅하며 쓰레기 줍기)'], ['club member', '동아리 회원'], ['Excuse me?', '뭐라고요?(다시 묻기)'], ['mean', '의미하다'], ['pick up', '줍다'], ['trash', '쓰레기'], ['at the same time', '동시에'], ['Sounds cool!', '멋지다!'], ['Interested?', '관심 있어?'], ['I\'ll think about it.', '생각해 볼게.'], ['by the way', '그런데(화제 바꾸기)'], ['help A with B', 'A가 B 하는 것을 돕다'], ['trash bag', '쓰레기 봉투'], ['heavy', '무거운']] },
+    { type: 'order', title: '대화 순서 맞추기', tries: 3, guide: '대화 한 편을 처음부터 끝까지 순서대로 놓아요. 묻는 말 → 대답, 허락 구하기 → 허락/거절 → 이유의 흐름을 떠올려요.', items: [
+      { lines: ['Hi, Yuna. What are you doing here?', 'Hi, Alex. I\'m plogging with my club members.', 'Excuse me?', 'Plogging. It means jogging and picking up trash at the same time.', 'Sounds cool! So you\'re a member of a plogging club.', 'Yes. We plog together every Saturday morning from 10 to 12. Interested?', 'Well, I\'ll think about it.', 'OK. By the way, can you please help me with this trash bag? It\'s heavy.', 'Sure. No problem.'], flow: ['Alex: 여기서 뭐 해?', 'Yuna: 동아리 회원들과 플로깅 중', 'Alex: 뭐라고?', 'Yuna: 조깅하며 쓰레기 줍기', 'Alex: 멋지다! 플로깅 동아리 회원이구나', 'Yuna: 매주 토요일 아침 10~12시, 관심 있어?', 'Alex: 생각해 볼게', 'Yuna: 그런데 쓰레기 봉투 좀 도와줄래? 무거워', 'Alex: 그래, 문제없어'] }
+    ] },
+    { type: 'pick', title: '어법·의미 고르기', guide: '대화 속 헷갈리는 말을 골라요.', items: [
+      { s: 'Hi, Alex. I\'m {plogging|plog} with my club members.', ex: '정답 ▶ plogging\n이유: 지금 하는 중 → 현재진행형 am plogging' },
+      { s: 'It means jogging and {picking|pick} up trash at the same time.', ex: '정답 ▶ picking\n이유: jogging과 and로 나란히 → picking' },
+      { s: 'It means jogging and picking up trash at the {same|different} time.', ex: '정답 ▶ same\n이유: at the same time = 동시에' },
+      { s: 'So you\'re a {member|members} of a plogging club.', ex: '정답 ▶ member\n이유: a + 단수 명사' },
+      { s: 'We plog together every Saturday morning {from|for} 10 to 12.', ex: '정답 ▶ from\n이유: from A to B = A부터 B까지' },
+      { s: 'OK. By the way, can you please help me {with|for} this trash bag?', ex: '정답 ▶ with\n이유: help + 사람 + with ~ = ~을 돕다' },
+      { s: 'Can you please help me with this trash bag? It\'s {heavy|light}.', ex: '정답 ▶ heavy\n이유: 도와 달라는 이유 → 무거워서' }
+    ] },
+    { type: 'scramble', title: '모든 줄 스크램블', guide: '대화의 모든 줄을 우리말 보고 영어로 완성해요. 이것만 다 하면 대화가 통째로 외워져요.', items: [
+      { ko: '안녕, 유나야. 여기서 뭐 하고 있어?', en: 'Hi, Yuna. What are you doing here?' },
+      { ko: '안녕, 알렉스. 나는 동아리 회원들과 플로깅을 하고 있어.', en: 'Hi, Alex. I\'m plogging with my club members.' },
+      { ko: '뭐라고?', en: 'Excuse me?' },
+      { ko: '플로깅. 그건 조깅하면서 동시에 쓰레기를 줍는 것을 의미해.', en: 'Plogging. It means jogging and picking up trash at the same time.' },
+      { ko: '멋지다! 그러니까 너는 플로깅 동아리 회원이구나.', en: 'Sounds cool! So you\'re a member of a plogging club.' },
+      { ko: '응. 우리는 매주 토요일 아침 10시부터 12시까지 함께 플로깅을 해. 관심 있니?', en: 'Yes. We plog together every Saturday morning from 10 to 12. Interested?' },
+      { ko: '음, 생각해 볼게.', en: 'Well, I\'ll think about it.' },
+      { ko: '그래. 그런데 이 쓰레기 봉투 좀 도와줄래? 무거워.', en: 'OK. By the way, can you please help me with this trash bag? It\'s heavy.' },
+      { ko: '물론이지. 문제없어.', en: 'Sure. No problem.' }
+    ] },
+    { type: 'verb', title: '핵심 표현 쓰기', ph: '영어로 쓰기', guide: '빈칸에 들어갈 영어를 직접 써요(괄호 속 우리말 힌트).', items: [
+      { s: 'Hi, Yuna. What are you ___ here?', v: '하고 있는', a: ['doing'], ex: '정답 ▶ doing' },
+      { s: 'I\'m plogging with my club ___.', v: '회원들', a: ['members'], ex: '정답 ▶ members' },
+      { s: 'It ___ jogging and picking up trash at the same time.', v: '의미하다', a: ['means'], ex: '정답 ▶ means' },
+      { s: 'It means jogging and ___ trash at the same time.', v: '줍는 것', a: ['picking up'], ex: '정답 ▶ picking up' },
+      { s: 'It means jogging and picking up trash ___.', v: '동시에', a: ['at the same time'], ex: '정답 ▶ at the same time' },
+      { s: 'So you\'re a ___ of a plogging club.', v: '회원', a: ['member'], ex: '정답 ▶ member' },
+      { s: 'We plog together every Saturday morning ___ 10 to 12.', v: '~부터', a: ['from'], ex: '정답 ▶ from' },
+      { s: 'Well, I\'ll ___ it.', v: '생각해 보다', a: ['think about'], ex: '정답 ▶ think about' },
+      { s: 'OK. ___, can you please help me with this trash bag?', v: '그런데', a: ['By the way'], ex: '정답 ▶ By the way' },
+      { s: 'Can you please ___ this trash bag?', v: '나를 돕다(~을)', a: ['help me with'], ex: '정답 ▶ help me with' }
+    ] },
+    { type: 'mc', title: '대화 내용 T/F', guide: '문제 위에 그 대화가 나와요. 누가 무엇을 했는지, 허락했는지 금지했는지 대화와 대조해서 T/F를 골라요.', items: [
+      { q: 'Yuna is plogging with her club members.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 5 · 플로깅 (Watch, Answer, and Talk)'], ex: '정답 ▶ T (맞다)\n이유: 동아리 회원들과 플로깅 중이에요.\n근거 ▶ I\'m plogging with my club members.' },
+      { q: 'Alex knew what plogging was from the start.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 대화 5 · 플로깅 (Watch, Answer, and Talk)'], ex: '정답 ▶ F (틀리다)\n이유: 뭐라고?(Excuse me?)라고 되물었어요.\n근거 ▶ Excuse me?' },
+      { q: 'Plogging means jogging and picking up trash at the same time.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 5 · 플로깅 (Watch, Answer, and Talk)'], ex: '정답 ▶ T (맞다)\n이유: 조깅하며 동시에 쓰레기 줍기.\n근거 ▶ jogging and picking up trash at the same time' },
+      { q: 'Yuna\'s club plogs every Sunday morning.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 대화 5 · 플로깅 (Watch, Answer, and Talk)'], ex: '정답 ▶ F (틀리다)\n이유: 일요일이 아니라 토요일이에요.\n근거 ▶ every Saturday morning' },
+      { q: 'The club plogs for two hours.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 5 · 플로깅 (Watch, Answer, and Talk)'], ex: '정답 ▶ T (맞다)\n이유: 10시부터 12시까지, 2시간이에요.\n근거 ▶ from 10 to 12' },
+      { q: 'Alex joins the plogging club right away.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 대화 5 · 플로깅 (Watch, Answer, and Talk)'], ex: '정답 ▶ F (틀리다)\n이유: 생각해 보겠다고만 해요.\n근거 ▶ I\'ll think about it.' },
+      { q: 'Yuna asks Alex to help her with a trash bag.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['6과 대화 5 · 플로깅 (Watch, Answer, and Talk)'], ex: '정답 ▶ T (맞다)\n이유: 쓰레기 봉투를 도와 달라고 해요.\n근거 ▶ can you please help me with this trash bag?' },
+      { q: 'The trash bag is light.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 대화 5 · 플로깅 (Watch, Answer, and Talk)'], ex: '정답 ▶ F (틀리다)\n이유: 무거워요.\n근거 ▶ It\'s heavy.' },
+      { q: 'Alex says no to Yuna\'s request.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['6과 대화 5 · 플로깅 (Watch, Answer, and Talk)'], ex: '정답 ▶ F (틀리다)\n이유: 물론이라고 수락해요.\n근거 ▶ Sure. No problem.' }
+    ] },
+    { type: 'mc', title: '상황·심경·기능', guide: '장소, 관계, 심경, 의도, 빈칸, 어색한 대화까지 시험에 나오는 모양 그대로예요.', items: [
+      { q: 'Alex가 <span class="en">Excuse me?</span>라고 말한 이유로 알맞은 것은?', opts: ['plogging이 무슨 뜻인지 몰라서', 'Yuna에게 사과하려고', '길을 비켜 달라고', 'Yuna의 이름을 몰라서', '쓰레기를 버리려고'], ex: '정답 ▶ plogging이 무슨 뜻인지 몰라서\n이유: 다음에 Yuna가 Plogging의 뜻을 설명함 → 무슨 말인지 몰라 되물음\n오답 ▶ Yuna에게 사과하려고 / 길을 비켜 달라고 / Yuna의 이름을 몰라서 / 쓰레기를 버리려고', box: ['6과 대화 5 · 플로깅 (Watch, Answer, and Talk)'] },
+      { q: 'Yuna의 동아리 활동 시간으로 알맞은 것은?', opts: ['매주 토요일 오전 10시~12시', '매주 일요일 오전 10시~12시', '매주 토요일 오후 2시~4시', '매주 금요일 오전 10시~12시', '매주 토요일 오전 9시~11시'], ex: '정답 ▶ 매주 토요일 오전 10시~12시\n이유: every Saturday morning from 10 to 12\n오답 ▶ 매주 일요일 오전 10시~12시 / 매주 토요일 오후 2시~4시 / 매주 금요일 오전 10시~12시 / 매주 토요일 오전 9시~11시', box: ['6과 대화 5 · 플로깅 (Watch, Answer, and Talk)'] },
+      { q: '동아리에 관심이 있냐는 말에 대한 Alex의 반응으로 알맞은 것은?', opts: ['생각해 보겠다고 한다.', '바로 가입하겠다고 한다.', '관심이 없다고 거절한다.', '다음 주에 가겠다고 한다.', '친구를 데려오겠다고 한다.'], ex: '정답 ▶ 생각해 보겠다고 한다.\n이유: Well, I\'ll think about it.\n오답 ▶ 바로 가입하겠다고 한다. / 관심이 없다고 거절한다. / 다음 주에 가겠다고 한다. / 친구를 데려오겠다고 한다.', box: ['6과 대화 5 · 플로깅 (Watch, Answer, and Talk)'] },
+      { q: 'Yuna가 Alex에게 부탁한 것은?', opts: ['쓰레기 봉투 드는 것을 도와주기', '동아리에 가입하기', '같이 조깅하기', '쓰레기 줍기', '물 가져다주기'], ex: '정답 ▶ 쓰레기 봉투 드는 것을 도와주기\n이유: can you please help me with this trash bag? It\'s heavy.\n오답 ▶ 동아리에 가입하기 / 같이 조깅하기 / 쓰레기 줍기 / 물 가져다주기', box: ['6과 대화 5 · 플로깅 (Watch, Answer, and Talk)'] },
+      { q: '<span class="en">By the way</span>의 쓰임으로 알맞은 것은?', opts: ['화제를 바꿀 때', '이유를 말할 때', '사과할 때', '결론을 말할 때', '놀랐을 때'], ex: '정답 ▶ 화제를 바꿀 때\n이유: 동아리 이야기 → 쓰레기 봉투 부탁으로 화제 전환\n오답 ▶ 이유를 말할 때 / 사과할 때 / 결론을 말할 때 / 놀랐을 때', box: ['6과 대화 5 · 플로깅 (Watch, Answer, and Talk)'] },
+      { q: '다음 대화의 빈칸에 들어갈 말로 가장 알맞은 것은?<br><span class="en">A: Can you please help me with this trash bag? It\'s heavy.<br>B: ________</span>', opts: ['Sure. No problem.', 'Well, I\'ll think about it.', 'Excuse me?', 'So you\'re a member of a plogging club.', 'It means jogging.'], ex: '정답 ▶ Sure. No problem.\n이유: 도와 달라는 요청에 수락\n오답 ▶ Well, I\'ll think about it. / Excuse me? / So you\'re a member of a plogging club. / It means jogging.' },
+      { q: '다음 중 짝지어진 대화가 <u>어색한</u> 것은?', opts: ['A: What are you doing here? B: Yes, I\'m interested.', 'A: Interested? B: Well, I\'ll think about it.', 'A: Can you please help me? B: Sure. No problem.', 'A: I\'m plogging. B: Excuse me?', 'A: So you\'re a member of a plogging club. B: Yes.'], ex: '정답 ▶ A: What are you doing here? B: Yes, I\'m interested.\n이유: 무엇을 하고 있냐는 물음에 \'응, 관심 있어\'는 어색해요.\n오답 ▶ A: Interested? B: Well, I\'ll think about it. / A: Can you please help me? B: Sure. No problem. / A: I\'m plogging. B: Excuse me? / A: So you\'re a member of a plogging club. B: Yes.' }
+    ] }
+  ] },
+  { id: 'k7a', name: 'DAY 23', range: '7과 대화문 꿰뚫기 ① 대화 1~4', story: '7과 대화문 꿰뚫기 ① 대화 1~4 · 대화문 꿰뚫기 (표현 카드 → 대화 순서 → 고르기 → 모든 줄 스크램블 16 → 표현 쓰기 11 → T/F 10 → 상황·심경·기능 8)', passage: [['#', '7과 대화 1 · 스포츠 기자', ''], ['G', 'What do you want to be in the future, Minsu?', '앞으로 무엇이 되고 싶니, 민수야?'], ['B', 'I want to be a sports reporter.', '나는 스포츠 기자가 되고 싶어.'], ['G', 'Oh, really? Do you watch a lot of sports games?', '오, 정말? 스포츠 경기를 많이 보니?'], ['B', 'Yes, I do. I\'m interested in all kinds of sports.', '응, 그래. 나는 모든 종류의 스포츠에 관심이 있어.'], ['#', '7과 대화 2 · 요리사', ''], ['G', 'David, what are you making?', 'David, 무엇을 만들고 있니?'], ['B', 'I\'m making pizza and pasta.', '피자와 파스타를 만들고 있어.'], ['G', 'They look delicious. Are you interested in Italian food?', '맛있어 보인다. 너는 이탈리아 음식에 관심 있니?'], ['B', 'Yes, I am. I want to be a world-famous chef in the future!', '응, 그래. 나는 앞으로 세계적으로 유명한 요리사가 되고 싶어!'], ['#', '7과 대화 3 · 작곡가', ''], ['G', 'What\'s this music, Hojin? It\'s awesome.', '이 음악 뭐야, 호진아? 굉장하다.'], ['B', 'I\'m writing a song with this computer program.', '나는 이 컴퓨터 프로그램으로 노래를 만들고 있어.'], ['G', 'You\'re very good. Do you want to be a songwriter?', '정말 잘하는구나. 너는 작곡가가 되고 싶니?'], ['B', 'Yes, I\'m really interested in writing songs.', '응, 나는 노래를 만드는 것에 정말로 관심이 있어.'], ['#', '7과 대화 4 · 패션 디자이너', ''], ['G', 'Are you interested in fashion, Jacob?', '패션에 관심이 있니, Jacob?'], ['B', 'Yes, I love to make clothes.', '응, 나는 옷 만드는 것을 매우 좋아해.'], ['G', 'Really? That\'s so cool!', '정말? 너무 멋있다!'], ['B', 'Thanks. I want to be a fashion designer. I\'ll make clothes for you someday.', '고마워. 나는 패션 디자이너가 되고 싶어. 언젠가 너에게 옷을 만들어 줄게.']], steps: [
+    { type: 'vocab', title: '대화 핵심 표현', guide: '대화에 나오는 표현이에요. 뜻을 정확히 익혀요.', quizN: 10, items: [['What do you want to be in the future?', '너는 장래에 무엇이 되고 싶니?(장래 희망 묻기)'], ['I want to be ~', '나는 ~이 되고 싶어'], ['sports reporter', '스포츠 기자'], ['a lot of', '많은'], ['be interested in', '~에 관심이 있다(관심 말하기)'], ['all kinds of', '모든 종류의'], ['delicious', '맛있는'], ['Italian food', '이탈리아 음식'], ['world-famous', '세계적으로 유명한'], ['chef', '요리사'], ['awesome', '멋진, 굉장한'], ['computer program', '컴퓨터 프로그램'], ['songwriter', '작곡가'], ['fashion', '패션'], ['clothes', '옷'], ['fashion designer', '패션 디자이너'], ['someday', '언젠가']] },
+    { type: 'order', title: '대화 순서 맞추기', tries: 3, guide: '대화 한 편을 처음부터 끝까지 순서대로 놓아요. 묻는 말 → 대답, 허락 구하기 → 허락/거절 → 이유의 흐름을 떠올려요.', items: [
+      { lines: ['What do you want to be in the future, Minsu?', 'I want to be a sports reporter.', 'Oh, really? Do you watch a lot of sports games?', 'Yes, I do. I\'m interested in all kinds of sports.'], flow: ['G: 민수야, 장래에 뭐가 되고 싶어?', 'B: 스포츠 기자', 'G: 경기 많이 봐?', 'B: 응, 모든 스포츠에 관심 있어'] },
+      { lines: ['David, what are you making?', 'I\'m making pizza and pasta.', 'They look delicious. Are you interested in Italian food?', 'Yes, I am. I want to be a world-famous chef in the future!'], flow: ['G: 뭐 만들어?', 'B: 피자와 파스타', 'G: 맛있어 보여, 이탈리아 음식에 관심 있어?', 'B: 응, 세계적인 요리사가 되고 싶어'] },
+      { lines: ['What\'s this music, Hojin? It\'s awesome.', 'I\'m writing a song with this computer program.', 'You\'re very good. Do you want to be a songwriter?', 'Yes, I\'m really interested in writing songs.'], flow: ['G: 이 음악 뭐야? 멋지다', 'B: 컴퓨터 프로그램으로 노래 쓰는 중', 'G: 잘한다, 작곡가 되고 싶어?', 'B: 응, 노래 쓰는 데 정말 관심 있어'] },
+      { lines: ['Are you interested in fashion, Jacob?', 'Yes, I love to make clothes.', 'Really? That\'s so cool!', 'Thanks. I want to be a fashion designer. I\'ll make clothes for you someday.'], flow: ['G: 패션에 관심 있어?', 'B: 응, 옷 만드는 게 좋아', 'G: 정말? 멋지다!', 'B: 고마워, 패션 디자이너가 되고 싶어, 언젠가 네 옷 만들어 줄게'] }
+    ] },
+    { type: 'pick', title: '어법·의미 고르기', guide: '대화 속 헷갈리는 말을 골라요.', items: [
+      { s: 'What do you want {to be|being} in the future, Minsu?', ex: '정답 ▶ to be\n이유: want + to부정사' },
+      { s: 'Oh, really? Do you {watch|watches} a lot of sports games?', ex: '정답 ▶ watch\n이유: Do you + 동사원형' },
+      { s: 'Yes, I do. I\'m interested {in|on} all kinds of sports.', ex: '정답 ▶ in\n이유: be interested in ~' },
+      { s: 'David, what are you {making|make}?', ex: '정답 ▶ making\n이유: are you + -ing (지금 만드는 중)' },
+      { s: 'They look {delicious|deliciously}. Are you interested in Italian food?', ex: '정답 ▶ delicious\n이유: look + 형용사(~해 보이다)' },
+      { s: 'I\'m writing a song {with|for} this computer program.', ex: '정답 ▶ with\n이유: (도구) ~을 가지고, ~으로 → with' },
+      { s: 'Yes, I\'m really interested in {writing|write} songs.', ex: '정답 ▶ writing\n이유: 전치사 in 뒤 동명사' },
+      { s: 'Yes, I love {to make|make} clothes.', ex: '정답 ▶ to make\n이유: love + to부정사(~하는 것을 좋아하다)' },
+      { s: 'I want to be a fashion designer. I\'ll make clothes {for|to} you someday.', ex: '정답 ▶ for\n이유: make A for 사람 = ~에게 A를 만들어 주다' }
+    ] },
+    { type: 'scramble', title: '모든 줄 스크램블', guide: '대화의 모든 줄을 우리말 보고 영어로 완성해요. 이것만 다 하면 대화가 통째로 외워져요.', items: [
+      { ko: '민수야, 너는 장래에 무엇이 되고 싶니?', en: 'What do you want to be in the future, Minsu?' },
+      { ko: '나는 스포츠 기자가 되고 싶어.', en: 'I want to be a sports reporter.' },
+      { ko: '오, 정말? 너는 스포츠 경기를 많이 보니?', en: 'Oh, really? Do you watch a lot of sports games?' },
+      { ko: '응, 그래. 나는 모든 종류의 스포츠에 관심이 있어.', en: 'Yes, I do. I\'m interested in all kinds of sports.' },
+      { ko: 'David, 무엇을 만들고 있니?', en: 'David, what are you making?' },
+      { ko: '나는 피자와 파스타를 만들고 있어.', en: 'I\'m making pizza and pasta.' },
+      { ko: '맛있어 보인다. 너는 이탈리아 음식에 관심이 있니?', en: 'They look delicious. Are you interested in Italian food?' },
+      { ko: '응, 그래. 나는 장래에 세계적으로 유명한 요리사가 되고 싶어!', en: 'Yes, I am. I want to be a world-famous chef in the future!' },
+      { ko: '호진아, 이 음악은 뭐야? 정말 멋지다.', en: 'What\'s this music, Hojin? It\'s awesome.' },
+      { ko: '나는 이 컴퓨터 프로그램으로 노래를 쓰고 있어.', en: 'I\'m writing a song with this computer program.' },
+      { ko: '너 정말 잘한다. 작곡가가 되고 싶니?', en: 'You\'re very good. Do you want to be a songwriter?' },
+      { ko: '응, 나는 노래를 쓰는 데 정말 관심이 있어.', en: 'Yes, I\'m really interested in writing songs.' },
+      { ko: 'Jacob, 너는 패션에 관심이 있니?', en: 'Are you interested in fashion, Jacob?' },
+      { ko: '응, 나는 옷을 만드는 것을 정말 좋아해.', en: 'Yes, I love to make clothes.' },
+      { ko: '정말? 정말 멋지다!', en: 'Really? That\'s so cool!' },
+      { ko: '고마워. 나는 패션 디자이너가 되고 싶어. 언젠가 너에게 옷을 만들어 줄게.', en: 'Thanks. I want to be a fashion designer. I\'ll make clothes for you someday.' }
+    ] },
+    { type: 'verb', title: '핵심 표현 쓰기', ph: '영어로 쓰기', guide: '빈칸에 들어갈 영어를 직접 써요(괄호 속 우리말 힌트).', items: [
+      { s: 'What do you want to be ___, Minsu?', v: '장래에', a: ['in the future'], ex: '정답 ▶ in the future' },
+      { s: 'I want to be a sports ___.', v: '기자', a: ['reporter'], ex: '정답 ▶ reporter' },
+      { s: 'Do you watch ___ sports games?', v: '많은', a: ['a lot of', 'lots of'], ex: '정답 ▶ a lot of / lots of' },
+      { s: 'I\'m interested in ___ sports.', v: '모든 종류의', a: ['all kinds of'], ex: '정답 ▶ all kinds of' },
+      { s: 'They look ___.', v: '맛있는', a: ['delicious'], ex: '정답 ▶ delicious' },
+      { s: 'I want to be a ___ chef in the future!', v: '세계적으로 유명한', a: ['world-famous'], ex: '정답 ▶ world-famous' },
+      { s: 'What\'s this music, Hojin? It\'s ___.', v: '멋진', a: ['awesome'], ex: '정답 ▶ awesome' },
+      { s: 'Do you want to be a ___?', v: '작곡가', a: ['songwriter'], ex: '정답 ▶ songwriter' },
+      { s: 'Yes, I\'m really ___ writing songs.', v: '~에 관심이 있는', a: ['interested in'], ex: '정답 ▶ interested in' },
+      { s: 'Yes, I love to make ___.', v: '옷', a: ['clothes'], ex: '정답 ▶ clothes' },
+      { s: 'I\'ll make clothes for you ___.', v: '언젠가', a: ['someday'], ex: '정답 ▶ someday' }
+    ] },
+    { type: 'mc', title: '대화 내용 T/F', guide: '문제 위에 그 대화가 나와요. 누가 무엇을 했는지, 허락했는지 금지했는지 대화와 대조해서 T/F를 골라요.', items: [
+      { q: 'Minsu wants to be a sports reporter.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 대화 1 · 스포츠 기자'], ex: '정답 ▶ T (맞다)\n이유: 스포츠 기자가 되고 싶어 해요.\n근거 ▶ I want to be a sports reporter.' },
+      { q: 'Minsu is interested in only soccer.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 대화 1 · 스포츠 기자'], ex: '정답 ▶ F (틀리다)\n이유: 모든 종류의 스포츠에 관심이 있어요.\n근거 ▶ I\'m interested in all kinds of sports.' },
+      { q: 'David is making pizza and pasta.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 대화 2 · 요리사'], ex: '정답 ▶ T (맞다)\n이유: 피자와 파스타를 만들고 있어요.\n근거 ▶ I\'m making pizza and pasta.' },
+      { q: 'David wants to be a world-famous chef.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 대화 2 · 요리사'], ex: '정답 ▶ T (맞다)\n이유: 세계적인 요리사가 꿈이에요.\n근거 ▶ I want to be a world-famous chef in the future!' },
+      { q: 'Hojin is listening to a famous singer\'s song.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 대화 3 · 작곡가'], ex: '정답 ▶ F (틀리다)\n이유: 직접 노래를 쓰고 있어요.\n근거 ▶ I\'m writing a song with this computer program.' },
+      { q: 'Hojin uses a computer program to write songs.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 대화 3 · 작곡가'], ex: '정답 ▶ T (맞다)\n이유: 컴퓨터 프로그램으로 써요.\n근거 ▶ I\'m writing a song with this computer program.' },
+      { q: 'Hojin is not interested in writing songs.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 대화 3 · 작곡가'], ex: '정답 ▶ F (틀리다)\n이유: 정말 관심이 있어요.\n근거 ▶ I\'m really interested in writing songs.' },
+      { q: 'Jacob loves to make clothes.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 대화 4 · 패션 디자이너'], ex: '정답 ▶ T (맞다)\n이유: 옷 만드는 걸 좋아해요.\n근거 ▶ I love to make clothes.' },
+      { q: 'Jacob wants to be a fashion model.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 대화 4 · 패션 디자이너'], ex: '정답 ▶ F (틀리다)\n이유: 모델이 아니라 디자이너예요.\n근거 ▶ I want to be a fashion designer.' },
+      { q: 'Jacob will make clothes for the girl someday.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 대화 4 · 패션 디자이너'], ex: '정답 ▶ T (맞다)\n이유: 언젠가 만들어 주겠대요.\n근거 ▶ I\'ll make clothes for you someday.' }
+    ] },
+    { type: 'mc', title: '상황·심경·기능', guide: '장소, 관계, 심경, 의도, 빈칸, 어색한 대화까지 시험에 나오는 모양 그대로예요.', items: [
+      { q: '대화 1에서 민수가 스포츠 기자가 되고 싶은 이유와 관련 있는 것은?', opts: ['모든 종류의 스포츠에 관심이 있다.', '글쓰기를 가장 좋아한다.', '운동을 아주 잘한다.', '아버지가 기자이다.', '축구 선수가 되지 못했다.'], ex: '정답 ▶ 모든 종류의 스포츠에 관심이 있다.\n이유: I\'m interested in all kinds of sports.\n오답 ▶ 글쓰기를 가장 좋아한다. / 운동을 아주 잘한다. / 아버지가 기자이다. / 축구 선수가 되지 못했다.', box: ['7과 대화 1 · 스포츠 기자'] },
+      { q: '대화 2에서 David가 관심 있는 것은?', opts: ['이탈리아 음식', '한국 음식', '제빵', '중국 음식', '음식 사진'], ex: '정답 ▶ 이탈리아 음식\n이유: Are you interested in Italian food? — Yes, I am.\n오답 ▶ 한국 음식 / 제빵 / 중국 음식 / 음식 사진', box: ['7과 대화 2 · 요리사'] },
+      { q: '대화 3에서 소녀의 말 <span class="en">You\'re very good.</span>의 의도로 알맞은 것은?', opts: ['칭찬하기', '사과하기', '충고하기', '거절하기', '길 묻기'], ex: '정답 ▶ 칭찬하기\n이유: 호진이의 노래 실력을 칭찬\n오답 ▶ 사과하기 / 충고하기 / 거절하기 / 길 묻기', box: ['7과 대화 3 · 작곡가'] },
+      { q: '대화 4에서 Jacob이 언젠가 하겠다고 한 일은?', opts: ['소녀에게 옷을 만들어 주기', '패션쇼에 나가기', '옷 가게를 열기', '소녀와 쇼핑하기', '패션 잡지를 만들기'], ex: '정답 ▶ 소녀에게 옷을 만들어 주기\n이유: I\'ll make clothes for you someday.\n오답 ▶ 패션쇼에 나가기 / 옷 가게를 열기 / 소녀와 쇼핑하기 / 패션 잡지를 만들기', box: ['7과 대화 4 · 패션 디자이너'] },
+      { q: '대화 1~4의 인물과 관심 분야의 연결이 <u>잘못된</u> 것은?', opts: ['Jacob – 이탈리아 음식', 'Minsu – 모든 종류의 스포츠', 'David – 이탈리아 음식', 'Hojin – 노래 쓰기', 'Jacob – 옷 만들기'], ex: '정답 ▶ Jacob – 이탈리아 음식\n이유: 이탈리아 음식은 David, Jacob은 패션(옷 만들기)\n오답 ▶ Minsu – 모든 종류의 스포츠 / David – 이탈리아 음식 / Hojin – 노래 쓰기 / Jacob – 옷 만들기', box: ['7과 대화 1 · 스포츠 기자', '7과 대화 2 · 요리사', '7과 대화 3 · 작곡가', '7과 대화 4 · 패션 디자이너'] },
+      { q: '다음 중 \'관심 말하기\' 표현으로 알맞은 것은?', opts: ['I\'m interested in writing songs.', 'What do you want to be?', 'You\'re very good.', 'That\'s so cool!', 'They look delicious.'], ex: '정답 ▶ I\'m interested in writing songs.\n이유: be interested in ~ = 관심 말하기\n오답 ▶ What do you want to be? / You\'re very good. / That\'s so cool! / They look delicious.' },
+      { q: '다음 대화의 빈칸에 들어갈 말로 가장 알맞은 것은?<br><span class="en">A: What do you want to be in the future?<br>B: ________</span>', opts: ['I want to be a sports reporter.', 'I\'m making pizza and pasta.', 'Yes, I do.', 'It\'s awesome.', 'Thanks a lot.'], ex: '정답 ▶ I want to be a sports reporter.\n이유: 장래 희망 묻기 → I want to be ~\n오답 ▶ I\'m making pizza and pasta. / Yes, I do. / It\'s awesome. / Thanks a lot.' },
+      { q: '다음 중 짝지어진 대화가 <u>어색한</u> 것은?', opts: ['A: Are you interested in fashion? B: No, I want to be a fashion designer.', 'A: What are you making? B: I\'m making pizza.', 'A: Do you watch a lot of sports games? B: Yes, I do.', 'A: What\'s this music? B: I\'m writing a song.', 'A: Do you want to be a songwriter? B: Yes, I\'m really interested in writing songs.'], ex: '정답 ▶ A: Are you interested in fashion? B: No, I want to be a fashion designer.\n이유: 패션에 관심 없다면서 패션 디자이너가 되고 싶다는 건 어색해요.\n오답 ▶ A: What are you making? B: I\'m making pizza. / A: Do you watch a lot of sports games? B: Yes, I do. / A: What\'s this music? B: I\'m writing a song. / A: Do you want to be a songwriter? B: Yes, I\'m really interested in writing songs.' }
+    ] }
+  ] },
+  { id: 'k7b', name: 'DAY 24', range: '7과 대화문 꿰뚫기 ② 대화 5', story: '7과 대화문 꿰뚫기 ② 대화 5 · 대화문 꿰뚫기 (표현 카드 → 대화 순서 → 고르기 → 모든 줄 스크램블 11 → 표현 쓰기 9 → T/F 9 → 상황·심경·기능 7)', passage: [['#', '7과 대화 5 · 비행기 체험 (Watch, Answer, and Talk)', ''], ['G', 'Jiho, why don\'t we try this? We can fly an airplane!', '지호야, 우리 이거 한번 해 보는 게 어때? 우리는 비행기를 조종해 볼 수 있어!'], ['B', 'Sure. It looks like fun!', '물론이야. 재미있어 보인다!'], ['G', 'Do you want to be a pilot in the future?', '너는 앞으로 조종사가 되고 싶니?'], ['B', 'Yes, I\'m interested in flying airplanes. How about you, Lucy?', '응, 나는 비행기를 조종하는 것에 관심이 있어. 너는 어때, Lucy?'], ['G', 'I\'m interested in making airplanes, not flying. I want to be an airplane engineer.', '나는 비행기를 만드는 것에 관심이 있어, 조종하는 것 말고. 나는 비행기 엔지니어가 되고 싶어.'], ['B', 'That sounds cool!', '멋있다!'], ['G', 'Thank you. I want to make an airplane someday!', '고마워. 나는 언젠가 비행기를 만들고 싶어!'], ['B', 'Let\'s fly this airplane, and then we can try making an airplane, too.', '이 비행기를 조종해 보자, 그런 다음에 비행기를 만들어 볼 수도 있어.'], ['G', 'Good idea.', '좋은 생각이야.']], steps: [
+    { type: 'vocab', title: '대화 핵심 표현', guide: '대화에 나오는 표현이에요. 뜻을 정확히 익혀요.', quizN: 10, items: [['Why don\'t we ~?', '우리 ~하는 게 어때?(제안하기)'], ['try', '해 보다'], ['fly an airplane', '비행기를 조종하다'], ['It looks like fun!', '재미있어 보여!'], ['pilot', '조종사'], ['How about you?', '너는 어때?'], ['make airplanes', '비행기를 만들다'], ['not ~', '~가 아니라'], ['airplane engineer', '항공 기술자(엔지니어)'], ['That sounds cool!', '멋지다!'], ['someday', '언젠가'], ['and then', '그러고 나서'], ['try making', '만들어 보다'], ['Good idea.', '좋은 생각이야.']] },
+    { type: 'order', title: '대화 순서 맞추기', tries: 3, guide: '대화 한 편을 처음부터 끝까지 순서대로 놓아요. 묻는 말 → 대답, 허락 구하기 → 허락/거절 → 이유의 흐름을 떠올려요.', items: [
+      { lines: ['Jiho, why don\'t we try this? We can fly an airplane!', 'Sure. It looks like fun!', 'Do you want to be a pilot in the future?', 'Yes, I\'m interested in flying airplanes. How about you, Lucy?', 'I\'m interested in making airplanes, not flying. I want to be an airplane engineer.', 'That sounds cool!', 'Thank you. I want to make an airplane someday!', 'Let\'s fly this airplane, and then we can try making an airplane, too.', 'Good idea.'], flow: ['Lucy: 지호야, 이거 해 볼래? 비행기 조종!', 'Jiho: 좋아, 재미있겠다', 'Lucy: 조종사가 되고 싶어?', 'Jiho: 응, 비행기 조종에 관심 있어. 너는?', 'Lucy: 나는 만드는 데 관심, 항공 기술자', 'Jiho: 멋지다!', 'Lucy: 고마워, 언젠가 비행기를 만들고 싶어', 'Jiho: 이거 조종하고 만들기도 해 보자', 'Lucy: 좋은 생각이야'] }
+    ] },
+    { type: 'pick', title: '어법·의미 고르기', guide: '대화 속 헷갈리는 말을 골라요.', items: [
+      { s: 'Jiho, why don\'t we {try|to try} this?', ex: '정답 ▶ try\n이유: Why don\'t we + 동사원형 ~?(제안)' },
+      { s: 'Sure. It looks {like|as} fun!', ex: '정답 ▶ like\n이유: look like + 명사 = ~처럼 보이다' },
+      { s: 'Do you want {to be|be} a pilot in the future?', ex: '정답 ▶ to be\n이유: want + to부정사' },
+      { s: 'Yes, I\'m interested in {flying|fly} airplanes.', ex: '정답 ▶ flying\n이유: 전치사 in 뒤 동명사' },
+      { s: 'I\'m interested in making airplanes, not {flying|fly}.', ex: '정답 ▶ flying\n이유: making과 나란히 → flying' },
+      { s: 'I want to be {an|a} airplane engineer.', ex: '정답 ▶ an\n이유: airplane은 모음 소리로 시작 → an' },
+      { s: 'Let\'s fly this airplane, and then we can try {making|made} an airplane, too.', ex: '정답 ▶ making\n이유: try + -ing = (시험 삼아) ~해 보다' }
+    ] },
+    { type: 'scramble', title: '모든 줄 스크램블', guide: '대화의 모든 줄을 우리말 보고 영어로 완성해요. 이것만 다 하면 대화가 통째로 외워져요.', items: [
+      { ko: '지호야, 우리 이거 해 보는 게 어때?', en: 'Jiho, why don\'t we try this?' },
+      { ko: '우리는 비행기를 조종할 수 있어!', en: 'We can fly an airplane!' },
+      { ko: '좋아. 재미있어 보여!', en: 'Sure. It looks like fun!' },
+      { ko: '너는 장래에 조종사가 되고 싶니?', en: 'Do you want to be a pilot in the future?' },
+      { ko: '응, 나는 비행기를 조종하는 데 관심이 있어. 너는 어때, Lucy?', en: 'Yes, I\'m interested in flying airplanes. How about you, Lucy?' },
+      { ko: '나는 조종하는 게 아니라 비행기를 만드는 데 관심이 있어.', en: 'I\'m interested in making airplanes, not flying.' },
+      { ko: '나는 항공 기술자가 되고 싶어.', en: 'I want to be an airplane engineer.' },
+      { ko: '멋지다!', en: 'That sounds cool!' },
+      { ko: '고마워. 나는 언젠가 비행기를 만들고 싶어!', en: 'Thank you. I want to make an airplane someday!' },
+      { ko: '이 비행기를 조종해 보고, 그러고 나서 비행기 만들기도 해 보자.', en: 'Let\'s fly this airplane, and then we can try making an airplane, too.' },
+      { ko: '좋은 생각이야.', en: 'Good idea.' }
+    ] },
+    { type: 'verb', title: '핵심 표현 쓰기', ph: '영어로 쓰기', guide: '빈칸에 들어갈 영어를 직접 써요(괄호 속 우리말 힌트).', items: [
+      { s: 'Jiho, ___ try this?', v: '우리 ~하는 게 어때', a: ['why don\'t we'], ex: '정답 ▶ why don\'t we' },
+      { s: 'We can ___ an airplane!', v: '조종하다', a: ['fly'], ex: '정답 ▶ fly' },
+      { s: 'Sure. It ___ fun!', v: '~처럼 보이다', a: ['looks like'], ex: '정답 ▶ looks like' },
+      { s: 'Do you want to be a ___ in the future?', v: '조종사', a: ['pilot'], ex: '정답 ▶ pilot' },
+      { s: 'Yes, I\'m interested in flying airplanes. ___, Lucy?', v: '너는 어때', a: ['How about you'], ex: '정답 ▶ How about you' },
+      { s: 'I want to be an airplane ___.', v: '기술자', a: ['engineer'], ex: '정답 ▶ engineer' },
+      { s: 'That ___ cool!', v: '~하게 들리다', a: ['sounds'], ex: '정답 ▶ sounds' },
+      { s: 'I want to make an airplane ___!', v: '언젠가', a: ['someday'], ex: '정답 ▶ someday' },
+      { s: 'Let\'s fly this airplane, and then we can ___ an airplane, too.', v: '만들어 보다', a: ['try making'], ex: '정답 ▶ try making' }
+    ] },
+    { type: 'mc', title: '대화 내용 T/F', guide: '문제 위에 그 대화가 나와요. 누가 무엇을 했는지, 허락했는지 금지했는지 대화와 대조해서 T/F를 골라요.', items: [
+      { q: 'Lucy suggests flying an airplane.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 대화 5 · 비행기 체험 (Watch, Answer, and Talk)'], ex: '정답 ▶ T (맞다)\n이유: 같이 해 보자고 제안해요.\n근거 ▶ why don\'t we try this? We can fly an airplane!' },
+      { q: 'Jiho doesn\'t want to try it.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 대화 5 · 비행기 체험 (Watch, Answer, and Talk)'], ex: '정답 ▶ F (틀리다)\n이유: 재미있어 보인다며 좋다고 해요.\n근거 ▶ Sure. It looks like fun!' },
+      { q: 'Jiho is interested in flying airplanes.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 대화 5 · 비행기 체험 (Watch, Answer, and Talk)'], ex: '정답 ▶ T (맞다)\n이유: 비행기 조종에 관심이 있어요.\n근거 ▶ I\'m interested in flying airplanes.' },
+      { q: 'Lucy wants to be a pilot.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 대화 5 · 비행기 체험 (Watch, Answer, and Talk)'], ex: '정답 ▶ F (틀리다)\n이유: 조종사가 아니라 항공 기술자예요.\n근거 ▶ I want to be an airplane engineer.' },
+      { q: 'Lucy is interested in making airplanes.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 대화 5 · 비행기 체험 (Watch, Answer, and Talk)'], ex: '정답 ▶ T (맞다)\n이유: 비행기 만들기에 관심이 있어요.\n근거 ▶ I\'m interested in making airplanes, not flying.' },
+      { q: 'Jiho thinks Lucy\'s dream is boring.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 대화 5 · 비행기 체험 (Watch, Answer, and Talk)'], ex: '정답 ▶ F (틀리다)\n이유: 멋지다고 해요.\n근거 ▶ That sounds cool!' },
+      { q: 'Lucy wants to make an airplane someday.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 대화 5 · 비행기 체험 (Watch, Answer, and Talk)'], ex: '정답 ▶ T (맞다)\n이유: 언젠가 만들고 싶어 해요.\n근거 ▶ I want to make an airplane someday!' },
+      { q: 'They will try making an airplane before flying one.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 1, box: ['7과 대화 5 · 비행기 체험 (Watch, Answer, and Talk)'], ex: '정답 ▶ F (틀리다)\n이유: 조종 먼저, 그다음 만들기예요.\n근거 ▶ Let\'s fly this airplane, and then we can try making an airplane, too.' },
+      { q: 'Lucy agrees with Jiho\'s idea.', opts: ['T (맞다)', 'F (틀리다)'], keep: true, a: 0, box: ['7과 대화 5 · 비행기 체험 (Watch, Answer, and Talk)'], ex: '정답 ▶ T (맞다)\n이유: 좋은 생각이라고 해요.\n근거 ▶ Good idea.' }
+    ] },
+    { type: 'mc', title: '상황·심경·기능', guide: '장소, 관계, 심경, 의도, 빈칸, 어색한 대화까지 시험에 나오는 모양 그대로예요.', items: [
+      { q: '두 사람이 있는 곳으로 가장 알맞은 곳은?', opts: ['비행기 조종·만들기 체험장', '공항 탑승구', '비행기 안', '도서관', '학교 교실'], ex: '정답 ▶ 비행기 조종·만들기 체험장\n이유: We can fly an airplane! / try making an airplane → 체험할 수 있는 곳\n오답 ▶ 공항 탑승구 / 비행기 안 / 도서관 / 학교 교실', box: ['7과 대화 5 · 비행기 체험 (Watch, Answer, and Talk)'] },
+      { q: 'Jiho와 Lucy의 장래 희망이 바르게 짝지어진 것은?', opts: ['Jiho – 조종사, Lucy – 항공 기술자', 'Jiho – 항공 기술자, Lucy – 조종사', 'Jiho – 조종사, Lucy – 조종사', 'Jiho – 기자, Lucy – 항공 기술자', 'Jiho – 요리사, Lucy – 디자이너'], ex: '정답 ▶ Jiho – 조종사, Lucy – 항공 기술자\n이유: Jiho: interested in flying airplanes (pilot) / Lucy: airplane engineer\n오답 ▶ Jiho – 항공 기술자, Lucy – 조종사 / Jiho – 조종사, Lucy – 조종사 / Jiho – 기자, Lucy – 항공 기술자 / Jiho – 요리사, Lucy – 디자이너', box: ['7과 대화 5 · 비행기 체험 (Watch, Answer, and Talk)'] },
+      { q: '두 사람이 할 일의 순서로 알맞은 것은?', opts: ['비행기 조종 체험 → 비행기 만들기', '비행기 만들기 → 비행기 조종 체험', '비행기 만들기만 함', '비행기 조종 체험만 함', '아무것도 하지 않음'], ex: '정답 ▶ 비행기 조종 체험 → 비행기 만들기\n이유: Let\'s fly this airplane, and then we can try making an airplane\n오답 ▶ 비행기 만들기 → 비행기 조종 체험 / 비행기 만들기만 함 / 비행기 조종 체험만 함 / 아무것도 하지 않음', box: ['7과 대화 5 · 비행기 체험 (Watch, Answer, and Talk)'] },
+      { q: 'Lucy의 말 <span class="en">Jiho, why don\'t we try this?</span>에 담긴 의사소통 기능은?', opts: ['제안하기', '이유 묻기', '거절하기', '사과하기', '충고하기'], ex: '정답 ▶ 제안하기\n이유: Why don\'t we ~? = 우리 ~하는 게 어때?(제안)\n오답 ▶ 이유 묻기 / 거절하기 / 사과하기 / 충고하기', box: ['7과 대화 5 · 비행기 체험 (Watch, Answer, and Talk)'] },
+      { q: 'Jiho의 말 <span class="en">That sounds cool!</span>에 담긴 심정으로 알맞은 것은?', opts: ['감탄함', '실망함', '걱정됨', '화남', '지루함'], ex: '정답 ▶ 감탄함\n이유: Lucy의 꿈에 \'멋지다!\'\n오답 ▶ 실망함 / 걱정됨 / 화남 / 지루함', box: ['7과 대화 5 · 비행기 체험 (Watch, Answer, and Talk)'] },
+      { q: '다음 대화의 빈칸에 들어갈 말로 가장 알맞은 것은?<br><span class="en">A: Yes, I\'m interested in flying airplanes. ________<br>B: I\'m interested in making airplanes, not flying.</span>', opts: ['How about you?', 'Good idea.', 'It looks like fun!', 'That sounds cool!', 'Do you want to be a pilot?'], ex: '정답 ▶ How about you?\n이유: 상대에게 되묻기 → How about you?\n오답 ▶ Good idea. / It looks like fun! / That sounds cool! / Do you want to be a pilot?' },
+      { q: '다음 중 짝지어진 대화가 <u>어색한</u> 것은?', opts: ['A: Why don\'t we try this? B: Yes, I do.', 'A: Do you want to be a pilot? B: Yes, I\'m interested in flying airplanes.', 'A: I want to be an airplane engineer. B: That sounds cool!', 'A: Let\'s fly this airplane. B: Good idea.', 'A: How about you? B: I\'m interested in making airplanes.'], ex: '정답 ▶ A: Why don\'t we try this? B: Yes, I do.\n이유: Why don\'t we ~?(제안)에는 Sure. / Good idea. 등 — Yes, I do. ✘\n오답 ▶ A: Do you want to be a pilot? B: Yes, I\'m interested in flying airplanes. / A: I want to be an airplane engineer. B: That sounds cool! / A: Let\'s fly this airplane. B: Good idea. / A: How about you? B: I\'m interested in making airplanes.' }
+    ] }
   ] }
   ]
 };
