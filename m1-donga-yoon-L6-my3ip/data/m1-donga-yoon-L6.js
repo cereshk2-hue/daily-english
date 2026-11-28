@@ -4,6 +4,7 @@
 /* 11/17: 6·7·5과 본문 어법 선택 한 판 DAY gt6·gt7·gt5 맨 끝 (generators/gen_m1dgate.py) */
 /* 11/19: 5·6·7과 본문 문장 순서(2문장 조각 · 3덩이) DAY od5·od6·od7 맨 끝 (generators/gen_m1dorder.py) */
 /* 11/27: 대화문 꿰뚫기 DAY (gen/m1dlg/gen.py, 과별 l5·l6·l7.py) 맨 끝 */
+/* 11/28: 5과 본문 오류 고치기 DAY fx5 (gen/m1err/gen5.py, step type fixs) */
 window.PKG = {
   id: 'm1-donga-yoon-L6',
   school: '중1 동아(윤정미)',
@@ -1272,6 +1273,35 @@ window.PKG = {
       { q: 'Jiho의 말 <span class="en">That sounds cool!</span>에 담긴 심정으로 알맞은 것은?', opts: ['감탄함', '실망함', '걱정됨', '화남', '지루함'], ex: '정답 ▶ 감탄함\n이유: Lucy의 꿈에 \'멋지다!\'\n오답 ▶ 실망함 / 걱정됨 / 화남 / 지루함', box: ['7과 대화 5 · 비행기 체험 (Watch, Answer, and Talk)'] },
       { q: '다음 대화의 빈칸에 들어갈 말로 가장 알맞은 것은?<br><span class="en">A: Yes, I\'m interested in flying airplanes. ________<br>B: I\'m interested in making airplanes, not flying.</span>', opts: ['How about you?', 'Good idea.', 'It looks like fun!', 'That sounds cool!', 'Do you want to be a pilot?'], ex: '정답 ▶ How about you?\n이유: 상대에게 되묻기 → How about you?\n오답 ▶ Good idea. / It looks like fun! / That sounds cool! / Do you want to be a pilot?' },
       { q: '다음 중 짝지어진 대화가 <u>어색한</u> 것은?', opts: ['A: Why don\'t we try this? B: Yes, I do.', 'A: Do you want to be a pilot? B: Yes, I\'m interested in flying airplanes.', 'A: I want to be an airplane engineer. B: That sounds cool!', 'A: Let\'s fly this airplane. B: Good idea.', 'A: How about you? B: I\'m interested in making airplanes.'], ex: '정답 ▶ A: Why don\'t we try this? B: Yes, I do.\n이유: Why don\'t we ~?(제안)에는 Sure. / Good idea. 등 — Yes, I do. ✘\n오답 ▶ A: Do you want to be a pilot? B: Yes, I\'m interested in flying airplanes. / A: I want to be an airplane engineer. B: That sounds cool! / A: Let\'s fly this airplane. B: Good idea. / A: How about you? B: I\'m interested in making airplanes.' }
+    ] }
+  ] },
+  { id: 'fx5', name: 'DAY 25', range: '5과 본문 오류 고치기 (Reading 연습 문제 2)', story: '25문장 · 틀린 부분을 모두 고쳐 쓰기, 맞는 문장은 ○ · 틀린 문장만 3번 더', passage: [['#', '5과 본문 · 오류 고치기 — 바른 본문은 다 풀고 나면 해설에 나와요', '']], steps: [
+    { type: 'fixs', title: '5과 본문 오류 고치기', guide: '각 문장에서 어법이나 어휘의 쓰임이 틀린 부분을 모두 찾아 바르게 고쳐 쓰세요. 맞는 문장이면 ○를 누르세요.', items: [
+      { no: '01', s: 'Last Saturday, someone throws a cake at the Monalisa in the Botero Museum in Bogota, Colombia.', a: ['Last Saturday, someone threw a cake at the Monalisa in the Botero Museum in Bogota, Colombia.'], ex: 'Last Saturday(지난 일) → 과거 threw' },
+      { no: '02', s: 'There was four eyewitnesses.', a: ['There were four eyewitnesses.'], ex: 'four eyewitnesses(복수) → There were' },
+      { no: '03', s: 'What did they said?', a: ['What did they say?'], ex: 'did + 동사원형 say' },
+      { no: '04', s: 'Read the following, and found the criminal.', a: ['Read the following, and find the criminal.'], ex: '명령문 Read와 나란히 → 동사원형 find' },
+      { no: '05', s: 'I was look at the Monalisa, and someone threw a cake at the painting.', a: ['I was looking at the Monalisa, and someone threw a cake at the painting.'], ex: '과거진행형 was + -ing → was looking' },
+      { no: '06', s: 'I turned around and see an old man.', a: ['I turned around and saw an old man.'], ex: 'turned와 나란히 과거 → saw' },
+      { no: '07', s: 'He was standing on front of a wheelchair.', a: ['He was standing in front of a wheelchair.'], ex: 'in front of = ~ 앞에' },
+      { no: '08', s: 'I\'m about 170 cm tall, and he was a little tall than me.', a: ['I\'m about 170 cm tall, and he was a little taller than me.'], ex: 'than 앞 → 비교급 taller' },
+      { no: '09', s: 'An old man with gray hair was running away, and something falls off his head.', a: ['An old man with gray hair was running away, and something fell off his head.'], ex: '지난 일 → 과거 fell' },
+      { no: '10', s: 'It was his wig.', a: null, ex: '맞는 문장 ○' },
+      { no: '11', s: 'I ran after him, but I couldn\'t catched him.', a: ['I ran after him, but I couldn\'t catch him.'], ex: 'couldn\'t + 동사원형 catch' },
+      { no: '12', s: 'He was fastest than me.', a: ['He was faster than me.'], ex: 'than 앞 → 비교급 faster' },
+      { no: '13', s: 'At fact, the old man was not old.', a: ['In fact, the old man was not old.'], ex: 'in fact = 사실은' },
+      { no: '14', s: 'He was a young man with long brown hair.', a: null, ex: '맞는 문장 ○' },
+      { no: '15', s: 'I went to the crime scene, and there were piece of cakes all over the painting.', a: ['I went to the crime scene, and there were pieces of cake all over the painting.'], ex: '케이크 조각들 = pieces of cake (piece → pieces, cakes → cake)' },
+      { no: '16', s: 'There be also a wheelchair near the painting, and I found a cake box next to the wheelchair.', a: ['There was also a wheelchair near the painting, and I found a cake box next to the wheelchair.'], ex: 'a wheelchair(단수) + 과거 → There was' },
+      { no: '17', s: 'The box was from Camila\'s Bakery.', a: null, ex: '맞는 문장 ○' },
+      { no: '18', s: 'Last Friday, a young man comes in.', a: ['Last Friday, a young man came in.'], ex: 'Last Friday → 과거 came' },
+      { no: '19', s: 'I spoke to him in Spain, but he didn\'t understand me.', a: ['I spoke to him in Spanish, but he didn\'t understand me.'], ex: '언어 = Spanish (Spain은 나라 이름)' },
+      { no: '20', s: 'He spoke only English.', a: null, ex: '맞는 문장 ○' },
+      { no: '21', s: 'We had a lot of different cakes, but he just wanted the small one.', a: ['We had a lot of different cakes, but he just wanted the smallest one.'], ex: '많은 케이크 중 가장 작은 것 → 최상급 the smallest' },
+      { no: '22', s: 'We selled only one cake that day, so I remember him clear.', a: ['We sold only one cake that day, so I remember him clearly.'], ex: 'sell - sold (불규칙), 동사 remember를 꾸밈 → 부사 clearly' },
+      { no: '23', s: 'Oh, he had blue eyes.', a: null, ex: '맞는 문장 ○' },
+      { no: '24', s: 'Now, looks at the information about the suspects.', a: ['Now, look at the information about the suspects.'], ex: '명령문 → 동사원형 look' },
+      { no: '25', s: 'Who the cake threw at the Monalisa?', a: ['Who threw the cake at the Monalisa?'], ex: '의문사 Who가 주어 → Who + 동사 + 목적어' }
     ] }
   ] }
   ]
