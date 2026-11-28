@@ -1,7 +1,8 @@
 # 11/27 중산중1 족보 OMR 답만 입력 (문제는 종이 족보, 앱엔 번호 + ①~⑤만) → m1-donga-yoon-L6 /* M1JB-TESTS */
 # kind 'exam' → 앱의 '실전기출' 탭에 따로(다른 Wrap-up과 섞이지 않게)
 # 정답: 족보 자체 [정답](그림 속 원문자, pdf 7·8쪽을 그림으로 읽음) + 문항마다 직접 풀어 대조. 해설은 짧게 내 말로(문제 원문 옮기지 않음)
-import json, re
+import json, re, sys
+sys.path.insert(0, '/home/claude/srcrepo/gen/m1jb')
 path = '/home/claude/proj/data/m1-donga-yoon-L6.js'
 C = '①②③④⑤'
 SETS = [
@@ -115,8 +116,13 @@ for S in SETS:
     for n, (a, typ, why) in enumerate(S['key'], 1):
         multi = isinstance(a, list); A = [x - 1 for x in a] if multi else a - 1
         mark = ''.join(C[x] for x in A) if multi else C[A]
+        exs = '정답 ▶ %s\n풀이 ▶ %s' % (mark, why)
+        if S['id'] == 'm1jb-7b':   # 11/28 친절한 해설 (ex7b.py)
+            from ex7b import EX
+            core, notes, point = EX[n]; lab = ['· '] * 5 if n in (7, 11, 13, 14) else [c + ' ' for c in C]
+            exs = '정답 ▶ %s\n핵심 ▶ %s\n%s\n포인트 ▶ %s' % (mark, core, '\n'.join(l + x for l, x in zip(lab, notes)), point)
         items.append({'n': n, 'src': typ, 'stem': '%d번%s' % (n, ' (%d개 고르기)' % len(A) if multi else ''), 'body': '', 'opts': list(C), 'en': False, 'ans': A,
-                      'ex': '정답 ▶ %s\n풀이 ▶ %s' % (mark, why), 'ctx': '', 'pts': 100 // len(S['key']), 'words': [], 'kos': []})
+                      'ex': exs, 'ctx': '', 'pts': 100 // len(S['key']), 'words': [], 'kos': []})
     tests.append({'id': S['id'], 'kind': 'exam', 'retry': 1, 'title': S['title'], 'short': S['short'], 'school': '중산중 1학년', 'minutes': 40, 'note': '문제는 종이 족보(%s)로 풀고, 여기엔 답만 입력해요.' % S['src'], 'items': items})
 src = open(path, encoding='utf-8').read()
 ids = [t['id'] for t in tests]
