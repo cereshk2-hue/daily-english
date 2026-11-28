@@ -86,6 +86,28 @@ SETS = [
    (4, 'after', '공통으로 after(~한 후에)'),
    (2, 'to부정사 부사적', '공통 to(~하기 위해) → ② to / To'),
    (1, 'after 쓰임', "① after는 전치사(뒤에 명사), 나머지는 접속사")]},
+ {'id': 'm1jb-7b', 'title': '족보 OMR · 7과 최다오답 공략 (01) 20문항', 'short': '족보 7과 최다오답', 'src': '7.Find Your Dream(01) 최다오답 공략(교육지대)',
+  'key': [
+   ([2, 5], '대화 내용', '② Lucy는 조종에는 관심 없음 ⑤ 둘 다 비행기 관련이지만 방식이 다름 (두 개 고르기)'),
+   (2, '대화 흐름', 'ⓑ 패션에 관심 있다면서 hate(싫어하다)는 어색 → love/like'),
+   (2, '짝 대화', '② 수학에 관심 있냐는 물음에 마술사가 되고 싶다는 건 어색'),
+   (4, '영영풀이', 'ⓓ games = 축구·야구처럼 팀이 하는 활동'),
+   (3, '대화 배열', '(C) 뭐 만들어? → (B) 피자와 파스타 → (A) 맛있어 보여, 관심 있어? → (D) 응, 요리사가 꿈'),
+   (3, '어휘 (-or)', 'sensor는 사람이 아니라 감지 장치 (actor·visitor·director·inventor = ~하는 사람)'),
+   (2, 'to부정사 목적', '목적은 We cleaned the room to welcome guests. 하나 → 1개'),
+   ([2, 5], '시간 부사절', '② When Jiho is a pilot ⑤ she feels great (두 개 고르기)'),
+   ([3, 4], 'to부정사 영작', '③ in order to solve ④ smart to pass(판단의 근거) (두 개 고르기)'),
+   ([1, 5], '시간 부사절', '① when the rain stops로 고쳐야 함 ⑤ hopes to visit로 고쳐야 함 (두 개 고르기)'),
+   (3, '어법 개수', 'ⓐ Before we go ⓓ the tour ends ⓔ to learn and enjoy → 3개'),
+   ([3, 5], '영작', '③ Because ~, I read a lot. ⑤ I read a lot of books because ~ (두 개 고르기)'),
+   (4, 'to부정사 부사적', '(B) smart to finish (E) 돈을 모은 것이 unlucky는 어색 → (B), (E)'),
+   (4, '답할 수 없는 질문', 'Q2·Q4·Q5·Q8은 글에 없음 → 4개'),
+   (5, '어법', '⑤ doing their best to help (동사가 두 번 ✘)'),
+   (2, '빈칸 어휘', 'charge는 in charge of로만 — (A) 자리에 charge 하나만은 못 씀'),
+   (2, '시간 접속사 after', 'A, and then B = After A, B → After we fly this airplane, we can try making one.'),
+   ([2, 4], '내용 불일치', '② Jim은 주연 배우가 아니라 감독 ④ 결말 이야기는 없음 (두 개 고르기)'),
+   ([1, 4], '답할 수 없는 질문', '① Chris 일의 가장 힘든 점 ④ 스토리텔링이 왜 중요한지 — 글에 없음 (두 개 고르기)'),
+   ([2, 5], '내용 일치', '② 오래 훈련하고 돌봄 ⑤ 드론으로 행복한 순간을 포착 (두 개 고르기)')]},
 ]
 tests = []
 for S in SETS:
@@ -94,11 +116,12 @@ for S in SETS:
         multi = isinstance(a, list); A = [x - 1 for x in a] if multi else a - 1
         mark = ''.join(C[x] for x in A) if multi else C[A]
         items.append({'n': n, 'src': typ, 'stem': '%d번%s' % (n, ' (%d개 고르기)' % len(A) if multi else ''), 'body': '', 'opts': list(C), 'en': False, 'ans': A,
-                      'ex': '정답 ▶ %s\n풀이 ▶ %s' % (mark, why), 'ctx': '', 'pts': 4, 'words': [], 'kos': []})
+                      'ex': '정답 ▶ %s\n풀이 ▶ %s' % (mark, why), 'ctx': '', 'pts': 100 // len(S['key']), 'words': [], 'kos': []})
     tests.append({'id': S['id'], 'kind': 'exam', 'retry': 1, 'title': S['title'], 'short': S['short'], 'school': '중산중 1학년', 'minutes': 40, 'note': '문제는 종이 족보(%s)로 풀고, 여기엔 답만 입력해요.' % S['src'], 'items': items})
 src = open(path, encoding='utf-8').read()
-src = re.sub(r'/\* M1JB-TESTS.*?/\* /M1JB-TESTS \*/\n?', '', src, flags=re.S)
 ids = [t['id'] for t in tests]
-src = src.rstrip('\n') + '\n/* M1JB-TESTS: 족보 OMR 답만 입력 (gen/m1jb/build.py 로 만듦 · 손으로 고치지 말 것) */\nwindow.PKG.tests = (window.PKG.tests || []).filter(function (t) { return %s.indexOf(t.id) < 0; }).concat(%s);\n/* /M1JB-TESTS */\n' % (json.dumps(ids), json.dumps(tests, ensure_ascii=False))
+_old = re.search(r'/\* M1JB-TESTS.*?/\* /M1JB-TESTS \*/\n?', src, flags=re.S)   # 11/28: 제자리에서 바꿈(실전기출 탭 순서 유지)
+_pre, _post = (src[:_old.start()], src[_old.end():]) if _old else (src.rstrip('\n') + '\n', '')
+src = _pre.rstrip('\n') + '\n/* M1JB-TESTS: 족보 OMR 답만 입력 (gen/m1jb/build.py 로 만듦 · 손으로 고치지 말 것) */\nwindow.PKG.tests = (window.PKG.tests || []).filter(function (t) { return %s.indexOf(t.id) < 0; }).concat(%s);\n/* /M1JB-TESTS */\n' % (json.dumps(ids), json.dumps(tests, ensure_ascii=False)) + _post
 open(path, 'w', encoding='utf-8').write(src)
 print([(t['id'], len(t['items']), ''.join(C[i['ans']] if not isinstance(i['ans'], list) else '[' + ''.join(C[x] for x in i['ans']) + ']' for i in t['items'])) for t in tests])
